@@ -107,7 +107,7 @@ export default function HomePage() {
           <h2 style={{ fontSize: 22, fontWeight: 700, margin: "0 0 4px" }}>ChatGPT Plus 成品号</h2>
           <p style={{ fontSize: 13, color: "#6b6b6b", margin: "0 0 4px" }}>独立成品账号（含邮箱密码），登录即用。</p>
           <p style={{ fontSize: 12, color: "#b45309", margin: "0 0 16px", background: "#fffbeb", display: "inline-block", padding: "4px 10px", borderRadius: 6 }}>
-            ⚠️ 非 OpenAI 官方渠道，上游供应商交付。存在风控风险，请使用小号登录。
+            ⚠️ 非 OpenAI 官方渠道。存在风控风险，请使用小号登录。
           </p>
 
           {/* 版本选择 */}
@@ -138,7 +138,7 @@ export default function HomePage() {
 
           {/* 交付说明 */}
           <div style={{ padding: "10px 14px", borderRadius: 8, background: "#f0f7ff", fontSize: 12, color: "#1677ff", marginBottom: 16, lineHeight: 1.6 }}>
-            📋 <b>交付流程：</b>付款后客服人工处理 → 上游供应商派发账号 → 发送至你的邮箱。如上游无货，全额退款。
+            📋 <b>交付流程：</b>付款后人工处理，账号发送至你的邮箱。如开通失败，全额退款。
           </div>
 
           {isSold ? (
@@ -165,7 +165,7 @@ export default function HomePage() {
                 "注册 ChatGPT 时间均为 24-25 年，存活至今更稳定",
                 "账号开通 Plus 均已静置 3 天左右，降低被风控几率",
                 "保证可登录，可改密，可绑定个人手机邮箱",
-                "客服人工交付，发送至你提供的接收邮箱",
+                "付款后人工处理，发送至你提供的接收邮箱",
                 "Image2 绘图等专业功能支持",
                 "保护隐私；数据不用于模型训练",
                 "部署代理进行编码与深度研究",
@@ -184,7 +184,7 @@ export default function HomePage() {
               {[
                 { n: "1", t: "填写邮箱", d: "输入接收产品的邮箱" },
                 { n: "2", t: "扫码付款", d: "备注订单号，保留截图" },
-                { n: "3", t: "等待交付", d: "客服人工处理，24h 内交付" },
+                { n: "3", t: "等待交付", d: "确认收款后处理，24h 内交付" },
               ].map(s => (
                 <div key={s.n} style={{ padding: "16px 12px", borderRadius: 10, border: "1px solid #e7e4df", background: "#fff", textAlign: "center" }}>
                   <div style={{ width: 32, height: 32, borderRadius: "50%", background: "linear-gradient(135deg,#f27a1a,#e84d5b)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 8px", fontSize: 14, fontWeight: 700 }}>{s.n}</div>
@@ -200,7 +200,7 @@ export default function HomePage() {
             <div style={{ border: "1px solid #e7e4df", borderRadius: 12, overflow: "hidden" }}>
               <FaqItem q="Plus 账号和 Plus 订阅有什么区别？" a="成品号是独立的新账号（含邮箱密码），买来直接登录使用。直充是在你自己现有的账号上开通 Plus 会员。" />
               <FaqItem q="账号会被多人使用吗？" a="每个账号仅交付给您一人，交付后请及时改密。请勿外泄账号信息。" />
-              <FaqItem q="账号无法登录怎么办？" a={variant === "warranty" ? "质保期内如被封禁、风控无法登录、Plus 意外失效，可免费换新。请联系客服处理。" : "无质保版本购买后不支持退款或换货。下单即表示接受此条款。"} />
+              <FaqItem q="账号无法登录怎么办？" a={variant === "warranty" ? "质保期内如被封禁、风控无法登录、Plus 意外失效，可免费换新。请联系 chengziai2026@163.com 处理。" : "无质保版本购买后不支持退款或换货。下单即表示接受此条款。"} />
               <div style={{ borderBottom: "none" }}>
                 <FaqItem q="会封号吗？" a="ChatGPT 存在 OpenAI 风控机制，任何非官方渠道获得的账号都有被封禁的风险。建议使用小号登录，不要在成品号上绑定重要信息。" />
               </div>
@@ -223,7 +223,7 @@ export default function HomePage() {
           </p>
 
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
-            {["💰 上游渠道代开", "⏱ 付款后 24h 内完成", "💗 质保30天订阅在线"].map(b => (
+            {["💰 人工代开通", "⏱ 付款后 24h 内完成", "💗 质保30天订阅在线"].map(b => (
               <span key={b} style={{ padding: "3px 10px", borderRadius: 20, background: "#f5f3f0", border: "1px solid #f0ede8", fontSize: 12, color: "#6b6b6b" }}>{b}</span>
             ))}
           </div>
@@ -233,13 +233,13 @@ export default function HomePage() {
               Session 如何获取？
             </a>
             <div style={{ padding: "10px 14px", borderRadius: 8, background: "#faf9f7", border: "1px solid #e7e4df", fontSize: 12, color: "#6b6b6b", lineHeight: 1.6 }}>
-              登录 chatgpt.com → 访问 <code style={{ background: "#e7e4df", padding: "1px 4px", borderRadius: 3 }}>/api/auth/session</code> → 复制全部内容 → 付款后发给客服
+              登录 chatgpt.com → 访问 <code style={{ background: "#e7e4df", padding: "1px 4px", borderRadius: 3 }}>/api/auth/session</code> → 复制全部内容 → 付款后发送至 chengziai2026@163.com
             </div>
           </div>
 
           {/* 交付说明 */}
           <div style={{ padding: "10px 14px", borderRadius: 8, background: "#f0f7ff", fontSize: 12, color: "#1677ff", marginBottom: 16, lineHeight: 1.6 }}>
-            📋 <b>开通流程：</b>付款后提供 Session → 客服人工到上游开通 → 完成后通知你。如上游无货或开通失败，全额退款。
+            📋 <b>开通流程：</b>付款后提供 Session，人工处理开通，完成后通知你。如开通失败，全额退款。
           </div>
 
           {plusSold ? (
@@ -260,7 +260,7 @@ export default function HomePage() {
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {[
                 "个人账号直升 Plus，无需更换账号",
-                "提供 Session 凭证，客服人工处理开通",
+                "提供 Session 凭证，人工处理开通",
                 "Image2 绘图等专业功能支持",
                 "网页对话 GPT-5.5 基础模型权限",
                 "生成图片、视频、幻灯片等",
@@ -279,7 +279,7 @@ export default function HomePage() {
               {[
                 { n: "1", t: "获取 Session", d: "登录 ChatGPT 复制凭证" },
                 { n: "2", t: "下单付款", d: "备注订单号，保留截图" },
-                { n: "3", t: "等待开通", d: "客服处理，24h 内完成" },
+                { n: "3", t: "等待开通", d: "确认收款后处理，24h 内完成" },
               ].map(s => (
                 <div key={s.n} style={{ padding: "16px 12px", borderRadius: 10, border: "1px solid #e7e4df", background: "#fff", textAlign: "center" }}>
                   <div style={{ width: 32, height: 32, borderRadius: "50%", background: "linear-gradient(135deg,#f27a1a,#e84d5b)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 8px", fontSize: 14, fontWeight: 700 }}>{s.n}</div>
@@ -307,11 +307,11 @@ export default function HomePage() {
         <div style={{ height: 1, background: "#e7e4df", marginBottom: 20 }} />
         <footer style={{ textAlign: "center" }}>
           <p style={{ fontSize: 12, color: "#9e9e9e", lineHeight: 1.8, maxWidth: 600, margin: "0 auto" }}>
-            本站为第三方转售/代下单服务，非 OpenAI 官方渠道。<br />
-            产品由上游供应商提供，存在库存、风控、封禁、不可用等风险。<br />
-            下单前请确认接受相关风险。如上游无货或无法交付，将全额退款。
+            本站为第三方代下单服务，非 OpenAI 官方渠道。<br />
+            ChatGPT 账号存在风控、封禁、不可用等风险，请使用小号操作。<br />
+            下单前请确认接受相关风险。如无法交付，将全额退款。
           </p>
-          <p style={{ fontSize: 12, color: "#9e9e9e", marginTop: 12 }}>© {new Date().getFullYear()} 橙子AI</p>
+          <p style={{ fontSize: 12, color: "#9e9e9e", marginTop: 12 }}>© {new Date().getFullYear()} 橙子AI · chengziai2026@163.com</p>
         </footer>
       </div>
 
@@ -373,8 +373,8 @@ export default function HomePage() {
                   {[
                     `扫描下方${payMethod === "alipay" ? "支付宝" : "微信"}码，支付 ¥${modal.price}`,
                     <span key="note"><b>重要：</b>转账<em>备注栏</em>填写订单号 <b style={{ fontFamily: "monospace", letterSpacing: 1 }}>{modal.orderId}</b></span>,
-                    `付款后保留截图，发送至 support@chengzi.ai 确认`,
-                    `客服确认收款后处理，产品 24h 内发送至 ${email || "你的邮箱"}`,
+                    `付款后保留截图，发送至 chengziai2026@163.com 确认`,
+                    `确认收款后处理，产品 24h 内发送至 ${email || "你的邮箱"}`,
                   ].map((t, i) => (
                     <div key={i} style={{ display: "flex", gap: 8, marginBottom: i < 3 ? 8 : 0, color: "#6b6b6b" }}>
                       <span style={{ width: 20, height: 20, borderRadius: "50%", background: "linear-gradient(135deg,#f27a1a,#e84d5b)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, flexShrink: 0 }}>{i + 1}</span>
