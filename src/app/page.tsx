@@ -371,14 +371,17 @@ export default function HomePage() {
                 <div style={{ padding: 14, borderRadius: 10, background: "#f5f3f0", fontSize: 13, marginBottom: 14 }}>
                   <div style={{ fontWeight: 600, marginBottom: 10 }}>付款步骤</div>
                   {[
-                    `扫描下方${payMethod === "alipay" ? "支付宝" : "微信"}码，支付 ¥${modal.price}`,
-                    <span key="note"><b>重要：</b>转账<em>备注栏</em>填写订单号 <b style={{ fontFamily: "monospace", letterSpacing: 1 }}>{modal.orderId}</b></span>,
-                    `付款后保留截图，发送至 chengziai2026@163.com 确认`,
-                    `确认收款后处理，产品 24h 内发送至 ${email || "你的邮箱"}`,
-                  ].map((t, i) => (
+                    { text: `扫描下方${payMethod === "alipay" ? "支付宝" : "微信"}码，支付 ¥${modal.price}` },
+                    { text: "转账备注栏填写订单号：", bold: modal.orderId },
+                    { text: "付款后保留截图，发送至 chengziai2026@163.com 确认" },
+                    { text: `确认收款后处理，产品 24h 内发送至 ${email || "你的邮箱"}` },
+                  ].map((s, i) => (
                     <div key={i} style={{ display: "flex", gap: 8, marginBottom: i < 3 ? 8 : 0, color: "#6b6b6b" }}>
                       <span style={{ width: 20, height: 20, borderRadius: "50%", background: "linear-gradient(135deg,#f27a1a,#e84d5b)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, flexShrink: 0 }}>{i + 1}</span>
-                      <span>{t}</span>
+                      <span>
+                        {s.text}
+                        {s.bold && <b style={{ fontFamily: "monospace", letterSpacing: 1 }}>{s.bold}</b>}
+                      </span>
                     </div>
                   ))}
                 </div>
