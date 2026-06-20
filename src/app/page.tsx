@@ -10,7 +10,7 @@ type PaymentMethod = "alipay" | "wechat";
    库存控制 — 改这里就能开关产品
    ═══════════════════════════════════════════ */
 const STOCK: Record<string, boolean> = {
-  "gemini-pro":         true,   // Gemini Pro 1年直充含绑卡 ¥30
+  "gemini-pro":         true,   // Gemini Pro 1年直充含绑卡 ¥100
   "account-nowarranty": true,   // 成品号 无质保 ¥66.66
   "account-warranty":   true,   // 成品号 附带质保 ¥122
   "plus-direct":        true,   // Plus 直充 ¥168.88
@@ -113,14 +113,14 @@ export default function HomePage() {
 
           {/* 价格对比 */}
           <div style={{ marginBottom: 6 }}>
-            <span style={{ fontSize: 28, fontWeight: 700 }}>¥30</span>
+            <span style={{ fontSize: 28, fontWeight: 700 }}>¥100</span>
             <span style={{ fontSize: 13, color: "#6b6b6b", marginLeft: 4 }}>元 / 年</span>
             <span style={{ display: "inline-flex", alignItems: "center", marginLeft: 10, fontSize: 12, color: "#16a34a", background: "#f0fdf4", border: "1px solid #bbf7d0", padding: "2px 10px", borderRadius: 20, fontWeight: 600 }}>
               💰 省 ¥1,640+
             </span>
           </div>
           <p style={{ fontSize: 13, color: "#6b6b6b", margin: "0 0 4px" }}>
-            官方定价 <span style={{ textDecoration: "line-through" }}>$19.99/月</span>（约 ¥145/月，一年 ¥1,740+），我们仅需 ¥30/年。
+            官方定价 <span style={{ textDecoration: "line-through" }}>$19.99/月</span>（约 ¥145/月，一年 ¥1,740+），我们仅需 ¥100/年。
           </p>
           <p style={{ fontSize: 12, color: "#b45309", margin: "0 0 16px", background: "#fffbeb", display: "inline-block", padding: "4px 10px", borderRadius: 6 }}>
             ⚠️ 非官方渠道。付款后系统会将 CDK 及专属激活页面发送至你的邮箱，请在专属页面中自助激活。激活后请立即修改 2FA！
@@ -134,7 +134,7 @@ export default function HomePage() {
                   <span style={{ fontSize: 15, fontWeight: 700 }}>Gemini Pro 年费订阅</span>
                   <span style={{ fontSize: 11, color: "#1a73e8", marginLeft: 8, background: "#e8f0fe", padding: "2px 8px", borderRadius: 10, fontWeight: 600 }}>含虚拟绑卡</span>
                 </div>
-                <span style={{ fontSize: 24, fontWeight: 700, color: "#1a73e8" }}>¥30</span>
+                <span style={{ fontSize: 24, fontWeight: 700, color: "#1a73e8" }}>¥100</span>
               </div>
               <div style={{ fontSize: 11, color: "#6b6b6b", marginTop: 4 }}>付款后收到 CDK 及专属激活页面，自助激活一次 Gemini Pro 1年。不支持退款。</div>
             </div>
@@ -154,8 +154,8 @@ export default function HomePage() {
           {!STOCK["gemini-pro"] ? (
             <div style={{ width: "100%", padding: "13px 0", borderRadius: 10, background: "#e5e2dc", color: "#b0ada6", textAlign: "center", fontSize: 15, fontWeight: 600 }}>已售罄</div>
           ) : (
-            <button onClick={() => buy("Gemini Pro 1年订阅（含绑卡）", 30)} style={btnStyle}>
-              下单激活 — ¥30.00
+            <button onClick={() => buy("Gemini Pro 1年订阅（含绑卡）", 100)} style={btnStyle}>
+              下单激活 — ¥100.00
             </button>
           )}
           {!STOCK["gemini-pro"] && (
