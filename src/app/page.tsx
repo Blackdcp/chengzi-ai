@@ -11,6 +11,7 @@ type PaymentMethod = "alipay" | "wechat";
    ═══════════════════════════════════════════ */
 const STOCK: Record<string, boolean> = {
   "gemini-pro":         true,   // Gemini Pro 1年直充含绑卡 ¥100
+  "team-k12":           true,   // GPT Team K12 额度号 ¥30
   "account-nowarranty": true,   // 成品号 无质保 ¥66.66
   "account-warranty":   true,   // 成品号 附带质保 ¥122
   "plus-direct":        true,   // Plus 直充 ¥168.88
@@ -56,6 +57,7 @@ export default function HomePage() {
   const isSold = variant === "nowarranty"
     ? !STOCK["account-nowarranty"]
     : !STOCK["account-warranty"];
+  const teamSold = !STOCK["team-k12"];
   const plusSold = !STOCK["plus-direct"];
   const warrantyDate = (() => { const d = new Date(); d.setDate(d.getDate() + 30); return `${d.getMonth() + 1}月${d.getDate()}日`; })();
 
@@ -85,8 +87,9 @@ export default function HomePage() {
       <header style={{ position: "sticky", top: 0, zIndex: 50, background: "rgba(250,249,247,0.9)", backdropFilter: "blur(16px)", borderBottom: "1px solid #e7e4df" }}>
         <div style={{ maxWidth: 780, margin: "0 auto", padding: "0 20px", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <span style={{ fontSize: 20, fontWeight: 700, color: "#f27a1a" }}>橙子 AI</span>
-          <div style={{ display: "flex", gap: 24, fontSize: 14, color: "#6b6b6b" }}>
+          <div style={{ display: "flex", gap: 24, fontSize: 14, color: "#6b6b6b", flexWrap: "wrap", justifyContent: "flex-end" }}>
             <a href="#gemini" style={{ color: "inherit", textDecoration: "none" }}>Gemini Pro</a>
+            <a href="#team" style={{ color: "inherit", textDecoration: "none" }}>Team额度号</a>
             <a href="#account" style={{ color: "inherit", textDecoration: "none" }}>成品号</a>
             <a href="#plus" style={{ color: "inherit", textDecoration: "none" }}>Plus 直充</a>
           </div>
@@ -216,6 +219,60 @@ export default function HomePage() {
                 <FaqItem q="激活失败怎么办？" a="如 CDK 无法激活或使用中遇到问题，请联系 chengziai2026@163.com。如确认无法激活，全额退款。" />
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ═══════════════ GPT Team K12 ═══════════════ */}
+        <section id="team" style={{ background: "#fff", border: "1px solid #e7e4df", borderRadius: 14, padding: "24px 28px 28px", marginBottom: 20 }}>
+
+          <div style={{ fontSize: 12, fontWeight: 600, color: "#9e9e9e", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 6 }}>ChatGPT Team · 仅限反代</div>
+          <h2 style={{ fontSize: 22, fontWeight: 700, margin: "0 0 2px" }}>GPT Team K12 额度号</h2>
+          <div style={{ marginBottom: 4 }}>
+            <span style={{ fontSize: 28, fontWeight: 700 }}>¥30</span>
+            <span style={{ fontSize: 13, color: "#6b6b6b", marginLeft: 4 }}>元</span>
+          </div>
+          <p style={{ fontSize: 13, color: "#6b6b6b", margin: "0 0 4px" }}>
+            包含：5小时限额约 20 刀，周限额约 100 刀的 API/反代配额。
+          </p>
+          <div style={{ marginTop: 8, marginBottom: 16, display: "flex", flexDirection: "column", gap: 6 }}>
+            <p style={{ fontSize: 12, color: "#dc2626", margin: 0, background: "#fef2f2", display: "inline-block", padding: "4px 10px", borderRadius: 6, border: "1px solid #fecaca" }}>
+              ⚠️ <b>拍前必读：</b>仅发 JSON 文件供中转/反代使用，<b>不可直接登录官网！</b>拍错不退！
+            </p>
+            <p style={{ fontSize: 12, color: "#b45309", margin: 0, background: "#fffbeb", display: "inline-block", padding: "4px 10px", borderRadius: 6 }}>
+              ⚠️ <b>质保规则：</b>质保1小时内首登，要用再买，囤货不保、不退！
+            </p>
+          </div>
+
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
+            {["🛠 仅限反代", "📦 JSON 交付", "⏱ 1小时首保", "🔗 支持 Cockpit/9router 等"].map(b => (
+              <span key={b} style={{ padding: "3px 10px", borderRadius: 20, background: "#f5f3f0", border: "1px solid #f0ede8", fontSize: 12, color: "#6b6b6b" }}>{b}</span>
+            ))}
+          </div>
+
+          <div style={{ padding: "10px 14px", borderRadius: 8, background: "#f0f7ff", fontSize: 12, color: "#1677ff", marginBottom: 16, lineHeight: 1.6 }}>
+            📋 <b>交付流程：</b>付款后人工处理，将提取好的 CPA / Sub2 / Cockpit 等格式的 JSON 文件发送至你的邮箱。
+          </div>
+
+          {teamSold ? (
+            <div style={{ width: "100%", padding: "13px 0", borderRadius: 10, background: "#e5e2dc", color: "#b0ada6", textAlign: "center", fontSize: 15, fontWeight: 600 }}>已售罄</div>
+          ) : (
+            <button onClick={() => buy("GPT Team K12 额度号 (反代用)", 30)} style={btnStyle}>
+              下单购买 — ¥30.00
+            </button>
+          )}
+
+          <div style={{ marginTop: 22, padding: "16px 18px", borderRadius: 10, background: "#f5f3f0" }}>
+            <div style={{ fontSize: 11, fontWeight: 600, color: "#9e9e9e", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 10 }}>套餐说明及注意事项</div>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              {[
+                "提取支持格式：CPA、Sub2、Cockpit、9router",
+                "由于官方系统延迟，导入中转后有时会显示为 FREE 套餐，此为正常现象，使用一段时间后会自动刷新恢复。",
+                "判断账号状态请只看「非周限额」和「非5H限额」即可，介意短暂显示 FREE 者请勿拍。",
+                "仅提供 JSON 文件供开发/代理环境对接，无基础技术能力请勿购买。",
+              ].map((f, i) => (
+                <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: 13, color: "#6b6b6b", padding: "3px 0" }}><CheckIcon />{f}</li>
+              ))}
+            </ul>
           </div>
         </section>
 
