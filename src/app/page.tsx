@@ -10,7 +10,7 @@ type PaymentMethod = "alipay" | "wechat";
    库存控制 — 改这里就能开关产品
    ═══════════════════════════════════════════ */
 const STOCK: Record<string, boolean> = {
-  "gemini-pro":         true,   // Gemini Pro 1年直充含绑卡 ¥100
+  "gemini-pro":         true,   // Gemini Pro 1年直充含绑卡 ¥30
   "account-nowarranty": true,   // 成品号 无质保 ¥66.66
   "account-warranty":   true,   // 成品号 附带质保 ¥122
   "plus-direct":        true,   // Plus 直充 ¥168.88
@@ -113,17 +113,17 @@ export default function HomePage() {
 
           {/* 价格对比 */}
           <div style={{ marginBottom: 6 }}>
-            <span style={{ fontSize: 28, fontWeight: 700 }}>¥100</span>
+            <span style={{ fontSize: 28, fontWeight: 700 }}>¥30</span>
             <span style={{ fontSize: 13, color: "#6b6b6b", marginLeft: 4 }}>元 / 年</span>
             <span style={{ display: "inline-flex", alignItems: "center", marginLeft: 10, fontSize: 12, color: "#16a34a", background: "#f0fdf4", border: "1px solid #bbf7d0", padding: "2px 10px", borderRadius: 20, fontWeight: 600 }}>
               💰 省 ¥1,640+
             </span>
           </div>
           <p style={{ fontSize: 13, color: "#6b6b6b", margin: "0 0 4px" }}>
-            官方定价 <span style={{ textDecoration: "line-through" }}>$19.99/月</span>（约 ¥145/月，一年 ¥1,740+），我们仅需 ¥100/年。
+            官方定价 <span style={{ textDecoration: "line-through" }}>$19.99/月</span>（约 ¥145/月，一年 ¥1,740+），我们仅需 ¥30/年。
           </p>
           <p style={{ fontSize: 12, color: "#b45309", margin: "0 0 16px", background: "#fffbeb", display: "inline-block", padding: "4px 10px", borderRadius: 6 }}>
-            ⚠️ 非官方渠道。购买后使用 CDK 至代开网站自助激活。激活后请立即修改 2FA！
+            ⚠️ 非官方渠道。付款后系统会将 CDK 及专属激活页面发送至你的邮箱，请在专属页面中自助激活。激活后请立即修改 2FA！
           </p>
 
           {/* 版本 */}
@@ -134,9 +134,9 @@ export default function HomePage() {
                   <span style={{ fontSize: 15, fontWeight: 700 }}>Gemini Pro 年费订阅</span>
                   <span style={{ fontSize: 11, color: "#1a73e8", marginLeft: 8, background: "#e8f0fe", padding: "2px 8px", borderRadius: 10, fontWeight: 600 }}>含虚拟绑卡</span>
                 </div>
-                <span style={{ fontSize: 24, fontWeight: 700, color: "#1a73e8" }}>¥100</span>
+                <span style={{ fontSize: 24, fontWeight: 700, color: "#1a73e8" }}>¥30</span>
               </div>
-              <div style={{ fontSize: 11, color: "#6b6b6b", marginTop: 4 }}>购买后收到 CDK，前往代开网站自助激活一次 Gemini Pro 1年。不支持退款。</div>
+              <div style={{ fontSize: 11, color: "#6b6b6b", marginTop: 4 }}>付款后收到 CDK 及专属激活页面，自助激活一次 Gemini Pro 1年。不支持退款。</div>
             </div>
           </div>
 
@@ -148,14 +148,14 @@ export default function HomePage() {
 
           {/* 交付说明 */}
           <div style={{ padding: "10px 14px", borderRadius: 8, background: "#f0f7ff", fontSize: 12, color: "#1677ff", marginBottom: 16, lineHeight: 1.6 }}>
-            📋 <b>交付流程：</b>付款后收取 CDK 至邮箱 → 前往代开网站输入 CDK 自助激活 → 订阅完成后立即修改 2FA。如开通失败，全额退款。
+            📋 <b>交付流程：</b>付款后收取 CDK 及专属激活网址至邮箱 → 打开专属页面输入 CDK 自助激活 → 订阅完成后立即修改 2FA。如开通失败，全额退款。
           </div>
 
           {!STOCK["gemini-pro"] ? (
             <div style={{ width: "100%", padding: "13px 0", borderRadius: 10, background: "#e5e2dc", color: "#b0ada6", textAlign: "center", fontSize: 15, fontWeight: 600 }}>已售罄</div>
           ) : (
-            <button onClick={() => buy("Gemini Pro 1年订阅（含绑卡）", 100)} style={btnStyle}>
-              下单激活 — ¥100.00
+            <button onClick={() => buy("Gemini Pro 1年订阅（含绑卡）", 30)} style={btnStyle}>
+              下单激活 — ¥30.00
             </button>
           )}
           {!STOCK["gemini-pro"] && (
@@ -194,8 +194,8 @@ export default function HomePage() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 10 }}>
               {[
                 { n: "1", t: "下单付款", d: "备注订单号，保留截图" },
-                { n: "2", t: "收取 CDK", d: "CDK 发送至你的接收邮箱" },
-                { n: "3", t: "自助激活", d: "前往代开网站输入 CDK 激活" },
+                { n: "2", t: "收取 CDK", d: "CDK 及专属激活网址发送至邮箱" },
+                { n: "3", t: "自助激活", d: "通过邮件里的专属页面激活" },
               ].map(s => (
                 <div key={s.n} style={{ padding: "16px 12px", borderRadius: 10, border: "1px solid #e7e4df", background: "#fff", textAlign: "center" }}>
                   <div style={{ width: 32, height: 32, borderRadius: "50%", background: "linear-gradient(135deg,#1a73e8,#4285f4)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 8px", fontSize: 14, fontWeight: 700 }}>{s.n}</div>
@@ -210,7 +210,7 @@ export default function HomePage() {
             <h3 style={{ fontSize: 16, fontWeight: 700, margin: "0 0 10px" }}>常见问题</h3>
             <div style={{ border: "1px solid #e7e4df", borderRadius: 12, overflow: "hidden" }}>
               <FaqItem q="Gemini Pro 和 ChatGPT Plus 有什么区别？" a="Gemini Pro 是 Google 的顶级 AI 模型，拥有 100万 Token 上下文（远超 GPT），支持 Deep Research、Gems 等功能。如果主要做深度研究和长文档分析，Gemini Pro 更强。" />
-              <FaqItem q="CDK 怎么用？" a="付款后你的邮箱会收到一个 CDK 兑换码和代开网站链接。前往代开网站输入 CDK，即可自助激活 Gemini Pro 1年订阅。全程无需自备海外信用卡。" />
+              <FaqItem q="CDK 怎么用？" a="付款后你的邮箱会收到一个 CDK 兑换码和专属的安全激活链接。在发给你的页面中输入 CDK，即可自助激活 Gemini Pro 1年订阅。全程无需自备海外信用卡。" />
               <FaqItem q="为什么必须修改 2FA？" a="激活账号后请立即修改两步验证（2FA），确保账号为你独有。未及时修改导致账号被他人访问、修改密码等问题，店铺概不负责。" />
               <div style={{ borderBottom: "none" }}>
                 <FaqItem q="激活失败怎么办？" a="如 CDK 无法激活或使用中遇到问题，请联系 chengziai2026@163.com。如确认无法激活，全额退款。" />
