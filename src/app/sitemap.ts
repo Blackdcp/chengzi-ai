@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { getProducts } from '../lib/api'
+import { getBlogPosts } from '../lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://cheng-zi-ai.com'
@@ -23,6 +24,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   ])
 
+  // Get blog posts for SEO
+  const zhPosts = getBlogPosts('zh')
+  const blogUrls = zhPosts.map(post => ({
+    url: `${baseUrl}/zh/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   return [
     {
       url: `${baseUrl}/zh`,
@@ -35,6 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/zh/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/zh/tools/ppt2pdf`,
@@ -60,6 +76,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
-    ...productUrls
+    ...productUrls,
+    ...blogUrls
   ]
 }
