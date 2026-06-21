@@ -4,6 +4,8 @@ import { useState } from "react";
 import type { Product } from "../../types/product";
 import { categories } from "../../lib/categories";
 
+type PaymentMethod = "alipay" | "wechat";
+
 const em = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 
 function genOrderId() {
@@ -19,6 +21,7 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [step, setStep] = useState<"email" | "pay">("email");
+  const [payMethod, setPayMethod] = useState<PaymentMethod>("alipay");
 
   const buy = (name: string, price: number) => {
     setModal({ name, price, orderId: genOrderId() });
@@ -170,8 +173,26 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                  </>
                ) : (
                  <div style={{ textAlign: "center" }}>
-                    <div style={{ width: 200, height: 200, margin: "0 auto 20px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", color: "#999999" }}>
-                      [支付二维码]
+                    <div style={{ display: "flex", gap: 12, marginBottom: 20 }}>
+                      <button 
+                        onClick={() => setPayMethod("alipay")}
+                        style={{ flex: 1, padding: "10px", borderRadius: "6px", border: payMethod === "alipay" ? "2px solid #1677ff" : "1px solid #eaeaea", background: payMethod === "alipay" ? "#f0f5ff" : "#fff", color: payMethod === "alipay" ? "#1677ff" : "#666", fontWeight: 600, cursor: "pointer", transition: "all 0.2s" }}
+                      >
+                        支付宝
+                      </button>
+                      <button 
+                        onClick={() => setPayMethod("wechat")}
+                        style={{ flex: 1, padding: "10px", borderRadius: "6px", border: payMethod === "wechat" ? "2px solid #07c160" : "1px solid #eaeaea", background: payMethod === "wechat" ? "#f0fdf4" : "#fff", color: payMethod === "wechat" ? "#07c160" : "#666", fontWeight: 600, cursor: "pointer", transition: "all 0.2s" }}
+                      >
+                        微信支付
+                      </button>
+                    </div>
+
+                    <div style={{ width: 200, height: 200, margin: "0 auto 20px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", color: "#999999", flexDirection: "column", gap: 8 }}>
+                      <div style={{ fontSize: 14 }}>
+                        {payMethod === "alipay" ? "支付宝收款码" : "微信收款码"}
+                      </div>
+                      <div style={{ fontSize: 12, color: "#ccc" }}>[待上传二维码]</div>
                     </div>
                     <p style={{ fontSize: 13, color: "#666666" }}>付款后卡密将发送至 <strong style={{ color: "#111827" }}>{email}</strong></p>
                  </div>
