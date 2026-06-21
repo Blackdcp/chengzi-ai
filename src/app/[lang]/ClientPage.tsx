@@ -8,7 +8,7 @@ import Link from "next/link";
 
 type PaymentMethod = "alipay" | "wechat";
 
-const em = (s: string) => /^[^s@]+@[^s@]+\.[^s@]+$/.test(s);
+const em = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 
 function genOrderId() {
   const now = new Date();

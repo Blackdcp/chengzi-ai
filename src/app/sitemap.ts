@@ -26,12 +26,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Get blog posts for SEO
   const zhPosts = getBlogPosts('zh')
-  const blogUrls = zhPosts.map(post => ({
+  const enPosts = getBlogPosts('en')
+  
+  const zhBlogUrls = zhPosts.map(post => ({
     url: `${baseUrl}/zh/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
+
+  const enBlogUrls = enPosts.map(post => ({
+    url: `${baseUrl}/en/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  const blogUrls = [...zhBlogUrls, ...enBlogUrls]
 
   return [
     {

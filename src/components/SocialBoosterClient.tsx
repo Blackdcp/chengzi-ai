@@ -143,7 +143,7 @@ export default function SocialBoosterClient({ dict, lang }: Props) {
         <p style={{ margin: "0 0 24px", color: "#4b5563", fontSize: 15, maxWidth: 480, marginLeft: "auto", marginRight: "auto" }}>
           {t.adDesc}
         </p>
-        <a href={`/${lang}#marketing-followers`} className="vercel-button" style={{ padding: "12px 32px", fontSize: 16, display: "inline-block", textDecoration: "none" }}>
+        <a href={`/${lang}/products/marketing-followers`} className="vercel-button" style={{ padding: "12px 32px", fontSize: 16, display: "inline-block", textDecoration: "none" }}>
           {t.adBtn}
         </a>
       </div>
