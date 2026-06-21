@@ -2,8 +2,11 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
-export default function Ppt2PdfPage({ params }: { params: { lang: string } }) {
+export default function Ppt2PdfPage() {
+  const params = useParams();
+  const lang = params?.lang || "zh";
   const [file, setFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [status, setStatus] = useState<"idle" | "uploading" | "success" | "error">("idle");
@@ -98,7 +101,7 @@ export default function Ppt2PdfPage({ params }: { params: { lang: string } }) {
     <div style={{ minHeight: "100vh", background: "#fafafa", fontFamily: "sans-serif" }}>
       <header style={{ background: "#ffffff", borderBottom: "1px solid #eaeaea", padding: "12px 0", position: "sticky", top: 0, zIndex: 50 }}>
         <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "48px" }}>
-          <Link href={`/${params.lang}`} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+          <Link href={`/${lang}`} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
              <span style={{ fontSize: 24, color: "#111827" }}>←</span>
              <span style={{ fontSize: 16, fontWeight: 700, color: "#111827" }}>返回首页</span>
           </Link>
