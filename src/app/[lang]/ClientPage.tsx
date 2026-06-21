@@ -20,8 +20,9 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
   const [modal, setModal] = useState<{ name: string; price: number; orderId: string } | null>(null);
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
-  const [step, setStep] = useState<"email" | "pay">("email");
+  const [step, setStep] = useState<"email" | "pay" | "success">("email");
   const [payMethod, setPayMethod] = useState<PaymentMethod>("alipay");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const buy = (name: string, price: number) => {
     setModal({ name, price, orderId: genOrderId() });
@@ -34,6 +35,33 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
     if (!em(email)) { setEmailErr("请输入有效的接收邮箱"); return; }
     setEmailErr("");
     setStep("pay");
+  };
+
+  const submitOrder = async () => {
+    if (!modal) return;
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          orderId: modal.orderId,
+          email: email,
+          productName: modal.name,
+          price: modal.price,
+          payMethod: payMethod
+        })
+      });
+      if (res.ok) {
+        setStep("success");
+      } else {
+        alert("提交失败，请重试或联系客服。");
+      }
+    } catch (e) {
+      alert("提交失败，请重试或联系客服。");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const productsByCategory: Record<string, Product[]> = {};
@@ -171,7 +199,7 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                    {emailErr && <div style={{ color: "#e00000", fontSize: 12, marginBottom: 12 }}>{emailErr}</div>}
                    <button onClick={goPay} className="vercel-button" style={{ width: "100%", padding: "12px 0", fontSize: 14, fontWeight: 500, cursor: "pointer", marginTop: 12 }}>下一步，去支付</button>
                  </>
-               ) : (
+               ) : step === "pay" ? (
                  <div style={{ textAlign: "center" }}>
                     <div style={{ display: "flex", gap: 12, marginBottom: 20 }}>
                       <button 
@@ -188,13 +216,37 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                       </button>
                     </div>
 
-                    <div style={{ width: 200, height: 200, margin: "0 auto 20px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", color: "#999999", flexDirection: "column", gap: 8 }}>
-                      <div style={{ fontSize: 14 }}>
-                        {payMethod === "alipay" ? "支付宝收款码" : "微信收款码"}
-                      </div>
-                      <div style={{ fontSize: 12, color: "#ccc" }}>[待上传二维码]</div>
+                    <div style={{ width: 200, height: 200, margin: "0 auto 20px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", color: "#999999", flexDirection: "column", overflow: "hidden" }}>
+                      <img 
+                        src={payMethod === "alipay" ? "/images/alipay.jpg" : "/images/wechat.jpg"} 
+                        alt="QR Code" 
+                        style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+                        onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling && (e.currentTarget.nextElementSibling as HTMLElement).style.setProperty('display', 'block') }}
+                      />
+                      <div style={{ fontSize: 13, color: "#ccc", display: "none" }}>请确保已将二维码保存至<br/>public/images/{payMethod}.jpg</div>
                     </div>
-                    <p style={{ fontSize: 13, color: "#666666" }}>付款后卡密将发送至 <strong style={{ color: "#111827" }}>{email}</strong></p>
+                    <p style={{ fontSize: 13, color: "#666666", marginBottom: 20 }}>请扫码支付，付款后点击下方提交订单。</p>
+
+                    <button 
+                      onClick={submitOrder} 
+                      disabled={isSubmitting}
+                      className="vercel-button" 
+                      style={{ width: "100%", padding: "12px 0", fontSize: 14, fontWeight: 500, cursor: isSubmitting ? "not-allowed" : "pointer", opacity: isSubmitting ? 0.7 : 1 }}
+                    >
+                      {isSubmitting ? "正在提交..." : "我已完成付款，提交订单"}
+                    </button>
+                 </div>
+               ) : (
+                 <div style={{ textAlign: "center", padding: "10px 0" }}>
+                    <div style={{ width: 64, height: 64, background: "#0a0a0a", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 32, margin: "0 auto 20px" }}>
+                      ✓
+                    </div>
+                    <h4 style={{ fontSize: 18, color: "#111827", margin: "0 0 12px" }}>提交成功</h4>
+                    <p style={{ fontSize: 14, color: "#666", lineHeight: 1.6 }}>
+                      您的订单通知已发给客服。<br/>
+                      核对收款后，商品将发送至邮箱：<br/>
+                      <strong style={{ color: "#111827" }}>{email}</strong>
+                    </p>
                  </div>
                )}
             </div>
