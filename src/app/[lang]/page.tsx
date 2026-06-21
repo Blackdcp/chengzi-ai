@@ -11,5 +11,5 @@ export default async function Page({
   const dict = await getDictionary(resolvedParams.lang)
   const products = getProducts(resolvedParams.lang)
   
-  return <ClientPage dict={dict} products={products} />
+  return <ClientPage dict={dict} products={products} lang={resolvedParams.lang} />
 }

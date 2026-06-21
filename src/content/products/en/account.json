@@ -1,0 +1,27 @@
+{
+  "id": "account",
+  "categoryId": "ai-accounts",
+  "categoryName": "ChatGPT Plus · Manual",
+  "title": "ChatGPT Plus Fresh Account",
+  "subtitle": "Independent account (includes email & password), ready to use.",
+  "price": 9.99,
+  "tags": [
+    "Independent Account",
+    "Email & Pass Inc.",
+    "Ready to Use"
+  ],
+  "warnings": [
+    "⚠️ Non-official channel. Risk of ban, use as alt account."
+  ],
+  "deliveryNotice": "Delivery: Manual delivery within 24h (usually 1-2h) to your email.",
+  "features": [
+    "Exclusive account, not shared",
+    "Includes full email/pass",
+    "ChatGPT Plus activated"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy (No Warranty) — $ 9.99",
+  "orderName": "ChatGPT Plus Account",
+  "isHot": false,
+  "originalPriceText": "$ 29.99"
+}

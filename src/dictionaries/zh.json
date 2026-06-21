@@ -2,10 +2,58 @@
   "header": {
     "title": "橙子 AI",
     "nav": {
-      "gemini": "Gemini Pro",
-      "team": "Team额度号",
-      "account": "成品号",
-      "plus": "Plus 直充"
+      "ai-accounts": "AI 账号与订阅",
+      "marketing": "营销引流资源",
+      "tools": "精选实用工具"
     }
+  },
+  "common": {
+    "hot": "热卖",
+    "free": "免费",
+    "soldOut": "已售罄",
+    "details": "详情",
+    "currency": "¥ "
+  },
+  "modal": {
+    "submitRequest": "提交需求",
+    "confirmOrder": "确认订单",
+    "product": "商品/业务：",
+    "emailStep": "第一步：您的接收邮箱",
+    "emailPlaceholder": "you@example.com (客服将通过此邮箱联系您)",
+    "reqStep": "第二步：具体需求 / 链接",
+    "reqPlaceholder": "请描述您的具体要求，或粘贴相关的目标链接...",
+    "submitBtnConsult": "提交需求并联系客服",
+    "submitBtnPay": "我已经付完款，通知客服发货",
+    "submitting": "正在提交...",
+    "payStep1": "第一步：扫码支付",
+    "payStep2": "第二步：输入邮箱接收商品",
+    "payEmailPlaceholder": "you@example.com (支付后用于接收商品)",
+    "success": "提交成功",
+    "consultSuccessMsg": "您的需求已发送给客服。\n我们将尽快通过邮件联系您：",
+    "paySuccessMsg": "您的订单通知已发给客服。\n核对收款后，商品将发送至邮箱：",
+    "alipay": "支付宝",
+    "wechat": "微信支付"
+  },
+  "ppt2pdf": {
+    "back": "返回首页",
+    "title": "PPT 转 PDF 高清无损",
+    "subtitle": "基于底层原生的文档引擎，完美保留原始排版、字体和动画帧。<br/>完全免费，支持最大 20MB 的 PPT/PPTX 文件。",
+    "clickOrDrag": "点击或拖拽文件到这里",
+    "supportText": "支持 .ppt, .pptx 格式，最大 20MB",
+    "startConvert": "开始转换",
+    "processing": "正在处理中...",
+    "processingHint": "大文件可能需要十几秒，请耐心等待",
+    "success": "转换成功！",
+    "downloadHint": "您的 PDF 文件已开始下载。",
+    "convertNext": "转换下一个文件",
+    "errInvalidExt": "只支持 .ppt 或 .pptx 格式的文件",
+    "errTooLarge": "文件大小不能超过 20MB",
+    "errServer": "转换失败，请重试",
+    "errNetwork": "网络错误，请检查您的连接"
+  },
+  "product": {
+    "features": "功能特性",
+    "warnings": "购买必读",
+    "back": "返回首页"
   }
 }

@@ -1,0 +1,31 @@
+{
+  "id": "gemini-pro",
+  "categoryId": "ai-accounts",
+  "categoryName": "Gemini Pro · CDK Activation",
+  "title": "Gemini Pro 1-Year Subscription",
+  "subtitle": "Includes Virtual Card",
+  "price": 14.99,
+  "originalPriceText": "$ 49.99",
+  "originalPriceNote": "约 ¥145/月，一年 ¥1,740+",
+  "tags": [
+    "CDK Auto-Activation",
+    "Virtual Card Inc.",
+    "1-Year Full Sub",
+    "Delivery within 24h"
+  ],
+  "warnings": [
+    "⚠️ Non-official channel. After payment, the CDK and activation link will be sent to your email. Please change your 2FA immediately after activation!"
+  ],
+  "deliveryNotice": "Delivery: Receive CDK via email -> Self-activate -> Change 2FA.",
+  "features": [
+    "1-Year Gemini Pro Subscription",
+    "Includes virtual card, no need for foreign CC",
+    "CDK self-activation",
+    "Full Pro features",
+    "1M Token window"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now — $ 14.99",
+  "orderName": "Gemini Pro 1-Year (w/ Card)",
+  "isHot": true
+}

@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import { getProductBySlug } from '../../../../lib/api'
+import { getDictionary } from '../../../../lib/dictionaries'
 
 export default async function ProductPage({
   params,
@@ -8,6 +9,7 @@ export default async function ProductPage({
 }) {
   const resolvedParams = await params
   const product = getProductBySlug(resolvedParams.lang, resolvedParams.slug)
+  const dict = await getDictionary(resolvedParams.lang)
 
   if (!product) {
     notFound()
@@ -20,7 +22,7 @@ export default async function ProductPage({
       <div style={{ background: "#ffffff", padding: "16px 24px", borderBottom: "1px solid #eaeaea", marginBottom: 40, marginLeft: -24, marginRight: -24, marginTop: -40 }}>
         <div style={{ maxWidth: 780, margin: "0 auto", display: "flex", alignItems: "center" }}>
           <a href={`/${resolvedParams.lang}`} style={{ color: "#666666", textDecoration: "none", fontSize: 14, fontWeight: 500 }}>
-            &larr; 返回首页
+            &larr; {dict.product.back}
           </a>
         </div>
       </div>
@@ -38,11 +40,10 @@ export default async function ProductPage({
         <div style={{ marginBottom: 32, display: "flex", alignItems: "baseline" }}>
           {product.price > 0 ? (
              <>
-               <span style={{ fontSize: 40, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>¥ {product.price}</span>
-               <span style={{ fontSize: 16, color: "#666666", marginLeft: 8 }}>/ 年</span>
+               <span style={{ fontSize: 40, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>{dict.common.currency}{product.price}</span>
              </>
           ) : (
-             <span style={{ fontSize: 40, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>免费</span>
+             <span style={{ fontSize: 40, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>{dict.common.free}</span>
           )}
         </div>
 
@@ -59,7 +60,7 @@ export default async function ProductPage({
         </div>
 
         <div style={{ borderTop: "1px solid #eaeaea", paddingTop: 40 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 600, margin: "0 0 24px", letterSpacing: "-0.01em" }}>功能特性</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 600, margin: "0 0 24px", letterSpacing: "-0.01em" }}>{dict.product.features}</h2>
           <ul style={{ paddingLeft: 0, margin: 0, color: "#444444", lineHeight: 1.8, fontSize: 15, listStyle: "none" }}>
             {product.features.map((f, i) => (
               <li key={i} style={{ marginBottom: 16, display: "flex", gap: 12, alignItems: "flex-start" }}>
@@ -75,7 +76,7 @@ export default async function ProductPage({
         {product.warnings && product.warnings.length > 0 && (
           <div style={{ marginTop: 48, padding: "24px", border: "1px solid #eaeaea", borderRadius: "8px", background: "#fafafa" }}>
             <h3 style={{ margin: "0 0 16px", color: "#111827", fontSize: 15, fontWeight: 600, display: "flex", alignItems: "center", gap: 8 }}>
-              购买必读
+              {dict.product.warnings}
             </h3>
             <ul style={{ paddingLeft: 20, margin: 0, color: "#444444", fontSize: 14, lineHeight: 1.6 }}>
               {product.warnings.map((w, i) => (
