@@ -274,6 +274,30 @@ export default function HomePage({ dict, products, lang }: { dict: any, products
                  </div>
                ) : step === "pay" ? (
                  <div style={{ textAlign: "center" }}>
+                    {lang === 'en' ? (
+                      <>
+                        <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>1. Send Payment via PayPal</div>
+                        <div style={{ background: "#f0f5ff", border: "1px solid #1677ff", borderRadius: "8px", padding: "20px", marginBottom: 24 }}>
+                          <p style={{ margin: "0 0 12px", fontSize: 14, color: "#111827" }}>Please send <strong style={{color:"#1677ff"}}>{dict.common.currency}{modal.price}</strong> to our PayPal account:</p>
+                          <div style={{ fontSize: 18, fontWeight: 700, color: "#1677ff", wordBreak: "break-all", userSelect: "all" }}>CHENGZIAI2026@163.COM</div>
+                        </div>
+                        <div style={{ borderTop: "1px dashed #eaeaea", paddingTop: 20, marginBottom: 20 }}>
+                          <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>2. Confirm Your Email</div>
+                          <input 
+                            type="email" 
+                            placeholder={dict.modal.payEmailPlaceholder} 
+                            value={email} 
+                            onChange={e => { setEmail(e.target.value); if(emailErr) setEmailErr(""); }} 
+                            style={{ width: "100%", padding: "12px", border: emailErr ? "1px solid #e00000" : "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box" }} 
+                            onFocus={(e) => { if (!emailErr) e.target.style.borderColor = "#0a0a0a" }} 
+                            onBlur={(e) => { if (!emailErr) e.target.style.borderColor = "#eaeaea" }} 
+                          />
+                          {emailErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: 8, textAlign: "left" }}>{emailErr}</div>}
+                        </div>
+                      </>
+                    ) : (
+                      <>
+
                     <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>{dict.modal.payStep1}</div>
                     <div style={{ display: "flex", gap: 12, marginBottom: 16 }}>
                       <button 
@@ -312,6 +336,9 @@ export default function HomePage({ dict, products, lang }: { dict: any, products
                       />
                       {emailErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: 8, textAlign: "left" }}>{emailErr}</div>}
                     </div>
+
+                      </>
+                    )}
 
                     <button 
                       onClick={submitOrder} 
