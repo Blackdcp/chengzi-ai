@@ -74,5 +74,24 @@
       "ChatGPT Team account",
       "Midjourney account"
     ]
+  },
+  "tools": {
+    "chatExporter": {
+      "meta": {
+        "title": "ChatGPT Markdown to Image/PDF Exporter | Free Tool",
+        "description": "100% Free tool to beautify ChatGPT outputs. Convert raw Markdown to stunning, shareable images or PDFs instantly in your browser. Zero privacy risk."
+      },
+      "hero": {
+        "title": "ChatGPT Beautiful Exporter",
+        "subtitle": "Turn messy Markdown into stunning, shareable cards for Twitter & LinkedIn.",
+        "watermarkText": "Rendered by cheng-zi-ai.com | Get ChatGPT Plus at a huge discount"
+      },
+      "editor": {
+        "placeholder": "Paste your raw Markdown from ChatGPT here...",
+        "previewTitle": "Live Preview",
+        "downloadImage": "Export HD Image",
+        "downloading": "Rendering..."
+      }
+    }
   }
 }

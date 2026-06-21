@@ -74,5 +74,24 @@
       "ChatGPT Plus 直充",
       "GPT-4成品号"
     ]
+  },
+  "tools": {
+    "chatExporter": {
+      "meta": {
+        "title": "ChatGPT Markdown转长图/PDF生成器 | 免费工具",
+        "description": "完全免费的 ChatGPT 回答美化工具。一键将丑陋的 Markdown 代码转换为排版精美的长图或 PDF 格式。前端生成，零隐私泄露风险。"
+      },
+      "hero": {
+        "title": "ChatGPT 问答长图导出神器",
+        "subtitle": "把杂乱的 Markdown 变成一张精美的卡片，引爆你的社交圈。",
+        "watermarkText": "Rendered by cheng-zi-ai.com | 极低价格获取独享 ChatGPT Plus"
+      },
+      "editor": {
+        "placeholder": "在这里粘贴 ChatGPT 吐出的 Markdown 格式文本...",
+        "previewTitle": "效果预览",
+        "downloadImage": "生成高清长图",
+        "downloading": "生成中..."
+      }
+    }
   }
 }
