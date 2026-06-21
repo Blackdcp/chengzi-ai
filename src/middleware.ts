@@ -8,15 +8,21 @@ const defaultLocale = 'zh'
 
 // Helper to get locale from Accept-Language header
 function getLocale(request: NextRequest): string {
-  const headers = { 'accept-language': request.headers.get('accept-language') || '' }
-  const languages = new Negotiator({ headers }).languages()
-  return match(languages, locales, defaultLocale)
+  const acceptLang = request.headers.get('accept-language')
+  if (!acceptLang) return ''
+  const headers = { 'accept-language': acceptLang }
+  try {
+    const languages = new Negotiator({ headers }).languages()
+    return match(languages, locales, defaultLocale)
+  } catch (e) {
+    return ''
+  }
 }
 
-export function proxy(request: NextRequest) {
+export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // Skip API routes, proxy routes, Next.js internals, and static files
+  // Skip API routes, Next.js internals, and static files
   if (
     pathname.startsWith('/api') ||
     pathname.startsWith('/proxy-html') ||
@@ -33,17 +39,18 @@ export function proxy(request: NextRequest) {
 
   if (pathnameHasLocale) return NextResponse.next()
 
-  // Determine locale based on Vercel GEO header first, fallback to browser language
-  let locale = 'zh'
-  const country = request.headers.get('x-vercel-ip-country')
+  // 1. Prioritize browser language (Accept-Language) because CDN/VPNs mask real IP
+  let locale = getLocale(request)
 
-  if (country) {
-    // If Vercel provides the country code
-    const chineseRegions = ['CN', 'HK', 'TW', 'MO']
-    locale = chineseRegions.includes(country) ? 'zh' : 'en'
-  } else {
-    // Localhost fallback
-    locale = getLocale(request)
+  // 2. Fallback to Vercel GEO header if Accept-Language is missing
+  if (!locale) {
+    const country = request.headers.get('x-vercel-ip-country')
+    if (country) {
+      const chineseRegions = ['CN', 'HK', 'TW', 'MO']
+      locale = chineseRegions.includes(country) ? 'zh' : 'en'
+    } else {
+      locale = 'en' // Ultimate fallback
+    }
   }
 
   // Redirect to the locale-prefixed path
