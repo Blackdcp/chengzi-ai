@@ -188,6 +188,29 @@ export default function ClientPpt2PdfPage({ dict, lang }: { dict: any, lang: str
             </div>
           )}
         </div>
+
+        {/* SEO Magnet FAQ Section */}
+        <div style={{ marginTop: 80, textAlign: "left", padding: "40px", background: "#ffffff", borderRadius: "16px", boxShadow: "0 4px 20px rgba(0,0,0,0.02)" }}>
+          <h2 style={{ fontSize: 24, fontWeight: 700, color: "#111827", marginBottom: 32, letterSpacing: "-0.02em" }}>
+            {dict.ppt2pdf.faqTitle}
+          </h2>
+          
+          <div style={{ marginBottom: 24 }}>
+            <h3 style={{ fontSize: 18, fontWeight: 600, color: "#111827", marginBottom: 8 }}>{dict.ppt2pdf.faq1q}</h3>
+            <p style={{ fontSize: 15, color: "#666666", lineHeight: 1.6 }}>{dict.ppt2pdf.faq1a}</p>
+          </div>
+          
+          <div style={{ marginBottom: 24 }}>
+            <h3 style={{ fontSize: 18, fontWeight: 600, color: "#111827", marginBottom: 8 }}>{dict.ppt2pdf.faq2q}</h3>
+            <p style={{ fontSize: 15, color: "#666666", lineHeight: 1.6 }}>{dict.ppt2pdf.faq2a}</p>
+          </div>
+          
+          <div>
+            <h3 style={{ fontSize: 18, fontWeight: 600, color: "#111827", marginBottom: 8 }}>{dict.ppt2pdf.faq3q}</h3>
+            <p style={{ fontSize: 15, color: "#666666", lineHeight: 1.6 }}>{dict.ppt2pdf.faq3a}</p>
+          </div>
+        </div>
+
       </main>
     </div>
   );

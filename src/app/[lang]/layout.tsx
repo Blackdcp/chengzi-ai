@@ -1,13 +1,29 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
+import { getDictionary } from "../../lib/dictionaries";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: 'swap' });
 
-export const metadata: Metadata = {
-  title: "橙子AI — Gemini Pro ¥100/年 | ChatGPT Plus 成品号 & 直充",
-  description: "Gemini Pro 1年订阅 ¥100（官方¥1,740+），含绑卡 CDK 自助激活。ChatGPT Plus 成品号 ¥66.66 起，直充 ¥168.88。人工交付，24h 内处理。",
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: 'zh' | 'en' }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const dict = await getDictionary(resolvedParams.lang);
+  
+  return {
+    title: dict.meta.title,
+    description: dict.meta.description,
+    openGraph: {
+      title: dict.meta.title,
+      description: dict.meta.description,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.title,
+      description: dict.meta.description,
+    }
+  };
+}
 
 export default async function RootLayout({ 
   children,

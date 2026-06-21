@@ -15,8 +15,27 @@ export default async function ProductPage({
     notFound()
   }
 
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.title,
+    "description": product.subtitle,
+    "offers": {
+      "@type": "Offer",
+      "price": product.price,
+      "priceCurrency": resolvedParams.lang === 'en' ? "USD" : "CNY",
+      "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+    }
+  };
+
+
   return (
     <div style={{ minHeight: "100vh", background: "#fafafa", color: "#111827", padding: "40px 24px", lineHeight: 1.6 }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       
       {/* Header bar */}
       <div style={{ background: "#ffffff", padding: "16px 24px", borderBottom: "1px solid #eaeaea", marginBottom: 40, marginLeft: -24, marginRight: -24, marginTop: -40 }}>
