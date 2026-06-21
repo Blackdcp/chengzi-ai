@@ -1,7 +1,8 @@
 import { getDictionary } from '../../../../lib/dictionaries';
 import AiVideoClient from './ClientPage';
 
-export async function generateMetadata({ params: { lang } }: { params: { lang: 'zh' | 'en' } }) {
+export async function generateMetadata({ params }: { params: Promise<{ lang: 'zh' | 'en' }> }) {
+  const { lang } = await params;
   const dict = await getDictionary(lang);
   
   return {
@@ -11,10 +12,11 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: '
 }
 
 export default async function AiVideoGeneratorPage({
-  params: { lang },
+  params,
 }: {
-  params: { lang: 'zh' | 'en' };
+  params: Promise<{ lang: 'zh' | 'en' }>;
 }) {
+  const { lang } = await params;
   const dict = await getDictionary(lang);
 
   return <AiVideoClient dict={dict} lang={lang} />;
