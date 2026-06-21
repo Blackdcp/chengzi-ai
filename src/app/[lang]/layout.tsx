@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
 import { getDictionary } from "../../lib/dictionaries";
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: 'swap' });
 
@@ -48,6 +49,7 @@ export default async function RootLayout({
     <html lang={lang} className={inter.variable}>
       <body className={lang === 'en' ? 'font-en tracking-tight' : 'font-zh tracking-tight'}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
