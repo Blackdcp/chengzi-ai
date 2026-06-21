@@ -14,56 +14,58 @@ export default async function ProductPage({
   }
 
   return (
-    <div style={{ minHeight: "100vh", background: "#ffffff", color: "#111827", padding: "40px 24px", lineHeight: 1.6 }}>
+    <div style={{ minHeight: "100vh", background: "#fafafa", color: "#111827", padding: "40px 24px", lineHeight: 1.6 }}>
       
       {/* Header bar */}
-      <div style={{ background: "#f6f6ef", padding: "12px 24px", borderBottom: "1px solid #e5e7eb", marginBottom: 40, marginLeft: -24, marginRight: -24, marginTop: -40 }}>
+      <div style={{ background: "#ffffff", padding: "16px 24px", borderBottom: "1px solid #eaeaea", marginBottom: 40, marginLeft: -24, marginRight: -24, marginTop: -40 }}>
         <div style={{ maxWidth: 780, margin: "0 auto", display: "flex", alignItems: "center" }}>
-          <a href={`/${resolvedParams.lang}`} style={{ color: "#111827", textDecoration: "none", fontSize: 14, fontWeight: 600 }}>
+          <a href={`/${resolvedParams.lang}`} style={{ color: "#666666", textDecoration: "none", fontSize: 14, fontWeight: 500 }}>
             &larr; 返回首页
           </a>
         </div>
       </div>
 
-      <div className="yc-card" style={{ maxWidth: 780, margin: "0 auto", padding: "40px" }}>
+      <div className="vercel-card" style={{ maxWidth: 780, margin: "0 auto", padding: "48px" }}>
         
-        <div style={{ fontSize: 11, fontWeight: 700, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 12 }}>
+        <div style={{ fontSize: 12, fontWeight: 500, color: "#666666", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 12 }}>
           {product.categoryName}
         </div>
         
-        <h1 style={{ fontSize: 28, fontWeight: 800, margin: "0 0 16px", lineHeight: 1.2, letterSpacing: "-0.01em" }}>
+        <h1 style={{ fontSize: 32, fontWeight: 700, margin: "0 0 16px", lineHeight: 1.2, letterSpacing: "-0.02em" }}>
           {product.title}
         </h1>
 
         <div style={{ marginBottom: 32, display: "flex", alignItems: "baseline" }}>
           {product.price > 0 ? (
              <>
-               <span style={{ fontSize: 36, fontWeight: 800, color: "#111827", letterSpacing: "-0.02em" }}>¥{product.price}</span>
-               <span style={{ fontSize: 14, color: "#6b7280", marginLeft: 6 }}>/ 年</span>
+               <span style={{ fontSize: 40, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>¥ {product.price}</span>
+               <span style={{ fontSize: 16, color: "#666666", marginLeft: 8 }}>/ 年</span>
              </>
           ) : (
-             <span style={{ fontSize: 36, fontWeight: 800, color: "#111827", letterSpacing: "-0.02em" }}>免费</span>
+             <span style={{ fontSize: 40, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>免费</span>
           )}
         </div>
 
-        <p style={{ fontSize: 16, color: "#374151", lineHeight: 1.6, marginBottom: 32 }}>
+        <p style={{ fontSize: 16, color: "#444444", lineHeight: 1.6, marginBottom: 40 }}>
           {product.subtitle}
         </p>
 
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 40 }}>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 48 }}>
           {product.tags.map(t => (
-            <span key={t} style={{ padding: "4px 10px", background: "#f3f4f6", border: "1px solid #e5e7eb", fontSize: 12, color: "#374151", fontWeight: 600 }}>
+            <span key={t} style={{ padding: "4px 12px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "999px", fontSize: 13, color: "#444444", fontWeight: 500 }}>
               {t}
             </span>
           ))}
         </div>
 
-        <div style={{ borderTop: "2px solid #111827", paddingTop: 32 }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, margin: "0 0 20px" }}>功能特性</h2>
-          <ul style={{ paddingLeft: 0, margin: 0, color: "#374151", lineHeight: 1.8, fontSize: 15, listStyle: "none" }}>
+        <div style={{ borderTop: "1px solid #eaeaea", paddingTop: 40 }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, margin: "0 0 24px", letterSpacing: "-0.01em" }}>功能特性</h2>
+          <ul style={{ paddingLeft: 0, margin: 0, color: "#444444", lineHeight: 1.8, fontSize: 15, listStyle: "none" }}>
             {product.features.map((f, i) => (
-              <li key={i} style={{ marginBottom: 12, display: "flex", gap: 12, alignItems: "flex-start" }}>
-                <span style={{ color: "#ff6600", fontWeight: "bold" }}>+</span>
+              <li key={i} style={{ marginBottom: 16, display: "flex", gap: 12, alignItems: "flex-start" }}>
+                <span style={{ color: "#0a0a0a", marginTop: 2 }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
                 <span>{f}</span>
               </li>
             ))}
@@ -71,13 +73,13 @@ export default async function ProductPage({
         </div>
 
         {product.warnings && product.warnings.length > 0 && (
-          <div style={{ marginTop: 40, padding: "20px", border: "1px solid #ff6600", background: "#fff5f0" }}>
-            <h3 style={{ margin: "0 0 12px", color: "#b91c1c", fontSize: 14, fontWeight: 700, textTransform: "uppercase" }}>
+          <div style={{ marginTop: 48, padding: "24px", border: "1px solid #eaeaea", borderRadius: "8px", background: "#fafafa" }}>
+            <h3 style={{ margin: "0 0 16px", color: "#111827", fontSize: 15, fontWeight: 600, display: "flex", alignItems: "center", gap: 8 }}>
               购买必读
             </h3>
-            <ul style={{ paddingLeft: 20, margin: 0, color: "#b91c1c", fontSize: 13, lineHeight: 1.6 }}>
+            <ul style={{ paddingLeft: 20, margin: 0, color: "#444444", fontSize: 14, lineHeight: 1.6 }}>
               {product.warnings.map((w, i) => (
-                <li key={i} style={{ marginBottom: 6 }}>{w}</li>
+                <li key={i} style={{ marginBottom: 8 }}>{w}</li>
               ))}
             </ul>
           </div>

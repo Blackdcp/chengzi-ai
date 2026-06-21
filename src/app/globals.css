@@ -1,6 +1,6 @@
 @import "tailwindcss";
 * { box-sizing: border-box; margin: 0; }
-body { margin: 0; background-color: #ffffff; color: #111827; }
+body { margin: 0; background-color: #fafafa; color: #111827; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
@@ -12,40 +12,43 @@ body { margin: 0; background-color: #ffffff; color: #111827; }
   .font-zh {
     font-family: var(--font-inter), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", ui-sans-serif, system-ui, sans-serif;
   }
-  .yc-card {
-    border: 1px solid #e5e7eb;
-    border-radius: 0px;
+  .vercel-card {
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
     background: #ffffff;
-    transition: border-color 0.15s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
-  .yc-card:hover {
-    border-color: #ff6600;
+  .vercel-card:hover {
+    border-color: #eaeaea;
+    box-shadow: 0 4px 14px 0 rgba(0,0,0,0.05);
   }
-  .yc-button {
-    background: #ff6600;
+  .vercel-button {
+    background: #0a0a0a;
     color: #ffffff;
-    border: none;
-    border-radius: 0px;
-    transition: background-color 0.1s ease;
+    border: 1px solid #0a0a0a;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
-  .yc-button:hover {
-    background: #e65c00;
+  .vercel-button:hover {
+    background: #ffffff;
+    color: #0a0a0a;
   }
-  .yc-button-secondary {
-    background: #f3f4f6;
-    color: #374151;
-    border: 1px solid #e5e7eb;
-    border-radius: 0px;
-    transition: background-color 0.1s ease;
+  .vercel-button-secondary {
+    background: #ffffff;
+    color: #666666;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    transition: color 0.2s ease, border-color 0.2s ease;
   }
-  .yc-button-secondary:hover {
-    background: #e5e7eb;
+  .vercel-button-secondary:hover {
+    color: #0a0a0a;
+    border-color: #0a0a0a;
   }
   .nav-link {
-    color: #6b7280;
-    transition: color 0.15s ease;
+    color: #666666;
+    transition: color 0.2s ease;
   }
   .nav-link:hover {
-    color: #111827;
+    color: #0a0a0a;
   }
 }

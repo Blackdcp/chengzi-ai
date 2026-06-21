@@ -2,7 +2,7 @@
   "id": "gemini-pro",
   "categoryId": "ai-accounts",
   "categoryName": "Gemini Pro · CDK 自助激活",
-  "title": "Gemini Pro 1年订阅 · 含绑卡",
+  "title": "Gemini Pro 1 年订阅 · 含绑卡",
   "subtitle": "包含虚拟绑卡",
   "price": 100,
   "originalPriceText": "$19.99/月",
@@ -10,7 +10,7 @@
   "tags": [
     "CDK 自助激活",
     "含虚拟绑卡",
-    "1年完整订阅",
+    "1 年完整订阅",
     "付款后 24h 内交付"
   ],
   "warnings": [
@@ -19,17 +19,17 @@
   ],
   "deliveryNotice": "交付流程：付款后收取 CDK 及专属激活网址至邮箱 → 打开专属页面输入 CDK 自助激活 → 订阅完成后立即修改 2FA。如开通失败，全额退款。",
   "features": [
-    "Gemini Pro 年费订阅，有效期 1年",
+    "Gemini Pro 年费订阅，有效期 1 年",
     "含虚拟绑卡，无需自备海外信用卡",
     "CDK 自助激活，方便快捷",
     "支持 Gemini 全部 Pro 功能",
-    "100万 Token 上下文窗口",
+    "100 万 Token 上下文窗口",
     "Deep Research 深度研究功能",
     "Gems 自定义 AI 助手",
     "优先体验最新 Gemini 模型"
   ],
   "inStock": true,
   "buyButtonText": "下单激活 — ¥100.00",
-  "orderName": "Gemini Pro 1年订阅（含绑卡）",
+  "orderName": "Gemini Pro 1 年订阅（含绑卡）",
   "isHot": true
 }
