@@ -10,6 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'zh
   const dict = await getDictionary(resolvedParams.lang);
   
   return {
+    metadataBase: new URL("https://cheng-zi-ai.com"),
     title: dict.meta.title,
     description: dict.meta.description,
     keywords: dict.meta.keywords,
