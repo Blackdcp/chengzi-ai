@@ -6,7 +6,6 @@ import Negotiator from 'negotiator'
 const locales = ['en', 'zh']
 const defaultLocale = 'zh'
 
-// Helper to get locale from Accept-Language header
 function getLocale(request: NextRequest): string {
   const acceptLang = request.headers.get('accept-language')
   if (!acceptLang) return ''
@@ -19,10 +18,9 @@ function getLocale(request: NextRequest): string {
   }
 }
 
-export default function middleware(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // Skip API routes, Next.js internals, and static files
   if (
     pathname.startsWith('/api') ||
     pathname.startsWith('/proxy-html') ||
@@ -32,35 +30,37 @@ export default function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Check if pathname already has a locale
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   )
 
   if (pathnameHasLocale) return NextResponse.next()
 
-  // 1. Prioritize browser language (Accept-Language) because CDN/VPNs mask real IP
   let locale = getLocale(request)
 
-  // 2. Fallback to Vercel GEO header if Accept-Language is missing
   if (!locale) {
     const country = request.headers.get('x-vercel-ip-country')
     if (country) {
-      const chineseRegions = ['CN', 'HK', 'TW', 'MO']
+      const chineseRegions = ['CN', 'HK', 'TW', 'MO', 'SG'] // Added SG because of Qiniu node
       locale = chineseRegions.includes(country) ? 'zh' : 'en'
     } else {
-      locale = 'en' // Ultimate fallback
+      locale = 'zh' // Changed ultimate fallback to zh based on primary audience
     }
   }
 
-  // Redirect to the locale-prefixed path
   request.nextUrl.pathname = `/${locale}${pathname === '/' ? '' : pathname}`
-  return NextResponse.redirect(request.nextUrl)
+  
+  // Create redirect response and PREVENT CDN CACHING
+  const response = NextResponse.redirect(request.nextUrl)
+  response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+  response.headers.set('Pragma', 'no-cache')
+  response.headers.set('Expires', '0')
+  
+  return response
 }
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next)
     '/((?!_next|api|proxy-html|favicon.ico).*)',
   ],
 }
