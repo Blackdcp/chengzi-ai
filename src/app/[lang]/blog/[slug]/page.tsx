@@ -5,9 +5,9 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { notFound } from 'next/navigation'
 
-export async function generateStaticParams({ params }: { params: Promise<{ lang: 'en' | 'zh' }> }) {
+export async function generateStaticParams({ params }: { params: any }) {
   const resolvedParams = await params
-  const lang = resolvedParams.lang
+  const lang = resolvedParams.lang as 'en' | 'zh'
   const posts = getBlogPosts(lang)
   
   return posts.map((post) => ({
