@@ -1,6 +1,6 @@
 @import "tailwindcss";
 * { box-sizing: border-box; margin: 0; }
-body { margin: 0; background-color: #fbfbfa; color: #111827; }
+body { margin: 0; background-color: #ffffff; color: #111827; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
@@ -12,25 +12,38 @@ body { margin: 0; background-color: #fbfbfa; color: #111827; }
   .font-zh {
     font-family: var(--font-inter), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", ui-sans-serif, system-ui, sans-serif;
   }
-  .stripe-shadow {
-    box-shadow: 0 2px 5px -1px rgba(50, 50, 93, 0.05), 0 1px 3px -1px rgba(0, 0, 0, 0.03);
-    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  .yc-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 0px;
+    background: #ffffff;
+    transition: border-color 0.15s ease;
   }
-  .stripe-shadow:hover {
-    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.1), 0 8px 16px -8px rgba(0, 0, 0, 0.08), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  .yc-card:hover {
+    border-color: #ff6600;
   }
-  .stripe-button {
-    background: linear-gradient(180deg, #fb923c 0%, #f97316 100%);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(234, 88, 12, 0.2);
-    transition: all 0.2s ease;
+  .yc-button {
+    background: #ff6600;
+    color: #ffffff;
+    border: none;
+    border-radius: 0px;
+    transition: background-color 0.1s ease;
   }
-  .stripe-button:hover {
-    background: linear-gradient(180deg, #fdba74 0%, #fb923c 100%);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 3px 6px rgba(234, 88, 12, 0.3);
+  .yc-button:hover {
+    background: #e65c00;
+  }
+  .yc-button-secondary {
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    border-radius: 0px;
+    transition: background-color 0.1s ease;
+  }
+  .yc-button-secondary:hover {
+    background: #e5e7eb;
   }
   .nav-link {
-    color: #4b5563;
-    transition: color 0.2s ease;
+    color: #6b7280;
+    transition: color 0.15s ease;
   }
   .nav-link:hover {
     color: #111827;
