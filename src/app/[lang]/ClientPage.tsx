@@ -322,7 +322,7 @@ export default function HomePage({ dict, products, lang }: { dict: any, products
                         src={payMethod === "alipay" ? "/images/alipay.jpg" : "/images/wechat.jpg"} 
                         alt="QR Code" 
                         style={{ width: "100%", height: "100%", objectFit: "contain" }} 
-                        onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling && (e.currentTarget.nextElementSibling as HTMLElement).style.setProperty('display', 'block') }}
+                        onError={(e) => { e.currentTarget.style.display = 'none'; const next = e.currentTarget.nextElementSibling; if (next) { (next as HTMLElement).style.setProperty('display', 'block'); } }}
                       />
                     </div>
 
