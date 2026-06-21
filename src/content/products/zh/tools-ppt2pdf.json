@@ -20,5 +20,7 @@
   "inStock": true,
   "buyButtonText": "免费使用",
   "orderName": "免费工具 (无订单)",
+  "actionType": "link",
+  "linkUrl": "https://www.google.com",
   "isHot": false
 }

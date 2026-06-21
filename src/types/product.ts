@@ -15,4 +15,6 @@ export interface Product {
   buyButtonText: string;
   orderName: string; // The name used in the order modal
   isHot?: boolean;
+  actionType?: "buy" | "consult" | "link";
+  linkUrl?: string;
 }

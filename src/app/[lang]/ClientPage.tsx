@@ -17,18 +17,26 @@ function genOrderId() {
 }
 
 export default function HomePage({ dict, products }: { dict: any, products: Product[] }) {
-  const [modal, setModal] = useState<{ name: string; price: number; orderId: string } | null>(null);
+  const [modal, setModal] = useState<{ name: string; price: number; orderId: string; actionType?: string } | null>(null);
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
-  const [step, setStep] = useState<"pay" | "success">("pay");
+  const [requirement, setRequirement] = useState("");
+  const [requirementErr, setRequirementErr] = useState("");
+  const [step, setStep] = useState<"pay" | "consult" | "success">("pay");
   const [payMethod, setPayMethod] = useState<PaymentMethod>("alipay");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const buy = (name: string, price: number) => {
-    setModal({ name, price, orderId: genOrderId() });
+  const buy = (product: Product) => {
+    if (product.actionType === "link" && product.linkUrl) {
+      window.open(product.linkUrl, "_blank");
+      return;
+    }
+    setModal({ name: product.orderName, price: product.price, orderId: genOrderId(), actionType: product.actionType || "buy" });
     setEmail("");
     setEmailErr("");
-    setStep("pay");
+    setRequirement("");
+    setRequirementErr("");
+    setStep(product.actionType === "consult" ? "consult" : "pay");
   };
 
   const submitOrder = async () => {
@@ -46,6 +54,36 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
           productName: modal.name,
           price: modal.price,
           payMethod: payMethod
+        })
+      });
+      if (res.ok) {
+        setStep("success");
+      } else {
+        alert("提交失败，请重试或联系客服。");
+      }
+    } catch (e) {
+      alert("提交失败，请重试或联系客服。");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const submitConsult = async () => {
+    if (!em(email)) { setEmailErr("请输入有效的接收邮箱"); return; }
+    setEmailErr("");
+    if (!requirement.trim()) { setRequirementErr("请简要描述您的需求或提供相关链接"); return; }
+    setRequirementErr("");
+    
+    if (!modal) return;
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/consult", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email,
+          requirement: requirement,
+          productName: modal.name,
         })
       });
       if (res.ok) {
@@ -146,7 +184,7 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                     <div style={{ display: 'flex', gap: 12, marginTop: "auto" }}>
                        {product.inStock ? (
                           <button 
-                            onClick={() => buy(product.orderName, product.price)} 
+                            onClick={() => buy(product)} 
                             className="vercel-button" 
                             style={{ flex: 1, padding: "12px 0", fontSize: 14, fontWeight: 500, cursor: "pointer" }}
                           >
@@ -173,14 +211,53 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
           <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.5)" }} onClick={() => setModal(null)} />
           <div style={{ position: "relative", width: "100%", maxWidth: 420, background: "#ffffff", border: "1px solid #eaeaea", borderRadius: "12px", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}>
             <div style={{ padding: "32px" }}>
-               <h3 style={{ margin: "0 0 20px", fontSize: 20, fontWeight: 600, color: "#111827", letterSpacing: "-0.01em" }}>确认订单</h3>
+               <h3 style={{ margin: "0 0 20px", fontSize: 20, fontWeight: 600, color: "#111827", letterSpacing: "-0.01em" }}>
+                 {step === "consult" ? "提交需求" : "确认订单"}
+               </h3>
                <p style={{ margin: "0 0 16px", color: "#666666", fontSize: 14 }}>
-                 商品：<span style={{ color: "#111827", fontWeight: 500 }}>{modal.name}</span>
+                 商品/业务：<span style={{ color: "#111827", fontWeight: 500 }}>{modal.name}</span>
                </p>
                
-               <div style={{ fontSize: 32, fontWeight: 700, color: "#111827", marginBottom: 32, letterSpacing: "-0.02em" }}>¥ {modal.price}</div>
+               {step !== "consult" && (
+                 <div style={{ fontSize: 32, fontWeight: 700, color: "#111827", marginBottom: 32, letterSpacing: "-0.02em" }}>¥ {modal.price}</div>
+               )}
                
-               {step === "pay" ? (
+               {step === "consult" ? (
+                 <div style={{ textAlign: "center" }}>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>第一步：您的接收邮箱</div>
+                    <input 
+                      type="email" 
+                      placeholder="you@example.com (客服将通过此邮箱联系您)" 
+                      value={email} 
+                      onChange={e => { setEmail(e.target.value); if(emailErr) setEmailErr(""); }} 
+                      style={{ width: "100%", padding: "12px", border: emailErr ? "1px solid #e00000" : "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box", marginBottom: 20 }} 
+                      onFocus={(e) => { if (!emailErr) e.target.style.borderColor = "#0a0a0a" }} 
+                      onBlur={(e) => { if (!emailErr) e.target.style.borderColor = "#eaeaea" }} 
+                    />
+                    {emailErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: -16, marginBottom: 20, textAlign: "left" }}>{emailErr}</div>}
+
+                    <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>第二步：具体需求 / 链接</div>
+                    <textarea 
+                      placeholder="请描述您的具体要求，或粘贴相关的目标链接..." 
+                      value={requirement} 
+                      onChange={e => { setRequirement(e.target.value); if(requirementErr) setRequirementErr(""); }} 
+                      rows={4}
+                      style={{ width: "100%", padding: "12px", border: requirementErr ? "1px solid #e00000" : "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box", resize: "none", marginBottom: 20 }} 
+                      onFocus={(e) => { if (!requirementErr) e.target.style.borderColor = "#0a0a0a" }} 
+                      onBlur={(e) => { if (!requirementErr) e.target.style.borderColor = "#eaeaea" }} 
+                    />
+                    {requirementErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: -16, marginBottom: 20, textAlign: "left" }}>{requirementErr}</div>}
+
+                    <button 
+                      onClick={submitConsult} 
+                      disabled={isSubmitting}
+                      className="vercel-button" 
+                      style={{ width: "100%", padding: "12px 0", fontSize: 14, fontWeight: 500, cursor: isSubmitting ? "not-allowed" : "pointer", opacity: isSubmitting ? 0.7 : 1 }}
+                    >
+                      {isSubmitting ? "正在提交..." : "提交需求并联系客服"}
+                    </button>
+                 </div>
+               ) : step === "pay" ? (
                  <div style={{ textAlign: "center" }}>
                     <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>第一步：扫码支付</div>
                     <div style={{ display: "flex", gap: 12, marginBottom: 16 }}>
@@ -238,8 +315,8 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                     </div>
                     <h4 style={{ fontSize: 18, color: "#111827", margin: "0 0 12px" }}>提交成功</h4>
                     <p style={{ fontSize: 14, color: "#666", lineHeight: 1.6 }}>
-                      您的订单通知已发给客服。<br/>
-                      核对收款后，商品将发送至邮箱：<br/>
+                      {modal.actionType === 'consult' ? "您的需求已发送给客服。" : "您的订单通知已发给客服。"}<br/>
+                      {modal.actionType === 'consult' ? "我们将尽快通过邮件联系您：" : "核对收款后，商品将发送至邮箱："}<br/>
                       <strong style={{ color: "#111827" }}>{email}</strong>
                     </p>
                  </div>

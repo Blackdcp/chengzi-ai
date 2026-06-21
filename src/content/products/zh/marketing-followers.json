@@ -21,7 +21,8 @@
     "掉粉包补"
   ],
   "inStock": true,
-  "buyButtonText": "下单涨粉 — ¥88.00",
-  "orderName": "小红书真人粉丝 1000 个",
-  "isHot": true
+  "buyButtonText": "提交需求",
+  "orderName": "全球真实社交粉丝矩阵",
+  "isHot": true,
+  "actionType": "consult"
 }
