@@ -18,7 +18,7 @@ export default function ChatExporter({ dict, lang }: { dict: any; lang: string }
       const dataUrl = await htmlToImage.toPng(previewRef.current, {
         quality: 1.0,
         pixelRatio: 2,
-        backgroundColor: '#1E1E1E', // Match dark theme
+        backgroundColor: '#1E1E1E', 
       });
       const link = document.createElement('a');
       link.download = 'chat-export.png';
@@ -32,106 +32,153 @@ export default function ChatExporter({ dict, lang }: { dict: any; lang: string }
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+    <div style={{ minHeight: "100vh", background: "#fafafa", fontFamily: "sans-serif" }}>
+      {/* Standardized Header */}
+      <header style={{ background: "#ffffff", borderBottom: "1px solid #eaeaea", padding: "12px 0", position: "sticky", top: 0, zIndex: 50 }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "48px" }}>
+          <Link href={`/${lang}`} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+             <span style={{ fontSize: 24, color: "#111827" }}>←</span>
+             <span style={{ fontSize: 16, fontWeight: 700, color: "#111827" }}>{dict.ppt2pdf?.back || (lang === 'zh' ? '返回首页' : 'Back to Home')}</span>
+          </Link>
+        </div>
+      </header>
+
+      {/* Main Content Area */}
+      <main style={{ maxWidth: 1080, margin: "60px auto", padding: "0 24px", textAlign: "center" }}>
+        <h1 style={{ fontSize: 36, fontWeight: 800, color: "#111827", marginBottom: 16, letterSpacing: "-0.04em" }}>
           {dict.tools.chatExporter.hero.title}
         </h1>
-        <p className="mt-4 text-xl text-gray-400">
+        <p style={{ fontSize: 16, color: "#666666", marginBottom: 48, lineHeight: 1.6 }}>
           {dict.tools.chatExporter.hero.subtitle}
         </p>
-      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        {/* Left Side: Input */}
-        <div className="flex flex-col gap-4">
-          <label className="text-sm font-medium text-gray-300">Markdown Input</label>
-          <textarea
-            className="w-full h-[600px] p-4 bg-gray-800/50 border border-gray-700 rounded-xl text-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent font-mono text-sm resize-none"
-            placeholder={dict.tools.chatExporter.editor.placeholder}
-            value={markdown}
-            onChange={(e) => setMarkdown(e.target.value)}
-          />
-        </div>
-
-        {/* Right Side: Preview & Export */}
-        <div className="flex flex-col gap-4">
-          <div className="flex justify-between items-end">
-            <label className="text-sm font-medium text-gray-300">{dict.tools.chatExporter.editor.previewTitle}</label>
-            <button
-              onClick={handleDownload}
-              disabled={isGenerating || !markdown}
-              className="px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-            >
-              {isGenerating ? (
-                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-              )}
-              {dict.tools.chatExporter.editor.downloadImage}
-            </button>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "32px", textAlign: "left", alignItems: "start" }}>
+          
+          {/* Left Side: Input */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <label style={{ fontSize: 14, fontWeight: 600, color: "#111827" }}>Markdown Input</label>
+            <textarea
+              style={{
+                width: "100%",
+                height: "600px",
+                padding: "16px",
+                background: "#ffffff",
+                border: "1px solid #eaeaea",
+                borderRadius: "12px",
+                color: "#111827",
+                fontFamily: "monospace",
+                fontSize: "14px",
+                resize: "none",
+                outline: "none",
+                boxShadow: "inset 0 2px 4px rgba(0,0,0,0.02)",
+                transition: "border-color 0.2s"
+              }}
+              placeholder={dict.tools.chatExporter.editor.placeholder}
+              value={markdown}
+              onChange={(e) => setMarkdown(e.target.value)}
+              onFocus={(e) => e.target.style.borderColor = "#1677ff"}
+              onBlur={(e) => e.target.style.borderColor = "#eaeaea"}
+            />
           </div>
 
-          {/* Render Area Wrapper for clipping */}
-          <div className="w-full bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-2xl">
-            {/* THIS is the div that gets captured */}
-            <div 
-              ref={previewRef}
-              className="bg-[#1E1E1E] text-gray-200 p-8 min-h-[600px] flex flex-col relative"
-              style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
-            >
-              {/* macOS style Window Buttons */}
-              <div className="flex gap-2 mb-6">
-                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-              </div>
+          {/* Right Side: Preview & Export */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+              <label style={{ fontSize: 14, fontWeight: 600, color: "#111827" }}>{dict.tools.chatExporter.editor.previewTitle}</label>
+              <button
+                onClick={handleDownload}
+                disabled={isGenerating || !markdown}
+                className="vercel-button"
+                style={{
+                  padding: "8px 24px",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  opacity: (isGenerating || !markdown) ? 0.5 : 1,
+                  cursor: (isGenerating || !markdown) ? "not-allowed" : "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px"
+                }}
+              >
+                {isGenerating ? dict.tools.chatExporter.editor.downloading : dict.tools.chatExporter.editor.downloadImage}
+              </button>
+            </div>
 
-              {/* Markdown Content */}
-              <div className="prose prose-invert prose-orange max-w-none flex-grow">
-                {markdown ? (
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                    {markdown}
-                  </ReactMarkdown>
-                ) : (
-                  <div className="text-gray-500 italic flex h-full items-center justify-center pt-32">
-                    {dict.tools.chatExporter.editor.placeholder}
+            {/* Render Area Wrapper for clipping */}
+            <div style={{
+              width: "100%",
+              background: "#ffffff",
+              border: "1px solid #eaeaea",
+              borderRadius: "12px",
+              overflow: "hidden",
+              boxShadow: "0 4px 20px rgba(0,0,0,0.02)"
+            }}>
+              {/* THIS is the div that gets captured */}
+              <div 
+                ref={previewRef}
+                style={{
+                  background: "#1E1E1E",
+                  color: "#e5e7eb",
+                  padding: "32px",
+                  minHeight: "600px",
+                  display: "flex",
+                  flexDirection: "column",
+                  position: "relative",
+                  fontFamily: "system-ui, -apple-system, sans-serif"
+                }}
+              >
+                {/* macOS style Window Buttons */}
+                <div style={{ display: "flex", gap: "8px", marginBottom: "24px" }}>
+                  <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ff5f56" }}></div>
+                  <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ffbd2e" }}></div>
+                  <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#27c93f" }}></div>
+                </div>
+
+                {/* Markdown Content */}
+                <div className="prose prose-invert prose-orange max-w-none" style={{ flexGrow: 1 }}>
+                  {markdown ? (
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {markdown}
+                    </ReactMarkdown>
+                  ) : (
+                    <div style={{ color: "#6b7280", fontStyle: "italic", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", paddingTop: "120px" }}>
+                      {dict.tools.chatExporter.editor.placeholder}
+                    </div>
+                  )}
+                </div>
+
+                {/* Viral Watermark */}
+                <div style={{ marginTop: "48px", paddingTop: "24px", borderTop: "1px solid rgba(255,255,255,0.1)", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "14px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "#9ca3af" }}>
+                    <span style={{ fontWeight: 600, color: "#f97316" }}>Chengzi AI</span>
+                    <span>—</span>
+                    <span>{dict.tools.chatExporter.hero.watermarkText}</span>
                   </div>
-                )}
-              </div>
-
-              {/* Viral Watermark */}
-              <div className="mt-12 pt-6 border-t border-gray-700/50 flex justify-between items-center text-sm">
-                <div className="flex items-center gap-2 text-gray-400">
-                  <span className="font-semibold text-orange-500">Chengzi AI</span>
-                  <span>—</span>
-                  <span>{dict.tools.chatExporter.hero.watermarkText}</span>
                 </div>
               </div>
             </div>
+
           </div>
-
         </div>
-      </div>
 
-      {/* Monetization Banner Below the Tool */}
-      <div className="mt-16 max-w-4xl mx-auto">
-        <div className="bg-gradient-to-r from-orange-500/10 to-purple-500/10 border border-orange-500/20 rounded-2xl p-8 text-center shadow-lg shadow-orange-500/5">
-          <h2 className="text-2xl font-bold text-white mb-4">Want smarter outputs to export?</h2>
-          <p className="text-gray-300 mb-6 text-lg">Stop relying on free AI. Upgrade to a premium intelligence.</p>
-          <div className="flex justify-center gap-4">
-            <Link href={`/${lang}/products/gemini-pro`} className="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium transition">
+        {/* Monetization Banner Below the Tool */}
+        <div style={{ marginTop: 80, padding: "40px", background: "#ffffff", borderRadius: "16px", boxShadow: "0 4px 20px rgba(0,0,0,0.02)", border: "1px solid #eaeaea" }}>
+          <h2 style={{ fontSize: 24, fontWeight: 700, color: "#111827", marginBottom: 16, letterSpacing: "-0.02em" }}>
+            Want smarter outputs to export?
+          </h2>
+          <p style={{ fontSize: 16, color: "#666666", marginBottom: 32 }}>
+            Stop relying on free AI. Upgrade to a premium intelligence.
+          </p>
+          <div style={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
+            <Link href={`/${lang}/products/gemini-pro`} className="vercel-button" style={{ padding: "12px 24px", fontSize: 16, textDecoration: "none" }}>
               Get Gemini Advanced ($14.99)
             </Link>
-            <Link href={`/${lang}/products/chatgpt-plus-random`} className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white border border-gray-600 hover:border-gray-500 rounded-lg font-medium transition">
+            <Link href={`/${lang}/products/account`} className="vercel-button-secondary" style={{ padding: "12px 24px", fontSize: 16, textDecoration: "none" }}>
               Get ChatGPT Plus
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

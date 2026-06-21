@@ -34,9 +34,5 @@ export default async function ChatExporterPage({
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang);
 
-  return (
-    <div className="min-h-screen bg-[#111111] pt-24 pb-12">
-      <ChatExporter dict={dict} lang={resolvedParams.lang} />
-    </div>
-  );
+  return <ChatExporter dict={dict} lang={resolvedParams.lang} />;
 }
