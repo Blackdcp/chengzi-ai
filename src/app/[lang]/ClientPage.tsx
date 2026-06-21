@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import type { Product } from "../../types/product";
+import { categories } from "../../lib/categories";
 
 type PaymentMethod = "alipay" | "wechat";
 
 const em = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 
 const CheckIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth={2.5} style={{ flexShrink: 0, marginTop: 3 }}>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth={2.5} style={{ flexShrink: 0, marginTop: 3 }}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
   </svg>
 );
@@ -26,14 +27,12 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [step, setStep] = useState<"email" | "pay">("email");
-  const [payMethod, setPayMethod] = useState<PaymentMethod>("alipay");
 
   const buy = (name: string, price: number) => {
     setModal({ name, price, orderId: genOrderId() });
     setEmail("");
     setEmailErr("");
     setStep("email");
-    setPayMethod("alipay");
   };
 
   const goPay = () => {
@@ -42,130 +41,123 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
     setStep("pay");
   };
 
-  const btnStyle: React.CSSProperties = {
-    width: "100%", padding: "13px 0", borderRadius: 10, border: "none",
-    background: "linear-gradient(135deg,#f27a1a,#e84d5b)", color: "#fff",
-    fontSize: 15, fontWeight: 600, cursor: "pointer", boxShadow: "0 2px 8px rgba(242,122,26,0.2)",
-  };
+  // Group products by categoryId
+  const productsByCategory: Record<string, Product[]> = {};
+  products.forEach(p => {
+    if (!productsByCategory[p.categoryId]) {
+      productsByCategory[p.categoryId] = [];
+    }
+    productsByCategory[p.categoryId].push(p);
+  });
 
   return (
-    <div style={{ minHeight: "100vh", background: "#faf9f7", fontFamily: '"Inter",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif', color: "#1a1a1a", lineHeight: 1.6 }}>
+    <div style={{ minHeight: "100vh", fontFamily: '"Inter",-apple-system,sans-serif', lineHeight: 1.6 }}>
 
       {/* ═══ Header ═══ */}
-      <header style={{ position: "sticky", top: 0, zIndex: 50, background: "rgba(250,249,247,0.9)", backdropFilter: "blur(16px)", borderBottom: "1px solid #e7e4df" }}>
-        <div style={{ maxWidth: 780, margin: "0 auto", padding: "0 20px", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <span style={{ fontSize: 20, fontWeight: 700, color: "#f27a1a" }}>{dict.header.title}</span>
-          <div style={{ display: "flex", gap: 24, fontSize: 14, color: "#6b6b6b", flexWrap: "wrap", justifyContent: "flex-end" }}>
-            {products.map(p => (
-              <a key={p.id} href={`#${p.id}`} style={{ color: "inherit", textDecoration: "none" }}>{p.title.split(' ')[0]}</a>
+      <header style={{ position: "sticky", top: 0, zIndex: 50, background: "rgba(251,251,250,0.85)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(0,0,0,0.04)" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <span style={{ fontSize: 22, fontWeight: 800, color: "#111827", letterSpacing: "-0.02em" }}>{dict.header.title}</span>
+          <div style={{ display: "flex", gap: 32, fontSize: 14, fontWeight: 500 }}>
+            {categories.map(cat => (
+              <a key={cat.id} href={`#${cat.id}`} className="nav-link" style={{ textDecoration: "none" }}>
+                {cat.name}
+              </a>
             ))}
           </div>
         </div>
       </header>
 
-      <div style={{ maxWidth: 780, margin: "0 auto", padding: "24px 20px 56px" }}>
-        <div style={{ textAlign: "right", marginBottom: 6 }}>
-          <span style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 12, color: "#16a34a" }}>
-            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#16a34a" }} />
-            接单中
-          </span>
-        </div>
+      <div style={{ maxWidth: 1080, margin: "0 auto", padding: "40px 24px 80px" }}>
+        
+        {/* ═══ Shelves By Category ═══ */}
+        {categories.map(category => {
+          const categoryProducts = productsByCategory[category.id];
+          if (!categoryProducts || categoryProducts.length === 0) return null;
 
-        {/* ═══ Dynamic Product List ═══ */}
-        {products.map(product => (
-          <section key={product.id} id={product.id} style={{ background: "#fff", border: "1px solid #e7e4df", borderRadius: 14, padding: "24px 28px 28px", marginBottom: 20, position: "relative", overflow: "hidden" }}>
-            {product.isHot && (
-              <div style={{ position: "absolute", top: 0, right: 0, background: "linear-gradient(135deg,#1a73e8,#4285f4)", color: "#fff", padding: "6px 20px", fontSize: 12, fontWeight: 700, borderRadius: "0 14px 0 14px", letterSpacing: "0.04em" }}>🔥 热卖</div>
-            )}
+          return (
+            <div key={category.id} id={category.id} style={{ paddingTop: 24, marginBottom: 64 }}>
+              <h2 style={{ fontSize: 24, fontWeight: 700, color: "#111827", marginBottom: 28, display: "flex", alignItems: "center", gap: 10, letterSpacing: "-0.01em" }}>
+                <span>{category.icon}</span> {category.name}
+              </h2>
+              
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "28px" }}>
+                {categoryProducts.map(product => (
+                  <div key={product.id} className="stripe-shadow" style={{ display: "flex", flexDirection: "column", background: "#fff", borderRadius: 16, padding: "32px 28px", position: "relative", cursor: "default" }}>
+                    
+                    {product.isHot && (
+                      <div style={{ position: "absolute", top: 16, right: 16, background: "rgba(234,88,12,0.1)", color: "#ea580c", padding: "4px 12px", fontSize: 11, fontWeight: 700, borderRadius: 20, letterSpacing: "0.02em" }}>🔥 热卖</div>
+                    )}
 
-            <div style={{ fontSize: 12, fontWeight: 600, color: "#9e9e9e", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 6 }}>{product.categoryName}</div>
-            <h2 style={{ fontSize: 22, fontWeight: 700, margin: "0 0 4px" }}>{product.title}</h2>
-            
-            <div style={{ marginBottom: 6 }}>
-              <span style={{ fontSize: 28, fontWeight: 700 }}>¥{product.price}</span>
-              <span style={{ fontSize: 13, color: "#6b6b6b", marginLeft: 4 }}>元</span>
-            </div>
+                    <div style={{ fontSize: 11, fontWeight: 600, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 8 }}>{product.categoryName}</div>
+                    
+                    <h3 style={{ fontSize: 20, fontWeight: 700, color: "#111827", margin: "0 0 16px", lineHeight: 1.3, letterSpacing: "-0.01em", paddingRight: product.isHot ? 60 : 0 }}>
+                      {product.title}
+                    </h3>
+                    
+                    <div style={{ marginBottom: 12, display: "flex", alignItems: "baseline" }}>
+                      {product.price > 0 ? (
+                        <>
+                          <span style={{ fontSize: 32, fontWeight: 800, color: "#111827", letterSpacing: "-0.02em" }}>¥{product.price}</span>
+                          <span style={{ fontSize: 14, color: "#6b7280", marginLeft: 4, fontWeight: 500 }}>/ 年</span>
+                        </>
+                      ) : (
+                        <span style={{ fontSize: 32, fontWeight: 800, color: "#111827", letterSpacing: "-0.02em" }}>免费</span>
+                      )}
+                    </div>
 
-            {product.originalPriceText && (
-               <p style={{ fontSize: 13, color: "#6b6b6b", margin: "0 0 4px" }}>
-                 官方定价 <span style={{ textDecoration: "line-through" }}>{product.originalPriceText}</span>（{product.originalPriceNote}），我们仅需 ¥{product.price}/年。
-               </p>
-            )}
+                    <p style={{ fontSize: 14, color: "#4b5563", margin: "0 0 24px", flexGrow: 1, lineHeight: 1.6 }}>{product.subtitle}</p>
 
-            <p style={{ fontSize: 13, color: "#6b6b6b", margin: "0 0 12px" }}>{product.subtitle}</p>
+                    <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 32 }}>
+                      {product.tags.slice(0, 3).map(t => (
+                        <span key={t} style={{ padding: "4px 10px", borderRadius: 6, background: "#f3f4f6", fontSize: 12, color: "#4b5563", fontWeight: 500 }}>{t}</span>
+                      ))}
+                      {product.tags.length > 3 && <span style={{ padding: "4px 10px", borderRadius: 6, background: "#f3f4f6", fontSize: 12, color: "#4b5563", fontWeight: 500 }}>...</span>}
+                    </div>
 
-            {product.warnings && product.warnings.length > 0 && (
-              <div style={{ marginTop: 8, marginBottom: 16, display: "flex", flexDirection: "column", gap: 6 }}>
-                {product.warnings.map((w, i) => (
-                   <p key={i} style={{ fontSize: 12, color: i === 0 ? "#dc2626" : "#b45309", margin: 0, background: i === 0 ? "#fef2f2" : "#fffbeb", display: "inline-block", padding: "4px 10px", borderRadius: 6, border: i === 0 ? "1px solid #fecaca" : "none" }}>
-                     {w}
-                   </p>
+                    <div style={{ display: 'flex', gap: 12, marginTop: "auto" }}>
+                       {product.inStock ? (
+                          <button onClick={() => buy(product.orderName, product.price)} className="stripe-button" style={{ flex: 3, padding: "12px 0", borderRadius: 8, color: "#fff", border: "none", fontSize: 14, fontWeight: 600, cursor: "pointer" }}>
+                            {product.buyButtonText}
+                          </button>
+                       ) : (
+                          <div style={{ flex: 3, padding: "12px 0", borderRadius: 8, background: "#f3f4f6", color: "#9ca3af", textAlign: "center", fontSize: 14, fontWeight: 600 }}>已售罄</div>
+                       )}
+                       <a href={`/zh/products/${product.id}`} style={{ flex: 2, padding: "12px 0", borderRadius: 8, border: "1px solid #e5e7eb", background: "#fff", color: "#111827", textAlign: "center", fontSize: 14, fontWeight: 600, textDecoration: "none", transition: "background 0.2s" }} onMouseOver={(e) => e.currentTarget.style.background = "#f9fafb"} onMouseOut={(e) => e.currentTarget.style.background = "#fff"}>
+                         详情
+                       </a>
+                    </div>
+                  </div>
                 ))}
               </div>
-            )}
-
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
-              {product.tags.map(t => (
-                <span key={t} style={{ padding: "3px 10px", borderRadius: 20, background: "#f5f3f0", border: "1px solid #f0ede8", fontSize: 12, color: "#6b6b6b" }}>{t}</span>
-              ))}
             </div>
-
-            {product.deliveryNotice && (
-              <div style={{ padding: "10px 14px", borderRadius: 8, background: "#f0f7ff", fontSize: 12, color: "#1677ff", marginBottom: 16, lineHeight: 1.6 }}>
-                {product.deliveryNotice}
-              </div>
-            )}
-
-            <div style={{ display: 'flex', gap: 12 }}>
-               {product.inStock ? (
-                  <button onClick={() => buy(product.orderName, product.price)} style={{...btnStyle, flex: 2}}>
-                    {product.buyButtonText}
-                  </button>
-               ) : (
-                  <div style={{ flex: 2, padding: "13px 0", borderRadius: 10, background: "#e5e2dc", color: "#b0ada6", textAlign: "center", fontSize: 15, fontWeight: 600 }}>已售罄</div>
-               )}
-               <a href={`/zh/products/${product.id}`} style={{ flex: 1, padding: "13px 0", borderRadius: 10, border: "1px solid #e7e4df", background: "#fff", color: "#1a1a1a", textAlign: "center", fontSize: 15, fontWeight: 600, textDecoration: "none" }}>
-                 详细介绍
-               </a>
-            </div>
-
-            {product.features && product.features.length > 0 && (
-              <div style={{ marginTop: 22, padding: "16px 18px", borderRadius: 10, background: "#f5f3f0" }}>
-                <div style={{ fontSize: 11, fontWeight: 600, color: "#9e9e9e", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 10 }}>套餐说明及注意事项</div>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {product.features.map((f, i) => (
-                    <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: 13, color: "#6b6b6b", padding: "3px 0" }}><CheckIcon />{f}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </section>
-        ))}
+          );
+        })}
       </div>
 
-      {/* Modal 弹窗逻辑 (保留原有逻辑) */}
+      {/* Modal 弹窗逻辑 (精简版 Stripe 风格) */}
       {modal && (
         <div style={{ position: "fixed", inset: 0, zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
-          <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.4)", backdropFilter: "blur(4px)" }} onClick={() => setModal(null)} />
-          <div style={{ position: "relative", width: "100%", maxWidth: 400, background: "#fff", borderRadius: 20, overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.2)" }}>
-            {/* Modal 内容省略大量原有静态代码，这里直接复用原有购买逻辑 */}
-            <div style={{ padding: "24px 28px" }}>
-               <h3 style={{ margin: "0 0 16px", fontSize: 20, fontWeight: 700 }}>确认订单</h3>
-               <div style={{ marginBottom: 16 }}>商品：{modal.name}</div>
-               <div style={{ marginBottom: 16 }}>金额：¥{modal.price}</div>
+          <div style={{ position: "absolute", inset: 0, background: "rgba(17,24,39,0.3)", backdropFilter: "blur(4px)" }} onClick={() => setModal(null)} />
+          <div style={{ position: "relative", width: "100%", maxWidth: 420, background: "#fff", borderRadius: 16, overflow: "hidden", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}>
+            <div style={{ padding: "32px" }}>
+               <h3 style={{ margin: "0 0 8px", fontSize: 20, fontWeight: 700, color: "#111827" }}>确认订单</h3>
+               <p style={{ margin: "0 0 24px", color: "#6b7280", fontSize: 14 }}>商品：{modal.name}</p>
+               
+               <div style={{ fontSize: 32, fontWeight: 800, color: "#111827", marginBottom: 32 }}>¥{modal.price}</div>
                
                {step === "email" ? (
                  <>
-                   <input type="email" placeholder="请输入用于接收 CDK 的邮箱" value={email} onChange={e => setEmail(e.target.value)} style={{ width: "100%", padding: 12, borderRadius: 8, border: "1px solid #ccc", marginBottom: 8 }} />
-                   {emailErr && <div style={{ color: "red", fontSize: 12, marginBottom: 8 }}>{emailErr}</div>}
-                   <button onClick={goPay} style={btnStyle}>下一步去付款</button>
+                   <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: "#374151", marginBottom: 6 }}>接收邮箱 (必填)</label>
+                   <input type="email" placeholder="you@example.com" value={email} onChange={e => setEmail(e.target.value)} style={{ width: "100%", padding: "12px 16px", borderRadius: 8, border: "1px solid #d1d5db", marginBottom: 8, fontSize: 15, outline: "none", transition: "border-color 0.2s" }} onFocus={(e) => e.target.style.borderColor = "#fb923c"} onBlur={(e) => e.target.style.borderColor = "#d1d5db"} />
+                   {emailErr && <div style={{ color: "#ef4444", fontSize: 12, marginBottom: 16 }}>{emailErr}</div>}
+                   <button onClick={goPay} className="stripe-button" style={{ width: "100%", padding: "14px 0", borderRadius: 8, color: "#fff", border: "none", fontSize: 15, fontWeight: 600, cursor: "pointer", marginTop: 16 }}>下一步，去支付</button>
                  </>
                ) : (
                  <div style={{ textAlign: "center" }}>
-                    <div style={{ width: 200, height: 200, margin: "0 auto 16px", background: "#f0f0f0", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      [支付二维码占位]
+                    <div style={{ width: 220, height: 220, margin: "0 auto 24px", background: "#f9fafb", border: "1px dashed #d1d5db", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", color: "#9ca3af" }}>
+                      [支付二维码]
                     </div>
-                    <p style={{ fontSize: 12, color: "#666" }}>付款后请查收邮件 {email}</p>
+                    <p style={{ fontSize: 13, color: "#4b5563" }}>付款后卡密将自动发送至 <span style={{ fontWeight: 600, color: "#111827" }}>{email}</span></p>
                  </div>
                )}
             </div>

@@ -1,6 +1,34 @@
 @import "tailwindcss";
 * { box-sizing: border-box; margin: 0; }
-body { margin: 0; }
+body { margin: 0; background-color: #fbfbfa; color: #111827; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #d4d2cc; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+
+/* 90-point Apple/Stripe UI Custom Utility Classes */
+@layer utilities {
+  .stripe-shadow {
+    box-shadow: 0 2px 5px -1px rgba(50, 50, 93, 0.05), 0 1px 3px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .stripe-shadow:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.1), 0 8px 16px -8px rgba(0, 0, 0, 0.08), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  }
+  .stripe-button {
+    background: linear-gradient(180deg, #fb923c 0%, #f97316 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(234, 88, 12, 0.2);
+    transition: all 0.2s ease;
+  }
+  .stripe-button:hover {
+    background: linear-gradient(180deg, #fdba74 0%, #fb923c 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 3px 6px rgba(234, 88, 12, 0.3);
+  }
+  .nav-link {
+    color: #4b5563;
+    transition: color 0.2s ease;
+  }
+  .nav-link:hover {
+    color: #111827;
+  }
+}
