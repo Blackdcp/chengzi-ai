@@ -20,7 +20,7 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
   const [modal, setModal] = useState<{ name: string; price: number; orderId: string } | null>(null);
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
-  const [step, setStep] = useState<"email" | "pay" | "success">("email");
+  const [step, setStep] = useState<"pay" | "success">("pay");
   const [payMethod, setPayMethod] = useState<PaymentMethod>("alipay");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -28,16 +28,12 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
     setModal({ name, price, orderId: genOrderId() });
     setEmail("");
     setEmailErr("");
-    setStep("email");
-  };
-
-  const goPay = () => {
-    if (!em(email)) { setEmailErr("请输入有效的接收邮箱"); return; }
-    setEmailErr("");
     setStep("pay");
   };
 
   const submitOrder = async () => {
+    if (!em(email)) { setEmailErr("请输入有效的接收邮箱"); return; }
+    setEmailErr("");
     if (!modal) return;
     setIsSubmitting(true);
     try {
@@ -184,39 +180,25 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                
                <div style={{ fontSize: 32, fontWeight: 700, color: "#111827", marginBottom: 32, letterSpacing: "-0.02em" }}>¥ {modal.price}</div>
                
-               {step === "email" ? (
-                 <>
-                   <label style={{ display: "block", fontSize: 13, fontWeight: 500, color: "#444444", marginBottom: 8 }}>接收邮箱 (必填)</label>
-                   <input 
-                     type="email" 
-                     placeholder="you@example.com" 
-                     value={email} 
-                     onChange={e => setEmail(e.target.value)} 
-                     style={{ width: "100%", padding: "12px", border: "1px solid #eaeaea", borderRadius: "6px", marginBottom: 8, fontSize: 14, outline: "none", transition: "border-color 0.2s" }} 
-                     onFocus={(e) => e.target.style.borderColor = "#0a0a0a"} 
-                     onBlur={(e) => e.target.style.borderColor = "#eaeaea"} 
-                   />
-                   {emailErr && <div style={{ color: "#e00000", fontSize: 12, marginBottom: 12 }}>{emailErr}</div>}
-                   <button onClick={goPay} className="vercel-button" style={{ width: "100%", padding: "12px 0", fontSize: 14, fontWeight: 500, cursor: "pointer", marginTop: 12 }}>下一步，去支付</button>
-                 </>
-               ) : step === "pay" ? (
+               {step === "pay" ? (
                  <div style={{ textAlign: "center" }}>
-                    <div style={{ display: "flex", gap: 12, marginBottom: 20 }}>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>第一步：扫码支付</div>
+                    <div style={{ display: "flex", gap: 12, marginBottom: 16 }}>
                       <button 
                         onClick={() => setPayMethod("alipay")}
-                        style={{ flex: 1, padding: "10px", borderRadius: "6px", border: payMethod === "alipay" ? "2px solid #1677ff" : "1px solid #eaeaea", background: payMethod === "alipay" ? "#f0f5ff" : "#fff", color: payMethod === "alipay" ? "#1677ff" : "#666", fontWeight: 600, cursor: "pointer", transition: "all 0.2s" }}
+                        style={{ flex: 1, padding: "8px", borderRadius: "6px", border: payMethod === "alipay" ? "2px solid #1677ff" : "1px solid #eaeaea", background: payMethod === "alipay" ? "#f0f5ff" : "#fff", color: payMethod === "alipay" ? "#1677ff" : "#666", fontWeight: 600, cursor: "pointer", transition: "all 0.2s", fontSize: 13 }}
                       >
                         支付宝
                       </button>
                       <button 
                         onClick={() => setPayMethod("wechat")}
-                        style={{ flex: 1, padding: "10px", borderRadius: "6px", border: payMethod === "wechat" ? "2px solid #07c160" : "1px solid #eaeaea", background: payMethod === "wechat" ? "#f0fdf4" : "#fff", color: payMethod === "wechat" ? "#07c160" : "#666", fontWeight: 600, cursor: "pointer", transition: "all 0.2s" }}
+                        style={{ flex: 1, padding: "8px", borderRadius: "6px", border: payMethod === "wechat" ? "2px solid #07c160" : "1px solid #eaeaea", background: payMethod === "wechat" ? "#f0fdf4" : "#fff", color: payMethod === "wechat" ? "#07c160" : "#666", fontWeight: 600, cursor: "pointer", transition: "all 0.2s", fontSize: 13 }}
                       >
                         微信支付
                       </button>
                     </div>
 
-                    <div style={{ width: 200, height: 200, margin: "0 auto 20px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", color: "#999999", flexDirection: "column", overflow: "hidden" }}>
+                    <div style={{ width: 180, height: 180, margin: "0 auto 24px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", color: "#999999", flexDirection: "column", overflow: "hidden" }}>
                       <img 
                         src={payMethod === "alipay" ? "/images/alipay.jpg" : "/images/wechat.jpg"} 
                         alt="QR Code" 
@@ -225,7 +207,20 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                       />
                       <div style={{ fontSize: 13, color: "#ccc", display: "none" }}>请确保已将二维码保存至<br/>public/images/{payMethod}.jpg</div>
                     </div>
-                    <p style={{ fontSize: 13, color: "#666666", marginBottom: 20 }}>请扫码支付，付款后点击下方提交订单。</p>
+
+                    <div style={{ borderTop: "1px dashed #eaeaea", paddingTop: 20, marginBottom: 20 }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>第二步：输入邮箱接收商品</div>
+                      <input 
+                        type="email" 
+                        placeholder="you@example.com (支付后用于接收卡密)" 
+                        value={email} 
+                        onChange={e => { setEmail(e.target.value); if(emailErr) setEmailErr(""); }} 
+                        style={{ width: "100%", padding: "12px", border: emailErr ? "1px solid #e00000" : "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box" }} 
+                        onFocus={(e) => { if (!emailErr) e.target.style.borderColor = "#0a0a0a" }} 
+                        onBlur={(e) => { if (!emailErr) e.target.style.borderColor = "#eaeaea" }} 
+                      />
+                      {emailErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: 8, textAlign: "left" }}>{emailErr}</div>}
+                    </div>
 
                     <button 
                       onClick={submitOrder} 
@@ -233,7 +228,7 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                       className="vercel-button" 
                       style={{ width: "100%", padding: "12px 0", fontSize: 14, fontWeight: 500, cursor: isSubmitting ? "not-allowed" : "pointer", opacity: isSubmitting ? 0.7 : 1 }}
                     >
-                      {isSubmitting ? "正在提交..." : "我已完成付款，提交订单"}
+                      {isSubmitting ? "正在提交..." : "我已经付完款，通知客服发货"}
                     </button>
                  </div>
                ) : (
