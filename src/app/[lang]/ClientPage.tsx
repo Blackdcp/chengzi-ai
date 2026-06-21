@@ -195,9 +195,11 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                        ) : (
                           <div style={{ flex: 1, padding: "12px 0", background: "#fafafa", color: "#999999", textAlign: "center", fontSize: 14, fontWeight: 500, border: "1px solid #eaeaea", borderRadius: "6px" }}>已售罄</div>
                        )}
-                       <a href={`/zh/products/${product.id}`} className="vercel-button-secondary" style={{ padding: "12px 24px", textAlign: "center", fontSize: 14, fontWeight: 500, textDecoration: "none" }}>
-                         详情
-                       </a>
+                       {product.actionType !== "link" && (
+                         <a href={`/zh/products/${product.id}`} className="vercel-button-secondary" style={{ padding: "12px 24px", textAlign: "center", fontSize: 14, fontWeight: 500, textDecoration: "none" }}>
+                           详情
+                         </a>
+                       )}
                     </div>
                   </div>
                 ))}
