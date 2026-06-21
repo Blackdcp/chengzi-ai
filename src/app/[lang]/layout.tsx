@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "../globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: 'swap' });
 
 export const metadata: Metadata = {
   title: "橙子AI — Gemini Pro ¥100/年 | ChatGPT Plus 成品号 & 直充",
@@ -13,10 +16,12 @@ export default async function RootLayout({
   children: React.ReactNode
   params: Promise<{ lang: string }>
 }) {
-  const { lang } = await params
+  const { lang } = await params;
   return (
-    <html lang={lang}>
-      <body>{children}</body>
+    <html lang={lang} className={inter.variable}>
+      <body className={lang === 'en' ? 'font-en tracking-tight' : 'font-zh tracking-tight'}>
+        {children}
+      </body>
     </html>
   );
 }

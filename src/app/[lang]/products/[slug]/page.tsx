@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { AlertTriangle } from 'lucide-react'
 import { getProductBySlug } from '../../../../lib/api'
 
 export default async function ProductPage({
@@ -69,7 +70,7 @@ export default async function ProductPage({
         {product.warnings && product.warnings.length > 0 && (
           <div style={{ marginTop: 40, padding: "20px 24px", background: "#fef2f2", borderRadius: 12 }}>
             <h3 style={{ margin: "0 0 12px", color: "#b91c1c", fontSize: 16, fontWeight: 700, display: "flex", alignItems: "center", gap: 8 }}>
-              ⚠️ 购买必读
+              <AlertTriangle size={18} /> 购买必读
             </h3>
             <ul style={{ paddingLeft: 24, margin: 0, color: "#b91c1c", fontSize: 14, lineHeight: 1.6 }}>
               {product.warnings.map((w, i) => (

@@ -1,18 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { Check, Flame, AlertTriangle, Bot, TrendingUp, Wrench, ArrowRight } from "lucide-react";
 import type { Product } from "../../types/product";
 import { categories } from "../../lib/categories";
 
 type PaymentMethod = "alipay" | "wechat";
 
 const em = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
-
-const CheckIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth={2.5} style={{ flexShrink: 0, marginTop: 3 }}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
-  </svg>
-);
 
 function genOrderId() {
   const now = new Date();
@@ -21,6 +17,12 @@ function genOrderId() {
   const r = Math.random().toString(36).slice(2, 6).toUpperCase();
   return `CZ${d}${t}${r}`;
 }
+
+const iconMap: Record<string, React.ReactNode> = {
+  "bot": <Bot size={20} />,
+  "trending-up": <TrendingUp size={20} />,
+  "wrench": <Wrench size={20} />
+};
 
 export default function HomePage({ dict, products }: { dict: any, products: Product[] }) {
   const [modal, setModal] = useState<{ name: string; price: number; orderId: string } | null>(null);
@@ -41,7 +43,6 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
     setStep("pay");
   };
 
-  // Group products by categoryId
   const productsByCategory: Record<string, Product[]> = {};
   products.forEach(p => {
     if (!productsByCategory[p.categoryId]) {
@@ -50,16 +51,29 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
     productsByCategory[p.categoryId].push(p);
   });
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants: any = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+  };
+
   return (
-    <div style={{ minHeight: "100vh", fontFamily: '"Inter",-apple-system,sans-serif', lineHeight: 1.6 }}>
+    <div style={{ minHeight: "100vh", lineHeight: 1.6 }}>
 
       {/* ═══ Header ═══ */}
-      <header style={{ position: "sticky", top: 0, zIndex: 50, background: "rgba(251,251,250,0.85)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(0,0,0,0.04)" }}>
+      <header style={{ position: "sticky", top: 0, zIndex: 50, background: "rgba(251,251,250,0.75)", backdropFilter: "blur(16px)", borderBottom: "1px solid rgba(0,0,0,0.04)" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <span style={{ fontSize: 22, fontWeight: 800, color: "#111827", letterSpacing: "-0.02em" }}>{dict.header.title}</span>
           <div style={{ display: "flex", gap: 32, fontSize: 14, fontWeight: 500 }}>
             {categories.map(cat => (
-              <a key={cat.id} href={`#${cat.id}`} className="nav-link" style={{ textDecoration: "none" }}>
+              <a key={cat.id} href={`#${cat.id}`} className="nav-link" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
                 {cat.name}
               </a>
             ))}
@@ -75,22 +89,40 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
           if (!categoryProducts || categoryProducts.length === 0) return null;
 
           return (
-            <div key={category.id} id={category.id} style={{ paddingTop: 24, marginBottom: 64 }}>
-              <h2 style={{ fontSize: 24, fontWeight: 700, color: "#111827", marginBottom: 28, display: "flex", alignItems: "center", gap: 10, letterSpacing: "-0.01em" }}>
-                <span>{category.icon}</span> {category.name}
-              </h2>
+            <motion.div 
+              key={category.id} 
+              id={category.id} 
+              style={{ paddingTop: 24, marginBottom: 64 }}
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
+            >
+              <motion.h2 variants={itemVariants} style={{ fontSize: 24, fontWeight: 700, color: "#111827", marginBottom: 28, display: "flex", alignItems: "center", gap: 10, letterSpacing: "-0.01em" }}>
+                <span style={{ color: "#f97316" }}>{iconMap[category.iconName]}</span>
+                {category.name}
+              </motion.h2>
               
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "28px" }}>
                 {categoryProducts.map(product => (
-                  <div key={product.id} className="stripe-shadow" style={{ display: "flex", flexDirection: "column", background: "#fff", borderRadius: 16, padding: "32px 28px", position: "relative", cursor: "default" }}>
+                  <motion.div 
+                    key={product.id} 
+                    variants={itemVariants}
+                    whileHover={{ y: -4 }}
+                    className="stripe-shadow" 
+                    style={{ display: "flex", flexDirection: "column", background: "#fff", borderRadius: 16, padding: "32px 28px", position: "relative", cursor: "default", border: "1px solid rgba(255,255,255,0.5)", boxSizing: "border-box" }}
+                  >
+                    {/* Glass inner ring simulation */}
+                    <div style={{ position: "absolute", inset: 0, borderRadius: 16, border: "1px solid rgba(0,0,0,0.03)", pointerEvents: "none" }} />
                     
                     {product.isHot && (
-                      <div style={{ position: "absolute", top: 16, right: 16, background: "rgba(234,88,12,0.1)", color: "#ea580c", padding: "4px 12px", fontSize: 11, fontWeight: 700, borderRadius: 20, letterSpacing: "0.02em" }}>🔥 热卖</div>
+                      <div style={{ position: "absolute", top: 16, right: 16, background: "rgba(234,88,12,0.1)", color: "#ea580c", padding: "4px 12px", fontSize: 11, fontWeight: 700, borderRadius: 20, letterSpacing: "0.02em", display: "flex", alignItems: "center", gap: 4 }}>
+                        <Flame size={12} strokeWidth={3} /> 热卖
+                      </div>
                     )}
 
                     <div style={{ fontSize: 11, fontWeight: 600, color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 8 }}>{product.categoryName}</div>
                     
-                    <h3 style={{ fontSize: 20, fontWeight: 700, color: "#111827", margin: "0 0 16px", lineHeight: 1.3, letterSpacing: "-0.01em", paddingRight: product.isHot ? 60 : 0 }}>
+                    <h3 style={{ fontSize: 20, fontWeight: 700, color: "#111827", margin: "0 0 16px", lineHeight: 1.3, letterSpacing: "-0.01em", paddingRight: product.isHot ? 70 : 0 }}>
                       {product.title}
                     </h3>
                     
@@ -114,11 +146,16 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                       {product.tags.length > 3 && <span style={{ padding: "4px 10px", borderRadius: 6, background: "#f3f4f6", fontSize: 12, color: "#4b5563", fontWeight: 500 }}>...</span>}
                     </div>
 
-                    <div style={{ display: 'flex', gap: 12, marginTop: "auto" }}>
+                    <div style={{ display: 'flex', gap: 12, marginTop: "auto", position: "relative", zIndex: 2 }}>
                        {product.inStock ? (
-                          <button onClick={() => buy(product.orderName, product.price)} className="stripe-button" style={{ flex: 3, padding: "12px 0", borderRadius: 8, color: "#fff", border: "none", fontSize: 14, fontWeight: 600, cursor: "pointer" }}>
-                            {product.buyButtonText}
-                          </button>
+                          <motion.button 
+                            whileTap={{ scale: 0.98 }}
+                            onClick={() => buy(product.orderName, product.price)} 
+                            className="stripe-button" 
+                            style={{ flex: 3, padding: "12px 0", borderRadius: 8, color: "#fff", border: "none", fontSize: 14, fontWeight: 600, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}
+                          >
+                            {product.buyButtonText} <ArrowRight size={16} />
+                          </motion.button>
                        ) : (
                           <div style={{ flex: 3, padding: "12px 0", borderRadius: 8, background: "#f3f4f6", color: "#9ca3af", textAlign: "center", fontSize: 14, fontWeight: 600 }}>已售罄</div>
                        )}
@@ -126,19 +163,19 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                          详情
                        </a>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>
 
-      {/* Modal 弹窗逻辑 (精简版 Stripe 风格) */}
+      {/* Modal */}
       {modal && (
         <div style={{ position: "fixed", inset: 0, zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
-          <div style={{ position: "absolute", inset: 0, background: "rgba(17,24,39,0.3)", backdropFilter: "blur(4px)" }} onClick={() => setModal(null)} />
-          <div style={{ position: "relative", width: "100%", maxWidth: 420, background: "#fff", borderRadius: 16, overflow: "hidden", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ position: "absolute", inset: 0, background: "rgba(17,24,39,0.3)", backdropFilter: "blur(4px)" }} onClick={() => setModal(null)} />
+          <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} style={{ position: "relative", width: "100%", maxWidth: 420, background: "#fff", borderRadius: 16, overflow: "hidden", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}>
             <div style={{ padding: "32px" }}>
                <h3 style={{ margin: "0 0 8px", fontSize: 20, fontWeight: 700, color: "#111827" }}>确认订单</h3>
                <p style={{ margin: "0 0 24px", color: "#6b7280", fontSize: 14 }}>商品：{modal.name}</p>
@@ -150,7 +187,7 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                    <label style={{ display: "block", fontSize: 13, fontWeight: 600, color: "#374151", marginBottom: 6 }}>接收邮箱 (必填)</label>
                    <input type="email" placeholder="you@example.com" value={email} onChange={e => setEmail(e.target.value)} style={{ width: "100%", padding: "12px 16px", borderRadius: 8, border: "1px solid #d1d5db", marginBottom: 8, fontSize: 15, outline: "none", transition: "border-color 0.2s" }} onFocus={(e) => e.target.style.borderColor = "#fb923c"} onBlur={(e) => e.target.style.borderColor = "#d1d5db"} />
                    {emailErr && <div style={{ color: "#ef4444", fontSize: 12, marginBottom: 16 }}>{emailErr}</div>}
-                   <button onClick={goPay} className="stripe-button" style={{ width: "100%", padding: "14px 0", borderRadius: 8, color: "#fff", border: "none", fontSize: 15, fontWeight: 600, cursor: "pointer", marginTop: 16 }}>下一步，去支付</button>
+                   <motion.button whileTap={{ scale: 0.98 }} onClick={goPay} className="stripe-button" style={{ width: "100%", padding: "14px 0", borderRadius: 8, color: "#fff", border: "none", fontSize: 15, fontWeight: 600, cursor: "pointer", marginTop: 16 }}>下一步，去支付</motion.button>
                  </>
                ) : (
                  <div style={{ textAlign: "center" }}>
@@ -161,7 +198,7 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                  </div>
                )}
             </div>
-          </div>
+          </motion.div>
         </div>
       )}
     </div>

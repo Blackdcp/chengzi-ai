@@ -1,11 +1,11 @@
 export interface Category {
   id: string;
   name: string;
-  icon: string;
+  iconName: string;
 }
 
 export const categories: Category[] = [
-  { id: "ai-accounts", name: "AI 账号与订阅", icon: "🤖" },
-  { id: "marketing", name: "营销引流资源", icon: "📈" },
-  { id: "tools", name: "精选实用工具", icon: "🛠️" }
+  { id: "ai-accounts", name: "AI 账号与订阅", iconName: "bot" },
+  { id: "marketing", name: "营销引流资源", iconName: "trending-up" },
+  { id: "tools", name: "精选实用工具", iconName: "wrench" }
 ];
