@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 * { box-sizing: border-box; margin: 0; }
 body { margin: 0; background-color: #fafafa; color: #111827; }
 ::-webkit-scrollbar { width: 6px; }
@@ -50,5 +51,36 @@ body { margin: 0; background-color: #fafafa; color: #111827; }
   }
   .nav-link:hover {
     color: #0a0a0a;
+  }
+  
+  /* Blog Prose Enhancements */
+  .prose h1, .prose h2, .prose h3 {
+    color: #111827 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em;
+    margin-top: 1.8em !important;
+    margin-bottom: 0.8em !important;
+  }
+  .prose h2 { font-size: 1.5em !important; }
+  .prose h3 { font-size: 1.25em !important; }
+  .prose p {
+    color: #374151 !important;
+    line-height: 1.8 !important;
+    margin-bottom: 1.25em !important;
+  }
+  .prose strong {
+    color: #111827 !important;
+    font-weight: 600 !important;
+  }
+  .prose ul, .prose ol {
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+    padding-left: 1.625em !important;
+  }
+  .prose li {
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+    line-height: 1.8 !important;
+    color: #374151 !important;
   }
 }
