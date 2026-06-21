@@ -2,6 +2,45 @@ import { notFound } from 'next/navigation'
 import { getProductBySlug } from '../../../../lib/api'
 import { getDictionary } from '../../../../lib/dictionaries'
 
+import { Metadata } from 'next'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: 'en' | 'zh'; slug: string }>
+}): Promise<Metadata> {
+  const resolvedParams = await params
+  const product = getProductBySlug(resolvedParams.lang, resolvedParams.slug)
+  const dict = await getDictionary(resolvedParams.lang)
+
+  if (!product) {
+    return {
+      title: 'Product Not Found',
+    }
+  }
+
+  const title = `${product.title} | ${dict.header.title}`
+  const description = product.subtitle.replace(/<[^>]*>?/gm, '') // Remove HTML tags
+  const keywords = product.tags
+
+  return {
+    title,
+    description,
+    keywords,
+    openGraph: {
+      title,
+      description,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    }
+  }
+}
+
+
 export default async function ProductPage({
   params,
 }: {

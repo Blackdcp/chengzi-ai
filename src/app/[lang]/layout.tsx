@@ -12,6 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'zh
   return {
     title: dict.meta.title,
     description: dict.meta.description,
+    keywords: dict.meta.keywords,
     openGraph: {
       title: dict.meta.title,
       description: dict.meta.description,
