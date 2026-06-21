@@ -92,6 +92,19 @@
         "downloadImage": "生成高清长图",
         "downloading": "生成中..."
       }
+    },
+    "socialBooster": {
+      "title": "AI 社媒爆款文案生成器",
+      "subtitle": "输入一句话，一键生成带网感、带 Emoji 的爆款文案。",
+      "placeholder": "比如：今天在星巴克喝了一杯很好喝的咖啡，感觉很治愈...",
+      "generate": "一键生成魔法文案",
+      "generating": "正在生成爆款...",
+      "platforms": { "twitter": "推特 / X", "instagram": "Instagram", "xiaohongshu": "小红书" },
+      "copy": "复制文案",
+      "copied": "已复制！",
+      "adTitle": "有了好文案，想保证 100% 爆款？",
+      "adDesc": "优质的内容需要启动量来触发算法推荐。购买我们的真人刷粉/点赞套餐，瞬间引爆你的帖子！",
+      "adBtn": "查看海外社媒涨粉服务"
     }
   }
 }

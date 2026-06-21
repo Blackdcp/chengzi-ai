@@ -92,6 +92,19 @@
         "downloadImage": "Export HD Image",
         "downloading": "Rendering..."
       }
+    },
+    "socialBooster": {
+      "title": "AI Social Media Booster",
+      "subtitle": "Turn a simple thought into a viral post in seconds.",
+      "placeholder": "E.g., I had a great coffee today at Starbucks...",
+      "generate": "Generate Magic",
+      "generating": "Generating...",
+      "platforms": { "twitter": "Twitter / X", "instagram": "Instagram", "xiaohongshu": "Xiaohongshu" },
+      "copy": "Copy Text",
+      "copied": "Copied!",
+      "adTitle": "Want to guarantee 1000 likes?",
+      "adDesc": "Great content needs an initial push. Buy our organic follower packages to trigger the algorithm.",
+      "adBtn": "View Marketing Services"
     }
   }
 }

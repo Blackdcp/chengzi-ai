@@ -5,14 +5,21 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { notFound } from 'next/navigation'
 
-export async function generateStaticParams({ params }: { params: any }) {
-  const resolvedParams = await params
-  const lang = resolvedParams.lang as 'en' | 'zh'
-  const posts = getBlogPosts(lang)
+export async function generateStaticParams() {
+  const zhPosts = getBlogPosts('zh')
+  const enPosts = getBlogPosts('en')
   
-  return posts.map((post) => ({
+  const zhParams = zhPosts.map((post) => ({
+    lang: 'zh',
     slug: post.slug,
   }))
+  
+  const enParams = enPosts.map((post) => ({
+    lang: 'en',
+    slug: post.slug,
+  }))
+
+  return [...zhParams, ...enParams]
 }
 
 export default async function BlogPostPage({
