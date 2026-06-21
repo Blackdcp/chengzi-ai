@@ -47,7 +47,7 @@ function genOrderId() {
   return `CZ${d}${t}${r}`;
 }
 
-export default function HomePage() {
+export default function HomePage({ dict }: { dict: any }) {
   const [variant, setVariant] = useState<AccountVariant>("nowarranty");
   const [modal, setModal] = useState<{ name: string; price: number; orderId: string } | null>(null);
   const [email, setEmail] = useState("");
@@ -86,12 +86,12 @@ export default function HomePage() {
       {/* ═══ Header ═══ */}
       <header style={{ position: "sticky", top: 0, zIndex: 50, background: "rgba(250,249,247,0.9)", backdropFilter: "blur(16px)", borderBottom: "1px solid #e7e4df" }}>
         <div style={{ maxWidth: 780, margin: "0 auto", padding: "0 20px", height: 56, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <span style={{ fontSize: 20, fontWeight: 700, color: "#f27a1a" }}>橙子 AI</span>
+          <span style={{ fontSize: 20, fontWeight: 700, color: "#f27a1a" }}>{dict.header.title}</span>
           <div style={{ display: "flex", gap: 24, fontSize: 14, color: "#6b6b6b", flexWrap: "wrap", justifyContent: "flex-end" }}>
-            <a href="#gemini" style={{ color: "inherit", textDecoration: "none" }}>Gemini Pro</a>
-            <a href="#team" style={{ color: "inherit", textDecoration: "none" }}>Team额度号</a>
-            <a href="#account" style={{ color: "inherit", textDecoration: "none" }}>成品号</a>
-            <a href="#plus" style={{ color: "inherit", textDecoration: "none" }}>Plus 直充</a>
+            <a href="#gemini" style={{ color: "inherit", textDecoration: "none" }}>{dict.header.nav.gemini}</a>
+            <a href="#team" style={{ color: "inherit", textDecoration: "none" }}>{dict.header.nav.team}</a>
+            <a href="#account" style={{ color: "inherit", textDecoration: "none" }}>{dict.header.nav.account}</a>
+            <a href="#plus" style={{ color: "inherit", textDecoration: "none" }}>{dict.header.nav.plus}</a>
           </div>
         </div>
       </header>
