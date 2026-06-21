@@ -51,5 +51,6 @@ export function getBlogPosts(lang: 'en' | 'zh'): BlogPost[] {
 
 export function getBlogPostBySlug(lang: 'en' | 'zh', slug: string): BlogPost | null {
   const posts = getBlogPosts(lang);
-  return posts.find(post => post.slug === slug) || null;
+  const decodedSlug = decodeURIComponent(slug);
+  return posts.find(post => post.slug === decodedSlug || post.slug === slug) || null;
 }
