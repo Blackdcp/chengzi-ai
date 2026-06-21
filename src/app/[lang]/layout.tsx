@@ -18,11 +18,20 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'zh
       title: dict.meta.title,
       description: dict.meta.description,
       type: "website",
+      images: [
+        {
+          url: "/opengraph-image.png",
+          width: 1200,
+          height: 630,
+          alt: dict.meta.title,
+        }
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: dict.meta.title,
       description: dict.meta.description,
+      images: ["/twitter-image.png"],
     }
   };
 }
