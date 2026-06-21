@@ -3,23 +3,6 @@ import type { NextRequest } from 'next/server'
 
 const locales = ['en', 'zh']
 
-function getLocale(request: NextRequest): string {
-  const acceptLang = request.headers.get('accept-language') || ''
-  const lowerLang = acceptLang.toLowerCase()
-  
-  // Only return English if they EXPLICITLY ask for English and DO NOT ask for Chinese
-  if (lowerLang.includes('en') && !lowerLang.includes('zh')) {
-    return 'en'
-  }
-  
-  // Otherwise, if they ask for Chinese, return Chinese
-  if (lowerLang.includes('zh') || lowerLang.includes('cn')) {
-    return 'zh'
-  }
-  
-  return ''
-}
-
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
@@ -38,15 +21,10 @@ export function proxy(request: NextRequest) {
 
   if (pathnameHasLocale) return NextResponse.next()
 
-  let locale = getLocale(request)
-
-  // CRITICAL FIX: Qiniu CDN's origin-pull servers are located in the US/Europe!
-  // This means x-vercel-ip-country will evaluate to "US".
-  // Furthermore, CDNs often strip Accept-Language headers.
-  // Therefore, if locale is unknown (stripped), we MUST default to 'zh'.
-  if (!locale) {
-    locale = 'zh'
-  }
+  // ULTIMATE FIX: Do not guess. Do not read headers. Do not read IP.
+  // ALWAYS redirect naked URLs to /zh.
+  // If users want English, they can click the English button in the navbar.
+  const locale = 'zh'
 
   request.nextUrl.pathname = `/${locale}${pathname === '/' ? '' : pathname}`
   
