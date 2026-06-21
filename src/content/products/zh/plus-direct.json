@@ -4,7 +4,7 @@
   "categoryName": "ChatGPT Plus 订阅 · 人工代开",
   "title": "ChatGPT Plus 直充",
   "subtitle": "在你的个人账号上开通 Plus 会员。同一邮箱三十天内只可开通一次。",
-  "price": 168.88,
+  "price": 66.66,
   "tags": [
     "个人号升级",
     "人工代充",
@@ -23,5 +23,6 @@
   "inStock": true,
   "buyButtonText": "下单代充 — ¥168.88",
   "orderName": "ChatGPT Plus 直充",
-  "isHot": false
+  "isHot": false,
+  "originalPriceText": "¥ 199.00"
 }

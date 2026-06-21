@@ -161,11 +161,13 @@ export default function HomePage({ dict, products }: { dict: any, products: Prod
                       {product.title}
                     </h3>
                     
-                    <div style={{ marginBottom: 16, display: "flex", alignItems: "baseline" }}>
+                    <div style={{ marginBottom: 16, display: "flex", alignItems: "baseline", flexWrap: "wrap" }}>
                       {product.price > 0 ? (
                         <>
                           <span style={{ fontSize: 32, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>¥ {product.price}</span>
-                          <span style={{ fontSize: 14, color: "#666666", marginLeft: 6 }}>/ 年</span>
+                          {product.originalPriceText && (
+                            <span style={{ fontSize: 16, color: "#999", textDecoration: "line-through", marginLeft: 8 }}>{product.originalPriceText}</span>
+                          )}
                         </>
                       ) : (
                         <span style={{ fontSize: 32, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>免费</span>

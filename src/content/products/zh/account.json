@@ -4,7 +4,7 @@
   "categoryName": "ChatGPT Plus 账号 · 人工交付",
   "title": "ChatGPT Plus 成品号",
   "subtitle": "独立成品账号（含邮箱密码），登录即用。",
-  "price": 66.66,
+  "price": 9.9,
   "tags": [
     "独立账号",
     "含邮箱密码",
@@ -23,5 +23,6 @@
   "inStock": true,
   "buyButtonText": "购买无质保版 — ¥66.66",
   "orderName": "ChatGPT Plus 成品号",
-  "isHot": false
+  "isHot": false,
+  "originalPriceText": "¥ 29.90"
 }

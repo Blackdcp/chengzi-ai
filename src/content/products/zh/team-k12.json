@@ -4,7 +4,7 @@
   "categoryName": "ChatGPT Team · 仅限反代",
   "title": "GPT Team K12 额度号",
   "subtitle": "包含：5 小时限额约 20 刀，周限额约 100 刀的 API/反代配额。",
-  "price": 30,
+  "price": 80,
   "tags": [
     "仅限反代",
     "JSON 交付",
@@ -25,5 +25,6 @@
   "inStock": true,
   "buyButtonText": "下单购买 — ¥30.00",
   "orderName": "GPT Team K12 额度号 (反代用)",
-  "isHot": false
+  "isHot": false,
+  "originalPriceText": "¥ 240.00"
 }
