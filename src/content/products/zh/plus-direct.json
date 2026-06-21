@@ -1,0 +1,23 @@
+{
+  "id": "plus-direct",
+  "categoryId": "ai-account",
+  "categoryName": "ChatGPT Plus 订阅 · 人工代开",
+  "title": "ChatGPT Plus 直充",
+  "subtitle": "在你的个人账号上开通 Plus 会员。同一邮箱三十天内只可开通一次。",
+  "price": 168.88,
+  "tags": ["🚀 个人号升级", "💳 人工代充", "🛡️ 安全稳定"],
+  "warnings": [
+    "⚠️ 需要提供 Session 凭证。非官方渠道，存在账号风控风险，请使用小号操作。"
+  ],
+  "deliveryNotice": "📋 交付流程：付款后请留意邮箱指引，提供登录 Session 等信息，我们将人工为您充值开通。",
+  "features": [
+    "在您自己的 ChatGPT 账号上升级 Plus",
+    "无需提供密码，只需提供临时 Session",
+    "享受完整的 Plus 会员权益30天",
+    "封号风险由买家自行承担"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单代充 — ¥168.88",
+  "orderName": "ChatGPT Plus 直充",
+  "isHot": false
+}
