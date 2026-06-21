@@ -5,7 +5,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://cheng-zi-ai.com'
   const products = getProducts('zh')
 
-  const productUrls = products.flatMap(p => [
+  // Only index real product detail pages
+  const validProducts = products.filter(p => p.actionType !== 'link')
+
+  const productUrls = validProducts.flatMap(p => [
     {
       url: `${baseUrl}/zh/products/${p.id}`,
       lastModified: new Date(),
@@ -41,6 +44,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/en/tools/ppt2pdf`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/zh/tools/chat-exporter`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/en/tools/chat-exporter`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
