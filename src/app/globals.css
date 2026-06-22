@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
+
 * { box-sizing: border-box; margin: 0; }
 body { margin: 0; background-color: #fafafa; color: #111827; }
 ::-webkit-scrollbar { width: 6px; }
@@ -53,61 +53,5 @@ body { margin: 0; background-color: #fafafa; color: #111827; }
     color: #0a0a0a;
   }
   
-  /* Blog Prose Enhancements */
-  .prose h1, .prose h2, .prose h3 {
-    color: #111827 !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.02em;
-    margin-top: 1.8em !important;
-    margin-bottom: 0.8em !important;
-  }
-  .prose h2 { font-size: 1.5em !important; }
-  .prose h3 { font-size: 1.25em !important; }
-  .prose p {
-    color: #374151 !important;
-    line-height: 1.8 !important;
-    margin-bottom: 1.25em !important;
-  }
-  .prose strong {
-    color: #111827 !important;
-    font-weight: 600 !important;
-  }
-  .prose ul, .prose ol {
-    margin-top: 1em !important;
-    margin-bottom: 1em !important;
-    padding-left: 1.625em !important;
-  }
-  .prose li {
-    margin-top: 0.5em !important;
-    margin-bottom: 0.5em !important;
-    line-height: 1.8 !important;
-    color: #374151 !important;
-  }
   
-  /* Inline code styling - remove tailwind default backticks */
-  .prose code::before,
-  .prose code::after {
-    content: none !important;
-  }
-  
-  /* Disable tailwind typography blockquote quotes */
-  .prose blockquote p:first-of-type::before,
-  .prose blockquote p:last-of-type::after {
-    content: none !important;
-  }
-  
-  .prose code {
-    background-color: #f3f4f6 !important;
-    color: #ef4444 !important;
-    padding: 0.2em 0.4em !important;
-    border-radius: 4px !important;
-    font-weight: 500 !important;
-    font-size: 0.875em !important;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
-  }
-  .prose pre code {
-    background-color: transparent !important;
-    color: inherit !important;
-    padding: 0 !important;
-  }
 }
