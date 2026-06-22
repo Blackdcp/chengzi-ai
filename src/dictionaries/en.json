@@ -80,7 +80,7 @@
       "subtitle": "Pay-as-you-go. Buy exactly what you need, no waste.",
       "starter": {
         "name": "Starter Code",
-        "price": "$1.49",
+        "price": "$4.29",
         "unit": "/ Includes $5 official quota equivalent",
         "features": [
           "All models available",
@@ -93,8 +93,8 @@
       "standard": {
         "name": "Standard Code",
         "badge": "Recommended",
-        "price": "$6.99",
-        "unit": "/ Includes $30 official quota equivalent",
+        "price": "$11.49",
+        "unit": "/ Includes $15 official quota equivalent",
         "features": [
           "All models available",
           "Priority support",
@@ -106,8 +106,8 @@
       },
       "premium": {
         "name": "Premium Code",
-        "price": "$22.99",
-        "unit": "/ Includes $100 official quota equivalent",
+        "price": "$18.49",
+        "unit": "/ Includes $30 official quota equivalent",
         "features": [
           "All models available",
           "1-on-1 dedicated support",

@@ -30,6 +30,69 @@ const PROVIDER_COLORS: Record<string, { bg: string; color: string; border: strin
   gemini: { bg: "#eff6ff", color: "#2563eb", border: "#bfdbfe" },
 };
 
+const MODEL_METADATA: Record<string, { tag: Record<string, string>; desc: Record<string, string> }> = {
+  "gpt-5.5": {
+    tag: { zh: "推理旗舰", en: "Next-Gen Reasoner" },
+    desc: { zh: "最强逻辑与数学推理，复杂问题克星", en: "Strongest logic & math reasoning, solver of complex problems" }
+  },
+  "gpt-5.4": {
+    tag: { zh: "通用旗舰", en: "Flagship" },
+    desc: { zh: "顶尖多模态理解与日常对话旗舰模型", en: "Top-tier multimodal understanding & daily chat flagship" }
+  },
+  "gpt-5.4-mini": {
+    tag: { zh: "高性价比", en: "Cost-Effective" },
+    desc: { zh: "极速轻量旗舰，适合高频对话与日常问答", en: "Fast & lightweight flagship for high-frequency chat" }
+  },
+  "codex-auto-review": {
+    tag: { zh: "智能审查", en: "Code Review" },
+    desc: { zh: "自动审查代码、Debug 与优化建议", en: "Automated code review, debug, and optimization suggestions" }
+  },
+  "gpt-5.3-codex": {
+    tag: { zh: "编程专家", en: "Coding Expert" },
+    desc: { zh: "深度优化编程、上下文代码分析与生成", en: "Deeply optimized for programming, context analysis & generation" }
+  },
+  "gpt-image-2": {
+    tag: { zh: "AI 生图", en: "AI Image" },
+    desc: { zh: "高精度图像创作，完美解析复杂提示词", en: "High-precision image creation, perfectly parses complex prompts" }
+  },
+  "claude-opus-4-8": {
+    tag: { zh: "终极学术", en: "Ultimate Logic" },
+    desc: { zh: "克劳德家族最高逻辑能力，适合学术与论文分析", en: "Highest logic in Claude family, ideal for academic & essay analysis" }
+  },
+  "claude-opus-4-7": {
+    tag: { zh: "强力逻辑", en: "Advanced Logic" },
+    desc: { zh: "超强逻辑处理，支持超长文本分析", en: "Advanced reasoning with support for extra-long text analysis" }
+  },
+  "claude-opus-4-6": {
+    tag: { zh: "深度分析", en: "Deep Analysis" },
+    desc: { zh: "针对企业级复杂文档分析与长文本理解", en: "Tailored for enterprise document analysis & long-text comprehension" }
+  },
+  "claude-sonnet-4-6": {
+    tag: { zh: "代码开发", en: "Coding Leader" },
+    desc: { zh: "最受全球开发者推崇的日常代码编写与Debug模型", en: "Highly praised by global developers for daily coding & debug" }
+  },
+  "claude-haiku-4-5-20251001": {
+    tag: { zh: "极速轻量", en: "Fast & Smart" },
+    desc: { zh: "极速响应，支持海量文本过滤与基础问答", en: "Fastest response time, ideal for text filtering & basic chat" }
+  },
+  "gemini-3.1-pro-high": {
+    tag: { zh: "多模态旗舰", en: "Multimodal Pro" },
+    desc: { zh: "多模态与长文本处理（高优先级通道）", en: "Top-tier multimodal & long-context (High priority channel)" }
+  },
+  "gemini-3.1-pro-low": {
+    tag: { zh: "通用分析", en: "General Pro" },
+    desc: { zh: "多模态通用理解与长文本处理", en: "General multimodal understanding & long-context analysis" }
+  },
+  "gemini-3.5-flash": {
+    tag: { zh: "极速响应", en: "Flash Speed" },
+    desc: { zh: "谷歌最新极速模型，超低延迟（高优先级通道）", en: "Google's latest ultra-fast model with minimal latency (High priority)" }
+  },
+  "gemini-3.5-flash-low": {
+    tag: { zh: "轻量分析", en: "Flash Lite" },
+    desc: { zh: "谷歌轻量级极速响应模型，日常任务首选", en: "Google's lightweight ultra-fast model, best for daily tasks" }
+  }
+};
+
 export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: string }) {
   const t = dict.apiService;
   const router = useRouter();
@@ -351,84 +414,108 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
           <p style={{ fontSize: 16, color: "#666666", margin: 0 }}>{t.models.subtitle}</p>
         </div>
 
-        <div
-          className="vercel-card"
-          style={{ overflow: "hidden", padding: 0 }}
-        >
-          {/* Table header */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 140px 100px",
-              padding: "14px 24px",
-              background: "#fafafa",
-              borderBottom: "1px solid #eaeaea",
-              fontSize: 12,
-              fontWeight: 600,
-              color: "#999",
-              textTransform: "uppercase",
-              letterSpacing: "0.05em",
-            }}
-          >
-            <span>{t.models.model}</span>
-            <span>{t.models.provider}</span>
-            <span style={{ textAlign: "right" }}>{t.models.status}</span>
-          </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24 }}>
+          {["openai", "claude", "gemini"].map(provider => {
+            const providerModels = MODELS.filter(m => m.provider === provider);
+            const pc = PROVIDER_COLORS[provider];
+            const providerName = provider === "openai" ? "OpenAI 接口服务" : provider === "claude" ? "Claude 智能中转" : "Gemini 极速节点";
+            const providerDesc = provider === "openai" 
+              ? (lang === "zh" ? "全面支持 gpt-5.5、gpt-5.4 及其生图通道，完全兼容官方格式，响应毫秒级。" : "Supports gpt-5.5, gpt-5.4, and image generation, fully compatible with official formats.")
+              : provider === "claude"
+              ? (lang === "zh" ? "集成 claude-opus-4、claude-sonnet-4 等全系逻辑模型，学术与开发首选。" : "Includes claude-opus-4, claude-sonnet-4, and full models family, ideal for coding.")
+              : (lang === "zh" ? "接入 gemini-3.5-flash、gemini-3.1-pro 极速通道，多模态与长文本首选。" : "Provides gemini-3.5-flash, gemini-3.1-pro, optimal choice for long context.");
 
-          {/* Model rows */}
-          {MODELS.map((model, i) => {
-            const pc = PROVIDER_COLORS[model.provider];
             return (
               <div
-                key={model.name}
+                key={provider}
+                className="vercel-card"
                 style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 140px 100px",
-                  padding: "14px 24px",
-                  borderBottom: i < MODELS.length - 1 ? "1px solid #f3f4f6" : "none",
-                  alignItems: "center",
-                  transition: "background 0.15s",
-                  cursor: "default",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "#fafafa";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "transparent";
+                  display: "flex",
+                  flexDirection: "column",
+                  padding: "32px",
+                  position: "relative",
                 }}
               >
-                <span style={{ fontSize: 14, fontWeight: 500, color: "#111827", fontFamily: "monospace" }}>
-                  {model.name}
-                </span>
-                <span>
-                  <span
-                    style={{
-                      display: "inline-block",
-                      padding: "3px 10px",
-                      borderRadius: "999px",
-                      fontSize: 12,
-                      fontWeight: 600,
-                      background: pc.bg,
-                      color: pc.color,
-                      border: `1px solid ${pc.border}`,
-                    }}
-                  >
-                    {t.models[model.provider]}
-                  </span>
-                </span>
-                <span style={{ textAlign: "right", display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 6 }}>
-                  <span
-                    style={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: "50%",
-                      background: "#22c55e",
-                      display: "inline-block",
-                      boxShadow: "0 0 6px rgba(34,197,94,0.4)",
-                    }}
-                  />
-                  <span style={{ fontSize: 13, color: "#22c55e", fontWeight: 500 }}>{t.models.available}</span>
-                </span>
+                {/* Availability status styled exactly like product hot badge */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 16,
+                    right: 16,
+                    border: "1px solid #22c55e",
+                    color: "#22c55e",
+                    padding: "2px 8px",
+                    fontSize: 11,
+                    fontWeight: 600,
+                    borderRadius: "999px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 4,
+                  }}
+                >
+                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#22c55e", display: "inline-block" }} />
+                  {t.models.available}
+                </div>
+
+                {/* Title */}
+                <h3
+                  style={{
+                    fontSize: 20,
+                    fontWeight: 600,
+                    color: "#111827",
+                    margin: "0 0 12px",
+                    lineHeight: 1.3,
+                    letterSpacing: "-0.02em",
+                    paddingRight: 60,
+                  }}
+                >
+                  {providerName}
+                </h3>
+
+                {/* Description */}
+                <p
+                  style={{
+                    fontSize: 14,
+                    color: "#666666",
+                    margin: "0 0 24px",
+                    flexGrow: 1,
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {providerDesc}
+                </p>
+
+                {/* Tags styled exactly like main site card tags */}
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  {providerModels.map(model => (
+                    <span
+                      key={model.name}
+                      style={{
+                        padding: "4px 10px",
+                        background: "#fafafa",
+                        border: "1px solid #eaeaea",
+                        borderRadius: "999px",
+                        fontSize: 12,
+                        color: "#666666",
+                        fontWeight: 500,
+                        cursor: "default",
+                        transition: "all 0.15s ease",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = pc.color;
+                        e.currentTarget.style.color = pc.color;
+                        e.currentTarget.style.background = pc.bg;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = "#eaeaea";
+                        e.currentTarget.style.color = "#666666";
+                        e.currentTarget.style.background = "#fafafa";
+                      }}
+                    >
+                      {model.name}
+                    </span>
+                  ))}
+                </div>
               </div>
             );
           })}
@@ -610,72 +697,39 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
           <p style={{ fontSize: 16, color: "#666666", margin: 0 }}>{t.ecosystem.subtitle}</p>
         </div>
 
-        {/* Tabs */}
-        <div style={{ display: "flex", justifyContent: "center", gap: 16, marginBottom: 32 }}>
-          <button
-            onClick={() => setActiveTab("clients")}
-            style={{
-              padding: "10px 24px",
-              background: activeTab === "clients" ? "#0a0a0a" : "transparent",
-              color: activeTab === "clients" ? "#fff" : "#666",
-              border: `1px solid ${activeTab === "clients" ? "#0a0a0a" : "#eaeaea"}`,
-              borderRadius: "999px",
-              fontSize: 14,
-              fontWeight: 600,
-              cursor: "pointer",
-              transition: "all 0.2s",
-            }}
-          >
-            {t.ecosystem.clientTab}
-          </button>
-          <button
-            onClick={() => setActiveTab("code")}
-            style={{
-              padding: "10px 24px",
-              background: activeTab === "code" ? "#0a0a0a" : "transparent",
-              color: activeTab === "code" ? "#fff" : "#666",
-              border: `1px solid ${activeTab === "code" ? "#0a0a0a" : "#eaeaea"}`,
-              borderRadius: "999px",
-              fontSize: 14,
-              fontWeight: 600,
-              cursor: "pointer",
-              transition: "all 0.2s",
-            }}
-          >
-            {t.ecosystem.developerTab}
-          </button>
-        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: 32 }}>
+          {/* Integration details */}
+          <div className="vercel-card" style={{ padding: 32, display: "flex", flexDirection: "column", gap: 24, justifyContent: "center" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: "#111827", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                1. 接口地址 (Base URL)
+              </div>
+              <div style={{ background: "#f8fafc", border: "1px solid #eaeaea", borderRadius: "6px", padding: "10px 14px", fontFamily: "monospace", fontSize: 13, color: "#0f172a", wordBreak: "break-all" }}>
+                {CONSOLE_URL}/v1
+              </div>
+            </div>
 
-        {activeTab === "clients" ? (
-          <div className="vercel-card" style={{ padding: "48px 32px", textAlign: "center" }}>
-            <p style={{ fontSize: 16, color: "#444", marginBottom: 32, fontWeight: 500 }}>
-              {t.ecosystem.clientDesc}
-            </p>
-            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 24 }}>
-              {["NextChat", "ChatBox", "Cursor", "Cline", "LobeChat"].map((client) => (
-                <div
-                  key={client}
-                  style={{
-                    padding: "16px 32px",
-                    background: "#fafafa",
-                    border: "1px solid #eaeaea",
-                    borderRadius: "12px",
-                    fontSize: 18,
-                    fontWeight: 600,
-                    color: "#111",
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.03)",
-                  }}
-                >
-                  {client}
-                </div>
-              ))}
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: "#111827", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                2. 接口密钥 (API Key)
+              </div>
+              <div style={{ fontSize: 14, color: "#475569", lineHeight: 1.5 }}>
+                {lang === "zh" ? "登录控制台在" : "Log in to the console, go to the " }<strong>{lang === "zh" ? "“令牌”" : "\"Tokens\"" }</strong>{lang === "zh" ? "菜单中创建并复制，格式为 " : " menu to create and copy, formatted as " }<code>sk-xxxxxx</code>。
+              </div>
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: "#111827", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                3. 100% 官方接口兼容
+              </div>
+              <div style={{ fontSize: 14, color: "#475569", lineHeight: 1.5 }}>
+                {lang === "zh" ? "可直接配置于 Cursor, NextChat, Cline, ChatBox 等任意支持自定义中转的开发工具或第三方应用中。" : "Compatible with Cursor, NextChat, Cline, ChatBox, or any third-party developer tool supporting custom API endpoints."}
+              </div>
             </div>
           </div>
-        ) : (
-          <div
-            className="vercel-card"
-            style={{ overflow: "hidden", padding: 0 }}
-          >
+
+          {/* Code example */}
+          <div className="vercel-card" style={{ padding: 0, overflow: "hidden", display: "flex", flexDirection: "column" }}>
             <div
               style={{
                 padding: "12px 20px",
@@ -703,6 +757,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
                 lineHeight: 1.8,
                 overflowX: "auto",
                 fontFamily: "'SF Mono', 'Fira Code', 'Fira Mono', Menlo, Consolas, monospace",
+                flex: 1,
               }}
             >
               <code>
@@ -730,7 +785,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
                 {"\n    "}
                 <span style={{ color: "#93c5fd" }}>&quot;model&quot;</span>
                 <span style={{ color: "#e5e5e5" }}>: </span>
-                <span style={{ color: "#34d399" }}>&quot;gpt-4o&quot;</span>
+                <span style={{ color: "#34d399" }}>&quot;gpt-5.5&quot;</span>
                 <span style={{ color: "#e5e5e5" }}>,</span>
                 {"\n    "}
                 <span style={{ color: "#93c5fd" }}>&quot;messages&quot;</span>
@@ -748,7 +803,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
               </code>
             </pre>
           </div>
-        )}
+        </div>
       </section>
 
       {/* ───── FAQ Section ───── */}
