@@ -1,12 +1,5 @@
-# AI Code Standards & Style Guidelines
-
-## UI Design Rules
-- All new web applications MUST use Vanilla CSS (no Tailwind CSS) and follow the minimalist Vercel-style design system.
-- Avoid generic colors. Prioritize a premium feel with subtle borders (#eaeaea), deep grays (#111827), and clean micro-interactions.
-
-## Markdown & SEO Content Generation Rules
-When generating or reviewing automated SEO articles or any Markdown content:
-1. **No Duplicate H1 Titles**: Never include an H1 (`# Title`) at the top of the Markdown body if the site framework (e.g. Next.js, Hugo, Jekyll) already renders the title from the frontmatter.
-2. **Clean Formatting**: Use standard Markdown syntax. Never nest punctuation inside bold tags awkwardly (e.g., `**"Text"**`). Use `**Text**` instead.
-3. **No Messy Characters**: Ensure the generated content is clean without erratic characters. 
-4. **Self-Check Protocol**: Always review LLM prompts that generate content to ensure they explicitly forbid messy formatting and enforce these high standards.
+# 工作区隔离规则
+你当前位于 `ai-post` (纯净现金流站) 的独立工作区。
+- 绝不允许跨目录去修改 `navokit` 的代码。
+- 绝不在这里写任何免费工具或 SEO 博客，这里只处理购买和引流。
+- 如果用户要求修改出海工具业务，提醒用户去另一个编辑器窗口操作。
