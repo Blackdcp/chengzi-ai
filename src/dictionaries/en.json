@@ -3,7 +3,8 @@
     "title": "Orange AI",
     "nav": {
       "ai-accounts": "AI Accounts & Subs",
-      "marketing": "Marketing & Traffic"
+      "marketing": "Marketing & Traffic",
+      "api-service": "API Gateway"
     }
   },
   "common": {
@@ -47,5 +48,130 @@
       "ChatGPT Team account",
       "Midjourney account"
     ]
+  },
+  "apiService": {
+    "nav": {
+      "home": "Home",
+      "models": "Models & Pricing",
+      "tutorial": "Quick Start",
+      "console": "Console"
+    },
+    "hero": {
+      "title": "Enterprise AI API Gateway",
+      "subtitle": "Direct Access · Ultra-Low Pricing · 99.9% Uptime",
+      "description": "One-stop access to OpenAI / Claude / Gemini models. No VPN needed. Fully compatible with official API formats. Ready to use.",
+      "ctaConsole": "Go to Console",
+      "ctaPricing": "View Pricing"
+    },
+    "models": {
+      "title": "Supported Models",
+      "subtitle": "Covering all mainstream AI provider models, continuously updated",
+      "model": "Model Name",
+      "provider": "Provider",
+      "status": "Status",
+      "available": "Available",
+      "openai": "OpenAI",
+      "claude": "Claude",
+      "gemini": "Gemini"
+    },
+    "pricing": {
+      "title": "Flexible Pricing",
+      "subtitle": "Pay-as-you-go. Buy exactly what you need, no waste.",
+      "starter": {
+        "name": "Starter",
+        "price": "$4.29",
+        "unit": "/ 1M tokens",
+        "features": [
+          "All models available",
+          "Community support",
+          "99.9% SLA guarantee",
+          "Self-service top-up"
+        ],
+        "cta": "Buy Now"
+      },
+      "standard": {
+        "name": "Standard",
+        "badge": "Recommended",
+        "price": "$11.49",
+        "unit": "/ 3M tokens",
+        "features": [
+          "All models available",
+          "Priority support",
+          "99.9% SLA guarantee",
+          "Self-service top-up",
+          "Usage analytics dashboard"
+        ],
+        "cta": "Buy Now"
+      },
+      "premium": {
+        "name": "Premium",
+        "price": "$18.49",
+        "unit": "/ 3M tokens",
+        "features": [
+          "All models available",
+          "1-on-1 dedicated support",
+          "99.99% SLA guarantee",
+          "Self-service top-up",
+          "Usage analytics dashboard",
+          "Priority request routing"
+        ],
+        "cta": "Buy Now"
+      }
+    },
+    "tutorial": {
+      "title": "Get Started in 3 Steps",
+      "subtitle": "From signup to API calls in under 5 minutes",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Purchase a Redeem Code",
+          "description": "Choose a plan that fits your needs. Get your redeem code instantly after payment."
+        },
+        {
+          "number": "02",
+          "title": "Register & Top Up",
+          "description": "Create an account on the console and use your redeem code to add token credits."
+        },
+        {
+          "number": "03",
+          "title": "Generate Key & Start Calling",
+          "description": "Generate your API Key in the console, replace the base_url, and start making requests."
+        }
+      ],
+      "codeTitle": "Code Example",
+      "codeComment1": "# Just replace base_url and api_key — fully compatible with the official OpenAI SDK",
+      "codeComment2": "# Replace with your API Key from the console"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "Which models are supported?",
+          "answer": "We currently support OpenAI (GPT-4o, GPT-4o-mini, o1, etc.), Claude (claude-opus-4, claude-sonnet-4, etc.), and Gemini (gemini-2.5-flash, etc.) full model families. The list is continuously updated."
+        },
+        {
+          "question": "How do I top up?",
+          "answer": "After purchasing a redeem code, enter it in the console to instantly add token credits to your account."
+        },
+        {
+          "question": "Can I get a refund?",
+          "answer": "Unused redeem codes are eligible for a full refund. Token credits that have already been redeemed are non-refundable."
+        },
+        {
+          "question": "How is this different from the official API?",
+          "answer": "We provide a relay service for official APIs with 100% compatible interfaces. The advantage is direct access from China, no VPN needed, and lower pricing."
+        },
+        {
+          "question": "Are there rate limits?",
+          "answer": "Standard and Premium plans have no additional rate limits. The Starter plan may experience slight queuing during peak times, but this won't affect normal usage."
+        }
+      ]
+    },
+    "footer": {
+      "contact": "Contact Support",
+      "copyright": "Orange AI. All rights reserved.",
+      "backToHome": "Back to Main Site"
+    }
   }
 }
+
