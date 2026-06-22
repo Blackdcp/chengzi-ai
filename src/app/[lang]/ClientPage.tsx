@@ -358,11 +358,15 @@ export default function HomePage({ dict, products, lang }: { dict: any, products
                       ✓
                     </div>
                     <h4 style={{ fontSize: 18, color: "#111827", margin: "0 0 12px" }}>{dict.modal.success}</h4>
-                    <p style={{ fontSize: 14, color: "#666", lineHeight: 1.6, whiteSpace: "pre-wrap" }}>
+                    <p style={{ fontSize: 14, color: "#666", lineHeight: 1.6, whiteSpace: "pre-wrap", marginBottom: 16 }}>
                       {modal.actionType === 'consult' ? dict.modal.consultSuccessMsg : dict.modal.paySuccessMsg}
                       <br/>
                       <strong style={{ color: "#111827" }}>{email}</strong>
                     </p>
+                    <div style={{ background: "#fafafa", padding: "12px", borderRadius: "8px", fontSize: 13, color: "#666" }}>
+                      {lang === 'zh' ? '如有任何问题，请联系客服：' : 'If you have any questions, contact: '}
+                      <a href="mailto:chengziai2026@163.com" style={{ color: "#111827", fontWeight: 600, textDecoration: "none" }}>chengziai2026@163.com</a>
+                    </div>
                  </div>
                )}
             </div>
@@ -370,6 +374,17 @@ export default function HomePage({ dict, products, lang }: { dict: any, products
           </div>
         </div>
       )}
+
+      {/* Footer */}
+      <footer style={{ borderTop: "1px solid #eaeaea", padding: "40px 24px", textAlign: "center", color: "#666", fontSize: 14 }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", display: "flex", flexDirection: "column", gap: "12px" }}>
+          <div>© {new Date().getFullYear()} {dict.header.title}. All rights reserved.</div>
+          <div>
+            {lang === 'zh' ? '联系客服：' : 'Contact Support: '} 
+            <a href="mailto:chengziai2026@163.com" style={{ color: "#111827", textDecoration: "none", fontWeight: 500 }}>chengziai2026@163.com</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
