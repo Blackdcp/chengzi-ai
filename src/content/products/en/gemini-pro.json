@@ -14,9 +14,10 @@
     "Delivery within 24h"
   ],
   "warnings": [
-    "⚠️ Non-official channel. After payment, the CDK and activation link will be sent to your email. Please change your 2FA immediately after activation!"
+    "⚠️ Disclaimer: We do not save any of your account information. Submitted details are used temporarily for subscription and destroyed immediately. For security, change your 2FA and password afterward.",
+    "⚠️ Policy: Individual account subscription, not a family group. Service is considered complete upon successful subscription. We do not guarantee against future Google policy changes."
   ],
-  "deliveryNotice": "Delivery: Receive CDK via email -> Self-activate -> Change 2FA.",
+  "deliveryNotice": "Delivery: Receive CDK -> Open bypass.aiverify.cc and verify CDK -> Submit account info as per tutorial -> Wait 4-20 mins for auto-activation.",
   "features": [
     "1-Year Gemini Pro Subscription",
     "Includes virtual card, no need for foreign CC",
