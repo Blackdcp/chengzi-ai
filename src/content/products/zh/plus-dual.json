@@ -1,0 +1,29 @@
+{
+  "id": "plus-dual",
+  "categoryId": "ai-accounts",
+  "categoryName": "ChatGPT Plus 成品号 · 自动发货",
+  "title": "Plus成品号 双用（网页+codex）",
+  "subtitle": "网页和CODEX都可以用！CPA, SUB, codex需接码。满额度库存号，只对额度做保证。",
+  "price": 80,
+  "order": 2,
+  "tags": [
+    "网页+Codex双用",
+    "满额度",
+    "需接码登录"
+  ],
+  "warnings": [
+    "⚠️ 售后说明：只对额度做保证，其他日期等问题不保证。大约1-15天，到期会有5天左右冷却期可以白嫖。",
+    "⚠️ 购买必读：看清楚接受再拍，发货后账号特殊性，不支持退款。可以先拍一个测试一下，没问题再批量购买。"
+  ],
+  "deliveryNotice": "交付流程：发货为邮箱-url。先输入邮箱登录，然后去URL地址获取验证码，不要直接打开url链接。如果没有获取到最新的验证码，多重发几次，然后刷新取件地址即可，建议使用谷歌浏览器。",
+  "features": [
+    "网页端和 Codex 接口双平台均可使用",
+    "账号满额度状态，库存号直发",
+    "发货格式：邮箱-URL",
+    "可通过 URL 自助获取登录验证码"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 — ¥80.00",
+  "orderName": "Plus成品号双用（网页+codex）",
+  "isHot": true
+}

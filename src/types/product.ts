@@ -17,4 +17,5 @@ export interface Product {
   isHot?: boolean;
   actionType?: "buy" | "consult" | "link";
   linkUrl?: string;
+  order?: number;
 }

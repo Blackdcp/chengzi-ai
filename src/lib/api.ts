@@ -21,6 +21,7 @@ export function getProducts(lang: 'zh' | 'en'): Product[] {
       const fileContents = fs.readFileSync(filePath, 'utf8')
       return JSON.parse(fileContents) as Product
     })
+    .sort((a, b) => (a.order ?? 99) - (b.order ?? 99))
 
   return products
 }
