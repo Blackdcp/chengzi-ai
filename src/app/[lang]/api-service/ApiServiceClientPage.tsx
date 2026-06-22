@@ -7,30 +7,27 @@ import Link from "next/link";
 const CONSOLE_URL = "http://149.71.241.139:3001";
 
 const MODELS = [
-  { name: "gpt-4.1", provider: "openai" },
-  { name: "gpt-4.1-mini", provider: "openai" },
-  { name: "gpt-4.1-nano", provider: "openai" },
-  { name: "gpt-4o", provider: "openai" },
-  { name: "o3", provider: "openai" },
-  { name: "o4-mini", provider: "openai" },
-  { name: "dall-e-3", provider: "openai" },
-  { name: "gpt-image-1", provider: "openai" },
-  { name: "codex-mini", provider: "openai" },
-  { name: "claude-opus-4", provider: "claude" },
-  { name: "claude-sonnet-4", provider: "claude" },
-  { name: "claude-haiku-3.5", provider: "claude" },
-  { name: "gemini-2.5-flash", provider: "gemini" },
-  { name: "gemini-2.5-pro", provider: "gemini" },
-  { name: "midjourney", provider: "midjourney" },
-  { name: "suno-v3", provider: "suno" },
+  { name: "gpt-5.5", provider: "openai" },
+  { name: "gpt-5.4", provider: "openai" },
+  { name: "gpt-5.4-mini", provider: "openai" },
+  { name: "codex-auto-review", provider: "openai" },
+  { name: "gpt-5.3-codex", provider: "openai" },
+  { name: "gpt-image-2", provider: "openai" },
+  { name: "claude-opus-4-8", provider: "claude" },
+  { name: "claude-haiku-4-5-20251001", provider: "claude" },
+  { name: "claude-opus-4-6", provider: "claude" },
+  { name: "claude-opus-4-7", provider: "claude" },
+  { name: "claude-sonnet-4-6", provider: "claude" },
+  { name: "gemini-3.1-pro-high", provider: "gemini" },
+  { name: "gemini-3.1-pro-low", provider: "gemini" },
+  { name: "gemini-3.5-flash", provider: "gemini" },
+  { name: "gemini-3.5-flash-low", provider: "gemini" },
 ];
 
 const PROVIDER_COLORS: Record<string, { bg: string; color: string; border: string }> = {
   openai: { bg: "#f0fdf4", color: "#16a34a", border: "#bbf7d0" },
   claude: { bg: "#fef3e2", color: "#d97706", border: "#fde68a" },
   gemini: { bg: "#eff6ff", color: "#2563eb", border: "#bfdbfe" },
-  midjourney: { bg: "#faf5ff", color: "#9333ea", border: "#e9d5ff" },
-  suno: { bg: "#fdf2f8", color: "#db2777", border: "#fbcfe8" },
 };
 
 export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: string }) {
@@ -52,6 +49,22 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
 
   return (
     <div style={{ minHeight: "100vh", lineHeight: 1.5, background: "#fafafa" }}>
+      {/* ───── Compliance Banner ───── */}
+      <div
+        style={{
+          background: "#fff5f5",
+          borderBottom: "1px solid #fee2e2",
+          color: "#991b1b",
+          fontSize: 12,
+          fontWeight: 500,
+          textAlign: "center",
+          padding: "10px 24px",
+          lineHeight: 1.4,
+        }}
+      >
+        ⚠️ {t.footer.disclaimer}
+      </div>
+
       {/* ───── Sticky Header ───── */}
       <header
         style={{
@@ -859,7 +872,10 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
               chengziai2026@163.com
             </a>
           </div>
-          <div>© {new Date().getFullYear()} {t.footer.copyright}</div>
+          <div style={{ maxWidth: 800, margin: "12px auto 0", fontSize: 12, color: "#999", lineHeight: 1.6 }}>
+            {t.footer.disclaimer}
+          </div>
+          <div style={{ marginTop: 8 }}>© {new Date().getFullYear()} {t.footer.copyright}</div>
         </div>
       </footer>
 

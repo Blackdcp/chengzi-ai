@@ -158,7 +158,8 @@
     "footer": {
       "contact": "联系客服",
       "copyright": "橙子 AI. All rights reserved.",
-      "backToHome": "返回主站"
+      "backToHome": "返回主站",
+      "disclaimer": "免责声明：根据中国大陆的法律法规限制，本站不为来自中国大陆的用户提供任何 OpenAI 相关的服务，请来自中国大陆的用户自觉停止访问本站。"
     }
   }
 }

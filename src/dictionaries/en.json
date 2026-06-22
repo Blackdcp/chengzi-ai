@@ -157,7 +157,8 @@
     "footer": {
       "contact": "Contact Support",
       "copyright": "Orange AI. All rights reserved.",
-      "backToHome": "Back to Main Site"
+      "backToHome": "Back to Main Site",
+      "disclaimer": "Disclaimer: In accordance with laws and regulations in mainland China, this site does not provide any OpenAI-related services to users from mainland China. Users from mainland China are requested to stop accessing this site voluntarily."
     }
   }
 }
