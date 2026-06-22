@@ -1,0 +1,31 @@
+{
+  "id": "codex-api-trial",
+  "categoryId": "ai-api",
+  "categoryName": "Codex API Gateway · Stable Node",
+  "title": "CodexAPI Trial Version (1 Million Quota)",
+  "subtitle": "Supports OpenAI compatible API, direct connection, perfect for personal testing and light development.",
+  "price": 4.5,
+  "originalPriceText": "$ 15.00",
+  "originalPriceNote": "Market Value",
+  "order": 3,
+  "tags": [
+    "Direct Connect",
+    "OpenAI API",
+    "Tutorial Included"
+  ],
+  "warnings": [
+    "⚠️ Target Audience: Suitable for users with basic development skills, or for use with mature third-party clients.",
+    "⚠️ Quota Info: Selling 1 million token quota, valid until exhausted. Does not promise official balance or account ownership."
+  ],
+  "deliveryNotice": "Delivery Process: After ordering, customer service will send your exclusive API Key, Base URL, and detailed basic configuration guide.",
+  "features": [
+    "1 Million API consumption quota",
+    "Direct connection, no proxy required",
+    "Compatible with standard OpenAI API specs",
+    "Includes basic integration tutorial"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Trial — $4.5",
+  "orderName": "CodexAPI Trial (1M Quota)",
+  "isHot": false
+}

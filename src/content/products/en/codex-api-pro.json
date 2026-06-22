@@ -1,0 +1,31 @@
+{
+  "id": "codex-api-pro",
+  "categoryId": "ai-api",
+  "categoryName": "Codex API Gateway · Stable Node",
+  "title": "CodexAPI Pro Version (3 Million Quota + Tech Support)",
+  "subtitle": "Must-buy for beginners! Includes 3M quota and 1-on-1 remote configuration service.",
+  "price": 18.9,
+  "originalPriceText": "$ 55.00",
+  "originalPriceNote": "Incl. Labor Fee",
+  "order": 5,
+  "tags": [
+    "1-on-1 Support",
+    "Remote Setup",
+    "Out of the box"
+  ],
+  "warnings": [
+    "⚠️ Target Audience: Beginners who know nothing about technology, proxies, or how to use APIs.",
+    "⚠️ Service Info: Add our tech support WeChat after purchase. We will remotely guide you to configure the environment step-by-step until you can successfully chat/code!"
+  ],
+  "deliveryNotice": "Delivery Process: After ordering, customer service will send your API Key and tech support WeChat. Add WeChat for remote manual configuration.",
+  "features": [
+    "3 Million API consumption quota",
+    "1-on-1 remote manual configuration service",
+    "Resolve all tricky issues, guaranteed to work",
+    "Includes exclusive after-sales support channel"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Pro — $18.9",
+  "orderName": "CodexAPI Pro (3M Quota + Tech Support)",
+  "isHot": true
+}

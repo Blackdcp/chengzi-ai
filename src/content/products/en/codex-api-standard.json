@@ -1,0 +1,31 @@
+{
+  "id": "codex-api-standard",
+  "categoryId": "ai-api",
+  "categoryName": "Codex API Gateway · Stable Node",
+  "title": "CodexAPI Standard Version (3 Million Quota)",
+  "subtitle": "Best value! Enjoy 3 million massive quota, unlimited concurrency, lightning-fast response.",
+  "price": 11.9,
+  "originalPriceText": "$ 40.00",
+  "originalPriceNote": "Market Value",
+  "order": 4,
+  "tags": [
+    "Best Value",
+    "Massive Quota",
+    "Lightning Fast"
+  ],
+  "warnings": [
+    "⚠️ Target Audience: Suitable for heavy users and small studio development/testing.",
+    "⚠️ Quota Info: Selling 3 million token quota, valid until exhausted. Does not promise official balance or account ownership."
+  ],
+  "deliveryNotice": "Delivery Process: After ordering, customer service will send your exclusive API Key, Base URL, and detailed basic configuration guide.",
+  "features": [
+    "3 Million API consumption quota (Best Value)",
+    "Direct connection, millisecond response",
+    "Compatible with standard OpenAI API specs",
+    "Includes basic integration tutorial"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Standard — $11.9",
+  "orderName": "CodexAPI Standard (3M Quota)",
+  "isHot": true
+}

@@ -1,0 +1,31 @@
+{
+  "id": "codex-api-pro",
+  "categoryId": "ai-api",
+  "categoryName": "Codex API 中转服务 · 稳定节点",
+  "title": "CodexAPI 尊享版（300万额度+技术代配置）",
+  "subtitle": "小白必买！包含 300万 额度，且提供一对一远程代配置服务，包教包会。",
+  "price": 129.00,
+  "originalPriceText": "¥ 399.00",
+  "originalPriceNote": "含人工服务费",
+  "order": 5,
+  "tags": [
+    "包教包会",
+    "人工代配",
+    "开箱即用"
+  ],
+  "warnings": [
+    "⚠️ 适用人群：完全不懂技术、不会配置代理、不知道如何使用 API 的小白用户。",
+    "⚠️ 服务说明：购买后添加技术客服微信，我们手把手教您在本地配好所有环境，直到能够成功打字聊天/写代码为止！"
+  ],
+  "deliveryNotice": "交付流程：下单后，客服会发送专属 API Key 和专属技术支持微信，添加微信后由人工远程帮您配置环境。",
+  "features": [
+    "300万 API 消耗额度",
+    "一对一人工远程代配置服务",
+    "解决所有疑难杂症，包跑通",
+    "包含专属售后指导通道"
+  ],
+  "inStock": true,
+  "buyButtonText": "购买尊享版 — ¥129",
+  "orderName": "CodexAPI 尊享版（300万额度+代配置）",
+  "isHot": true
+}

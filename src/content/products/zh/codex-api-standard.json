@@ -1,0 +1,31 @@
+{
+  "id": "codex-api-standard",
+  "categoryId": "ai-api",
+  "categoryName": "Codex API 中转服务 · 稳定节点",
+  "title": "CodexAPI 标准版（300万额度）",
+  "subtitle": "主推性价比款！畅享 300万海量额度，不限并发，极速响应。",
+  "price": 79.9,
+  "originalPriceText": "¥ 280.00",
+  "originalPriceNote": "市场原价",
+  "order": 4,
+  "tags": [
+    "主推利润款",
+    "海量额度",
+    "极速响应"
+  ],
+  "warnings": [
+    "⚠️ 适用人群：适合重度使用者、小型工作室开发测试。",
+    "⚠️ 额度说明：售出的是 300万 Token 额度，用完即止。不承诺官方余额或账号归属。"
+  ],
+  "deliveryNotice": "交付流程：下单后，客服会发送专属 API Key、调用地址（Base URL）以及详细的基础配置文档给您。",
+  "features": [
+    "300万 API 消耗额度（超高性价比）",
+    "国内直连，毫秒级响应",
+    "兼容标准 OpenAI 接口规范",
+    "赠送基础接入教程文档"
+  ],
+  "inStock": true,
+  "buyButtonText": "购买标准版 — ¥79.9",
+  "orderName": "CodexAPI 标准版（300万额度）",
+  "isHot": true
+}
