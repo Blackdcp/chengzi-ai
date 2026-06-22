@@ -89,6 +89,13 @@ body { margin: 0; background-color: #fafafa; color: #111827; }
   .prose code::after {
     content: none !important;
   }
+  
+  /* Disable tailwind typography blockquote quotes */
+  .prose blockquote p:first-of-type::before,
+  .prose blockquote p:last-of-type::after {
+    content: none !important;
+  }
+  
   .prose code {
     background-color: #f3f4f6 !important;
     color: #ef4444 !important;
