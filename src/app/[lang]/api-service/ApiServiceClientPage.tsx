@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 
-const CONSOLE_URL = "http://149.71.241.139:3001";
+const CONSOLE_URL = "https://api.cheng-zi-ai.com";
 
 const MODELS = [
   { name: "gpt-5.5", provider: "openai" },
