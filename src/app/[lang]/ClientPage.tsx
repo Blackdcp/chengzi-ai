@@ -70,10 +70,10 @@ export default function HomePage({ dict, products, lang }: { dict: any, products
       if (res.ok) {
         setStep("success");
       } else {
-        alert(dict.ppt2pdf?.errServer || "Submit failed");
+        alert("提交失败，请稍后重试 (Submit failed)");
       }
     } catch (e) {
-      alert(dict.ppt2pdf?.errServer || "Submit failed");
+      alert("提交失败，请稍后重试 (Submit failed)");
     } finally {
       setIsSubmitting(false);
     }
@@ -100,10 +100,10 @@ export default function HomePage({ dict, products, lang }: { dict: any, products
       if (res.ok) {
         setStep("success");
       } else {
-        alert(dict.ppt2pdf?.errServer || "Submit failed");
+        alert("提交失败，请稍后重试 (Submit failed)");
       }
     } catch (e) {
-      alert(dict.ppt2pdf?.errServer || "Submit failed");
+      alert("提交失败，请稍后重试 (Submit failed)");
     } finally {
       setIsSubmitting(false);
     }
