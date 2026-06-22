@@ -14,19 +14,19 @@ async function generateAIContent(topic, language) {
     if (language === 'zh') {
       prompt = `你是一个顶尖的全球社媒营销专家和技术博主。请根据最新AI热点：【${topic}】，写一篇深度、干货、能吸引大量流量的中文SEO文章。
 要求：
-1. 包含一个极具吸引力、带悬念和情感价值的 H1 标题 (# 标题)。
+1. 第一行必须是一个极具吸引力、带悬念和情感价值的 H1 标题 (# 标题)。
 2. 文章结构清晰，有若干 H2 子标题 (## 标题)。
 3. 在文章中，极其自然地结合我们网站的业务（如：社交媒体爆款文案生成器、社媒真实涨粉服务、ChatGPT等AI工具代充服务），作为落地实操的工具推荐。
 4. 结尾包含极强的 Call to Action（行为号召），引导用户使用我们网站的服务。
-5. 使用专业且网感极佳的词汇，全程语气为干货分享。`;
+5. 必须使用标准、纯净的 Markdown 语法。严禁出现排版错乱、乱码或嵌套错误的标点（比如绝对不要写成 **"文本"** 或 "#标题"），加粗文本直接使用 **文本**。`;
     } else {
       prompt = `You are a top-tier global social media marketing expert and tech blogger. Based on the latest AI news: [${topic}], write an in-depth, actionable, highly viral SEO article in English.
 Requirements:
-1. Include an extremely catchy, viral-style H1 title (# Title).
+1. The first line MUST be an extremely catchy, viral-style H1 title (# Title).
 2. Well-structured with several H2 subheadings (## Subheading).
 3. Naturally seamlessly integrate our website's services (e.g., Viral Social Media Post Generator, Real Social Media Followers Growth Service, AI Tool subscriptions/APIs) as recommended actionable tools.
 4. End with a strong Call to Action (CTA) encouraging users to try our services.
-5. Tone must be actionable, energetic, and highly professional yet readable. Include engaging formatting (bullet points, bold text).`;
+5. You MUST use standard, clean Markdown formatting. Do not use messy punctuation inside bold text (e.g., never use **"text"**), simply use **text**. Tone must be actionable, energetic, and highly professional.`;
     }
 
     const payload = JSON.stringify({
@@ -75,6 +75,11 @@ function saveArticle(content, lang) {
   const matchTitle = isZH ? content.match(/^#\s+(.+)$/m) : content.match(/^#\s+(.+)$/m);
   let title = matchTitle ? matchTitle[1].trim() : (isZH ? "今日热点分析" : "Daily Hot Topic Analysis");
   title = title.replace(/["*]/g, ''); // Clean basic markdown syntax from title
+  
+  // Remove the H1 title from the content to avoid duplicate titles in the rendered page
+  if (matchTitle) {
+    content = content.replace(matchTitle[0], '').trim();
+  }
   
   let filename = '';
   if (isZH) {
