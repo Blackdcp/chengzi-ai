@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { orderId, email, productName, price, payMethod } = body;
+    const { orderId, email, productName, price, payMethod, refCode } = body;
 
     // Validate inputs
     if (!orderId || !email || !productName) {
@@ -50,6 +50,12 @@ export async function POST(req: Request) {
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">支付方式</td>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600;">${payMethodStr}</td>
               </tr>
+              ${refCode ? `
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">代理监测码</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; color: #ff6600;">${refCode}</td>
+              </tr>
+              ` : ''}
               <tr>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">客户邮箱</td>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600;">

@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { email, requirement, productName } = body;
+    const { email, requirement, productName, refCode } = body;
 
     if (!email || !requirement || !productName) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -40,6 +40,12 @@ export async function POST(req: Request) {
                   <a href="mailto:${email}" style="color: #1677ff; text-decoration: none;">${email}</a>
                 </td>
               </tr>
+              ${refCode ? `
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">代理监测码</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; color: #ff6600;">${refCode}</td>
+              </tr>
+              ` : ''}
             </tbody>
           </table>
           

@@ -18,7 +18,7 @@ function genOrderId() {
   return `CZ${d}${t}${r}`;
 }
 
-export default function HomePage({ dict, products, lang }: { dict: any, products: Product[], lang: string }) {
+export default function HomePage({ dict, products, lang, refCode }: { dict: any, products: Product[], lang: string, refCode?: string }) {
   const [modal, setModal] = useState<{ name: string; price: number; orderId: string; actionType?: string } | null>(null);
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
@@ -64,7 +64,8 @@ export default function HomePage({ dict, products, lang }: { dict: any, products
           email: email,
           productName: modal.name,
           price: modal.price,
-          payMethod: payMethod
+          payMethod: payMethod,
+          refCode: refCode
         })
       });
       if (res.ok) {
@@ -95,6 +96,7 @@ export default function HomePage({ dict, products, lang }: { dict: any, products
           email: email,
           requirement: requirement,
           productName: modal.name,
+          refCode: refCode
         })
       });
       if (res.ok) {
