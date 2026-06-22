@@ -13,6 +13,7 @@ const MODELS = [
   { name: "gpt-4o", provider: "openai" },
   { name: "o3", provider: "openai" },
   { name: "o4-mini", provider: "openai" },
+  { name: "dall-e-3", provider: "openai" },
   { name: "gpt-image-1", provider: "openai" },
   { name: "codex-mini", provider: "openai" },
   { name: "claude-opus-4", provider: "claude" },
@@ -20,12 +21,16 @@ const MODELS = [
   { name: "claude-haiku-3.5", provider: "claude" },
   { name: "gemini-2.5-flash", provider: "gemini" },
   { name: "gemini-2.5-pro", provider: "gemini" },
+  { name: "midjourney", provider: "midjourney" },
+  { name: "suno-v3", provider: "suno" },
 ];
 
 const PROVIDER_COLORS: Record<string, { bg: string; color: string; border: string }> = {
   openai: { bg: "#f0fdf4", color: "#16a34a", border: "#bbf7d0" },
   claude: { bg: "#fef3e2", color: "#d97706", border: "#fde68a" },
   gemini: { bg: "#eff6ff", color: "#2563eb", border: "#bfdbfe" },
+  midjourney: { bg: "#faf5ff", color: "#9333ea", border: "#e9d5ff" },
+  suno: { bg: "#fdf2f8", color: "#db2777", border: "#fbcfe8" },
 };
 
 export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: string }) {
@@ -33,6 +38,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
   const router = useRouter();
   const pathname = usePathname();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<"clients" | "code">("clients");
 
   const switchLang = () => {
     const newLang = lang === "zh" ? "en" : "zh";
@@ -197,11 +203,27 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
               fontSize: 13,
               fontWeight: 500,
               color: "rgba(255,255,255,0.7)",
-              marginBottom: 32,
+              marginBottom: 16,
               background: "rgba(255,255,255,0.05)",
             }}
           >
             🚀 OpenAI / Claude / Gemini
+          </div>
+          <div
+            style={{
+              display: "inline-block",
+              padding: "6px 16px",
+              border: "1px solid rgba(34,197,94,0.3)",
+              borderRadius: "999px",
+              fontSize: 13,
+              fontWeight: 600,
+              color: "#4ade80",
+              marginBottom: 32,
+              marginLeft: 12,
+              background: "rgba(34,197,94,0.1)",
+            }}
+          >
+            ✅ {t.hero.compatibilityBadge}
           </div>
 
           <h1
@@ -558,7 +580,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
         </div>
       </section>
 
-      {/* ───── Tutorial Section ───── */}
+      {/* ───── Ecosystem & Client Support Section ───── */}
       <section id="tutorial" style={{ padding: "80px 24px", maxWidth: 1080, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <h2
@@ -570,153 +592,150 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
               margin: "0 0 12px",
             }}
           >
-            {t.tutorial.title}
+            {t.ecosystem.title}
           </h2>
-          <p style={{ fontSize: 16, color: "#666666", margin: 0 }}>{t.tutorial.subtitle}</p>
+          <p style={{ fontSize: 16, color: "#666666", margin: 0 }}>{t.ecosystem.subtitle}</p>
         </div>
 
-        {/* Steps */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: 24,
-            marginBottom: 48,
-          }}
-        >
-          {t.tutorial.steps.map((step: any, i: number) => (
+        {/* Tabs */}
+        <div style={{ display: "flex", justifyContent: "center", gap: 16, marginBottom: 32 }}>
+          <button
+            onClick={() => setActiveTab("clients")}
+            style={{
+              padding: "10px 24px",
+              background: activeTab === "clients" ? "#0a0a0a" : "transparent",
+              color: activeTab === "clients" ? "#fff" : "#666",
+              border: `1px solid ${activeTab === "clients" ? "#0a0a0a" : "#eaeaea"}`,
+              borderRadius: "999px",
+              fontSize: 14,
+              fontWeight: 600,
+              cursor: "pointer",
+              transition: "all 0.2s",
+            }}
+          >
+            {t.ecosystem.clientTab}
+          </button>
+          <button
+            onClick={() => setActiveTab("code")}
+            style={{
+              padding: "10px 24px",
+              background: activeTab === "code" ? "#0a0a0a" : "transparent",
+              color: activeTab === "code" ? "#fff" : "#666",
+              border: `1px solid ${activeTab === "code" ? "#0a0a0a" : "#eaeaea"}`,
+              borderRadius: "999px",
+              fontSize: 14,
+              fontWeight: 600,
+              cursor: "pointer",
+              transition: "all 0.2s",
+            }}
+          >
+            {t.ecosystem.developerTab}
+          </button>
+        </div>
+
+        {activeTab === "clients" ? (
+          <div className="vercel-card" style={{ padding: "48px 32px", textAlign: "center" }}>
+            <p style={{ fontSize: 16, color: "#444", marginBottom: 32, fontWeight: 500 }}>
+              {t.ecosystem.clientDesc}
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 24 }}>
+              {["NextChat", "ChatBox", "Cursor", "Cline", "LobeChat"].map((client) => (
+                <div
+                  key={client}
+                  style={{
+                    padding: "16px 32px",
+                    background: "#fafafa",
+                    border: "1px solid #eaeaea",
+                    borderRadius: "12px",
+                    fontSize: 18,
+                    fontWeight: 600,
+                    color: "#111",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.03)",
+                  }}
+                >
+                  {client}
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div
+            className="vercel-card"
+            style={{ overflow: "hidden", padding: 0 }}
+          >
             <div
-              key={i}
-              className="vercel-card"
               style={{
-                padding: "32px 28px",
-                position: "relative",
-                transition: "transform 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-2px)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
+                padding: "12px 20px",
+                background: "#fafafa",
+                borderBottom: "1px solid #eaeaea",
+                display: "flex",
+                alignItems: "center",
+                gap: 8,
               }}
             >
-              <div
-                style={{
-                  fontSize: 40,
-                  fontWeight: 800,
-                  color: "#f0f0f0",
-                  letterSpacing: "-0.04em",
-                  lineHeight: 1,
-                  marginBottom: 16,
-                }}
-              >
-                {step.number}
-              </div>
-              <h3 style={{ fontSize: 18, fontWeight: 600, color: "#111827", margin: "0 0 8px" }}>
-                {step.title}
-              </h3>
-              <p style={{ fontSize: 14, color: "#666", margin: 0, lineHeight: 1.6 }}>
-                {step.description}
-              </p>
-
-              {/* Arrow connector (visible between steps) */}
-              {i < t.tutorial.steps.length - 1 && (
-                <div
-                  style={{
-                    position: "absolute",
-                    right: -16,
-                    top: "50%",
-                    transform: "translateY(-50%)",
-                    fontSize: 20,
-                    color: "#d1d5db",
-                    zIndex: 1,
-                  }}
-                  className="step-arrow"
-                >
-                  →
-                </div>
-              )}
+              <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ff5f56" }} />
+              <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ffbd2e" }} />
+              <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#27c93f" }} />
+              <span style={{ marginLeft: 12, fontSize: 13, color: "#999", fontWeight: 500 }}>
+                {t.ecosystem.codeTitle}
+              </span>
             </div>
-          ))}
-        </div>
-
-        {/* Code Snippet */}
-        <div
-          className="vercel-card"
-          style={{ overflow: "hidden", padding: 0 }}
-        >
-          <div
-            style={{
-              padding: "12px 20px",
-              background: "#fafafa",
-              borderBottom: "1px solid #eaeaea",
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-            }}
-          >
-            <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ff5f56" }} />
-            <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ffbd2e" }} />
-            <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#27c93f" }} />
-            <span style={{ marginLeft: 12, fontSize: 13, color: "#999", fontWeight: 500 }}>
-              {t.tutorial.codeTitle}
-            </span>
+            <pre
+              style={{
+                margin: 0,
+                padding: "24px",
+                background: "#0a0a0a",
+                color: "#e5e5e5",
+                fontSize: 13,
+                lineHeight: 1.8,
+                overflowX: "auto",
+                fontFamily: "'SF Mono', 'Fira Code', 'Fira Mono', Menlo, Consolas, monospace",
+              }}
+            >
+              <code>
+                <span style={{ color: "#6b7280" }}>{t.ecosystem.codeComment1}</span>
+                {"\n\n"}
+                <span style={{ color: "#c084fc" }}>curl</span>
+                {" "}
+                <span style={{ color: "#a78bfa" }}>-X POST</span>
+                {" "}
+                <span style={{ color: "#34d399" }}>&quot;{CONSOLE_URL}/v1/chat/completions&quot;</span>
+                {" \\\n  "}
+                <span style={{ color: "#a78bfa" }}>-H</span>
+                {" "}
+                <span style={{ color: "#34d399" }}>&quot;Content-Type: application/json&quot;</span>
+                {" \\\n  "}
+                <span style={{ color: "#a78bfa" }}>-H</span>
+                {" "}
+                <span style={{ color: "#34d399" }}>&quot;Authorization: Bearer sk-your-api-key&quot;</span>
+                {"  "}
+                <span style={{ color: "#6b7280" }}>{t.ecosystem.codeComment2}</span>
+                {" \\\n  "}
+                <span style={{ color: "#a78bfa" }}>-d</span>
+                {" "}
+                <span style={{ color: "#34d399" }}>&apos;{"{"}</span>
+                {"\n    "}
+                <span style={{ color: "#93c5fd" }}>&quot;model&quot;</span>
+                <span style={{ color: "#e5e5e5" }}>: </span>
+                <span style={{ color: "#34d399" }}>&quot;gpt-4o&quot;</span>
+                <span style={{ color: "#e5e5e5" }}>,</span>
+                {"\n    "}
+                <span style={{ color: "#93c5fd" }}>&quot;messages&quot;</span>
+                <span style={{ color: "#e5e5e5" }}>: [{"{"}</span>
+                <span style={{ color: "#93c5fd" }}>&quot;role&quot;</span>
+                <span style={{ color: "#e5e5e5" }}>: </span>
+                <span style={{ color: "#34d399" }}>&quot;user&quot;</span>
+                <span style={{ color: "#e5e5e5" }}>, </span>
+                <span style={{ color: "#93c5fd" }}>&quot;content&quot;</span>
+                <span style={{ color: "#e5e5e5" }}>: </span>
+                <span style={{ color: "#34d399" }}>&quot;Hello!&quot;</span>
+                <span style={{ color: "#e5e5e5" }}>{"}"}]</span>
+                {"\n  "}
+                <span style={{ color: "#34d399" }}>{"}"}&apos;</span>
+              </code>
+            </pre>
           </div>
-          <pre
-            style={{
-              margin: 0,
-              padding: "24px",
-              background: "#0a0a0a",
-              color: "#e5e5e5",
-              fontSize: 13,
-              lineHeight: 1.8,
-              overflowX: "auto",
-              fontFamily: "'SF Mono', 'Fira Code', 'Fira Mono', Menlo, Consolas, monospace",
-            }}
-          >
-            <code>
-              <span style={{ color: "#6b7280" }}>{t.tutorial.codeComment1}</span>
-              {"\n\n"}
-              <span style={{ color: "#c084fc" }}>curl</span>
-              {" "}
-              <span style={{ color: "#a78bfa" }}>-X POST</span>
-              {" "}
-              <span style={{ color: "#34d399" }}>&quot;{CONSOLE_URL}/v1/chat/completions&quot;</span>
-              {" \\\n  "}
-              <span style={{ color: "#a78bfa" }}>-H</span>
-              {" "}
-              <span style={{ color: "#34d399" }}>&quot;Content-Type: application/json&quot;</span>
-              {" \\\n  "}
-              <span style={{ color: "#a78bfa" }}>-H</span>
-              {" "}
-              <span style={{ color: "#34d399" }}>&quot;Authorization: Bearer sk-your-api-key&quot;</span>
-              {"  "}
-              <span style={{ color: "#6b7280" }}>{t.tutorial.codeComment2}</span>
-              {" \\\n  "}
-              <span style={{ color: "#a78bfa" }}>-d</span>
-              {" "}
-              <span style={{ color: "#34d399" }}>&apos;{"{"}</span>
-              {"\n    "}
-              <span style={{ color: "#93c5fd" }}>&quot;model&quot;</span>
-              <span style={{ color: "#e5e5e5" }}>: </span>
-              <span style={{ color: "#34d399" }}>&quot;gpt-4.1&quot;</span>
-              <span style={{ color: "#e5e5e5" }}>,</span>
-              {"\n    "}
-              <span style={{ color: "#93c5fd" }}>&quot;messages&quot;</span>
-              <span style={{ color: "#e5e5e5" }}>: [{"{"}</span>
-              <span style={{ color: "#93c5fd" }}>&quot;role&quot;</span>
-              <span style={{ color: "#e5e5e5" }}>: </span>
-              <span style={{ color: "#34d399" }}>&quot;user&quot;</span>
-              <span style={{ color: "#e5e5e5" }}>, </span>
-              <span style={{ color: "#93c5fd" }}>&quot;content&quot;</span>
-              <span style={{ color: "#e5e5e5" }}>: </span>
-              <span style={{ color: "#34d399" }}>&quot;Hello!&quot;</span>
-              <span style={{ color: "#e5e5e5" }}>{"}"}]</span>
-              {"\n  "}
-              <span style={{ color: "#34d399" }}>{"}"}&apos;</span>
-            </code>
-          </pre>
-        </div>
+        )}
       </section>
 
       {/* ───── FAQ Section ───── */}

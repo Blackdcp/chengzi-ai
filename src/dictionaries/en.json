@@ -61,7 +61,8 @@
       "subtitle": "Direct Access · Ultra-Low Pricing · 99.9% Uptime",
       "description": "One-stop access to OpenAI / Claude / Gemini models. No VPN needed. Fully compatible with official API formats. Ready to use.",
       "ctaConsole": "Go to Console",
-      "ctaPricing": "View Pricing"
+      "ctaPricing": "View Pricing",
+      "compatibilityBadge": "100% Fully compatible with OpenAI API Protocol"
     },
     "models": {
       "title": "Supported Models",
@@ -78,9 +79,9 @@
       "title": "Flexible Pricing",
       "subtitle": "Pay-as-you-go. Buy exactly what you need, no waste.",
       "starter": {
-        "name": "Starter",
-        "price": "$4.29",
-        "unit": "/ 1M tokens",
+        "name": "Starter Code",
+        "price": "$1.49",
+        "unit": "/ Includes $5 official quota equivalent",
         "features": [
           "All models available",
           "Community support",
@@ -90,10 +91,10 @@
         "cta": "Buy Now"
       },
       "standard": {
-        "name": "Standard",
+        "name": "Standard Code",
         "badge": "Recommended",
-        "price": "$11.49",
-        "unit": "/ 3M tokens",
+        "price": "$6.99",
+        "unit": "/ Includes $30 official quota equivalent",
         "features": [
           "All models available",
           "Priority support",
@@ -104,9 +105,9 @@
         "cta": "Buy Now"
       },
       "premium": {
-        "name": "Premium",
-        "price": "$18.49",
-        "unit": "/ 3M tokens",
+        "name": "Premium Code",
+        "price": "$22.99",
+        "unit": "/ Includes $100 official quota equivalent",
         "features": [
           "All models available",
           "1-on-1 dedicated support",
@@ -118,26 +119,12 @@
         "cta": "Buy Now"
       }
     },
-    "tutorial": {
-      "title": "Get Started in 3 Steps",
-      "subtitle": "From signup to API calls in under 5 minutes",
-      "steps": [
-        {
-          "number": "01",
-          "title": "Purchase a Redeem Code",
-          "description": "Choose a plan that fits your needs. Get your redeem code instantly after payment."
-        },
-        {
-          "number": "02",
-          "title": "Register & Top Up",
-          "description": "Create an account on the console and use your redeem code to add token credits."
-        },
-        {
-          "number": "03",
-          "title": "Generate Key & Start Calling",
-          "description": "Generate your API Key in the console, replace the base_url, and start making requests."
-        }
-      ],
+    "ecosystem": {
+      "title": "Ecosystem & Supported Clients",
+      "subtitle": "No coding required. Instant access in 100+ popular apps",
+      "clientTab": "Clients (Recommended)",
+      "developerTab": "Developers (Code)",
+      "clientDesc": "No coding required. Just paste the Base URL and API Key into any of these 100+ apps.",
       "codeTitle": "Code Example",
       "codeComment1": "# Just replace base_url and api_key — fully compatible with the official OpenAI SDK",
       "codeComment2": "# Replace with your API Key from the console"
