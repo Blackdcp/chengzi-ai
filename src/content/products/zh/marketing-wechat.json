@@ -1,0 +1,28 @@
+{
+  "id": "marketing-wechat",
+  "categoryId": "marketing",
+  "categoryName": "社交媒体买量推广",
+  "title": "微信公众号推广服务",
+  "subtitle": "微信公众号文章阅读量快速提升，帮助突破阅读瓶颈，提升文章展现权重。",
+  "price": 40,
+  "tags": [
+    "阅读 40元/1000个",
+    "快速稳定",
+    "安全不封号"
+  ],
+  "warnings": [
+    "⚠️ 微信公众号文章链接必须处于正常发布状态，未被微信官方封禁或限制分享。"
+  ],
+  "deliveryNotice": "交付流程：填写公众号文章链接与阅读量需求，扫码支付后点击确认，客服将在 24 小时内安排发货。",
+  "features": [
+    "阅读量服务：¥ 40.00 / 1000 阅读",
+    "稳定极速增长，真实设备展现",
+    "安全合规，不影响公众号正常状态"
+  ],
+  "inStock": true,
+  "buyButtonText": "提交需求",
+  "orderName": "微信公众号推广服务",
+  "isHot": false,
+  "actionType": "buy",
+  "originalPriceText": ""
+}

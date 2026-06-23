@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { orderId, email, productName, price, payMethod, refCode } = body;
+    const { orderId, email, productName, price, payMethod, refCode, workLink, requirement } = body;
 
     // Validate inputs
     if (!orderId || !email || !productName) {
@@ -69,6 +69,20 @@ export async function POST(req: Request) {
                   <a href="mailto:${email}" style="color: #0a0a0a; text-decoration: none;">${email}</a>
                 </td>
               </tr>
+              ${workLink ? `
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">作品/主页链接</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; word-break: break-all;">
+                  <a href="${workLink}" target="_blank" style="color: #1677ff;">${workLink}</a>
+                </td>
+              </tr>
+              ` : ''}
+              ${requirement ? `
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">具体需求</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; white-space: pre-wrap;">${requirement}</td>
+              </tr>
+              ` : ''}
             </tbody>
           </table>
           

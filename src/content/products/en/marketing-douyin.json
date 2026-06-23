@@ -1,0 +1,30 @@
+{
+  "id": "marketing-douyin",
+  "categoryId": "marketing",
+  "categoryName": "Social Media Growth",
+  "title": "Douyin Promotion Service",
+  "subtitle": "Douyin growth suite including followers, views, likes, shares, and bookmarks.",
+  "price": 2.80,
+  "tags": [
+    "Followers $70/1000",
+    "Views $2.8/1000",
+    "Likes/Shares $2.8/100"
+  ],
+  "warnings": [
+    "⚠️ Please ensure your account and video links are public."
+  ],
+  "deliveryNotice": "Process: Enter homepage or video link and requirements, pay via Alipay/PayPal, support starts within 24h.",
+  "features": [
+    "Followers: $70.00 / 1000 followers",
+    "Views: $2.80 / 1000 views",
+    "Likes: $2.80 / 100 likes",
+    "Shares: $2.80 / 100 shares",
+    "Bookmarks: $4.20 / 100 bookmarks"
+  ],
+  "inStock": true,
+  "buyButtonText": "Submit Request",
+  "orderName": "Douyin Promotion Service",
+  "isHot": true,
+  "actionType": "buy",
+  "originalPriceText": ""
+}

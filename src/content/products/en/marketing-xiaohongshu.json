@@ -1,0 +1,30 @@
+{
+  "id": "marketing-xiaohongshu",
+  "categoryId": "marketing",
+  "categoryName": "Social Media Growth",
+  "title": "Xiaohongshu Growth Service",
+  "subtitle": "High-quality Xiaohongshu likes and views service to boost your posts to trending.",
+  "price": 0.28,
+  "tags": [
+    "Followers $135/1000",
+    "Likes $0.28/ea",
+    "Views $10/1000"
+  ],
+  "warnings": [
+    "⚠️ Please ensure your post link is set to public."
+  ],
+  "deliveryNotice": "Process: Enter post link and requirements, scan and pay via Alipay/PayPal, support will start within 24h.",
+  "features": [
+    "Followers service: $135.00 / 1000 followers",
+    "Likes service: $0.28 / ea",
+    "Views service: $10.00 / 1000 views",
+    "Active human accounts",
+    "Safe growth, no account restrictions"
+  ],
+  "inStock": true,
+  "buyButtonText": "Submit Request",
+  "orderName": "Xiaohongshu Growth Service",
+  "isHot": true,
+  "actionType": "buy",
+  "originalPriceText": ""
+}

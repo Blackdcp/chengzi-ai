@@ -1,0 +1,28 @@
+{
+  "id": "marketing-wechat",
+  "categoryId": "marketing",
+  "categoryName": "Social Media Growth",
+  "title": "WeChat Articles Promotion",
+  "subtitle": "Boost article views on WeChat Official Account quickly and safely.",
+  "price": 5.60,
+  "tags": [
+    "Views $5.6/1000",
+    "Fast & Stable",
+    "No Risk"
+  ],
+  "warnings": [
+    "⚠️ Please ensure your WeChat article is accessible and public."
+  ],
+  "deliveryNotice": "Process: Enter article link and views count, pay via Alipay/PayPal, support starts within 24h.",
+  "features": [
+    "Article Views: $5.60 / 1000 views",
+    "Stable growth rate",
+    "Safe and compliant with WeChat guidelines"
+  ],
+  "inStock": true,
+  "buyButtonText": "Submit Request",
+  "orderName": "WeChat Articles Promotion",
+  "isHot": false,
+  "actionType": "buy",
+  "originalPriceText": ""
+}

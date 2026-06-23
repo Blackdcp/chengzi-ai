@@ -1,0 +1,30 @@
+{
+  "id": "marketing-xiaohongshu",
+  "categoryId": "marketing",
+  "categoryName": "社交媒体买量推广",
+  "title": "小红书自助推广服务",
+  "subtitle": "提供高质量小红书点赞、阅读量提升服务，安全稳定，助力上热门。",
+  "price": 2,
+  "tags": [
+    "粉丝 950元/1000粉",
+    "点赞 2元/个",
+    "阅读 70元/1000个"
+  ],
+  "warnings": [
+    "⚠️ 请确保需要买量的作品链接处于公开状态，不要设置私密。"
+  ],
+  "deliveryNotice": "交付流程：填写作品链接与需求，扫码支付后点击确认，客服将在 24 小时内安排发货。",
+  "features": [
+    "粉丝服务：¥ 950.00 / 1000 粉丝",
+    "点赞服务：¥ 2.00 / 个",
+    "阅读量服务：¥ 70.00 / 1000 个",
+    "纯真人账号活跃操作",
+    "安全不限流，稳步增长"
+  ],
+  "inStock": true,
+  "buyButtonText": "提交需求",
+  "orderName": "小红书自助推广服务",
+  "isHot": true,
+  "actionType": "buy",
+  "originalPriceText": ""
+}
