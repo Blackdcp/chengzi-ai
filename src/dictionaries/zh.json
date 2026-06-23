@@ -53,113 +53,37 @@
   "apiService": {
     "nav": {
       "home": "首页",
-      "models": "模型与定价",
+      "models": "模型",
+      "pricing": "价格",
       "tutorial": "接入教程",
+      "faq": "FAQ",
       "console": "控制台"
     },
     "hero": {
-      "title": "企业级 AI 接口中转服务",
-      "subtitle": "国内直连 · 超低价格 · 99.9% 可用性",
-      "description": "一站式接入 OpenAI / Claude / Gemini 全系模型，无需翻墙，兼容官方 API 格式，开箱即用。",
-      "ctaConsole": "前往控制台",
-      "ctaPricing": "查看定价",
-      "compatibilityBadge": "100% 完全兼容 OpenAI 接口协议"
+      "title": "低价 AI API 中转服务",
+      "subtitle": "多模型接入 · 低价额度 · OpenAI 格式兼容",
+      "description": "支持主流 AI 模型接口中转，适合个人开发者、AI 工具用户和小团队低成本测试使用。可用于 Cursor、Cline、ChatBox、NextChat 等支持自定义 Base URL 的客户端。",
+      "ctaConsole": "进入控制台",
+      "ctaBuy": "立即购买兑换码",
+      "ctaTutorial": "查看 3 分钟接入教程"
     },
     "models": {
-      "title": "支持模型",
-      "subtitle": "覆盖主流 AI 厂商全系模型，持续更新",
+      "title": "可用模型",
+      "subtitle": "支持多家主流模型接口，具体可用模型、价格倍率与状态以控制台为准。",
       "model": "模型名称",
       "provider": "供应商",
       "status": "状态",
       "available": "可用",
       "openai": "OpenAI",
       "claude": "Claude",
-      "gemini": "Gemini"
-    },
-    "pricing": {
-      "title": "灵活定价",
-      "subtitle": "按量付费，用多少买多少，不浪费一分钱",
-      "starter": {
-        "name": "体验兑换码",
-        "price": "¥29.9",
-        "unit": "/ 包含 $5 官方等价额度",
-        "features": [
-          "全部模型可用",
-          "社区群技术支持",
-          "99.9% SLA 保障",
-          "兑换码自助充值"
-        ],
-        "cta": "立即购买"
-      },
-      "standard": {
-        "name": "标准兑换码",
-        "badge": "推荐",
-        "price": "¥79.9",
-        "unit": "/ 包含 $15 官方等价额度",
-        "features": [
-          "全部模型可用",
-          "优先技术支持",
-          "99.9% SLA 保障",
-          "兑换码自助充值",
-          "用量统计面板"
-        ],
-        "cta": "立即购买"
-      },
-      "premium": {
-        "name": "尊享兑换码",
-        "price": "¥129.0",
-        "unit": "/ 包含 $30 官方等价额度",
-        "features": [
-          "全部模型可用",
-          "1v1 专属技术支持",
-          "99.99% SLA 保障",
-          "兑换码自助充值",
-          "用量统计面板",
-          "优先调用通道"
-        ],
-        "cta": "立即购买"
-      }
-    },
-    "ecosystem": {
-      "title": "生态与客户端支持",
-      "subtitle": "免代码接入，100+ 热门应用即刻可用",
-      "clientTab": "客户端接入 (推荐)",
-      "developerTab": "开发者代码接入",
-      "clientDesc": "无需编写代码。只需在以下任意客户端填入 Base URL 和 API Key 即可。",
-      "codeTitle": "调用示例",
-      "codeComment1": "# 只需替换 base_url 和 api_key，其他代码完全兼容 OpenAI 官方 SDK",
-      "codeComment2": "# 替换为你在控制台生成的 Key"
-    },
-    "faq": {
-      "title": "常见问题",
-      "items": [
-        {
-          "question": "支持哪些模型？",
-          "answer": "目前支持 OpenAI（GPT-4o、GPT-4o-mini、o1 等）、Claude（claude-opus-4、claude-sonnet-4 等）、Gemini（gemini-2.5-flash 等）全系模型，列表持续更新。"
-        },
-        {
-          "question": "如何充值？",
-          "answer": "购买兑换码后，在控制台使用兑换码即可自助充值，token 额度即时到账。"
-        },
-        {
-          "question": "可以退款吗？",
-          "answer": "兑换码未使用的情况下可以申请全额退款，已充值的 token 额度不支持退款。"
-        },
-        {
-          "question": "和官方 API 有什么区别？",
-          "answer": "我们是官方 API 的中转服务，接口格式 100% 兼容。优势在于国内直连、无需翻墙、价格更低。"
-        },
-        {
-          "question": "调用限速吗？",
-          "answer": "标准版和尊享版无额外限速，体验版在高峰期可能有轻微排队，但不影响正常使用。"
-        }
-      ]
+      "gemini": "Gemini",
+      "disclaimer": "模型列表可能随上游状态和成本变化调整。"
     },
     "footer": {
       "contact": "联系客服",
       "copyright": "橙子 AI. All rights reserved.",
       "backToHome": "返回主站",
-      "disclaimer": "免责声明：根据中国大陆的法律法规限制，本站不为来自中国大陆的用户提供任何 OpenAI 相关的服务，请来自中国大陆的用户自觉停止访问本站。"
+      "disclaimer": "服务可用范围受相关法律法规、平台政策及上游服务规则影响。用户应自行确认其所在地区是否允许使用相关服务。本站为第三方 API 中转与额度服务平台，非 OpenAI、Anthropic、Google 官方服务，亦非其授权代理。相关模型名称和商标归对应权利方所有。"
     }
   }
 }
