@@ -3,13 +3,13 @@
   "categoryId": "ai-api",
   "categoryName": "Codex API 中转服务 · 稳定节点",
   "title": "CodexAPI 体验版（100万额度）",
-  "subtitle": "支持 OpenAI 兼容接口，国内直连可用，适合个人测试、学习、轻量开发。",
+  "subtitle": "支持 OpenAI 兼容接口，适合个人测试、学习、轻量开发。",
   "price": 29.9,
   "originalPriceText": "¥ 99.00",
   "originalPriceNote": "市场原价",
   "order": 3,
   "tags": [
-    "国内可用",
+    "极速网络",
     "OpenAI接口",
     "包含教程"
   ],
@@ -20,7 +20,7 @@
   "deliveryNotice": "交付流程：下单后，客服会发送专属 API Key、调用地址（Base URL）以及详细的基础配置文档给您。",
   "features": [
     "100万 API 消耗额度",
-    "国内直连，无需代理",
+    "极速响应，使用简单",
     "兼容标准 OpenAI 接口规范",
     "赠送基础接入教程文档"
   ],

@@ -22,7 +22,14 @@ export async function POST(req: Request) {
       },
     });
 
-    const payMethodStr = payMethod === 'alipay' ? '支付宝' : '微信支付';
+    let payMethodStr = '未知';
+    if (payMethod === 'alipay') {
+      payMethodStr = '支付宝';
+    } else if (payMethod === 'wechat') {
+      payMethodStr = '微信支付';
+    } else if (payMethod === 'paypal') {
+      payMethodStr = 'PayPal';
+    }
 
     const htmlContent = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;">
