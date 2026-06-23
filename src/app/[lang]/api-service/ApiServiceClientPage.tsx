@@ -339,9 +339,43 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
       </header>
 
       {/* ───── Hero ───── */}
-      <section style={{ padding: "80px 24px 100px", textAlign: "center", position: "relative" }}>
-        <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <div style={{ display: "inline-block", padding: "6px 16px", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "999px", fontSize: 13, color: "#9ca3af", marginBottom: 24, background: "rgba(255,255,255,0.05)" }}>
+      <section
+        style={{
+          background: "linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%)",
+          color: "#ffffff",
+          padding: "100px 24px 120px",
+          position: "relative",
+          overflow: "hidden",
+          textAlign: "center"
+        }}
+      >
+        {/* Decorative grid overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+            pointerEvents: "none",
+          }}
+        />
+        {/* Radial glow */}
+        <div
+          style={{
+            position: "absolute",
+            top: "-40%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "800px",
+            height: "800px",
+            background: "radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+        
+        <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <div style={{ display: "inline-block", padding: "6px 16px", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "999px", fontSize: 13, color: "rgba(255,255,255,0.7)", marginBottom: 24, background: "rgba(255,255,255,0.05)" }}>
             OpenAI / Claude / Gemini
           </div>
           <h1 style={{ fontSize: "clamp(32px, 6vw, 56px)", fontWeight: 800, lineHeight: 1.1, marginBottom: 20 }}>
@@ -359,13 +393,23 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
               onClick={() => scrollTo("pricing")}
               style={{
                 padding: "14px 32px",
-                background: "#2563eb",
-                color: "#ffffff",
+                background: "#ffffff",
+                color: "#0a0a0a",
                 border: "none",
                 borderRadius: "8px",
-                fontSize: 16,
+                fontSize: 15,
                 fontWeight: 600,
                 cursor: "pointer",
+                transition: "transform 0.2s, box-shadow 0.2s",
+                boxShadow: "0 4px 14px rgba(0,0,0,0.25)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.35)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 4px 14px rgba(0,0,0,0.25)";
               }}
             >
               {t.hero.ctaBuy}
@@ -375,12 +419,21 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
               style={{
                 padding: "14px 32px",
                 background: "transparent",
-                color: "#d1d5db",
-                border: "1px solid rgba(255,255,255,0.2)",
+                color: "#ffffff",
+                border: "1px solid rgba(255,255,255,0.25)",
                 borderRadius: "8px",
-                fontSize: 16,
+                fontSize: 15,
                 fontWeight: 600,
                 cursor: "pointer",
+                transition: "border-color 0.2s, background 0.2s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.6)";
+                e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)";
+                e.currentTarget.style.background = "transparent";
               }}
             >
               {t.hero.ctaTutorial}
