@@ -34,46 +34,32 @@ const getPlans = (lang: string) => {
   const isEn = lang === "en";
   return [
     {
-      id: "starter",
-      name: isEn ? "Starter Code" : "体验兑换码",
-      priceText: isEn ? "¥29.9" : "¥29.9",
-      priceValue: 29.9,
-      priceUsd: 4.49,
-      credit: isEn ? "$5 Platform Quota" : "$5 平台等价调用额度",
+      id: "plan_100",
+      name: isEn ? "Basic Credit Code" : "基础充值码",
+      priceText: isEn ? "$100" : "¥100",
+      priceValue: 100,
+      priceUsd: 100,
+      credit: isEn ? "$100 platform credit" : "$100 平台计价额度",
       badge: "",
-      bestFor: isEn ? "Suitable for testing interface and client config" : "适合先测试接口、跑通客户端配置",
+      bestFor: isEn ? "For individual developers, AI client testing, and lightweight usage." : "适合：个人开发者、AI 客户端测试、Cursor / Cline / ChatBox 轻量使用",
       features: isEn
         ? ["Mainstream models available", "Self-service top-up in console", "Usage logs view", "Basic community support"]
         : ["主流模型可用", "支持控制台自助兑换", "支持用量记录查看", "社群基础支持"],
-      buttonText: isEn ? "Buy Starter Code" : "购买体验码",
+      buttonText: isEn ? "Buy $100 Credit Code" : "购买 ¥100 充值码",
     },
     {
-      id: "standard",
-      name: isEn ? "Standard Code" : "标准兑换码",
-      priceText: isEn ? "¥79.9" : "¥79.9",
-      priceValue: 79.9,
-      priceUsd: 11.49,
-      credit: isEn ? "$15 Platform Quota" : "$15 平台等价调用额度",
+      id: "plan_300",
+      name: isEn ? "Pro Credit Code" : "大额充值码",
+      priceText: isEn ? "$300" : "¥300",
+      priceValue: 300,
+      priceUsd: 300,
+      credit: isEn ? "$300 platform credit" : "$300 平台计价额度",
       badge: isEn ? "Recommended" : "推荐",
-      bestFor: isEn ? "Ideal for Cursor / Cline / ChatBox daily light use" : "适合 Cursor / Cline / ChatBox 日常轻量使用",
-      features: isEn
-        ? ["Mainstream models available", "Self-service top-up in console", "Usage statistics dashboard", "Priority issue handling"]
-        : ["主流模型可用", "支持控制台自助兑换", "支持用量统计", "优先问题处理"],
-      buttonText: isEn ? "Buy Standard Code" : "购买标准码",
-    },
-    {
-      id: "premium",
-      name: isEn ? "Premium Code" : "尊享兑换码",
-      priceText: isEn ? "¥129" : "¥129",
-      priceValue: 129,
-      priceUsd: 18.49,
-      credit: isEn ? "$30 Platform Quota" : "$30 平台等价调用额度",
-      badge: "",
-      bestFor: isEn ? "Suitable for multiple tools, intensive testing" : "适合多工具、多模型测试和更高额度使用",
+      bestFor: isEn ? "For frequent usage, AI coding, multi-model testing, and small team usage." : "适合：高频使用、AI Coding、多模型测试、小团队轻量共用",
       features: isEn
         ? ["Mainstream models available", "Self-service top-up in console", "Usage statistics dashboard", "Peak-time priority routing", "1v1 Setup assistance"]
         : ["主流模型可用", "支持控制台自助兑换", "支持用量统计", "高峰期优先处理", "1v1 配置协助"],
-      buttonText: isEn ? "Buy Premium Code" : "购买尊享码",
+      buttonText: isEn ? "Buy $300 Credit Code" : "购买 ¥300 充值码",
     },
   ];
 };
@@ -126,24 +112,34 @@ const getQuickStartSteps = (lang: string) => {
   const isEn = lang === "en";
   return [
     {
-      title: isEn ? "1. Purchase Redeem Code" : "1. 购买兑换码",
-      desc: isEn ? "Select the CDK package that fits your needs, and receive the code after payment." : "选择适合自己的额度套餐，完成购买后获得兑换码。"
+      title: isEn ? "1. Buy Credit Code" : "1. 购买充值码",
+      desc: isEn 
+        ? "Select $100 / $300 credit code, complete payment via PayPal, and submit your email." 
+        : "选择 ¥100 / ¥300 充值码，完成支付宝付款，并提交邮箱。"
     },
     {
-      title: isEn ? "2. Redeem in Console" : "2. 进入控制台兑换额度",
-      desc: isEn ? "Log in to the console, input the redeem code in the redeem page. The quota will credit instantly." : "登录控制台，在兑换码页面输入兑换码，额度会自动充值到账户。"
+      title: isEn ? "2. Manual Verification & Delivery" : "2. 人工核款发码",
+      desc: isEn 
+        ? "We will send the redemption code to your email after manually confirming the payment." 
+        : "我们会在核对收款后，将兑换码发送到你的邮箱。"
     },
     {
-      title: isEn ? "3. Create API Key" : "3. 创建 API Key",
-      desc: isEn ? "Navigate to the Token page inside the console, generate and copy your API Key." : "在控制台进入「令牌」页面，创建并复制自己的 API Key。"
+      title: isEn ? "3. Redeem in Console" : "3. 控制台兑换额度",
+      desc: isEn 
+        ? "Log in to https://api.cheng-zi-ai.com, and redeem the code in the redeem page." 
+        : "登录 https://api.cheng-zi-ai.com，在「兑换」页面输入兑换码。"
     },
     {
-      title: isEn ? "4. Configure AI Agent / Client" : "4. 填入客户端 / AI 智能体",
-      desc: isEn ? "In Claude Code, CodeX, Cline, Cursor, or any tools supporting custom endpoints, configure the Base URL and API Key." : "在 Claude Code、CodeX、Cline、Cursor 等现代化 AI 编程智能体或支持自定义 API 的开发工具中，填写 Base URL 和 API Key。"
+      title: isEn ? "4. Create API Key" : "4. 创建 API Key",
+      desc: isEn 
+        ? "Navigate to the Token page inside the console, generate your API Key." 
+        : "进入「令牌」页面创建你的 API Key。"
     },
     {
-      title: isEn ? "5. Send Test Request" : "5. 发送测试请求",
-      desc: isEn ? "Choose a model and send a test message. If successful, you can verify usage and call records in the console." : "选择模型后发送一条测试消息，如果返回正常，即代表配置成功。后续可在控制台查看调用记录和额度消耗。"
+      title: isEn ? "5. Configure Client" : "5. 填入客户端",
+      desc: isEn 
+        ? "Base URL is https://api.cheng-zi-ai.com/v1, and API Key is your created token." 
+        : "Base URL 填写 https://api.cheng-zi-ai.com/v1，API Key 填写你创建的令牌。"
     }
   ];
 };
@@ -152,46 +148,40 @@ const getFaqItems = (lang: string) => {
   const isEn = lang === "en";
   return [
     {
-      question: isEn ? "Which models are supported?" : "支持哪些模型？",
+      question: isEn ? "Is this an official service?" : "这是官方服务吗？",
       answer: isEn
-        ? "We support OpenAI format, Claude, and Gemini models. Specific available models, price multipliers, and statuses are detailed in the console. Model availability can adjust dynamically based on upstream status and cost adjustments."
-        : "支持 OpenAI 格式、Claude、Gemini 等主流模型中转。具体可用模型、价格倍率和状态以控制台显示为准。模型可能会根据上游状态和成本变化动态调整。"
+        ? "No. This site is a third-party API relay and platform credit service, not affiliated with or authorized by OpenAI, Anthropic, or Google."
+        : "不是。本站为第三方 API 中转与平台计价额度服务，不是 OpenAI、Anthropic、Google 官方服务，也不是官方授权代理。"
     },
     {
-      question: isEn ? "How do I top up?" : "如何充值？",
+      question: isEn ? "What am I buying?" : "购买的是什么？",
       answer: isEn
-        ? "After purchasing a redeem code, log in to the console, navigate to the Redeem Code page, enter the code to redeem. The balance will instantly credit to your account."
-        : "购买兑换码后，在控制台输入兑换码，即可兑换为平台调用额度。额度到账后可创建 API Key 并开始调用。"
+        ? "You are purchasing a redemption code for platform credit, not official account balances or official USD top-ups. You can view your balance and call logs in the console after redemption."
+        : "购买的是本站平台计价额度兑换码，不是官方账户余额或官方美元充值。兑换码兑换后可在控制台中查看余额和调用记录。"
+    },
+    {
+      question: isEn ? "Are fees different for different models?" : "不同模型扣费一样吗？",
+      answer: isEn
+        ? "Yes, they differ. Different models and endpoints consume credit at different rates. The actual deduction is based on console usage logs."
+        : "不一样。不同模型、不同线路会按不同倍率消耗额度，实际扣费以控制台调用日志为准。"
+    },
+    {
+      question: isEn ? "How long to receive the code after payment?" : "付款后多久收到兑换码？",
+      answer: isEn
+        ? "After PayPal payment, please submit your email and order information. We will send the redemption code after manual confirmation."
+        : "支付宝付款后，请提交邮箱和订单信息。我们会在人工核对收款后发送兑换码。"
     },
     {
       question: isEn ? "Can I get a refund?" : "可以退款吗？",
       answer: isEn
-        ? "Unused redeem codes are eligible for refunds. Redeemed codes or balances that have incurred calls/usage are non-refundable. If you encounter abnormal deductions, contact support to investigate."
-        : "兑换码未使用可申请退款；已兑换或已产生调用消耗的额度不支持无理由退款。若出现扣费异常或调用失败扣费，可联系客服核查处理。"
-    },
-    {
-      question: isEn ? "What is the difference from official APIs?" : "和官方 API 有什么区别？",
-      answer: isEn
-        ? "This site is a third-party relay service, not affiliated with or authorized by OpenAI, Anthropic, or Google. We offer consolidated API access, unified top-up CDK, usage analytics, and client integrations. Advantages are lower costs, easier access, and multi-model unified management."
-        : "本站不是 OpenAI、Anthropic、Google 官方服务，也不是官方授权代理。我们提供第三方 API 中转、统一充值、统一 Key、用量统计和客户端适配。优势是低价、接入简单、多模型统一管理。"
-    },
-    {
-      question: isEn ? "Will calls be rate-limited?" : "调用会限速吗？",
-      answer: isEn
-        ? "Different models and packages have different concurrency and peak-time scheduling strategies. Normal lightweight usage will not be affected. For extremely high-frequency, massive batch, or abnormal calls, the system may apply queueing or rate limits."
-        : "不同模型和套餐会有不同并发与高峰期策略。正常轻量使用不受影响；如出现高频、大批量或异常调用，系统可能临时限制或排队。"
+        ? "Unused redemption codes are eligible for refunds by contacting support. Once redeemed or consumed, codes are non-refundable. For abnormal billing, contact support to investigate."
+        : "兑换码未使用前可以联系客服处理退款。兑换码一经兑换，或额度已经产生调用消耗，不支持无理由退款。异常扣费或调用失败扣费可以联系客服核查。"
     },
     {
       question: isEn ? "Is it suitable for production?" : "适合生产环境吗？",
       answer: isEn
-        ? "It is best suited for individual developers, sandbox testing, client integrations, and prototype MVPs. It is not recommended for high-risk domains like medical, financial, or legal production systems."
-        : "更适合个人开发者、小团队测试、AI 客户端接入和原型验证。不建议直接用于医疗、金融、法律等高风险正式生产场景。"
-    },
-    {
-      question: isEn ? "Can I submit sensitive information?" : "可以提交敏感信息吗？",
-      answer: isEn
-        ? "We advise against submitting credentials, private keys, government IDs, confidential business secrets, or unreleased codebase snippets. Please evaluate data security risks beforehand."
-        : "不建议提交密码、密钥、身份证、商业机密、未公开代码等敏感内容。请在使用前自行判断数据风险。"
+        ? "It is best suited for individual developers, small team testing, AI client integration, and lightweight usage. We do not recommend it for enterprise production, high-concurrency core businesses, or high-risk scenarios such as medical, financial, or legal domains."
+        : "更适合个人开发者、小团队测试、AI 客户端接入和轻量使用。不建议用于企业正式生产、高并发核心业务、医疗、金融、法律等高风险场景。"
     }
   ];
 };
@@ -215,6 +205,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
   const [payMethod, setPayMethod] = useState<"alipay" | "wechat">("alipay");
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
+  const [contact, setContact] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderId, setOrderId] = useState("");
 
@@ -264,6 +255,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
     setOrderId(genOrderId());
     setEmail("");
     setEmailErr("");
+    setContact("");
     setPurchaseStep("confirm");
     setIsPurchaseModalOpen(true);
   };
@@ -286,12 +278,10 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          orderId: orderId,
+          planId: selectedPlan.id,
           email: email,
-          productName: selectedPlan.name,
-          price: selectedPlan.priceValue, // Always send RMB value to route.ts for verification consistency
-          payMethod: isEn ? "paypal" : payMethod,
-          refCode: ""
+          lang: lang,
+          contact: contact
         })
       });
       if (res.ok) {
@@ -1587,61 +1577,66 @@ print(response.choices[0].message.content)`;
             {purchaseStep === "pay" && (
               <div style={{ textAlign: "center" }}>
                 <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: "#111827", textAlign: "left" }}>
-                  {isEn ? "Payment Details" : "订单支付"}
+                  {isEn ? "PayPal Payment" : "支付宝付款"}
                 </h3>
                 
                 {isEn ? (
                   <>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 8, textAlign: "left" }}>1. Send Payment via PayPal</div>
                     <div style={{ background: "#f0f5ff", border: "1px solid #1677ff", borderRadius: "8px", padding: "16px", marginBottom: 20 }}>
-                      <p style={{ margin: "0 0 10px", fontSize: 14, color: "#111827" }}>
+                      <p style={{ margin: "0 0 10px", fontSize: 14, color: "#111827", textAlign: "left" }}>
                         Please send <strong style={{ color: "#1677ff" }}>${selectedPlan.priceUsd}</strong> to PayPal account:
                       </p>
-                      <div style={{ fontSize: 16, fontWeight: 700, color: "#1677ff", wordBreak: "break-all", userSelect: "all" }}>
+                      <div style={{ fontSize: 16, fontWeight: 700, color: "#1677ff", wordBreak: "break-all", userSelect: "all", textAlign: "center" }}>
                         CHENGZIAI2026@163.COM
                       </div>
+                    </div>
+                    <div style={{ fontSize: 12, color: "#666", marginBottom: 20, textAlign: "left", lineHeight: 1.5 }}>
+                      Please complete the payment via PayPal. After payment, submit your email. We will send the redemption code after manually confirming the payment.
                     </div>
                   </>
                 ) : (
                   <>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>1. 扫码进行支付（订单金额：<strong style={{ color: "#ff5a00" }}>{selectedPlan.priceText}</strong>）</div>
-                    <div style={{ display: "flex", gap: 12, marginBottom: 16 }}>
-                      <button 
-                        onClick={() => setPayMethod("alipay")}
-                        style={{ flex: 1, padding: "8px", borderRadius: "6px", border: payMethod === "alipay" ? "2px solid #1677ff" : "1px solid #eaeaea", background: payMethod === "alipay" ? "#f0f5ff" : "#fff", color: payMethod === "alipay" ? "#1677ff" : "#666", fontWeight: 600, cursor: "pointer", transition: "all 0.2s", fontSize: 13 }}
-                      >
-                        支付宝
-                      </button>
-                      <button 
-                        onClick={() => setPayMethod("wechat")}
-                        style={{ flex: 1, padding: "8px", borderRadius: "6px", border: payMethod === "wechat" ? "2px solid #07c160" : "1px solid #eaeaea", background: payMethod === "wechat" ? "#f0fdf4" : "#fff", color: payMethod === "wechat" ? "#07c160" : "#666", fontWeight: 600, cursor: "pointer", transition: "all 0.2s", fontSize: 13 }}
-                      >
-                        微信支付
-                      </button>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>
+                      请使用支付宝扫码支付（金额：<strong style={{ color: "#ff5a00" }}>{selectedPlan.priceText}</strong>）
                     </div>
-
-                    <div style={{ width: 180, height: 180, margin: "0 auto 20px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+                    <div style={{ width: 160, height: 160, margin: "0 auto 16px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
                       <img 
-                        src={payMethod === "alipay" ? "/images/alipay.jpg" : "/images/wechat.jpg"} 
-                        alt="Payment QR Code" 
+                        src="/images/alipay.jpg" 
+                        alt="Alipay QR Code" 
                         style={{ width: "100%", height: "100%", objectFit: "contain" }} 
                       />
+                    </div>
+                    <div style={{ fontSize: 12, color: "#666", marginBottom: 16, textAlign: "left", lineHeight: 1.5 }}>
+                      付款后填写邮箱并提交订单信息，我们会在人工核对收款后发送兑换码。
                     </div>
                   </>
                 )}
 
-                <div style={{ borderTop: "1px dashed #eaeaea", paddingTop: 16, marginBottom: 20 }}>
-                  <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>
-                    {isEn ? "2. Confirm Your Email Address" : "2. 填写您的接收邮箱"}
+                <div style={{ borderTop: "1px dashed #eaeaea", paddingTop: 16, marginBottom: 16 }}>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 8, textAlign: "left" }}>
+                    {isEn ? "Confirm Your Email Address" : "填写您的接收邮箱"}
                   </div>
                   <input 
                     type="email" 
-                    placeholder={isEn ? "you@example.com (To receive the redeem code)" : "you@example.com (支付后用于收取兑换码)"} 
+                    placeholder={isEn ? "you@example.com (To receive code)" : "you@example.com (支付后用于收取兑换码)"} 
                     value={email} 
                     onChange={e => { setEmail(e.target.value); if(emailErr) setEmailErr(""); }} 
-                    style={{ width: "100%", padding: "12px", border: emailErr ? "1px solid #e00000" : "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box" }} 
+                    style={{ width: "100%", padding: "10px 12px", border: emailErr ? "1px solid #e00000" : "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box" }} 
                   />
                   {emailErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: 6, textAlign: "left" }}>{emailErr}</div>}
+                </div>
+
+                <div style={{ marginBottom: 20 }}>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 8, textAlign: "left" }}>
+                    {isEn ? "Contact / Note (Optional)" : "联系方式 / 备注 (选填)"}
+                  </div>
+                  <input 
+                    type="text" 
+                    placeholder={isEn ? "WeChat, QQ, or note" : "如微信号、QQ或付款备注"} 
+                    value={contact} 
+                    onChange={e => setContact(e.target.value)} 
+                    style={{ width: "100%", padding: "10px 12px", border: "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box" }} 
+                  />
                 </div>
 
                 <button 
@@ -1650,7 +1645,7 @@ print(response.choices[0].message.content)`;
                   className="vercel-button" 
                   style={{ width: "100%", padding: "12px 0", fontSize: 14, fontWeight: 500, cursor: isSubmitting ? "not-allowed" : "pointer", opacity: isSubmitting ? 0.7 : 1 }}
                 >
-                  {isSubmitting ? (isEn ? "Submitting..." : "提交中...") : (isEn ? "I have paid, notify support" : "已完成支付，通知客服")}
+                  {isSubmitting ? (isEn ? "Notifying..." : "正在通知...") : (isEn ? "I have paid, notify support" : "已完成支付，通知客服")}
                 </button>
               </div>
             )}
@@ -1664,15 +1659,17 @@ print(response.choices[0].message.content)`;
                 <h4 style={{ fontSize: 18, color: "#111827", margin: "0 0 12px", fontWeight: 700 }}>
                   {isEn ? "Order Submitted" : "订单提交成功"}
                 </h4>
-                <p style={{ fontSize: 14, color: "#666", lineHeight: 1.6, marginBottom: 20 }}>
+                <p style={{ fontSize: 14, color: "#666", lineHeight: 1.6, marginBottom: 20, textAlign: "left" }}>
                   {isEn 
-                    ? "After verification, your redeem code will be sent to:" 
-                    : "收款核对后，您的套餐兑换码会发送到邮箱："}
+                    ? "Order submitted. We will send the redemption code to your email after manually confirming the payment." 
+                    : "订单已提交。我们会在核对收款后，将兑换码发送到你的邮箱。"}
                   <br/>
-                  <strong style={{ color: "#111827" }}>{email}</strong>
+                  {isEn ? "Email: " : "接收邮箱："}<strong>{email}</strong>
                 </p>
-                <div style={{ background: "#fafafa", padding: "12px", borderRadius: "8px", fontSize: 12, color: "#666", lineHeight: 1.4 }}>
-                  {isEn ? "If you have any questions, contact support: " : "如有任何问题，请联系客服："}
+                <div style={{ background: "#fafafa", padding: "12px", borderRadius: "8px", fontSize: 12, color: "#666", lineHeight: 1.4, textAlign: "left" }}>
+                  {isEn 
+                    ? "If you do not receive it within 30 minutes, please contact: " 
+                    : "如果 30 分钟内未收到，请联系客服："}
                   <a href="mailto:chengziai2026@163.com" style={{ color: "#111827", fontWeight: 600, textDecoration: "none" }}>chengziai2026@163.com</a>
                 </div>
               </div>
@@ -1724,10 +1721,15 @@ print(response.choices[0].message.content)`;
         }}
       >
         <div style={{ color: "#111827", fontWeight: 700 }}>
-          <span style={{ fontSize: 11, color: "#666", fontWeight: 400, marginRight: 4 }}>
-            {isEn ? "From" : "起"}
-          </span>
-          ¥29.9
+          {isEn ? (
+            <span style={{ fontSize: 13, color: "#111827", fontWeight: 700 }}>
+              $100 credit
+            </span>
+          ) : (
+            <>
+              ¥100 <span style={{ fontSize: 11, color: "#666", fontWeight: 400, marginLeft: 2 }}>起</span>
+            </>
+          )}
         </div>
         <div style={{ display: "flex", gap: 10 }}>
           <button
@@ -1743,7 +1745,7 @@ print(response.choices[0].message.content)`;
               cursor: "pointer",
             }}
           >
-            {isEn ? "Tutorial" : "接入教程"}
+            {isEn ? "Setup Guide" : "接入教程"}
           </button>
           <button
             onClick={() => scrollTo("pricing")}
@@ -1758,7 +1760,7 @@ print(response.choices[0].message.content)`;
               cursor: "pointer",
             }}
           >
-            {isEn ? "Buy Code" : "购买兑换码"}
+            {isEn ? "Buy Credit Code" : "购买充值码"}
           </button>
         </div>
       </div>

@@ -1,14 +1,102 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+const PLAN_MAP = {
+  plan_100: {
+    zhName: "基础充值码",
+    enName: "Basic Credit Code",
+    cnyAmount: 100,
+    usdAmount: 100,
+    platformCreditZh: "$100 平台计价额度",
+    platformCreditEn: "$100 platform credit",
+  },
+  plan_300: {
+    zhName: "大额充值码",
+    enName: "Pro Credit Code",
+    cnyAmount: 300,
+    usdAmount: 300,
+    platformCreditZh: "$300 平台计价额度",
+    platformCreditEn: "$300 platform credit",
+  },
+} as const;
+
+function escapeHtml(unsafe: string): string {
+  if (!unsafe) return '';
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { orderId, email, productName, price, payMethod, refCode, workLink, requirement } = body;
+    const { planId, email, lang, contact } = body;
 
-    // Validate inputs
-    if (!orderId || !email || !productName) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    let finalOrderId = '';
+    let finalProductName = '';
+    let finalPrice = '';
+    let finalPayMethodStr = '';
+    let finalEmail = '';
+    let finalContact = '';
+    let finalLang = lang === 'en' ? 'English' : '中文';
+    let finalCredit = '';
+
+    if (planId) {
+      // 1. API Service Order with planId secure validation
+      const plan = PLAN_MAP[planId as keyof typeof PLAN_MAP];
+      if (!plan) {
+        return NextResponse.json({ error: 'Invalid planId' }, { status: 400 });
+      }
+      if (!email || !emailRegex.test(email)) {
+        return NextResponse.json({ error: 'Invalid email address' }, { status: 400 });
+      }
+
+      // Generate order ID
+      const now = new Date();
+      const ts = now.getFullYear().toString() +
+        (now.getMonth() + 1).toString().padStart(2, '0') +
+        now.getDate().toString().padStart(2, '0') +
+        now.getHours().toString().padStart(2, '0') +
+        now.getMinutes().toString().padStart(2, '0') +
+        now.getSeconds().toString().padStart(2, '0');
+      const rand = Math.floor(1000 + Math.random() * 9000);
+      finalOrderId = `API-${ts}-${rand}`;
+
+      const isEn = lang === 'en';
+      finalProductName = isEn ? plan.enName : plan.zhName;
+      finalPrice = isEn ? `$${plan.usdAmount}` : `¥${plan.cnyAmount}`;
+      finalPayMethodStr = isEn ? 'PayPal' : '支付宝';
+      finalEmail = escapeHtml(email);
+      finalContact = escapeHtml(contact || '');
+      finalCredit = isEn ? plan.platformCreditEn : plan.platformCreditZh;
+    } else {
+      // 2. Legacy / Marketing / Main page fallback
+      const { orderId, email: rawEmail, productName, price, payMethod, refCode, workLink, requirement } = body;
+      if (!orderId || !rawEmail || !productName) {
+        return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+      }
+      if (!emailRegex.test(rawEmail)) {
+        return NextResponse.json({ error: 'Invalid email address' }, { status: 400 });
+      }
+      finalOrderId = escapeHtml(orderId);
+      finalProductName = escapeHtml(productName);
+      finalPrice = price !== undefined ? (lang === 'en' ? `$${price}` : `¥${price}`) : '未知';
+      finalEmail = escapeHtml(rawEmail);
+      
+      let payMethodStr = '未知';
+      if (payMethod === 'alipay') {
+        payMethodStr = '支付宝';
+      } else if (payMethod === 'wechat') {
+        payMethodStr = '微信支付';
+      } else if (payMethod === 'paypal') {
+        payMethodStr = 'PayPal';
+      }
+      finalPayMethodStr = payMethodStr;
     }
 
     // Configure nodemailer transporter using environment variables
@@ -22,15 +110,6 @@ export async function POST(req: Request) {
       },
     });
 
-    let payMethodStr = '未知';
-    if (payMethod === 'alipay') {
-      payMethodStr = '支付宝';
-    } else if (payMethod === 'wechat') {
-      payMethodStr = '微信支付';
-    } else if (payMethod === 'paypal') {
-      payMethodStr = 'PayPal';
-    }
-
     const htmlContent = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden;">
         <div style="background-color: #0a0a0a; color: #ffffff; padding: 20px; text-align: center;">
@@ -43,44 +122,60 @@ export async function POST(req: Request) {
             <tbody>
               <tr>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666; width: 100px;">订单编号</td>
-                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600;">${orderId}</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600;">${finalOrderId}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">系统语言</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600;">${finalLang}</td>
               </tr>
               <tr>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">商品名称</td>
-                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; color: #ff6600;">${productName}</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; color: #ff6600;">${finalProductName}</td>
               </tr>
+              ${finalCredit ? `
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">平台额度</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; color: #22c55e;">${finalCredit}</td>
+              </tr>
+              ` : ''}
               <tr>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">支付金额</td>
-                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600;">¥ ${price}</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600;">${finalPrice}</td>
               </tr>
               <tr>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">支付方式</td>
-                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600;">${payMethodStr}</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600;">${finalPayMethodStr}</td>
               </tr>
-              ${refCode ? `
-              <tr>
-                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">代理监测码</td>
-                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; color: #ff6600;">${refCode}</td>
-              </tr>
-              ` : ''}
               <tr>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">客户邮箱</td>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600;">
-                  <a href="mailto:${email}" style="color: #0a0a0a; text-decoration: none;">${email}</a>
+                  <a href="mailto:${finalEmail}" style="color: #0a0a0a; text-decoration: none;">${finalEmail}</a>
                 </td>
               </tr>
-              ${workLink ? `
+              ${finalContact ? `
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">联系备注</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; white-space: pre-wrap;">${finalContact}</td>
+              </tr>
+              ` : ''}
+              ${body.refCode ? `
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">代理监测码</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; color: #ff6600;">${escapeHtml(body.refCode)}</td>
+              </tr>
+              ` : ''}
+              ${body.workLink ? `
               <tr>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">作品/主页链接</td>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; word-break: break-all;">
-                  <a href="${workLink}" target="_blank" style="color: #1677ff;">${workLink}</a>
+                  <a href="${escapeHtml(body.workLink)}" target="_blank" style="color: #1677ff;">${escapeHtml(body.workLink)}</a>
                 </td>
               </tr>
               ` : ''}
-              ${requirement ? `
+              ${body.requirement ? `
               <tr>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">具体需求</td>
-                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; white-space: pre-wrap;">${requirement}</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; white-space: pre-wrap;">${escapeHtml(body.requirement)}</td>
               </tr>
               ` : ''}
             </tbody>
@@ -96,7 +191,7 @@ export async function POST(req: Request) {
     const mailOptions = {
       from: `"订单系统" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_EMAIL || process.env.SMTP_USER,
-      subject: `[新订单] 收到一笔新订单：${productName} (¥${price})`,
+      subject: `[新订单] 收到一笔新订单：${finalProductName} (${finalPrice})`,
       html: htmlContent,
     };
 
