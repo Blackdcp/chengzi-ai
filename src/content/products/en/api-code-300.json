@@ -1,0 +1,31 @@
+{
+  "id": "api-code-300",
+  "categoryId": "ai-api",
+  "categoryName": "API Credit Codes",
+  "title": "Pro Credit Code ($300)",
+  "subtitle": "Get $300 platform credit. Best value for intensive AI Coding assistant usage and multi-model testing.",
+  "price": 300,
+  "originalPriceText": "",
+  "order": 2,
+  "tags": [
+    "$300 credit",
+    "PayPal only",
+    "Manual delivery",
+    "Best Value"
+  ],
+  "warnings": [
+    "⚠️ The redemption code will be sent by email after manual payment confirmation."
+  ],
+  "deliveryNotice": "Process: Click to redirect to the API service page to complete payment and order submission.",
+  "features": [
+    "Get $300 platform credit",
+    "Optimized concurrency routing and high-availability endpoints",
+    "Redemption code sent via email after manual verification"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy $300 Credit Code",
+  "orderName": "Pro Credit Code",
+  "isHot": true,
+  "actionType": "link",
+  "linkUrl": "/en/api-service"
+}

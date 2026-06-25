@@ -1,0 +1,31 @@
+{
+  "id": "api-code-300",
+  "categoryId": "ai-api",
+  "categoryName": "API 充值额度",
+  "title": "大额充值码 (¥300)",
+  "subtitle": "获得 $300 平台计价额度。高频使用、AI Coding 编程助手深度用户推荐款，性价比首选。",
+  "price": 300,
+  "originalPriceText": "",
+  "order": 2,
+  "tags": [
+    "$300 额度",
+    "仅支持支付宝",
+    "人工发码",
+    "推荐款"
+  ],
+  "warnings": [
+    "⚠️ 购买后需要人工审核收款，兑换码将发送至您的接收邮箱。"
+  ],
+  "deliveryNotice": "交付流程：点击“去购买”跳转到 API 专属页面进行支付和提交订单。",
+  "features": [
+    "获得 $300 平台计价额度",
+    "支持高并发及多线路调度优化",
+    "人工核对付款后发送兑换码"
+  ],
+  "inStock": true,
+  "buyButtonText": "去购买 ¥300 充值码",
+  "orderName": "大额充值码",
+  "isHot": true,
+  "actionType": "link",
+  "linkUrl": "/zh/api-service"
+}

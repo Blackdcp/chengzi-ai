@@ -1,0 +1,30 @@
+{
+  "id": "api-code-100",
+  "categoryId": "ai-api",
+  "categoryName": "API 充值额度",
+  "title": "基础充值码 (¥100)",
+  "subtitle": "获得 $100 平台计价额度。支持 OpenAI 格式，可在 Cursor / Cline / ChatBox 等主流 AI 客户端中零代码快速配置使用。",
+  "price": 100,
+  "originalPriceText": "",
+  "order": 1,
+  "tags": [
+    "$100 额度",
+    "仅支持支付宝",
+    "人工发码"
+  ],
+  "warnings": [
+    "⚠️ 购买后需要人工审核收款，兑换码将发送至您的接收邮箱。"
+  ],
+  "deliveryNotice": "交付流程：点击“去购买”跳转到 API 专属页面进行支付和提交订单。",
+  "features": [
+    "获得 $100 平台计价额度",
+    "支持主流 OpenAI 格式兼容调用",
+    "人工核对付款后发送兑换码"
+  ],
+  "inStock": true,
+  "buyButtonText": "去购买 ¥100 充值码",
+  "orderName": "基础充值码",
+  "isHot": false,
+  "actionType": "link",
+  "linkUrl": "/zh/api-service"
+}

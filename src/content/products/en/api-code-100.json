@@ -1,0 +1,30 @@
+{
+  "id": "api-code-100",
+  "categoryId": "ai-api",
+  "categoryName": "API Credit Codes",
+  "title": "Basic Credit Code ($100)",
+  "subtitle": "Get $100 platform credit. Compatible with OpenAI format. Zero-code config in Cursor, Cline, and ChatBox.",
+  "price": 100,
+  "originalPriceText": "",
+  "order": 1,
+  "tags": [
+    "$100 credit",
+    "PayPal only",
+    "Manual delivery"
+  ],
+  "warnings": [
+    "⚠️ The redemption code will be sent by email after manual payment confirmation."
+  ],
+  "deliveryNotice": "Process: Click to redirect to the API service page to complete payment and order submission.",
+  "features": [
+    "Get $100 platform credit",
+    "Compatible with mainstream OpenAI-style clients",
+    "Redemption code sent via email after manual verification"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy $100 Credit Code",
+  "orderName": "Basic Credit Code",
+  "isHot": false,
+  "actionType": "link",
+  "linkUrl": "/en/api-service"
+}
