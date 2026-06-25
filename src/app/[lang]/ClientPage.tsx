@@ -175,9 +175,6 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
                 {dict.header.nav[cat.id] || cat.name}
               </a>
             ))}
-            <Link href={`/${lang}/api-service`} className="nav-link" style={{ textDecoration: "none" }}>
-              {dict.header.nav['api-service'] || 'API Service'}
-            </Link>
             <button onClick={switchLang} style={{ background: "none", border: "1px solid #eaeaea", borderRadius: "6px", padding: "4px 8px", cursor: "pointer", fontSize: 13, fontWeight: 600, color: "#666" }}>
               {lang === 'zh' ? 'EN' : '中文'}
             </button>

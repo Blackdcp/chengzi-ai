@@ -1,7 +1,7 @@
 {
   "id": "api-code-100",
   "categoryId": "ai-api",
-  "categoryName": "API Credit Codes",
+  "categoryName": "API Service",
   "title": "Basic Credit Code ($100)",
   "subtitle": "Get $100 platform credit. Compatible with OpenAI format. Zero-code config in Cursor, Cline, and ChatBox.",
   "price": 100,

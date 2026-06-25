@@ -1,7 +1,7 @@
 {
   "id": "api-code-100",
   "categoryId": "ai-api",
-  "categoryName": "API 充值额度",
+  "categoryName": "API 中转服务",
   "title": "基础充值码 (¥100)",
   "subtitle": "获得 $100 平台计价额度。支持 OpenAI 格式，可在 Cursor / Cline / ChatBox 等主流 AI 客户端中零代码快速配置使用。",
   "price": 100,

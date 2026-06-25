@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'zh
   const isEn = lang === 'en';
   
   const title = isEn 
-    ? "ChengZi AI — Low-cost AI API Credit Codes | OpenAI, Claude, Gemini Compatible"
-    : "橙子AI — 低价 AI API 充值码 | OpenAI / Claude / Gemini 中转服务";
+    ? "ChengZi AI — Low-cost AI API Service | OpenAI, Claude, Gemini Compatible"
+    : "橙子AI — 低价 AI API 中转服务 | OpenAI / Claude / Gemini 兼容";
     
   const description = isEn
     ? "Buy platform credit codes for low-cost AI API access. Compatible with OpenAI-style API clients such as Cursor, Cline, ChatBox, and NextChat. Third-party service for developers and lightweight testing."
