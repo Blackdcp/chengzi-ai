@@ -335,8 +335,9 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
       </div>
       
       <footer style={{ textAlign: "center", padding: "40px 0", borderTop: "1px solid #eaeaea", color: "#666", fontSize: 14 }}>
-        © 2026 橙子 AI. All rights reserved.<br/>
-        客服邮箱：chengziai2026@163.com
+        © {new Date().getFullYear()} {dict.header.title}. All rights reserved.<br/>
+        {lang === 'zh' ? '客服邮箱：' : 'Support Email: '}
+        <a href="mailto:chengziai2026@163.com" style={{ color: "#666", textDecoration: "none" }}>chengziai2026@163.com</a>
       </footer>
         {modal && (
         <div style={{ position: "fixed", inset: 0, zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
