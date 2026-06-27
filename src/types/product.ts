@@ -18,4 +18,12 @@ export interface Product {
   actionType?: "buy" | "consult" | "link";
   linkUrl?: string;
   order?: number;
+  detail?: {
+    title?: string;
+    subtitle?: string;
+    sections?: {
+      title: string;
+      items: string[];
+    }[];
+  };
 }

@@ -1,0 +1,50 @@
+{
+  "id": "chatgpt-plus-monthly-code",
+  "categoryId": "gpt",
+  "categoryName": "GPT 会员",
+  "title": "ChatGPT Plus 国内直连月卡",
+  "subtitle": "不用翻墙，开通后直接可用。适合写作、办公、学习等日常高频场景。",
+  "price": 59.9,
+  "originalPriceText": "参考开通成本 ¥100+",
+  "order": 1,
+  "tags": [
+    "国内直连",
+    "月度会员",
+    "新手可买"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 — ¥59.9",
+  "actionType": "buy",
+  "detail": {
+    "title": "ChatGPT Plus 国内直连月卡",
+    "subtitle": "不用翻墙，开通后直接可用。适合写作、办公、学习等日常高频场景。",
+    "sections": [
+      {
+        "title": "适合谁",
+        "items": [
+          "想低价体验 ChatGPT Plus",
+          "临时需要 Plus 能力",
+          "写作、办公、学习、编程等日常使用",
+          "不想自己处理海外支付"
+        ]
+      },
+      {
+        "title": "交付内容",
+        "items": [
+          "ChatGPT Plus 月卡使用方式",
+          "相关账号 / 卡密 / 使用说明，以实际商品交付方式为准"
+        ]
+      },
+      {
+        "title": "购买说明",
+        "items": [
+          "网页直接下单",
+          "下单后按页面提示完成信息提交",
+          "交付后请按说明使用"
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "ChatGPT Plus 国内直连月卡"
+}

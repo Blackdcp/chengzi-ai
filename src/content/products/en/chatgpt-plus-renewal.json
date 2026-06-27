@@ -1,0 +1,49 @@
+{
+  "id": "chatgpt-plus-renewal",
+  "categoryId": "gpt",
+  "categoryName": "GPT 会员",
+  "title": "ChatGPT Plus Personal Account Renewal",
+  "subtitle": "Top up your own ChatGPT account. Perfect for users who already have an account and want to keep using Plus.",
+  "price": 29.9,
+  "originalPriceText": "Official Plus is $20/month",
+  "order": 2,
+  "tags": [
+    "Personal Account",
+    "Plus Renewal",
+    "Stable Choice"
+  ],
+  "inStock": true,
+  "buyButtonText": "Renew Now — $29.9",
+  "actionType": "buy",
+  "detail": {
+    "title": "ChatGPT Plus Personal Account Renewal",
+    "subtitle": "Top up your own ChatGPT account. Perfect for users who already have an account and want to keep using Plus.",
+    "sections": [
+      {
+        "title": "Suitable For",
+        "items": [
+          "Users with an existing ChatGPT account",
+          "Want to keep Plus on own account",
+          "Avoid overseas payment hassles",
+          "Long-term stable GPT usage"
+        ]
+      },
+      {
+        "title": "Delivery Content",
+        "items": [
+          "Plus renewal instructions",
+          "Key or top-up method based on delivery"
+        ]
+      },
+      {
+        "title": "Purchase Notes",
+        "items": [
+          "Ensure you have a ChatGPT account",
+          "Do not order if account is restricted",
+          "Follow web instructions to complete renewal"
+        ]
+      }
+    ]
+  },
+  "orderName": "ChatGPT Plus Personal Account Renewal"
+}

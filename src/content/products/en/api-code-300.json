@@ -1,31 +1,50 @@
 {
   "id": "api-code-300",
-  "categoryId": "ai-api",
-  "categoryName": "API Service",
-  "title": "Pro Credit Code ($300)",
-  "subtitle": "Get $300 platform credit. Best value for intensive AI Coding assistant usage and multi-model testing.",
-  "price": 300,
-  "originalPriceText": "",
-  "order": 2,
+  "categoryId": "api",
+  "categoryName": "API 中转站",
+  "title": "AI API $300 Credit Pack",
+  "subtitle": "Ideal for high-frequency use and AI Coding. Fits multi-client setups and heavy workloads.",
+  "price": 43.9,
+  "originalPriceText": "Receives $300 API Credit",
+  "order": 7,
   "tags": [
-    "$300 credit",
-    "PayPal only",
-    "Manual delivery",
-    "Best Value"
-  ],
-  "warnings": [
-    "⚠️ The redemption code will be sent by email after manual payment confirmation."
-  ],
-  "deliveryNotice": "Process: Click to redirect to the API service page to complete payment and order submission.",
-  "features": [
-    "Get $300 platform credit",
-    "Optimized concurrency routing and high-availability endpoints",
-    "Redemption code sent via email after manual verification"
+    "$300 Credit",
+    "High Frequency",
+    "AI Coding"
   ],
   "inStock": true,
-  "buyButtonText": "Buy $300 Credit Code",
-  "orderName": "Pro Credit Code",
-  "isHot": true,
+  "buyButtonText": "Buy $300 Pack",
   "actionType": "link",
+  "detail": {
+    "title": "AI API $300 Credit Pack",
+    "subtitle": "AI API 300 Credit Pack: $43.9 for $300 API Credits.",
+    "sections": [
+      {
+        "title": "Suitable For",
+        "items": [
+          "Frequent API users",
+          "AI Coding users",
+          "Multi-client configurations",
+          "Developers or teams needing large limits"
+        ]
+      },
+      {
+        "title": "Delivery Content",
+        "items": [
+          "$300 Platform API Credit",
+          "API Top-up Key / Guide",
+          "Endpoint & config details"
+        ]
+      },
+      {
+        "title": "Purchase Notes",
+        "items": [
+          "Not a ChatGPT Plus membership",
+          "Perfect for Cursor, Cline, ChatBox, etc.",
+          "Redeem credits via instructions"
+        ]
+      }
+    ]
+  },
   "linkUrl": "/en/api-service"
 }

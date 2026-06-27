@@ -1,0 +1,49 @@
+{
+  "id": "chatgpt-plus-renewal",
+  "categoryId": "gpt",
+  "categoryName": "GPT 会员",
+  "title": "ChatGPT Plus 自用账号续费",
+  "subtitle": "充值到自己的 ChatGPT 账号，适合已经有账号、希望继续使用 Plus 的用户。",
+  "price": 199,
+  "originalPriceText": "官方 Plus 参考 $20/月",
+  "order": 2,
+  "tags": [
+    "自用账号",
+    "Plus 续费",
+    "稳定主力款"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单续费 — ¥199",
+  "actionType": "buy",
+  "detail": {
+    "title": "ChatGPT Plus 自用账号续费",
+    "subtitle": "适合已有 ChatGPT 账号、希望继续在自己账号上使用 Plus 的用户。",
+    "sections": [
+      {
+        "title": "适合谁",
+        "items": [
+          "已有自己的 ChatGPT 账号",
+          "希望 Plus 续在自己账号上",
+          "不想自己处理海外支付",
+          "需要长期稳定使用 GPT 的用户"
+        ]
+      },
+      {
+        "title": "交付内容",
+        "items": [
+          "Plus 月卡续费 / 充值说明",
+          "卡密或充值方式，以实际商品交付方式为准"
+        ]
+      },
+      {
+        "title": "购买说明",
+        "items": [
+          "请确认自己已有 ChatGPT 账号",
+          "如账号状态异常，请先不要下单",
+          "网页下单后按说明完成续费流程"
+        ]
+      }
+    ]
+  },
+  "orderName": "ChatGPT Plus 自用账号续费"
+}

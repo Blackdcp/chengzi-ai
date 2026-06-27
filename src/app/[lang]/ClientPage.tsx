@@ -57,7 +57,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
     setRequirementErr("");
     setWorkLink("");
     setWorkLinkErr("");
-    setStep(product.categoryId === "marketing" ? "consult" : (product.actionType === "consult" ? "consult" : "pay"));
+    setStep(product.categoryId === "growth" ? "consult" : (product.actionType === "consult" ? "consult" : "pay"));
   };
 
   const handleMarketingNext = () => {
@@ -99,10 +99,10 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
           email: email,
           productName: modal.name,
           price: modal.price,
-          payMethod: lang === 'en' ? "paypal" : (modal.categoryId === "marketing" ? "alipay" : payMethod),
+          payMethod: lang === 'en' ? "paypal" : (modal.categoryId === "growth" ? "alipay" : payMethod),
           refCode: refCode,
-          workLink: modal.categoryId === "marketing" ? workLink : undefined,
-          requirement: modal.categoryId === "marketing" ? requirement : undefined
+          workLink: modal.categoryId === "growth" ? workLink : undefined,
+          requirement: modal.categoryId === "growth" ? requirement : undefined
         })
       });
       if (res.ok) {
@@ -159,20 +159,19 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
   return (
     <div style={{ minHeight: "100vh", lineHeight: 1.5, background: "#fafafa" }}>
 
-      <header style={{ background: "#ffffff", borderBottom: "1px solid #eaeaea", padding: "12px 0", position: "sticky", top: 0, zIndex: 50 }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "48px" }}>
+      <header style={{ background: "#ffffff", borderBottom: "1px solid #eaeaea", padding: "16px 0", position: "sticky", top: 0, zIndex: 50 }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "60px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <div style={{ width: 24, height: 24, background: "#0a0a0a", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <div style={{ width: 0, height: 0, borderLeft: "5px solid transparent", borderRight: "5px solid transparent", borderBottom: "8px solid #ffffff", marginTop: "-2px" }} />
-            </div>
-            <span style={{ fontSize: 16, fontWeight: 700, color: "#111827", letterSpacing: "-0.01em" }}>
-              {dict.header.title}
-            </span>
+            <img 
+              src={lang === 'zh' ? '/images/logo-zh.png' : '/images/logo-en.png'} 
+              alt={dict.header.title} 
+              style={{ height: 27, width: 'auto', display: "block" }} 
+            />
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 24, fontSize: 14, fontWeight: 500 }}>
-            {categories.map(cat => (
-              <a key={cat.id} href={`#${cat.id}`} className="nav-link" style={{ textDecoration: "none" }}>
-                {dict.header.nav[cat.id] || cat.name}
+            {["gpt", "gemini", "api", "growth", "flow"].map(key => (
+              <a key={key} href={`#${key}`} className="nav-link" style={{ textDecoration: "none" }}>
+                {dict.header.nav[key]}
               </a>
             ))}
             <button onClick={switchLang} style={{ background: "none", border: "1px solid #eaeaea", borderRadius: "6px", padding: "4px 8px", cursor: "pointer", fontSize: 13, fontWeight: 600, color: "#666" }}>
@@ -185,27 +184,63 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
 
       <div style={{ maxWidth: 1080, margin: "0 auto", padding: "40px 24px 80px" }}>
         
+        <div style={{ padding: "64px 0 80px", textAlign: "center" }}>
+          <h1 style={{ fontSize: 48, fontWeight: 800, color: "#111827", letterSpacing: "-0.04em", marginBottom: 24 }}>
+            {lang === 'zh' ? '主流 AI 账号和低价 API 资源，一站下单' : 'Mainstream AI Accounts & Low-Cost API Resources'}
+          </h1>
+          <p style={{ fontSize: 18, color: "#666666", maxWidth: 640, margin: "0 auto 40px", lineHeight: 1.6 }}>
+            {lang === 'zh' ? 'GPT Plus / Pro、Gemini 年卡、API 中转额度、抖音 / 公众号 / 小红书营销资源都在这里。适合高频 AI 用户、开发者和内容从业者，网页直接下单，按商品类型交付账号、卡密、充值说明或额度码。' : 'GPT Plus / Pro, Gemini Annual Pass, API Relay Credits, and Marketing Resources all in one place. Perfect for heavy AI users, developers, and creators. Order directly online and receive accounts, keys, or credits instantly.'}
+          </p>
+          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 40 }}>
+            <span style={{ padding: "4px 12px", background: "#f3f4f6", borderRadius: "999px", fontSize: 14, color: "#4b5563" }}>GPT Plus / Pro</span>
+            <span style={{ padding: "4px 12px", background: "#f3f4f6", borderRadius: "999px", fontSize: 14, color: "#4b5563" }}>{lang === 'zh' ? 'Gemini 年卡' : 'Gemini Annual Pass'}</span>
+            <span style={{ padding: "4px 12px", background: "#f3f4f6", borderRadius: "999px", fontSize: 14, color: "#4b5563" }}>Claude / Codex API</span>
+            <span style={{ padding: "4px 12px", background: "#f3f4f6", borderRadius: "999px", fontSize: 14, color: "#4b5563" }}>{lang === 'zh' ? '营销资源' : 'Marketing Resources'}</span>
+          </div>
+          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+            <a href="#gpt" className="vercel-button" style={{ padding: "12px 32px", fontSize: 16, textDecoration: "none" }}>{lang === 'zh' ? '购买 GPT 会员' : 'Buy GPT Membership'}</a>
+            <a href="#api" className="vercel-button-secondary" style={{ padding: "12px 32px", fontSize: 16, textDecoration: "none" }}>{lang === 'zh' ? '购买 API 额度' : 'Buy API Credits'}</a>
+          </div>
+        </div>
+
         {categories.map(category => {
           const categoryProducts = productsByCategory[category.id];
           if (!categoryProducts || categoryProducts.length === 0) return null;
 
           return (
             <div key={category.id} id={category.id} style={{ marginBottom: 64 }}>
-              <h2 style={{ fontSize: 20, fontWeight: 600, color: "#111827", marginBottom: 20, letterSpacing: "-0.01em" }}>
+              <h2 style={{ fontSize: 24, fontWeight: 700, color: "#111827", marginBottom: 8, letterSpacing: "-0.02em" }}>
                 {dict.header.nav[category.id] || category.name}
               </h2>
+              <p style={{ fontSize: 16, color: "#666", marginBottom: 24 }}>
+                {category.id === 'gpt' && (lang === 'zh' ? '从不用翻墙的直连月卡，到自用续费、成品账号，再到 Pro 20X 高阶月卡，按需求直接下单。' : 'From direct-connect monthly passes to renewals, ready-to-use accounts, and Pro 20X high-tier passes. Order exactly what you need.')}
+                {category.id === 'gemini' && (lang === 'zh' ? '适合长上下文、资料整理、写作和备用 AI 会员场景。' : 'Perfect for long-context tasks, data organization, writing, and as a backup AI membership.')}
+                {category.id === 'api' && (lang === 'zh' ? '低价 API 中转额度，适合 Claude Code、Codex、Cursor 等高频 AI Coding 场景，OpenAI 兼容格式，拿到额度即可接入。' : 'Low-cost API relay credits. Perfect for Claude Code, Codex, and Cursor AI Coding. Fully OpenAI-compatible.')}
+                {category.id === 'growth' && (lang === 'zh' ? '低价稳定、优先安全的抖音、公众号、小红书推广资源，适合内容冷启动和基础曝光。' : 'Low-cost, stable, and safe promotion resources for TikTok, WeChat, and Xiaohongshu. Great for cold starts and basic exposure.')}
+              </p>
               
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "24px" }}>
                 {categoryProducts.map(product => (
                   <div 
                     key={product.id} 
                     className="vercel-card" 
-                    style={{ display: "flex", flexDirection: "column", padding: "32px", position: "relative" }}
+                    style={{ 
+                      display: "flex", flexDirection: "column", padding: "32px", position: "relative",
+                      ...(product.id === 'chatgpt-pro-20x-fast' ? {
+                         background: "linear-gradient(to bottom right, #ffffff, #fff9f0)",
+                         border: "2px solid #ff9900",
+                         boxShadow: "0 8px 30px rgba(255, 153, 0, 0.15)"
+                      } : product.id === 'chatgpt-plus-monthly-code' ? {
+                         background: "linear-gradient(to bottom right, #ffffff, #fafafa)",
+                         border: "1px solid #ff9900",
+                         boxShadow: "0 4px 14px rgba(255, 153, 0, 0.08)"
+                      } : {})
+                    }}
                   >
                     
                     {product.isHot && (
                       <div style={{ position: "absolute", top: 16, right: 16, border: "1px solid #ff6600", color: "#ff6600", padding: "2px 8px", fontSize: 11, fontWeight: 600, borderRadius: "999px" }}>
-                        {dict.common.hot}
+                        {product.id === 'chatgpt-pro-20x-fast' ? (lang === 'zh' ? '高阶主推' : 'Premium Pick') : product.id === 'chatgpt-plus-monthly-code' ? (lang === 'zh' ? '入门主推' : 'Starter Pick') : dict.common.hot}
                       </div>
                     )}
                     
@@ -214,25 +249,28 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
                     </h3>
                     
                     <div style={{ marginBottom: 16, display: "flex", alignItems: "baseline", flexWrap: "wrap" }}>
-                      {product.price > 0 ? (
+                      {product.actionType !== 'consult' ? (
                         <>
-                          <span style={{ fontSize: 32, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>{dict.common.currency}{product.price}</span>
+                          <span style={{ fontSize: 32, fontWeight: 700, color: "#111827", letterSpacing: "-0.02em" }}>
+                            {dict.common.currency}{product.price}{category.id === 'growth' && (lang === 'zh' ? ' 起' : '+')}
+                          </span>
                           {product.originalPriceText && (
-                            <span style={{ fontSize: 16, color: "#999", textDecoration: "line-through", marginLeft: 8 }}>{product.originalPriceText}</span>
+                            <span style={{ fontSize: 13, color: "#888", textDecoration: "none", fontWeight: 500, background: "#f3f4f6", padding: "2px 6px", borderRadius: 4, marginLeft: 8 }}>
+                              {product.originalPriceText}
+                            </span>
                           )}
                         </>
                       ) : (
-                        <span style={{ fontSize: 32, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>{dict.common.free}</span>
+                        <span style={{ fontSize: 32, fontWeight: 700, color: "#111827", letterSpacing: "-0.02em" }}>{lang === 'zh' ? '咨询报价' : 'Consulting'}</span>
                       )}
                     </div>
 
                     <p style={{ fontSize: 14, color: "#666666", margin: "0 0 24px", flexGrow: 1, lineHeight: 1.6 }} dangerouslySetInnerHTML={{__html: product.subtitle}}></p>
 
                     <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 32 }}>
-                      {product.tags.slice(0, 3).map(t => (
+                      {product.tags.map(t => (
                         <span key={t} style={{ padding: "4px 10px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "999px", fontSize: 12, color: "#666666", fontWeight: 500 }}>{t}</span>
                       ))}
-                      {product.tags.length > 3 && <span style={{ padding: "4px 10px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "999px", fontSize: 12, color: "#666666", fontWeight: 500 }}>...</span>}
                     </div>
 
                     <div style={{ display: 'flex', gap: 12, marginTop: "auto" }}>
@@ -259,26 +297,52 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
             </div>
           );
         })}
+
+        <section id="flow" style={{ marginBottom: 64, paddingTop: 40, borderTop: "1px solid #eaeaea" }}>
+          <h2 style={{ fontSize: 24, fontWeight: 700, color: "#111827", marginBottom: 32, letterSpacing: "-0.02em" }}>
+            {lang === 'zh' ? '购买流程' : 'Purchase Flow'}
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 24 }}>
+            {[
+              { step: 1, title: lang === 'zh' ? "选择商品" : "Select Product", desc: lang === 'zh' ? "选择需要的 GPT 会员、Gemini 年卡、API 额度或营销资源。" : "Choose from GPT, Gemini, API credits, or Marketing resources." },
+              { step: 2, title: lang === 'zh' ? "网页下单" : "Order Online", desc: lang === 'zh' ? "在商品页直接完成下单和付款。" : "Complete your order and payment directly on the page." },
+              { step: 3, title: lang === 'zh' ? "等待交付" : "Wait for Delivery", desc: lang === 'zh' ? "我们会按商品类型交付账号、卡密、充值说明、API 充值码或营销资源订单说明。" : "We will deliver the account, license key, or API credits based on the product type." },
+              { step: 4, title: lang === 'zh' ? "邮件售后" : "Email Support", desc: lang === 'zh' ? "订单问题请邮件联系：chengziai2026@163.com" : "For order inquiries, email: chengziai2026@163.com" }
+            ].map(f => (
+              <div key={f.step} className="vercel-card" style={{ padding: 24 }}>
+                <div style={{ width: 32, height: 32, borderRadius: "50%", background: "#ff6600", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, marginBottom: 16 }}>{f.step}</div>
+                <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 8, color: "#111827" }}>{f.title}</h3>
+                <p style={{ fontSize: 14, color: "#666", lineHeight: 1.5, margin: 0 }}>{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
       </div>
+      
+      <footer style={{ textAlign: "center", padding: "40px 0", borderTop: "1px solid #eaeaea", color: "#666", fontSize: 14 }}>
+        © 2026 橙子 AI. All rights reserved.<br/>
+        客服邮箱：chengziai2026@163.com
+      </footer>
         {modal && (
         <div style={{ position: "fixed", inset: 0, zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
           <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.5)" }} onClick={() => setModal(null)} />
           <div style={{ position: "relative", width: "100%", maxWidth: 420, background: "#ffffff", border: "1px solid #eaeaea", borderRadius: "12px", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}>
             <div style={{ padding: "32px" }}>
                <h3 style={{ margin: "0 0 20px", fontSize: 20, fontWeight: 600, color: "#111827", letterSpacing: "-0.01em" }}>
-                 {step === "consult" ? (modal.categoryId === "marketing" ? (lang === 'zh' ? "提交推广需求" : "Submit Promotion Details") : dict.modal.submitRequest) : dict.modal.confirmOrder}
+                 {step === "consult" ? (modal.categoryId === "growth" ? (lang === 'zh' ? "提交推广需求" : "Submit Promotion Details") : dict.modal.submitRequest) : dict.modal.confirmOrder}
                </h3>
                <p style={{ margin: "0 0 16px", color: "#666666", fontSize: 14 }}>
                  {dict.modal.product}<span style={{ color: "#111827", fontWeight: 500 }}>{modal.name}</span>
                </p>
                
-               {step !== "consult" && modal.categoryId !== "marketing" && (
+               {step !== "consult" && modal.categoryId !== "growth" && (
                  <div style={{ fontSize: 32, fontWeight: 700, color: "#111827", marginBottom: 32, letterSpacing: "-0.02em" }}>{dict.common.currency}{modal.price}</div>
                )}
                
                {step === "consult" ? (
                  <div style={{ textAlign: "center" }}>
-                   {modal.categoryId === "marketing" ? (
+                   {modal.categoryId === "growth" ? (
                      <>
                        <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 8, textAlign: "left" }}>
                          {lang === 'zh' ? "第一步：需要买量的作品链接 / 主页链接" : "Step 1: Link to work / homepage"}
@@ -369,19 +433,20 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
                  </div>
                ) : step === "pay" ? (
                  <div style={{ textAlign: "center" }}>
-                   {modal.categoryId === "marketing" ? (
+                   {modal.categoryId === "growth" ? (
                      <>
                        {lang === 'en' ? (
                          <>
-                           <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>
-                             Step 4: Send Payment via PayPal
+                           <div style={{ fontSize: 14, fontWeight: 500, color: "#666", marginBottom: 16 }}>
+                             Payment Method
                            </div>
-                           <div style={{ background: "#f0f5ff", border: "1px solid #1677ff", borderRadius: "8px", padding: "20px", marginBottom: 24 }}>
-                             <p style={{ margin: "0 0 12px", fontSize: 14, color: "#111827" }}>
-                               Please send the calculated price based on your requirements to our PayPal account:
-                             </p>
-                             <div style={{ fontSize: 18, fontWeight: 700, color: "#1677ff", wordBreak: "break-all", userSelect: "all" }}>
-                               CHENGZIAI2026@163.COM
+                           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginBottom: 24 }}>
+                             <button style={{ padding: "8px 24px", border: "2px solid #003087", background: "#f0f5ff", borderRadius: 8, cursor: "default", color: "#003087", fontWeight: 600 }}>PayPal</button>
+                           </div>
+                           <div style={{ width: 240, height: 240, background: "#f5f5f5", margin: "0 auto 24px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: 12, border: "1px solid #eaeaea", textAlign: "center", padding: "0 20px" }}>
+                             <div>
+                               <div style={{ color: "#111827", fontWeight: 600, marginBottom: 8, wordBreak: "break-all" }}>Paypal Account:<br/>chengziai2026@163.com</div>
+                               <div style={{ fontSize: 13, color: "#666" }}>Please transfer the exact USD amount and submit your email.</div>
                              </div>
                            </div>
                            <div style={{ fontSize: 13, color: "#666", marginBottom: 20, textAlign: "left", lineHeight: 1.5 }}>
@@ -485,7 +550,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
                     </div>
                     <h4 style={{ fontSize: 18, color: "#111827", margin: "0 0 12px" }}>{dict.modal.success}</h4>
                     <p style={{ fontSize: 14, color: "#666", lineHeight: 1.6, whiteSpace: "pre-wrap", marginBottom: 16 }}>
-                      {modal.actionType === 'consult' ? dict.modal.consultSuccessMsg : (modal.categoryId === "marketing" ? (lang === 'zh' ? "您的推广需求已通知客服。\n核对收款后，客服将尽快开始发货推广！" : "Your order notification has been sent.\nSupport will start the delivery once payment is verified!") : dict.modal.paySuccessMsg)}
+                      {modal.actionType === 'consult' ? dict.modal.consultSuccessMsg : (modal.categoryId === "growth" ? (lang === 'zh' ? "您的推广需求已通知客服。\n核对收款后，客服将尽快开始发货推广！" : "Your order notification has been sent.\nSupport will start the delivery once payment is verified!") : dict.modal.paySuccessMsg)}
                       <br/>
                       <strong style={{ color: "#111827" }}>{email}</strong>
                     </p>
@@ -501,16 +566,6 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
         </div>
       )}
 
-      {/* Footer */}
-      <footer style={{ borderTop: "1px solid #eaeaea", padding: "40px 24px", textAlign: "center", color: "#666", fontSize: 14 }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto", display: "flex", flexDirection: "column", gap: "12px" }}>
-          <div>© {new Date().getFullYear()} {dict.header.title}. All rights reserved.</div>
-          <div>
-            {lang === 'zh' ? '联系客服：' : 'Contact Support: '} 
-            <a href="mailto:chengziai2026@163.com" style={{ color: "#111827", textDecoration: "none", fontWeight: 500 }}>chengziai2026@163.com</a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

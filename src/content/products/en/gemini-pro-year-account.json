@@ -1,0 +1,50 @@
+{
+  "id": "gemini-pro-year-account",
+  "categoryId": "gemini",
+  "categoryName": "Gemini 会员",
+  "title": "Gemini Pro 1-Year Account",
+  "subtitle": "1-year validity. Perfect for long context, data parsing, writing, and backup AI needs.",
+  "price": 14.9,
+  "originalPriceText": "Low-cost Backup AI",
+  "order": 5,
+  "tags": [
+    "1-Year Pass",
+    "Gemini Pro",
+    "Backup AI"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now — $14.9",
+  "actionType": "buy",
+  "detail": {
+    "title": "Gemini Pro 1-Year Account",
+    "subtitle": "1-year validity. Perfect for long context, data parsing, writing, and backup AI needs.",
+    "sections": [
+      {
+        "title": "Suitable For",
+        "items": [
+          "Need Gemini Pro capabilities",
+          "Require long context & data parsing",
+          "Want a backup AI membership",
+          "Writers, learners, data workers"
+        ]
+      },
+      {
+        "title": "Delivery Content",
+        "items": [
+          "Gemini Pro 1-Year Account",
+          "Login instructions",
+          "Usage guide"
+        ]
+      },
+      {
+        "title": "Purchase Notes",
+        "items": [
+          "Order directly online",
+          "Test login upon receipt",
+          "Use according to delivery notes"
+        ]
+      }
+    ]
+  },
+  "orderName": "Gemini Pro 1-Year Account"
+}

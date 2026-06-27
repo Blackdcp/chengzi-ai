@@ -126,19 +126,39 @@ export default async function ProductPage({
           ))}
         </div>
 
-        <div style={{ borderTop: "1px solid #eaeaea", paddingTop: 40 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 600, margin: "0 0 24px", letterSpacing: "-0.01em" }}>{dict.product.features}</h2>
-          <ul style={{ paddingLeft: 0, margin: 0, color: "#444444", lineHeight: 1.8, fontSize: 15, listStyle: "none" }}>
-            {product.features.map((f, i) => (
-              <li key={i} style={{ marginBottom: 16, display: "flex", gap: 12, alignItems: "flex-start" }}>
-                <span style={{ color: "#0a0a0a", marginTop: 2 }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                </span>
-                <span>{f}</span>
-              </li>
+        {product.detail?.sections ? (
+          <div style={{ borderTop: "1px solid #eaeaea", paddingTop: 40, display: "flex", flexDirection: "column", gap: 32 }}>
+            {product.detail.sections.map((section: any, idx: number) => (
+              <div key={idx}>
+                <h2 style={{ fontSize: 20, fontWeight: 600, margin: "0 0 16px", color: "#111827", letterSpacing: "-0.01em" }}>{section.title}</h2>
+                <ul style={{ paddingLeft: 0, margin: 0, color: "#444444", lineHeight: 1.8, fontSize: 15, listStyle: "none" }}>
+                  {section.items.map((item: string, i: number) => (
+                    <li key={i} style={{ marginBottom: 12, display: "flex", gap: 12, alignItems: "flex-start" }}>
+                      <span style={{ color: "#0a0a0a", marginTop: 2 }}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
-        </div>
+          </div>
+        ) : (
+          <div style={{ borderTop: "1px solid #eaeaea", paddingTop: 40 }}>
+            <h2 style={{ fontSize: 20, fontWeight: 600, margin: "0 0 24px", letterSpacing: "-0.01em" }}>{dict.product.features}</h2>
+            <ul style={{ paddingLeft: 0, margin: 0, color: "#444444", lineHeight: 1.8, fontSize: 15, listStyle: "none" }}>
+              {product.features?.map((f: any, i: number) => (
+                <li key={i} style={{ marginBottom: 16, display: "flex", gap: 12, alignItems: "flex-start" }}>
+                  <span style={{ color: "#0a0a0a", marginTop: 2 }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </span>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {product.warnings && product.warnings.length > 0 && (
           <div style={{ marginTop: 48, padding: "24px", border: "1px solid #eaeaea", borderRadius: "8px", background: "#fafafa" }}>
@@ -146,7 +166,7 @@ export default async function ProductPage({
               {dict.product.warnings}
             </h3>
             <ul style={{ paddingLeft: 20, margin: 0, color: "#444444", fontSize: 14, lineHeight: 1.6 }}>
-              {product.warnings.map((w, i) => (
+              {product.warnings.map((w: any, i: number) => (
                 <li key={i} style={{ marginBottom: 8 }}>{w}</li>
               ))}
             </ul>

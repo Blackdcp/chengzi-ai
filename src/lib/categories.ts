@@ -5,7 +5,8 @@ export interface Category {
 }
 
 export const categories: Category[] = [
-  { id: "ai-accounts", name: "AI 账号与订阅", iconName: "bot" },
-  { id: "ai-api", name: "API 中转服务", iconName: "key" },
-  { id: "marketing", name: "营销引流资源", iconName: "trending-up" }
+  { id: "gpt", name: "GPT 会员", iconName: "bot" },
+  { id: "gemini", name: "Gemini 会员", iconName: "star" },
+  { id: "api", name: "API 中转站", iconName: "key" },
+  { id: "growth", name: "营销资源", iconName: "trending-up" }
 ];

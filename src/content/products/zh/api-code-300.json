@@ -1,31 +1,50 @@
 {
   "id": "api-code-300",
-  "categoryId": "ai-api",
-  "categoryName": "API 中转服务",
-  "title": "大额充值码 (¥300)",
-  "subtitle": "获得 $300 平台计价额度。高频使用、AI Coding 编程助手深度用户推荐款，性价比首选。",
+  "categoryId": "api",
+  "categoryName": "API 中转站",
+  "title": "AI API 300 额度包",
+  "subtitle": "高频使用和 AI Coding 更合适，适合多客户端和更高强度调用。",
   "price": 300,
-  "originalPriceText": "",
-  "order": 2,
+  "originalPriceText": "到账 $300 美金额度",
+  "order": 7,
   "tags": [
-    "$300 额度",
-    "仅支持支付宝",
-    "人工发码",
-    "推荐款"
-  ],
-  "warnings": [
-    "⚠️ 购买后需要人工审核收款，兑换码将发送至您的接收邮箱。"
-  ],
-  "deliveryNotice": "交付流程：点击“去购买”跳转到 API 专属页面进行支付和提交订单。",
-  "features": [
-    "获得 $300 平台计价额度",
-    "支持高并发及多线路调度优化",
-    "人工核对付款后发送兑换码"
+    "$300 美金额度",
+    "高频使用",
+    "AI Coding"
   ],
   "inStock": true,
-  "buyButtonText": "去购买 ¥300 充值码",
-  "orderName": "大额充值码",
-  "isHot": true,
+  "buyButtonText": "购买 ¥300 额度包",
   "actionType": "link",
+  "detail": {
+    "title": "AI API 300 额度包",
+    "subtitle": "AI API 300 额度包: ¥300，到账 $300 美金额度",
+    "sections": [
+      {
+        "title": "适合谁",
+        "items": [
+          "高频 API 用户",
+          "AI Coding 用户",
+          "多客户端调用用户",
+          "需要更大额度的开发者或团队用户"
+        ]
+      },
+      {
+        "title": "交付内容",
+        "items": [
+          "$300 平台计价额度",
+          "API 充值码 / 使用说明",
+          "接入地址和配置说明，以当前系统说明为准"
+        ]
+      },
+      {
+        "title": "购买说明",
+        "items": [
+          "本商品用于 API 调用，不是 ChatGPT 官网会员",
+          "适合 Cursor、Cline、ChatBox、Cherry Studio 等客户端配置",
+          "网页直接下单，按说明兑换额度"
+        ]
+      }
+    ]
+  },
   "linkUrl": "/zh/api-service"
 }

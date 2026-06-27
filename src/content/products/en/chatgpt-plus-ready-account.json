@@ -1,0 +1,50 @@
+{
+  "id": "chatgpt-plus-ready-account",
+  "categoryId": "gpt",
+  "categoryName": "GPT 会员",
+  "title": "ChatGPT Plus Ready-to-Use Account",
+  "subtitle": "No registration needed. Log in and use upon receipt. Great for backup or temporary use.",
+  "price": 13.9,
+  "originalPriceText": "Backup Plus Account",
+  "order": 3,
+  "tags": [
+    "Ready Account",
+    "Instant Use",
+    "Backup Account"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now — $13.9",
+  "actionType": "buy",
+  "detail": {
+    "title": "ChatGPT Plus Ready-to-Use Account",
+    "subtitle": "No registration needed. Log in and use upon receipt. Great for backup or temporary use.",
+    "sections": [
+      {
+        "title": "Suitable For",
+        "items": [
+          "No ChatGPT account",
+          "Need a backup Plus account",
+          "Temporary GPT Plus usage",
+          "Skip the registration hassle"
+        ]
+      },
+      {
+        "title": "Delivery Content",
+        "items": [
+          "ChatGPT Plus ready-to-use account",
+          "Login instructions",
+          "Follow verification guide if prompted"
+        ]
+      },
+      {
+        "title": "Purchase Notes",
+        "items": [
+          "Log in and test ASAP upon receipt",
+          "Follow delivery instructions",
+          "Delivered based on product type"
+        ]
+      }
+    ]
+  },
+  "orderName": "ChatGPT Plus Ready-to-Use Account"
+}

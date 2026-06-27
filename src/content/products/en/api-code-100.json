@@ -1,30 +1,50 @@
 {
   "id": "api-code-100",
-  "categoryId": "ai-api",
-  "categoryName": "API Service",
-  "title": "Basic Credit Code ($100)",
-  "subtitle": "Get $100 platform credit. Compatible with OpenAI format. Zero-code config in Cursor, Cline, and ChatBox.",
-  "price": 100,
-  "originalPriceText": "",
-  "order": 1,
+  "categoryId": "api",
+  "categoryName": "API 中转站",
+  "title": "AI API $100 Credit Pack",
+  "subtitle": "Top choice for light usage and personal testing. Great for client integrations.",
+  "price": 14.9,
+  "originalPriceText": "Receives $100 API Credit",
+  "order": 6,
   "tags": [
-    "$100 credit",
-    "PayPal only",
-    "Manual delivery"
-  ],
-  "warnings": [
-    "⚠️ The redemption code will be sent by email after manual payment confirmation."
-  ],
-  "deliveryNotice": "Process: Click to redirect to the API service page to complete payment and order submission.",
-  "features": [
-    "Get $100 platform credit",
-    "Compatible with mainstream OpenAI-style clients",
-    "Redemption code sent via email after manual verification"
+    "$100 Credit",
+    "Light Usage",
+    "Fast Setup"
   ],
   "inStock": true,
-  "buyButtonText": "Buy $100 Credit Code",
-  "orderName": "Basic Credit Code",
-  "isHot": false,
+  "buyButtonText": "Buy $100 Pack",
   "actionType": "link",
+  "detail": {
+    "title": "AI API $100 Credit Pack",
+    "subtitle": "AI API 100 Credit Pack: $14.9 for $100 API Credits.",
+    "sections": [
+      {
+        "title": "Suitable For",
+        "items": [
+          "Solo developers",
+          "AI Coding users",
+          "Cursor, Cline, ChatBox, Cherry Studio users",
+          "Light API testing"
+        ]
+      },
+      {
+        "title": "Delivery Content",
+        "items": [
+          "$100 Platform API Credit",
+          "API Top-up Key / Guide",
+          "Endpoint & config details"
+        ]
+      },
+      {
+        "title": "Purchase Notes",
+        "items": [
+          "Not a ChatGPT Plus membership",
+          "Strictly for API and client usage",
+          "Redeem credits via instructions"
+        ]
+      }
+    ]
+  },
   "linkUrl": "/en/api-service"
 }

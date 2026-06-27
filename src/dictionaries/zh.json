@@ -2,9 +2,11 @@
   "header": {
     "title": "橙子 AI",
     "nav": {
-      "ai-accounts": "AI 账号与订阅",
-      "ai-api": "API 中转服务",
-      "marketing": "营销引流资源",
+      "gpt": "GPT 会员",
+      "gemini": "Gemini 会员",
+      "api": "API 中转站",
+      "growth": "营销资源",
+      "flow": "购买流程",
       "api-service": "API 中转服务"
     }
   },
@@ -41,14 +43,16 @@
     "back": "返回首页"
   },
   "meta": {
-    "title": "橙子AI — Gemini Pro ¥100/年 | ChatGPT Plus 成品号 & 直充",
-    "description": "Gemini Pro 1年订阅 ¥100（官方¥1,740+），含绑卡 CDK 自助激活。ChatGPT Plus 成品号 ¥66.66 起，直充 ¥168.88。人工交付，24h 内处理。",
+    "title": "橙子 AI — 主流 AI 账号 | 低价 API 中转资源 | 营销流量服务",
+    "description": "专为 AI 开发者、工具运营者与内容团队打造的一站式直采平台。提供 GPT Plus / Gemini 会员、极具性价比的高可用 API 中转额度（100% 兼容 OpenAI 协议），以及抖音、小红书等前沿流量营销资源。网页直接下单，极速交付。",
     "keywords": [
-      "ChatGPT Plus购买",
-      "Gemini Pro充值",
       "AI账号批发",
-      "ChatGPT Plus 直充",
-      "GPT-4成品号"
+      "API中转站",
+      "低价API资源",
+      "OpenAI接口",
+      "GPT Plus账号",
+      "Gemini会员",
+      "营销流量资源"
     ]
   },
   "apiService": {

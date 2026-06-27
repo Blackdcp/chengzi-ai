@@ -1,0 +1,50 @@
+{
+  "id": "chatgpt-plus-monthly-code",
+  "categoryId": "gpt",
+  "categoryName": "GPT 会员",
+  "title": "ChatGPT Plus Direct Connect Monthly Pass",
+  "subtitle": "No VPN required. Ready to use immediately. Perfect for writing, office work, and daily high-frequency tasks.",
+  "price": 9.9,
+  "originalPriceText": "Estimated cost $20+",
+  "order": 1,
+  "tags": [
+    "Direct Connect",
+    "Monthly Pass",
+    "Beginner Friendly"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now — $9.9",
+  "actionType": "buy",
+  "detail": {
+    "title": "ChatGPT Plus Direct Connect Monthly Pass",
+    "subtitle": "No VPN required. Ready to use immediately. Perfect for writing, office work, and daily high-frequency tasks.",
+    "sections": [
+      {
+        "title": "Suitable For",
+        "items": [
+          "Low-cost ChatGPT Plus experience",
+          "Temporary Plus needs",
+          "Daily use for writing, coding, etc.",
+          "Users avoiding overseas payments"
+        ]
+      },
+      {
+        "title": "Delivery Content",
+        "items": [
+          "ChatGPT Plus monthly pass access instructions",
+          "Account/Key/Guide based on actual delivery"
+        ]
+      },
+      {
+        "title": "Purchase Notes",
+        "items": [
+          "Order directly on the web",
+          "Submit info after payment",
+          "Follow instructions upon delivery"
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "ChatGPT Plus Direct Connect Monthly Pass"
+}

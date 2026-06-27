@@ -1,0 +1,50 @@
+{
+  "id": "chatgpt-pro-20x-fast",
+  "categoryId": "gpt",
+  "categoryName": "GPT 会员",
+  "title": "ChatGPT Pro 20X Fast Monthly Pass",
+  "subtitle": "Built for heavy users focused on AI Coding, high-frequency chat, file analysis, and deep research.",
+  "price": 149,
+  "originalPriceText": "Official Pro is $200/month",
+  "order": 4,
+  "tags": [
+    "Pro 20X",
+    "AI Coding",
+    "Heavy Users"
+  ],
+  "isHot": true,
+  "inStock": true,
+  "buyButtonText": "Buy Now — $149",
+  "actionType": "buy",
+  "detail": {
+    "title": "ChatGPT Pro 20X Fast Monthly Pass",
+    "subtitle": "This is the premium GPT monthly pass, not standard Plus. Built for AI Coding, high-frequency chat, file analysis, and deep research.",
+    "sections": [
+      {
+        "title": "Suitable For",
+        "items": [
+          "Frequent AI Coding users",
+          "Deep research & frequent chat users",
+          "Professionals needing high intensity",
+          "Short-term project sprints & dev work"
+        ]
+      },
+      {
+        "title": "Delivery Content",
+        "items": [
+          "Pro 20X top-up method",
+          "Key / Instant instructions / Operation guide"
+        ]
+      },
+      {
+        "title": "Purchase Notes",
+        "items": [
+          "This is a premium tier, not standard Plus",
+          "For heavy users, not for casual chat",
+          "Order online and follow instructions"
+        ]
+      }
+    ]
+  },
+  "orderName": "ChatGPT Pro 20X Fast Monthly Pass"
+}

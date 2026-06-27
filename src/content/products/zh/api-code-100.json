@@ -1,30 +1,50 @@
 {
   "id": "api-code-100",
-  "categoryId": "ai-api",
-  "categoryName": "API 中转服务",
-  "title": "基础充值码 (¥100)",
-  "subtitle": "获得 $100 平台计价额度。支持 OpenAI 格式，可在 Cursor / Cline / ChatBox 等主流 AI 客户端中零代码快速配置使用。",
+  "categoryId": "api",
+  "categoryName": "API 中转站",
+  "title": "AI API 100 额度包",
+  "subtitle": "轻量调用和个人测试首选，适合客户端接入和日常使用。",
   "price": 100,
-  "originalPriceText": "",
-  "order": 1,
+  "originalPriceText": "到账 $100 美金额度",
+  "order": 6,
   "tags": [
-    "$100 额度",
-    "仅支持支付宝",
-    "人工发码"
-  ],
-  "warnings": [
-    "⚠️ 购买后需要人工审核收款，兑换码将发送至您的接收邮箱。"
-  ],
-  "deliveryNotice": "交付流程：点击“去购买”跳转到 API 专属页面进行支付和提交订单。",
-  "features": [
-    "获得 $100 平台计价额度",
-    "支持主流 OpenAI 格式兼容调用",
-    "人工核对付款后发送兑换码"
+    "$100 美金额度",
+    "轻量调用",
+    "快速接入"
   ],
   "inStock": true,
-  "buyButtonText": "去购买 ¥100 充值码",
-  "orderName": "基础充值码",
-  "isHot": false,
+  "buyButtonText": "购买 ¥100 额度包",
   "actionType": "link",
+  "detail": {
+    "title": "AI API 100 额度包",
+    "subtitle": "AI API 100 额度包: ¥100，到账 $100 美金额度",
+    "sections": [
+      {
+        "title": "适合谁",
+        "items": [
+          "个人开发者",
+          "AI Coding 用户",
+          "Cursor、Cline、ChatBox、Cherry Studio 等客户端用户",
+          "需要轻量测试 API 调用的用户"
+        ]
+      },
+      {
+        "title": "交付内容",
+        "items": [
+          "$100 平台计价额度",
+          "API 充值码 / 使用说明",
+          "接入地址和配置说明，以当前系统说明为准"
+        ]
+      },
+      {
+        "title": "购买说明",
+        "items": [
+          "ChatGPT Plus 会员不等于 API 额度",
+          "本商品用于 API 调用和客户端配置",
+          "网页直接下单，按说明兑换额度"
+        ]
+      }
+    ]
+  },
   "linkUrl": "/zh/api-service"
 }

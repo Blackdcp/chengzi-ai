@@ -1,0 +1,50 @@
+{
+  "id": "chatgpt-pro-20x-fast",
+  "categoryId": "gpt",
+  "categoryName": "GPT 会员",
+  "title": "ChatGPT Pro 20X 秒冲月卡",
+  "subtitle": "面向 AI Coding、高频对话、文件分析、深度研究和项目冲刺的重度用户。",
+  "price": 999,
+  "originalPriceText": "官方 Pro 参考 $200/月",
+  "order": 4,
+  "tags": [
+    "Pro 20X",
+    "AI Coding",
+    "重度用户"
+  ],
+  "isHot": true,
+  "inStock": true,
+  "buyButtonText": "下单购买 — ¥999",
+  "actionType": "buy",
+  "detail": {
+    "title": "ChatGPT Pro 20X 秒冲月卡",
+    "subtitle": "这是 GPT 高阶月卡，不是普通 Plus。适合 AI Coding、高频对话、文件分析、深度研究和项目冲刺。",
+    "sections": [
+      {
+        "title": "适合谁",
+        "items": [
+          "AI Coding 高频用户",
+          "高频对话和深度研究用户",
+          "需要更高使用强度的专业用户",
+          "短期项目冲刺、代码开发、内容生产用户"
+        ]
+      },
+      {
+        "title": "交付内容",
+        "items": [
+          "Pro 20X 月卡充值方式",
+          "卡密 / 秒冲说明 / 操作指引，以实际商品交付方式为准"
+        ]
+      },
+      {
+        "title": "购买说明",
+        "items": [
+          "这是 GPT 高阶月卡，不是普通 Plus",
+          "适合重度用户，不适合只偶尔聊天的用户",
+          "网页直接下单，按商品说明完成操作"
+        ]
+      }
+    ]
+  },
+  "orderName": "ChatGPT Pro 20X 秒冲月卡"
+}

@@ -357,36 +357,16 @@ print(response.choices[0].message.content)`;
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            height: "48px",
+            height: "60px",
           }}
         >
           {/* Logo & Brand */}
           <Link href={`/${lang}`} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
-            <div
-              style={{
-                width: 24,
-                height: 24,
-                background: "#0a0a0a",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <div
-                style={{
-                  width: 0,
-                  height: 0,
-                  borderLeft: "5px solid transparent",
-                  borderRight: "5px solid transparent",
-                  borderBottom: "8px solid #ffffff",
-                  marginTop: "-2px",
-                }}
-              />
-            </div>
-            <span style={{ fontSize: 16, fontWeight: 700, color: "#111827", letterSpacing: "-0.01em" }}>
-              {dict.header.title}
-            </span>
+            <img 
+              src={lang === 'zh' ? '/images/logo-zh.png' : '/images/logo-en.png'} 
+              alt={dict.header.title} 
+              style={{ height: 27, width: 'auto', display: "block" }} 
+            />
           </Link>
 
           {/* Desktop Nav Items */}

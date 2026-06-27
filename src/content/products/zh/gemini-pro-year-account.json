@@ -1,0 +1,50 @@
+{
+  "id": "gemini-pro-year-account",
+  "categoryId": "gemini",
+  "categoryName": "Gemini 会员",
+  "title": "Gemini Pro 一年成品号",
+  "subtitle": "一年有效期，适合长上下文、资料整理、写作和备用 AI 会员场景。",
+  "price": 100,
+  "originalPriceText": "低成本备用 AI 会员",
+  "order": 5,
+  "tags": [
+    "一年会员",
+    "Gemini Pro",
+    "备用 AI"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 — ¥100",
+  "actionType": "buy",
+  "detail": {
+    "title": "Gemini Pro 一年成品号",
+    "subtitle": "一年有效期，适合长上下文、资料整理、写作和备用 AI 会员场景。",
+    "sections": [
+      {
+        "title": "适合谁",
+        "items": [
+          "需要 Gemini Pro 的用户",
+          "需要长上下文和资料整理",
+          "想要备用 AI 会员",
+          "内容写作、学习、资料处理用户"
+        ]
+      },
+      {
+        "title": "交付内容",
+        "items": [
+          "Gemini Pro 一年成品号",
+          "登录说明",
+          "使用说明"
+        ]
+      },
+      {
+        "title": "购买说明",
+        "items": [
+          "网页直接下单",
+          "收到后请按说明登录测试",
+          "按实际商品交付内容使用"
+        ]
+      }
+    ]
+  },
+  "orderName": "Gemini Pro 一年成品号"
+}

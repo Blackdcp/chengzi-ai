@@ -1,0 +1,50 @@
+{
+  "id": "chatgpt-plus-ready-account",
+  "categoryId": "gpt",
+  "categoryName": "GPT 会员",
+  "title": "ChatGPT Plus 成品账号",
+  "subtitle": "不用自己注册，收到账号后按说明登录使用。适合备用账号和临时使用。",
+  "price": 89,
+  "originalPriceText": "备用 Plus 账号",
+  "order": 3,
+  "tags": [
+    "成品账号",
+    "拿到即用",
+    "备用账号"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 — ¥89",
+  "actionType": "buy",
+  "detail": {
+    "title": "ChatGPT Plus 成品账号",
+    "subtitle": "适合需要备用 Plus 账号、临时使用或不想自己注册的用户。",
+    "sections": [
+      {
+        "title": "适合谁",
+        "items": [
+          "没有 ChatGPT 账号",
+          "需要备用 Plus 账号",
+          "临时使用 GPT Plus",
+          "不想自己注册和开通"
+        ]
+      },
+      {
+        "title": "交付内容",
+        "items": [
+          "ChatGPT Plus 成品账号",
+          "登录说明",
+          "如需验证，按交付说明操作"
+        ]
+      },
+      {
+        "title": "购买说明",
+        "items": [
+          "收到账号后请尽快登录测试",
+          "按交付说明使用",
+          "网页直接下单，按商品类型交付"
+        ]
+      }
+    ]
+  },
+  "orderName": "ChatGPT Plus 成品账号"
+}
