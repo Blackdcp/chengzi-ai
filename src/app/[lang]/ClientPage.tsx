@@ -196,10 +196,10 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
         </div>
       </header>
 
-      <div style={{ maxWidth: 1080, margin: "0 auto", padding: "40px 24px 80px" }}>
+      <div style={{ maxWidth: 1080, margin: "0 auto", padding: "max(20px, 4vw) 16px max(40px, 8vw)" }}>
         
-        <div style={{ padding: "64px 0 80px", textAlign: "center" }}>
-          <h1 style={{ fontSize: 48, fontWeight: 800, color: "#111827", letterSpacing: "-0.04em", marginBottom: 24 }}>
+        <div style={{ padding: "max(32px, 6vw) 0 max(40px, 8vw)", textAlign: "center" }}>
+          <h1 style={{ fontSize: "clamp(28px, 5vw, 48px)", fontWeight: 800, color: "#111827", letterSpacing: "-0.04em", marginBottom: 24 }}>
             {lang === 'zh' ? '主流 AI 账号和低价 API 资源，一站下单' : 'Mainstream AI Accounts & Low-Cost API Resources'}
           </h1>
           <p style={{ fontSize: 18, color: "#666666", maxWidth: 640, margin: "0 auto 40px", lineHeight: 1.6 }}>
@@ -223,7 +223,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
 
           return (
             <div key={category.id} id={category.id} style={{ marginBottom: 64 }}>
-              <h2 style={{ fontSize: 24, fontWeight: 700, color: "#111827", marginBottom: 8, letterSpacing: "-0.02em" }}>
+              <h2 style={{ fontSize: "clamp(18px, 2.5vw, 24px)", fontWeight: 700, color: "#111827", marginBottom: 8, letterSpacing: "-0.02em" }}>
                 {dict.header.nav[category.id] || category.name}
               </h2>
               <p style={{ fontSize: 16, color: "#666", marginBottom: 24 }}>
@@ -265,7 +265,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
                     <div style={{ marginBottom: 16, display: "flex", alignItems: "baseline", flexWrap: "wrap" }}>
                       {product.actionType !== 'consult' ? (
                         <>
-                          <span style={{ fontSize: 32, fontWeight: 700, color: "#111827", letterSpacing: "-0.02em" }}>
+                          <span style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 700, color: "#111827", letterSpacing: "-0.02em" }}>
                             {dict.common.currency}{product.price}{category.id === 'growth' && (lang === 'zh' ? ' 起' : '+')}
                           </span>
                           {product.originalPriceText && (
@@ -275,7 +275,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
                           )}
                         </>
                       ) : (
-                        <span style={{ fontSize: 32, fontWeight: 700, color: "#111827", letterSpacing: "-0.02em" }}>{lang === 'zh' ? '咨询报价' : 'Consulting'}</span>
+                        <span style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 700, color: "#111827", letterSpacing: "-0.02em" }}>{lang === 'zh' ? '咨询报价' : 'Consulting'}</span>
                       )}
                     </div>
 
@@ -313,7 +313,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
         })}
 
         <section id="flow" style={{ marginBottom: 64, paddingTop: 40, borderTop: "1px solid #eaeaea" }}>
-          <h2 style={{ fontSize: 24, fontWeight: 700, color: "#111827", marginBottom: 32, letterSpacing: "-0.02em" }}>
+          <h2 style={{ fontSize: "clamp(18px, 2.5vw, 24px)", fontWeight: 700, color: "#111827", marginBottom: 32, letterSpacing: "-0.02em" }}>
             {lang === 'zh' ? '购买流程' : 'Purchase Flow'}
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 24 }}>
@@ -334,7 +334,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
 
       </div>
       
-      <footer style={{ textAlign: "center", padding: "40px 0", borderTop: "1px solid #eaeaea", color: "#666", fontSize: 14 }}>
+      <footer style={{ textAlign: "center", padding: "max(20px, 4vw) 0", borderTop: "1px solid #eaeaea", color: "#666", fontSize: 14 }}>
         © {new Date().getFullYear()} {dict.header.title}. All rights reserved.<br/>
         {lang === 'zh' ? '客服邮箱：' : 'Support Email: '}
         <a href="mailto:chengziai2026@163.com" style={{ color: "#666", textDecoration: "none" }}>chengziai2026@163.com</a>
@@ -352,7 +352,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
                </p>
                
                {step !== "consult" && modal.categoryId !== "growth" && (
-                 <div style={{ fontSize: 32, fontWeight: 700, color: "#111827", marginBottom: 32, letterSpacing: "-0.02em" }}>{dict.common.currency}{modal.price}</div>
+                 <div style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 700, color: "#111827", marginBottom: 32, letterSpacing: "-0.02em" }}>{dict.common.currency}{modal.price}</div>
                )}
                
                {step === "consult" ? (
@@ -560,7 +560,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
                  </div>
                ) : (
                  <div style={{ textAlign: "center", padding: "10px 0" }}>
-                    <div style={{ width: 64, height: 64, background: "#0a0a0a", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 32, margin: "0 auto 20px" }}>
+                    <div style={{ width: 64, height: 64, background: "#0a0a0a", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: "clamp(22px, 3.5vw, 32px)", margin: "0 auto 20px" }}>
                       ✓
                     </div>
                     <h4 style={{ fontSize: 18, color: "#111827", margin: "0 0 12px" }}>{dict.modal.success}</h4>
@@ -576,7 +576,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
                  </div>
                )}
             </div>
-            <button onClick={() => setModal(null)} style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", fontSize: 24, cursor: "pointer", color: "#999999", lineHeight: 1 }}>×</button>
+            <button onClick={() => setModal(null)} style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", fontSize: "clamp(18px, 2.5vw, 24px)", cursor: "pointer", color: "#999999", lineHeight: 1 }}>×</button>
           </div>
         </div>
       )}

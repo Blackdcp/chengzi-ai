@@ -100,7 +100,7 @@ export default async function ProductPage({
           {product.categoryName}
         </div>
         
-        <h1 style={{ fontSize: 32, fontWeight: 700, margin: "0 0 16px", lineHeight: 1.2, letterSpacing: "-0.02em" }}>
+        <h1 style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 700, margin: "0 0 16px", lineHeight: 1.2, letterSpacing: "-0.02em" }}>
           {product.title}
         </h1>
 

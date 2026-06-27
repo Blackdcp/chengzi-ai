@@ -802,7 +802,7 @@ print(response.choices[0].message.content)`;
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <h2
             style={{
-              fontSize: 32,
+              fontSize: "clamp(22px, 3.5vw, 32px)",
               fontWeight: 700,
               color: "#111827",
               letterSpacing: "-0.02em",
@@ -948,7 +948,7 @@ print(response.choices[0].message.content)`;
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <h2
               style={{
-                fontSize: 32,
+                fontSize: "clamp(22px, 3.5vw, 32px)",
                 fontWeight: 700,
                 color: "#111827",
                 letterSpacing: "-0.02em",
@@ -1122,7 +1122,7 @@ print(response.choices[0].message.content)`;
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <h2
             style={{
-              fontSize: 32,
+              fontSize: "clamp(22px, 3.5vw, 32px)",
               fontWeight: 700,
               color: "#111827",
               letterSpacing: "-0.02em",
@@ -1359,7 +1359,7 @@ print(response.choices[0].message.content)`;
         }}
       >
         <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <h2 style={{ fontSize: 32, fontWeight: 700, color: "#111827", letterSpacing: "-0.02em" }}>
+          <h2 style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 700, color: "#111827", letterSpacing: "-0.02em" }}>
             {isEn ? "Is this service right for you?" : "适合谁使用？"}
           </h2>
         </div>
@@ -1411,7 +1411,7 @@ print(response.choices[0].message.content)`;
           <div style={{ textAlign: "center", marginBottom: 48 }}>
             <h2
               style={{
-                fontSize: 32,
+                fontSize: "clamp(22px, 3.5vw, 32px)",
                 fontWeight: 700,
                 color: "#111827",
                 letterSpacing: "-0.02em",
@@ -1517,7 +1517,7 @@ print(response.choices[0].message.content)`;
       {isPurchaseModalOpen && selectedPlan && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
           <div style={{ background: "#ffffff", width: "100%", maxWidth: 460, borderRadius: "12px", padding: 28, position: "relative", border: "1px solid #eaeaea", boxShadow: "0 20px 40px rgba(0,0,0,0.15)" }}>
-            <button onClick={() => setIsPurchaseModalOpen(false)} style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", color: "#999999", fontSize: 24, cursor: "pointer", lineHeight: 1 }}>×</button>
+            <button onClick={() => setIsPurchaseModalOpen(false)} style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", color: "#999999", fontSize: "clamp(18px, 2.5vw, 24px)", cursor: "pointer", lineHeight: 1 }}>×</button>
             
             {/* Step 1: Confirmation Screen */}
             {purchaseStep === "confirm" && (
@@ -1633,7 +1633,7 @@ print(response.choices[0].message.content)`;
             {/* Step 3: Success Screen */}
             {purchaseStep === "success" && (
               <div style={{ textAlign: "center", padding: "10px 0" }}>
-                <div style={{ width: 54, height: 54, background: "#0a0a0a", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 24, margin: "0 auto 16px" }}>
+                <div style={{ width: 54, height: 54, background: "#0a0a0a", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: "clamp(18px, 2.5vw, 24px)", margin: "0 auto 16px" }}>
                   ✓
                 </div>
                 <h4 style={{ fontSize: 18, color: "#111827", margin: "0 0 12px", fontWeight: 700 }}>
@@ -1662,7 +1662,7 @@ print(response.choices[0].message.content)`;
       {isSupportModalOpen && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
           <div style={{ background: "#ffffff", width: "100%", maxWidth: 380, borderRadius: "12px", padding: 28, position: "relative", border: "1px solid #eaeaea", boxShadow: "0 20px 40px rgba(0,0,0,0.15)" }}>
-            <button onClick={() => setIsSupportModalOpen(false)} style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", color: "#999999", fontSize: 24, cursor: "pointer", lineHeight: 1 }}>×</button>
+            <button onClick={() => setIsSupportModalOpen(false)} style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", color: "#999999", fontSize: "clamp(18px, 2.5vw, 24px)", cursor: "pointer", lineHeight: 1 }}>×</button>
             <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: "#111827", textAlign: "center" }}>
               {isEn ? "Need Help?" : "需要协助？"}
             </h3>
