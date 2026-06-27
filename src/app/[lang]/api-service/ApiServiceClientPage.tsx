@@ -361,7 +361,7 @@ print(response.choices[0].message.content)`;
           }}
         >
           {/* Logo & Brand */}
-          <Link href={`/${lang}`} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+          <Link href={`/${lang}`} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flexShrink: 0 }}>
             <img 
               src={lang === 'zh' ? '/images/logo-zh.png' : '/images/logo-en.png'} 
               alt={dict.header.title} 
@@ -370,7 +370,7 @@ print(response.choices[0].message.content)`;
           </Link>
 
           {/* Desktop Nav Items */}
-          <div className="desktop-flex" style={{ display: "flex", alignItems: "center", gap: 20, fontSize: 14, fontWeight: 500 }}>
+          <div className="desktop-flex" style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 14, fontWeight: 500, minWidth: 0, overflowX: "auto", whiteSpace: "nowrap", paddingBottom: 2, msOverflowStyle: 'none', scrollbarWidth: 'none' }}>
             <Link href={`/${lang}`} className="nav-link" style={{ textDecoration: "none" }}>
               {t.nav.home}
             </Link>

@@ -160,25 +160,39 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
     <div style={{ minHeight: "100vh", lineHeight: 1.5, background: "#fafafa" }}>
 
       <header style={{ background: "#ffffff", borderBottom: "1px solid #eaeaea", padding: "16px 0", position: "sticky", top: 0, zIndex: 50 }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "60px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 16px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "60px", gap: 16 }}>
+          <Link href={`/${lang}`} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flexShrink: 0 }}>
             <img 
               src={lang === 'zh' ? '/images/logo-zh.png' : '/images/logo-en.png'} 
               alt={dict.header.title} 
               style={{ height: 27, width: 'auto', display: "block" }} 
             />
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 24, fontSize: 14, fontWeight: 500 }}>
-            {["gpt", "gemini", "api", "growth", "flow"].map(key => (
-              <a key={key} href={`#${key}`} className="nav-link" style={{ textDecoration: "none" }}>
-                {dict.header.nav[key]}
+          </Link>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 14, fontWeight: 500, minWidth: 0, overflowX: "auto", whiteSpace: "nowrap", paddingBottom: 2, msOverflowStyle: 'none', scrollbarWidth: 'none' }}>
+            {categories.map(category => (
+              <a 
+                key={category.id} 
+                href={`#${category.id}`} 
+                className="nav-link"
+                style={{ textDecoration: "none", color: "#666666", transition: "color 0.2s ease", flexShrink: 0 }}
+              >
+                {dict.header.nav[category.id as keyof typeof dict.header.nav]}
               </a>
             ))}
-            <button onClick={switchLang} style={{ background: "none", border: "1px solid #eaeaea", borderRadius: "6px", padding: "4px 8px", cursor: "pointer", fontSize: 13, fontWeight: 600, color: "#666" }}>
+            <Link href={`/${lang}/api-service`} className="nav-link" style={{ textDecoration: "none", color: "#666666", transition: "color 0.2s ease", flexShrink: 0 }}>
+              {dict.header.nav['api-service']}
+            </Link>
+            <a 
+              href="#flow" 
+              className="nav-link"
+              style={{ textDecoration: "none", color: "#666666", transition: "color 0.2s ease", flexShrink: 0 }}
+            >
+              {dict.header.nav.flow}
+            </a>
+            <button onClick={switchLang} style={{ background: "none", border: "1px solid #eaeaea", borderRadius: "6px", padding: "4px 8px", cursor: "pointer", fontSize: 13, fontWeight: 600, color: "#666", flexShrink: 0 }}>
               {lang === 'zh' ? 'EN' : '中文'}
             </button>
           </div>
-
         </div>
       </header>
 
