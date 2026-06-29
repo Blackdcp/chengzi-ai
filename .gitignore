@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local one-off maintenance scripts
+/clean_logo.js
+/fix_fonts.js
+/fix_ordernames.js
+/force_crop.js
+/patch_api_links.js
+/patch_en_json.js
+/patch_json.js
+/patch_json.py
+/validate_products.js
+/ops/

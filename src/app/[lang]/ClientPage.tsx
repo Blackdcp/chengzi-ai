@@ -4,8 +4,19 @@ import { useState } from "react";
 import type { Product } from "../../types/product";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 type PaymentMethod = "alipay" | "wechat";
+type HomeDictionary = {
+  header: { title: string };
+  common: {
+    currency: string;
+    soldOut: string;
+    details: string;
+    free: string;
+  };
+  modal: Record<string, string>;
+};
 
 const em = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 
@@ -17,7 +28,7 @@ function genOrderId() {
   return `CZ${d}${t}${r}`;
 }
 
-export default function HomePage({ dict, products, lang, refCode }: { dict: any, products: Product[], lang: string, refCode?: string }) {
+export default function HomePage({ dict, products, lang, refCode }: { dict: HomeDictionary, products: Product[], lang: string, refCode?: string }) {
   const [modal, setModal] = useState<{ name: string; price: number; orderId: string; actionType?: string; categoryId?: string } | null>(null);
   const [detailProduct, setDetailProduct] = useState<Product | null>(null);
   const [email, setEmail] = useState("");
@@ -27,7 +38,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
   const [workLink, setWorkLink] = useState("");
   const [workLinkErr, setWorkLinkErr] = useState("");
   const [step, setStep] = useState<"pay" | "consult" | "success">("pay");
-  const [payMethod, setPayMethod] = useState<PaymentMethod>("alipay");
+  const payMethod: PaymentMethod = "alipay";
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showApiFloat, setShowApiFloat] = useState(true);
 
@@ -111,7 +122,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
       } else {
         alert("提交失败，请稍后重试 (Submit failed)");
       }
-    } catch (e) {
+    } catch {
       alert("提交失败，请稍后重试 (Submit failed)");
     } finally {
       setIsSubmitting(false);
@@ -142,7 +153,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
       } else {
         alert("提交失败，请稍后重试 (Submit failed)");
       }
-    } catch (e) {
+    } catch {
       alert("提交失败，请稍后重试 (Submit failed)");
     } finally {
       setIsSubmitting(false);
@@ -819,9 +830,11 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
       <header className="cz-header" style={{ background: "#ffffff", borderBottom: "1px solid #eaeaea", padding: "16px 0", position: "sticky", top: 0, zIndex: 50 }}>
         <div className="cz-header-inner" style={{ maxWidth: 1080, margin: "0 auto", padding: "0 16px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "60px", gap: 16 }}>
           <Link href={`/${lang}`} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flexShrink: 0 }}>
-            <img
+            <Image
               src={lang === 'zh' ? '/images/logo-zh.png' : '/images/logo-en.png'}
               alt={dict.header.title}
+              width={lang === 'zh' ? 1309 : 1392}
+              height={lang === 'zh' ? 329 : 283}
               style={{ height: 27, width: 'auto', display: "block" }}
             />
           </Link>
@@ -1188,11 +1201,13 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
                              第四步：请用支付宝扫码支付对应款项
                            </div>
                            <div style={{ width: 180, height: 180, margin: "0 auto 24px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-                             <img 
-                               src="/images/alipay.jpg" 
-                               alt="Alipay QR Code" 
-                               style={{ width: "100%", height: "100%", objectFit: "contain" }} 
-                             />
+                              <Image
+                                src="/images/alipay.jpg"
+                                alt="Alipay QR Code"
+                                width={554}
+                                height={554}
+                                style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                              />
                            </div>
                            <div style={{ fontSize: 13, color: "#666", marginBottom: 20, textAlign: "left", lineHeight: 1.5 }}>
                              请根据您的需求计算应付金额并扫码支付。<br/>
@@ -1236,11 +1251,13 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
                          <>
                            <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>第一步：请使用支付宝扫码支付对应金额</div>
                            <div style={{ width: 180, height: 180, margin: "0 auto 12px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", color: "#999999", flexDirection: "column", overflow: "hidden" }}>
-                             <img 
-                               src="/images/alipay.jpg" 
-                               alt="Alipay QR Code" 
-                               style={{ width: "100%", height: "100%", objectFit: "contain" }} 
-                             />
+                              <Image
+                                src="/images/alipay.jpg"
+                                alt="Alipay QR Code"
+                                width={554}
+                                height={554}
+                                style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                              />
                            </div>
                            <div style={{ fontSize: 12, color: "#666", marginBottom: 24, textAlign: "center" }}>
                              使用支付宝扫一扫支付 <strong style={{ color: "#111827" }}>¥{modal.price}</strong> 元

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 const CONSOLE_URL = "https://api.cheng-zi-ai.com";
 
@@ -78,6 +79,18 @@ const getPlans = (lang: string) => {
       contactOnly: true,
     },
   ];
+};
+
+type ApiPlan = ReturnType<typeof getPlans>[number];
+
+type ApiServiceDictionary = {
+  header: { title: string };
+  apiService: {
+    nav: Record<"home" | "pricing" | "models" | "tutorial" | "faq" | "console", string>;
+    hero: Record<"title" | "subtitle" | "description" | "ctaBuy" | "ctaTutorial", string>;
+    models: Record<"title" | "subtitle" | "available", string>;
+    footer: Record<"backToHome" | "disclaimer" | "copyright", string>;
+  };
 };
 
 const getModelGroups = (lang: string) => {
@@ -250,7 +263,7 @@ const getFaqItems = (lang: string) => {
   ];
 };
 
-export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: string }) {
+export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceDictionary; lang: string }) {
   const t = dict.apiService;
   const router = useRouter();
   const pathname = usePathname();
@@ -264,15 +277,13 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
 
   // UI States
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [selectedPlan, setSelectedPlan] = useState<any | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<ApiPlan | null>(null);
   const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
   const [purchaseStep, setPurchaseStep] = useState<"confirm" | "pay" | "success">("confirm");
-  const [payMethod, setPayMethod] = useState<"alipay" | "wechat">("alipay");
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [contact, setContact] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [orderId, setOrderId] = useState("");
 
   const [copiedStates, setCopiedStates] = useState<Record<string, boolean>>({});
   const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
@@ -303,21 +314,8 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
     }
   };
 
-  const genOrderId = () => {
-    const now = new Date();
-    const ts = now.getFullYear().toString() +
-      (now.getMonth() + 1).toString().padStart(2, '0') +
-      now.getDate().toString().padStart(2, '0') +
-      now.getHours().toString().padStart(2, '0') +
-      now.getMinutes().toString().padStart(2, '0') +
-      now.getSeconds().toString().padStart(2, '0');
-    const rand = Math.floor(1000 + Math.random() * 9000);
-    return `API-${ts}-${rand}`;
-  };
-
-  const handleBuy = (plan: any) => {
+  const handleBuy = (plan: ApiPlan) => {
     setSelectedPlan(plan);
-    setOrderId(genOrderId());
     setEmail("");
     setEmailErr("");
     setContact("");
@@ -354,7 +352,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
       } else {
         alert(isEn ? "Submission failed, please try again." : "提交订单失败，请稍后重试");
       }
-    } catch (e) {
+    } catch {
       alert(isEn ? "Submission failed, please try again." : "提交订单失败，请稍后重试");
     } finally {
       setIsSubmitting(false);
@@ -406,10 +404,12 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
         >
           {/* Logo & Brand */}
           <Link href={`/${lang}`} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flexShrink: 0 }}>
-            <img 
-              src={lang === 'zh' ? '/images/logo-zh.png' : '/images/logo-en.png'} 
-              alt={dict.header.title} 
-              style={{ height: 27, width: 'auto', display: "block" }} 
+            <Image
+              src={lang === 'zh' ? '/images/logo-zh.png' : '/images/logo-en.png'}
+              alt={dict.header.title}
+              width={lang === 'zh' ? 1309 : 1392}
+              height={lang === 'zh' ? 329 : 283}
+              style={{ height: 27, width: 'auto', display: "block" }}
             />
           </Link>
 
@@ -1543,10 +1543,12 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
                       请使用支付宝扫码支付（金额：<strong style={{ color: "#ff5a00" }}>{selectedPlan.priceText}</strong>）
                     </div>
                     <div style={{ width: 160, height: 160, margin: "0 auto 16px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-                      <img 
-                        src="/images/alipay.jpg" 
-                        alt="Alipay QR Code" 
-                        style={{ width: "100%", height: "100%", objectFit: "contain" }} 
+                      <Image
+                        src="/images/alipay.jpg"
+                        alt="Alipay QR Code"
+                        width={554}
+                        height={554}
+                        style={{ width: "100%", height: "100%", objectFit: "contain" }}
                       />
                     </div>
                     <div style={{ fontSize: 12, color: "#666", marginBottom: 16, textAlign: "left", lineHeight: 1.5 }}>

@@ -19,7 +19,7 @@ export async function GET() {
         'Content-Type': 'text/html; charset=utf-8',
       },
     });
-  } catch (error) {
+  } catch {
     return new NextResponse('Error loading activation page', { status: 500 });
   }
 }

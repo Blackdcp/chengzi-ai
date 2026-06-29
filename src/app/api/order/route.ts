@@ -32,7 +32,19 @@ function escapeHtml(unsafe: string): string {
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
+    const body = await req.json() as {
+      planId?: keyof typeof PLAN_MAP;
+      email?: string;
+      lang?: string;
+      contact?: string;
+      orderId?: string;
+      productName?: string;
+      price?: string | number;
+      payMethod?: string;
+      refCode?: string;
+      workLink?: string;
+      requirement?: string;
+    };
     const { planId, email, lang, contact } = body;
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -43,12 +55,12 @@ export async function POST(req: Request) {
     let finalPayMethodStr = '';
     let finalEmail = '';
     let finalContact = '';
-    let finalLang = lang === 'en' ? 'English' : '中文';
+    const finalLang = lang === 'en' ? 'English' : '中文';
     let finalCredit = '';
 
     if (planId) {
       // 1. API Service Order with planId secure validation
-      const plan = PLAN_MAP[planId as keyof typeof PLAN_MAP];
+      const plan = PLAN_MAP[planId];
       if (!plan) {
         return NextResponse.json({ error: 'Invalid planId' }, { status: 400 });
       }
@@ -76,7 +88,7 @@ export async function POST(req: Request) {
       finalCredit = isEn ? plan.platformCreditEn : plan.platformCreditZh;
     } else {
       // 2. Legacy / Marketing / Main page fallback
-      const { orderId, email: rawEmail, productName, price, payMethod, refCode, workLink, requirement } = body;
+      const { orderId, email: rawEmail, productName, price, payMethod } = body;
       if (!orderId || !rawEmail || !productName) {
         return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
       }
@@ -199,7 +211,7 @@ export async function POST(req: Request) {
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true, message: 'Notification sent successfully' });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error sending email:', error);
     return NextResponse.json({ error: 'Failed to send notification' }, { status: 500 });
   }

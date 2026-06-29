@@ -3,7 +3,12 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
+    const body = await req.json() as {
+      email?: string;
+      requirement?: string;
+      productName?: string;
+      refCode?: string;
+    };
     const { email, requirement, productName, refCode } = body;
 
     if (!email || !requirement || !productName) {
@@ -71,7 +76,7 @@ export async function POST(req: Request) {
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true, message: 'Consultation request sent successfully' });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error sending email:', error);
     return NextResponse.json({ error: 'Failed to send notification' }, { status: 500 });
   }
