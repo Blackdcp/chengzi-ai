@@ -8,26 +8,27 @@ const CONSOLE_URL = "https://api.cheng-zi-ai.com";
 
 const MODELS = [
   { name: "gpt-5.5", provider: "openai" },
+  { name: "gpt-image-2", provider: "openai" },
   { name: "gpt-5.4", provider: "openai" },
   { name: "gpt-5.4-mini", provider: "openai" },
-  { name: "codex-auto-review", provider: "openai" },
   { name: "gpt-5.3-codex", provider: "openai" },
-  { name: "gpt-image-2", provider: "openai" },
+  { name: "codex-auto-review", provider: "openai" },
   { name: "claude-opus-4-8", provider: "claude" },
-  { name: "claude-haiku-4-5-20251001", provider: "claude" },
-  { name: "claude-opus-4-6", provider: "claude" },
-  { name: "claude-opus-4-7", provider: "claude" },
   { name: "claude-sonnet-4-6", provider: "claude" },
+  { name: "claude-opus-4-7", provider: "claude" },
+  { name: "claude-opus-4-6", provider: "claude" },
+  { name: "claude-haiku-4-5-20251001", provider: "claude" },
   { name: "gemini-3.1-pro-high", provider: "gemini" },
   { name: "gemini-3.1-pro-low", provider: "gemini" },
+  { name: "gemini-3.1-pro-preview-customtools", provider: "gemini" },
   { name: "gemini-3.5-flash", provider: "gemini" },
   { name: "gemini-3.5-flash-low", provider: "gemini" },
 ];
 
-const PROVIDER_COLORS: Record<string, { bg: string; color: string; border: string }> = {
-  openai: { bg: "#f0fdf4", color: "#16a34a", border: "#bbf7d0" },
-  claude: { bg: "#fef3e2", color: "#d97706", border: "#fde68a" },
-  gemini: { bg: "#eff6ff", color: "#2563eb", border: "#bfdbfe" },
+const PROVIDER_META: Record<string, { mark: string; logo: string; featured: string[] }> = {
+  openai: { mark: "AI", logo: "OpenAI", featured: ["gpt-5.5", "gpt-image-2"] },
+  claude: { mark: "C", logo: "Claude", featured: ["claude-opus-4-8"] },
+  gemini: { mark: "G", logo: "Gemini", featured: ["gemini-3.1-pro-high"] },
 };
 
 const getPlans = (lang: string) => {
@@ -40,7 +41,7 @@ const getPlans = (lang: string) => {
       priceValue: 100,
       priceUsd: 100,
       credit: isEn ? "$100 platform credit" : "$100 平台计价额度",
-      badge: "",
+      badge: isEn ? "Recommended" : "推荐",
       bestFor: isEn ? "For individual developers, AI client testing, and lightweight usage." : "适合：个人开发者、AI 客户端测试、Cursor / Cline / ChatBox 轻量使用",
       features: isEn
         ? ["Mainstream models available", "Self-service top-up in console", "Usage logs view", "Basic community support"]
@@ -54,94 +55,157 @@ const getPlans = (lang: string) => {
       priceValue: 300,
       priceUsd: 300,
       credit: isEn ? "$300 platform credit" : "$300 平台计价额度",
-      badge: isEn ? "Recommended" : "推荐",
+      badge: "",
       bestFor: isEn ? "For frequent usage, AI coding, multi-model testing, and small team usage." : "适合：高频使用、AI Coding、多模型测试、小团队轻量共用",
       features: isEn
         ? ["Mainstream models available", "Self-service top-up in console", "Usage statistics dashboard", "Peak-time priority routing", "1v1 Setup assistance"]
         : ["主流模型可用", "支持控制台自助兑换", "支持用量统计", "高峰期优先处理", "1v1 配置协助"],
       buttonText: isEn ? "Buy $300 Credit Code" : "购买 ¥300 充值码",
     },
+    {
+      id: "plan_bulk",
+      name: isEn ? "Bulk Subscription" : "大额订阅",
+      priceText: isEn ? "Custom" : "定制折扣",
+      priceValue: 0,
+      priceUsd: 0,
+      credit: isEn ? "Bulk credit / recurring usage" : "大额额度 / 长期订阅",
+      badge: isEn ? "Lower discount available" : "可谈更低折扣",
+      bestFor: isEn ? "For stable monthly usage, team usage, or larger Claude / Codex consumption." : "适合：稳定月用量、团队共用、Claude / Codex 大额消耗",
+      features: isEn
+        ? ["Lower rate for larger usage", "Monthly or one-time bulk credit", "Model and client setup assistance", "Manual quote based on usage"]
+        : ["大额用量可谈更低折扣", "支持月度订阅或一次性大额", "协助确认模型和客户端配置", "按实际用量人工报价"],
+      buttonText: isEn ? "Talk to Support" : "联系客服谈折扣",
+      contactOnly: true,
+    },
   ];
 };
 
-
-const getFitData = (lang: string) => {
+const getModelGroups = (lang: string) => {
   const isEn = lang === "en";
-  return {
-    suitable: {
-      title: isEn ? "Who Is This For?" : "适合谁",
-      items: isEn
-        ? [
-            "Individual Developers & Hobbyists",
-            "Cursor / Cline / ChatBox / NextChat users",
-            "AI application sandbox testers",
-            "Small teams building rapid MVP prototypes",
-            "Users wanting low-cost trials of multiple LLM providers"
-          ]
-        : [
-            "个人开发者",
-            "Cursor / Cline / ChatBox 用户",
-            "AI 工具测试用户",
-            "小团队原型验证",
-            "想低成本体验多模型的人"
-          ]
-    },
-    unsuitable: {
-      title: isEn ? "Who Is This NOT For?" : "不适合谁",
-      items: isEn
-        ? [
-            "Enterprise formal production deployments",
-            "High-concurrency mission-critical operations",
-            "High-risk sectors (medical, financial, legal domains)",
-            "Customers requiring official contracts, VAT invoices, DPA, or custom SLAs",
-            "Users who cannot tolerate temporary upstream model adjustments"
-          ]
-        : [
-            "企业正式生产系统",
-            "高并发核心业务",
-            "医疗、金融、法律等高风险场景",
-            "对官方合同、发票、DPA、SLA 有要求的客户",
-            "不能接受模型临时调整的人"
-          ]
-    }
-  };
+  return ["openai", "claude", "gemini"].map((provider) => {
+    const meta = PROVIDER_META[provider];
+    const title =
+      provider === "openai"
+        ? isEn ? "OpenAI-format models" : "OpenAI 格式模型"
+        : provider === "claude"
+          ? isEn ? "Claude series models" : "Claude 系列模型"
+          : isEn ? "Gemini series models" : "Gemini 系列模型";
+
+    const desc =
+      provider === "openai"
+        ? isEn
+          ? "For text, coding, image generation, and OpenAI-compatible clients."
+          : "支持文本、代码、图像生成和 OpenAI 兼容客户端。"
+        : provider === "claude"
+          ? isEn
+            ? "For Claude Code, advanced coding, writing, and long-document analysis."
+            : "支持 Claude Code、高阶代码、写作和长文档分析。"
+          : isEn
+            ? "For long context, multimodal work, and cost-sensitive calls."
+            : "适合长上下文、多模态和成本敏感调用场景。";
+
+    return {
+      provider,
+      logoMark: meta.mark,
+      logoText: meta.logo,
+      title,
+      desc,
+      featuredModels: meta.featured,
+      models: MODELS.filter((model) => model.provider === provider).map((model) => model.name),
+    };
+  });
 };
 
-
-const getQuickStartSteps = (lang: string) => {
+const getSetupFlow = (lang: string) => {
   const isEn = lang === "en";
   return [
     {
-      title: isEn ? "1. Buy Credit Code" : "1. 购买充值码",
-      desc: isEn 
-        ? "Select $100 / $300 credit code, complete payment via PayPal, and submit your email." 
-        : "选择 ¥100 / ¥300 充值码，完成支付宝付款，并提交邮箱。"
+      title: isEn ? "Buy credit" : "购买额度",
+      desc: isEn ? "Choose a credit code or contact support for bulk discounts." : "选择充值码；大额长期用量可以联系客服谈折扣。",
     },
     {
-      title: isEn ? "2. Manual Verification & Delivery" : "2. 人工核款发码",
-      desc: isEn 
-        ? "We will send the redemption code to your email after manually confirming the payment." 
-        : "我们会在核对收款后，将兑换码发送到你的邮箱。"
+      title: isEn ? "Redeem in console" : "控制台兑换",
+      desc: isEn ? "Redeem the code to platform credit inside the console." : "在控制台兑换为平台额度，余额和日志都能查看。",
     },
     {
-      title: isEn ? "3. Redeem in Console" : "3. 控制台兑换额度",
-      desc: isEn 
-        ? "Log in to https://api.cheng-zi-ai.com, and redeem the code in the redeem page." 
-        : "登录 https://api.cheng-zi-ai.com，在「兑换」页面输入兑换码。"
+      title: isEn ? "Create API Key" : "创建 API Key",
+      desc: isEn ? "Create a key and select the models you want to allow." : "创建 Key 时勾选需要开放的模型。",
     },
     {
-      title: isEn ? "4. Create API Key" : "4. 创建 API Key",
-      desc: isEn 
-        ? "Navigate to the Token page inside the console, generate your API Key." 
-        : "进入「令牌」页面创建你的 API Key。"
+      title: isEn ? "Fill into client" : "填入客户端",
+      desc: isEn ? "Use /v1 for OpenAI-compatible clients; Claude Code uses a different base URL." : "OpenAI 兼容客户端用 /v1；Claude Code 走单独配置。",
     },
-    {
-      title: isEn ? "5. Configure Client" : "5. 填入客户端",
-      desc: isEn 
-        ? "Base URL is https://api.cheng-zi-ai.com/v1, and API Key is your created token." 
-        : "Base URL 填写 https://api.cheng-zi-ai.com/v1，API Key 填写你创建的令牌。"
-    }
   ];
+};
+
+
+const getClientGuideData = (lang: string) => {
+  const isEn = lang === "en";
+  const keyPlaceholder = isEn ? "sk-your-api-key" : "sk-你的API_KEY";
+  const claudePowerShell = `$env:ANTHROPIC_AUTH_TOKEN="${keyPlaceholder}"
+Remove-Item Env:ANTHROPIC_API_KEY -ErrorAction SilentlyContinue
+$env:ANTHROPIC_BASE_URL="https://api.cheng-zi-ai.com"
+$env:ANTHROPIC_MODEL="claude-opus-4-8"
+$env:ANTHROPIC_DEFAULT_HAIKU_MODEL="claude-haiku-4-5-20251001"
+$env:ANTHROPIC_DEFAULT_SONNET_MODEL="claude-sonnet-4-6"
+$env:ANTHROPIC_DEFAULT_OPUS_MODEL="claude-opus-4-8"
+$env:CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="1"
+
+claude -p "Reply with exactly: OK" --model claude-opus-4-8`;
+  const claudeSettings = `{
+  "model": "claude-opus-4-8",
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://api.cheng-zi-ai.com",
+    "ANTHROPIC_AUTH_TOKEN": "${keyPlaceholder}",
+    "ANTHROPIC_MODEL": "claude-opus-4-8",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-4-5-20251001",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-6",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-8",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  }
+}`;
+  const codexPowerShell = `$env:OPENAI_API_KEY="${keyPlaceholder}"`;
+  const codexConfig = `model = "gpt-5.3-codex"
+openai_base_url = "https://api.cheng-zi-ai.com/v1"`;
+
+  return {
+    cards: [
+      {
+        label: "Claude Code",
+        title: isEn ? "Claude Code configuration" : "Claude Code 配置",
+        endpoint: "https://api.cheng-zi-ai.com",
+        note: isEn
+          ? "Critical: Base URL has no /v1, use ANTHROPIC_AUTH_TOKEN, and remove ANTHROPIC_API_KEY if it was set before."
+          : "关键：Base URL 不加 /v1；密钥用 ANTHROPIC_AUTH_TOKEN；如果以前设置过 ANTHROPIC_API_KEY，要先删掉。",
+        steps: [
+          ["Base URL", "https://api.cheng-zi-ai.com"],
+          [isEn ? "Token variable" : "密钥变量", "ANTHROPIC_AUTH_TOKEN"],
+          [isEn ? "Recommended model" : "推荐模型", "claude-opus-4-8"],
+        ],
+        blocks: [
+          { title: isEn ? "PowerShell temporary setup" : "PowerShell 临时配置", code: claudePowerShell },
+          { title: "%USERPROFILE%\\.claude\\settings.json", code: claudeSettings },
+        ],
+      },
+      {
+        label: "Codex",
+        title: isEn ? "Codex configuration" : "Codex 配置",
+        endpoint: "https://api.cheng-zi-ai.com/v1",
+        note: isEn
+          ? "Critical: Codex uses OpenAI-compatible routing, so the Base URL must include /v1."
+          : "关键：Codex 走 OpenAI 兼容路由，所以 Base URL 必须带 /v1。",
+        steps: [
+          ["Base URL", "https://api.cheng-zi-ai.com/v1"],
+          [isEn ? "Key variable" : "密钥变量", "OPENAI_API_KEY"],
+          [isEn ? "Recommended model" : "推荐模型", "gpt-5.3-codex / codex-auto-review"],
+        ],
+        blocks: [
+          { title: isEn ? "PowerShell environment" : "PowerShell 环境变量", code: codexPowerShell },
+          { title: isEn ? "%USERPROFILE%\\.codex\\config.toml" : "%USERPROFILE%\\.codex\\config.toml", code: codexConfig },
+        ],
+      },
+    ],
+  };
 };
 
 const getFaqItems = (lang: string) => {
@@ -181,7 +245,7 @@ const getFaqItems = (lang: string) => {
       question: isEn ? "Is it suitable for production?" : "适合生产环境吗？",
       answer: isEn
         ? "It is best suited for individual developers, small team testing, AI client integration, and lightweight usage. We do not recommend it for enterprise production, high-concurrency core businesses, or high-risk scenarios such as medical, financial, or legal domains."
-        : "更适合个人开发者、小团队测试、AI 客户端接入和轻量使用。不建议用于企业正式生产、高并发核心业务、医疗、金融、法律等高风险场景。"
+        : "更适合个人开发者、小团队测试、AI 客户端配置和轻量使用。不建议用于企业正式生产、高并发核心业务、医疗、金融、法律等高风险场景。"
     }
   ];
 };
@@ -193,9 +257,10 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
   const isEn = lang === "en";
 
   const plans = getPlans(lang);
-  const fitData = getFitData(lang);
+  const modelGroups = getModelGroups(lang);
+  const clientGuideData = getClientGuideData(lang);
+  const setupFlow = getSetupFlow(lang);
   const faqItems = getFaqItems(lang);
-  const quickStartSteps = getQuickStartSteps(lang);
 
   // UI States
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -296,27 +361,6 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: any; lang: 
     }
   };
 
-  const curlExampleCode = `curl -X POST "https://api.cheng-zi-ai.com/v1/chat/completions" \\
-  -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer sk-your-api-key" \\
-  -d '{
-    "model": "gpt-5.5",
-    "messages": [{"role": "user", "content": "Hello!"}]
-  }'`;
-
-  const pythonExampleCode = `import openai
-
-client = openai.OpenAI(
-    base_url="https://api.cheng-zi-ai.com/v1",
-    api_key="sk-your-api-key"
-)
-
-response = client.chat.completions.create(
-    model="gpt-5.5",
-    messages=[{"role": "user", "content": "Hello!"}]
-)
-print(response.choices[0].message.content)`;
-
   return (
     <div style={{ minHeight: "100vh", lineHeight: 1.5, background: "#fafafa" }}>
       {/* ───── Compliance Banner (Section 2) ───── */}
@@ -375,17 +419,6 @@ print(response.choices[0].message.content)`;
               {t.nav.home}
             </Link>
             <a
-              href="#models"
-              className="nav-link"
-              style={{ textDecoration: "none" }}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo("models");
-              }}
-            >
-              {t.nav.models}
-            </a>
-            <a
               href="#pricing"
               className="nav-link"
               style={{ textDecoration: "none" }}
@@ -395,6 +428,17 @@ print(response.choices[0].message.content)`;
               }}
             >
               {t.nav.pricing}
+            </a>
+            <a
+              href="#models"
+              className="nav-link"
+              style={{ textDecoration: "none" }}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollTo("models");
+              }}
+            >
+              {t.nav.models}
             </a>
             <a
               href="#quick-start"
@@ -519,17 +563,6 @@ print(response.choices[0].message.content)`;
               {t.nav.home}
             </Link>
             <a
-              href="#models"
-              style={{ textDecoration: "none", color: "#333" }}
-              onClick={(e) => {
-                e.preventDefault();
-                setMobileMenuOpen(false);
-                scrollTo("models");
-              }}
-            >
-              {t.nav.models}
-            </a>
-            <a
               href="#pricing"
               style={{ textDecoration: "none", color: "#333" }}
               onClick={(e) => {
@@ -539,6 +572,17 @@ print(response.choices[0].message.content)`;
               }}
             >
               {t.nav.pricing}
+            </a>
+            <a
+              href="#models"
+              style={{ textDecoration: "none", color: "#333" }}
+              onClick={(e) => {
+                e.preventDefault();
+                setMobileMenuOpen(false);
+                scrollTo("models");
+              }}
+            >
+              {t.nav.models}
             </a>
             <a
               href="#quick-start"
@@ -614,10 +658,11 @@ print(response.choices[0].message.content)`;
 
       {/* ───── Hero (Section 4) ───── */}
       <section
+        className="api-hero-section"
         style={{
-          background: "linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%)",
-          color: "#ffffff",
-          padding: "80px 24px 100px",
+          background: "#fafafa",
+          color: "#111827",
+          padding: "max(22px, 4vw) 18px max(44px, 7vw)",
           position: "relative",
           overflow: "hidden",
         }}
@@ -627,9 +672,7 @@ print(response.choices[0].message.content)`;
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
+            backgroundImage: "none",
             pointerEvents: "none",
           }}
         />
@@ -642,47 +685,52 @@ print(response.choices[0].message.content)`;
             transform: "translateX(-50%)",
             width: "800px",
             height: "800px",
-            background: "radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)",
+            background: "transparent",
             pointerEvents: "none",
           }}
         />
 
-        <div style={{ maxWidth: 1080, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
+        <div className="api-hero-shell" style={{ maxWidth: 1120, margin: "0 auto", textAlign: "left", position: "relative", zIndex: 1, background: "#ffffff", border: "1px solid #eaeaea", borderRadius: 28, padding: "clamp(34px, 5vw, 56px)", boxShadow: "0 18px 60px rgba(0,0,0,0.05)" }}>
           <div
             style={{
-              display: "inline-block",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
               padding: "6px 16px",
-              border: "1px solid rgba(255,255,255,0.15)",
+              border: "1px solid #eaeaea",
               borderRadius: "999px",
               fontSize: 13,
-              fontWeight: 500,
-              color: "rgba(255,255,255,0.7)",
+              fontWeight: 700,
+              color: "#111827",
               marginBottom: 16,
-              background: "rgba(255,255,255,0.05)",
+              background: "#ffffff",
             }}
           >
-            🚀 OpenAI / Claude / Gemini
+            <span style={{ width: 8, height: 8, borderRadius: 999, background: "#ff6a00", display: "inline-block" }} />
+            OpenAI / Claude / Gemini
           </div>
           <div
             style={{
-              display: "inline-block",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
               padding: "6px 16px",
-              border: "1px solid rgba(34,197,94,0.3)",
+              border: "1px solid #eaeaea",
               borderRadius: "999px",
               fontSize: 13,
-              fontWeight: 600,
-              color: "#4ade80",
+              fontWeight: 700,
+              color: "#111827",
               marginBottom: 32,
               marginLeft: 12,
-              background: "rgba(34,197,94,0.1)",
+              background: "#ffffff",
             }}
           >
-            ✅ OpenAI {isEn ? "Compatible" : "格式兼容"}
+            OpenAI {isEn ? "Compatible" : "格式兼容"}
           </div>
 
           <h1
             style={{
-              fontSize: "clamp(32px, 5vw, 54px)",
+              fontSize: "clamp(34px, 5vw, 54px)",
               fontWeight: 800,
               letterSpacing: "-0.04em",
               lineHeight: 1.1,
@@ -695,7 +743,7 @@ print(response.choices[0].message.content)`;
           <p
             style={{
               fontSize: "clamp(15px, 2vw, 18px)",
-              color: "rgba(255,255,255,0.85)",
+              color: "#333333",
               fontWeight: 500,
               margin: "0 0 12px",
               letterSpacing: "0.02em",
@@ -707,9 +755,9 @@ print(response.choices[0].message.content)`;
           <p
             style={{
               fontSize: 15,
-              color: "rgba(255,255,255,0.55)",
-              maxWidth: 620,
-              margin: "0 auto 40px",
+              color: "#666666",
+              maxWidth: 680,
+              margin: "0 0 40px",
               lineHeight: 1.7,
               whiteSpace: "pre-wrap",
             }}
@@ -717,7 +765,7 @@ print(response.choices[0].message.content)`;
             {t.hero.description}
           </p>
 
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 48 }}>
+          <div style={{ display: "flex", gap: 16, justifyContent: "flex-start", flexWrap: "wrap", marginBottom: 32 }}>
             <button
               onClick={() => scrollTo("pricing")}
               style={{
@@ -725,35 +773,37 @@ print(response.choices[0].message.content)`;
                 alignItems: "center",
                 gap: 8,
                 padding: "14px 32px",
-                background: "#ffffff",
-                color: "#0a0a0a",
+                background: "#111827",
+                color: "#ffffff",
                 border: "none",
                 borderRadius: "8px",
                 fontSize: 15,
                 fontWeight: 600,
                 cursor: "pointer",
                 transition: "transform 0.2s, box-shadow 0.2s",
-                boxShadow: "0 4px 14px rgba(0,0,0,0.25)",
+                boxShadow: "0 10px 24px rgba(0,0,0,0.12)",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow = "0 8px 25px rgba(0,0,0,0.35)";
+                e.currentTarget.style.boxShadow = "0 10px 22px rgba(255,106,0,0.18)";
+                e.currentTarget.style.background = "#ff6a00";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 4px 14px rgba(0,0,0,0.25)";
+                e.currentTarget.style.boxShadow = "0 10px 24px rgba(0,0,0,0.12)";
+                e.currentTarget.style.background = "#111827";
               }}
             >
               {t.hero.ctaBuy}
               <span style={{ fontSize: 18 }}>→</span>
             </button>
             <button
-              onClick={() => scrollTo("quick-start")}
+              onClick={() => scrollTo("client-guides")}
               style={{
                 padding: "14px 32px",
                 background: "transparent",
-                color: "#ffffff",
-                border: "1px solid rgba(255,255,255,0.25)",
+                color: "#111827",
+                border: "1px solid #eaeaea",
                 borderRadius: "8px",
                 fontSize: 15,
                 fontWeight: 600,
@@ -762,11 +812,13 @@ print(response.choices[0].message.content)`;
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = "rgba(255,255,255,0.6)";
-                e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+                e.currentTarget.style.borderColor = "#ff6a00";
+                e.currentTarget.style.color = "#ff6a00";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)";
+                e.currentTarget.style.borderColor = "#eaeaea";
                 e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "#111827";
               }}
             >
               {t.hero.ctaTutorial}
@@ -774,22 +826,22 @@ print(response.choices[0].message.content)`;
           </div>
 
           {/* Small Trust Badges */}
-          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            {["OpenAI 格式兼容", "支持多客户端", "统一额度管理"].map((tagZh, i) => {
-              const tagEn = ["OpenAI Compatible", "Multi-Client Support", "Unified Quota Console"][i];
+          <div style={{ display: "flex", gap: 12, justifyContent: "flex-start", flexWrap: "wrap" }}>
+            {["¥100 起试用", "Claude Code 可用", "大额订阅可谈"].map((tagZh, i) => {
+              const tagEn = ["From $100", "Claude Code ready", "Bulk discount available"][i];
               return (
                 <span
                   key={i}
                   style={{
                     fontSize: 13,
-                    color: "rgba(255,255,255,0.45)",
-                    background: "rgba(255,255,255,0.03)",
-                    border: "1px solid rgba(255,255,255,0.08)",
+                    color: "#666666",
+                    background: "#fafafa",
+                    border: "1px solid #eaeaea",
                     padding: "6px 14px",
                     borderRadius: "999px",
                   }}
                 >
-                  ✓ {isEn ? tagEn : tagZh}
+                  {isEn ? tagEn : tagZh}
                 </span>
               );
             })}
@@ -797,144 +849,7 @@ print(response.choices[0].message.content)`;
         </div>
       </section>
 
-      {/* ───── Available Models (Section 5) ───── */}
-      <section id="models" style={{ padding: "80px 24px", maxWidth: 1080, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <h2
-            style={{
-              fontSize: "clamp(22px, 3.5vw, 32px)",
-              fontWeight: 700,
-              color: "#111827",
-              letterSpacing: "-0.02em",
-              margin: "0 0 12px",
-            }}
-          >
-            {t.models.title}
-          </h2>
-          <p style={{ fontSize: 16, color: "#666666", margin: 0 }}>{t.models.subtitle}</p>
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24, marginBottom: 32 }}>
-          {["openai", "claude", "gemini"].map(provider => {
-            const providerModels = MODELS.filter(m => m.provider === provider);
-            const pc = PROVIDER_COLORS[provider];
-            
-            const providerName = provider === "openai" 
-              ? (isEn ? "OpenAI Models" : "OpenAI 格式模型") 
-              : provider === "claude" 
-              ? (isEn ? "Claude Series Models" : "Claude 系列模型") 
-              : (isEn ? "Gemini Series Models" : "Gemini 系列模型");
-
-            const providerDesc = provider === "openai" 
-              ? (isEn ? "Supports various OpenAI format models, ideal for text, coding, and image generation. Specific names in console." : "支持多种 OpenAI 格式模型，可用于文本、代码、部分多模态场景。具体模型名称和可用状态以控制台为准。")
-              : provider === "claude"
-              ? (isEn ? "Supports Claude series relay, ideal for writing, advanced coding, and long document analytics." : "支持 Claude 系列模型中转，适合写作、代码、长文本分析等场景。")
-              : (isEn ? "Supports Gemini models, optimal choice for long-context windows and low-cost execution." : "支持 Gemini 系列模型，适合多模态、长文本和低成本调用场景。");
-
-            return (
-              <div
-                key={provider}
-                className="vercel-card"
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  padding: "32px",
-                  position: "relative",
-                }}
-              >
-                {/* Availability status */}
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 16,
-                    right: 16,
-                    border: "1px solid #22c55e",
-                    color: "#22c55e",
-                    padding: "2px 8px",
-                    fontSize: 11,
-                    fontWeight: 600,
-                    borderRadius: "999px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 4,
-                  }}
-                >
-                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#22c55e", display: "inline-block" }} />
-                  {t.models.available}
-                </div>
-
-                {/* Title */}
-                <h3
-                  style={{
-                    fontSize: 18,
-                    fontWeight: 600,
-                    color: "#111827",
-                    margin: "0 0 12px",
-                    lineHeight: 1.3,
-                    letterSpacing: "-0.02em",
-                    paddingRight: 60,
-                  }}
-                >
-                  {providerName}
-                </h3>
-
-                {/* Description */}
-                <p
-                  style={{
-                    fontSize: 14,
-                    color: "#666666",
-                    margin: "0 0 24px",
-                    flexGrow: 1,
-                    lineHeight: 1.6,
-                    minHeight: "72px",
-                  }}
-                >
-                  {providerDesc}
-                </p>
-
-                {/* Tags */}
-                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                  {providerModels.map(model => (
-                    <span
-                      key={model.name}
-                      style={{
-                        padding: "4px 10px",
-                        background: "#fafafa",
-                        border: "1px solid #eaeaea",
-                        borderRadius: "999px",
-                        fontSize: 12,
-                        color: "#666666",
-                        fontWeight: 500,
-                        cursor: "default",
-                        transition: "all 0.15s ease",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = pc.color;
-                        e.currentTarget.style.color = pc.color;
-                        e.currentTarget.style.background = pc.bg;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = "#eaeaea";
-                        e.currentTarget.style.color = "#666666";
-                        e.currentTarget.style.background = "#fafafa";
-                      }}
-                    >
-                      {model.name}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        
-        {/* Card bottom disclaimer */}
-        <div style={{ textAlign: "center", fontSize: 13, color: "#999999" }}>
-          {isEn ? "* The model list and availability can adjust dynamically based on upstream status and cost factors." : "* 模型列表可能随上游状态和成本变化调整。"}
-        </div>
-      </section>
-
-      {/* ───── Pricing Section (Section 6) ───── */}
+      {/* ───── Pricing Section (Section 5) ───── */}
       <section
         id="pricing"
         style={{
@@ -955,25 +870,26 @@ print(response.choices[0].message.content)`;
                 margin: "0 0 12px",
               }}
             >
-              {isEn ? "Low-cost CDK Packages" : "低价兑换码"}
+              {isEn ? "Credit Codes & Bulk Discounts" : "兑换码与大额折扣"}
             </h2>
             <p style={{ fontSize: 16, color: "#666666", maxWidth: 600, margin: "0 auto", lineHeight: 1.6 }}>
               {isEn
-                ? "CDK purchases can be redeemed in the console for platform quota. Multi-model consumption rates are listed in the console."
-                : "购买兑换码后，可在控制台兑换为平台调用额度。不同模型会按不同价格倍率消耗，具体以控制台显示为准。"}
+                ? "Buy a credit code for quick top-up, or contact support for a lower rate when you have larger recurring usage."
+                : "轻量使用直接购买兑换码；如果是长期稳定用量或团队用量，可以联系客服聊更低的大额折扣。"}
             </p>
           </div>
 
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
               gap: 24,
               alignItems: "stretch",
             }}
           >
             {plans.map((plan) => {
-              const isHighlighted = plan.id === "standard";
+              const isHighlighted = plan.id === "plan_100";
+              const isContactOnly = "contactOnly" in plan && plan.contactOnly;
               return (
                 <div
                   key={plan.id}
@@ -981,7 +897,8 @@ print(response.choices[0].message.content)`;
                   style={{
                     padding: 0,
                     position: "relative",
-                    border: isHighlighted ? "2px solid #0a0a0a" : undefined,
+                    border: isHighlighted ? "1px solid #111827" : isContactOnly ? "1px solid #d4d4d8" : "1px solid #eaeaea",
+                    background: isContactOnly ? "#fafafa" : "#ffffff",
                     display: "flex",
                     flexDirection: "column",
                     transition: "transform 0.2s, box-shadow 0.2s",
@@ -995,7 +912,6 @@ print(response.choices[0].message.content)`;
                     e.currentTarget.style.boxShadow = "";
                   }}
                 >
-                  {/* Recommended badge */}
                   {isHighlighted && plan.badge && (
                     <div
                       style={{
@@ -1003,7 +919,7 @@ print(response.choices[0].message.content)`;
                         top: -1,
                         left: "50%",
                         transform: "translateX(-50%) translateY(-50%)",
-                        background: "#0a0a0a",
+                        background: "#111827",
                         color: "#fff",
                         fontSize: 12,
                         fontWeight: 600,
@@ -1016,9 +932,16 @@ print(response.choices[0].message.content)`;
                   )}
 
                   <div style={{ padding: "40px 32px 32px", flexGrow: 1, display: "flex", flexDirection: "column" }}>
-                    <h3 style={{ fontSize: 18, fontWeight: 600, color: "#111827", margin: "0 0 16px" }}>
-                      {plan.name}
-                    </h3>
+                    <div style={{ minHeight: 54, marginBottom: 16 }}>
+                      <h3 style={{ fontSize: 18, fontWeight: 700, color: "#111827", margin: "0 0 8px" }}>
+                        {plan.name}
+                      </h3>
+                      {!isHighlighted && plan.badge && (
+                        <span style={{ display: "inline-flex", alignItems: "center", padding: "4px 10px", borderRadius: 999, border: "1px solid #e5e7eb", background: "#ffffff", color: "#111827", fontSize: 12, fontWeight: 700 }}>
+                          {plan.badge}
+                        </span>
+                      )}
+                    </div>
 
                     <div style={{ marginBottom: 12 }}>
                       <span style={{ fontSize: 36, fontWeight: 800, color: "#111827", letterSpacing: "-0.03em" }}>
@@ -1026,7 +949,7 @@ print(response.choices[0].message.content)`;
                       </span>
                     </div>
 
-                    <div style={{ fontSize: 14, color: "#22c55e", fontWeight: 600, marginBottom: 16 }}>
+                    <div style={{ fontSize: 14, color: "#111827", fontWeight: 700, marginBottom: 16 }}>
                       {plan.credit}
                     </div>
 
@@ -1053,8 +976,9 @@ print(response.choices[0].message.content)`;
                               width: 16,
                               height: 16,
                               borderRadius: "50%",
-                              background: isHighlighted ? "#0a0a0a" : "#f5f5f5",
-                              color: isHighlighted ? "#fff" : "#22c55e",
+                              background: isHighlighted ? "#111827" : isContactOnly ? "#ffffff" : "#f5f5f5",
+                              color: isHighlighted ? "#fff" : "#111827",
+                              border: isContactOnly ? "1px solid #d4d4d8" : "none",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
@@ -1071,7 +995,13 @@ print(response.choices[0].message.content)`;
                     </ul>
 
                     <button
-                      onClick={() => handleBuy(plan)}
+                      onClick={() => {
+                        if (isContactOnly) {
+                          setIsSupportModalOpen(true);
+                          return;
+                        }
+                        handleBuy(plan);
+                      }}
                       style={{
                         display: "block",
                         width: "100%",
@@ -1080,22 +1010,22 @@ print(response.choices[0].message.content)`;
                         fontSize: 14,
                         fontWeight: 600,
                         borderRadius: "6px",
-                        border: isHighlighted ? "none" : "1px solid #eaeaea",
-                        background: isHighlighted ? "#0a0a0a" : "transparent",
-                        color: isHighlighted ? "#ffffff" : "#666666",
+                        border: isHighlighted ? "none" : "1px solid #d4d4d8",
+                        background: isHighlighted ? "#111827" : "transparent",
+                        color: isHighlighted ? "#ffffff" : "#111827",
                         cursor: "pointer",
                         transition: "all 0.2s",
                       }}
                       onMouseEnter={(e) => {
                         if (!isHighlighted) {
-                          e.currentTarget.style.borderColor = "#0a0a0a";
-                          e.currentTarget.style.color = "#0a0a0a";
+                          e.currentTarget.style.borderColor = "#ff6a00";
+                          e.currentTarget.style.color = "#ff6a00";
                         }
                       }}
                       onMouseLeave={(e) => {
                         if (!isHighlighted) {
-                          e.currentTarget.style.borderColor = "#eaeaea";
-                          e.currentTarget.style.color = "#666666";
+                          e.currentTarget.style.borderColor = "#d4d4d8";
+                          e.currentTarget.style.color = "#111827";
                         }
                       }}
                     >
@@ -1109,290 +1039,323 @@ print(response.choices[0].message.content)`;
         </div>
       </section>
 
+      {/* ───── Available Models (Section 5) ───── */}
+      <section id="models" style={{ padding: "80px 24px", maxWidth: 1080, margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: 48 }}>
+          <h2
+            style={{
+              fontSize: "clamp(22px, 3.5vw, 32px)",
+              fontWeight: 800,
+              color: "#111827",
+              letterSpacing: "-0.03em",
+              margin: "0 0 12px",
+            }}
+          >
+            {t.models.title}
+          </h2>
+          <p style={{ fontSize: 16, color: "#666666", margin: 0, lineHeight: 1.7 }}>
+            {t.models.subtitle}
+          </p>
+        </div>
+
+        <div className="featured-model-grid">
+          {modelGroups.map((group) => (
+            <div
+              key={group.provider}
+              className="vercel-card featured-model-card"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                padding: 28,
+                position: "relative",
+                background: "#ffffff",
+              }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  top: 18,
+                  right: 18,
+                  border: "1px solid #22c55e",
+                  color: "#16a34a",
+                  padding: "3px 9px",
+                  fontSize: 11,
+                  fontWeight: 800,
+                  borderRadius: "999px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 5,
+                  background: "#ffffff",
+                }}
+              >
+                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#22c55e", display: "inline-block" }} />
+                {t.models.available}
+              </div>
+
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18, paddingRight: 76 }}>
+                <span
+                  style={{
+                    width: 38,
+                    height: 38,
+                    borderRadius: 12,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: "1px solid #eaeaea",
+                    background: "#fafafa",
+                    color: "#111827",
+                    fontSize: 13,
+                    fontWeight: 900,
+                    lineHeight: 1,
+                  }}
+                >
+                  {group.logoMark}
+                </span>
+                <span style={{ color: "#111827", fontSize: 18, fontWeight: 900, letterSpacing: "-0.03em" }}>
+                  {group.logoText}
+                </span>
+              </div>
+
+              <h3
+                style={{
+                  fontSize: 18,
+                  fontWeight: 800,
+                  color: "#111827",
+                  margin: "0 0 12px",
+                  lineHeight: 1.3,
+                  letterSpacing: "-0.025em",
+                }}
+              >
+                {group.title}
+              </h3>
+              <p
+                style={{
+                  fontSize: 14,
+                  color: "#666666",
+                  margin: "0 0 22px",
+                  lineHeight: 1.65,
+                  minHeight: 68,
+                }}
+              >
+                {group.desc}
+              </p>
+
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignContent: "flex-start" }}>
+                {group.models.map((modelName) => {
+                  const isFeatured = group.featuredModels.includes(modelName);
+                  return (
+                    <span
+                      key={modelName}
+                      style={{
+                        padding: isFeatured ? "6px 11px" : "5px 10px",
+                        background: isFeatured ? "#111827" : "#fafafa",
+                        border: isFeatured ? "1px solid #111827" : "1px solid #eaeaea",
+                        borderRadius: "999px",
+                        fontSize: 12,
+                        color: isFeatured ? "#ffffff" : "#666666",
+                        fontWeight: isFeatured ? 850 : 550,
+                        fontFamily: "monospace",
+                        cursor: "default",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 6,
+                      }}
+                    >
+                      {isFeatured && (
+                        <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#ff6a00", display: "inline-block" }} />
+                      )}
+                      {modelName}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ marginTop: 22, textAlign: "center", fontSize: 13, color: "#999999" }}>
+          {isEn ? "* The model list and availability can adjust dynamically based on upstream status and cost factors." : "* 模型列表可能随上游状态和成本变化调整。"}
+        </div>
+      </section>
 
       {/* ───── 3-Minute Quick Start (Section 9) ───── */}
       <section
         id="quick-start"
         style={{
           padding: "80px 24px",
-          maxWidth: 1080,
-          margin: "0 auto",
+          background: "#ffffff",
+          borderTop: "1px solid #eaeaea",
+          borderBottom: "1px solid #eaeaea",
         }}
       >
-        <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <h2
-            style={{
-              fontSize: "clamp(22px, 3.5vw, 32px)",
-              fontWeight: 700,
-              color: "#111827",
-              letterSpacing: "-0.02em",
-              margin: "0 0 12px",
-            }}
-          >
-            {isEn ? "3-Minute Quick Start" : "3 分钟接入流程"}
-          </h2>
-          <p style={{ fontSize: 16, color: "#666666", margin: 0 }}>
-            {isEn ? "Redeem your quota and start calling in minutes." : "买完兑换码后，按下面步骤即可完成接入。"}
-          </p>
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(420px, 1fr))", gap: 32 }}>
-          {/* Column 1: 5 Steps as individual cards with nice progress layout */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 14, margin: 0 }}>
-            {quickStartSteps.map((step, idx) => (
-              <div
-                key={idx}
-                className="vercel-card"
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 0.9fr) minmax(0, 1.1fr)", gap: 36, alignItems: "end", marginBottom: 36 }}>
+            <div>
+              <h2
                 style={{
-                  padding: "16px 20px",
-                  display: "flex",
-                  gap: 16,
-                  alignItems: "flex-start",
-                  margin: 0,
-                  transition: "all 0.2s ease",
-                  background: "#ffffff",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "#0a0a0a";
-                  e.currentTarget.style.transform = "translateX(6px)";
-                  e.currentTarget.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.05)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "#eaeaea";
-                  e.currentTarget.style.transform = "translateX(0)";
-                  e.currentTarget.style.boxShadow = "none";
+                  fontSize: "clamp(24px, 3.5vw, 36px)",
+                  fontWeight: 800,
+                  color: "#111827",
+                  letterSpacing: "-0.04em",
+                  margin: "0 0 12px",
                 }}
               >
-                <div
-                  style={{
-                    width: 26,
-                    height: 26,
-                    borderRadius: "50%",
-                    background: "#0a0a0a",
-                    color: "#fff",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    flexShrink: 0,
-                    marginTop: 2,
-                  }}
-                >
-                  {idx + 1}
+                {isEn ? "3-minute setup, no detours" : "3 分钟接入，不绕路"}
+              </h2>
+              <p style={{ fontSize: 15, color: "#666666", lineHeight: 1.7, margin: 0 }}>
+                {isEn
+                  ? "Buy credit, redeem it, create a key, then fill the right Base URL into your client."
+                  : "买额度、兑换、创建 Key、填入客户端。真正要做的事情就这四步。"}
+              </p>
+            </div>
+            <div style={{ display: "flex", gap: 12, justifyContent: "flex-end", flexWrap: "wrap" }}>
+              <a
+                href={CONSOLE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="vercel-button"
+                style={{ padding: "10px 16px", borderRadius: 8, fontSize: 13, fontWeight: 800, textDecoration: "none" }}
+              >
+                {isEn ? "Open Console" : "打开控制台"}
+              </a>
+              <button
+                onClick={() => scrollTo("client-guides")}
+                style={{ padding: "10px 16px", borderRadius: 8, border: "1px solid #d4d4d8", background: "#ffffff", color: "#111827", fontSize: 13, fontWeight: 800, cursor: "pointer" }}
+              >
+                {isEn ? "Client details" : "看客户端配置"}
+              </button>
+            </div>
+          </div>
+
+          <div className="setup-flow-grid">
+            {setupFlow.map((step, idx) => (
+              <div key={step.title} className="vercel-card setup-step-card" style={{ padding: 22, background: idx === 0 ? "#111827" : "#ffffff", borderColor: idx === 0 ? "#111827" : "#eaeaea" }}>
+                <div style={{ fontSize: 12, fontWeight: 900, color: idx === 0 ? "rgba(255,255,255,0.55)" : "#9ca3af", marginBottom: 28 }}>
+                  {String(idx + 1).padStart(2, "0")}
                 </div>
-                <div style={{ flex: 1 }}>
-                  <h4 style={{ fontSize: 14, fontWeight: 700, color: "#111827", margin: "0 0 4px" }}>
-                    {step.title.replace(/^\d+\.\s*/, "")}
-                  </h4>
-                  <p style={{ fontSize: 13, color: "#475569", margin: 0, lineHeight: 1.5 }}>
-                    {step.desc}
-                  </p>
-                </div>
+                <h3 style={{ fontSize: 17, fontWeight: 850, color: idx === 0 ? "#ffffff" : "#111827", letterSpacing: "-0.03em", margin: "0 0 10px" }}>
+                  {step.title}
+                </h3>
+                <p style={{ fontSize: 13, color: idx === 0 ? "rgba(255,255,255,0.7)" : "#64748b", lineHeight: 1.7, margin: 0 }}>
+                  {step.desc}
+                </p>
               </div>
             ))}
           </div>
 
-          {/* Column 2: Credentials and sample code */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-            {/* Unified Configuration Card */}
-            <div className="vercel-card" style={{ padding: "32px", display: "flex", flexDirection: "column", gap: 24 }}>
-              {/* Base URL Section */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                <div style={{ fontSize: 12, fontWeight: 700, color: "#111827", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                  Base URL
-                </div>
-                <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                  <div style={{ flex: 1, background: "#f8fafc", border: "1px solid #eaeaea", borderRadius: "6px", padding: "10px 14px", fontFamily: "monospace", fontSize: 13, color: "#0f172a", wordBreak: "break-all" }}>
-                    https://api.cheng-zi-ai.com/v1
-                  </div>
-                  <button
-                    onClick={() => copyText("https://api.cheng-zi-ai.com/v1", "base_url")}
-                    style={{
-                      background: "#ffffff",
-                      border: "1px solid #eaeaea",
-                      borderRadius: "6px",
-                      padding: "10px 16px",
-                      fontSize: 13,
-                      fontWeight: 600,
-                      cursor: "pointer",
-                      color: "#333",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {copiedStates["base_url"] ? (isEn ? "Copied" : "已复制") : (isEn ? "Copy" : "复制")}
-                  </button>
-                </div>
+          <div style={{ marginTop: 24, padding: "18px 20px", border: "1px solid #eaeaea", borderRadius: 16, background: "#fafafa", display: "flex", justifyContent: "space-between", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
+            <div>
+              <div style={{ fontSize: 13, fontWeight: 900, color: "#111827", marginBottom: 4 }}>
+                {isEn ? "Most clients use one Base URL" : "大多数客户端只需要一个地址"}
               </div>
-
-              <div style={{ height: "1px", background: "#eaeaea" }} />
-
-              {/* API Key Section */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                <div style={{ fontSize: 12, fontWeight: 700, color: "#111827", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                  API Key
-                </div>
-                <div style={{ fontSize: 13, color: "#475569", lineHeight: 1.5 }}>
-                  {isEn ? "Create and copy your API Key inside the console." : "在控制台创建并复制你的 API Key"}
-                </div>
-                <div style={{ marginTop: 4 }}>
-                  <a
-                    href={CONSOLE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="vercel-button-secondary"
-                    style={{
-                      display: "inline-block",
-                      padding: "8px 16px",
-                      fontSize: 13,
-                      fontWeight: 600,
-                      textDecoration: "none",
-                      borderRadius: "6px",
-                    }}
-                  >
-                    {isEn ? "Go to Console & Create Key" : "前往控制台创建 Key"}
-                  </a>
-                </div>
+              <div style={{ fontFamily: "monospace", fontSize: 13, color: "#475569", wordBreak: "break-all" }}>
+                https://api.cheng-zi-ai.com/v1
               </div>
             </div>
-
-            {/* curl example block */}
-            <div className="vercel-card" style={{ padding: 0, overflow: "hidden", display: "flex", flexDirection: "column" }}>
-              <div
-                style={{
-                  padding: "12px 20px",
-                  background: "#fafafa",
-                  borderBottom: "1px solid #eaeaea",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ff5f56" }} />
-                  <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ffbd2e" }} />
-                  <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#27c93f" }} />
-                  <span style={{ marginLeft: 12, fontSize: 13, color: "#999", fontWeight: 500 }}>
-                    curl_test.sh
-                  </span>
-                </div>
-                <button
-                  onClick={() => copyText(curlExampleCode, "curl")}
-                  style={{
-                    background: "transparent",
-                    border: "none",
-                    fontSize: 12,
-                    fontWeight: 600,
-                    cursor: "pointer",
-                    color: "#666",
-                  }}
-                >
-                  {copiedStates["curl"] ? (isEn ? "Copied" : "已复制") : (isEn ? "Copy Code" : "复制代码")}
-                </button>
-              </div>
-              <pre
-                style={{
-                  margin: 0,
-                  padding: "24px",
-                  background: "#0a0a0a",
-                  color: "#e5e5e5",
-                  fontSize: 13,
-                  lineHeight: 1.8,
-                  overflowX: "auto",
-                  fontFamily: "'SF Mono', 'Fira Code', 'Fira Mono', Menlo, Consolas, monospace",
-                  flex: 1,
-                }}
-              >
-                <code>
-                  <span style={{ color: "#6b7280" }}># Send a simple completion request</span>
-                  {"\n\n"}
-                  <span style={{ color: "#c084fc" }}>curl</span>
-                  {" "}
-                  <span style={{ color: "#a78bfa" }}>-X POST</span>
-                  {" "}
-                  <span style={{ color: "#34d399" }}>&quot;https://api.cheng-zi-ai.com/v1/chat/completions&quot;</span>
-                  {" \\\n  "}
-                  <span style={{ color: "#a78bfa" }}>-H</span>
-                  {" "}
-                  <span style={{ color: "#34d399" }}>&quot;Content-Type: application/json&quot;</span>
-                  {" \\\n  "}
-                  <span style={{ color: "#a78bfa" }}>-H</span>
-                  {" "}
-                  <span style={{ color: "#34d399" }}>&quot;Authorization: Bearer sk-your-api-key&quot;</span>
-                  {" \\\n  "}
-                  <span style={{ color: "#a78bfa" }}>-d</span>
-                  {" "}
-                  <span style={{ color: "#34d399" }}>&apos;{"{"}</span>
-                  {"\n    "}
-                  <span style={{ color: "#93c5fd" }}>&quot;model&quot;</span>
-                  <span style={{ color: "#e5e5e5" }}>: </span>
-                  <span style={{ color: "#34d399" }}>&quot;gpt-5.5&quot;</span>
-                  <span style={{ color: "#e5e5e5" }}>,</span>
-                  {"\n    "}
-                  <span style={{ color: "#93c5fd" }}>&quot;messages&quot;</span>
-                  <span style={{ color: "#e5e5e5" }}>: [{"{"}</span>
-                  <span style={{ color: "#93c5fd" }}>&quot;role&quot;</span>
-                  <span style={{ color: "#e5e5e5" }}>: </span>
-                  <span style={{ color: "#34d399" }}>&quot;user&quot;</span>
-                  <span style={{ color: "#e5e5e5" }}>, </span>
-                  <span style={{ color: "#93c5fd" }}>&quot;content&quot;</span>
-                  <span style={{ color: "#e5e5e5" }}>: </span>
-                  <span style={{ color: "#34d399" }}>&quot;Hello!&quot;</span>
-                  <span style={{ color: "#e5e5e5" }}>{"}"}]</span>
-                  {"\n  "}
-                  <span style={{ color: "#34d399" }}>{"}"}&apos;</span>
-                </code>
-              </pre>
-            </div>
+            <button
+              onClick={() => copyText("https://api.cheng-zi-ai.com/v1", "base_url")}
+              style={{ background: "#111827", color: "#ffffff", border: "none", borderRadius: 8, padding: "10px 14px", fontSize: 13, fontWeight: 850, cursor: "pointer" }}
+            >
+              {copiedStates["base_url"] ? (isEn ? "Copied" : "已复制") : (isEn ? "Copy" : "复制")}
+            </button>
           </div>
         </div>
       </section>
 
 
-      {/* ───── Suitable/Not Suitable (Section 11) ───── */}
+      {/* ───── Client Guides (Section 11) ───── */}
       <section
-        id="fit"
+        id="client-guides"
         style={{
           padding: "80px 24px",
-          maxWidth: 1080,
-          margin: "0 auto",
+          background: "#fafafa",
         }}
       >
-        <div style={{ textAlign: "center", marginBottom: 48 }}>
-          <h2 style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 700, color: "#111827", letterSpacing: "-0.02em" }}>
-            {isEn ? "Is this service right for you?" : "适合谁使用？"}
-          </h2>
-        </div>
-
-        <div className="fit-grid">
-          {/* Suitable */}
-          <div className="vercel-card" style={{ padding: "32px", borderColor: "#bbf7d0", background: "rgba(240, 253, 244, 0.2)" }}>
-            <h3 style={{ fontSize: 18, fontWeight: 600, color: "#16a34a", marginBottom: 20, display: "flex", alignItems: "center", gap: 8 }}>
-              ✓ {fitData.suitable.title}
-            </h3>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
-              {fitData.suitable.items.map((item, i) => (
-                <li key={i} style={{ fontSize: 14, color: "#374151", display: "flex", alignItems: "flex-start", gap: 8 }}>
-                  <span style={{ color: "#16a34a", fontWeight: "bold" }}>+</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+        <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 34 }}>
+            <h2 style={{ fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 850, color: "#111827", letterSpacing: "-0.04em", margin: "0 0 12px" }}>
+              {isEn ? "Claude Code / Codex setup" : "Claude Code / Codex 接入配置"}
+            </h2>
+            <p style={{ fontSize: 15, color: "#666666", lineHeight: 1.7, margin: "0 auto", maxWidth: 620 }}>
+              {isEn
+                ? "Different clients use different base URLs. Copy the matching setup below."
+                : "不同客户端的 Base URL 不一样。按下面对应工具复制配置即可。"}
+            </p>
           </div>
 
-          {/* Unsuitable */}
-          <div className="vercel-card" style={{ padding: "32px", borderColor: "#e5e7eb", background: "#fafafa" }}>
-            <h3 style={{ fontSize: 18, fontWeight: 600, color: "#6b7280", marginBottom: 20, display: "flex", alignItems: "center", gap: 8 }}>
-              ✗ {fitData.unsuitable.title}
-            </h3>
-            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
-              {fitData.unsuitable.items.map((item, i) => (
-                <li key={i} style={{ fontSize: 14, color: "#6b7280", display: "flex", alignItems: "flex-start", gap: 8 }}>
-                  <span style={{ color: "#9ca3af", fontWeight: "bold" }}>-</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+          <div className="integration-guide-grid compact-guide-grid">
+            {clientGuideData.cards.map((card, i) => (
+              <div key={card.label} className="vercel-card" style={{ padding: 26, background: "#ffffff", borderColor: "#eaeaea" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, marginBottom: 16 }}>
+                  <span style={{ display: "inline-flex", alignItems: "center", padding: "5px 10px", borderRadius: 999, background: i === 0 ? "#111827" : "#fafafa", color: i === 0 ? "#ffffff" : "#111827", border: i === 0 ? "1px solid #111827" : "1px solid #eaeaea", fontSize: 12, fontWeight: 900 }}>
+                    {card.label}
+                  </span>
+                  <button
+                    onClick={() => copyText(card.endpoint, `guide_endpoint_${i}`)}
+                    style={{
+                      background: "transparent",
+                      color: "#111827",
+                      border: "1px solid #eaeaea",
+                      borderRadius: 8,
+                      padding: "7px 10px",
+                      fontSize: 12,
+                      fontWeight: 800,
+                      cursor: "pointer",
+                    }}
+                  >
+                    {copiedStates[`guide_endpoint_${i}`] ? (isEn ? "Copied" : "已复制") : (isEn ? "Copy URL" : "复制地址")}
+                  </button>
+                </div>
+
+                <h3 style={{ fontSize: 21, fontWeight: 850, color: "#111827", letterSpacing: "-0.04em", margin: "0 0 18px" }}>
+                    {card.title}
+                </h3>
+
+                <div style={{ display: "grid", gap: 12, marginBottom: 16 }}>
+                  {card.steps.map(([label, value]) => (
+                    <div key={label} style={{ display: "grid", gridTemplateColumns: "120px minmax(0, 1fr)", gap: 12, alignItems: "baseline" }}>
+                      <div style={{ fontSize: 12, fontWeight: 850, color: "#64748b" }}>
+                        {label}
+                      </div>
+                      <div style={{ fontFamily: "monospace", fontSize: 13, color: "#111827", wordBreak: "break-all", fontWeight: 750 }}>
+                        {value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div style={{ fontSize: 13, color: "#111827", lineHeight: 1.65, background: "#fff7ed", border: "1px solid #fed7aa", borderRadius: 12, padding: "10px 12px", marginBottom: 16 }}>
+                  {card.note}
+                </div>
+
+                <div style={{ display: "grid", gap: 12 }}>
+                  {card.blocks.map((block, blockIndex) => (
+                    <div key={block.title} style={{ border: "1px solid #eaeaea", borderRadius: 14, overflow: "hidden", background: "#0b1020" }}>
+                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)", background: "#111827" }}>
+                        <span style={{ color: "rgba(255,255,255,0.76)", fontSize: 12, fontWeight: 850 }}>
+                          {block.title}
+                        </span>
+                        <button
+                          onClick={() => copyText(block.code, `guide_block_${i}_${blockIndex}`)}
+                          style={{ background: "rgba(255,255,255,0.08)", color: "#ffffff", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 8, padding: "6px 9px", fontSize: 12, fontWeight: 800, cursor: "pointer" }}
+                        >
+                          {copiedStates[`guide_block_${i}_${blockIndex}`] ? (isEn ? "Copied" : "已复制") : (isEn ? "Copy" : "复制")}
+                        </button>
+                      </div>
+                      <pre style={{ margin: 0, padding: 14, color: "#e5e7eb", fontSize: 12, lineHeight: 1.65, overflowX: "auto", whiteSpace: "pre-wrap", fontFamily: "'SF Mono', 'Fira Code', Menlo, Consolas, monospace" }}>
+                        <code>{block.code}</code>
+                      </pre>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ marginTop: 18, textAlign: "center", fontSize: 13, color: "#64748b", lineHeight: 1.7 }}>
+            {isEn
+              ? "Tip: Claude Code uses Anthropic-compatible environment variables. Codex uses OpenAI-compatible routing."
+              : "提示：Claude Code 走 Anthropic 兼容环境变量；Codex 走 OpenAI 兼容路由。"}
           </div>
         </div>
       </section>
@@ -1526,7 +1489,7 @@ print(response.choices[0].message.content)`;
                   {isEn ? "You are purchasing:" : "你将购买："} {selectedPlan.name}
                 </h3>
                 <div style={{ background: "#f9fafb", padding: "16px 20px", borderRadius: "8px", border: "1px solid #eaeaea", marginBottom: 24 }}>
-                  <div style={{ color: "#22c55e", fontWeight: 700, fontSize: 15, marginBottom: 12 }}>
+                  <div style={{ color: "#111827", fontWeight: 700, fontSize: 15, marginBottom: 12 }}>
                     {isEn ? "Quota: " : "到手额度："}{selectedPlan.credit}
                   </div>
                   <div style={{ fontSize: 13, color: "#4b5563", marginBottom: 10, lineHeight: 1.5 }}>
@@ -1668,13 +1631,14 @@ print(response.choices[0].message.content)`;
             </h3>
             <ul style={{ listStyle: "none", padding: 0, margin: "0 0 20px", color: "#4b5563", fontSize: 13, textAlign: "left", display: "flex", flexDirection: "column", gap: 8 }}>
               <li>• {isEn ? "Pre-purchase consulting" : "购买前咨询"}</li>
+              <li>• {isEn ? "Bulk subscription / discount quote" : "大额订阅 / 折扣报价"}</li>
               <li>• {isEn ? "CDK redemption assistance" : "兑换码不会使用"}</li>
               <li>• {isEn ? "Cursor / Cline configuration failure" : "Cursor / Cline 配置失败"}</li>
               <li>• {isEn ? "API exceptions or deduction errors" : "调用异常或扣费问题"}</li>
             </ul>
             <div style={{ background: "#f9fafb", padding: "16px", borderRadius: "8px", border: "1px solid #eaeaea", textAlign: "center" }}>
               <span style={{ fontSize: 13, color: "#666" }}>{isEn ? "Support Email" : "客服邮箱"}</span>
-              <a href="mailto:chengziai2026@163.com" style={{ display: "block", color: "#2563eb", fontWeight: 700, fontSize: 15, marginTop: 6, textDecoration: "none" }}>
+              <a href="mailto:chengziai2026@163.com" style={{ display: "block", color: "#111827", fontWeight: 700, fontSize: 15, marginTop: 6, textDecoration: "none" }}>
                 chengziai2026@163.com
               </a>
             </div>
@@ -1764,23 +1728,55 @@ print(response.choices[0].message.content)`;
           zIndex: 40,
         }}
       >
-        💬 {isEn ? "Support" : "联系客服"}
+        {isEn ? "Support" : "联系客服"}
       </button>
 
       {/* Responsive adjustments (Section 18) */}
       <style>{`
+        :root {
+          --cz-accent: #ff6a00;
+        }
+        .nav-link {
+          color: #666666;
+          transition: color 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+        }
+        .nav-link:hover,
+        .nav-link:focus-visible {
+          color: var(--cz-accent) !important;
+        }
+        button,
+        a {
+          -webkit-tap-highlight-color: transparent;
+        }
         .desktop-flex { display: flex !important; }
         .desktop-only { display: block !important; }
         .mobile-only { display: none !important; }
         .mobile-flex { display: none !important; }
-        .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .featured-model-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .setup-flow-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+        .integration-guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 
         @media (max-width: 768px) {
+          .api-hero-section {
+            padding: 16px 12px 34px !important;
+          }
+          .api-hero-shell {
+            padding: 24px 18px !important;
+            border-radius: 20px !important;
+          }
           .desktop-flex { display: none !important; }
           .desktop-only { display: none !important; }
           .mobile-only { display: flex !important; }
           .mobile-flex { display: flex !important; }
-          .fit-grid { grid-template-columns: 1fr !important; gap: 16px; }
+          .featured-model-grid,
+          .setup-flow-grid,
+          .integration-guide-grid {
+            grid-template-columns: minmax(0, 1fr) !important;
+            gap: 14px !important;
+          }
+          .featured-model-card {
+            min-height: auto !important;
+          }
         }
       `}</style>
     </div>

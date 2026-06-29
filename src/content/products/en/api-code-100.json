@@ -15,6 +15,7 @@
   "inStock": true,
   "buyButtonText": "Buy $100 Pack",
   "actionType": "link",
+  "isHot": true,
   "detail": {
     "title": "AI API $100 Credit Pack",
     "subtitle": "AI API 100 Credit Pack: $14.9 for $100 API Credits.",

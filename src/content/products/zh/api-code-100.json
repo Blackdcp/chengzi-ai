@@ -15,6 +15,7 @@
   "inStock": true,
   "buyButtonText": "购买 ¥100 额度包",
   "actionType": "link",
+  "isHot": true,
   "detail": {
     "title": "AI API 100 额度包",
     "subtitle": "AI API 100 额度包: ¥100，到账 $100 美金额度",

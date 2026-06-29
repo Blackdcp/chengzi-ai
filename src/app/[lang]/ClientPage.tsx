@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import type { Product } from "../../types/product";
-import { categories } from "../../lib/categories";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -20,6 +19,7 @@ function genOrderId() {
 
 export default function HomePage({ dict, products, lang, refCode }: { dict: any, products: Product[], lang: string, refCode?: string }) {
   const [modal, setModal] = useState<{ name: string; price: number; orderId: string; actionType?: string; categoryId?: string } | null>(null);
+  const [detailProduct, setDetailProduct] = useState<Product | null>(null);
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [requirement, setRequirement] = useState("");
@@ -29,6 +29,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
   const [step, setStep] = useState<"pay" | "consult" | "success">("pay");
   const [payMethod, setPayMethod] = useState<PaymentMethod>("alipay");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showApiFloat, setShowApiFloat] = useState(true);
 
   const router = useRouter();
   const pathname = usePathname();
@@ -156,39 +157,685 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
     productsByCategory[p.categoryId].push(p);
   });
 
-  return (
-    <div style={{ minHeight: "100vh", lineHeight: 1.5, background: "#fafafa" }}>
+  const pageNavItems = [
+    { href: "#accounts", label: lang === 'zh' ? 'AI 账号' : 'AI Accounts' },
+    { href: "#api", label: lang === 'zh' ? 'API 额度' : 'API Credits' },
+    { href: "#growth", label: lang === 'zh' ? '内容推广' : 'Growth' },
+    { href: "#flow", label: lang === 'zh' ? '购买流程' : 'Order Flow' }
+  ];
 
-      <header style={{ background: "#ffffff", borderBottom: "1px solid #eaeaea", padding: "16px 0", position: "sticky", top: 0, zIndex: 50 }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 16px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "60px", gap: 16 }}>
+  const productsById = products.reduce<Record<string, Product | undefined>>((acc, product) => {
+    acc[product.id] = product;
+    return acc;
+  }, {});
+
+  const accountItems = [
+    {
+      label: lang === 'zh' ? "无需翻墙" : "No VPN needed",
+      product: productsById["chatgpt-plus-monthly-code"]
+    },
+    {
+      label: lang === 'zh' ? "即开即用" : "Ready account",
+      product: productsById["chatgpt-plus-ready-account"]
+    },
+    {
+      label: lang === 'zh' ? "谷歌福利" : "Google perks",
+      product: productsById["gemini-pro-year-account"]
+    },
+    {
+      label: lang === 'zh' ? "重度使用" : "Heavy use",
+      product: productsById["chatgpt-pro-20x-fast"]
+    },
+    {
+      label: lang === 'zh' ? "自用续费" : "Renewal",
+      product: productsById["chatgpt-plus-renewal"]
+    }
+  ].filter((item): item is { label: string; product: Product } => Boolean(item.product));
+
+  const apiProducts = productsByCategory.api || [];
+  const growthProducts = productsByCategory.growth || [];
+
+  const productHints: Record<string, string> = {
+    "chatgpt-plus-monthly-code": lang === 'zh' ? "适合第一次购买、预算敏感、想马上用。" : "Good for first-time buyers and budget-conscious users.",
+    "chatgpt-plus-ready-account": lang === 'zh' ? "适合不想注册、不想折腾账号流程。" : "Good when you want a ready-to-use account.",
+    "gemini-pro-year-account": lang === 'zh' ? "适合长文档、资料整理、备用 AI 会员。" : "Good for long documents, research, and backup use.",
+    "chatgpt-pro-20x-fast": lang === 'zh' ? "适合 AI Coding、高频对话、项目冲刺。" : "Good for AI coding, heavy chat, and project sprints.",
+    "chatgpt-plus-renewal": lang === 'zh' ? "适合已有自用账号，只想继续续费。" : "Good if you already have your own account.",
+    "api-code-100": lang === 'zh' ? "适合个人测试、Claude Code 入门、轻量调用。" : "Good for testing, Claude Code starter use, and light calls.",
+    "api-code-300": lang === 'zh' ? "适合高频 AI Coding、多客户端长期使用。" : "Good for frequent AI coding or long-term client use.",
+    "marketing-xiaohongshu": lang === 'zh' ? "提交小红书作品链接和具体数量" : "Submit a Xiaohongshu post link and quantity",
+    "marketing-douyin": lang === 'zh' ? "提交抖音视频链接和具体数量" : "Submit a Douyin video link and quantity",
+    "marketing-wechat": lang === 'zh' ? "提交公众号文章链接和具体数量" : "Submit a WeChat article link and quantity"
+  };
+
+  const getProductBadge = (product: Product) => {
+    if (product.id === "chatgpt-pro-20x-fast") return lang === 'zh' ? "主推" : "Pick";
+    if (product.id === "chatgpt-plus-monthly-code" || product.id === "api-code-100") return lang === 'zh' ? "推荐" : "Recommended";
+    if (product.isHot) return lang === 'zh' ? "热门" : "Popular";
+    return "";
+  };
+
+  const renderProductRow = (product: Product, label?: string) => {
+    const badge = getProductBadge(product);
+
+    return (
+    <div
+      key={product.id}
+      className={`vercel-card cz-product-row${badge ? " cz-product-featured" : ""}`}
+      style={{
+        background: "#ffffff",
+        border: "1px solid #eaeaea",
+        boxShadow: badge ? "0 10px 26px rgba(0,0,0,0.045)" : undefined,
+        position: "relative",
+        overflow: "hidden"
+      }}
+    >
+      <div className="cz-product-label">
+        {label || product.categoryName}
+      </div>
+
+      <div className="cz-product-main">
+        <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 8 }}>
+          <h3 className="cz-product-title" style={{ fontSize: 20, fontWeight: 700, color: "#111827", margin: 0, letterSpacing: "-0.02em" }}>{product.title}</h3>
+          {badge && (
+            <span className="cz-product-badge" style={{ border: "1px solid #111827", color: "#ffffff", padding: "2px 8px", fontSize: 11, fontWeight: 700, borderRadius: "999px", background: "#111827" }}>
+              {badge}
+            </span>
+          )}
+        </div>
+        <p className="cz-product-subtitle" style={{ color: "#666", fontSize: 14, lineHeight: 1.6, margin: "0 0 10px" }} dangerouslySetInnerHTML={{ __html: product.subtitle }} />
+        {productHints[product.id] && (
+          <div className="cz-product-hint" style={{ fontSize: 13, color: "#111827", marginBottom: 10, lineHeight: 1.5 }}>{productHints[product.id]}</div>
+        )}
+        <div className="cz-product-tags" style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          {product.tags.map(tag => (
+            <span key={tag} className="cz-product-tag" style={{ padding: "4px 10px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: 999, color: "#666", fontSize: 12 }}>{tag}</span>
+          ))}
+        </div>
+      </div>
+
+      <div className="cz-product-action">
+        <div className="cz-product-price" style={{ fontSize: product.categoryId === 'growth' ? 24 : 30 }}>
+          {product.actionType !== 'consult' ? `${dict.common.currency}${product.price}${product.categoryId === 'growth' ? (lang === 'zh' ? ' 起' : '+') : ''}` : (lang === 'zh' ? '咨询报价' : 'Consulting')}
+        </div>
+        <div className="cz-product-buttons">
+          {product.inStock ? (
+            <button onClick={() => buy(product)} className="vercel-button" style={{ padding: "11px 18px", fontSize: 14, fontWeight: 600, cursor: "pointer" }}>
+              {product.buyButtonText}
+            </button>
+          ) : (
+            <div style={{ padding: "11px 18px", background: "#fafafa", color: "#999999", textAlign: "center", fontSize: 14, fontWeight: 500, border: "1px solid #eaeaea", borderRadius: "6px" }}>{dict.common.soldOut}</div>
+          )}
+          {product.detail && (
+            <button onClick={() => setDetailProduct(product)} className="vercel-button-secondary" style={{ padding: "11px 14px", textAlign: "center", fontSize: 14, fontWeight: 500, cursor: "pointer" }}>
+              {dict.common.details}
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+    );
+  };
+
+  const renderSectionHeader = (index: string, title: string, desc: string) => (
+    <div className="cz-section-head">
+      <div className="cz-section-index">{index}</div>
+      <div>
+        <h2 style={{ fontSize: "clamp(26px, 3.2vw, 36px)", fontWeight: 800, color: "#111827", margin: "0 0 10px", letterSpacing: "-0.04em", lineHeight: 1.12 }}>
+          {title}
+        </h2>
+        <p style={{ color: "#666", fontSize: 15, lineHeight: 1.7, margin: 0, maxWidth: 760 }}>
+          {desc}
+        </p>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="cz-home" style={{ minHeight: "100vh", lineHeight: 1.5, background: "#fafafa" }}>
+      <style>{`
+        .cz-home {
+          --cz-accent: #ff6a00;
+        }
+        .cz-header {
+          padding: 10px 0 !important;
+        }
+        .cz-header-inner {
+          height: auto !important;
+          min-height: 48px;
+          display: grid !important;
+          grid-template-columns: minmax(0, 1fr) auto;
+          align-items: center;
+          padding: 0 12px !important;
+          gap: 8px !important;
+        }
+        .cz-header-nav {
+          grid-column: 1 / -1;
+          gap: 14px !important;
+          font-size: 13px !important;
+          overflow-x: auto;
+          padding: 2px 0 0 !important;
+          -webkit-overflow-scrolling: touch;
+        }
+        .cz-page {
+          max-width: 1120px;
+          margin: 0 auto;
+          padding: 16px 12px 42px;
+        }
+        .cz-hero {
+          padding: 28px 0 26px !important;
+          text-align: left !important;
+        }
+        .cz-hero-title {
+          font-size: clamp(34px, 11vw, 52px) !important;
+          max-width: 620px !important;
+          margin: 0 0 14px !important;
+        }
+        .cz-hero-copy {
+          font-size: 16px !important;
+          max-width: 620px !important;
+          margin: 0 0 22px !important;
+          line-height: 1.65 !important;
+        }
+        .cz-hero-shell {
+          display: block;
+        }
+        .cz-hero-panel {
+          display: none;
+        }
+        .cz-hero-actions {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 10px;
+          width: 100%;
+        }
+        .cz-hero-actions a {
+          width: 100%;
+          box-sizing: border-box;
+          text-align: center;
+          border-radius: 12px;
+          padding: 14px 16px !important;
+        }
+        .cz-hero-primary {
+          background: #111827 !important;
+          border-color: #111827 !important;
+          color: #ffffff !important;
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+        }
+        .cz-hero-actions a,
+        .cz-product-buttons button,
+        .cz-product-buttons a,
+        .nav-link,
+        .cz-inline-link {
+          transition: color 0.18s ease, border-color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+        }
+        .cz-hero-actions a:hover,
+        .cz-hero-actions a:focus-visible,
+        .cz-product-buttons .vercel-button:hover,
+        .cz-product-buttons .vercel-button:focus-visible {
+          background: var(--cz-accent) !important;
+          border-color: var(--cz-accent) !important;
+          color: #ffffff !important;
+          box-shadow: 0 10px 22px rgba(255, 106, 0, 0.18);
+        }
+        .cz-product-buttons .vercel-button-secondary:hover,
+        .cz-product-buttons .vercel-button-secondary:focus-visible,
+        .nav-link:hover,
+        .nav-link:focus-visible,
+        .cz-inline-link:hover,
+        .cz-inline-link:focus-visible {
+          color: var(--cz-accent) !important;
+          border-color: var(--cz-accent) !important;
+        }
+        .cz-hero-note {
+          margin-top: 14px;
+          display: inline-flex;
+          align-items: center;
+          width: fit-content;
+          max-width: 100%;
+          padding: 7px 10px;
+          border: 1px solid #eaeaea;
+          border-radius: 999px;
+          background: #ffffff;
+          color: #111827;
+          font-size: 12px;
+          font-weight: 700;
+        }
+        .cz-section {
+          margin-bottom: 52px;
+          scroll-margin-top: 112px;
+        }
+        .cz-section-head {
+          display: block;
+          margin-bottom: 18px;
+        }
+        .cz-section-index {
+          color: #111827;
+          border: 1px solid #111827;
+          border-radius: 999px;
+          width: 46px;
+          height: 28px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+          background: #ffffff;
+          margin-bottom: 12px;
+        }
+        .cz-product-row {
+          display: block;
+          padding: 16px;
+          border-radius: 16px;
+        }
+        .cz-product-featured::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 3px;
+          background: #111827;
+        }
+        .cz-product-label {
+          display: inline-flex;
+          align-items: center;
+          width: auto;
+          margin-bottom: 12px;
+          padding: 4px 10px;
+          border: 1px solid #eaeaea;
+          border-radius: 999px;
+          background: #fafafa;
+          color: #111827;
+          font-size: 13px;
+          font-weight: 800;
+          line-height: 1.25;
+        }
+        .cz-product-main {
+          flex: 1 1 360px;
+          min-width: 0;
+        }
+        .cz-product-action {
+          margin-top: 16px;
+          text-align: left;
+        }
+        .cz-product-price {
+          color: #111827;
+          font-weight: 850;
+          letter-spacing: -0.05em;
+          line-height: 1;
+          margin-bottom: 12px;
+          font-size: 28px !important;
+        }
+        .cz-product-buttons {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 8px;
+          justify-content: stretch;
+        }
+        .cz-product-buttons button,
+        .cz-product-buttons a {
+          border-radius: 10px;
+          width: 100%;
+          min-height: 44px;
+        }
+        .cz-product-title {
+          font-size: 17px !important;
+          line-height: 1.28 !important;
+        }
+        .cz-product-subtitle {
+          font-size: 13px !important;
+          line-height: 1.55 !important;
+          margin-bottom: 8px !important;
+        }
+        .cz-product-hint {
+          margin: 10px 0 !important;
+          padding: 9px 10px;
+          border-left: 2px solid #111827;
+          border-radius: 8px;
+          background: #fafafa;
+        }
+        .cz-product-tags {
+          flex-wrap: nowrap !important;
+          overflow-x: auto;
+          margin: 0 -16px;
+          padding: 0 16px 2px;
+          -webkit-overflow-scrolling: touch;
+        }
+        .cz-product-tag {
+          white-space: nowrap;
+          font-size: 11px !important;
+        }
+        .cz-detail-list {
+          display: grid;
+          gap: 14px;
+        }
+        .cz-detail-section {
+          padding-top: 18px;
+          border-top: 1px solid #eaeaea;
+        }
+        .cz-detail-overlay {
+          align-items: flex-end !important;
+          padding: 0 !important;
+        }
+        .cz-detail-panel {
+          max-width: 100% !important;
+          max-height: 88vh !important;
+          border-radius: 20px 20px 0 0 !important;
+        }
+        .cz-api-float {
+          position: fixed;
+          left: 12px;
+          right: 12px;
+          bottom: calc(12px + env(safe-area-inset-bottom));
+          z-index: 70;
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          pointer-events: none;
+        }
+        .cz-api-float-link {
+          pointer-events: auto;
+          flex: 1;
+          display: grid;
+          grid-template-columns: auto minmax(0, 1fr) auto;
+          gap: 10px;
+          align-items: center;
+          min-height: 52px;
+          padding: 10px 12px;
+          background: #111827;
+          border: 1px solid #111827;
+          border-radius: 16px;
+          color: #ffffff;
+          text-decoration: none;
+          box-shadow: 0 18px 44px rgba(0, 0, 0, 0.2);
+          transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+        }
+        .cz-api-float-link:hover,
+        .cz-api-float-link:focus-visible {
+          transform: translateY(-2px);
+          border-color: var(--cz-accent);
+          box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+        }
+        .cz-api-float-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 999px;
+          background: var(--cz-accent);
+        }
+        .cz-api-float-title {
+          font-size: 14px;
+          font-weight: 850;
+          line-height: 1.1;
+          margin-bottom: 3px;
+        }
+        .cz-api-float-desc {
+          color: rgba(255, 255, 255, 0.72);
+          font-size: 12px;
+          line-height: 1.2;
+        }
+        .cz-api-float-arrow {
+          font-size: 18px;
+          font-weight: 800;
+          opacity: 0.9;
+        }
+        .cz-api-float-close {
+          pointer-events: auto;
+          width: 34px;
+          height: 34px;
+          border: 1px solid #eaeaea;
+          border-radius: 999px;
+          background: #ffffff;
+          color: #666;
+          cursor: pointer;
+          box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+        }
+        @media (min-width: 721px) {
+          .cz-header {
+            padding: 16px 0 !important;
+          }
+          .cz-header-inner {
+            height: 60px !important;
+            display: flex !important;
+            padding: 0 16px !important;
+            gap: 16px !important;
+          }
+          .cz-header-nav {
+            grid-column: auto;
+            gap: 16px !important;
+            font-size: 14px !important;
+            padding-bottom: 2px !important;
+          }
+          .cz-page {
+            max-width: 1120px;
+            padding: max(22px, 4vw) 18px max(44px, 8vw);
+          }
+          .cz-hero {
+            padding: max(28px, 5vw) 0 max(42px, 6vw) !important;
+            text-align: left !important;
+          }
+          .cz-hero-shell {
+            display: grid;
+            grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+            gap: clamp(28px, 4vw, 56px);
+            align-items: center;
+            padding: clamp(34px, 5vw, 56px);
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 28px;
+            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.05);
+          }
+          .cz-hero-title {
+            font-size: clamp(30px, 5vw, 52px) !important;
+            max-width: 680px !important;
+            margin: 0 0 18px !important;
+          }
+          .cz-hero-copy {
+            font-size: clamp(16px, 2vw, 19px) !important;
+            max-width: 660px !important;
+            margin: 0 0 28px !important;
+          }
+          .cz-hero-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            width: auto;
+          }
+          .cz-hero-actions a {
+            width: auto;
+            padding: 12px 24px !important;
+          }
+          .cz-hero-note {
+            margin-top: 18px;
+            font-size: 13px;
+          }
+          .cz-hero-panel {
+            display: block;
+            padding: 24px;
+            background: #fafafa;
+            border: 1px solid #eaeaea;
+            border-radius: 22px;
+          }
+          .cz-hero-panel-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            color: #111827;
+            font-size: 13px;
+            font-weight: 800;
+          }
+          .cz-accent-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: var(--cz-accent);
+          }
+          .cz-hero-panel-list {
+            display: grid;
+            gap: 10px;
+          }
+          .cz-hero-panel-item {
+            display: grid;
+            grid-template-columns: 34px minmax(0, 1fr);
+            gap: 12px;
+            padding: 14px;
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 16px;
+          }
+          .cz-hero-panel-num {
+            color: #666;
+            font-size: 12px;
+            font-weight: 800;
+          }
+          .cz-hero-panel-title {
+            color: #111827;
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 3px;
+          }
+          .cz-hero-panel-desc {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.45;
+          }
+          .cz-section {
+            margin-bottom: 72px;
+            scroll-margin-top: 110px;
+          }
+          .cz-section-head {
+            display: grid;
+            grid-template-columns: 56px minmax(0, 1fr);
+            gap: 18px;
+            align-items: start;
+            margin-bottom: 24px;
+          }
+          .cz-section-index {
+            width: auto;
+            height: 36px;
+            display: flex;
+            font-size: 13px;
+            margin-bottom: 0;
+          }
+          .cz-product-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px;
+            border-radius: 18px;
+          }
+          .cz-product-featured::before {
+            width: 4px;
+          }
+          .cz-product-label {
+            flex: 0 0 98px;
+            display: block;
+            margin-bottom: 0;
+            padding: 0;
+            border: 0;
+            background: transparent;
+          }
+          .cz-product-action {
+            flex: 0 0 180px;
+            margin-top: 0;
+            text-align: right;
+          }
+          .cz-product-price {
+            font-size: 30px !important;
+            margin-bottom: 14px;
+          }
+          .cz-product-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+          }
+          .cz-product-buttons button,
+          .cz-product-buttons a {
+            width: auto;
+            min-height: auto;
+          }
+          .cz-product-title {
+            font-size: 20px !important;
+          }
+          .cz-product-subtitle {
+            font-size: 14px !important;
+          }
+          .cz-product-hint {
+            padding: 8px 10px;
+            border-left: 2px solid #111827;
+            border-radius: 8px;
+            background: #fafafa;
+          }
+          .cz-product-tags {
+            flex-wrap: wrap !important;
+            overflow: visible;
+            margin: 0;
+            padding: 0;
+          }
+          .cz-product-tag {
+            font-size: 12px !important;
+          }
+          .cz-detail-overlay {
+            align-items: center !important;
+            padding: 20px !important;
+          }
+          .cz-detail-panel {
+            max-width: 560px !important;
+            max-height: 86vh !important;
+            border-radius: 18px !important;
+          }
+          .cz-api-float {
+            left: auto;
+            right: 24px;
+            bottom: 24px;
+            width: 268px;
+          }
+          .cz-api-float-link {
+            min-height: 68px;
+            padding: 14px 16px;
+            border-radius: 20px;
+            background: #ffffff;
+            color: #111827;
+            border-color: #eaeaea;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.14);
+          }
+          .cz-api-float-link:hover,
+          .cz-api-float-link:focus-visible {
+            border-color: var(--cz-accent);
+          }
+          .cz-api-float-desc {
+            color: #666;
+          }
+          .cz-api-float-arrow {
+            color: #111827;
+          }
+        }
+      `}</style>
+
+      <header className="cz-header" style={{ background: "#ffffff", borderBottom: "1px solid #eaeaea", padding: "16px 0", position: "sticky", top: 0, zIndex: 50 }}>
+        <div className="cz-header-inner" style={{ maxWidth: 1080, margin: "0 auto", padding: "0 16px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "60px", gap: 16 }}>
           <Link href={`/${lang}`} style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flexShrink: 0 }}>
-            <img 
-              src={lang === 'zh' ? '/images/logo-zh.png' : '/images/logo-en.png'} 
-              alt={dict.header.title} 
-              style={{ height: 27, width: 'auto', display: "block" }} 
+            <img
+              src={lang === 'zh' ? '/images/logo-zh.png' : '/images/logo-en.png'}
+              alt={dict.header.title}
+              style={{ height: 27, width: 'auto', display: "block" }}
             />
           </Link>
-          <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 14, fontWeight: 500, minWidth: 0, overflowX: "auto", whiteSpace: "nowrap", paddingBottom: 2, msOverflowStyle: 'none', scrollbarWidth: 'none' }}>
-            {categories.map(category => (
-              <a 
-                key={category.id} 
-                href={`#${category.id}`} 
+          <div className="cz-header-nav" style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 14, fontWeight: 500, minWidth: 0, overflowX: "auto", whiteSpace: "nowrap", paddingBottom: 2, msOverflowStyle: 'none', scrollbarWidth: 'none' }}>
+            {pageNavItems.map(item => (
+              <a
+                key={item.href}
+                href={item.href}
                 className="nav-link"
                 style={{ textDecoration: "none", color: "#666666", transition: "color 0.2s ease", flexShrink: 0 }}
               >
-                {dict.header.nav[category.id as keyof typeof dict.header.nav]}
+                {item.label}
               </a>
             ))}
-            <Link href={`/${lang}/api-service`} className="nav-link" style={{ textDecoration: "none", color: "#666666", transition: "color 0.2s ease", flexShrink: 0 }}>
-              {dict.header.nav['api-service']}
-            </Link>
-            <a 
-              href="#flow" 
-              className="nav-link"
-              style={{ textDecoration: "none", color: "#666666", transition: "color 0.2s ease", flexShrink: 0 }}
-            >
-              {dict.header.nav.flow}
-            </a>
             <button onClick={switchLang} style={{ background: "none", border: "1px solid #eaeaea", borderRadius: "6px", padding: "4px 8px", cursor: "pointer", fontSize: 13, fontWeight: 600, color: "#666", flexShrink: 0 }}>
               {lang === 'zh' ? 'EN' : '中文'}
             </button>
@@ -196,137 +843,129 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
         </div>
       </header>
 
-      <div style={{ maxWidth: 1080, margin: "0 auto", padding: "max(20px, 4vw) 16px max(40px, 8vw)" }}>
-        
-        <div style={{ padding: "max(32px, 6vw) 0 max(40px, 8vw)", textAlign: "center" }}>
-          <h1 style={{ fontSize: "clamp(28px, 5vw, 48px)", fontWeight: 800, color: "#111827", letterSpacing: "-0.04em", marginBottom: 24 }}>
-            {lang === 'zh' ? '主流 AI 账号和低价 API 资源，一站下单' : 'Mainstream AI Accounts & Low-Cost API Resources'}
-          </h1>
-          <p style={{ fontSize: 18, color: "#666666", maxWidth: 640, margin: "0 auto 40px", lineHeight: 1.6 }}>
-            {lang === 'zh' ? 'GPT Plus / Pro、Gemini 年卡、API 中转额度、抖音 / 公众号 / 小红书营销资源都在这里。适合高频 AI 用户、开发者和内容从业者，网页直接下单，按商品类型交付账号、卡密、充值说明或额度码。' : 'GPT Plus / Pro, Gemini Annual Pass, API Relay Credits, and Marketing Resources all in one place. Perfect for heavy AI users, developers, and creators. Order directly online and receive accounts, keys, or credits instantly.'}
-          </p>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 40 }}>
-            <span style={{ padding: "4px 12px", background: "#f3f4f6", borderRadius: "999px", fontSize: 14, color: "#4b5563" }}>GPT Plus / Pro</span>
-            <span style={{ padding: "4px 12px", background: "#f3f4f6", borderRadius: "999px", fontSize: 14, color: "#4b5563" }}>{lang === 'zh' ? 'Gemini 年卡' : 'Gemini Annual Pass'}</span>
-            <span style={{ padding: "4px 12px", background: "#f3f4f6", borderRadius: "999px", fontSize: 14, color: "#4b5563" }}>Claude / Codex API</span>
-            <span style={{ padding: "4px 12px", background: "#f3f4f6", borderRadius: "999px", fontSize: 14, color: "#4b5563" }}>{lang === 'zh' ? '营销资源' : 'Marketing Resources'}</span>
-          </div>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="#gpt" className="vercel-button" style={{ padding: "12px 32px", fontSize: 16, textDecoration: "none" }}>{lang === 'zh' ? '购买 GPT 会员' : 'Buy GPT Membership'}</a>
-            <a href="#api" className="vercel-button-secondary" style={{ padding: "12px 32px", fontSize: 16, textDecoration: "none" }}>{lang === 'zh' ? '购买 API 额度' : 'Buy API Credits'}</a>
-          </div>
-        </div>
-
-        {categories.map(category => {
-          const categoryProducts = productsByCategory[category.id];
-          if (!categoryProducts || categoryProducts.length === 0) return null;
-
-          return (
-            <div key={category.id} id={category.id} style={{ marginBottom: 64 }}>
-              <h2 style={{ fontSize: "clamp(18px, 2.5vw, 24px)", fontWeight: 700, color: "#111827", marginBottom: 8, letterSpacing: "-0.02em" }}>
-                {dict.header.nav[category.id] || category.name}
-              </h2>
-              <p style={{ fontSize: 16, color: "#666", marginBottom: 24 }}>
-                {category.id === 'gpt' && (lang === 'zh' ? '从不用翻墙的直连月卡，到自用续费、成品账号，再到 Pro 20X 高阶月卡，按需求直接下单。' : 'From direct-connect monthly passes to renewals, ready-to-use accounts, and Pro 20X high-tier passes. Order exactly what you need.')}
-                {category.id === 'gemini' && (lang === 'zh' ? '适合长上下文、资料整理、写作和备用 AI 会员场景。' : 'Perfect for long-context tasks, data organization, writing, and as a backup AI membership.')}
-                {category.id === 'api' && (lang === 'zh' ? '低价 API 中转额度，适合 Claude Code、Codex、Cursor 等高频 AI Coding 场景，OpenAI 兼容格式，拿到额度即可接入。' : 'Low-cost API relay credits. Perfect for Claude Code, Codex, and Cursor AI Coding. Fully OpenAI-compatible.')}
-                {category.id === 'growth' && (lang === 'zh' ? '低价稳定、优先安全的抖音、公众号、小红书推广资源，适合内容冷启动和基础曝光。' : 'Low-cost, stable, and safe promotion resources for TikTok, WeChat, and Xiaohongshu. Great for cold starts and basic exposure.')}
+      <div className="cz-page" style={{ maxWidth: 1120, margin: "0 auto", padding: "max(20px, 4vw) 16px max(40px, 8vw)" }}>
+        <section className="cz-hero" style={{ padding: "max(42px, 8vw) 0 max(34px, 6vw)", textAlign: "center" }}>
+          <div className="cz-hero-shell">
+            <div className="cz-hero-main">
+              <h1 className="cz-hero-title" style={{ fontSize: "clamp(30px, 5vw, 52px)", fontWeight: 800, color: "#111827", letterSpacing: "-0.05em", lineHeight: 1.08, margin: "0 auto 18px", maxWidth: 860 }}>
+                {lang === 'zh' ? '主流 AI 账号和低价 API 资源，一站下单' : 'Choose the AI service you need, then order.'}
+              </h1>
+              <p className="cz-hero-copy" style={{ fontSize: "clamp(16px, 2vw, 19px)", color: "#666666", maxWidth: 720, margin: "0 auto 28px", lineHeight: 1.7 }}>
+                {lang === 'zh'
+                  ? '买 AI 账号、买 API 额度、做内容推广。适合不同应用场景。网页直接下单，按商品类型交付账号、卡密、充值说明或额度码。'
+                  : 'Buy AI accounts, API credits, or growth services on one page. Works cleanly on mobile too.'}
               </p>
-              
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "24px" }}>
-                {categoryProducts.map(product => (
-                  <div 
-                    key={product.id} 
-                    className="vercel-card" 
-                    style={{ 
-                      display: "flex", flexDirection: "column", padding: "32px", position: "relative",
-                      ...(product.id === 'chatgpt-pro-20x-fast' ? {
-                         background: "linear-gradient(to bottom right, #ffffff, #fff9f0)",
-                         border: "2px solid #ff9900",
-                         boxShadow: "0 8px 30px rgba(255, 153, 0, 0.15)"
-                      } : product.id === 'chatgpt-plus-monthly-code' ? {
-                         background: "linear-gradient(to bottom right, #ffffff, #fafafa)",
-                         border: "1px solid #ff9900",
-                         boxShadow: "0 4px 14px rgba(255, 153, 0, 0.08)"
-                      } : {})
-                    }}
-                  >
-                    
-                    {product.isHot && (
-                      <div style={{ position: "absolute", top: 16, right: 16, border: "1px solid #ff6600", color: "#ff6600", padding: "2px 8px", fontSize: 11, fontWeight: 600, borderRadius: "999px" }}>
-                        {product.id === 'chatgpt-pro-20x-fast' ? (lang === 'zh' ? '高阶主推' : 'Premium Pick') : product.id === 'chatgpt-plus-monthly-code' ? (lang === 'zh' ? '入门主推' : 'Starter Pick') : dict.common.hot}
-                      </div>
-                    )}
-                    
-                    <h3 style={{ fontSize: 20, fontWeight: 600, color: "#111827", margin: "0 0 12px", lineHeight: 1.3, letterSpacing: "-0.02em", paddingRight: product.isHot ? 50 : 0 }}>
-                      {product.title}
-                    </h3>
-                    
-                    <div style={{ marginBottom: 16, display: "flex", alignItems: "baseline", flexWrap: "wrap" }}>
-                      {product.actionType !== 'consult' ? (
-                        <>
-                          <span style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 700, color: "#111827", letterSpacing: "-0.02em" }}>
-                            {dict.common.currency}{product.price}{category.id === 'growth' && (lang === 'zh' ? ' 起' : '+')}
-                          </span>
-                          {product.originalPriceText && (
-                            <span style={{ fontSize: 13, color: "#888", textDecoration: "none", fontWeight: 500, background: "#f3f4f6", padding: "2px 6px", borderRadius: 4, marginLeft: 8 }}>
-                              {product.originalPriceText}
-                            </span>
-                          )}
-                        </>
-                      ) : (
-                        <span style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 700, color: "#111827", letterSpacing: "-0.02em" }}>{lang === 'zh' ? '咨询报价' : 'Consulting'}</span>
-                      )}
-                    </div>
+              <div className="cz-hero-actions">
+                <a href="#accounts" className="vercel-button-secondary" style={{ padding: "12px 24px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '买 AI 账号' : 'Buy AI accounts'}</a>
+                <a href="#api" className="vercel-button cz-hero-primary" style={{ padding: "12px 24px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '买 API 额度' : 'Buy API credits'}</a>
+                <a href="#growth" className="vercel-button-secondary" style={{ padding: "12px 24px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '做内容推广' : 'Run growth'}</a>
+              </div>
+              <div className="cz-hero-note">
+                {lang === 'zh' ? 'GPT Plus / Pro 、Gemini 年卡、Claude / Codex API。' : 'Clear pricing · Mobile ordering · Email support'}
+              </div>
+            </div>
 
-                    <p style={{ fontSize: 14, color: "#666666", margin: "0 0 24px", flexGrow: 1, lineHeight: 1.6 }} dangerouslySetInnerHTML={{__html: product.subtitle}}></p>
-
-                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 32 }}>
-                      {product.tags.map(t => (
-                        <span key={t} style={{ padding: "4px 10px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "999px", fontSize: 12, color: "#666666", fontWeight: 500 }}>{t}</span>
-                      ))}
-                    </div>
-
-                    <div style={{ display: 'flex', gap: 12, marginTop: "auto" }}>
-                       {product.inStock ? (
-                          <button 
-                            onClick={() => buy(product)} 
-                            className="vercel-button" 
-                            style={{ flex: 1, padding: "12px 0", fontSize: 14, fontWeight: 500, cursor: "pointer" }}
-                          >
-                            {product.buyButtonText}
-                          </button>
-                       ) : (
-                          <div style={{ flex: 1, padding: "12px 0", background: "#fafafa", color: "#999999", textAlign: "center", fontSize: 14, fontWeight: 500, border: "1px solid #eaeaea", borderRadius: "6px" }}>{dict.common.soldOut}</div>
-                       )}
-                       {product.actionType !== "link" && (
-                         <Link href={`/${lang}/products/${product.id}`} className="vercel-button-secondary" style={{ padding: "12px 24px", textAlign: "center", fontSize: 14, fontWeight: 500, textDecoration: "none" }}>
-                           {dict.common.details}
-                         </Link>
-                       )}
+            <div className="cz-hero-panel" aria-label={lang === 'zh' ? '服务类型概览' : 'Service overview'}>
+              <div className="cz-hero-panel-label">
+                <span className="cz-accent-dot" />
+                {lang === 'zh' ? '按需求选，不绕路' : 'Pick by need'}
+              </div>
+              <div className="cz-hero-panel-list">
+                {[
+                  {
+                    num: '01',
+                    title: lang === 'zh' ? 'AI 账号' : 'AI accounts',
+                    desc: lang === 'zh' ? 'GPT Plus / Pro、Gemini 年卡' : 'GPT Plus / Pro, Gemini annual cards'
+                  },
+                  {
+                    num: '02',
+                    title: lang === 'zh' ? 'API 额度' : 'API credits',
+                    desc: lang === 'zh' ? 'Claude / Codex / GPT / Gemini 多模型' : 'Claude / Codex / GPT / Gemini models'
+                  },
+                  {
+                    num: '03',
+                    title: lang === 'zh' ? '内容推广' : 'Growth services',
+                    desc: lang === 'zh' ? '小红书、抖音、公众号基础曝光' : 'Basic exposure for social platforms'
+                  }
+                ].map(item => (
+                  <div className="cz-hero-panel-item" key={item.num}>
+                    <div className="cz-hero-panel-num">{item.num}</div>
+                    <div>
+                      <div className="cz-hero-panel-title">{item.title}</div>
+                      <div className="cz-hero-panel-desc">{item.desc}</div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-          );
-        })}
+          </div>
+        </section>
 
-        <section id="flow" style={{ marginBottom: 64, paddingTop: 40, borderTop: "1px solid #eaeaea" }}>
-          <h2 style={{ fontSize: "clamp(18px, 2.5vw, 24px)", fontWeight: 700, color: "#111827", marginBottom: 32, letterSpacing: "-0.02em" }}>
-            {lang === 'zh' ? '购买流程' : 'Purchase Flow'}
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 24 }}>
+        <section id="accounts" className="cz-section">
+          {renderSectionHeader(
+            "01",
+            lang === 'zh' ? 'AI 账号：按使用强度选' : 'AI accounts: choose by usage',
+            lang === 'zh'
+              ? '不按“入门/高阶”绕路。直接看你要解决什么：体验、备用、长文档、重度使用、已有账号续费。'
+              : 'Trial, ready account, long-context work, heavy Pro usage, or renewal. Pick by how you use it.'
+          )}
+
+          <div style={{ display: "grid", gap: 14 }}>
+            {accountItems.map(item => renderProductRow(item.product, item.label))}
+          </div>
+        </section>
+
+        <section id="api" className="cz-section">
+          {renderSectionHeader(
+            "02",
+            lang === 'zh' ? 'API 额度：给 Claude Code / Codex / Cursor 用' : 'API credits: for Claude Code, Codex, and Cursor',
+            lang === 'zh'
+              ? '先买额度包，再到控制台创建 API Key。支持 Claude、GPT、Gemini、Codex 等模型；配置说明放在购买后。'
+              : 'Buy a credit pack, then create a new API key in the console. Claude, GPT, Gemini, Codex, and more are supported.'
+          )}
+          <div style={{ display: "grid", gap: 14 }}>
+            {apiProducts.map(product => renderProductRow(product, product.id === "api-code-300" ? (lang === 'zh' ? "$300 包" : "$300 pack") : (lang === 'zh' ? "$100 包" : "$100 pack")))}
+          </div>
+          <div style={{ marginTop: 14, padding: "14px 16px", background: "#ffffff", border: "1px solid #eaeaea", borderRadius: 12, color: "#333333", fontSize: 14, lineHeight: 1.6 }}>
+            {lang === 'zh' ? '购买后配置：进入控制台创建 API Key，再把服务地址填到客户端。下单前不用先研究配置。' : 'After purchase: create an API key in the console and enter the service URL in your client.'}
+            <Link href={`/${lang}/api-service`} className="cz-inline-link" style={{ color: "#111827", fontWeight: 800, textDecoration: "none", marginLeft: 8 }}>
+              {lang === 'zh' ? '需要时查看说明 →' : 'Setup guide →'}
+            </Link>
+          </div>
+        </section>
+
+        <section id="growth" className="cz-section">
+          {renderSectionHeader(
+            "03",
+            lang === 'zh' ? '内容推广：按平台提交链接和数量' : 'Growth services: submit links and quantity',
+            lang === 'zh'
+              ? '适合内容冷启动、素材测试和基础曝光。选平台，提交作品链接和数量，客服核对后执行。'
+              : 'For content cold starts, creative testing, and basic exposure. Submit your link, requirement, and quantity.'
+          )}
+          <div style={{ display: "grid", gap: 14 }}>
+            {growthProducts.map(product => renderProductRow(product, product.id.includes("xiaohongshu") ? (lang === 'zh' ? "小红书" : "Xiaohongshu") : product.id.includes("douyin") ? (lang === 'zh' ? "抖音" : "Douyin") : (lang === 'zh' ? "公众号" : "WeChat")))}
+          </div>
+        </section>
+
+        <section id="flow" className="cz-section" style={{ paddingTop: 40, borderTop: "1px solid #eaeaea" }}>
+          {renderSectionHeader(
+            "04",
+            lang === 'zh' ? '购买流程：从选择到交付' : 'Purchase flow: from choice to delivery',
+            lang === 'zh'
+              ? '流程尽量短：选商品、下单、按类型交付，有问题直接邮件联系。'
+              : 'A short flow: choose, order, receive delivery, and contact support by email if needed.'
+          )}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
             {[
-              { step: 1, title: lang === 'zh' ? "选择商品" : "Select Product", desc: lang === 'zh' ? "选择需要的 GPT 会员、Gemini 年卡、API 额度或营销资源。" : "Choose from GPT, Gemini, API credits, or Marketing resources." },
-              { step: 2, title: lang === 'zh' ? "网页下单" : "Order Online", desc: lang === 'zh' ? "在商品页直接完成下单和付款。" : "Complete your order and payment directly on the page." },
-              { step: 3, title: lang === 'zh' ? "等待交付" : "Wait for Delivery", desc: lang === 'zh' ? "我们会按商品类型交付账号、卡密、充值说明、API 充值码或营销资源订单说明。" : "We will deliver the account, license key, or API credits based on the product type." },
-              { step: 4, title: lang === 'zh' ? "邮件售后" : "Email Support", desc: lang === 'zh' ? "订单问题请邮件联系：chengziai2026@163.com" : "For order inquiries, email: chengziai2026@163.com" }
-            ].map(f => (
-              <div key={f.step} className="vercel-card" style={{ padding: 24 }}>
-                <div style={{ width: 32, height: 32, borderRadius: "50%", background: "#ff6600", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, marginBottom: 16 }}>{f.step}</div>
-                <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 8, color: "#111827" }}>{f.title}</h3>
-                <p style={{ fontSize: 14, color: "#666", lineHeight: 1.5, margin: 0 }}>{f.desc}</p>
+              { step: "1", title: lang === 'zh' ? "选择商品" : "Choose", desc: lang === 'zh' ? "按账号、API、营销三类选择。" : "Pick accounts, APIs, or growth." },
+              { step: "2", title: lang === 'zh' ? "网页下单" : "Order", desc: lang === 'zh' ? "直接支付或提交需求。" : "Pay or submit details online." },
+              { step: "3", title: lang === 'zh' ? "等待交付" : "Delivery", desc: lang === 'zh' ? "按商品类型交付账号、卡密、额度或推广说明。" : "Receive account, key, credits, or instructions." },
+              { step: "4", title: lang === 'zh' ? "邮件售后" : "Support", desc: lang === 'zh' ? "订单问题联系 chengziai2026@163.com。" : "Contact chengziai2026@163.com for order issues." }
+            ].map(item => (
+              <div key={item.step} className="vercel-card" style={{ padding: 22, background: "#ffffff" }}>
+                <div style={{ width: 30, height: 30, borderRadius: "50%", background: "#111827", color: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, marginBottom: 14 }}>{item.step}</div>
+                <h3 style={{ fontSize: 16, fontWeight: 700, color: "#111827", margin: "0 0 8px" }}>{item.title}</h3>
+                <p style={{ fontSize: 14, color: "#666", lineHeight: 1.55, margin: 0 }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -339,7 +978,82 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: any,
         {lang === 'zh' ? '客服邮箱：' : 'Support Email: '}
         <a href="mailto:chengziai2026@163.com" style={{ color: "#666", textDecoration: "none" }}>chengziai2026@163.com</a>
       </footer>
-        {modal && (
+
+      {showApiFloat && !modal && !detailProduct && (
+        <div className="cz-api-float" aria-label={lang === 'zh' ? "API 额度入口" : "API credits entry"}>
+          <Link href={`/${lang}/api-service`} className="cz-api-float-link">
+            <span className="cz-api-float-dot" aria-hidden="true" />
+            <span>
+              <span className="cz-api-float-title">
+                {lang === 'zh' ? "API 额度" : "API credits"}
+              </span>
+              <span className="cz-api-float-desc">
+                {lang === 'zh' ? "Claude Code / Codex 可用" : "For Claude Code / Codex"}
+              </span>
+            </span>
+            <span className="cz-api-float-arrow" aria-hidden="true">→</span>
+          </Link>
+          <button
+            type="button"
+            className="cz-api-float-close"
+            onClick={() => setShowApiFloat(false)}
+            aria-label={lang === 'zh' ? "关闭 API 入口" : "Close API entry"}
+          >
+            ×
+          </button>
+        </div>
+      )}
+
+      {detailProduct && (
+        <div className="cz-detail-overlay" style={{ position: "fixed", inset: 0, zIndex: 90, display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
+          <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.48)" }} onClick={() => setDetailProduct(null)} />
+          <div className="cz-detail-panel" style={{ position: "relative", width: "100%", maxWidth: 560, maxHeight: "86vh", overflow: "auto", background: "#ffffff", border: "1px solid #eaeaea", borderRadius: 18, boxShadow: "0 24px 80px rgba(0,0,0,0.22)" }}>
+            <div style={{ padding: "28px" }}>
+              <div style={{ fontSize: 13, fontWeight: 800, color: "#666", marginBottom: 10 }}>
+                {detailProduct.categoryName}
+              </div>
+              <h3 style={{ fontSize: "clamp(22px, 4vw, 30px)", fontWeight: 850, letterSpacing: "-0.04em", lineHeight: 1.12, color: "#111827", margin: "0 32px 12px 0" }}>
+                {detailProduct.detail?.title || detailProduct.title}
+              </h3>
+              <p style={{ color: "#666", fontSize: 15, lineHeight: 1.7, margin: "0 0 20px" }}>
+                {detailProduct.detail?.subtitle || detailProduct.subtitle}
+              </p>
+
+              <div className="cz-detail-list">
+                {(detailProduct.detail?.sections || []).map(section => (
+                  <div key={section.title} className="cz-detail-section">
+                    <h4 style={{ color: "#111827", fontSize: 15, fontWeight: 800, margin: "0 0 10px" }}>{section.title}</h4>
+                    <ul style={{ margin: 0, paddingLeft: 18, color: "#666", fontSize: 14, lineHeight: 1.75 }}>
+                      {section.items.map(item => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              <div style={{ display: "flex", gap: 10, marginTop: 24, flexWrap: "wrap" }}>
+                <button
+                  onClick={() => {
+                    setDetailProduct(null);
+                    buy(detailProduct);
+                  }}
+                  className="vercel-button"
+                  style={{ flex: "1 1 180px", padding: "12px 18px", fontSize: 14, fontWeight: 700, cursor: "pointer" }}
+                >
+                  {detailProduct.actionType === "link" ? (lang === 'zh' ? "去购买 / 兑换" : "Buy / redeem") : detailProduct.buyButtonText}
+                </button>
+                <button onClick={() => setDetailProduct(null)} className="vercel-button-secondary" style={{ flex: "1 1 120px", padding: "12px 18px", fontSize: 14, fontWeight: 600, cursor: "pointer" }}>
+                  {lang === 'zh' ? "先不买" : "Not now"}
+                </button>
+              </div>
+            </div>
+            <button onClick={() => setDetailProduct(null)} aria-label={lang === 'zh' ? "关闭详情" : "Close details"} style={{ position: "absolute", top: 16, right: 16, background: "#ffffff", border: "1px solid #eaeaea", borderRadius: "999px", width: 32, height: 32, fontSize: 20, cursor: "pointer", color: "#666", lineHeight: 1 }}>×</button>
+          </div>
+        </div>
+      )}
+
+      {modal && (
         <div style={{ position: "fixed", inset: 0, zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>
           <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.5)" }} onClick={() => setModal(null)} />
           <div style={{ position: "relative", width: "100%", maxWidth: 420, background: "#ffffff", border: "1px solid #eaeaea", borderRadius: "12px", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}>
