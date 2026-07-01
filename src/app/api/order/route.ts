@@ -6,17 +6,17 @@ const PLAN_MAP = {
     zhName: "基础充值码",
     enName: "Basic Credit Code",
     cnyAmount: 100,
-    usdAmount: 100,
+    usdAmount: 14,
     platformCreditZh: "$100 平台计价额度",
-    platformCreditEn: "$100 platform credit",
+    platformCreditEn: "Get $100 platform credit",
   },
   plan_300: {
     zhName: "大额充值码",
     enName: "Pro Credit Code",
     cnyAmount: 300,
-    usdAmount: 300,
+    usdAmount: 42,
     platformCreditZh: "$300 平台计价额度",
-    platformCreditEn: "$300 platform credit",
+    platformCreditEn: "Get $300 platform credit",
   },
 } as const;
 

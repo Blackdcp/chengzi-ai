@@ -45,30 +45,30 @@ const getPlans = (lang: string) => {
     {
       id: "plan_100",
       name: isEn ? "Basic Credit Code" : "基础充值码",
-      priceText: isEn ? "$100" : "¥100",
+      priceText: isEn ? "$14" : "¥100",
       priceValue: 100,
-      priceUsd: 100,
-      credit: isEn ? "$100 platform credit" : "$100 平台计价额度",
+      priceUsd: 14,
+      credit: isEn ? "Get $100 platform credit" : "$100 平台计价额度",
       badge: isEn ? "Recommended" : "推荐",
       bestFor: isEn ? "For individual developers, AI client testing, and lightweight usage." : "适合：个人开发者、AI 客户端测试、Cursor / Cline / ChatBox 轻量使用",
       features: isEn
         ? ["Mainstream models available", "Self-service top-up in console", "Usage logs view", "Basic community support"]
         : ["主流模型可用", "支持控制台自助兑换", "支持用量记录查看", "社群基础支持"],
-      buttonText: isEn ? "Buy $100 Credit Code" : "购买 ¥100 充值码",
+      buttonText: isEn ? "Pay $14 · Get $100 Credit" : "购买 ¥100 充值码",
     },
     {
       id: "plan_300",
       name: isEn ? "Pro Credit Code" : "大额充值码",
-      priceText: isEn ? "$300" : "¥300",
+      priceText: isEn ? "$42" : "¥300",
       priceValue: 300,
-      priceUsd: 300,
-      credit: isEn ? "$300 platform credit" : "$300 平台计价额度",
+      priceUsd: 42,
+      credit: isEn ? "Get $300 platform credit" : "$300 平台计价额度",
       badge: "",
       bestFor: isEn ? "For frequent usage, AI coding, multi-model testing, and small team usage." : "适合：高频使用、AI Coding、多模型测试、小团队轻量共用",
       features: isEn
         ? ["Mainstream models available", "Self-service top-up in console", "Usage statistics dashboard", "Peak-time priority routing", "1v1 Setup assistance"]
         : ["主流模型可用", "支持控制台自助兑换", "支持用量统计", "高峰期优先处理", "1v1 配置协助"],
-      buttonText: isEn ? "Buy $300 Credit Code" : "购买 ¥300 充值码",
+      buttonText: isEn ? "Pay $42 · Get $300 Credit" : "购买 ¥300 充值码",
     },
     {
       id: "plan_bulk",
@@ -864,7 +864,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
           {/* Small Trust Badges */}
           <div style={{ display: "flex", gap: 12, justifyContent: "flex-start", flexWrap: "wrap" }}>
             {["¥100 起试用", "Claude Code 可用", "大额订阅可谈"].map((tagZh, i) => {
-              const tagEn = ["From $100", "Claude Code ready", "Bulk discount available"][i];
+              const tagEn = ["From $14", "Claude Code ready", "Bulk discount available"][i];
               return (
                 <span
                   key={i}
@@ -1807,7 +1807,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
         <div style={{ color: "#111827", fontWeight: 700 }}>
           {isEn ? (
             <span style={{ fontSize: 13, color: "#111827", fontWeight: 700 }}>
-              $100 credit
+              $14 → $100 credit
             </span>
           ) : (
             <>
