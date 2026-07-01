@@ -1,11 +1,18 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
 const CONSOLE_URL = "https://api.cheng-zi-ai.com";
+const REFERRAL_STORAGE_KEY = "chengzi_ai_invitee_referral_code";
+
+const normalizeReferralCode = (value?: string | null) => {
+  const code = (value || "").trim();
+  if (!code) return "";
+  return /^[a-zA-Z0-9_-]{2,80}$/.test(code) ? code : "";
+};
 
 const MODELS = [
   { name: "gpt-5.5", provider: "openai" },
@@ -267,6 +274,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
   const t = dict.apiService;
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const isEn = lang === "en";
 
   const plans = getPlans(lang);
@@ -282,17 +290,45 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
   const [purchaseStep, setPurchaseStep] = useState<"confirm" | "pay" | "success">("confirm");
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
-  const [contact, setContact] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [copiedStates, setCopiedStates] = useState<Record<string, boolean>>({});
   const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [referralCode, setReferralCode] = useState("");
+  const [activeInviteCode, setActiveInviteCode] = useState("");
+  const [isReferralCardClosed, setIsReferralCardClosed] = useState(false);
+
+  useEffect(() => {
+    const incomingCode = normalizeReferralCode(
+      searchParams.get("aff") || searchParams.get("ref") || searchParams.get("refCode")
+    );
+
+    if (incomingCode) {
+      window.localStorage.setItem(REFERRAL_STORAGE_KEY, incomingCode);
+      queueMicrotask(() => {
+        setReferralCode(incomingCode);
+        setActiveInviteCode(incomingCode);
+      });
+      return;
+    }
+
+    const storedCode = normalizeReferralCode(window.localStorage.getItem(REFERRAL_STORAGE_KEY));
+    if (storedCode) {
+      queueMicrotask(() => setReferralCode(storedCode));
+    }
+  }, [searchParams]);
+
+  const registerUrl = activeInviteCode
+    ? `${CONSOLE_URL}/register?aff=${encodeURIComponent(activeInviteCode)}`
+    : `${CONSOLE_URL}/register`;
+
+  const referralCardUrl = `/${lang}/referral-card`;
 
   const switchLang = () => {
     const newLang = lang === "zh" ? "en" : "zh";
     const newPath = pathname.replace(`/${lang}`, `/${newLang}`);
-    router.push(newPath);
+    router.push(activeInviteCode ? `${newPath}?aff=${encodeURIComponent(activeInviteCode)}` : newPath);
   };
 
   const scrollTo = (id: string) => {
@@ -318,7 +354,6 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
     setSelectedPlan(plan);
     setEmail("");
     setEmailErr("");
-    setContact("");
     setPurchaseStep("confirm");
     setIsPurchaseModalOpen(true);
   };
@@ -344,7 +379,8 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
           planId: selectedPlan.id,
           email: email,
           lang: lang,
-          contact: contact
+          refCode: referralCode || undefined,
+          refSource: referralCode ? "api-invite" : undefined
         })
       });
       if (res.ok) {
@@ -846,6 +882,100 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section
+        className="mobile-only"
+        style={{
+          display: "none",
+          padding: "0 12px 28px",
+          background: "#fafafa",
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            background: "#111827",
+            color: "#ffffff",
+            borderRadius: 18,
+            padding: "18px 16px",
+            boxShadow: "0 14px 34px rgba(0,0,0,0.12)",
+          }}
+        >
+          <div style={{ fontSize: 13, color: "rgba(255,255,255,0.72)", marginBottom: 6, fontWeight: 700 }}>
+            {activeInviteCode
+              ? isEn ? "Invite offer locked" : "邀请福利已锁定"
+              : isEn ? "Referral rewards" : "邀请好友赚奖励"}
+          </div>
+          <div style={{ fontSize: 18, fontWeight: 900, lineHeight: 1.35, marginBottom: 12 }}>
+            {activeInviteCode
+              ? isEn ? "New users can claim $10 API credit." : "新用户通过邀请注册，可领取 $10 API 体验额度。"
+              : isEn ? "Invite friends: they get $10, you get ¥20." : "邀请好友注册，好友得 $10，你最高得 ¥20。"}
+          </div>
+          <div style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", lineHeight: 1.55, marginBottom: 16 }}>
+            {activeInviteCode
+              ? isEn ? `Invite code: ${activeInviteCode}` : `邀请码：${activeInviteCode}。首充满 ¥100 后，邀请人获得 ¥20 奖励。`
+              : isEn ? "Log in to the console, copy your invite link from Wallet, then make a share card." : "登录控制台，在钱包管理复制邀请链接，再生成推广卡片分享。"}
+          </div>
+          {activeInviteCode ? (
+            <a
+              href={registerUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "block",
+                textAlign: "center",
+                background: "#ffffff",
+                color: "#111827",
+                textDecoration: "none",
+                borderRadius: 12,
+                padding: "12px 14px",
+                fontSize: 14,
+                fontWeight: 900,
+              }}
+            >
+              {isEn ? "New user: claim $10" : "新用户领取 $10"}
+            </a>
+          ) : (
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+              <a
+                href={CONSOLE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  background: "#ffffff",
+                  color: "#111827",
+                  textDecoration: "none",
+                  borderRadius: 12,
+                  padding: "12px 10px",
+                  fontSize: 13,
+                  fontWeight: 900,
+                }}
+              >
+                {isEn ? "Open console" : "去后台复制"}
+              </a>
+              <Link
+                href={referralCardUrl}
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  background: "rgba(255,255,255,0.1)",
+                  color: "#ffffff",
+                  border: "1px solid rgba(255,255,255,0.18)",
+                  textDecoration: "none",
+                  borderRadius: 12,
+                  padding: "12px 10px",
+                  fontSize: 13,
+                  fontWeight: 900,
+                }}
+              >
+                {isEn ? "Make card" : "生成卡片"}
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
@@ -1446,7 +1576,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
       </section>
 
       {/* ───── Footer (Section 15) ───── */}
-      <footer style={{ borderTop: "1px solid #eaeaea", padding: "40px 24px 100px", textAlign: "center", color: "#666", fontSize: 14 }}>
+      <footer className="api-footer" style={{ borderTop: "1px solid #eaeaea", padding: "40px 24px 100px", textAlign: "center", color: "#666", fontSize: 14 }}>
         <div
           style={{
             maxWidth: 1080,
@@ -1571,18 +1701,25 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
                   {emailErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: 6, textAlign: "left" }}>{emailErr}</div>}
                 </div>
 
-                <div style={{ marginBottom: 20 }}>
-                  <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 8, textAlign: "left" }}>
-                    {isEn ? "Contact / Note (Optional)" : "联系方式 / 备注 (选填)"}
+                {referralCode && (
+                  <div
+                    style={{
+                      background: "#fff7ed",
+                      border: "1px solid #fed7aa",
+                      borderRadius: 8,
+                      padding: "10px 12px",
+                      fontSize: 12,
+                      color: "#9a3412",
+                      lineHeight: 1.5,
+                      marginBottom: 16,
+                      textAlign: "left",
+                    }}
+                  >
+                    {isEn
+                      ? `Referral code ${referralCode} will be attached to this order for manual checking. Final rewards should be settled against the console invite relationship.`
+                      : `本订单将记录推荐码 ${referralCode} 作为人工核对线索；最终奖励请以控制台邀请关系和首充记录为准。`}
                   </div>
-                  <input 
-                    type="text" 
-                    placeholder={isEn ? "WeChat, QQ, or note" : "如微信号、QQ或付款备注"} 
-                    value={contact} 
-                    onChange={e => setContact(e.target.value)} 
-                    style={{ width: "100%", padding: "10px 12px", border: "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box" }} 
-                  />
-                </div>
+                )}
 
                 <button 
                   onClick={submitOrder} 
@@ -1659,11 +1796,12 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
           background: "rgba(255,255,255,0.95)",
           backdropFilter: "blur(12px)",
           borderTop: "1px solid #eaeaea",
-          padding: "12px 24px",
+          padding: "10px 12px calc(10px + env(safe-area-inset-bottom))",
           display: "none",
           alignItems: "center",
           justifyContent: "space-between",
-          zIndex: 40,
+          gap: 10,
+          zIndex: 70,
         }}
       >
         <div style={{ color: "#111827", fontWeight: 700 }}>
@@ -1677,16 +1815,16 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
             </>
           )}
         </div>
-        <div style={{ display: "flex", gap: 10 }}>
+        <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
           <button
             onClick={() => scrollTo("quick-start")}
             style={{
               background: "transparent",
               color: "#333333",
               border: "1px solid #eaeaea",
-              padding: "8px 12px",
+              padding: "9px 10px",
               borderRadius: "6px",
-              fontSize: 13,
+              fontSize: 12,
               fontWeight: 600,
               cursor: "pointer",
             }}
@@ -1699,9 +1837,9 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
               background: "#0a0a0a",
               color: "#ffffff",
               border: "none",
-              padding: "8px 16px",
+              padding: "9px 12px",
               borderRadius: "6px",
-              fontSize: 13,
+              fontSize: 12,
               fontWeight: 600,
               cursor: "pointer",
             }}
@@ -1710,6 +1848,257 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
           </button>
         </div>
       </div>
+
+      {/* ───── Referral Promo Card (Desktop & Mobile) ───── */}
+      {!isReferralCardClosed && (
+        <>
+          <div
+            className="hide-on-mobile"
+            style={{
+              position: "fixed",
+              right: 24,
+              bottom: 82,
+              width: 318,
+              background: "#ffffff",
+              border: "1px solid #eaeaea",
+              borderRadius: 18,
+              boxShadow: "0 18px 50px rgba(0,0,0,0.13)",
+              padding: 18,
+              zIndex: 41,
+            }}
+          >
+            <button
+              aria-label={isEn ? "Close referral card" : "关闭推广卡片"}
+              onClick={() => setIsReferralCardClosed(true)}
+              style={{
+                position: "absolute",
+                top: 10,
+                right: 10,
+                width: 26,
+                height: 26,
+                border: "none",
+                borderRadius: 999,
+                background: "#f5f5f5",
+                color: "#666",
+                cursor: "pointer",
+                fontSize: 16,
+                lineHeight: "26px",
+              }}
+            >
+              ×
+            </button>
+
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12, paddingRight: 24 }}>
+              <span
+                style={{
+                  width: 34,
+                  height: 34,
+                  borderRadius: 12,
+                  background: "#111827",
+                  color: "#fff",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontWeight: 800,
+                }}
+              >
+                {activeInviteCode ? "$" : "↗"}
+              </span>
+              <div>
+                <div style={{ fontSize: 15, fontWeight: 800, color: "#111827" }}>
+                  {activeInviteCode
+                    ? isEn ? "Invite offer locked" : "邀请福利已锁定"
+                    : isEn ? "Referral rewards" : "邀请好友赚奖励"}
+                </div>
+                <div style={{ fontSize: 12, color: "#666", marginTop: 2 }}>
+                  {activeInviteCode
+                    ? isEn ? `Invite code: ${activeInviteCode}` : `邀请码：${activeInviteCode}`
+                    : isEn ? "Invitee gets $10, inviter gets ¥20" : "好友得 $10，你得 ¥20"}
+                </div>
+              </div>
+            </div>
+
+            <div style={{ fontSize: 13, color: "#333", lineHeight: 1.55, marginBottom: 14, display: "grid", gap: 8 }}>
+              {activeInviteCode ? (
+                <>
+                  <div>{isEn ? <>New users who register via this invite link can get <strong>$10 API credit</strong>.</> : <>新用户通过此邀请链接首次注册，可领取 <strong>$10 API 体验额度</strong>。</>}</div>
+                  <div style={{ color: "#666" }}>{isEn ? "After the first ¥100 top-up, the inviter gets ¥20." : "首充满 ¥100 后，邀请人获得 ¥20 奖励。"}</div>
+                </>
+              ) : (
+                <>
+                  <div style={{ display: "grid", gap: 5 }}>
+                    <div><strong>{isEn ? "1." : "1."}</strong> {isEn ? "Log in to console → Wallet." : "登录控制台 → 钱包管理"}</div>
+                    <div><strong>{isEn ? "2." : "2."}</strong> {isEn ? "Copy invite link and share." : "复制邀请链接后分享"}</div>
+                  </div>
+                  <div style={{ color: "#666" }}>
+                    {isEn ? <>New invited users get <strong>$10 credit</strong>; you get <strong>¥20</strong> after their first ¥100 top-up.</> : <>被邀请的新用户得 <strong>$10 额度</strong>；好友首充满 ¥100 后，你得 <strong>¥20</strong>。</>}
+                  </div>
+                </>
+              )}
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: activeInviteCode ? "1fr" : "1fr 1fr", gap: 10 }}>
+              {activeInviteCode ? (
+                <a
+                  href={registerUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    textAlign: "center",
+                    background: "#111827",
+                    color: "#fff",
+                    textDecoration: "none",
+                    borderRadius: 10,
+                    padding: "10px 12px",
+                    fontSize: 13,
+                    fontWeight: 700,
+                  }}
+                >
+                  {isEn ? "New user: claim $10" : "新用户领取 $10"}
+                </a>
+              ) : (
+                <>
+                  <a
+                    href={CONSOLE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      textAlign: "center",
+                      background: "#111827",
+                      color: "#fff",
+                      textDecoration: "none",
+                      borderRadius: 10,
+                      padding: "10px 12px",
+                      fontSize: 13,
+                      fontWeight: 700,
+                    }}
+                  >
+                    {isEn ? "Open console" : "去后台复制链接"}
+                  </a>
+                  <Link
+                    href={referralCardUrl}
+                    style={{
+                      textAlign: "center",
+                      background: "#fff",
+                      color: "#111827",
+                      border: "1px solid #eaeaea",
+                      textDecoration: "none",
+                      borderRadius: 10,
+                      padding: "10px 12px",
+                      fontSize: 13,
+                      fontWeight: 700,
+                    }}
+                  >
+                    {isEn ? "Make card" : "生成卡片"}
+                  </Link>
+                </>
+              )}
+            </div>
+          </div>
+
+          <div
+            className="api-referral-mobile-disabled"
+            style={{
+              position: "fixed",
+              left: 12,
+              right: 12,
+              bottom: 72,
+              background: "#ffffff",
+              border: "1px solid #eaeaea",
+              borderRadius: 14,
+              boxShadow: "0 14px 40px rgba(0,0,0,0.14)",
+              padding: "12px 12px",
+              zIndex: 42,
+              display: "none",
+              alignItems: "center",
+              gap: 10,
+            }}
+          >
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 13, fontWeight: 800, color: "#111827" }}>
+                {activeInviteCode
+                  ? isEn ? "Invite offer locked" : "邀请福利已锁定"
+                  : isEn ? "Referral rewards" : "邀请好友赚奖励"}
+              </div>
+              <div style={{ fontSize: 11, color: "#666", lineHeight: 1.35, whiteSpace: "normal" }}>
+                {activeInviteCode
+                  ? isEn ? "$10 credit for new invite registration" : "新用户通过邀请注册送 $10 体验额度"
+                  : isEn ? "Log in → copy link → share" : "后台复制链接 → 分享好友"}
+              </div>
+            </div>
+            {activeInviteCode ? (
+              <a
+                href={registerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: "#111827",
+                  color: "#fff",
+                  textDecoration: "none",
+                  borderRadius: 10,
+                  padding: "9px 12px",
+                  fontSize: 12,
+                  fontWeight: 800,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {isEn ? "Claim" : "新用户领取"}
+              </a>
+            ) : (
+              <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
+                <a
+                  href={CONSOLE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    background: "#111827",
+                    color: "#fff",
+                    textDecoration: "none",
+                    borderRadius: 10,
+                    padding: "9px 10px",
+                    fontSize: 12,
+                    fontWeight: 800,
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {isEn ? "Console" : "后台"}
+                </a>
+                <Link
+                  href={referralCardUrl}
+                  style={{
+                    background: "#fff",
+                    color: "#111827",
+                    border: "1px solid #eaeaea",
+                    textDecoration: "none",
+                    borderRadius: 10,
+                    padding: "9px 10px",
+                    fontSize: 12,
+                    fontWeight: 800,
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {isEn ? "Have link?" : "已有链接"}
+                </Link>
+              </div>
+            )}
+            <button
+              aria-label={isEn ? "Close referral card" : "关闭推广卡片"}
+              onClick={() => setIsReferralCardClosed(true)}
+              style={{
+                border: "none",
+                background: "#f5f5f5",
+                color: "#666",
+                width: 28,
+                height: 28,
+                borderRadius: 999,
+                cursor: "pointer",
+              }}
+            >
+              ×
+            </button>
+          </div>
+        </>
+      )}
 
       {/* ───── Floating Support (Desktop) (Section 14) ───── */}
       <button 
@@ -1752,6 +2141,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
         }
         .desktop-flex { display: flex !important; }
         .desktop-only { display: block !important; }
+        .hide-on-mobile { display: block !important; }
         .mobile-only { display: none !important; }
         .mobile-flex { display: none !important; }
         .featured-model-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
@@ -1768,6 +2158,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
           }
           .desktop-flex { display: none !important; }
           .desktop-only { display: none !important; }
+          .hide-on-mobile { display: none !important; }
           .mobile-only { display: flex !important; }
           .mobile-flex { display: flex !important; }
           .featured-model-grid,
@@ -1778,6 +2169,9 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
           }
           .featured-model-card {
             min-height: auto !important;
+          }
+          .api-footer {
+            padding-bottom: calc(128px + env(safe-area-inset-bottom)) !important;
           }
         }
       `}</style>

@@ -113,6 +113,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
           price: modal.price,
           payMethod: lang === 'en' ? "paypal" : (modal.categoryId === "growth" ? "alipay" : payMethod),
           refCode: refCode,
+          refSource: refCode ? "homepage" : undefined,
           workLink: modal.categoryId === "growth" ? workLink : undefined,
           requirement: modal.categoryId === "growth" ? requirement : undefined
         })

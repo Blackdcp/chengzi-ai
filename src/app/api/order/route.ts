@@ -42,6 +42,7 @@ export async function POST(req: Request) {
       price?: string | number;
       payMethod?: string;
       refCode?: string;
+      refSource?: string;
       workLink?: string;
       requirement?: string;
     };
@@ -57,6 +58,13 @@ export async function POST(req: Request) {
     let finalContact = '';
     const finalLang = lang === 'en' ? 'English' : '中文';
     let finalCredit = '';
+    const refSource = body.refSource === 'api-invite' ? 'api-invite' : body.refSource === 'homepage' ? 'homepage' : '';
+    const refLabel = refSource === 'api-invite' ? 'API 邀请码（辅助核对）' : refSource === 'homepage' ? '首页推广码' : '推荐码（辅助核对）';
+    const refTip = refSource === 'api-invite'
+      ? '这是 API 邀请活动线索；邀请奖励请以 New API 控制台中的邀请关系和被邀请用户首充记录为准。'
+      : refSource === 'homepage'
+        ? '这是首页推广来源码；仅用于判断订单来源，不等同于 New API 邀请返佣。'
+        : '推荐码仅用于辅助查单；如涉及邀请奖励，请以 New API 控制台中的邀请关系和被邀请用户首充记录为准。';
 
     if (planId) {
       // 1. API Service Order with planId secure validation
@@ -172,8 +180,14 @@ export async function POST(req: Request) {
               ` : ''}
               ${body.refCode ? `
               <tr>
-                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">代理监测码</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">${refLabel}</td>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; color: #ff6600;">${escapeHtml(body.refCode)}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">来源说明</td>
+                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; color: #666;">
+                  ${refTip}
+                </td>
               </tr>
               ` : ''}
               ${body.workLink ? `
