@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const CONSOLE_URL = "https://api.cheng-zi-ai.com";
-const REFERRAL_STORAGE_KEY = "chengzi_ai_invitee_referral_code";
 
 const normalizeReferralCode = (value?: string | null) => {
   const code = (value || "").trim();
@@ -305,7 +304,6 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
     );
 
     if (incomingCode) {
-      window.localStorage.setItem(REFERRAL_STORAGE_KEY, incomingCode);
       queueMicrotask(() => {
         setReferralCode(incomingCode);
         setActiveInviteCode(incomingCode);
@@ -313,10 +311,10 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
       return;
     }
 
-    const storedCode = normalizeReferralCode(window.localStorage.getItem(REFERRAL_STORAGE_KEY));
-    if (storedCode) {
-      queueMicrotask(() => setReferralCode(storedCode));
-    }
+    queueMicrotask(() => {
+      setReferralCode("");
+      setActiveInviteCode("");
+    });
   }, [searchParams]);
 
   const registerUrl = activeInviteCode
@@ -1700,26 +1698,6 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
                   />
                   {emailErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: 6, textAlign: "left" }}>{emailErr}</div>}
                 </div>
-
-                {referralCode && (
-                  <div
-                    style={{
-                      background: "#fff7ed",
-                      border: "1px solid #fed7aa",
-                      borderRadius: 8,
-                      padding: "10px 12px",
-                      fontSize: 12,
-                      color: "#9a3412",
-                      lineHeight: 1.5,
-                      marginBottom: 16,
-                      textAlign: "left",
-                    }}
-                  >
-                    {isEn
-                      ? `Referral code ${referralCode} will be attached to this order for manual checking. Final rewards should be settled against the console invite relationship.`
-                      : `本订单将记录推荐码 ${referralCode} 作为人工核对线索；最终奖励请以控制台邀请关系和首充记录为准。`}
-                  </div>
-                )}
 
                 <button 
                   onClick={submitOrder} 
