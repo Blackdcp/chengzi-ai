@@ -449,9 +449,6 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
 
           {/* Desktop Nav Items */}
           <div className="desktop-flex" style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 14, fontWeight: 500, minWidth: 0, overflowX: "auto", whiteSpace: "nowrap", paddingBottom: 2, msOverflowStyle: 'none', scrollbarWidth: 'none' }}>
-            <Link href={`/${lang}`} className="nav-link" style={{ textDecoration: "none" }}>
-              {t.nav.home}
-            </Link>
             <a
               href="#pricing"
               className="nav-link"
@@ -483,7 +480,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
                 scrollTo("quick-start");
               }}
             >
-              {t.nav.tutorial}
+              {isEn ? "Setup" : "接入"}
             </a>
             <a
               href="#faq"
@@ -495,15 +492,6 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
               }}
             >
               {t.nav.faq}
-            </a>
-            <a
-              href={CONSOLE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-link"
-              style={{ textDecoration: "none" }}
-            >
-              {t.nav.console}
             </a>
             <button
               onClick={switchLang}
@@ -535,7 +523,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
                 cursor: "pointer",
               }}
             >
-              {isEn ? "Buy Quota" : "购买兑换码"}
+              {isEn ? "Buy Credit" : "购买额度"}
             </button>
             <a
               href={CONSOLE_URL}
@@ -593,9 +581,6 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
         {/* Mobile Nav Drawer */}
         {mobileMenuOpen && (
           <div style={{ background: "#ffffff", borderTop: "1px solid #eaeaea", padding: "16px 24px", display: "flex", flexDirection: "column", gap: 16, fontSize: 15, fontWeight: 500 }}>
-            <Link href={`/${lang}`} style={{ textDecoration: "none", color: "#333" }} onClick={() => setMobileMenuOpen(false)}>
-              {t.nav.home}
-            </Link>
             <a
               href="#pricing"
               style={{ textDecoration: "none", color: "#333" }}
@@ -627,7 +612,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
                 scrollTo("quick-start");
               }}
             >
-              {t.nav.tutorial}
+              {isEn ? "Setup" : "接入"}
             </a>
             <a
               href="#faq"
@@ -639,15 +624,6 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
               }}
             >
               {t.nav.faq}
-            </a>
-            <a
-              href={CONSOLE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "#333" }}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {t.nav.console}
             </a>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: 8, borderTop: "1px solid #f5f5f5" }}>
               <button
