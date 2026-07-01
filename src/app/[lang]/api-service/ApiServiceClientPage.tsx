@@ -911,11 +911,11 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
           <div style={{ fontSize: 18, fontWeight: 900, lineHeight: 1.35, marginBottom: 12 }}>
             {activeInviteCode
               ? isEn ? "New users can claim $10 API credit." : "新用户通过邀请注册，可领取 $10 API 体验额度。"
-              : isEn ? "Invite friends: they get $10, you get ¥20." : "邀请好友注册，好友得 $10，你最高得 ¥20。"}
+              : isEn ? "Invite friends: they get $10, you get $3." : "邀请好友注册，好友得 $10，你最高得 ¥20。"}
           </div>
           <div style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", lineHeight: 1.55, marginBottom: 16 }}>
             {activeInviteCode
-              ? isEn ? `Invite code: ${activeInviteCode}` : `邀请码：${activeInviteCode}。首充满 ¥100 后，邀请人获得 ¥20 奖励。`
+              ? isEn ? `Invite code: ${activeInviteCode}. After the first $100 top-up, the inviter gets a $3 reward.` : `邀请码：${activeInviteCode}。首充满 ¥100 后，邀请人获得 ¥20 奖励。`
               : isEn ? "Log in to the console, copy your invite link from Wallet, then make a share card." : "登录控制台，在钱包管理复制邀请链接，再生成推广卡片分享。"}
           </div>
           {activeInviteCode ? (
@@ -1913,7 +1913,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
                 <div style={{ fontSize: 12, color: "#666", marginTop: 2 }}>
                   {activeInviteCode
                     ? isEn ? `Invite code: ${activeInviteCode}` : `邀请码：${activeInviteCode}`
-                    : isEn ? "Invitee gets $10, inviter gets ¥20" : "好友得 $10，你得 ¥20"}
+                    : isEn ? "Invitee gets $10, inviter gets $3" : "好友得 $10，你得 ¥20"}
                 </div>
               </div>
             </div>
@@ -1922,7 +1922,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
               {activeInviteCode ? (
                 <>
                   <div>{isEn ? <>New users who register via this invite link can get <strong>$10 API credit</strong>.</> : <>新用户通过此邀请链接首次注册，可领取 <strong>$10 API 体验额度</strong>。</>}</div>
-                  <div style={{ color: "#666" }}>{isEn ? "After the first ¥100 top-up, the inviter gets ¥20." : "首充满 ¥100 后，邀请人获得 ¥20 奖励。"}</div>
+                  <div style={{ color: "#666" }}>{isEn ? "After the first $100 top-up, the inviter gets a $3 reward." : "首充满 ¥100 后，邀请人获得 ¥20 奖励。"}</div>
                 </>
               ) : (
                 <>
@@ -1931,7 +1931,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
                     <div><strong>{isEn ? "2." : "2."}</strong> {isEn ? "Copy invite link and share." : "复制邀请链接后分享"}</div>
                   </div>
                   <div style={{ color: "#666" }}>
-                    {isEn ? <>New invited users get <strong>$10 credit</strong>; you get <strong>¥20</strong> after their first ¥100 top-up.</> : <>被邀请的新用户得 <strong>$10 额度</strong>；好友首充满 ¥100 后，你得 <strong>¥20</strong>。</>}
+                    {isEn ? <>New invited users get <strong>$10 credit</strong>; you get <strong>$3</strong> after their first $100 top-up.</> : <>被邀请的新用户得 <strong>$10 额度</strong>；好友首充满 ¥100 后，你得 <strong>¥20</strong>。</>}
                   </div>
                 </>
               )}
