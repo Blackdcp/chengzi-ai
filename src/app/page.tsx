@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
+        url: "/images/new-api-doc-logo.png",
+        width: 335,
+        height: 329,
         alt: title,
       },
     ],
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/twitter-image.png"],
+    images: ["/images/new-api-doc-logo.png"],
   },
   alternates: {
     canonical: "/",
