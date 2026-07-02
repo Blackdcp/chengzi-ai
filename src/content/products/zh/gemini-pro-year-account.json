@@ -2,49 +2,57 @@
   "id": "gemini-pro-year-account",
   "categoryId": "gemini",
   "categoryName": "Gemini 会员",
-  "title": "Gemini Pro 一年成品号",
-  "subtitle": "一年有效期，适合长上下文、资料整理、写作和备用 AI 会员场景。",
+  "title": "Gemini AI Pro 会员直充含绑卡",
+  "subtitle": "给自己的 Google / Gemini 账号订阅一年 Google AI Pro，非家庭组，个人账号单独订阅。",
   "price": 100,
-  "originalPriceText": "低成本备用 AI 会员",
+  "originalPriceText": "自有账号直充",
   "order": 5,
   "tags": [
     "一年会员",
-    "Gemini Pro",
-    "备用 AI"
+    "Google AI Pro",
+    "自动发 CDKey"
   ],
   "inStock": true,
   "buyButtonText": "下单购买 — ¥100",
   "actionType": "buy",
   "detail": {
-    "title": "Gemini Pro 一年成品号",
-    "subtitle": "一年有效期，适合长上下文、资料整理、写作和备用 AI 会员场景。",
+    "title": "Gemini AI Pro 会员直充含绑卡",
+    "subtitle": "下单后自动发 CDKey，用于给你自己的 Gemini 账号订阅一年 Google AI Pro 会员。",
     "sections": [
       {
-        "title": "适合谁",
+        "title": "商品内容",
         "items": [
-          "需要 Gemini Pro 的用户",
-          "需要长上下文和资料整理",
-          "想要备用 AI 会员",
-          "内容写作、学习、资料处理用户"
+          "给你自己的 Gemini / Google 账号订阅一年 Google AI Pro 会员",
+          "非家庭组共享，是个人账号单独订阅",
+          "订阅成功后可自行查询会员到期时间",
+          "下单 1 次表示给 1 个 Gemini 账号订阅 1 年会员"
         ]
       },
       {
-        "title": "交付内容",
+        "title": "发货与使用",
         "items": [
-          "Gemini Pro 一年成品号",
-          "登录说明",
-          "使用说明"
+          "下单后自动发 CDKey",
+          "按页面说明自助操作订阅",
+          "请使用自己的 Google / Gemini 账号完成订阅"
         ]
       },
       {
-        "title": "购买说明",
+        "title": "售后政策",
         "items": [
-          "网页直接下单",
-          "收到后请按说明登录测试",
-          "按实际商品交付内容使用"
+          "订阅成功即服务完成",
+          "本平台只提供订阅认证服务",
+          "后续谷歌官方活动、权益变动或政策调整，以谷歌官方为准，本平台不做保证与担保"
+        ]
+      },
+      {
+        "title": "隐私与账户安全",
+        "items": [
+          "我们不会保存您的任何账户信息",
+          "提交的信息仅做订阅临时使用，完成后自动销毁",
+          "为了账户安全，请完成后修改 2FA 和密码"
         ]
       }
     ]
   },
-  "orderName": "Gemini Pro 一年成品号"
+  "orderName": "Gemini AI Pro 会员直充含绑卡"
 }

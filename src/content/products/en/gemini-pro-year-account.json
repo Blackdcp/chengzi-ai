@@ -2,49 +2,57 @@
   "id": "gemini-pro-year-account",
   "categoryId": "gemini",
   "categoryName": "Gemini 会员",
-  "title": "Gemini Pro 1-Year Account",
-  "subtitle": "1-year validity. Perfect for long context, data parsing, writing, and backup AI needs.",
+  "title": "Gemini AI Pro 1-Year Top-up",
+  "subtitle": "Subscribe your own Google / Gemini account to Google AI Pro for one year. Individual account subscription, not a family group.",
   "price": 14.9,
-  "originalPriceText": "Low-cost Backup AI",
+  "originalPriceText": "Own-account top-up",
   "order": 5,
   "tags": [
-    "1-Year Pass",
-    "Gemini Pro",
-    "Backup AI"
+    "1-Year Plan",
+    "Google AI Pro",
+    "Auto CDKey"
   ],
   "inStock": true,
   "buyButtonText": "Buy Now — $14.9",
   "actionType": "buy",
   "detail": {
-    "title": "Gemini Pro 1-Year Account",
-    "subtitle": "1-year validity. Perfect for long context, data parsing, writing, and backup AI needs.",
+    "title": "Gemini AI Pro 1-Year Top-up",
+    "subtitle": "Auto-delivered CDKey for subscribing your own Google / Gemini account to Google AI Pro for one year.",
     "sections": [
       {
-        "title": "Suitable For",
+        "title": "What You Get",
         "items": [
-          "Need Gemini Pro capabilities",
-          "Require long context & data parsing",
-          "Want a backup AI membership",
-          "Writers, learners, data workers"
+          "Subscribe your own Google / Gemini account to Google AI Pro for one year",
+          "Individual account subscription, not a family group",
+          "You can check the membership expiration date after activation",
+          "One order covers one Gemini account for one year"
         ]
       },
       {
-        "title": "Delivery Content",
+        "title": "Delivery & Setup",
         "items": [
-          "Gemini Pro 1-Year Account",
-          "Login instructions",
-          "Usage guide"
+          "The CDKey is delivered automatically after payment",
+          "Follow the instructions to complete the subscription yourself",
+          "Please use your own Google / Gemini account for activation"
         ]
       },
       {
-        "title": "Purchase Notes",
+        "title": "After-sales Policy",
         "items": [
-          "Order directly online",
-          "Test login upon receipt",
-          "Use according to delivery notes"
+          "Once the subscription is completed, the service is considered fulfilled",
+          "We only provide the subscription activation service",
+          "Future Google official benefits, activities, or policy changes are subject to Google and are not guaranteed by this platform"
+        ]
+      },
+      {
+        "title": "Privacy & Security",
+        "items": [
+          "We do not keep your account information",
+          "Submitted information is only used temporarily for subscription activation and is deleted after completion",
+          "For account security, please update your 2FA and password after completion"
         ]
       }
     ]
   },
-  "orderName": "Gemini Pro 1-Year Account"
+  "orderName": "Gemini AI Pro 1-Year Top-up"
 }

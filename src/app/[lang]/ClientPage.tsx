@@ -210,7 +210,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
   const productHints: Record<string, string> = {
     "chatgpt-plus-monthly-code": lang === 'zh' ? "适合第一次购买、预算敏感、想马上用。" : "Good for first-time buyers and budget-conscious users.",
     "chatgpt-plus-ready-account": lang === 'zh' ? "适合不想注册、不想折腾账号流程。" : "Good when you want a ready-to-use account.",
-    "gemini-pro-year-account": lang === 'zh' ? "适合长文档、资料整理、备用 AI 会员。" : "Good for long documents, research, and backup use.",
+    "gemini-pro-year-account": lang === 'zh' ? "给自己的 Google 账号直充一年 Google AI Pro，自动发 CDKey。" : "Top up your own Google account with a 1-year Google AI Pro subscription.",
     "chatgpt-pro-20x-fast": lang === 'zh' ? "适合 AI Coding、高频对话、项目冲刺。" : "Good for AI coding, heavy chat, and project sprints.",
     "chatgpt-plus-renewal": lang === 'zh' ? "适合已有自用账号，只想继续续费。" : "Good if you already have your own account.",
     "api-code-100": lang === 'zh' ? "适合个人测试、Claude Code 入门、轻量调用。" : "Good for testing, Claude Code starter use, and light calls.",
