@@ -9,6 +9,8 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: 'sw
 export async function generateMetadata({ params }: { params: Promise<{ lang: 'zh' | 'en' }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang);
+  const lang = resolvedParams.lang;
+  const canonicalPath = `/${lang}`;
   
   return {
     metadataBase: new URL("https://cheng-zi-ai.com"),
@@ -18,6 +20,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'zh
     openGraph: {
       title: dict.meta.title,
       description: dict.meta.description,
+      url: canonicalPath,
+      siteName: dict.header.title,
+      locale: lang === "zh" ? "zh_CN" : "en_US",
       type: "website",
       images: [
         {
@@ -33,7 +38,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'zh
       title: dict.meta.title,
       description: dict.meta.description,
       images: ["/twitter-image.png"],
-    }
+    },
+    alternates: {
+      canonical: canonicalPath,
+      languages: {
+        "zh-CN": "/zh",
+        "en-US": "/en",
+      },
+    },
   };
 }
 

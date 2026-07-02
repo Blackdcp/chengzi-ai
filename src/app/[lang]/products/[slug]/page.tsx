@@ -27,12 +27,16 @@ export async function generateMetadata({
   const keywords = product.tags
 
   return {
+    metadataBase: new URL("https://cheng-zi-ai.com"),
     title,
     description,
     keywords,
     openGraph: {
       title,
       description,
+      url: `/${resolvedParams.lang}/products/${resolvedParams.slug}`,
+      siteName: dict.header.title,
+      locale: resolvedParams.lang === "zh" ? "zh_CN" : "en_US",
       type: "website",
       images: [
         {
@@ -48,7 +52,14 @@ export async function generateMetadata({
       title,
       description,
       images: ["/twitter-image.png"],
-    }
+    },
+    alternates: {
+      canonical: `/${resolvedParams.lang}/products/${resolvedParams.slug}`,
+      languages: {
+        "zh-CN": `/zh/products/${resolvedParams.slug}`,
+        "en-US": `/en/products/${resolvedParams.slug}`,
+      },
+    },
   }
 }
 

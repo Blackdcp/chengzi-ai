@@ -1,33 +1,44 @@
-"use client";
+import type { Metadata } from "next";
+import RootRedirectClient from "./RootRedirectClient";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+const title = "橙子 AI — 主流 AI 账号和低价 API 资源，一站下单";
+const description = "买 AI 账号、买 API 额度、做内容推广。网页直接下单，按商品类型交付账号、卡密、充值说明或额度码。";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://cheng-zi-ai.com"),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: "/",
+    siteName: "橙子 AI",
+    locale: "zh_CN",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: title,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/twitter-image.png"],
+  },
+  alternates: {
+    canonical: "/",
+    languages: {
+      "zh-CN": "/zh",
+      "en-US": "/en",
+    },
+  },
+};
 
 export default function Root() {
-  const router = useRouter();
-
-  useEffect(() => {
-    // We execute this purely on the client side to bypass ALL CDN caching,
-    // IP masking, and header stripping issues caused by Qiniu/Cloudflare.
-    const lang = navigator.language.toLowerCase();
-    
-    // Check if the user's OS or browser is explicitly set to Chinese
-    if (lang.includes('zh') || lang.includes('cn')) {
-      router.replace('/zh');
-    } else {
-      // For all other languages (English, Spanish, etc.), redirect to English
-      router.replace('/en');
-    }
-  }, [router]);
-
-  return (
-    <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fafafa' }}>
-      <div style={{ width: 24, height: 24, border: '2px solid #ccc', borderTopColor: '#0a0a0a', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
-      <style>{`
-        @keyframes spin {
-          100% { transform: rotate(360deg); }
-        }
-      `}</style>
-    </div>
-  );
+  return <RootRedirectClient />;
 }
