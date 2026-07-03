@@ -101,9 +101,9 @@ export async function generateMetadata({ params }: ProductsIndexPageProps): Prom
       type: 'website',
       images: [
         {
-          url: '/images/new-api-doc-logo.png',
-          width: 335,
-          height: 329,
+          url: '/opengraph-image.png',
+          width: 1200,
+          height: 630,
           alt: pageCopy.title,
         },
       ],
@@ -112,7 +112,7 @@ export async function generateMetadata({ params }: ProductsIndexPageProps): Prom
       card: 'summary_large_image',
       title: pageCopy.title,
       description: pageCopy.description,
-      images: ['/images/new-api-doc-logo.png'],
+      images: ['/opengraph-image.png'],
     },
     alternates: {
       canonical: url,

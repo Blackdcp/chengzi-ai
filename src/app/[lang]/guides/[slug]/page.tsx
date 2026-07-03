@@ -56,9 +56,9 @@ export async function generateMetadata({ params }: GuidePageProps): Promise<Meta
       modifiedTime: guide.lastModified,
       images: [
         {
-          url: '/images/new-api-doc-logo.png',
-          width: 335,
-          height: 329,
+          url: '/opengraph-image.png',
+          width: 1200,
+          height: 630,
           alt: guide.title,
         },
       ],
@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: GuidePageProps): Promise<Meta
       card: 'summary_large_image',
       title: guide.title,
       description: guide.description,
-      images: ['/images/new-api-doc-logo.png'],
+      images: ['/opengraph-image.png'],
     },
     alternates: {
       canonical: url,

@@ -181,9 +181,9 @@ export async function generateMetadata({ params }: GuidesIndexPageProps): Promis
       type: 'website',
       images: [
         {
-          url: '/images/new-api-doc-logo.png',
-          width: 335,
-          height: 329,
+          url: '/opengraph-image.png',
+          width: 1200,
+          height: 630,
           alt: copy.title,
         },
       ],
@@ -192,7 +192,7 @@ export async function generateMetadata({ params }: GuidesIndexPageProps): Promis
       card: 'summary_large_image',
       title: copy.title,
       description: copy.description,
-      images: ['/images/new-api-doc-logo.png'],
+      images: ['/opengraph-image.png'],
     },
     alternates: {
       canonical: url,
