@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { getProductBySlug } from '../../../../lib/api'
+import { getProductBySlug, getProducts } from '../../../../lib/api'
 import { getDictionary } from '../../../../lib/dictionaries'
 import type { Product } from '../../../../types/product'
 
@@ -10,6 +10,19 @@ type ProductDetailSection = NonNullable<NonNullable<Product["detail"]>["sections
 type ProductFaq = {
   question: string
   answer: string
+}
+
+const languages = ['zh', 'en'] as const
+
+export const dynamicParams = false
+
+export function generateStaticParams() {
+  return languages.flatMap(lang =>
+    getProducts(lang).map(product => ({
+      lang,
+      slug: product.id,
+    }))
+  )
 }
 
 function getProductFaqs(product: Product, lang: 'en' | 'zh'): ProductFaq[] {
