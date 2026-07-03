@@ -118,7 +118,7 @@ const categoriesByLanguage: Record<GuideLanguage, GuideCategory[]> = {
 
 const pageCopy = {
   zh: {
-    title: '实用教程索引',
+    title: 'AI 工具与 API 实用教程索引',
     description:
       '面向 OpenAI 兼容 API、Base URL、AI Coding 工具和常见报错的教程集合。首页只放精选入口，这里承载全部可抓取教程。',
     kicker: '持续更新',
