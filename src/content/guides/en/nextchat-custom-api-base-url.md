@@ -1,5 +1,5 @@
 ---
-title: "How to Configure a Custom OpenAI API Base URL in NextChat"
+title: "NextChat Custom OpenAI API Base URL Setup"
 description: "A setup guide for self-hosted NextChat users covering OPENAI_API_KEY, BASE_URL, model names, and OpenAI-compatible API gateways."
 date: "2026-07-03"
 ---

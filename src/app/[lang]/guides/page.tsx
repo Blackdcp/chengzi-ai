@@ -133,7 +133,7 @@ const pageCopy = {
   en: {
     title: 'Practical Guides Index',
     description:
-      'Guides for OpenAI-compatible APIs, Base URLs, AI coding tools, and common API errors. The homepage keeps featured entries; this index keeps every crawlable guide.',
+      'Guides for OpenAI-compatible APIs, Base URLs, AI coding tools, and common API errors. Browse every crawlable setup and troubleshooting guide.',
     kicker: 'Updated regularly',
     home: 'Back home',
     apiService: 'View API service',

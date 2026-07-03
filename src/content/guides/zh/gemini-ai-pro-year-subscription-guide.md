@@ -1,6 +1,6 @@
 ---
 title: "Gemini AI Pro 一年会员订阅前要确认什么？"
-description: "说明 Gemini AI Pro 一年会员直充的商品内容、账号类型、交付流程、隐私和售后注意事项。"
+description: "说明 Gemini AI Pro 一年会员直充的商品内容、账号类型、交付流程、隐私和售后注意事项，帮助下单前快速判断是否适合。"
 date: "2026-07-03"
 ---
 

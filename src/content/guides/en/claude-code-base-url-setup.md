@@ -1,5 +1,5 @@
 ---
-title: "How to Configure Claude Code with API Key and Base URL"
+title: "Claude Code API Key and Base URL Setup"
 description: "Claude Code setup notes for third-party API endpoints, including ANTHROPIC_AUTH_TOKEN, ANTHROPIC_BASE_URL, model variables, and PowerShell examples."
 date: "2026-07-03"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Gemini AI Pro 1-Year Subscription: What You Get and What to Check"
+title: "Gemini AI Pro 1-Year Subscription Guide"
 description: "Understand Gemini AI Pro one-year top-up, individual account subscription, delivery, privacy, and after-sales notes before ordering."
 date: "2026-07-03"
 ---

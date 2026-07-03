@@ -1,5 +1,5 @@
 ---
-title: "OpenAI-Compatible API Credits: When to Buy Credits Instead of ChatGPT Plus"
+title: "OpenAI-Compatible API Credits vs ChatGPT Plus"
 description: "Learn when API credits are the right choice for Cursor, Cline, Claude Code, ChatBox, Cherry Studio, and other OpenAI-compatible clients."
 date: "2026-07-03"
 ---

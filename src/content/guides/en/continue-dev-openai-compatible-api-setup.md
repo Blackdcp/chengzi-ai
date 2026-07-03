@@ -1,5 +1,5 @@
 ---
-title: "How to Configure an OpenAI-Compatible API in Continue.dev"
+title: "Continue.dev OpenAI-Compatible API Setup"
 description: "A Continue.dev setup guide covering config.yaml, provider, apiBase, apiKey, model, and roles."
 date: "2026-07-03"
 ---

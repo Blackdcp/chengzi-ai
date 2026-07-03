@@ -1,5 +1,5 @@
 ---
-title: "How to Use an OpenAI-Compatible API Key in Common Clients"
+title: "OpenAI-Compatible API Key Client Setup"
 description: "Learn the three core fields for OpenAI-compatible API clients: API Key, Base URL, and model name, with setup notes for Cline, ChatBox, and NextChat."
 date: "2026-07-03"
 ---

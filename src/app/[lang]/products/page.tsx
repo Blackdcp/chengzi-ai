@@ -21,7 +21,7 @@ const languages = ['zh', 'en'] as const
 const copy = {
   zh: {
     title: '产品索引',
-    description: '橙子 AI 的账号、会员和 API 额度服务索引。这里保留可抓取的产品详情入口。',
+    description: '橙子 AI 的账号、会员和 API 额度服务索引，集中展示 ChatGPT、Gemini 与 API 额度等可抓取产品详情入口。',
     kicker: '可购买服务',
     home: '返回首页',
     apiService: '查看 API 服务',

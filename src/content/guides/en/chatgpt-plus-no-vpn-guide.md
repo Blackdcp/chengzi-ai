@@ -1,5 +1,5 @@
 ---
-title: "ChatGPT Plus Without VPN: What a Direct-Connect Monthly Pass Means"
+title: "ChatGPT Plus Without VPN: Direct-Connect Guide"
 description: "Understand what a ChatGPT Plus direct-connect monthly pass is for, who should consider it, and what to check before buying."
 date: "2026-07-03"
 ---

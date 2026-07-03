@@ -1,5 +1,5 @@
 ---
-title: "How to Buy a ChatGPT Plus Account: What to Check Before Ordering"
+title: "Buy ChatGPT Plus: Pre-Order Checklist"
 description: "A practical checklist for users comparing ChatGPT Plus monthly passes, ready accounts, and renewal services before placing an order."
 date: "2026-07-03"
 ---
