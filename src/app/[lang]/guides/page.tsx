@@ -61,7 +61,7 @@ const categoriesByLanguage: Record<GuideLanguage, GuideCategory[]> = {
     {
       id: 'troubleshooting',
       title: 'API 报错与额度排查',
-      description: 'Base URL、模型不存在、429、quota、rate limit 等高意图问题的排查入口。',
+      description: '排查 Base URL、模型不存在、429、quota、rate limit 等常见 API 问题。',
       slugs: [
         'api-base-url-troubleshooting',
         'api-429-quota-rate-limit-guide',
@@ -107,7 +107,7 @@ const categoriesByLanguage: Record<GuideLanguage, GuideCategory[]> = {
     {
       id: 'troubleshooting',
       title: 'API Errors and Quota Troubleshooting',
-      description: 'Fix high-intent setup issues such as Base URL errors, missing models, 429, quota, and rate limits.',
+      description: 'Fix common API issues such as Base URL errors, missing models, 429, quota, and rate limits.',
       slugs: [
         'api-base-url-troubleshooting',
         'api-429-quota-rate-limit-guide',
@@ -118,9 +118,9 @@ const categoriesByLanguage: Record<GuideLanguage, GuideCategory[]> = {
 
 const pageCopy = {
   zh: {
-    title: 'AI 工具与 API 实用教程索引',
+    title: 'AI 工具与 API 实用教程',
     description:
-      '面向 OpenAI 兼容 API、Base URL、AI Coding 工具和常见报错的教程集合。首页只放精选入口，这里承载全部可抓取教程。',
+      '整理 OpenAI 兼容 API、Base URL、AI Coding 工具和常见报错的教程。适合配置前查看，也适合遇到报错时快速排查。',
     kicker: '持续更新',
     home: '返回首页',
     apiService: '查看 API 服务',
@@ -131,9 +131,9 @@ const pageCopy = {
     updated: '更新',
   },
   en: {
-    title: 'Practical Guides Index',
+    title: 'Practical AI Tool and API Guides',
     description:
-      'Guides for OpenAI-compatible APIs, Base URLs, AI coding tools, and common API errors. Browse every crawlable setup and troubleshooting guide.',
+      'Guides for OpenAI-compatible APIs, Base URLs, AI coding tools, and common API errors. Use them before setup or when troubleshooting.',
     kicker: 'Updated regularly',
     home: 'Back home',
     apiService: 'View API service',

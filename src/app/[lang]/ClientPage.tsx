@@ -938,10 +938,10 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
           <section id="guides" className="cz-section" style={{ paddingTop: 40, borderTop: "1px solid #eaeaea" }}>
             {renderSectionHeader(
               "03",
-              lang === 'zh' ? '精选教程入口：问题页放到索引里' : 'Featured guide entries',
+              lang === 'zh' ? '实用教程：快速解决 API 和账号问题' : 'Practical guides: fix API and account issues',
               lang === 'zh'
-                ? '首页只展示少量高意图教程，完整教程库放在索引页，方便持续扩展和抓取。'
-                : 'The homepage shows a small set of high-intent guides. The full guide library lives on a dedicated index page for scale and discovery.'
+                ? '整理常见报错、客户端配置和购买前判断。遇到问题先看这里，少走弯路。'
+                : 'Setup notes, error fixes, and buying decisions for AI accounts and API credits.'
             )}
             <div className="cz-featured-guides" style={{ display: "grid", gap: 14 }}>
               {guides.map(guide => (

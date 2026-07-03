@@ -20,8 +20,8 @@ const languages = ['zh', 'en'] as const
 
 const copy = {
   zh: {
-    title: 'AI 账号会员与 API 额度产品索引',
-    description: '橙子 AI 的账号、会员和 API 额度服务索引，集中展示 ChatGPT、Gemini 与 API 额度等可抓取产品详情入口。',
+    title: 'AI 账号会员与 API 额度产品',
+    description: '集中展示橙子 AI 的账号、会员和 API 额度服务，方便按使用场景选择 ChatGPT、Gemini 与 API 额度产品。',
     kicker: '可购买服务',
     home: '返回首页',
     apiService: '查看 API 服务',
@@ -44,7 +44,7 @@ const copy = {
   },
   en: {
     title: 'AI Accounts and API Credit Products',
-    description: 'A crawlable index of ChengZi AI accounts, memberships, and API credit entry points.',
+    description: 'ChengZi AI accounts, memberships, and API credit services organized by use case.',
     kicker: 'Available services',
     home: 'Back home',
     apiService: 'View API service',
