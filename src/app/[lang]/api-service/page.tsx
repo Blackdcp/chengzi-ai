@@ -43,12 +43,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'zh
   const isEn = lang === 'en';
   
   const title = isEn 
-    ? "ChengZi AI API Service — OpenAI-Compatible Base URL for Cursor, Claude Code, Cline"
-    : "橙子 AI API 中转服务 — Cursor / Claude Code / Cline 可用的 OpenAI 兼容接口";
+    ? "ChengZi AI API Gateway | OpenAI-Compatible API"
+    : "橙子 AI API 中转服务 | OpenAI 兼容接口";
     
   const description = isEn
-    ? "Buy ChengZi AI platform credit codes for OpenAI-compatible API access. Setup guides for Cursor, Claude Code, Cline, ChatBox, and NextChat with GPT, Claude, Gemini, and coding models."
-    : "购买橙子 AI 平台计价额度兑换码，支持 OpenAI 兼容 API，可用于 Cursor、Claude Code、Cline、ChatBox、NextChat 等客户端，覆盖 GPT、Claude、Gemini 和 AI Coding 模型。";
+    ? "Buy ChengZi AI API credits for OpenAI-compatible access in Cursor, Claude Code, Cline, ChatBox, and NextChat."
+    : "购买橙子 AI API 额度，支持 OpenAI 兼容接口，可用于 Cursor、Claude Code、Cline、ChatBox 和 NextChat。";
 
   return {
     metadataBase: new URL("https://cheng-zi-ai.com"),
