@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import RootRedirectClient from "./RootRedirectClient";
 
 const title = "橙子 AI — 主流 AI 账号和低价 API 资源，一站下单";
-const description = "买 AI 账号、买 API 额度、做内容推广。网页直接下单，按商品类型交付账号、卡密、充值说明或额度码。";
+const description = "买 AI 账号、买 API 额度。网页直接下单，按商品类型交付账号、卡密、充值说明或额度码。";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cheng-zi-ai.com"),

@@ -17,9 +17,15 @@ export async function GET() {
     return new NextResponse(html, {
       headers: {
         'Content-Type': 'text/html; charset=utf-8',
+        'X-Robots-Tag': 'noindex, nofollow',
       },
     });
   } catch {
-    return new NextResponse('Error loading activation page', { status: 500 });
+    return new NextResponse('Error loading activation page', {
+      status: 500,
+      headers: {
+        'X-Robots-Tag': 'noindex, nofollow',
+      },
+    });
   }
 }

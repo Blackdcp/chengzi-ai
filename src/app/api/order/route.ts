@@ -43,7 +43,6 @@ export async function POST(req: Request) {
       payMethod?: string;
       refCode?: string;
       refSource?: string;
-      workLink?: string;
       requirement?: string;
     };
     const { planId, email, lang, contact } = body;
@@ -59,11 +58,11 @@ export async function POST(req: Request) {
     const finalLang = lang === 'en' ? 'English' : '中文';
     let finalCredit = '';
     const refSource = body.refSource === 'api-invite' ? 'api-invite' : body.refSource === 'homepage' ? 'homepage' : '';
-    const refLabel = refSource === 'api-invite' ? 'API 邀请码（辅助核对）' : refSource === 'homepage' ? '首页推广码' : '推荐码（辅助核对）';
+    const refLabel = refSource === 'api-invite' ? 'API 邀请码（辅助核对）' : refSource === 'homepage' ? '首页来源码' : '推荐码（辅助核对）';
     const refTip = refSource === 'api-invite'
       ? '这是 API 邀请活动线索；邀请奖励请以 New API 控制台中的邀请关系和被邀请用户首充记录为准。'
       : refSource === 'homepage'
-        ? '这是首页推广来源码；仅用于判断订单来源，不等同于 New API 邀请返佣。'
+        ? '这是首页来源码；仅用于判断订单来源，不等同于 New API 邀请返佣。'
         : '推荐码仅用于辅助查单；如涉及邀请奖励，请以 New API 控制台中的邀请关系和被邀请用户首充记录为准。';
 
     if (planId) {
@@ -95,7 +94,7 @@ export async function POST(req: Request) {
       finalContact = escapeHtml(contact || '');
       finalCredit = isEn ? plan.platformCreditEn : plan.platformCreditZh;
     } else {
-      // 2. Legacy / Marketing / Main page fallback
+      // 2. Legacy / main page fallback
       const { orderId, email: rawEmail, productName, price, payMethod } = body;
       if (!orderId || !rawEmail || !productName) {
         return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
@@ -187,14 +186,6 @@ export async function POST(req: Request) {
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">来源说明</td>
                 <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; color: #666;">
                   ${refTip}
-                </td>
-              </tr>
-              ` : ''}
-              ${body.workLink ? `
-              <tr>
-                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; color: #666;">作品/主页链接</td>
-                <td style="padding: 12px 0; border-bottom: 1px solid #eaeaea; font-weight: 600; word-break: break-all;">
-                  <a href="${escapeHtml(body.workLink)}" target="_blank" style="color: #1677ff;">${escapeHtml(body.workLink)}</a>
                 </td>
               </tr>
               ` : ''}

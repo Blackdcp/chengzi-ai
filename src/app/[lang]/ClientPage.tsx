@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Product } from "../../types/product";
+import type { GuideSummary } from "../../lib/guides";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -28,15 +29,13 @@ function genOrderId() {
   return `CZ${d}${t}${r}`;
 }
 
-export default function HomePage({ dict, products, lang, refCode }: { dict: HomeDictionary, products: Product[], lang: string, refCode?: string }) {
+export default function HomePage({ dict, products, guides, lang, refCode }: { dict: HomeDictionary, products: Product[], guides: GuideSummary[], lang: string, refCode?: string }) {
   const [modal, setModal] = useState<{ name: string; price: number; orderId: string; actionType?: string; categoryId?: string } | null>(null);
   const [detailProduct, setDetailProduct] = useState<Product | null>(null);
   const [email, setEmail] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [requirement, setRequirement] = useState("");
   const [requirementErr, setRequirementErr] = useState("");
-  const [workLink, setWorkLink] = useState("");
-  const [workLinkErr, setWorkLinkErr] = useState("");
   const [step, setStep] = useState<"pay" | "consult" | "success">("pay");
   const payMethod: PaymentMethod = "alipay";
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -67,34 +66,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
     setEmailErr("");
     setRequirement("");
     setRequirementErr("");
-    setWorkLink("");
-    setWorkLinkErr("");
-    setStep(product.categoryId === "growth" ? "consult" : (product.actionType === "consult" ? "consult" : "pay"));
-  };
-
-  const handleMarketingNext = () => {
-    let valid = true;
-    if (!workLink.trim()) {
-      setWorkLinkErr(lang === 'zh' ? "请输入作品链接或主页链接" : "Please enter the link");
-      valid = false;
-    } else {
-      setWorkLinkErr("");
-    }
-    if (!requirement.trim()) {
-      setRequirementErr(lang === 'zh' ? "请输入具体买量需求与数量" : "Please enter requirement and quantity");
-      valid = false;
-    } else {
-      setRequirementErr("");
-    }
-    if (!em(email)) {
-      setEmailErr(dict.modal.emailErr || "Invalid email");
-      valid = false;
-    } else {
-      setEmailErr("");
-    }
-    if (valid) {
-      setStep("pay");
-    }
+    setStep(product.actionType === "consult" ? "consult" : "pay");
   };
 
   const submitOrder = async () => {
@@ -111,11 +83,9 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
           email: email,
           productName: modal.name,
           price: modal.price,
-          payMethod: lang === 'en' ? "paypal" : (modal.categoryId === "growth" ? "alipay" : payMethod),
+          payMethod: lang === 'en' ? "paypal" : payMethod,
           refCode: refCode,
-          refSource: refCode ? "homepage" : undefined,
-          workLink: modal.categoryId === "growth" ? workLink : undefined,
-          requirement: modal.categoryId === "growth" ? requirement : undefined
+          refSource: refCode ? "homepage" : undefined
         })
       });
       if (res.ok) {
@@ -172,7 +142,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
   const pageNavItems = [
     { href: "#accounts", label: lang === 'zh' ? 'AI 账号' : 'AI Accounts' },
     { href: "#api", label: lang === 'zh' ? 'API 额度' : 'API Credits' },
-    { href: "#growth", label: lang === 'zh' ? '内容推广' : 'Growth' },
+    { href: "#guides", label: lang === 'zh' ? '教程' : 'Guides' },
     { href: "#flow", label: lang === 'zh' ? '购买流程' : 'Order Flow' }
   ];
 
@@ -205,7 +175,6 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
   ].filter((item): item is { label: string; product: Product } => Boolean(item.product));
 
   const apiProducts = productsByCategory.api || [];
-  const growthProducts = productsByCategory.growth || [];
 
   const productHints: Record<string, string> = {
     "chatgpt-plus-monthly-code": lang === 'zh' ? "适合第一次购买、预算敏感、想马上用。" : "Good for first-time buyers and budget-conscious users.",
@@ -214,10 +183,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
     "chatgpt-pro-20x-fast": lang === 'zh' ? "适合 AI Coding、高频对话、项目冲刺。" : "Good for AI coding, heavy chat, and project sprints.",
     "chatgpt-plus-renewal": lang === 'zh' ? "适合已有自用账号，只想继续续费。" : "Good if you already have your own account.",
     "api-code-100": lang === 'zh' ? "适合个人测试、Claude Code 入门、轻量调用。" : "Good for testing, Claude Code starter use, and light calls.",
-    "api-code-300": lang === 'zh' ? "适合高频 AI Coding、多客户端长期使用。" : "Good for frequent AI coding or long-term client use.",
-    "marketing-xiaohongshu": lang === 'zh' ? "提交小红书作品链接和具体数量" : "Submit a Xiaohongshu post link and quantity",
-    "marketing-douyin": lang === 'zh' ? "提交抖音视频链接和具体数量" : "Submit a Douyin video link and quantity",
-    "marketing-wechat": lang === 'zh' ? "提交公众号文章链接和具体数量" : "Submit a WeChat article link and quantity"
+    "api-code-300": lang === 'zh' ? "适合高频 AI Coding、多客户端长期使用。" : "Good for frequent AI coding or long-term client use."
   };
 
   const getProductBadge = (product: Product) => {
@@ -264,11 +230,20 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
             <span key={tag} className="cz-product-tag" style={{ padding: "4px 10px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: 999, color: "#666", fontSize: 12 }}>{tag}</span>
           ))}
         </div>
+        {product.actionType !== "link" && (
+          <Link
+            href={`/${lang}/products/${product.id}`}
+            className="cz-inline-link"
+            style={{ display: "inline-flex", marginTop: 10, color: "#111827", fontSize: 13, fontWeight: 800, textDecoration: "none" }}
+          >
+            {lang === 'zh' ? '产品详情页 →' : 'Product details →'}
+          </Link>
+        )}
       </div>
 
       <div className="cz-product-action">
-        <div className="cz-product-price" style={{ fontSize: product.categoryId === 'growth' ? 24 : 30 }}>
-          {product.actionType !== 'consult' ? `${dict.common.currency}${product.price}${product.categoryId === 'growth' ? (lang === 'zh' ? ' 起' : '+') : ''}` : (lang === 'zh' ? '咨询报价' : 'Consulting')}
+        <div className="cz-product-price" style={{ fontSize: 30 }}>
+          {product.actionType !== 'consult' ? `${dict.common.currency}${product.price}` : (lang === 'zh' ? '咨询报价' : 'Consulting')}
         </div>
         <div className="cz-product-buttons">
           {product.inStock ? (
@@ -518,6 +493,12 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
         .cz-product-tag {
           white-space: nowrap;
           font-size: 11px !important;
+        }
+        .cz-featured-guides {
+          grid-template-columns: 1fr;
+        }
+        .cz-featured-guide-card:nth-of-type(n+3) {
+          display: none !important;
         }
         .cz-detail-list {
           display: grid;
@@ -791,6 +772,12 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
           .cz-product-tag {
             font-size: 12px !important;
           }
+          .cz-featured-guides {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          }
+          .cz-featured-guide-card:nth-of-type(n+3) {
+            display: block !important;
+          }
           .cz-detail-overlay {
             align-items: center !important;
             padding: 20px !important;
@@ -824,6 +811,11 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
           }
           .cz-api-float-arrow {
             color: #111827;
+          }
+        }
+        @media (min-width: 960px) {
+          .cz-featured-guides {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
           }
         }
       `}</style>
@@ -866,13 +858,12 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
               </h1>
               <p className="cz-hero-copy" style={{ fontSize: "clamp(16px, 2vw, 19px)", color: "#666666", maxWidth: 720, margin: "0 auto 28px", lineHeight: 1.7 }}>
                 {lang === 'zh'
-                  ? '买 AI 账号、买 API 额度、做内容推广。适合不同应用场景。网页直接下单，按商品类型交付账号、卡密、充值说明或额度码。'
-                  : 'Buy AI accounts, API credits, or growth services on one page. Works cleanly on mobile too.'}
+                  ? '买 AI 账号、买 API 额度。适合不同应用场景。网页直接下单，按商品类型交付账号、卡密、充值说明或额度码。'
+                  : 'Buy AI accounts or API credits on one page. Works cleanly on mobile too.'}
               </p>
               <div className="cz-hero-actions">
                 <a href="#accounts" className="vercel-button-secondary" style={{ padding: "12px 24px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '买 AI 账号' : 'Buy AI accounts'}</a>
                 <a href="#api" className="vercel-button cz-hero-primary" style={{ padding: "12px 24px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '买 API 额度' : 'Buy API credits'}</a>
-                <a href="#growth" className="vercel-button-secondary" style={{ padding: "12px 24px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '做内容推广' : 'Run growth'}</a>
               </div>
               <div className="cz-hero-note">
                 {lang === 'zh' ? 'GPT Plus / Pro 、Gemini 年卡、Claude / Codex API。' : 'Clear pricing · Mobile ordering · Email support'}
@@ -895,11 +886,6 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
                     num: '02',
                     title: lang === 'zh' ? 'API 额度' : 'API credits',
                     desc: lang === 'zh' ? 'Claude / Codex / GPT / Gemini 多模型' : 'Claude / Codex / GPT / Gemini models'
-                  },
-                  {
-                    num: '03',
-                    title: lang === 'zh' ? '内容推广' : 'Growth services',
-                    desc: lang === 'zh' ? '小红书、抖音、公众号基础曝光' : 'Basic exposure for social platforms'
                   }
                 ].map(item => (
                   <div className="cz-hero-panel-item" key={item.num}>
@@ -948,22 +934,44 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
           </div>
         </section>
 
-        <section id="growth" className="cz-section">
-          {renderSectionHeader(
-            "03",
-            lang === 'zh' ? '内容推广：按平台提交链接和数量' : 'Growth services: submit links and quantity',
-            lang === 'zh'
-              ? '适合内容冷启动、素材测试和基础曝光。选平台，提交作品链接和数量，客服核对后执行。'
-              : 'For content cold starts, creative testing, and basic exposure. Submit your link, requirement, and quantity.'
-          )}
-          <div style={{ display: "grid", gap: 14 }}>
-            {growthProducts.map(product => renderProductRow(product, product.id.includes("xiaohongshu") ? (lang === 'zh' ? "小红书" : "Xiaohongshu") : product.id.includes("douyin") ? (lang === 'zh' ? "抖音" : "Douyin") : (lang === 'zh' ? "公众号" : "WeChat")))}
-          </div>
-        </section>
+        {guides.length > 0 && (
+          <section id="guides" className="cz-section" style={{ paddingTop: 40, borderTop: "1px solid #eaeaea" }}>
+            {renderSectionHeader(
+              "03",
+              lang === 'zh' ? '精选教程入口：问题页放到索引里' : 'Featured guide entries',
+              lang === 'zh'
+                ? '首页只展示少量高意图教程，完整教程库放在索引页，方便持续扩展和抓取。'
+                : 'The homepage shows a small set of high-intent guides. The full guide library lives on a dedicated index page for scale and discovery.'
+            )}
+            <div className="cz-featured-guides" style={{ display: "grid", gap: 14 }}>
+              {guides.map(guide => (
+                <Link
+                  key={guide.slug}
+                  href={`/${lang}/guides/${guide.slug}`}
+                  className="vercel-card cz-inline-link cz-featured-guide-card"
+                  style={{ display: "block", padding: 20, background: "#ffffff", color: "#111827", textDecoration: "none", minHeight: 176 }}
+                >
+                  <div style={{ fontSize: 12, color: "#666", fontWeight: 800, marginBottom: 12 }}>{guide.date}</div>
+                  <h3 style={{ fontSize: 17, lineHeight: 1.35, letterSpacing: 0, margin: "0 0 10px", color: "#111827" }}>{guide.title}</h3>
+                  <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, margin: 0 }}>{guide.description}</p>
+                </Link>
+              ))}
+            </div>
+            <div style={{ marginTop: 16, display: "flex", justifyContent: "center" }}>
+              <Link
+                href={`/${lang}/guides`}
+                className="vercel-button-secondary cz-inline-link"
+                style={{ padding: "12px 18px", fontSize: 14, fontWeight: 800, color: "#111827", textDecoration: "none" }}
+              >
+                {lang === 'zh' ? '查看全部教程 →' : 'View all guides →'}
+              </Link>
+            </div>
+          </section>
+        )}
 
         <section id="flow" className="cz-section" style={{ paddingTop: 40, borderTop: "1px solid #eaeaea" }}>
           {renderSectionHeader(
-            "04",
+            guides.length > 0 ? "04" : "03",
             lang === 'zh' ? '购买流程：从选择到交付' : 'Purchase flow: from choice to delivery',
             lang === 'zh'
               ? '流程尽量短：选商品、下单、按类型交付，有问题直接邮件联系。'
@@ -971,9 +979,9 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
           )}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
             {[
-              { step: "1", title: lang === 'zh' ? "选择商品" : "Choose", desc: lang === 'zh' ? "按账号、API、营销三类选择。" : "Pick accounts, APIs, or growth." },
+              { step: "1", title: lang === 'zh' ? "选择商品" : "Choose", desc: lang === 'zh' ? "按账号和 API 两类选择。" : "Pick accounts or APIs." },
               { step: "2", title: lang === 'zh' ? "网页下单" : "Order", desc: lang === 'zh' ? "直接支付或提交需求。" : "Pay or submit details online." },
-              { step: "3", title: lang === 'zh' ? "等待交付" : "Delivery", desc: lang === 'zh' ? "按商品类型交付账号、卡密、额度或推广说明。" : "Receive account, key, credits, or instructions." },
+              { step: "3", title: lang === 'zh' ? "等待交付" : "Delivery", desc: lang === 'zh' ? "按商品类型交付账号、卡密、额度或配置说明。" : "Receive account, key, credits, or setup instructions." },
               { step: "4", title: lang === 'zh' ? "邮件售后" : "Support", desc: lang === 'zh' ? "订单问题联系 chengziai2026@163.com。" : "Contact chengziai2026@163.com for order issues." }
             ].map(item => (
               <div key={item.step} className="vercel-card" style={{ padding: 22, background: "#ffffff" }}>
@@ -991,6 +999,14 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
         © {new Date().getFullYear()} {dict.header.title}. All rights reserved.<br/>
         {lang === 'zh' ? '客服邮箱：' : 'Support Email: '}
         <a href="mailto:chengziai2026@163.com" style={{ color: "#666", textDecoration: "none" }}>chengziai2026@163.com</a>
+        <div style={{ marginTop: 10, display: "flex", justifyContent: "center", gap: 14, flexWrap: "wrap" }}>
+          <Link href={`/${lang}/products`} className="cz-inline-link" style={{ color: "#666", textDecoration: "none", fontWeight: 700 }}>
+            {lang === 'zh' ? '产品索引' : 'Products'}
+          </Link>
+          <Link href={`/${lang}/guides`} className="cz-inline-link" style={{ color: "#666", textDecoration: "none", fontWeight: 700 }}>
+            {lang === 'zh' ? '教程索引' : 'Guides'}
+          </Link>
+        </div>
       </footer>
 
       {showApiFloat && !modal && !detailProduct && (
@@ -1073,160 +1089,54 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
           <div style={{ position: "relative", width: "100%", maxWidth: 420, background: "#ffffff", border: "1px solid #eaeaea", borderRadius: "12px", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}>
             <div style={{ padding: "32px" }}>
                <h3 style={{ margin: "0 0 20px", fontSize: 20, fontWeight: 600, color: "#111827", letterSpacing: "-0.01em" }}>
-                 {step === "consult" ? (modal.categoryId === "growth" ? (lang === 'zh' ? "提交推广需求" : "Submit Promotion Details") : dict.modal.submitRequest) : dict.modal.confirmOrder}
+                 {step === "consult" ? dict.modal.submitRequest : dict.modal.confirmOrder}
                </h3>
                <p style={{ margin: "0 0 16px", color: "#666666", fontSize: 14 }}>
                  {dict.modal.product}<span style={{ color: "#111827", fontWeight: 500 }}>{modal.name}</span>
                </p>
                
-               {step !== "consult" && modal.categoryId !== "growth" && (
+               {step !== "consult" && (
                  <div style={{ fontSize: "clamp(22px, 3.5vw, 32px)", fontWeight: 700, color: "#111827", marginBottom: 32, letterSpacing: "-0.02em" }}>{dict.common.currency}{modal.price}</div>
                )}
                
                {step === "consult" ? (
                  <div style={{ textAlign: "center" }}>
-                   {modal.categoryId === "growth" ? (
-                     <>
-                       <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 8, textAlign: "left" }}>
-                         {lang === 'zh' ? "第一步：需要买量的作品链接 / 主页链接" : "Step 1: Link to work / homepage"}
-                       </div>
-                       <input 
-                         type="text" 
-                         placeholder={lang === 'zh' ? "请粘贴需要推广的作品或主页链接" : "Please paste target link..."} 
-                         value={workLink} 
-                         onChange={e => { setWorkLink(e.target.value); if(workLinkErr) setWorkLinkErr(""); }} 
-                         style={{ width: "100%", padding: "12px", border: workLinkErr ? "1px solid #e00000" : "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box", marginBottom: 20 }} 
-                         onFocus={(e) => { if (!workLinkErr) e.target.style.borderColor = "#0a0a0a" }} 
-                         onBlur={(e) => { if (!workLinkErr) e.target.style.borderColor = "#eaeaea" }} 
-                       />
-                       {workLinkErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: -16, marginBottom: 20, textAlign: "left" }}>{workLinkErr}</div>}
+                   <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>{dict.modal.emailStep}</div>
+                   <input 
+                     type="email" 
+                     placeholder={dict.modal.emailPlaceholder} 
+                     value={email} 
+                     onChange={e => { setEmail(e.target.value); if(emailErr) setEmailErr(""); }} 
+                     style={{ width: "100%", padding: "12px", border: emailErr ? "1px solid #e00000" : "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box", marginBottom: 20 }} 
+                     onFocus={(e) => { if (!emailErr) e.target.style.borderColor = "#0a0a0a" }} 
+                     onBlur={(e) => { if (!emailErr) e.target.style.borderColor = "#eaeaea" }} 
+                   />
+                   {emailErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: -16, marginBottom: 20, textAlign: "left" }}>{emailErr}</div>}
 
-                       <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 8, textAlign: "left" }}>
-                         {lang === 'zh' ? "第二步：具体推广需求（买什么服务，多少量）" : "Step 2: Specific requirements (services & qty)"}
-                       </div>
-                       <textarea 
-                         placeholder={lang === 'zh' ? "请写清楚具体的需求（买什么服务，多少量），例如：点赞 100 个" : "Please write details, e.g., 100 likes / 1000 views"} 
-                         value={requirement} 
-                         onChange={e => { setRequirement(e.target.value); if(requirementErr) setRequirementErr(""); }} 
-                         rows={3}
-                         style={{ width: "100%", padding: "12px", border: requirementErr ? "1px solid #e00000" : "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box", resize: "none", marginBottom: 20 }} 
-                         onFocus={(e) => { if (!requirementErr) e.target.style.borderColor = "#0a0a0a" }} 
-                         onBlur={(e) => { if (!requirementErr) e.target.style.borderColor = "#eaeaea" }} 
-                       />
-                       {requirementErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: -16, marginBottom: 20, textAlign: "left" }}>{requirementErr}</div>}
+                   <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>{dict.modal.reqStep}</div>
+                   <textarea 
+                     placeholder={dict.modal.reqPlaceholder} 
+                     value={requirement} 
+                     onChange={e => { setRequirement(e.target.value); if(requirementErr) setRequirementErr(""); }} 
+                     rows={4}
+                     style={{ width: "100%", padding: "12px", border: requirementErr ? "1px solid #e00000" : "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box", resize: "none", marginBottom: 20 }} 
+                     onFocus={(e) => { if (!requirementErr) e.target.style.borderColor = "#0a0a0a" }} 
+                     onBlur={(e) => { if (!requirementErr) e.target.style.borderColor = "#eaeaea" }} 
+                   />
+                   {requirementErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: -16, marginBottom: 20, textAlign: "left" }}>{requirementErr}</div>}
 
-                       <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 8, textAlign: "left" }}>
-                         {lang === 'zh' ? "第三步：您的联系邮箱" : "Step 3: Your email address"}
-                       </div>
-                       <input 
-                         type="email" 
-                         placeholder="you@example.com" 
-                         value={email} 
-                         onChange={e => { setEmail(e.target.value); if(emailErr) setEmailErr(""); }} 
-                         style={{ width: "100%", padding: "12px", border: emailErr ? "1px solid #e00000" : "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box", marginBottom: 20 }} 
-                         onFocus={(e) => { if (!emailErr) e.target.style.borderColor = "#0a0a0a" }} 
-                         onBlur={(e) => { if (!emailErr) e.target.style.borderColor = "#eaeaea" }} 
-                       />
-                       {emailErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: -16, marginBottom: 20, textAlign: "left" }}>{emailErr}</div>}
-
-                       <button 
-                         onClick={handleMarketingNext} 
-                         className="vercel-button" 
-                         style={{ width: "100%", padding: "12px 0", fontSize: 14, fontWeight: 500, cursor: "pointer" }}
-                       >
-                         {lang === 'zh' ? "下一步：扫码支付" : "Next: Scan & Pay"}
-                       </button>
-                     </>
-                   ) : (
-                     <>
-                       <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>{dict.modal.emailStep}</div>
-                       <input 
-                         type="email" 
-                         placeholder={dict.modal.emailPlaceholder} 
-                         value={email} 
-                         onChange={e => { setEmail(e.target.value); if(emailErr) setEmailErr(""); }} 
-                         style={{ width: "100%", padding: "12px", border: emailErr ? "1px solid #e00000" : "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box", marginBottom: 20 }} 
-                         onFocus={(e) => { if (!emailErr) e.target.style.borderColor = "#0a0a0a" }} 
-                         onBlur={(e) => { if (!emailErr) e.target.style.borderColor = "#eaeaea" }} 
-                       />
-                       {emailErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: -16, marginBottom: 20, textAlign: "left" }}>{emailErr}</div>}
-
-                       <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>{dict.modal.reqStep}</div>
-                       <textarea 
-                         placeholder={dict.modal.reqPlaceholder} 
-                         value={requirement} 
-                         onChange={e => { setRequirement(e.target.value); if(requirementErr) setRequirementErr(""); }} 
-                         rows={4}
-                         style={{ width: "100%", padding: "12px", border: requirementErr ? "1px solid #e00000" : "1px solid #eaeaea", borderRadius: "6px", fontSize: 14, outline: "none", transition: "border-color 0.2s", boxSizing: "border-box", resize: "none", marginBottom: 20 }} 
-                         onFocus={(e) => { if (!requirementErr) e.target.style.borderColor = "#0a0a0a" }} 
-                         onBlur={(e) => { if (!requirementErr) e.target.style.borderColor = "#eaeaea" }} 
-                       />
-                       {requirementErr && <div style={{ color: "#e00000", fontSize: 12, marginTop: -16, marginBottom: 20, textAlign: "left" }}>{requirementErr}</div>}
-
-                       <button 
-                         onClick={submitConsult} 
-                         disabled={isSubmitting}
-                         className="vercel-button" 
-                         style={{ width: "100%", padding: "12px 0", fontSize: 14, fontWeight: 500, cursor: isSubmitting ? "not-allowed" : "pointer", opacity: isSubmitting ? 0.7 : 1 }}
-                       >
-                         {isSubmitting ? dict.modal.submitting : dict.modal.submitBtnConsult}
-                       </button>
-                     </>
-                   )}
+                   <button 
+                     onClick={submitConsult} 
+                     disabled={isSubmitting}
+                     className="vercel-button" 
+                     style={{ width: "100%", padding: "12px 0", fontSize: 14, fontWeight: 500, cursor: isSubmitting ? "not-allowed" : "pointer", opacity: isSubmitting ? 0.7 : 1 }}
+                   >
+                     {isSubmitting ? dict.modal.submitting : dict.modal.submitBtnConsult}
+                   </button>
                  </div>
                ) : step === "pay" ? (
                  <div style={{ textAlign: "center" }}>
-                   {modal.categoryId === "growth" ? (
-                     <>
-                       {lang === 'en' ? (
-                         <>
-                           <div style={{ fontSize: 14, fontWeight: 500, color: "#666", marginBottom: 16 }}>
-                             Payment Method
-                           </div>
-                           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginBottom: 24 }}>
-                             <button style={{ padding: "8px 24px", border: "2px solid #003087", background: "#f0f5ff", borderRadius: 8, cursor: "default", color: "#003087", fontWeight: 600 }}>PayPal</button>
-                           </div>
-                           <div style={{ width: 240, height: 240, background: "#f5f5f5", margin: "0 auto 24px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: 12, border: "1px solid #eaeaea", textAlign: "center", padding: "0 20px" }}>
-                             <div>
-                               <div style={{ color: "#111827", fontWeight: 600, marginBottom: 8, wordBreak: "break-all" }}>Paypal Account:<br/>chengziai2026@163.com</div>
-                               <div style={{ fontSize: 13, color: "#666" }}>Please transfer the exact USD amount and submit your email.</div>
-                             </div>
-                           </div>
-                           <div style={{ fontSize: 13, color: "#666", marginBottom: 20, textAlign: "left", lineHeight: 1.5 }}>
-                             Notification Email: <strong>{email}</strong>
-                           </div>
-                         </>
-                       ) : (
-                         <>
-                           <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>
-                             第四步：请用支付宝扫码支付对应款项
-                           </div>
-                           <div style={{ width: 180, height: 180, margin: "0 auto 24px", background: "#fafafa", border: "1px solid #eaeaea", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-                              <Image
-                                src="/images/alipay.jpg"
-                                alt="Alipay QR Code"
-                                width={554}
-                                height={554}
-                                style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                              />
-                           </div>
-                           <div style={{ fontSize: 13, color: "#666", marginBottom: 20, textAlign: "left", lineHeight: 1.5 }}>
-                             请根据您的需求计算应付金额并扫码支付。<br/>
-                             通知邮箱：<strong>{email}</strong>
-                           </div>
-                         </>
-                       )}
-                       <button 
-                         onClick={submitOrder} 
-                         disabled={isSubmitting}
-                         className="vercel-button" 
-                         style={{ width: "100%", padding: "12px 0", fontSize: 14, fontWeight: 500, cursor: isSubmitting ? "not-allowed" : "pointer", opacity: isSubmitting ? 0.7 : 1 }}
-                       >
-                         {isSubmitting ? (lang === 'zh' ? "正在通知..." : "Notifying...") : (lang === 'zh' ? "我已经付完款，通知客服发货" : "I have paid, notify support")}
-                       </button>
-                     </>
-                   ) : (
-                     <>
+                   <>
                        {lang === 'en' ? (
                          <>
                            <div style={{ fontSize: 13, fontWeight: 600, color: "#111827", marginBottom: 12, textAlign: "left" }}>1. Send Payment via PayPal</div>
@@ -1287,8 +1197,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
                        >
                          {isSubmitting ? dict.modal.submitting : dict.modal.submitBtnPay}
                        </button>
-                     </>
-                   )}
+                   </>
                  </div>
                ) : (
                  <div style={{ textAlign: "center", padding: "10px 0" }}>
@@ -1297,7 +1206,7 @@ export default function HomePage({ dict, products, lang, refCode }: { dict: Home
                     </div>
                     <h4 style={{ fontSize: 18, color: "#111827", margin: "0 0 12px" }}>{dict.modal.success}</h4>
                     <p style={{ fontSize: 14, color: "#666", lineHeight: 1.6, whiteSpace: "pre-wrap", marginBottom: 16 }}>
-                      {modal.actionType === 'consult' ? dict.modal.consultSuccessMsg : (modal.categoryId === "growth" ? (lang === 'zh' ? "您的推广需求已通知客服。\n核对收款后，客服将尽快开始发货推广！" : "Your order notification has been sent.\nSupport will start the delivery once payment is verified!") : dict.modal.paySuccessMsg)}
+                      {modal.actionType === 'consult' ? dict.modal.consultSuccessMsg : dict.modal.paySuccessMsg}
                       <br/>
                       <strong style={{ color: "#111827" }}>{email}</strong>
                     </p>

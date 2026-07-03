@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/'],
+      disallow: ['/api/', '/proxy-html', '/zh/activate', '/en/activate'],
     },
     sitemap: 'https://cheng-zi-ai.com/sitemap.xml',
   }

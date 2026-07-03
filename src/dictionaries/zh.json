@@ -5,7 +5,6 @@
       "gpt": "GPT 会员",
       "gemini": "Gemini 会员",
       "api": "API 中转站",
-      "growth": "营销资源",
       "flow": "购买流程",
       "api-service": "API 中转服务"
     }
@@ -43,16 +42,15 @@
     "back": "返回首页"
   },
   "meta": {
-    "title": "橙子 AI — 主流 AI 账号 | 低价 API 中转资源 | 营销流量服务",
-    "description": "专为 AI 开发者、工具运营者与内容团队打造的一站式直采平台。提供 GPT Plus / Gemini 会员、极具性价比的高可用 API 中转额度（100% 兼容 OpenAI 协议），以及抖音、小红书等前沿流量营销资源。网页直接下单，极速交付。",
+    "title": "橙子 AI — 主流 AI 账号 | 低价 API 中转资源",
+    "description": "专为 AI 开发者、工具用户与小团队打造的一站式直采平台。提供 GPT Plus / Gemini 会员，以及高可用 API 中转额度（兼容 OpenAI 协议）。网页直接下单，按商品类型交付账号、卡密、充值说明或额度码。",
     "keywords": [
       "AI账号批发",
       "API中转站",
       "低价API资源",
       "OpenAI接口",
       "GPT Plus账号",
-      "Gemini会员",
-      "营销流量资源"
+      "Gemini会员"
     ]
   },
   "apiService": {

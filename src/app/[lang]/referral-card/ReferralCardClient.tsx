@@ -289,13 +289,13 @@ export default function ReferralCardClient({ lang }: ReferralCardClientProps) {
             </div>
 
             <h1 style={{ fontSize: "clamp(34px, 5vw, 56px)", lineHeight: 1.08, letterSpacing: "-0.04em", margin: "0 0 16px", fontWeight: 900 }}>
-              {isEn ? "Turn your invite link into a share card." : "已注册用户，把邀请链接变成推广卡片。"}
+              {isEn ? "Turn your invite link into a share card." : "已注册用户，把邀请链接变成邀请卡片。"}
             </h1>
 
             <p style={{ fontSize: 16, color: "#555", lineHeight: 1.75, maxWidth: 680, margin: "0 0 30px" }}>
               {isEn
                 ? "This tool is for users who already have a console account. Copy your invite link from Wallet Management and paste it here to generate a share card."
-                : "这个功能只给已经注册过控制台的用户使用。请先到控制台「钱包管理」复制你的邀请链接，再粘贴到这里生成推广卡片。"}
+                : "这个功能只给已经注册过控制台的用户使用。请先到控制台「钱包管理」复制你的邀请链接，再粘贴到这里生成邀请卡片。"}
             </p>
 
             <div style={{ border: "1px solid #e5e7eb", background: "#f5f5f7", borderRadius: 18, padding: 18, marginBottom: 24 }}>
@@ -352,7 +352,7 @@ export default function ReferralCardClient({ lang }: ReferralCardClientProps) {
                   cursor: "pointer",
                 }}
               >
-                {isEn ? "Generate card" : "生成推广卡片"}
+                {isEn ? "Generate card" : "生成邀请卡片"}
               </button>
               {landingUrl && (
                 <button
@@ -376,7 +376,7 @@ export default function ReferralCardClient({ lang }: ReferralCardClientProps) {
             {landingUrl && (
               <div style={{ border: "1px solid #eaeaea", background: "#fafafa", borderRadius: 16, padding: 16, display: "grid", gap: 10, fontSize: 13, color: "#4b5563" }}>
                 <div>
-                  <strong style={{ color: "#111827" }}>{isEn ? "Landing page:" : "推广落地页："}</strong>{" "}
+                  <strong style={{ color: "#111827" }}>{isEn ? "Landing page:" : "邀请落地页："}</strong>{" "}
                   <span style={{ wordBreak: "break-all" }}>{landingUrl}</span>
                 </div>
                 <div>
@@ -394,10 +394,10 @@ export default function ReferralCardClient({ lang }: ReferralCardClientProps) {
             <div style={{ background: "#f4f4f2", borderRadius: 18, padding: 12, minHeight: 360, display: "flex", alignItems: "center", justifyContent: "center" }}>
               {cardDataUrl ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={cardDataUrl} alt={isEn ? "Referral card preview" : "推广卡片预览"} style={{ width: "100%", height: "auto", borderRadius: 14, display: "block" }} />
+                <img src={cardDataUrl} alt={isEn ? "Referral card preview" : "邀请卡片预览"} style={{ width: "100%", height: "auto", borderRadius: 14, display: "block" }} />
               ) : (
                 <div style={{ textAlign: "center", color: "#777", fontSize: 14, lineHeight: 1.7, padding: 24 }}>
-                  {isEn ? "Enter an invitation link to generate the card." : "输入邀请链接后，这里会生成可下载的推广卡片。"}
+                  {isEn ? "Enter an invitation link to generate the card." : "输入邀请链接后，这里会生成可下载的邀请卡片。"}
                 </div>
               )}
             </div>

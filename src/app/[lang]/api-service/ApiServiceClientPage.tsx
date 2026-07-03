@@ -239,7 +239,7 @@ const getFaqItems = (lang: string) => {
     {
       question: isEn ? "What am I buying?" : "购买的是什么？",
       answer: isEn
-        ? "You are purchasing a redemption code for platform credit, not official account balances or official USD top-ups. You can view your balance and call logs in the console after redemption."
+        ? "You are purchasing a redemption code for platform credit, not official provider balances or official USD top-ups. You can view your balance and call logs in the console after redemption."
         : "购买的是本站平台计价额度兑换码，不是官方账户余额或官方美元充值。兑换码兑换后可在控制台中查看余额和调用记录。"
     },
     {
@@ -269,6 +269,37 @@ const getFaqItems = (lang: string) => {
   ];
 };
 
+const getRelatedGuideLinks = (lang: string) => {
+  const isEn = lang === "en";
+  return [
+    {
+      href: `/${lang}/guides/claude-code-base-url-setup`,
+      title: isEn ? "Claude Code Base URL setup" : "Claude Code Base URL 配置",
+      desc: isEn ? "Base URL, token variables, model names, and quick verification." : "Base URL、密钥变量、模型名和快速验证方法。",
+    },
+    {
+      href: `/${lang}/guides/cursor-api-base-url-setup`,
+      title: isEn ? "Cursor API Base URL setup" : "Cursor API Base URL 配置",
+      desc: isEn ? "How to connect Cursor to an OpenAI-compatible API endpoint." : "把 Cursor 接入 OpenAI 兼容 API 地址的配置说明。",
+    },
+    {
+      href: `/${lang}/guides/cline-openai-compatible-api-setup`,
+      title: isEn ? "Cline OpenAI-compatible API setup" : "Cline OpenAI Compatible API 配置",
+      desc: isEn ? "Provider, Base URL, API key, and model ID checklist." : "Provider、Base URL、API Key 和 Model ID 检查清单。",
+    },
+    {
+      href: `/${lang}/guides/api-base-url-troubleshooting`,
+      title: isEn ? "API Base URL troubleshooting" : "API Base URL 报错排查",
+      desc: isEn ? "Fix 401, 404, model not found, and connection errors." : "排查 401、404、模型不存在和连接错误。",
+    },
+    {
+      href: `/${lang}/guides`,
+      title: isEn ? "All API setup guides" : "全部 API 配置教程",
+      desc: isEn ? "Browse every setup, client, and troubleshooting guide." : "查看全部配置、客户端和报错排查教程。",
+    },
+  ];
+};
+
 export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceDictionary; lang: string }) {
   const t = dict.apiService;
   const router = useRouter();
@@ -281,6 +312,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
   const clientGuideData = getClientGuideData(lang);
   const setupFlow = getSetupFlow(lang);
   const faqItems = getFaqItems(lang);
+  const relatedGuideLinks = getRelatedGuideLinks(lang);
 
   // UI States
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -890,7 +922,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
           <div style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", lineHeight: 1.55, marginBottom: 16 }}>
             {activeInviteCode
               ? isEn ? `Invite code: ${activeInviteCode}. After the first $100 top-up, the inviter gets a $3 reward.` : `邀请码：${activeInviteCode}。首充满 ¥100 后，邀请人获得 ¥20 奖励。`
-              : isEn ? "Log in to the console, copy your invite link from Wallet, then make a share card." : "登录控制台，在钱包管理复制邀请链接，再生成推广卡片分享。"}
+              : isEn ? "Log in to the console, copy your invite link from Wallet, then make a share card." : "登录控制台，在钱包管理复制邀请链接，再生成邀请卡片分享。"}
           </div>
           {activeInviteCode ? (
             <a
@@ -1466,6 +1498,54 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
 
       {/* ───── FAQ Accordion (Section 12) ───── */}
       <section
+        id="related-guides"
+        style={{
+          padding: "72px 24px",
+          background: "#fafafa",
+          borderTop: "1px solid #eaeaea",
+        }}
+      >
+        <div style={{ maxWidth: 980, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 30 }}>
+            <h2 style={{ fontSize: "clamp(24px, 3.5vw, 34px)", fontWeight: 850, color: "#111827", letterSpacing: 0, margin: "0 0 12px" }}>
+              {isEn ? "More API setup guides" : "更多 API 配置教程"}
+            </h2>
+            <p style={{ fontSize: 15, color: "#666666", lineHeight: 1.7, margin: "0 auto", maxWidth: 620 }}>
+              {isEn
+                ? "Use these pages when you need a client-specific setup or troubleshooting checklist."
+                : "如果你需要按具体客户端配置，或排查 Base URL / API Key 报错，可以从这里进入。"}
+            </p>
+          </div>
+          <div style={{ display: "grid", gap: 12 }}>
+            {relatedGuideLinks.map(guide => (
+              <Link
+                key={guide.href}
+                href={guide.href}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "minmax(0, 1fr) auto",
+                  gap: 16,
+                  alignItems: "center",
+                  padding: "16px 18px",
+                  border: "1px solid #eaeaea",
+                  borderRadius: 14,
+                  background: "#ffffff",
+                  color: "#111827",
+                  textDecoration: "none",
+                }}
+              >
+                <span>
+                  <span style={{ display: "block", fontSize: 16, fontWeight: 850, marginBottom: 5 }}>{guide.title}</span>
+                  <span style={{ display: "block", color: "#666", fontSize: 13, lineHeight: 1.55 }}>{guide.desc}</span>
+                </span>
+                <span style={{ fontSize: 18, fontWeight: 850 }} aria-hidden="true">→</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
         id="faq"
         style={{
           padding: "80px 24px",
@@ -1822,7 +1902,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
             }}
           >
             <button
-              aria-label={isEn ? "Close referral card" : "关闭推广卡片"}
+              aria-label={isEn ? "Close referral card" : "关闭邀请卡片"}
               onClick={() => setIsReferralCardClosed(true)}
               style={{
                 position: "absolute",
@@ -2036,7 +2116,7 @@ export default function ApiServiceClientPage({ dict, lang }: { dict: ApiServiceD
               </div>
             )}
             <button
-              aria-label={isEn ? "Close referral card" : "关闭推广卡片"}
+              aria-label={isEn ? "Close referral card" : "关闭邀请卡片"}
               onClick={() => setIsReferralCardClosed(true)}
               style={{
                 border: "none",

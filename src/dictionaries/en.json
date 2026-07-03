@@ -5,7 +5,6 @@
       "gpt": "GPT Subs",
       "gemini": "Gemini Subs",
       "api": "API Gateway",
-      "growth": "Marketing",
       "flow": "Purchase Flow",
       "api-service": "API Gateway"
     }
@@ -43,16 +42,15 @@
     "back": "Back to Home"
   },
   "meta": {
-    "title": "Orange AI — Premium AI Accounts | Low-Cost API Resources | Marketing Services",
-    "description": "A one-stop direct procurement platform for developers, AI operators, and content teams. We offer GPT Plus & Gemini subscriptions, highly reliable API relay credits (100% OpenAI compatible), and cutting-edge marketing traffic resources. Order online for fast delivery.",
+    "title": "Orange AI — Premium AI Accounts | Low-Cost API Resources",
+    "description": "A one-stop direct procurement platform for developers, AI tool users, and small teams. We offer GPT Plus and Gemini subscriptions plus reliable OpenAI-compatible API relay credits. Order online for fast delivery.",
     "keywords": [
       "AI accounts",
       "API Gateway",
       "Cheap API credits",
       "OpenAI compatible API",
       "Buy GPT Plus",
-      "Gemini subscription",
-      "Marketing traffic"
+      "Gemini subscription"
     ]
   },
   "apiService": {
