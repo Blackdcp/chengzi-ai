@@ -1,0 +1,43 @@
+{
+  "id": "plus-ready-normal",
+  "categoryId": "gpt",
+  "categoryName": "GPT Member",
+  "title": "Plus Ready Account - Web (Standard)",
+  "subtitle": "Standard Plus ready-made account for Web. Recommended to use fingerprint browser + clean IP.",
+  "price": 66,
+  "originalPriceText": "Best Value",
+  "order": 3,
+  "tags": [
+    "Standard",
+    "Web Exclusive",
+    "Best Value"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥66.0",
+  "actionType": "buy",
+  "warnings": [
+    "For stable accounts, we recommend using fingerprint browser with clean IP. Logging in via mobile app simultaneously increases risk."
+  ],
+  "detail": {
+    "title": "Plus Ready Account - Web (Standard)",
+    "subtitle": "Standard Plus ready-made account for Web. Recommended to use fingerprint browser + clean IP.",
+    "sections": [
+      {
+        "title": "Suitable For",
+        "items": [
+          "Budget-conscious Plus users",
+          "Daily chatting and lightweight tasks"
+        ]
+      },
+      {
+        "title": "Delivery Contents",
+        "items": [
+          "Standard ready-made account & password",
+          "Bound email & password"
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "Plus Ready Account - Web (Standard)"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "gemini-pro-direct",
+  "categoryId": "gemini",
+  "categoryName": "Gemini Member",
+  "title": "Gemini AI Pro Member - Direct Top-up",
+  "subtitle": "Includes legitimate international credit card binding. Directly upgrades your Google account to Gemini Advanced (Pro).",
+  "price": 11.5,
+  "originalPriceText": "Safe Top-up",
+  "order": 1,
+  "tags": [
+    "Gemini Pro",
+    "Direct Top-up",
+    "Card Binding"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥11.5",
+  "actionType": "buy",
+  "warnings": [
+    "Requires your Google account and password for the upgrade. Do not log in during the process to avoid triggering Google risk control."
+  ],
+  "detail": {
+    "title": "Gemini AI Pro Member - Direct Top-up",
+    "subtitle": "Includes legitimate international credit card binding. Directly upgrades your Google account to Gemini Advanced (Pro).",
+    "sections": [
+      {
+        "title": "Suitable For",
+        "items": [
+          "Users wanting Google's strongest model Gemini 1.5 Pro",
+          "Users without overseas credit cards"
+        ]
+      },
+      {
+        "title": "Delivery Contents",
+        "items": [
+          "Assistance in upgrading your Google account to Gemini Advanced",
+          "Includes virtual card issuance and handling fees"
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "Gemini AI Pro Member - Direct Top-up"
+}

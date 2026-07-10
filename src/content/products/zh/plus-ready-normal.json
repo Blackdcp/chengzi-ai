@@ -1,0 +1,43 @@
+{
+  "id": "plus-ready-normal",
+  "categoryId": "gpt",
+  "categoryName": "GPT 会员",
+  "title": "Plus 成品 网页用 (普通版)",
+  "subtitle": "基础款 Plus 成品账号。推荐使用指纹浏览器+干净IP，手机端同时登陆会增加风控风险。",
+  "price": 66,
+  "originalPriceText": "高性价首选",
+  "order": 3,
+  "tags": [
+    "普通版",
+    "网页端专用",
+    "高性价比"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥66.0",
+  "actionType": "buy",
+  "warnings": [
+    "买的稳定号推荐用指纹浏览器+干净ip使用，手机端同时登陆会增加风控风险。网页端请认准网页端专用成品号(不要买成json)。"
+  ],
+  "detail": {
+    "title": "Plus 成品 网页用 (普通版)",
+    "subtitle": "基础款 Plus 成品账号。推荐使用指纹浏览器+干净IP，手机端同时登陆会增加风控风险。",
+    "sections": [
+      {
+        "title": "适合人群",
+        "items": [
+          "预算有限的 Plus 体验用户",
+          "日常对话和轻量级任务需求"
+        ]
+      },
+      {
+        "title": "发货内容",
+        "items": [
+          "基础成品账号及密码",
+          "绑定的邮箱及密码"
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "Plus 成品 网页用 (普通版)"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "gemini-pro-direct",
+  "categoryId": "gemini",
+  "categoryName": "Gemini 会员",
+  "title": "Gemini Ai Pro 会员 直充含绑卡",
+  "subtitle": "包含正规国际信用卡绑卡服务，直接升级您现有的 Google 账号至 Gemini Advanced (Pro)。",
+  "price": 11.5,
+  "originalPriceText": "安全直充",
+  "order": 1,
+  "tags": [
+    "Gemini Pro",
+    "直充到账",
+    "含绑卡服务"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥11.5",
+  "actionType": "buy",
+  "warnings": [
+    "需要您提供需要升级的谷歌账号与密码。直充期间请勿登录抢占IP，以免触发谷歌风控。"
+  ],
+  "detail": {
+    "title": "Gemini Ai Pro 会员 直充含绑卡",
+    "subtitle": "包含正规国际信用卡绑卡服务，直接升级您现有的 Google 账号至 Gemini Advanced (Pro)。",
+    "sections": [
+      {
+        "title": "适合人群",
+        "items": [
+          "想要使用 Google 最强模型 Gemini 1.5 Pro 的用户",
+          "没有海外信用卡的国内用户"
+        ]
+      },
+      {
+        "title": "发货内容",
+        "items": [
+          "协助将您的谷歌账号升级为 Gemini Advanced",
+          "包含绑定的虚拟卡开卡费和手续费"
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "Gemini Ai Pro 会员 直充含绑卡"
+}

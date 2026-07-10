@@ -1,0 +1,43 @@
+{
+  "id": "plus-ready-google",
+  "categoryId": "gpt",
+  "categoryName": "GPT 会员",
+  "title": "Plus 成品 网页用 谷歌邮箱",
+  "subtitle": "采用高权重谷歌邮箱注册，适合纯净 IP 配合指纹浏览器在网页端使用。",
+  "price": 100,
+  "originalPriceText": "谷歌直登",
+  "order": 4,
+  "tags": [
+    "谷歌邮箱",
+    "网页端专用",
+    "防风控"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥100.0",
+  "actionType": "buy",
+  "warnings": [
+    "买的稳定号推荐用指纹浏览器+干净ip使用，手机端同时登陆会增加风控风险。"
+  ],
+  "detail": {
+    "title": "Plus 成品 网页用 谷歌邮箱",
+    "subtitle": "采用高权重谷歌邮箱注册，适合纯净 IP 配合指纹浏览器在网页端使用。",
+    "sections": [
+      {
+        "title": "适合人群",
+        "items": [
+          "习惯使用 Google 授权登录的用户",
+          "对账号稳定性要求极高的专业用户"
+        ]
+      },
+      {
+        "title": "发货内容",
+        "items": [
+          "绑定的谷歌邮箱及密码",
+          "辅助恢复邮箱或手机"
+        ]
+      }
+    ]
+  },
+  "isHot": false,
+  "orderName": "Plus 成品 网页用 谷歌邮箱"
+}

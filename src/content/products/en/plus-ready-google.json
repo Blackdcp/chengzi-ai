@@ -1,0 +1,43 @@
+{
+  "id": "plus-ready-google",
+  "categoryId": "gpt",
+  "categoryName": "GPT Member",
+  "title": "Plus Ready Account - Web (Google Email)",
+  "subtitle": "Registered with high-trust Google Email, suitable for clean IP and fingerprint browser on Web.",
+  "price": 100,
+  "originalPriceText": "Google Direct Login",
+  "order": 4,
+  "tags": [
+    "Google Email",
+    "Web Exclusive",
+    "Anti-Ban"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥100.0",
+  "actionType": "buy",
+  "warnings": [
+    "For stable accounts, we recommend using fingerprint browser with clean IP. Logging in via mobile app simultaneously increases risk."
+  ],
+  "detail": {
+    "title": "Plus Ready Account - Web (Google Email)",
+    "subtitle": "Registered with high-trust Google Email, suitable for clean IP and fingerprint browser on Web.",
+    "sections": [
+      {
+        "title": "Suitable For",
+        "items": [
+          "Users accustomed to Google OAuth login",
+          "Pro users demanding high account stability"
+        ]
+      },
+      {
+        "title": "Delivery Contents",
+        "items": [
+          "Bound Google email & password",
+          "Recovery email or phone"
+        ]
+      }
+    ]
+  },
+  "isHot": false,
+  "orderName": "Plus Ready Account - Web (Google Email)"
+}

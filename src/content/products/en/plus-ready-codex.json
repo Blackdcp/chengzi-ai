@@ -1,0 +1,44 @@
+{
+  "id": "plus-ready-codex",
+  "categoryId": "gpt",
+  "categoryName": "GPT Member",
+  "title": "Plus Ready Account - Web (Codex Supported)",
+  "subtitle": "Premium Plus ready-made account supporting Codex, exclusive for Web. Recommended to use fingerprint browser + clean IP.",
+  "price": 100,
+  "originalPriceText": "High-trust New Account",
+  "order": 2,
+  "tags": [
+    "Codex Supported",
+    "Web Exclusive",
+    "High Trust"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥100.0",
+  "actionType": "buy",
+  "warnings": [
+    "For stable accounts, we recommend using fingerprint browser with clean IP. Logging in via mobile app simultaneously increases risk. Ensure you are buying a Web-exclusive account."
+  ],
+  "detail": {
+    "title": "Plus Ready Account - Web (Codex Supported)",
+    "subtitle": "Premium Plus ready-made account supporting Codex, exclusive for Web. Recommended to use fingerprint browser + clean IP.",
+    "sections": [
+      {
+        "title": "Suitable For",
+        "items": [
+          "Users needing stable ChatGPT Plus access",
+          "Developers needing code execution (Codex)",
+          "Users avoiding the hassle of self-registration"
+        ]
+      },
+      {
+        "title": "Delivery Contents",
+        "items": [
+          "High-trust ready-made account & password",
+          "Bound email & password"
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "Plus Ready Account - Web (Codex Supported)"
+}
