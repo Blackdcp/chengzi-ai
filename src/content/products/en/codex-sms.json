@@ -4,7 +4,7 @@
   "categoryName": "GPT Member",
   "title": "Codex Long-term SMS - US Real Card",
   "subtitle": "US physical mobile card SMS service, passes all AI verifications for long-term OpenAI usage.",
-  "price": 2.8,
+  "price": 20,
   "originalPriceText": "¥4",
   "order": 6,
   "tags": [
@@ -13,7 +13,7 @@
     "Anti-Ban"
   ],
   "inStock": true,
-  "buyButtonText": "Buy Now ¥2.8",
+  "buyButtonText": "Buy Now ¥20.0",
   "actionType": "buy",
   "warnings": [
     "Provides single SMS verification for the designated platform. Contact support after purchase."

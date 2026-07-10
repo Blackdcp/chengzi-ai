@@ -4,7 +4,7 @@
   "categoryName": "Gemini Member",
   "title": "Gemini AI Pro Member - Direct Top-up",
   "subtitle": "Includes legitimate international credit card binding. Directly upgrades your Google account to Gemini Advanced (Pro).",
-  "price": 11.5,
+  "price": 100,
   "originalPriceText": "Safe Top-up",
   "order": 1,
   "tags": [
@@ -13,7 +13,7 @@
     "Card Binding"
   ],
   "inStock": true,
-  "buyButtonText": "Buy Now ¥11.5",
+  "buyButtonText": "Buy Now ¥100.0",
   "actionType": "buy",
   "warnings": [
     "Requires your Google account and password for the upgrade. Do not log in during the process to avoid triggering Google risk control."

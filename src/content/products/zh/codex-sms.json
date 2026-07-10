@@ -4,7 +4,7 @@
   "categoryName": "GPT 会员",
   "title": "Codex 长效接码 美国实卡",
   "subtitle": "美国实体手机卡接码服务，秒过所有 AI 验证，用于 OpenAI 等账号的长期验证接码。",
-  "price": 2.8,
+  "price": 20,
   "originalPriceText": "￥4",
   "order": 6,
   "tags": [
@@ -13,7 +13,7 @@
     "防封锁"
   ],
   "inStock": true,
-  "buyButtonText": "下单购买 ￥2.8",
+  "buyButtonText": "下单购买 ￥20.0",
   "actionType": "buy",
   "warnings": [
     "仅提供单次指定平台的接码服务，拍下后联系客服获取手机号和验证码。"

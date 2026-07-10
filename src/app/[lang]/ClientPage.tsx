@@ -168,8 +168,6 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
       label = lang === 'zh' ? "尝鲜专区" : "Trial";
     } else if (product.id === "codex-sms") {
       label = lang === 'zh' ? "长期验证" : "Long-term Verify";
-    } else if (product.id === "gpt-normal-whiteip") {
-      label = lang === 'zh' ? "极品自用" : "Personal Use";
     } else if (product.id === "gemini-pro-direct") {
       label = lang === 'zh' ? "安全直充" : "Safe Top-up";
     }
@@ -185,7 +183,6 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
     "plus-ready-google": lang === 'zh' ? "适合对谷歌环境有极高要求的跨境玩家。" : "Good for advanced users relying on Google environment.",
     "grok-ready-7d": lang === 'zh' ? "抢鲜体验地表最强无审查模型。" : "Early access to the most unfiltered AI model.",
     "codex-sms": lang === 'zh' ? "注册 OpenAI 必备神卡，拒绝临时死码。" : "Essential for OpenAI registration, avoids temporary blocks.",
-    "gpt-normal-whiteip": lang === 'zh' ? "纯白家庭宽带注册，适合囤号防封。" : "Registered with white home IP, great for anti-ban backup.",
     "gemini-pro-direct": lang === 'zh' ? "零门槛开通谷歌亲儿子最强模型。" : "Zero threshold to unlock Google's strongest model.",
     "api-code-100": lang === 'zh' ? "适合个人测试、Claude Code 入门、轻量调用。" : "Good for testing, Claude Code starter use, and light calls.",
     "api-code-300": lang === 'zh' ? "适合高频 AI Coding、多客户端长期使用。" : "Good for frequent AI coding or long-term client use."
