@@ -152,42 +152,47 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
   }, {});
 
   const accountItems = [
-    {
-      label: lang === 'zh' ? "无需翻墙" : "No VPN needed",
-      product: productsById["chatgpt-plus-monthly-code"]
-    },
-    {
-      label: lang === 'zh' ? "即开即用" : "Ready account",
-      product: productsById["chatgpt-plus-ready-account"]
-    },
-    {
-      label: lang === 'zh' ? "谷歌福利" : "Google perks",
-      product: productsById["gemini-pro-year-account"]
-    },
-    {
-      label: lang === 'zh' ? "重度使用" : "Heavy use",
-      product: productsById["chatgpt-pro-20x-fast"]
-    },
-    {
-      label: lang === 'zh' ? "自用续费" : "Renewal",
-      product: productsById["chatgpt-plus-renewal"]
+    ...(productsByCategory.gpt || []),
+    ...(productsByCategory.gemini || [])
+  ].map(product => {
+    let label = product.categoryName;
+    if (product.id === "chatgpt-plus-monthly-code") {
+      label = lang === 'zh' ? "无需翻墙" : "No VPN needed";
+    } else if (product.id === "plus-ready-codex") {
+      label = lang === 'zh' ? "支持Codex" : "Codex Support";
+    } else if (product.id === "plus-ready-normal") {
+      label = lang === 'zh' ? "高性价比" : "Best Value";
+    } else if (product.id === "plus-ready-google") {
+      label = lang === 'zh' ? "高权重" : "High Trust";
+    } else if (product.id === "grok-ready-7d") {
+      label = lang === 'zh' ? "尝鲜专区" : "Trial";
+    } else if (product.id === "codex-sms") {
+      label = lang === 'zh' ? "长期验证" : "Long-term Verify";
+    } else if (product.id === "gpt-normal-whiteip") {
+      label = lang === 'zh' ? "极品自用" : "Personal Use";
+    } else if (product.id === "gemini-pro-direct") {
+      label = lang === 'zh' ? "安全直充" : "Safe Top-up";
     }
-  ].filter((item): item is { label: string; product: Product } => Boolean(item.product));
+    return { label, product };
+  });
 
   const apiProducts = productsByCategory.api || [];
 
   const productHints: Record<string, string> = {
     "chatgpt-plus-monthly-code": lang === 'zh' ? "适合第一次购买、预算敏感、想马上用。" : "Good for first-time buyers and budget-conscious users.",
-    "chatgpt-plus-ready-account": lang === 'zh' ? "适合不想注册、不想折腾账号流程。" : "Good when you want a ready-to-use account.",
-    "gemini-pro-year-account": lang === 'zh' ? "给自己的 Google 账号直充一年 Google AI Pro，自动发 CDKey。" : "Top up your own Google account with a 1-year Google AI Pro subscription.",
-    "chatgpt-pro-20x-fast": lang === 'zh' ? "适合 AI Coding、高频对话、项目冲刺。" : "Good for AI coding, heavy chat, and project sprints.",
-    "chatgpt-plus-renewal": lang === 'zh' ? "适合已有自用账号，只想继续续费。" : "Good if you already have your own account.",
+    "plus-ready-codex": lang === 'zh' ? "适合对稳定性要求高、且需要写代码的专业开发者。" : "Good for developers who need high stability and Codex execution.",
+    "plus-ready-normal": lang === 'zh' ? "性价比之选，适合日常图文对话、普通办公。" : "Value choice for daily chatting and general work.",
+    "plus-ready-google": lang === 'zh' ? "适合对谷歌环境有极高要求的跨境玩家。" : "Good for advanced users relying on Google environment.",
+    "grok-ready-7d": lang === 'zh' ? "抢鲜体验地表最强无审查模型。" : "Early access to the most unfiltered AI model.",
+    "codex-sms": lang === 'zh' ? "注册 OpenAI 必备神卡，拒绝临时死码。" : "Essential for OpenAI registration, avoids temporary blocks.",
+    "gpt-normal-whiteip": lang === 'zh' ? "纯白家庭宽带注册，适合囤号防封。" : "Registered with white home IP, great for anti-ban backup.",
+    "gemini-pro-direct": lang === 'zh' ? "零门槛开通谷歌亲儿子最强模型。" : "Zero threshold to unlock Google's strongest model.",
     "api-code-100": lang === 'zh' ? "适合个人测试、Claude Code 入门、轻量调用。" : "Good for testing, Claude Code starter use, and light calls.",
     "api-code-300": lang === 'zh' ? "适合高频 AI Coding、多客户端长期使用。" : "Good for frequent AI coding or long-term client use."
   };
 
   const getProductBadge = (product: Product) => {
-    if (product.id === "chatgpt-pro-20x-fast") return lang === 'zh' ? "主推" : "Pick";
+    if (product.id === "plus-ready-google" || product.id === "gemini-pro-direct") return lang === 'zh' ? "主推" : "Pick";
     if (product.id === "chatgpt-plus-monthly-code" || product.id === "api-code-100") return lang === 'zh' ? "推荐" : "Recommended";
     if (product.isHot) return lang === 'zh' ? "热门" : "Popular";
     return "";
