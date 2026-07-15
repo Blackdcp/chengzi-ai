@@ -15,20 +15,11 @@ export const metadata: Metadata = {
     siteName: "橙子 AI",
     locale: "zh_CN",
     type: "website",
-    images: [
-      {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
-        alt: title,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/opengraph-image.png"],
   },
   alternates: {
     canonical: "/",
