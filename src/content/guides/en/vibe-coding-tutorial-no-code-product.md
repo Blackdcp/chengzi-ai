@@ -36,15 +36,19 @@ If you want top-tier code completion in IDEs like Cursor, **ChatGPT Plus (with C
 - **Unlock ultimate coding power**: Native support for Codex, your strongest external brain for Vibe Coding.
 - 👉 [Get it now (¥100)](/en/products)
 
-### Option 2: Flexible API Credits for Agent Tools
-Many advanced Agent tools (like open-source coding agents) require direct API access. Our API relay supports all top-tier models with lightning-fast response times.
+### Option 2: Unrestricted Brainstorming with Musk's AI
+If you want a highly capable, uncensored AI assistant to help you design architecture and brainstorm, Grok is a fantastic choice.
 
-🔥 **AI API $300 Credit Pack**
-- **Perfect for intensive coding**: Ideal for multi-client setups and high-frequency code generation.
-- **Incredible value**: Pay ¥300 and get $300 worth of API credits.
-- 👉 [Get it now (¥300)](/en/products)
+🔥 **Grok Ready-Made Account — 7 Days**
+- **Experience Musk's latest AI**: Unrestricted conversations and raw power.
+- 👉 [Get it now (¥39.9)](/en/products)
 
-If you just want to run light tests, we also offer a **$100 Credit Pack (¥100)**.
+### Option 3: Massive Context Window
+Dealing with huge codebases or endless error logs? Gemini 1.5 Pro's massive context window is unbeatable.
+
+🔥 **Gemini AI Pro Member (Direct Google Top-up)**
+- **Exclusive massive context**: Drop your entire codebase in without missing a detail.
+- 👉 [Get it now (¥100)](/en/products)
 
 **Start Your Vibe Coding Journey Now:**
 Don't let a lack of coding knowledge stop you from building something great. Head over to our [**Products Page**](/en/products), gear up your AI arsenal, and write your first line of "natural language code" today!
