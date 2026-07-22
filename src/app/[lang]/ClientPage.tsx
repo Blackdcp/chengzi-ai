@@ -166,6 +166,8 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
       label = lang === 'zh' ? "高权重" : "High Trust";
     } else if (product.id === "grok-ready-7d") {
       label = lang === 'zh' ? "尝鲜专区" : "Trial";
+    } else if (product.id === "chatgpt-pro-20x") {
+      label = lang === 'zh' ? "算力怪兽" : "Ultimate";
     } else if (product.id === "codex-sms") {
       label = lang === 'zh' ? "长期验证" : "Long-term Verify";
     } else if (product.id === "gemini-pro-direct") {
@@ -177,6 +179,7 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
   const apiProducts = productsByCategory.api || [];
 
   const productHints: Record<string, string> = {
+    "chatgpt-pro-20x": lang === 'zh' ? "适合需要 20 倍运算能力、深度代码开发的高阶工作室。" : "Good for high-end studios needing 20x computation and deep coding.",
     "chatgpt-plus-monthly-code": lang === 'zh' ? "适合第一次购买、预算敏感、想马上用。" : "Good for first-time buyers and budget-conscious users.",
     "plus-ready-codex": lang === 'zh' ? "适合对稳定性要求高、且需要写代码的专业开发者。" : "Good for developers who need high stability and Codex execution.",
     "plus-ready-normal": lang === 'zh' ? "性价比之选，适合日常图文对话、普通办公。" : "Value choice for daily chatting and general work.",
@@ -189,7 +192,7 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
   };
 
   const getProductBadge = (product: Product) => {
-    if (product.id === "plus-ready-google" || product.id === "gemini-pro-direct") return lang === 'zh' ? "主推" : "Pick";
+    if (product.id === "chatgpt-pro-20x" || product.id === "plus-ready-google" || product.id === "gemini-pro-direct") return lang === 'zh' ? "主推" : "Pick";
     if (product.id === "chatgpt-plus-monthly-code" || product.id === "api-code-100") return lang === 'zh' ? "推荐" : "Recommended";
     if (product.isHot) return lang === 'zh' ? "热门" : "Popular";
     return "";

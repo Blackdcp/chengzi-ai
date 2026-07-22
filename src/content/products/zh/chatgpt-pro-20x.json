@@ -1,0 +1,46 @@
+{
+  "id": "chatgpt-pro-20x",
+  "categoryId": "gpt",
+  "categoryName": "GPT 会员",
+  "title": "ChatGPT Pro 20X 月卡｜官方卡充",
+  "subtitle": "200刀款（20倍极速版），自助充值卡密，兑换完自动订阅一个月 Pro 20X 套餐。",
+  "price": 1300,
+  "originalPriceText": "￥1500.0",
+  "order": 1,
+  "tags": [
+    "Pro 20X",
+    "官方正规",
+    "卡密直充",
+    "支持续费"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥1300.0",
+  "actionType": "buy",
+  "warnings": [
+    "请勿使用微软邮箱",
+    "如果您的账号已经是Plus/Team/Pro，或之前买过0元购/低价黑卡，请勿充值，否则掉线封号不予退款。",
+    "售后问题以OpenAI官方判定为准。"
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 20X 月卡｜官方卡充",
+    "subtitle": "200刀旗舰款（20倍极速版），自助充值卡密，兑换完自动订阅一个月 Pro 20X 套餐。",
+    "sections": [
+      {
+        "title": "操作提示",
+        "items": [
+          "提交订单后将由人工处理，正常处理时间约 1–30 分钟。",
+          "请勿使用微软邮箱。"
+        ]
+      },
+      {
+        "title": "禁止提交说明",
+        "items": [
+          "如果已经是 Plus / Team / Pro 资格账号，请勿提交。",
+          "非正常号、0元购、低价黑冲号禁止提交，会导致封禁且不退款。"
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "ChatGPT Pro 20X 月卡"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "chatgpt-pro-20x",
+  "categoryId": "gpt",
+  "categoryName": "GPT Member",
+  "title": "ChatGPT Pro 20X Monthly | Official Top-up",
+  "subtitle": " tier (20x speed version). Automated redeem code for a 1-month Pro 20X subscription.",
+  "price": 1300,
+  "originalPriceText": "¥1500.0",
+  "order": 1,
+  "tags": [
+    "Pro 20X",
+    "Official",
+    "Direct Top-up",
+    "Renewable"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥1300.0",
+  "actionType": "buy",
+  "warnings": [
+    "Do not use Microsoft emails.",
+    "Do not use accounts that already have Plus/Team/Pro or were involved in fraud/cheap upgrades. Bans are non-refundable.",
+    "Refunds are subject to OpenAI official policy."
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 20X Monthly | Official Top-up",
+    "subtitle": " tier flagship model. Automated redeem code for a 1-month Pro 20X subscription.",
+    "sections": [
+      {
+        "title": "Instructions",
+        "items": [
+          "Processing takes 1–30 minutes after order submission.",
+          "Do not use Microsoft emails."
+        ]
+      },
+      {
+        "title": "Prohibited Accounts",
+        "items": [
+          "Do not use if already subscribed to Plus / Team / Pro.",
+          "Using fraudulent or cheap-upgraded accounts will result in bans with no refund."
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "ChatGPT Pro 20X Monthly"
+}
