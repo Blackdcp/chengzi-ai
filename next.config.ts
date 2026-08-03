@@ -74,6 +74,31 @@ const nextConfig: NextConfig = {
         destination: '/:lang/api-service',
         permanent: true,
       },
+      {
+        source: '/:lang(zh|en)/blog/:path*',
+        destination: '/:lang',
+        permanent: true,
+      },
+      {
+        source: '/:lang(zh|en)/tools/:path*',
+        destination: '/:lang',
+        permanent: true,
+      },
+      {
+        source: '/:lang(zh|en)/products/marketing-followers',
+        destination: '/:lang/products',
+        permanent: true,
+      },
+      {
+        source: '/:lang(zh|en)/products/tools-ppt2pdf',
+        destination: '/:lang/products',
+        permanent: true,
+      },
+      {
+        source: '/:lang(zh|en)/products/plus-direct',
+        destination: '/:lang/products/chatgpt-plus-monthly-code',
+        permanent: true,
+      },
     ];
   },
   async rewrites() {
