@@ -1,0 +1,45 @@
+{
+  "id": "grok-super-90d",
+  "categoryId": "gpt",
+  "categoryName": "GPT Member",
+  "title": "Grok-Super $90 3-Month Card 【90 Days】",
+  "subtitle": "Genuine top-up, safe and secure without providing account password.",
+  "price": 520,
+  "originalPriceText": "",
+  "order": 6,
+  "tags": [
+    "90 Days",
+    "Grok-Super",
+    "Genuine Top-up"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ￥520.0",
+  "actionType": "buy",
+  "warnings": [
+    "Risk warning: Account bans caused by user environment (e.g., bulk registration, frequent IP changes) are not covered by warranty.",
+    "Renewals: Early renewal is supported, but it will overwrite the current duration rather than stack.",
+    "Top-up errors: If it fails, try again later; do not try multiple codes on the same account repeatedly."
+  ],
+  "detail": {
+    "title": "Grok-Super $90 3-Month Card 【90 Days】",
+    "subtitle": "Genuine top-up, safe and secure without providing account password.",
+    "sections": [
+      {
+        "title": "What's Included",
+        "items": [
+          "Grok-Super $90 3-Month Subscription Code"
+        ]
+      },
+      {
+        "title": "Important Notes",
+        "items": [
+          "Account bans caused by user environment are not covered by warranty",
+          "Renewals will overwrite the current duration rather than stack",
+          "If top-up fails, try again later. Do not try multiple codes repeatedly"
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "Grok-Super $90 3-Month Card 【90 Days】"
+}
