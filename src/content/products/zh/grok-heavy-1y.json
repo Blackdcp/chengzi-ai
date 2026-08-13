@@ -1,0 +1,47 @@
+{
+  "id": "grok-heavy-1y",
+  "categoryId": "gpt",
+  "categoryName": "Grok 会员",
+  "title": "Grok Heavy 一年直充（质保3天订阅）",
+  "subtitle": "Grok 送的羊毛！最高套餐 Grok Heavy，可以免费领 Cursor 的 Ultra（能调用 claude-Fable5）。",
+  "price": 1500,
+  "originalPriceText": "",
+  "order": 5,
+  "tags": [
+    "一年直充",
+    "Grok Heavy",
+    "送Cursor Ultra"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥1500",
+  "actionType": "buy",
+  "warnings": [
+    "账号需要是无会员订阅状态。",
+    "质保3天订阅。",
+    "免费领 Cursor Ultra 方法：下载 Grok Bot，登陆会跳转到 Cursor 选择授权，Cursor 和 Grok 保持同一个邮箱即可领取。"
+  ],
+  "detail": {
+    "title": "Grok Heavy 一年直充（质保3天订阅）",
+    "subtitle": "Grok 送的羊毛！最高套餐 Grok Heavy，可以免费领 Cursor 的 Ultra（能调用 claude-Fable5）。",
+    "sections": [
+      {
+        "title": "特别注意",
+        "items": [
+          "提供需要升级的账号，且账号需要是无会员订阅状态",
+          "质保3天订阅"
+        ]
+      },
+      {
+        "title": "福利：免费领 Cursor Ultra",
+        "items": [
+          "最高套餐 Grok Heavy 上线 Grok Bot，可以免费领 Cursor 的 Ultra（能调用 claude-Fable5）",
+          "下载 Grok Bot",
+          "登陆会跳转到 Cursor 选择授权",
+          "Cursor 和 Grok 保持同一个邮箱即可领"
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "Grok Heavy一年直充"
+}
