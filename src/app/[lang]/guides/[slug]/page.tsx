@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { getDictionary } from '../../../../lib/dictionaries'
 import { getGuideBySlug, getGuides, type GuideLanguage } from '../../../../lib/guides'
 import GuideCtaLink from './GuideCtaLink'
+import { AdsterraBanner, AdsterraNative } from '../../../../components/AdsterraAds'
 
 type GuidePageProps = {
   params: Promise<{ lang: GuideLanguage; slug: string }>
@@ -480,8 +481,11 @@ export default async function GuidePage({ params }: GuidePageProps) {
           </div>
           <h1>{guide.title}</h1>
           <p className="cz-guide-desc">{guide.description}</p>
+          <AdsterraBanner options={{ key: '70095f25e0b7acab8aedb96ddeefe539', format: 'iframe', height: 250, width: 300 }} />
           <div className="cz-guide-date">{guide.date}</div>
           <div className="cz-guide-content">{parseMarkdown(guide.content).map(renderBlock)}</div>
+          <AdsterraBanner options={{ key: '1065e3f82bc373e44aa82323f53c328e', format: 'iframe', height: 50, width: 320 }} />
+          <AdsterraNative />
           <div className="cz-guide-cta">
             <div className="cz-guide-cta-title">
               {lang === 'zh' ? '需要稳定的 AI API 额度？' : 'Need stable AI API credits?'}
