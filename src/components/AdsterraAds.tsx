@@ -47,7 +47,7 @@ export function AdsterraNative() {
       const script = document.createElement('script');
       script.async = true;
       script.setAttribute('data-cfasync', 'false');
-      script.src = 'https://pl30892930.effectivecpmnetwork.com/b50e3f7e2710e0dd1052c6b1d8c13c65/invoke.js';
+      script.src = 'https://arkgleamfox.com/b50e3f7e2710e0dd1052c6b1d8c13c65/invoke.js';
       containerRef.current.appendChild(script);
     }
   }, []);

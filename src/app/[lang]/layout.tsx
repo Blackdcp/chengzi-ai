@@ -53,8 +53,8 @@ export default async function RootLayout({
       <body className={lang === 'en' ? 'font-en tracking-tight' : 'font-zh tracking-tight'}>
         {children}
         <Analytics />
-        <script src="https://pl30892928.effectivecpmnetwork.com/69/2d/3d/692d3df29251b86ec1465d7cfa3d4141.js" async></script>
-        <script src="https://pl30892929.effectivecpmnetwork.com/04/7d/47/047d47e001c8ae3d22268c0312ce2cfd.js" async></script>
+        <script src="https://arkgleamfox.com/69/2d/3d/692d3df29251b86ec1465d7cfa3d4141.js" async></script>
+        <script src="https://arkgleamfox.com/04/7d/47/047d47e001c8ae3d22268c0312ce2cfd.js" async></script>
       </body>
     </html>
   );
