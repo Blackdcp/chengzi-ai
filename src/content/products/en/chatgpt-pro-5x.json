@@ -1,0 +1,45 @@
+{
+  "id": "chatgpt-pro-5x",
+  "categoryId": "gpt",
+  "categoryName": "GPT Members",
+  "title": "ChatGPT Pro 5X | 1 Month | iOS Official Recharge",
+  "subtitle": "Official iOS channel recharge, instant delivery. Enjoy 5x usage limits.",
+  "price": 860,
+  "originalPriceText": "",
+  "order": 1,
+  "tags": [
+    "Pro 5X",
+    "Official",
+    "Instant",
+    "Renewable"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥860.0",
+  "actionType": "buy",
+  "warnings": [
+    "Do not use Microsoft email addresses.",
+    "If your account is already Plus/Team/Pro, or bought cheap black cards before, do not recharge, or it will result in a ban without refund.",
+    "After-sales issues are subject to OpenAI official judgment."
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 5X | 1 Month | iOS Official Recharge",
+    "subtitle": "Official iOS recharge service, quickly activate ChatGPT Pro 5X.",
+    "sections": [
+      {
+        "title": "Operation Tips",
+        "items": [
+          "Instant delivery, very fast processing time.",
+          "Do not use Microsoft email."
+        ]
+      },
+      {
+        "title": "Prohibited Submission",
+        "items": [
+          "Abnormal accounts or black card recharges are strictly prohibited and will result in bans without refunds."
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "ChatGPT Pro 5X 1 Month"
+}

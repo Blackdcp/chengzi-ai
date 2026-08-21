@@ -1,0 +1,45 @@
+{
+  "id": "chatgpt-pro-5x",
+  "categoryId": "gpt",
+  "categoryName": "GPT 会员",
+  "title": "ChatGPT Pro 5X｜1个月｜iOS 官方正规充值 【秒冲】",
+  "subtitle": "官方正规 iOS 渠道充值，极速秒冲到账。享受 5 倍用量额度。",
+  "price": 860,
+  "originalPriceText": "",
+  "order": 1,
+  "tags": [
+    "Pro 5X",
+    "官方正规",
+    "iOS 秒冲",
+    "支持续费"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥860.0",
+  "actionType": "buy",
+  "warnings": [
+    "请勿使用微软邮箱",
+    "如果您的账号已经是Plus/Team/Pro，或之前买过0元购/低价黑卡，请勿充值，否则掉线封号不予退款。",
+    "售后问题以OpenAI官方判定为准。"
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 5X｜1个月｜iOS 官方正规充值 【秒冲】",
+    "subtitle": "提供官方正规 iOS 充值服务，快速开通 ChatGPT Pro 5X (极速版)，自动订阅一个月。",
+    "sections": [
+      {
+        "title": "操作提示",
+        "items": [
+          "秒冲服务，正常处理时间极快。",
+          "请勿使用微软邮箱。"
+        ]
+      },
+      {
+        "title": "禁止提交说明",
+        "items": [
+          "非正常号、0元购、低价黑冲号禁止提交，会导致封禁且不退款。"
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "ChatGPT Pro 5X 月卡"
+}
