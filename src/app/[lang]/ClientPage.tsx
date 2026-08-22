@@ -6,7 +6,6 @@ import type { GuideSummary } from "../../lib/guides";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { AdsterraBanner, AdsterraNative } from "../../components/AdsterraAds";
 
 type PaymentMethod = "alipay" | "wechat";
 type HomeDictionary = {
@@ -856,7 +855,6 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
       </header>
 
       <div className="cz-page" style={{ maxWidth: 1120, margin: "0 auto", padding: "max(20px, 4vw) 16px max(40px, 8vw)" }}>
-        <AdsterraBanner options={{ key: 'f7e4828ae0e2d4f2882b3b9a88394313', format: 'iframe', height: 90, width: 728 }} />
         <section className="cz-hero" style={{ padding: "max(42px, 8vw) 0 max(34px, 6vw)", textAlign: "center" }}>
           <div className="cz-hero-shell">
             <div className="cz-hero-main">
@@ -922,7 +920,6 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
           </div>
         </section>
 
-        <AdsterraBanner options={{ key: '28f51b0be5e3cfc51eff37f5b9a4d014', format: 'iframe', height: 60, width: 468 }} />
         <section id="api" className="cz-section">
           {renderSectionHeader(
             "02",
@@ -978,7 +975,6 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
         )}
 
         <section id="flow" className="cz-section" style={{ paddingTop: 40, borderTop: "1px solid #eaeaea" }}>
-          <AdsterraNative />
           {renderSectionHeader(
             guides.length > 0 ? "04" : "03",
             lang === 'zh' ? '购买流程：从选择到交付' : 'Purchase flow: from choice to delivery',
