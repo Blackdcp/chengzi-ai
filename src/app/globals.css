@@ -54,6 +54,23 @@ body { margin: 0; background-color: #fafafa; color: #111827; }
   .nav-link:hover {
     color: #0a0a0a;
   }
-  
-  
+}
+
+/* Ensure Header is always above and unblocked */
+.cz-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 99999 !important;
+}
+
+/* Move top-right floating ads (Adsterra Social Bar) down below the header */
+body > div[style*="fixed"][style*="right"][style*="top"],
+body > div[style*="fixed"][style*="top: 0"],
+body > div[style*="fixed"][style*="top: 1"],
+body > div[style*="fixed"][style*="top: 2"],
+body > iframe[style*="fixed"][style*="right"][style*="top"],
+div[class*="social-bar"],
+div[id*="social-bar"],
+div[class*="adsterra"] {
+  top: 72px !important;
 }
