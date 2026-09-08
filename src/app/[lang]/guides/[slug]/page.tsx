@@ -488,15 +488,15 @@ export default async function GuidePage({ params }: GuidePageProps) {
           <AdsterraNative />
           <div className="cz-guide-cta">
             <div className="cz-guide-cta-title">
-              {lang === 'zh' ? '需要稳定的 AI API 额度？' : 'Need stable AI API credits?'}
+              {lang === 'zh' ? '需要官方正规 AI 账号与高算力会员？' : 'Need Official AI Accounts & Premium Subscriptions?'}
             </div>
             <div className="cz-guide-cta-copy">
               {lang === 'zh'
-                ? '教程看完后，可以回到 API 中转服务页选择额度包，再按说明创建 API Key。'
-                : 'After reading the guide, choose an API credit pack and create your API key from the console.'}
+                ? '前往橙子 AI 官方商城，选购 ChatGPT Pro 5X / 20X、Gemini Pro 与 Grok-Super 官方正规账号与会员秒充。'
+                : 'Visit Orange AI store to get official ChatGPT Pro 5X / 20X, Gemini Pro, and Grok-Super accounts with instant delivery.'}
             </div>
-            <GuideCtaLink href={`/${lang}/api-service`} lang={lang} slug={guide.slug}>
-              {lang === 'zh' ? '查看 API 服务' : 'View API service'}
+            <GuideCtaLink href={`/${lang}#accounts`} lang={lang} slug={guide.slug}>
+              {lang === 'zh' ? '前往选购 AI 账号 →' : 'Explore AI Accounts →'}
             </GuideCtaLink>
           </div>
         </article>

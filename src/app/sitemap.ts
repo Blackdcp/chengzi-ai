@@ -31,13 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   ])
 
-  const serviceUrls = (['zh', 'en'] as const).map(lang => ({
-    url: `${baseUrl}/${lang}/api-service`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.9,
-  }))
-
   const guideIndexUrls = (['zh', 'en'] as const).map(lang => ({
     url: `${baseUrl}/${lang}/guides`,
     lastModified: new Date(),
@@ -67,7 +60,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 1,
     },
-    ...serviceUrls,
     ...productIndexUrls,
     ...productUrls,
     ...guideIndexUrls,

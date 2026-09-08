@@ -28,4 +28,4 @@ ChatGPT Plus and API credits are different products. Plus is for the ChatGPT app
 - API credits do not renew your ChatGPT Plus subscription.
 - Model availability and pricing can differ by endpoint.
 
-Start here: [API service](/en/api-service)
+Start here: [ChatGPT Pro 5X Official Recharge](/en/products/chatgpt-pro-5x) and [ChatGPT Pro 20X](/en/products/chatgpt-pro-20x)

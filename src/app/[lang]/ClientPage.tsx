@@ -40,7 +40,6 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
   const [step, setStep] = useState<"pay" | "consult" | "success">("pay");
   const payMethod: PaymentMethod = "alipay";
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showApiFloat, setShowApiFloat] = useState(true);
 
   const router = useRouter();
   const pathname = usePathname();
@@ -142,7 +141,6 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
 
   const pageNavItems = [
     { href: "#accounts", label: lang === 'zh' ? 'AI 账号' : 'AI Accounts' },
-    { href: "#api", label: lang === 'zh' ? 'API 额度' : 'API Credits' },
     { href: "#guides", label: lang === 'zh' ? '教程' : 'Guides' },
     { href: "#flow", label: lang === 'zh' ? '购买流程' : 'Order Flow' }
   ];
@@ -157,44 +155,27 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
     ...(productsByCategory.gemini || [])
   ].map(product => {
     let label = product.categoryName;
-    if (product.id === "chatgpt-plus-monthly-code") {
-      label = lang === 'zh' ? "无需翻墙" : "No VPN needed";
-    } else if (product.id === "plus-ready-codex") {
-      label = lang === 'zh' ? "支持Codex" : "Codex Support";
-    } else if (product.id === "plus-ready-normal") {
-      label = lang === 'zh' ? "高性价比" : "Best Value";
-    } else if (product.id === "plus-ready-google") {
-      label = lang === 'zh' ? "高权重" : "High Trust";
-    } else if (product.id === "grok-ready-7d") {
-      label = lang === 'zh' ? "尝鲜专区" : "Trial";
+    if (product.id === "chatgpt-pro-5x") {
+      label = lang === 'zh' ? "5倍算力" : "5X Compute";
     } else if (product.id === "chatgpt-pro-20x") {
       label = lang === 'zh' ? "算力怪兽" : "Ultimate";
-    } else if (product.id === "codex-sms") {
-      label = lang === 'zh' ? "长期验证" : "Long-term Verify";
     } else if (product.id === "gemini-pro-direct") {
       label = lang === 'zh' ? "安全直充" : "Safe Top-up";
+    } else if (product.id === "grok-super-90d") {
+      label = lang === 'zh' ? "深度推理" : "Deep Search";
     }
     return { label, product };
   });
 
-  const apiProducts = productsByCategory.api || [];
-
   const productHints: Record<string, string> = {
-    "chatgpt-pro-20x": lang === 'zh' ? "适合需要 20 倍运算能力、深度代码开发的高阶工作室。" : "Good for high-end studios needing 20x computation and deep coding.",
-    "chatgpt-plus-monthly-code": lang === 'zh' ? "适合第一次购买、预算敏感、想马上用。" : "Good for first-time buyers and budget-conscious users.",
-    "plus-ready-codex": lang === 'zh' ? "适合对稳定性要求高、且需要写代码的专业开发者。" : "Good for developers who need high stability and Codex execution.",
-    "plus-ready-normal": lang === 'zh' ? "性价比之选，适合日常图文对话、普通办公。" : "Value choice for daily chatting and general work.",
-    "plus-ready-google": lang === 'zh' ? "适合对谷歌环境有极高要求的跨境玩家。" : "Good for advanced users relying on Google environment.",
-    "grok-ready-7d": lang === 'zh' ? "抢鲜体验地表最强无审查模型。" : "Early access to the most unfiltered AI model.",
-    "codex-sms": lang === 'zh' ? "注册 OpenAI 必备神卡，拒绝临时死码。" : "Essential for OpenAI registration, avoids temporary blocks.",
-    "gemini-pro-direct": lang === 'zh' ? "零门槛开通谷歌亲儿子最强模型。" : "Zero threshold to unlock Google's strongest model.",
-    "api-code-100": lang === 'zh' ? "适合个人测试、Claude Code 入门、轻量调用。" : "Good for testing, Claude Code starter use, and light calls.",
-    "api-code-300": lang === 'zh' ? "适合高频 AI Coding、多客户端长期使用。" : "Good for frequent AI coding or long-term client use."
+    "chatgpt-pro-5x": lang === 'zh' ? "iOS 官方正规秒充，5 倍官方用量与满血 o1/GPT-6 深度推理。" : "Official iOS instant top-up, 5x quota with full o1 reasoning.",
+    "chatgpt-pro-20x": lang === 'zh' ? "适合需要 20 倍运算能力、深度代码开发的高阶工作室与团队。" : "Good for high-end studios needing 20x computation and deep coding.",
+    "gemini-pro-direct": lang === 'zh' ? "零门槛开通谷歌 200 万超大上下文 Ultra 旗舰模型。" : "Zero threshold to unlock Google's 2M context flagship model.",
+    "grok-super-90d": lang === 'zh' ? "直通马斯克 xAI 万卡集群与实时搜索最强大脑。" : "Direct access to Elon Musk's xAI supercomputing cluster."
   };
 
   const getProductBadge = (product: Product) => {
-    if (product.id === "chatgpt-pro-20x" || product.id === "plus-ready-google" || product.id === "gemini-pro-direct") return lang === 'zh' ? "主推" : "Pick";
-    if (product.id === "chatgpt-plus-monthly-code" || product.id === "api-code-100") return lang === 'zh' ? "推荐" : "Recommended";
+    if (product.id === "chatgpt-pro-5x" || product.id === "chatgpt-pro-20x" || product.id === "gemini-pro-direct") return lang === 'zh' ? "推荐" : "Recommended";
     if (product.isHot) return lang === 'zh' ? "热门" : "Popular";
     return "";
   };
@@ -861,38 +842,37 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
           <div className="cz-hero-shell">
             <div className="cz-hero-main">
               <h1 className="cz-hero-title" style={{ fontSize: "clamp(30px, 5vw, 52px)", fontWeight: 800, color: "#111827", letterSpacing: "-0.05em", lineHeight: 1.08, margin: "0 auto 18px", maxWidth: 860 }}>
-                {lang === 'zh' ? '主流 AI 账号和低价 API 资源，一站下单' : 'Choose the AI service you need, then order.'}
+                {lang === 'zh' ? '主流 AI 官方正规账号与会员直充，一站下单' : 'Official AI Accounts & Subscriptions, Fast Delivery'}
               </h1>
               <p className="cz-hero-copy" style={{ fontSize: "clamp(16px, 2vw, 19px)", color: "#666666", maxWidth: 720, margin: "0 auto 28px", lineHeight: 1.7 }}>
                 {lang === 'zh'
-                  ? '买 AI 账号、买 API 额度。适合不同应用场景。网页直接下单，按商品类型交付账号、卡密、充值说明或额度码。'
-                  : 'Buy AI accounts or API credits on one page. Works cleanly on mobile too.'}
+                  ? '专注 ChatGPT Pro 5X / 20X、Gemini Pro、Grok 等官方正规账号直充。网页直接下单，自动安全交付。'
+                  : 'Official accounts for ChatGPT Pro 5X/20X, Gemini Pro, and Grok. Fast and secure delivery.'}
               </p>
               <div className="cz-hero-actions">
-                <a href="#accounts" className="vercel-button-secondary" style={{ padding: "12px 24px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '买 AI 账号' : 'Buy AI accounts'}</a>
-                <a href="#api" className="vercel-button cz-hero-primary" style={{ padding: "12px 24px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '买 API 额度' : 'Buy API credits'}</a>
+                <a href="#accounts" className="vercel-button cz-hero-primary" style={{ padding: "12px 28px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '立即选购 AI 账号' : 'Explore AI Accounts'}</a>
               </div>
               <div className="cz-hero-note">
-                {lang === 'zh' ? 'GPT Plus / Pro 、Gemini 年卡、Claude / Codex API。' : 'Clear pricing · Mobile ordering · Email support'}
+                {lang === 'zh' ? 'ChatGPT Pro 5X / 20X · Gemini Pro 年卡 · Grok-Super 订阅' : 'ChatGPT Pro 5X / 20X · Gemini Pro · Grok-Super'}
               </div>
             </div>
 
             <div className="cz-hero-panel" aria-label={lang === 'zh' ? '服务类型概览' : 'Service overview'}>
               <div className="cz-hero-panel-label">
                 <span className="cz-accent-dot" />
-                {lang === 'zh' ? '按需求选，不绕路' : 'Pick by need'}
+                {lang === 'zh' ? '官方正规保障' : 'Official Verified'}
               </div>
               <div className="cz-hero-panel-list">
                 {[
                   {
                     num: '01',
-                    title: lang === 'zh' ? 'AI 账号' : 'AI accounts',
-                    desc: lang === 'zh' ? 'GPT Plus / Pro、Gemini 年卡' : 'GPT Plus / Pro, Gemini annual cards'
+                    title: lang === 'zh' ? 'Pro 旗舰算力' : 'Pro Flagship',
+                    desc: lang === 'zh' ? 'ChatGPT Pro 5X / 20X 满血推理' : 'ChatGPT Pro 5X / 20X full reasoning'
                   },
                   {
                     num: '02',
-                    title: lang === 'zh' ? 'API 额度' : 'API credits',
-                    desc: lang === 'zh' ? 'Claude / Codex / GPT / Gemini 多模型' : 'Claude / Codex / GPT / Gemini models'
+                    title: lang === 'zh' ? '多模态会员' : 'Multimodal Subs',
+                    desc: lang === 'zh' ? 'Gemini Pro 年卡、Grok-Super' : 'Gemini Pro Annual, Grok-Super'
                   }
                 ].map(item => (
                   <div className="cz-hero-panel-item" key={item.num}>
@@ -913,8 +893,8 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
             "01",
             lang === 'zh' ? 'AI 账号：按使用强度选' : 'AI accounts: choose by usage',
             lang === 'zh'
-              ? '不按“入门/高阶”绕路。直接看你要解决什么：体验、备用、长文档、重度使用、已有账号续费。'
-              : 'Trial, ready account, long-context work, heavy Pro usage, or renewal. Pick by how you use it.'
+              ? '不按“入门/高阶”绕路。直接看你要解决什么：深度编程、科研建模、长文档理解、已有账号安全直充。'
+              : 'Deep coding, research modeling, long-context work, or renewal. Pick by how you use it.'
           )}
 
           <div style={{ display: "grid", gap: 14 }}>
@@ -923,33 +903,15 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
         </section>
 
         <AdsterraBanner options={{ key: '28f51b0be5e3cfc51eff37f5b9a4d014', format: 'iframe', height: 60, width: 468 }} />
-        <section id="api" className="cz-section">
-          {renderSectionHeader(
-            "02",
-            lang === 'zh' ? 'API 额度：给 Claude Code / Codex / Cursor 用' : 'API credits: for Claude Code, Codex, and Cursor',
-            lang === 'zh'
-              ? '先买额度包，再到控制台创建 API Key。支持 Claude、GPT、Gemini、Codex 等模型；配置说明放在购买后。'
-              : 'Buy a credit pack, then create a new API key in the console. Claude, GPT, Gemini, Codex, and more are supported.'
-          )}
-          <div style={{ display: "grid", gap: 14 }}>
-            {apiProducts.map(product => renderProductRow(product, product.id === "api-code-300" ? (lang === 'zh' ? "$300 包" : "$300 pack") : (lang === 'zh' ? "$100 包" : "$100 pack")))}
-          </div>
-          <div style={{ marginTop: 14, padding: "14px 16px", background: "#ffffff", border: "1px solid #eaeaea", borderRadius: 12, color: "#333333", fontSize: 14, lineHeight: 1.6 }}>
-            {lang === 'zh' ? '购买后配置：进入控制台创建 API Key，再把服务地址填到客户端。下单前不用先研究配置。' : 'After purchase: create an API key in the console and enter the service URL in your client.'}
-            <Link href={`/${lang}/api-service`} className="cz-inline-link" style={{ color: "#111827", fontWeight: 800, textDecoration: "none", marginLeft: 8 }}>
-              {lang === 'zh' ? '需要时查看说明 →' : 'Setup guide →'}
-            </Link>
-          </div>
-        </section>
 
         {guides.length > 0 && (
           <section id="guides" className="cz-section" style={{ paddingTop: 40, borderTop: "1px solid #eaeaea" }}>
             {renderSectionHeader(
-              "03",
-              lang === 'zh' ? '实用教程：快速解决 API 和账号问题' : 'Practical guides: fix API and account issues',
+              "02",
+              lang === 'zh' ? '实用教程：快速上手主流 AI 与前沿模型' : 'Practical guides: mastering frontier AI',
               lang === 'zh'
-                ? '整理常见报错、客户端配置和购买前判断。遇到问题先看这里，少走弯路。'
-                : 'Setup notes, error fixes, and buying decisions for AI accounts and API credits.'
+                ? '整理最新大模型实测、提示词调优与高效开发工作流。少走弯路，快速进阶。'
+                : 'Setup notes, model benchmarks, and productivity workflows.'
             )}
             <div className="cz-featured-guides" style={{ display: "grid", gap: 14 }}>
               {guides.map(guide => (
@@ -980,7 +942,7 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
         <section id="flow" className="cz-section" style={{ paddingTop: 40, borderTop: "1px solid #eaeaea" }}>
           <AdsterraNative />
           {renderSectionHeader(
-            guides.length > 0 ? "04" : "03",
+            "03",
             lang === 'zh' ? '购买流程：从选择到交付' : 'Purchase flow: from choice to delivery',
             lang === 'zh'
               ? '流程尽量短：选商品、下单、按类型交付，有问题直接邮件联系。'
@@ -988,9 +950,9 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
           )}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
             {[
-              { step: "1", title: lang === 'zh' ? "选择商品" : "Choose", desc: lang === 'zh' ? "按账号和 API 两类选择。" : "Pick accounts or APIs." },
+              { step: "1", title: lang === 'zh' ? "选择商品" : "Choose", desc: lang === 'zh' ? "按需选择 ChatGPT Pro、Gemini 或 Grok。" : "Pick ChatGPT Pro, Gemini, or Grok." },
               { step: "2", title: lang === 'zh' ? "网页下单" : "Order", desc: lang === 'zh' ? "直接支付或提交需求。" : "Pay or submit details online." },
-              { step: "3", title: lang === 'zh' ? "等待交付" : "Delivery", desc: lang === 'zh' ? "按商品类型交付账号、卡密、额度或配置说明。" : "Receive account, key, credits, or setup instructions." },
+              { step: "3", title: lang === 'zh' ? "等待交付" : "Delivery", desc: lang === 'zh' ? "按商品类型交付账号、卡密或官方直充说明。" : "Receive account, code, or top-up instructions." },
               { step: "4", title: lang === 'zh' ? "邮件售后" : "Support", desc: lang === 'zh' ? "订单问题联系 chengziai2026@163.com。" : "Contact chengziai2026@163.com for order issues." }
             ].map(item => (
               <div key={item.step} className="vercel-card" style={{ padding: 22, background: "#ffffff" }}>
@@ -1017,31 +979,6 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
           </Link>
         </div>
       </footer>
-
-      {showApiFloat && !modal && !detailProduct && (
-        <div className="cz-api-float" aria-label={lang === 'zh' ? "API 额度入口" : "API credits entry"}>
-          <Link href={`/${lang}/api-service`} className="cz-api-float-link">
-            <span className="cz-api-float-dot" aria-hidden="true" />
-            <span>
-              <span className="cz-api-float-title">
-                {lang === 'zh' ? "API 额度" : "API credits"}
-              </span>
-              <span className="cz-api-float-desc">
-                {lang === 'zh' ? "Claude Code / Codex 可用" : "For Claude Code / Codex"}
-              </span>
-            </span>
-            <span className="cz-api-float-arrow" aria-hidden="true">→</span>
-          </Link>
-          <button
-            type="button"
-            className="cz-api-float-close"
-            onClick={() => setShowApiFloat(false)}
-            aria-label={lang === 'zh' ? "关闭 API 入口" : "Close API entry"}
-          >
-            ×
-          </button>
-        </div>
-      )}
 
       {detailProduct && (
         <div className="cz-detail-overlay" style={{ position: "fixed", inset: 0, zIndex: 90, display: "flex", alignItems: "center", justifyContent: "center", padding: 20 }}>

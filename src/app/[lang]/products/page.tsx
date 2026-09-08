@@ -20,48 +20,48 @@ const languages = ['zh', 'en'] as const
 
 const copy = {
   zh: {
-    title: 'AI 账号会员与 API 额度产品',
-    description: '集中展示橙子 AI 的账号、会员和 API 额度服务，方便按使用场景选择 ChatGPT、Gemini 与 API 额度产品。',
-    kicker: '可购买服务',
+    title: 'AI 官方账号与会员直充产品',
+    description: '集中展示橙子 AI 的官方账号与会员直充服务，包含 ChatGPT Pro 5X / 20X、Gemini Pro 与 Grok-Super。',
+    kicker: '官方现货',
     home: '返回首页',
-    apiService: '查看 API 服务',
+    guidesLink: '查看实用教程',
     viewDetails: '查看详情',
     from: '起',
     groups: {
       gpt: {
-        title: 'GPT 账号与会员',
-        description: 'ChatGPT Plus、Pro、成品号和续费相关服务。',
+        title: 'ChatGPT 旗舰与 Pro 算力',
+        description: 'ChatGPT Pro 5X、Pro 20X 官方秒充与账号直充服务。',
       },
       gemini: {
-        title: 'Gemini 账号',
-        description: 'Gemini Pro 年卡和相关账号服务。',
+        title: 'Gemini 与 Grok 会员',
+        description: 'Gemini Pro 年卡直充与 Grok-Super 季度订阅。',
       },
       other: {
         title: '其他服务',
-        description: '暂未归类的可购买服务。',
+        description: '官方正规保障，全自动极速交付。',
       },
     },
   },
   en: {
-    title: 'AI Accounts and API Credit Products',
-    description: 'ChengZi AI accounts, memberships, and API credit services organized by use case.',
-    kicker: 'Available services',
+    title: 'Official AI Accounts & Subscriptions',
+    description: 'Official account subscriptions from Orange AI, featuring ChatGPT Pro 5X / 20X, Gemini Pro, and Grok-Super.',
+    kicker: 'Verified Stock',
     home: 'Back home',
-    apiService: 'View API service',
+    guidesLink: 'Practical Guides',
     viewDetails: 'View details',
     from: 'from',
     groups: {
       gpt: {
-        title: 'GPT Accounts and Memberships',
-        description: 'ChatGPT Plus, Pro, ready accounts, and renewal services.',
+        title: 'ChatGPT Pro & Flagship Compute',
+        description: 'Official ChatGPT Pro 5X and 20X top-ups and subscriptions.',
       },
       gemini: {
-        title: 'Gemini Accounts',
-        description: 'Gemini Pro annual cards and related account services.',
+        title: 'Gemini & Grok Subscriptions',
+        description: 'Gemini Pro annual cards and Grok-Super 90-day passes.',
       },
       other: {
         title: 'Other Services',
-        description: 'Available services that are not categorized yet.',
+        description: 'Safe, verified, and automated instant delivery.',
       },
     },
   },
@@ -70,7 +70,7 @@ const copy = {
   description: string
   kicker: string
   home: string
-  apiService: string
+  guidesLink: string
   viewDetails: string
   from: string
   groups: Record<string, { title: string; description: string }>
@@ -387,7 +387,7 @@ export default async function ProductsIndexPage({ params }: ProductsIndexPagePro
       <div className="cz-products-shell">
         <nav className="cz-products-nav" aria-label={pageCopy.title}>
           <Link href={`/${lang}`}>{pageCopy.home}</Link>
-          <Link href={`/${lang}/api-service`}>{pageCopy.apiService}</Link>
+          <Link href={`/${lang}/guides`}>{pageCopy.guidesLink}</Link>
         </nav>
 
         <header className="cz-products-hero">

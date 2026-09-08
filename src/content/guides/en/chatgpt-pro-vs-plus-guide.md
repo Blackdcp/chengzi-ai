@@ -31,5 +31,5 @@ Start from your workload, not from the product name.
 Relevant pages:
 
 - [ChatGPT Plus monthly pass](/en/products/chatgpt-plus-monthly-code)
-- [ChatGPT Pro 20X monthly pass](/en/products/chatgpt-pro-20x-fast)
-- [API service](/en/api-service)
+- [ChatGPT Pro 5X Official Recharge](/en/products/chatgpt-pro-5x)
+- [ChatGPT Pro 20X Flagship](/en/products/chatgpt-pro-20x)

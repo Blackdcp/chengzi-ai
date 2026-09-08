@@ -31,5 +31,5 @@ date: "2026-07-03"
 相关入口：
 
 - [ChatGPT Plus 国内直连月卡](/zh/products/chatgpt-plus-monthly-code)
-- [ChatGPT Pro 20X 秒冲月卡](/zh/products/chatgpt-pro-20x-fast)
-- [API 中转服务](/zh/api-service)
+- [ChatGPT Pro 5X 官方直充](/zh/products/chatgpt-pro-5x)
+- [ChatGPT Pro 20X 旗舰版](/zh/products/chatgpt-pro-20x)

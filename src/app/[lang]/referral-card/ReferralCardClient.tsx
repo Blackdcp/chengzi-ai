@@ -101,7 +101,7 @@ export default function ReferralCardClient({ lang }: ReferralCardClientProps) {
 
   const landingUrl = useMemo(() => {
     if (!referralCode) return "";
-    return `${SITE_URL}/${lang}/api-service?aff=${encodeURIComponent(referralCode)}`;
+    return `${SITE_URL}/${lang}?aff=${encodeURIComponent(referralCode)}`;
   }, [lang, referralCode]);
 
   const registerUrl = useMemo(() => {
@@ -268,8 +268,8 @@ export default function ReferralCardClient({ lang }: ReferralCardClientProps) {
           <Link href={`/${lang}`} style={{ color: "#111827", textDecoration: "none", fontWeight: 800, fontSize: 18 }}>
             {isEn ? "ChengZi AI" : "橙子 AI"}
           </Link>
-          <Link href={`/${lang}/api-service`} style={{ color: "#666", textDecoration: "none", fontSize: 14, fontWeight: 600 }}>
-            {isEn ? "Back to API Service" : "返回 API 服务页"}
+          <Link href={`/${lang}`} style={{ color: "#666", textDecoration: "none", fontSize: 14, fontWeight: 600 }}>
+            {isEn ? "Back to Home" : "返回主站"}
           </Link>
         </header>
 

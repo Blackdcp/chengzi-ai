@@ -19,7 +19,7 @@ date: "2026-07-03"
 - 你是 AI Coding 或深度研究的重度用户。
 - 你需要给 Cursor、Cline、Claude Code、ChatBox 等客户端配置 API。
 
-如果是客户端 API 调用，请看 [API 中转服务](/zh/api-service)，不要把 Plus 月卡和 API 额度混在一起。
+如果是高并发深度推理与长链代码开发，请看 [ChatGPT Pro 5X 官方直充](/zh/products/chatgpt-pro-5x)。
 
 ## 下单前检查
 

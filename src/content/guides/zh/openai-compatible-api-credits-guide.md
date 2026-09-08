@@ -28,4 +28,4 @@ ChatGPT Plus 和 API 额度不是同一种东西。Plus 面向 ChatGPT 应用体
 - API 额度不会给 ChatGPT Plus 续费。
 - 不同模型和线路的可用性、扣费倍率可能不同。
 
-入口：[API 中转服务](/zh/api-service)
+入口：[ChatGPT Pro 5X 官方直充](/zh/products/chatgpt-pro-5x) 与 [ChatGPT Pro 20X](/zh/products/chatgpt-pro-20x)

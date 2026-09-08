@@ -19,7 +19,7 @@ Some users want ChatGPT Plus access without handling extra network or payment st
 - You need very heavy usage for AI coding or deep research.
 - You need API access for Cursor, Cline, Claude Code, or ChatBox.
 
-For API clients, use the [API service page](/en/api-service) instead of a ChatGPT Plus product.
+For high-concurrency coding and heavy research, check the [ChatGPT Pro 5X Official Recharge](/en/products/chatgpt-pro-5x).
 
 ## Checklist before buying
 

@@ -4,9 +4,7 @@
     "nav": {
       "gpt": "GPT Subs",
       "gemini": "Gemini Subs",
-      "api": "API Gateway",
-      "flow": "Purchase Flow",
-      "api-service": "API Gateway"
+      "flow": "Purchase Flow"
     }
   },
   "common": {
@@ -42,52 +40,16 @@
     "back": "Back to Home"
   },
   "meta": {
-    "title": "Orange AI — Premium AI Accounts | Low-Cost API Resources",
-    "description": "Buy GPT Plus, Gemini subscriptions, and OpenAI-compatible API credits from Orange AI. Fast delivery for developers and small teams.",
+    "title": "Orange AI — Official AI Accounts & Premium Subscriptions",
+    "description": "Buy official ChatGPT Pro 5X / 20X, Gemini Pro, and Grok subscriptions from Orange AI. Instant, verified delivery for developers and teams.",
     "keywords": [
-      "AI accounts",
-      "API Gateway",
-      "Cheap API credits",
-      "OpenAI compatible API",
-      "Buy GPT Plus",
-      "Gemini subscription"
+      "Buy AI accounts",
+      "ChatGPT Pro 5X recharge",
+      "ChatGPT Pro 20X",
+      "Gemini Pro subscription",
+      "Grok Super subscription",
+      "Buy GPT Plus"
     ]
-  },
-  "apiService": {
-    "nav": {
-      "home": "Home",
-      "models": "Models",
-      "pricing": "Pricing",
-      "tutorial": "Quick Start",
-      "faq": "FAQ",
-      "console": "Console"
-    },
-    "hero": {
-      "title": "Low-cost AI API Gateway",
-      "subtitle": "Multi-Model Access · Low Pricing · OpenAI Format Compatible",
-      "description": "API gateway for mainstream AI models, ideal for independent developers, AI tool users, and small teams for low-cost testing. Works with Cursor, Cline, ChatBox, NextChat, and any client supporting custom Base URLs.",
-      "ctaConsole": "Go to Console",
-      "ctaBuy": "Buy Redeem Code Now",
-      "ctaTutorial": "View 3-Minute Quick Start"
-    },
-    "models": {
-      "title": "Supported Models",
-      "subtitle": "Supporting APIs from major providers. Actual availability, price multipliers, and status are shown in the console.",
-      "model": "Model Name",
-      "provider": "Provider",
-      "status": "Status",
-      "available": "Available",
-      "openai": "OpenAI",
-      "claude": "Claude",
-      "gemini": "Gemini",
-      "disclaimer": "The model list may adjust dynamically based on upstream status and costs."
-    },
-    "footer": {
-      "contact": "Contact Support",
-      "copyright": "Orange AI. All rights reserved.",
-      "backToHome": "Back to Main Site",
-      "disclaimer": "Service availability is subject to applicable laws, regulations, platform policies, and upstream rules. Users must verify if using related services is permitted in their region. This site is a third-party API gateway and quota service platform, not an official service or authorized agent of OpenAI, Anthropic, or Google. Trademarks and model names belong to their respective rights holders."
-    }
   }
 }
 

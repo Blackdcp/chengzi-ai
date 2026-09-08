@@ -118,12 +118,12 @@ const categoriesByLanguage: Record<GuideLanguage, GuideCategory[]> = {
 
 const pageCopy = {
   zh: {
-    title: 'AI 工具与 API 实用教程',
+    title: 'AI 工具与前沿模型深度指南',
     description:
-      '整理 OpenAI 兼容 API、Base URL、AI Coding 工具和常见报错的教程。适合配置前查看，也适合遇到报错时快速排查。',
+      '整理前沿大模型评测、深度提示词调优、AI 编程工具与企业级落地指南。',
     kicker: '持续更新',
     home: '返回首页',
-    apiService: '查看 API 服务',
+    productsLink: '选购 AI 账号',
     allGuides: '全部教程',
     totalLabel: '篇教程',
     otherTitle: '其他教程',
@@ -131,12 +131,12 @@ const pageCopy = {
     updated: '更新',
   },
   en: {
-    title: 'Practical AI Tool and API Guides',
+    title: 'Practical AI Guides & Model Benchmarks',
     description:
-      'Guides for OpenAI-compatible APIs, Base URLs, AI coding tools, and common API errors. Use them before setup or when troubleshooting.',
+      'In-depth guides for frontier AI models, prompt engineering, agentic coding workflows, and enterprise best practices.',
     kicker: 'Updated regularly',
     home: 'Back home',
-    apiService: 'View API service',
+    productsLink: 'Explore AI Accounts',
     allGuides: 'All guides',
     totalLabel: 'guides',
     otherTitle: 'Other guides',
@@ -148,7 +148,7 @@ const pageCopy = {
   description: string
   kicker: string
   home: string
-  apiService: string
+  productsLink: string
   allGuides: string
   totalLabel: string
   otherTitle: string
@@ -452,7 +452,7 @@ export default async function GuidesIndexPage({ params }: GuidesIndexPageProps) 
       <div className="cz-guides-shell">
         <nav className="cz-guides-nav" aria-label={copy.allGuides}>
           <Link href={`/${lang}`}>{copy.home}</Link>
-          <Link href={`/${lang}/api-service`}>{copy.apiService}</Link>
+          <Link href={`/${lang}/products`}>{copy.productsLink}</Link>
         </nav>
 
         <header className="cz-guides-hero">
