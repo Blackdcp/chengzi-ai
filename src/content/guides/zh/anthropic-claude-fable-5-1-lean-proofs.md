@@ -62,6 +62,6 @@ Claude Fable 5.1 通过在数十万篇形式化数学论文与 Lean / Coq 仓库
 想要在日常开发中随时调用全球最顶尖的推理旗舰？橙子 AI 为您提供全网最具性价比的正规现货保障：
 
 - 🚀 **[ChatGPT Pro 5X 官方秒充 (¥860)](/zh/products/chatgpt-pro-5x)**：iOS 官方正规渠道秒级充值，畅享 5 倍官方用量与满血深度推理，极速到账。
-- 👑 **[ChatGPT Pro 20X 旗舰版 (¥1300)](/zh/products/chatgpt-pro-20x)**：200 刀顶配无限制算力，适合高并发重度编程极客与团队。
+- 👑 **[ChatGPT Pro 20X 旗舰版 (¥1400)](/zh/products/chatgpt-pro-20x)**：200 刀顶配无限制算力，适合高并发重度编程极客与团队。
 - ⚡ **[Gemini Pro 会员直充](/zh/products/gemini-pro-direct)**：含正规绑卡服务，解锁 Google 最强 200 万超大上下文。
 - 🔥 **[Grok-Super 3 个月订阅](/zh/products/grok-super-90d)**：马斯克 xAI 强劲万卡集群支撑，畅享前沿模型与实时联网能力。

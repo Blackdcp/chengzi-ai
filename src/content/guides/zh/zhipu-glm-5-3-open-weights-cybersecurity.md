@@ -55,6 +55,6 @@ GLM-5.3 引入了分层专家路由（Hierarchical Expert Routing）：
 如果您在企业级研发中不仅需要开源私有化模型，还需要随时调用全球公认最强的商业闭源旗舰算力，橙子 AI 为您提供合规可靠的官方直充服务：
 
 - 🚀 **[ChatGPT Pro 5X 官方秒充 (¥860)](/zh/products/chatgpt-pro-5x)**：iOS 官方正规渠道秒充，享 5 倍官方用量与 GPT-6 / o1 满血深度推理。
-- 👑 **[ChatGPT Pro 20X 旗舰版 (¥1300)](/zh/products/chatgpt-pro-20x)**：200 刀顶配无限制算力天花板，重度极客与工程团队主力工作站。
+- 👑 **[ChatGPT Pro 20X 旗舰版 (¥1400)](/zh/products/chatgpt-pro-20x)**：200 刀顶配无限制算力天花板，重度极客与工程团队主力工作站。
 - ⚡ **[Gemini Pro 会员直充](/zh/products/gemini-pro-direct)**：含正规绑卡服务，解锁 Google 最强 200 万超大上下文。
 - 🔥 **[Grok-Super 3 个月订阅](/zh/products/grok-super-90d)**：马斯克 xAI 强劲万卡集群支撑，直通实时联网大模型。

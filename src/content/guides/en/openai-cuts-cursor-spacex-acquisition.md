@@ -36,6 +36,6 @@ This guide analyzes the strategic fallout and provides developers with immediate
 ## Official Accounts & Developer Subscriptions
 
 - 🚀 **[ChatGPT Pro 5X Official Recharge (¥860)](/en/products/chatgpt-pro-5x)**: 5x official quota with full o1/GPT-6 reasoning power and instant delivery.
-- 👑 **[ChatGPT Pro 20X Flagship Code (¥1300)](/en/products/chatgpt-pro-20x)**: Uncapped compute power for enterprise development.
+- 👑 **[ChatGPT Pro 20X Flagship Code (¥1400)](/en/products/chatgpt-pro-20x)**: Uncapped compute power for enterprise development.
 - 🔥 **[Grok-Super 3 Months Pass (¥520)](/en/products/grok-super-90d)**: Direct xAI cluster access, natively integrated with Cursor.
 - ⚡ **[Gemini Pro Official Recharge](/en/products/gemini-pro-direct)**: Unlock Google's 2,000,000 token context window.

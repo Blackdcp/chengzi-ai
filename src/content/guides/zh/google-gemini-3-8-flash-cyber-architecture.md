@@ -51,5 +51,5 @@ lastModified: "2026-09-02T08:00:00.000Z"
 
 - ⚡ **[Gemini Pro 会员直充服务](/zh/products/gemini-pro-direct)**：含正规国际信用卡绑卡，一键解锁 Google 最强 200 万超大上下文与 Ultra 旗舰算力。
 - 🚀 **[ChatGPT Pro 5X 官方秒充 (¥860)](/zh/products/chatgpt-pro-5x)**：iOS 官方渠道秒充，畅享 5 倍官方用量与 GPT-6 / o1 满血深度推理。
-- 👑 **[ChatGPT Pro 20X 旗舰版 (¥1300)](/zh/products/chatgpt-pro-20x)**：200 刀顶配无限制算力，团队科研首选。
+- 👑 **[ChatGPT Pro 20X 旗舰版 (¥1400)](/zh/products/chatgpt-pro-20x)**：200 刀顶配无限制算力，团队科研首选。
 - 🔥 **[Grok-Super 3 个月订阅卡密](/zh/products/grok-super-90d)**：马斯克 xAI 超级算力集群直接订阅。

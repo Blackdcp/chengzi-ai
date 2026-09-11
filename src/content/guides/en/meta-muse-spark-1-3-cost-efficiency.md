@@ -36,6 +36,6 @@ Delivering near-GPT-4o coding performance at one-fifth the cost, Muse Spark 1.3 
 ## Premium Developer Accounts & Subscriptions
 
 - 🚀 **[ChatGPT Pro 5X Official Recharge (¥860)](/en/products/chatgpt-pro-5x)**: 5x official quota with full o1/GPT-6 reasoning power and instant delivery.
-- 👑 **[ChatGPT Pro 20X Flagship Pass (¥1300)](/en/products/chatgpt-pro-20x)**: Uncapped compute power for enterprise development.
+- 👑 **[ChatGPT Pro 20X Flagship Pass (¥1400)](/en/products/chatgpt-pro-20x)**: Uncapped compute power for enterprise development.
 - ⚡ **[Gemini Pro Official Recharge](/en/products/gemini-pro-direct)**: Includes official card binding for Google's 2M token flagship model.
 - 🔥 **[Grok-Super 3 Months Pass](/en/products/grok-super-90d)**: xAI supercomputing power with real-time web access.

@@ -61,6 +61,6 @@ The deployment of Jalapeño signals a broader transition from "software-defined 
 To maximize your coding and research productivity on OpenAI's latest infrastructure, ChengZi AI provides instant, official subscription fulfillment:
 
 - 🚀 **[ChatGPT Pro 5X Official Recharge (¥860)](/en/products/chatgpt-pro-5x)**: 5x official quota with full o1/GPT-5.6 reasoning power and instant delivery.
-- 👑 **[ChatGPT Pro 20X Flagship Code (¥1300)](/en/products/chatgpt-pro-20x)**: Uncapped compute power for enterprise development and research squads.
+- 👑 **[ChatGPT Pro 20X Flagship Code (¥1400)](/en/products/chatgpt-pro-20x)**: Uncapped compute power for enterprise development and research squads.
 - ⚡ **[Gemini Pro Official Recharge](/en/products/gemini-pro-direct)**: Unlock Google's 2,000,000 token context window with official card binding.
 - 🔥 **[Grok-Super 3 Months Pass](/en/products/grok-super-90d)**: Direct access to Elon Musk's xAI supercomputing cluster and real-time search.

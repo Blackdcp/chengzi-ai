@@ -59,6 +59,6 @@ OpenAI o1 系列模型的面世，彻底颠覆了大语言模型在“困难推�
 由于 o1 模型在基础 Plus 账户下受到严格的调用频率限制，重度开发者强烈建议配备高算力权限账号：
 
 - 🚀 **[ChatGPT Pro 5X 官方秒充 (¥860)](/zh/products/chatgpt-pro-5x)**：5 倍官方算力扩容，畅享高频 o1 深度推理，极速秒充。
-- 👑 **[ChatGPT Pro 20X 官方卡充 (¥1300)](/zh/products/chatgpt-pro-20x)**：200 刀旗舰级无限制满血推理，科研与全栈极客顶级装备。
+- 👑 **[ChatGPT Pro 20X 官方卡充 (¥1400)](/zh/products/chatgpt-pro-20x)**：200 刀旗舰级无限制满血推理，科研与全栈极客顶级装备。
 - ⚡ **[Gemini Pro 会员直充](/zh/products/gemini-pro-direct)**：200 万 Token 上下文与多模态原生协同。
 - 🔥 **[Grok-Super 3 个月卡密](/zh/products/grok-super-90d)**：马斯克 xAI 强劲算力支撑，实时接入全球热点推演。

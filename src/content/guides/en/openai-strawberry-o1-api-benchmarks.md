@@ -51,6 +51,6 @@ This guide analyzes o1's performance across competitive coding and complex archi
 ## Premium Account & Quota Recommendations
 
 - 🚀 **[ChatGPT Pro 5X Official Recharge (¥860)](/en/products/chatgpt-pro-5x)**: 5x official quota with full o1 reasoning capabilities and instant delivery.
-- 👑 **[ChatGPT Pro 20X Flagship Code (¥1300)](/en/products/chatgpt-pro-20x)**: The $200 tier for uninterrupted, high-concurrency research.
+- 👑 **[ChatGPT Pro 20X Flagship Code (¥1400)](/en/products/chatgpt-pro-20x)**: The $200 tier for uninterrupted, high-concurrency research.
 - ⚡ **[Gemini Pro Official Recharge](/en/products/gemini-pro-direct)**: 2M token context for massive multi-file audits.
 - 🔥 **[Grok-Super 3 Months Pass](/en/products/grok-super-90d)**: xAI supercomputing cluster with real-time web search.

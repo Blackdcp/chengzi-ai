@@ -45,6 +45,6 @@ Two standout open-source leaders in this domain are **Cline (formerly Claude Dev
 ## Verified Developer Accounts & Subscriptions
 
 - 🚀 **[ChatGPT Pro 5X Official Recharge (¥860)](/en/products/chatgpt-pro-5x)**: 5x official quota with full o1 reasoning power and instant delivery.
-- 👑 **[ChatGPT Pro 20X Flagship Code (¥1300)](/en/products/chatgpt-pro-20x)**: Uncapped compute power for enterprise development.
+- 👑 **[ChatGPT Pro 20X Flagship Code (¥1400)](/en/products/chatgpt-pro-20x)**: Uncapped compute power for enterprise development.
 - ⚡ **[Gemini Pro Official Recharge](/en/products/gemini-pro-direct)**: Includes official card binding for Google's 2M token flagship model.
 - 🔥 **[Grok-Super 3 Months Pass](/en/products/grok-super-90d)**: xAI supercomputing power with real-time web access.

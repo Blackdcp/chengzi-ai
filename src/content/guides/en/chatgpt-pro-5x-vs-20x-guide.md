@@ -32,7 +32,7 @@ To address these demands, OpenAI offers high-tier compute tiers: **ChatGPT Pro 5
 | **Advanced Voice Mode** | Limited daily minutes | **Extended daily quota** | **Unlimited priority pipe** |
 | **Sora Video Generation** | Basic Queue | **High Priority Queue** | **Dedicated Fast Compute** |
 | **Official Price Reference** | $20 / month | ~$100 / month equivalent | $200 / month |
-| **ChengZi AI Price** | ~¥59 - ¥99 | **¥860 (Instant Delivery)** | **¥1300 (Official Code)** |
+| **ChengZi AI Price** | ~¥59 - ¥99 | **¥860 (Instant Delivery)** | **¥1400 (Official Code)** |
 
 ---
 
@@ -54,6 +54,6 @@ To address these demands, OpenAI offers high-tier compute tiers: **ChatGPT Pro 5
 Ensure your account safety by purchasing through genuine, verified channels:
 
 - 🌟 **[ChatGPT Pro 5X Official Recharge (¥860)](/en/products/chatgpt-pro-5x)**: Instant iOS official channel recharge with 5x compute capacity.
-- 👑 **[ChatGPT Pro 20X Flagship Code (¥1300)](/en/products/chatgpt-pro-20x)**: Uncapped $200 tier for ultimate compute power.
+- 👑 **[ChatGPT Pro 20X Flagship Code (¥1400)](/en/products/chatgpt-pro-20x)**: Uncapped $200 tier for ultimate compute power.
 - 💎 **[Gemini Pro Official Annual Plan](/en/products/gemini-pro-direct)**: Official card-binding service for Google's 2M context flagship.
 - 🔥 **[Grok-Super 3 Months Pass](/en/products/grok-super-90d)**: Direct subscription to xAI supercomputing cluster.

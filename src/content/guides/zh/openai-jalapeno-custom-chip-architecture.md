@@ -63,6 +63,6 @@ Jalapeño 的成功证明，当大模型算法收敛到特定范式（如自注�
 想要稳定畅享 OpenAI 最前沿的 GPT-5.6、o1 满血算力与无限制 Pro 特权？橙子 AI 为您提供合规可靠的官方现货直充服务：
 
 - 🚀 **[ChatGPT Pro 5X 官方秒充 (¥860)](/zh/products/chatgpt-pro-5x)**：iOS 官方正规渠道秒级充值，畅享 5 倍官方用量与顶级 Jalapeño 算力集群加速。
-- 👑 **[ChatGPT Pro 20X 旗舰版 (¥1300)](/zh/products/chatgpt-pro-20x)**：200 刀顶配无限制算力天花板，重度开发与科研团队首选。
+- 👑 **[ChatGPT Pro 20X 旗舰版 (¥1400)](/zh/products/chatgpt-pro-20x)**：200 刀顶配无限制算力天花板，重度开发与科研团队首选。
 - ⚡ **[Gemini Pro 会员直充](/zh/products/gemini-pro-direct)**：含正规国际信用卡绑卡，解锁 Google 最强 200 万超大上下文。
 - 🔥 **[Grok-Super 3 个月订阅](/zh/products/grok-super-90d)**：马斯克 xAI 强劲万卡集群支撑，直通实时联网与前沿大模型。

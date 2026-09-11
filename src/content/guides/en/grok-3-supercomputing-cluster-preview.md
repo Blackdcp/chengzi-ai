@@ -48,5 +48,5 @@ Grok 3 excels at low-level C, Rust, kernel debugging, and concurrency analysis, 
 
 - 🔥 **[Grok-Super 90-Day Pass (¥520)](/en/products/grok-super-90d)**: Genuine direct subscription to xAI's flagship supercomputing cluster.
 - 🚀 **[ChatGPT Pro 5X Official Recharge (¥860)](/en/products/chatgpt-pro-5x)**: 5x official quota with full o1 reasoning capabilities and instant delivery.
-- 👑 **[ChatGPT Pro 20X Flagship Code (¥1300)](/en/products/chatgpt-pro-20x)**: The $200 tier for uninterrupted research.
+- 👑 **[ChatGPT Pro 20X Flagship Code (¥1400)](/en/products/chatgpt-pro-20x)**: The $200 tier for uninterrupted research.
 - ⚡ **[Gemini AI Pro Official Subscription](/en/products/gemini-pro-direct)**: Unlock Google's 2,000,000 token context model.

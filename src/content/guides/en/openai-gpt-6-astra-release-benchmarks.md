@@ -48,6 +48,6 @@ Traditional reasoning models rely on linear chain-of-thought progression. GPT-6 
 ## Recommended Official AI Accounts & Subscriptions
 
 - 🚀 **[ChatGPT Pro 5X Official Recharge (¥860)](/en/products/chatgpt-pro-5x)**: 5x official quota with full GPT-6 Astra / o1 reasoning capabilities and instant delivery.
-- 👑 **[ChatGPT Pro 20X Flagship Code (¥1300)](/en/products/chatgpt-pro-20x)**: The $200 uncapped tier for high-concurrency enterprise development.
+- 👑 **[ChatGPT Pro 20X Flagship Code (¥1400)](/en/products/chatgpt-pro-20x)**: The $200 uncapped tier for high-concurrency enterprise development.
 - ⚡ **[Gemini Pro Official Recharge](/en/products/gemini-pro-direct)**: Includes official card binding for Google's 2M token flagship model.
 - 🔥 **[Grok-Super 3 Months Pass](/en/products/grok-super-90d)**: Direct access to Elon Musk's xAI supercomputing cluster and real-time search.

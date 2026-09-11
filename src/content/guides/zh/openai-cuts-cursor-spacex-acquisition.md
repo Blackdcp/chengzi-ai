@@ -57,6 +57,6 @@ lastModified: "2026-08-29T08:00:00.000Z"
 无论编辑器生态如何风云变幻，掌握属于自己的顶级模型直充通道才是生产力的终极护城河：
 
 - 🚀 **[ChatGPT Pro 5X 官方秒充 (¥860)](/zh/products/chatgpt-pro-5x)**：iOS 官方正规渠道秒级充值，畅享 5 倍官方用量与顶级满血算力。
-- 👑 **[ChatGPT Pro 20X 旗舰版 (¥1300)](/zh/products/chatgpt-pro-20x)**：200 刀顶配无限制算力天花板，重度开发与科研团队首选。
+- 👑 **[ChatGPT Pro 20X 旗舰版 (¥1400)](/zh/products/chatgpt-pro-20x)**：200 刀顶配无限制算力天花板，重度开发与科研团队首选。
 - 🔥 **[Grok-Super 3 个月订阅 (¥520)](/zh/products/grok-super-90d)**：直接接入马斯克 xAI 万卡集群，原生支持 Cursor 深度集成。
 - ⚡ **[Gemini Pro 会员直充](/zh/products/gemini-pro-direct)**：含正规绑卡服务，解锁 Google 最强 200 万超大上下文。

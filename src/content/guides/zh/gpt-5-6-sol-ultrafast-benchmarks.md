@@ -69,6 +69,6 @@ lastModified: "2026-08-26T08:00:00.000Z"
 想要抢先体验 GPT-5.6 Sol 的 Ultrafast 极速算力，享受 100% 纯净无广告的顶级高阶特权？橙子 AI 为您提供稳定高效的官方现货直充服务：
 
 - 🚀 **[ChatGPT Pro 5X 官方秒充 (¥860)](/zh/products/chatgpt-pro-5x)**：iOS 官方正规渠道秒级充值，畅享 5 倍官方用量与 GPT-5.6 极速满血算力，无广告纯净体验。
-- 👑 **[ChatGPT Pro 20X 旗舰版 (¥1300)](/zh/products/chatgpt-pro-20x)**：200 刀顶配无限制算力天花板，重度极客与工程团队首选。
+- 👑 **[ChatGPT Pro 20X 旗舰版 (¥1400)](/zh/products/chatgpt-pro-20x)**：200 刀顶配无限制算力天花板，重度极客与工程团队首选。
 - ⚡ **[Gemini Pro 会员直充](/zh/products/gemini-pro-direct)**：含正规国际信用卡绑卡，解锁 Google 最强 200 万超大上下文。
 - 🔥 **[Grok-Super 3 个月订阅](/zh/products/grok-super-90d)**：马斯克 xAI 强劲万卡集群支撑，直通实时联网与前沿大模型。

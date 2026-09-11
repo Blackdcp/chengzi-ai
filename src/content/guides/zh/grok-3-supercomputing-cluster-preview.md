@@ -50,5 +50,5 @@ lastModified: "2026-08-25T08:00:00.000Z"
 
 - 🔥 **[Grok-Super 90刀3个月卡【90天订阅】](/zh/products/grok-super-90d)**：纯正代充，非违规低价号，无需提供账号密码，安全有保障，直通 xAI 超级算力。
 - 🚀 **[ChatGPT Pro 5X 官方秒充 (¥860)](/zh/products/chatgpt-pro-5x)**：iOS 正规渠道秒级充值，享受 5 倍官方算力扩容与满血 o1 深度推理。
-- 👑 **[ChatGPT Pro 20X 官方卡充 (¥1300)](/zh/products/chatgpt-pro-20x)**：200 刀旗舰级无限制算力天花板。
+- 👑 **[ChatGPT Pro 20X 官方卡充 (¥1400)](/zh/products/chatgpt-pro-20x)**：200 刀旗舰级无限制算力天花板。
 - ⚡ **[Gemini AI Pro 会员直充](/zh/products/gemini-pro-direct)**：含正规绑卡服务，解锁 Google 最强 200 万超大上下文与多模态能力。
