@@ -158,7 +158,7 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
     if (product.id === "chatgpt-pro-5x") {
       label = lang === 'zh' ? "5倍算力" : "5X Compute";
     } else if (product.id === "chatgpt-pro-20x") {
-      label = lang === 'zh' ? "算力怪兽" : "Ultimate";
+      label = lang === 'zh' ? "在期续费" : "Renewal";
     } else if (product.id === "chatgpt-pro-20x-ready") {
       label = lang === 'zh' ? "成品现货" : "Ready Account";
     } else if (product.id === "gemini-pro-direct") {
@@ -171,7 +171,7 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
 
   const productHints: Record<string, string> = {
     "chatgpt-pro-5x": lang === 'zh' ? "iOS 官方正规秒充，5 倍官方用量与满血 o1/GPT-6 深度推理。" : "Official iOS instant top-up, 5x quota with full o1 reasoning.",
-    "chatgpt-pro-20x": lang === 'zh' ? "适合需要 20 倍运算能力、深度代码开发的高阶工作室与团队。" : "Good for high-end studios needing 20x computation and deep coding.",
+    "chatgpt-pro-20x": lang === 'zh' ? "要求当前仍在有效期内且之前为卡充（优先菲区），已到期或 iOS/Google Play 开通不可续费。" : "For active unexpired accounts previously topped up via card (PH region preferred).",
     "chatgpt-pro-20x-ready": lang === 'zh' ? "官方正规充值独享成品号，含 30 天订阅质保，免去自己注册与风控烦恼。" : "Official dedicated ready account with 30-day subscription warranty, hassle-free.",
     "gemini-pro-direct": lang === 'zh' ? "零门槛开通谷歌 200 万超大上下文 Ultra 旗舰模型。" : "Zero threshold to unlock Google's 2M context flagship model.",
     "grok-super-90d": lang === 'zh' ? "直通马斯克 xAI 万卡集群与实时搜索最强大脑。" : "Direct access to Elon Musk's xAI supercomputing cluster."

@@ -2,45 +2,47 @@
   "id": "chatgpt-pro-20x",
   "categoryId": "gpt",
   "categoryName": "GPT Member",
-  "title": "ChatGPT Pro 20X Monthly | Official Top-up",
-  "subtitle": " tier (20x speed version). Automated redeem code for a 1-month Pro 20X subscription.",
+  "title": "ChatGPT Pro 20X Renewal Monthly | Official Card [Active Accounts Only]",
+  "subtitle": "For active Pro 20X accounts renewing via card (Philippines region preferred). Expired accounts or iOS/Google Play subscriptions cannot use this channel.",
   "price": 1400,
   "originalPriceText": "¥1500.0",
-  "order": 1,
+  "order": 2,
   "tags": [
-    "Pro 20X",
-    "Official",
-    "Direct Top-up",
-    "Renewable"
+    "Pro 20X Renewal",
+    "Card Top-up",
+    "PH Region First",
+    "Active Only"
   ],
   "inStock": true,
-  "buyButtonText": "Buy Now ¥1400.0",
+  "buyButtonText": "Renew Now ¥1400.0",
   "actionType": "buy",
   "warnings": [
-    "Do not use Microsoft emails.",
-    "Do not use accounts that already have Plus/Team/Pro or were involved in fraud/cheap upgrades. Bans are non-refundable.",
-    "Refunds are subject to OpenAI official policy."
+    "【Must be unexpired】: If your PRO 20X has expired and reverted to free, this channel cannot be used.",
+    "【Active accounts only】: If your PRO 20X is still active, you can renew via this channel.",
+    "【Channel requirements】: Previous payment must be card top-up (Philippines region preferred; US/JP contact support to confirm).",
+    "【Incompatible channels】: Subscriptions created via iOS (App Store) or Google Play cannot be renewed through this channel."
   ],
   "detail": {
-    "title": "ChatGPT Pro 20X Monthly | Official Top-up",
-    "subtitle": " tier flagship model. Automated redeem code for a 1-month Pro 20X subscription.",
+    "title": "ChatGPT Pro 20X Renewal Monthly | Official Card [Active Accounts Only]",
+    "subtitle": "Official card renewal channel. Requires previous subscription to be card top-up (PH region preferred). Only active, unexpired Pro 20X accounts are supported.",
     "sections": [
       {
-        "title": "Instructions",
+        "title": "Eligibility (Read Before Ordering)",
         "items": [
-          "Processing takes 1–30 minutes after order submission.",
-          "Do not use Microsoft emails."
+          "❌ Condition 1 (Expired): If your PRO 20X has already expired and reverted to free, it CANNOT be renewed via this channel (please purchase a 2300 RMB ready account instead).",
+          "✔️ Condition 2 (Active & Unexpired): If your PRO 20X is still within its active validity period, you can renew through this channel."
         ]
       },
       {
-        "title": "Prohibited Accounts",
+        "title": "Channel & Account Requirements",
         "items": [
-          "Do not use if already subscribed to Plus / Team / Pro.",
-          "Using fraudulent or cheap-upgraded accounts will result in bans with no refund."
+          "Previous payment must be card top-up (Philippines region preferred; US/JP accounts supported upon confirmation).",
+          "Subscriptions created via iOS (App Store) or Google Play cannot use this renewal channel.",
+          "Processed manually by customer support within 10–30 minutes."
         ]
       }
     ]
   },
   "isHot": true,
-  "orderName": "ChatGPT Pro 20X Monthly"
+  "orderName": "ChatGPT Pro 20X Renewal"
 }
