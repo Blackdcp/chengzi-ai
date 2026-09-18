@@ -1,0 +1,47 @@
+{
+  "id": "chatgpt-pro-20x-ready",
+  "categoryId": "gpt",
+  "categoryName": "GPT 会员",
+  "title": "ChatGPT Pro 20X 月卡｜成品号｜官方正规充值【质保订阅】",
+  "subtitle": "官方正规充值独享成品号，订阅有效期 1 个月，提供 30 天订阅质保。预计 10 分钟至 2 小时完成交付。",
+  "price": 2300,
+  "originalPriceText": "￥2600.0",
+  "order": 1,
+  "tags": [
+    "Pro 20X 成品号",
+    "官方正规",
+    "30天质保",
+    "独享账号"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥2300.0",
+  "actionType": "buy",
+  "warnings": [
+    "本商品为 ChatGPT Pro 20X 成品号，保证正规官方充值，订阅有效期为1个月。",
+    "提供30天订阅质保，仅保障订阅，封号不在质保范围内。",
+    "预计10分钟至2小时完成交付。"
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 20X 月卡｜成品号｜官方正规充值【质保订阅】",
+    "subtitle": "ChatGPT Pro 20X 成品号｜官方正规充值｜1个月。本商品为 ChatGPT Pro 20X 成品号，保证正规官方充值，订阅有效期为1个月。预计10分钟至2小时完成交付。",
+    "sections": [
+      {
+        "title": "商品说明",
+        "items": [
+          "本商品为 ChatGPT Pro 20X 成品号，保证正规官方充值，订阅有效期为1个月。",
+          "独享原生干净账号与密码交付，支持修改密码。",
+          "预计 10 分钟至 2 小时内完成交付并发送至您的邮箱。"
+        ]
+      },
+      {
+        "title": "质保规则",
+        "items": [
+          "提供 30 天订阅质保，仅保障订阅正常，封号不在质保范围内。",
+          "使用请遵守 OpenAI 官方使用规范与政策。"
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "ChatGPT Pro 20X 成品号"
+}

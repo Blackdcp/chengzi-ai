@@ -1,0 +1,47 @@
+{
+  "id": "chatgpt-pro-20x-ready",
+  "categoryId": "gpt",
+  "categoryName": "GPT Member",
+  "title": "ChatGPT Pro 20X Monthly | Ready Account | Official Top-up [30-Day Warranty]",
+  "subtitle": "Dedicated ready account with 1-month official Pro 20X subscription. 30-day subscription warranty included. Delivery in 10 minutes to 2 hours.",
+  "price": 2300,
+  "originalPriceText": "¥2600.0",
+  "order": 1,
+  "tags": [
+    "Pro 20X Ready",
+    "Official Top-up",
+    "30-Day Warranty",
+    "Dedicated"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥2300.0",
+  "actionType": "buy",
+  "warnings": [
+    "This product is an official ChatGPT Pro 20X ready account with a 1-month subscription.",
+    "30-day subscription warranty provided (covers subscription validity; bans are not covered).",
+    "Estimated delivery: 10 minutes to 2 hours."
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 20X Monthly | Ready Account | Official Top-up [30-Day Warranty]",
+    "subtitle": "ChatGPT Pro 20X Ready Account | Official Recharge | 1 Month. Verified official top-up with 1-month validity. Delivery in 10 mins to 2 hours.",
+    "sections": [
+      {
+        "title": "Product Overview",
+        "items": [
+          "Delivered as a clean, dedicated OpenAI account with login credentials.",
+          "Includes 1-month full Pro 20X subscription tier.",
+          "Delivery completed and credentials sent to your email within 10 minutes to 2 hours."
+        ]
+      },
+      {
+        "title": "Warranty Terms",
+        "items": [
+          "30-day subscription warranty guarantees subscription duration.",
+          "Account bans due to user policy violations are excluded from warranty."
+        ]
+      }
+    ]
+  },
+  "isHot": true,
+  "orderName": "ChatGPT Pro 20X Ready Account"
+}
