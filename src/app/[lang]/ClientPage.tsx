@@ -6,7 +6,6 @@ import type { GuideSummary } from "../../lib/guides";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { AdsterraBanner, AdsterraNative } from "../../components/AdsterraAds";
 
 type PaymentMethod = "alipay" | "wechat";
 type HomeDictionary = {
@@ -188,12 +187,20 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
         overflow: "hidden"
       }}
     >
-      <div className="cz-product-label">
-        {label || product.categoryName}
-      </div>
-
       <div className="cz-product-main">
         <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 8 }}>
+          <span style={{ 
+            display: "inline-flex", 
+            alignItems: "center", 
+            padding: "3px 9px", 
+            background: "#f3f4f6", 
+            borderRadius: "6px", 
+            color: "#374151", 
+            fontSize: 12, 
+            fontWeight: 700 
+          }}>
+            {label || product.categoryName}
+          </span>
           <h3 className="cz-product-title" style={{ fontSize: 20, fontWeight: 700, color: "#111827", margin: 0, letterSpacing: "-0.02em" }}>{product.title}</h3>
           {badge && (
             <span className="cz-product-badge" style={{ border: "1px solid #111827", color: "#ffffff", padding: "2px 8px", fontSize: 11, fontWeight: 700, borderRadius: "999px", background: "#111827" }}>
@@ -704,12 +711,7 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
             width: 4px;
           }
           .cz-product-label {
-            flex: 0 0 98px;
-            display: block;
-            margin-bottom: 0;
-            padding: 0;
-            border: 0;
-            background: transparent;
+            display: none;
           }
           .cz-product-action {
             flex: 0 0 180px;
@@ -830,7 +832,6 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
       </header>
 
       <div className="cz-page" style={{ maxWidth: 1120, margin: "0 auto", padding: "max(20px, 4vw) 16px max(40px, 8vw)" }}>
-        <AdsterraBanner options={{ key: 'f7e4828ae0e2d4f2882b3b9a88394313', format: 'iframe', height: 90, width: 728 }} />
         <section className="cz-hero" style={{ padding: "max(42px, 8vw) 0 max(34px, 6vw)", textAlign: "center" }}>
           <div className="cz-hero-shell">
             <div className="cz-hero-main">
@@ -940,8 +941,6 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
           </div>
         </section>
 
-        <AdsterraBanner options={{ key: '28f51b0be5e3cfc51eff37f5b9a4d014', format: 'iframe', height: 60, width: 468 }} />
-
         {guides.length > 0 && (
           <section id="guides" className="cz-section" style={{ paddingTop: 40, borderTop: "1px solid #eaeaea" }}>
             {renderSectionHeader(
@@ -978,7 +977,6 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
         )}
 
         <section id="flow" className="cz-section" style={{ paddingTop: 40, borderTop: "1px solid #eaeaea" }}>
-          <AdsterraNative />
           {renderSectionHeader(
             "03",
             lang === 'zh' ? '购买流程：从选择到交付' : 'Purchase flow: from choice to delivery',
