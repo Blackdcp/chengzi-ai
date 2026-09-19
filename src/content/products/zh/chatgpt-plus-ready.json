@@ -1,0 +1,51 @@
+{
+  "id": "chatgpt-plus-ready",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Plus 月卡｜成品号｜官方正规充值【质保订阅】",
+  "subtitle": "成品号开箱即用。正规官方充值开通 1 个月 Plus 会员的纯净独享成品账号。",
+  "price": 190,
+  "order": 3,
+  "tags": [
+    "成品号",
+    "独享开通",
+    "开箱即用",
+    "质保订阅"
+  ],
+  "deliveryNotice": "自动发货或 10 分钟至 2 小时内完成交付",
+  "features": [
+    "独享邮箱账号",
+    "官方正规充值",
+    "30 天订阅质保",
+    "支持改密"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥190",
+  "actionType": "buy",
+  "orderName": "ChatGPT Plus 月卡成品号",
+  "isHot": true,
+  "warnings": [
+    "交付完整账号及邮箱密码，建议首次登录后自行修改密码。",
+    "请使用稳定干净的代理网络登录，避免滥用导致风控。"
+  ],
+  "detail": {
+    "title": "ChatGPT Plus 月卡｜成品号",
+    "subtitle": "纯净独享已开通 Plus 的现成账号，开箱即用，无需自己折腾充值卡。",
+    "sections": [
+      {
+        "title": "商品说明",
+        "items": [
+          "官方正规充值好的 ChatGPT Plus 独享账号，含完整邮箱及密码。",
+          "订阅有效期足额 1 个月，支持全量修改个人资料与密码。"
+        ]
+      },
+      {
+        "title": "质保规则",
+        "items": [
+          "提供 30 天订阅质保，仅保障订阅状态有效。",
+          "封号属于自身环境或使用行为风控，不在质保范围内。"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "grok-heavy-300",
+  "categoryId": "grok",
+  "categoryName": "Grok",
+  "title": "SuperGrok Heavy 1-Month |  Tier Official Top-up / Ready Account",
+  "subtitle": "Flagship xAI  tier. Supports top-up to existing account or full ready account.",
+  "price": 2800,
+  "order": 14,
+  "tags": [
+    "Heavy 300刀",
+    "顶配算力",
+    "充值/成品号",
+    "质保30天"
+  ],
+  "deliveryNotice": "Instant automated delivery after payment",
+  "features": [
+    "xAI 300 美元顶配套餐",
+    "专属极限高并发与算力",
+    "30 天全程质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥2800",
+  "actionType": "buy",
+  "orderName": "SuperGrok Heavy 月卡（300刀款）",
+  "isHot": true,
+  "warnings": [
+    "支持充值到自己已有账号，也可制作纯净独享成品号交付。",
+    "提供全程订阅质保，掉订阅按天退差价。封号不在售后范围。"
+  ],
+  "detail": {
+    "title": "SuperGrok Heavy 1-Month |  Tier Official Top-up / Ready Account",
+    "subtitle": "Flagship xAI  tier. Supports top-up to existing account or full ready account.",
+    "sections": [
+      {
+        "title": "Product Details",
+        "items": [
+          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
+          "Includes 30-day subscription warranty against unprompted drops."
+        ]
+      },
+      {
+        "title": "Important Notes",
+        "items": [
+          "Please use a clean, stable proxy IP environment.",
+          "Account bans caused by network environment or policy violations are not covered."
+        ]
+      }
+    ]
+  }
+}

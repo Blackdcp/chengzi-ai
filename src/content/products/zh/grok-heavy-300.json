@@ -1,0 +1,50 @@
+{
+  "id": "grok-heavy-300",
+  "categoryId": "grok",
+  "categoryName": "Grok",
+  "title": "SuperGrok Heavy 月卡｜官网正规充值 / 成品号【质保30天】",
+  "subtitle": "【SuperGrok Heavy 300刀款】。xAI 旗舰顶配 300 刀套餐，支持充值自用或交付成品号。",
+  "price": 2800,
+  "order": 14,
+  "tags": [
+    "Heavy 300刀",
+    "顶配算力",
+    "充值/成品号",
+    "质保30天"
+  ],
+  "deliveryNotice": "下单后专人跟进，现场制作交付",
+  "features": [
+    "xAI 300 美元顶配套餐",
+    "专属极限高并发与算力",
+    "30 天全程质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥2800",
+  "actionType": "buy",
+  "orderName": "SuperGrok Heavy 月卡（300刀款）",
+  "isHot": true,
+  "warnings": [
+    "支持充值到自己已有账号，也可制作纯净独享成品号交付。",
+    "提供全程订阅质保，掉订阅按天退差价。封号不在售后范围。"
+  ],
+  "detail": {
+    "title": "SuperGrok Heavy 月卡｜300 美元顶配款",
+    "subtitle": "xAI 旗舰顶配 300 刀套餐，顶尖科研与大模型调度专家首选。",
+    "sections": [
+      {
+        "title": "商品说明",
+        "items": [
+          "正规官方卡充，支持充值到指定的自己账号，也可以现场配置并交付独享成品号。",
+          "下单后客服一对一跟进制作，提供 30 天足额订阅质保。"
+        ]
+      },
+      {
+        "title": "售后说明",
+        "items": [
+          "全程 30 天订阅质保，若掉订阅按剩余天数退补差价。",
+          "请遵守平台使用规范，避免敏感词批量调用。"
+        ]
+      }
+    ]
+  }
+}

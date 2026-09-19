@@ -1,0 +1,51 @@
+{
+  "id": "chatgpt-plus-ph",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Plus 月卡｜菲区官方正规卡充【秒充】【同步官方售后】【卡密可囤五天】",
+  "subtitle": "充值到自己账号。自助充值卡密，兑换完即可订阅一个月的 Plus 套餐。",
+  "price": 140,
+  "order": 1,
+  "tags": [
+    "Plus 月卡",
+    "官方卡充",
+    "秒充",
+    "可囤五天"
+  ],
+  "deliveryNotice": "卡密自动发货，支持 24 小时自助充值",
+  "features": [
+    "正规卡充充值",
+    "质保 30 天不掉订阅",
+    "卡密提取后 5 天内有效"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥140",
+  "actionType": "buy",
+  "orderName": "ChatGPT Plus 月卡（菲区卡充）",
+  "isHot": true,
+  "warnings": [
+    "请确认当前会员已到期，账号无未结清账单。",
+    "封号由于官方风控或自身使用网络环境导致，不在质保范围内。"
+  ],
+  "detail": {
+    "title": "ChatGPT Plus 月卡｜菲区官方正规卡充",
+    "subtitle": "正规官方卡充，兑换成功后即可开通或续费 1 个月 ChatGPT Plus 权益。",
+    "sections": [
+      {
+        "title": "商品说明",
+        "items": [
+          "自助充值卡密，正规官方渠道卡充，兑换完即可订阅 1 个月 Plus 套餐。",
+          "卡密提取后 5 天内有效，支持随时自助兑换。",
+          "兑换成功后重新登录 ChatGPT 即可享受 Plus 会员权益。"
+        ]
+      },
+      {
+        "title": "质保规则",
+        "items": [
+          "质保 30 天不掉订阅，非零元购，正规通道充值。",
+          "封号多由于用户使用环境或网络 IP 变动导致，封号不在质保范围内。"
+        ]
+      }
+    ]
+  }
+}

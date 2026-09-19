@@ -131,13 +131,13 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
     }
   };
 
-  const productsByCategory: Record<string, Product[]> = {};
-  products.forEach(p => {
-    if (!productsByCategory[p.categoryId]) {
-      productsByCategory[p.categoryId] = [];
-    }
-    productsByCategory[p.categoryId].push(p);
-  });
+  const [activeTab, setActiveTab] = useState<"all" | "chatgpt" | "claude" | "grok">("all");
+
+  const productsByCategory: Record<string, Product[]> = {
+    chatgpt: products.filter(p => p.categoryId === "chatgpt"),
+    claude: products.filter(p => p.categoryId === "claude"),
+    grok: products.filter(p => p.categoryId === "grok")
+  };
 
   const pageNavItems = [
     { href: "#accounts", label: lang === 'zh' ? 'AI 账号' : 'AI Accounts' },
@@ -145,41 +145,31 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
     { href: "#flow", label: lang === 'zh' ? '购买流程' : 'Order Flow' }
   ];
 
-  const productsById = products.reduce<Record<string, Product | undefined>>((acc, product) => {
-    acc[product.id] = product;
-    return acc;
-  }, {});
-
-  const accountItems = [
-    ...(productsByCategory.gpt || []),
-    ...(productsByCategory.gemini || [])
-  ].map(product => {
-    let label = product.categoryName;
-    if (product.id === "chatgpt-pro-5x") {
-      label = lang === 'zh' ? "5倍算力" : "5X Compute";
-    } else if (product.id === "chatgpt-pro-20x") {
-      label = lang === 'zh' ? "在期续费" : "Renewal";
-    } else if (product.id === "chatgpt-pro-20x-ready") {
-      label = lang === 'zh' ? "成品现货" : "Ready Account";
-    } else if (product.id === "gemini-pro-direct") {
-      label = lang === 'zh' ? "安全直充" : "Safe Top-up";
-    } else if (product.id === "grok-super-90d") {
-      label = lang === 'zh' ? "深度推理" : "Deep Search";
-    }
-    return { label, product };
-  });
+  const filteredProducts = activeTab === "all" 
+    ? products 
+    : (productsByCategory[activeTab] || []);
 
   const productHints: Record<string, string> = {
-    "chatgpt-pro-5x": lang === 'zh' ? "iOS 官方正规秒充，5 倍官方用量与满血 o1/GPT-6 深度推理。" : "Official iOS instant top-up, 5x quota with full o1 reasoning.",
-    "chatgpt-pro-20x": lang === 'zh' ? "要求当前仍在有效期内且之前为卡充（优先菲区），已到期或 iOS/Google Play 开通不可续费。" : "For active unexpired accounts previously topped up via card (PH region preferred).",
-    "chatgpt-pro-20x-ready": lang === 'zh' ? "官方正规充值独享成品号，含 30 天订阅质保，免去自己注册与风控烦恼。" : "Official dedicated ready account with 30-day subscription warranty, hassle-free.",
-    "gemini-pro-direct": lang === 'zh' ? "零门槛开通谷歌 200 万超大上下文 Ultra 旗舰模型。" : "Zero threshold to unlock Google's 2M context flagship model.",
-    "grok-super-90d": lang === 'zh' ? "直通马斯克 xAI 万卡集群与实时搜索最强大脑。" : "Direct access to Elon Musk's xAI supercomputing cluster."
+    "chatgpt-plus-ph": lang === 'zh' ? "官方正规卡充，卡密提取后 5 天内有效，支持 24 小时自助兑换。" : "Official card top-up, valid for 5 days after delivery, 24/7 self-service.",
+    "chatgpt-plus-ios": lang === 'zh' ? "iOS 官方正规通道充值，无需账号密码，1-3 分钟极速秒充。" : "Official iOS in-app top-up, no password needed, 1-3 mins delivery.",
+    "chatgpt-plus-ready": lang === 'zh' ? "纯净独享已开通 Plus 成品号，含完整邮箱资料，开箱即用。" : "Dedicated ready account with 1-month Plus, full email access included.",
+    "chatgpt-sms-verify": lang === 'zh' ? "美国真实实体手机卡接码，专为 OpenAI / ChatGPT 注册与安全验证打造。" : "Real US physical SIM verification, dedicated to OpenAI / ChatGPT.",
+    "chatgpt-pro-5x-card": lang === 'zh' ? "官方正规卡充，5 倍官方用量与满血 o1/o3 深度推理算力。" : "Official card top-up with 5X official quota and full o1 reasoning.",
+    "chatgpt-pro-5x-ios": lang === 'zh' ? "iOS 官方内购直充，无需账号密码，秒级到账，享 30 天全程质保。" : "Official iOS top-up with 5X quota, instant delivery with 30-day warranty.",
+    "chatgpt-pro-20x-renew": lang === 'zh' ? "要求当前仍在有效期内且之前为卡充（优先菲区），顶级 20X 旗舰算力延期。" : "For active unexpired accounts previously topped up via card (PH preferred).",
+    "chatgpt-pro-20x-ios": lang === 'zh' ? "iOS 官方直充，新号或已过期老号均可充值，顶配 20X 满血算力。" : "Official iOS top-up for new or expired accounts. Full 20X flagship compute.",
+    "chatgpt-pro-20x-ready": lang === 'zh' ? "顶配 20X 旗舰算力独享成品号，含 30 天官方订阅质保，现货即发。" : "Flagship 20X ready account with 30-day warranty. Hassle-free deployment.",
+    "claude-pro-ios": lang === 'zh' ? "正规 iOS 渠道代充，极速秒充，畅享 Claude 3.7 Sonnet 混合推理。" : "Official iOS top-up with Claude 3.7 Sonnet hybrid reasoning.",
+    "claude-max-5x-ios": lang === 'zh' ? "Claude 官方 5 倍算力额度，重度编程与长工程架构利器。" : "5X Claude compute quota. Ideal for heavy coding & long documents.",
+    "claude-max-20x-ios": lang === 'zh' ? "Claude 顶配 20 倍推理算力上限，支持高并发长文本分析与大项目重构。" : "Top-tier 20X compute limit for enterprise engineering & complex workflows.",
+    "grok-super-cdk": lang === 'zh' ? "官方正规 iOS CDK，全端（Web/iOS/Android）支持，直通万卡集群。" : "Official Grok Super key, works on all platforms with real-time cluster search.",
+    "grok-heavy-300": lang === 'zh' ? "xAI 旗舰顶配 300 刀套餐，支持充值自用账号或交付独享成品号。" : "xAI flagship $300 tier. Supports existing account top-up or dedicated ready account."
   };
 
   const getProductBadge = (product: Product) => {
-    if (product.id === "chatgpt-pro-5x" || product.id === "chatgpt-pro-20x" || product.id === "chatgpt-pro-20x-ready" || product.id === "gemini-pro-direct") return lang === 'zh' ? "推荐" : "Recommended";
-    if (product.isHot) return lang === 'zh' ? "热门" : "Popular";
+    if (product.id.includes("pro-20x") || product.id.includes("max-20x") || product.id === "grok-heavy-300") return lang === 'zh' ? "旗舰顶配" : "Flagship";
+    if (product.id.includes("plus") || product.id === "claude-pro-ios") return lang === 'zh' ? "高性价比" : "Popular";
+    if (product.isHot) return lang === 'zh' ? "热门" : "Hot";
     return "";
   };
 
@@ -849,14 +839,14 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
               </h1>
               <p className="cz-hero-copy" style={{ fontSize: "clamp(16px, 2vw, 19px)", color: "#666666", maxWidth: 720, margin: "0 auto 28px", lineHeight: 1.7 }}>
                 {lang === 'zh'
-                  ? '专注 ChatGPT Pro 5X / 20X、Gemini Pro、Grok 等官方正规账号直充。网页直接下单，自动安全交付。'
-                  : 'Official accounts for ChatGPT Pro 5X/20X, Gemini Pro, and Grok. Fast and secure delivery.'}
+                  ? '专注 ChatGPT、Claude、Grok 等官方正规会员直充与成品号。网页直接下单，自动安全交付。'
+                  : 'Official subscriptions and accounts for ChatGPT, Claude, and Grok. Fast, reliable, and secure delivery.'}
               </p>
               <div className="cz-hero-actions">
                 <a href="#accounts" className="vercel-button cz-hero-primary" style={{ padding: "12px 28px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '立即选购 AI 账号' : 'Explore AI Accounts'}</a>
               </div>
               <div className="cz-hero-note">
-                {lang === 'zh' ? 'ChatGPT Pro 5X / 20X · Gemini Pro 年卡 · Grok-Super 订阅' : 'ChatGPT Pro 5X / 20X · Gemini Pro · Grok-Super'}
+                {lang === 'zh' ? 'ChatGPT Plus/Pro · Claude Pro/MAX · Grok Super/Heavy 旗舰算力' : 'ChatGPT Plus/Pro · Claude Pro/MAX · Grok Super/Heavy'}
               </div>
             </div>
 
@@ -869,13 +859,13 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
                 {[
                   {
                     num: '01',
-                    title: lang === 'zh' ? 'Pro 旗舰算力' : 'Pro Flagship',
-                    desc: lang === 'zh' ? 'ChatGPT Pro 5X / 20X 满血推理' : 'ChatGPT Pro 5X / 20X full reasoning'
+                    title: lang === 'zh' ? '三大前沿生态' : 'Top 3 Frontier AI',
+                    desc: lang === 'zh' ? 'ChatGPT · Claude · Grok' : 'ChatGPT, Claude, and Grok'
                   },
                   {
                     num: '02',
-                    title: lang === 'zh' ? '多模态会员' : 'Multimodal Subs',
-                    desc: lang === 'zh' ? 'Gemini Pro 年卡、Grok-Super' : 'Gemini Pro Annual, Grok-Super'
+                    title: lang === 'zh' ? '全额质保与秒充' : 'Full Warranty & Instant',
+                    desc: lang === 'zh' ? '30天订阅保障 · 24h自助' : '30-Day warranty · 24/7 self-service'
                   }
                 ].map(item => (
                   <div className="cz-hero-panel-item" key={item.num}>
@@ -894,14 +884,59 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
         <section id="accounts" className="cz-section">
           {renderSectionHeader(
             "01",
-            lang === 'zh' ? 'AI 账号：按使用强度选' : 'AI accounts: choose by usage',
+            lang === 'zh' ? 'AI 会员与账号专区' : 'AI Subscriptions & Accounts',
             lang === 'zh'
-              ? '不按“入门/高阶”绕路。直接看你要解决什么：深度编程、科研建模、长文档理解、已有账号安全直充。'
-              : 'Deep coding, research modeling, long-context work, or renewal. Pick by how you use it.'
+              ? '支持 ChatGPT、Claude 与 Grok 全系列正规官方充值、高阶算力与成品号，官方通道极速交付，全额质保。'
+              : 'Official subscriptions, compute tiers, and ready accounts for ChatGPT, Claude, and Grok with instant delivery.'
           )}
 
+          {/* Category Tabs */}
+          <div style={{ display: "flex", gap: 10, marginBottom: 22, flexWrap: "wrap" }}>
+            {[
+              { key: "all", label: lang === 'zh' ? "全部产品" : "All Products", count: products.length },
+              { key: "chatgpt", label: "ChatGPT", count: productsByCategory.chatgpt?.length || 0 },
+              { key: "claude", label: "Claude", count: productsByCategory.claude?.length || 0 },
+              { key: "grok", label: "Grok", count: productsByCategory.grok?.length || 0 }
+            ].map(tab => {
+              const isSelected = activeTab === tab.key;
+              return (
+                <button
+                  key={tab.key}
+                  onClick={() => setActiveTab(tab.key as any)}
+                  style={{
+                    padding: "10px 18px",
+                    borderRadius: "999px",
+                    fontSize: 14,
+                    fontWeight: 700,
+                    cursor: "pointer",
+                    border: isSelected ? "1px solid #111827" : "1px solid #e5e7eb",
+                    background: isSelected ? "#111827" : "#ffffff",
+                    color: isSelected ? "#ffffff" : "#4b5563",
+                    boxShadow: isSelected ? "0 4px 12px rgba(17, 24, 39, 0.15)" : "none",
+                    transition: "all 0.18s ease",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 6
+                  }}
+                >
+                  <span>{tab.label}</span>
+                  <span style={{
+                    fontSize: 12,
+                    fontWeight: 600,
+                    padding: "1px 6px",
+                    borderRadius: "999px",
+                    background: isSelected ? "rgba(255,255,255,0.2)" : "#f3f4f6",
+                    color: isSelected ? "#ffffff" : "#6b7280"
+                  }}>
+                    {tab.count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
           <div style={{ display: "grid", gap: 14 }}>
-            {accountItems.map(item => renderProductRow(item.product, item.label))}
+            {filteredProducts.map(product => renderProductRow(product, product.categoryName))}
           </div>
         </section>
 

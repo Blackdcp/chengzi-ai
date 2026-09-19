@@ -1,0 +1,50 @@
+{
+  "id": "chatgpt-pro-20x-renew",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Pro 20X Renewal | Official Card Top-up [20X Flagship]",
+  "subtitle": "For active unexpired Pro 20X accounts previously topped up via card. Full 20X compute renewal.",
+  "price": 1400,
+  "order": 7,
+  "tags": [
+    "Pro 20X 续费",
+    "顶级算力",
+    "卡充续费",
+    "可囤三天"
+  ],
+  "deliveryNotice": "Instant automated delivery after payment",
+  "features": [
+    "20 倍顶配推理算力",
+    "无限制模型并发",
+    "30 天订阅质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥1400",
+  "actionType": "buy",
+  "orderName": "ChatGPT Pro 20X 续费月卡",
+  "isHot": true,
+  "warnings": [
+    "【必须尚未到期】：如果 Pro 20X 已到期变为免费版，无法通过该渠道续费。",
+    "【仅支持在期续费】：要求之前为卡充（优先菲区），通过 iOS / Google Play 开通的无法走此渠道。"
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 20X Renewal | Official Card Top-up [20X Flagship]",
+    "subtitle": "For active unexpired Pro 20X accounts previously topped up via card. Full 20X compute renewal.",
+    "sections": [
+      {
+        "title": "Product Details",
+        "items": [
+          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
+          "Includes 30-day subscription warranty against unprompted drops."
+        ]
+      },
+      {
+        "title": "Important Notes",
+        "items": [
+          "Please use a clean, stable proxy IP environment.",
+          "Account bans caused by network environment or policy violations are not covered."
+        ]
+      }
+    ]
+  }
+}

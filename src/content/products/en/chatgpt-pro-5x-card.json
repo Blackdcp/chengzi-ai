@@ -1,0 +1,51 @@
+{
+  "id": "chatgpt-pro-5x-card",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Pro 5X 1-Month | Official Card Top-up [5X Quota]",
+  "subtitle": "5X official quota & o1 reasoning for 1 month. Self top-up code on your own account.",
+  "price": 900,
+  "order": 5,
+  "tags": [
+    "Pro 5X",
+    "官方卡充",
+    "5倍算力",
+    "可囤五天"
+  ],
+  "deliveryNotice": "Instant automated delivery after payment",
+  "features": [
+    "5 倍用量额度",
+    "o1/o3 深度推理",
+    "正规卡充",
+    "30 天质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥900",
+  "actionType": "buy",
+  "orderName": "ChatGPT Pro 5X 月卡（官方卡充）",
+  "isHot": true,
+  "warnings": [
+    "请勿使用微软邮箱注册的账号充值。",
+    "非正常号、0元购、低价黑冲号禁止提交，否则封号不退款。"
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 5X 1-Month | Official Card Top-up [5X Quota]",
+    "subtitle": "5X official quota & o1 reasoning for 1 month. Self top-up code on your own account.",
+    "sections": [
+      {
+        "title": "Product Details",
+        "items": [
+          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
+          "Includes 30-day subscription warranty against unprompted drops."
+        ]
+      },
+      {
+        "title": "Important Notes",
+        "items": [
+          "Please use a clean, stable proxy IP environment.",
+          "Account bans caused by network environment or policy violations are not covered."
+        ]
+      }
+    ]
+  }
+}

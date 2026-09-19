@@ -1,0 +1,51 @@
+{
+  "id": "claude-pro-ios",
+  "categoryId": "claude",
+  "categoryName": "Claude",
+  "title": "Claude Pro 月卡｜iOS 官方正规充值【秒充】【质保30天】",
+  "subtitle": "充值到自己账号。正规 iOS 渠道充值，极速 1-3 分钟到账，畅享 Claude 3.7 Sonnet 混合推理。",
+  "price": 190,
+  "order": 10,
+  "tags": [
+    "Claude Pro",
+    "iOS 充值",
+    "秒充到账",
+    "质保30天"
+  ],
+  "deliveryNotice": "24 小时自动充值，预计 1-3 分钟到账",
+  "features": [
+    "Claude 3.7 Sonnet",
+    "支持深度思考",
+    "无需账号密码",
+    "30 天订阅质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥190",
+  "actionType": "buy",
+  "orderName": "Claude Pro 月卡（iOS 充值）",
+  "isHot": true,
+  "warnings": [
+    "请确认当前会员已到期，账号无 0 元账单或逾期欠费。",
+    "封号 99% 为用户自身 IP 环境异常导致，封号不在售后范围。"
+  ],
+  "detail": {
+    "title": "Claude Pro 月卡｜iOS 官方正规充值",
+    "subtitle": "正规 iOS 充值，无需提供账号密码，畅享 Claude 混合推理架构。",
+    "sections": [
+      {
+        "title": "商品说明",
+        "items": [
+          "正规 iOS 充值，无需提供账号密码，提供 24 小时全自动自助充值流程。",
+          "支持畅享 Claude 3.7 Sonnet 混合推理及长代码工程解析。"
+        ]
+      },
+      {
+        "title": "质保与风控说明",
+        "items": [
+          "质保 30 天不掉订阅，若掉订阅按剩余天数折算退款。",
+          "封号多由自身网络 IP 频繁切换或代理质量差引发，封号不在质保售后范围。"
+        ]
+      }
+    ]
+  }
+}

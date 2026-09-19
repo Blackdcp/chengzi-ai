@@ -1,0 +1,50 @@
+{
+  "id": "chatgpt-pro-5x-ios",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Pro 5X｜1个月｜iOS 官方正规充值【秒充】【质保30天】",
+  "subtitle": "【5X 算力档】iOS 正规秒充。正规 iOS 渠道充值，极速稳定，30 天订阅全程质保。",
+  "price": 950,
+  "order": 6,
+  "tags": [
+    "Pro 5X",
+    "iOS 直充",
+    "秒充到账",
+    "质保30天"
+  ],
+  "deliveryNotice": "秒级处理，极速直充到账",
+  "features": [
+    "Apple iOS 官方内购",
+    "无需提供账号密码",
+    "30 天全程质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥950",
+  "actionType": "buy",
+  "orderName": "ChatGPT Pro 5X（iOS 充值）",
+  "isHot": true,
+  "warnings": [
+    "需确保当前账户无未结清账单。",
+    "掉订阅按剩余天数退补差价，封号不在售后范围。"
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 5X｜iOS 官方正规充值",
+    "subtitle": "通过 Apple 官方内购通道直充，稳定性高，5 倍官方算力。",
+    "sections": [
+      {
+        "title": "商品说明",
+        "items": [
+          "通过 Apple iOS 官方内购正规充值，到账极速稳定，无需账号密码。",
+          "享受足额 1 个月 Pro 5X 高额度深度推理与代码生成算力。"
+        ]
+      },
+      {
+        "title": "质保规则",
+        "items": [
+          "全程 30 天订阅质保，30 天内掉订阅按剩余天数退补差价。",
+          "请确认当前账号状态正常无逾期后再行提交。"
+        ]
+      }
+    ]
+  }
+}

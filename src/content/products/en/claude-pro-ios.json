@@ -1,0 +1,51 @@
+{
+  "id": "claude-pro-ios",
+  "categoryId": "claude",
+  "categoryName": "Claude",
+  "title": "Claude Pro 1-Month | iOS Official Top-up [Instant][30-Day Warranty]",
+  "subtitle": "Official iOS top-up for Claude Pro on your own account. Instant 1-3 min delivery.",
+  "price": 190,
+  "order": 10,
+  "tags": [
+    "Claude Pro",
+    "iOS 充值",
+    "秒充到账",
+    "质保30天"
+  ],
+  "deliveryNotice": "Instant automated delivery after payment",
+  "features": [
+    "Claude 3.7 Sonnet",
+    "支持深度思考",
+    "无需账号密码",
+    "30 天订阅质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥190",
+  "actionType": "buy",
+  "orderName": "Claude Pro 月卡（iOS 充值）",
+  "isHot": true,
+  "warnings": [
+    "请确认当前会员已到期，账号无 0 元账单或逾期欠费。",
+    "封号 99% 为用户自身 IP 环境异常导致，封号不在售后范围。"
+  ],
+  "detail": {
+    "title": "Claude Pro 1-Month | iOS Official Top-up [Instant][30-Day Warranty]",
+    "subtitle": "Official iOS top-up for Claude Pro on your own account. Instant 1-3 min delivery.",
+    "sections": [
+      {
+        "title": "Product Details",
+        "items": [
+          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
+          "Includes 30-day subscription warranty against unprompted drops."
+        ]
+      },
+      {
+        "title": "Important Notes",
+        "items": [
+          "Please use a clean, stable proxy IP environment.",
+          "Account bans caused by network environment or policy violations are not covered."
+        ]
+      }
+    ]
+  }
+}

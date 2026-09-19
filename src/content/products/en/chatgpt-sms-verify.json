@@ -1,0 +1,49 @@
+{
+  "id": "chatgpt-sms-verify",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT US Physical SIM Verification [1-Month Valid][OpenAI Only]",
+  "subtitle": "Real US physical phone number for OpenAI/ChatGPT registration and phone verification.",
+  "price": 20,
+  "order": 4,
+  "tags": [
+    "实体卡接码",
+    "美国号码",
+    "只限GPT",
+    "当期有效"
+  ],
+  "deliveryNotice": "Instant automated delivery after payment",
+  "features": [
+    "美国真实实体号码",
+    "非虚拟号接码",
+    "专为 OpenAI 验证打造"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥20",
+  "actionType": "buy",
+  "orderName": "ChatGPT 美国实体卡接码",
+  "isHot": false,
+  "warnings": [
+    "仅限 GPT 验证使用，有效期约一个月（当期批次到期日前有效），非永久卡号。"
+  ],
+  "detail": {
+    "title": "ChatGPT US Physical SIM Verification [1-Month Valid][OpenAI Only]",
+    "subtitle": "Real US physical phone number for OpenAI/ChatGPT registration and phone verification.",
+    "sections": [
+      {
+        "title": "Product Details",
+        "items": [
+          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
+          "Includes 30-day subscription warranty against unprompted drops."
+        ]
+      },
+      {
+        "title": "Important Notes",
+        "items": [
+          "Please use a clean, stable proxy IP environment.",
+          "Account bans caused by network environment or policy violations are not covered."
+        ]
+      }
+    ]
+  }
+}

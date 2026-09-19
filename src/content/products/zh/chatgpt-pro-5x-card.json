@@ -1,0 +1,51 @@
+{
+  "id": "chatgpt-pro-5x-card",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Pro 5X 月卡｜官方卡充｜1个月｜正规充值【卡密可囤五天】",
+  "subtitle": "【5X 算力档】充值到自己账号。自助充值卡密，兑换完即可订阅一个月的 Pro 5X 套餐。",
+  "price": 900,
+  "order": 5,
+  "tags": [
+    "Pro 5X",
+    "官方卡充",
+    "5倍算力",
+    "可囤五天"
+  ],
+  "deliveryNotice": "卡密自动发货，24 小时自助兑换",
+  "features": [
+    "5 倍用量额度",
+    "o1/o3 深度推理",
+    "正规卡充",
+    "30 天质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥900",
+  "actionType": "buy",
+  "orderName": "ChatGPT Pro 5X 月卡（官方卡充）",
+  "isHot": true,
+  "warnings": [
+    "请勿使用微软邮箱注册的账号充值。",
+    "非正常号、0元购、低价黑冲号禁止提交，否则封号不退款。"
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 5X 月卡｜官方卡充",
+    "subtitle": "享受 5 倍官方用量额度与满血深度推理算力，官方正规卡充。",
+    "sections": [
+      {
+        "title": "商品说明",
+        "items": [
+          "官方正规卡充，提供超高 o1 / o3 深度推理额度与优先响应算力。",
+          "自助卡密兑换，无需上号，卡密提取后 5 天内有效。"
+        ]
+      },
+      {
+        "title": "质保规则",
+        "items": [
+          "提供 30 天订阅质保。如遇官方退款扣除 20% 手续费退还余款。",
+          "封号多数由自身使用环境风控引发，封号不在质保售后范围。"
+        ]
+      }
+    ]
+  }
+}

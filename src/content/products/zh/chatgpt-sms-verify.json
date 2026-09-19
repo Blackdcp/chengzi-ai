@@ -1,0 +1,49 @@
+{
+  "id": "chatgpt-sms-verify",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT 美国实体卡接码 有效期约一个月【只限GPT接码】",
+  "subtitle": "只限 GPT 注册与换绑接码。美国真实实体电话卡，支持接收 ChatGPT 验证码。",
+  "price": 20,
+  "order": 4,
+  "tags": [
+    "实体卡接码",
+    "美国号码",
+    "只限GPT",
+    "当期有效"
+  ],
+  "deliveryNotice": "下单后提取号码并接收短信验证码",
+  "features": [
+    "美国真实实体号码",
+    "非虚拟号接码",
+    "专为 OpenAI 验证打造"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥20",
+  "actionType": "buy",
+  "orderName": "ChatGPT 美国实体卡接码",
+  "isHot": false,
+  "warnings": [
+    "仅限 GPT 验证使用，有效期约一个月（当期批次到期日前有效），非永久卡号。"
+  ],
+  "detail": {
+    "title": "ChatGPT 美国实体卡接码",
+    "subtitle": "美国真实实体电话卡，成功率远高于虚拟号，专门用于 OpenAI 账号注册或换绑。",
+    "sections": [
+      {
+        "title": "服务说明",
+        "items": [
+          "专用于 OpenAI / ChatGPT 注册或安全验证的美国真实实体卡号码。",
+          "提取卡号后发起验证，平台自动回传短信验证码。"
+        ]
+      },
+      {
+        "title": "注意事项",
+        "items": [
+          "非永久手机号，本批卡密有效期约 1 个月。",
+          "仅限 OpenAI / ChatGPT 平台接码，其他平台无法使用。"
+        ]
+      }
+    ]
+  }
+}

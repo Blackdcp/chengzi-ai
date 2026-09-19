@@ -1,35 +1,34 @@
 {
-  "id": "chatgpt-pro-20x-ready",
+  "id": "chatgpt-pro-20x-ios",
   "categoryId": "chatgpt",
   "categoryName": "ChatGPT",
-  "title": "ChatGPT Pro 20X Ready Account | Official 1-Month [30-Day Warranty]",
-  "subtitle": "Dedicated ready-to-use ChatGPT Pro 20X account. 1 month official subscription with 30-day warranty.",
+  "title": "ChatGPT Pro 20X 1-Month | iOS Official Top-up [All Accounts][30-Day Warranty]",
+  "subtitle": "Official iOS top-up for new or expired accounts. Full 20X compute with 30-day warranty.",
   "price": 2600,
-  "order": 9,
+  "order": 8,
   "tags": [
-    "Pro 20X 成品",
-    "独享账号",
-    "现货交付",
-    "质保订阅"
+    "Pro 20X",
+    "新老号皆可",
+    "iOS 直充",
+    "质保30天"
   ],
   "deliveryNotice": "Instant automated delivery after payment",
   "features": [
-    "顶配 20X 旗舰算力",
-    "独享已开通成品号",
-    "30 天订阅质保"
+    "iOS 原生充值通道",
+    "新号老号均可充值",
+    "30 天足额质保"
   ],
   "inStock": true,
   "buyButtonText": "Buy Now ¥2600",
   "actionType": "buy",
-  "orderName": "ChatGPT Pro 20X 成品号",
+  "orderName": "ChatGPT Pro 20X（iOS 直充）",
   "isHot": true,
   "warnings": [
-    "交付完整账号及独享邮箱密码，支持全量修改个人资料。",
-    "仅保障官方订阅，封号不在质保售后范围内。"
+    "支持已过期的老号或全新号直接充值。卡密提取后请在 24 小时内使用。"
   ],
   "detail": {
-    "title": "ChatGPT Pro 20X Ready Account | Official 1-Month [30-Day Warranty]",
-    "subtitle": "Dedicated ready-to-use ChatGPT Pro 20X account. 1 month official subscription with 30-day warranty.",
+    "title": "ChatGPT Pro 20X 1-Month | iOS Official Top-up [All Accounts][30-Day Warranty]",
+    "subtitle": "Official iOS top-up for new or expired accounts. Full 20X compute with 30-day warranty.",
     "sections": [
       {
         "title": "Product Details",

@@ -1,0 +1,50 @@
+{
+  "id": "chatgpt-plus-ph",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Plus 1-Month | PH Official Top-up [Instant][Warranty]",
+  "subtitle": "Self top-up code for 1-month ChatGPT Plus subscription on your own account.",
+  "price": 140,
+  "order": 1,
+  "tags": [
+    "Plus 月卡",
+    "官方卡充",
+    "秒充",
+    "可囤五天"
+  ],
+  "deliveryNotice": "Instant automated delivery after payment",
+  "features": [
+    "正规卡充充值",
+    "质保 30 天不掉订阅",
+    "卡密提取后 5 天内有效"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥140",
+  "actionType": "buy",
+  "orderName": "ChatGPT Plus 月卡（菲区卡充）",
+  "isHot": true,
+  "warnings": [
+    "请确认当前会员已到期，账号无未结清账单。",
+    "封号由于官方风控或自身使用网络环境导致，不在质保范围内。"
+  ],
+  "detail": {
+    "title": "ChatGPT Plus 1-Month | PH Official Top-up [Instant][Warranty]",
+    "subtitle": "Self top-up code for 1-month ChatGPT Plus subscription on your own account.",
+    "sections": [
+      {
+        "title": "Product Details",
+        "items": [
+          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
+          "Includes 30-day subscription warranty against unprompted drops."
+        ]
+      },
+      {
+        "title": "Important Notes",
+        "items": [
+          "Please use a clean, stable proxy IP environment.",
+          "Account bans caused by network environment or policy violations are not covered."
+        ]
+      }
+    ]
+  }
+}

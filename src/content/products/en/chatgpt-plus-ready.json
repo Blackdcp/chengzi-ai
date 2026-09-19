@@ -1,0 +1,51 @@
+{
+  "id": "chatgpt-plus-ready",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Plus Ready Account | Official 1-Month [30-Day Warranty]",
+  "subtitle": "Dedicated ready-to-use account with 1 month Plus subscription. Full email credentials provided.",
+  "price": 190,
+  "order": 3,
+  "tags": [
+    "成品号",
+    "独享开通",
+    "开箱即用",
+    "质保订阅"
+  ],
+  "deliveryNotice": "Instant automated delivery after payment",
+  "features": [
+    "独享邮箱账号",
+    "官方正规充值",
+    "30 天订阅质保",
+    "支持改密"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥190",
+  "actionType": "buy",
+  "orderName": "ChatGPT Plus 月卡成品号",
+  "isHot": true,
+  "warnings": [
+    "交付完整账号及邮箱密码，建议首次登录后自行修改密码。",
+    "请使用稳定干净的代理网络登录，避免滥用导致风控。"
+  ],
+  "detail": {
+    "title": "ChatGPT Plus Ready Account | Official 1-Month [30-Day Warranty]",
+    "subtitle": "Dedicated ready-to-use account with 1 month Plus subscription. Full email credentials provided.",
+    "sections": [
+      {
+        "title": "Product Details",
+        "items": [
+          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
+          "Includes 30-day subscription warranty against unprompted drops."
+        ]
+      },
+      {
+        "title": "Important Notes",
+        "items": [
+          "Please use a clean, stable proxy IP environment.",
+          "Account bans caused by network environment or policy violations are not covered."
+        ]
+      }
+    ]
+  }
+}

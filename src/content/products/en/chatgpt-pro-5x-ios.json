@@ -1,0 +1,50 @@
+{
+  "id": "chatgpt-pro-5x-ios",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Pro 5X 1-Month | iOS Official Top-up [Instant][30-Day Warranty]",
+  "subtitle": "Official iOS in-app top-up with 5X official compute and 30-day full subscription warranty.",
+  "price": 950,
+  "order": 6,
+  "tags": [
+    "Pro 5X",
+    "iOS 直充",
+    "秒充到账",
+    "质保30天"
+  ],
+  "deliveryNotice": "Instant automated delivery after payment",
+  "features": [
+    "Apple iOS 官方内购",
+    "无需提供账号密码",
+    "30 天全程质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥950",
+  "actionType": "buy",
+  "orderName": "ChatGPT Pro 5X（iOS 充值）",
+  "isHot": true,
+  "warnings": [
+    "需确保当前账户无未结清账单。",
+    "掉订阅按剩余天数退补差价，封号不在售后范围。"
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 5X 1-Month | iOS Official Top-up [Instant][30-Day Warranty]",
+    "subtitle": "Official iOS in-app top-up with 5X official compute and 30-day full subscription warranty.",
+    "sections": [
+      {
+        "title": "Product Details",
+        "items": [
+          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
+          "Includes 30-day subscription warranty against unprompted drops."
+        ]
+      },
+      {
+        "title": "Important Notes",
+        "items": [
+          "Please use a clean, stable proxy IP environment.",
+          "Account bans caused by network environment or policy violations are not covered."
+        ]
+      }
+    ]
+  }
+}

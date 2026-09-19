@@ -1,0 +1,49 @@
+{
+  "id": "chatgpt-pro-20x-renew",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Pro 20X 月卡｜官方卡充｜秒充｜正规充值【卡密可囤三天】",
+  "subtitle": "【20X 旗舰算力】在期卡充续费。要求当前仍在有效期内且之前为卡充（优先菲区）。",
+  "price": 1400,
+  "order": 7,
+  "tags": [
+    "Pro 20X 续费",
+    "顶级算力",
+    "卡充续费",
+    "可囤三天"
+  ],
+  "deliveryNotice": "卡密自动发货，即买即充",
+  "features": [
+    "20 倍顶配推理算力",
+    "无限制模型并发",
+    "30 天订阅质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单续费 ￥1400",
+  "actionType": "buy",
+  "orderName": "ChatGPT Pro 20X 续费月卡",
+  "isHot": true,
+  "warnings": [
+    "【必须尚未到期】：如果 Pro 20X 已到期变为免费版，无法通过该渠道续费。",
+    "【仅支持在期续费】：要求之前为卡充（优先菲区），通过 iOS / Google Play 开通的无法走此渠道。"
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 20X 月卡｜官方卡充续费",
+    "subtitle": "ChatGPT 顶配 20X 深度推理算力，在期账号卡充延期首选。",
+    "sections": [
+      {
+        "title": "续费要求",
+        "items": [
+          "要求当前账号 Pro 20X 仍在有效期内，不可到期。",
+          "要求之前是卡充开通（优先菲区），iOS 或 Google Play 开通的账号不可用。"
+        ]
+      },
+      {
+        "title": "质保规则",
+        "items": [
+          "正规官方卡充，提取卡密后 3 天内有效，提供 30 天订阅质保。"
+        ]
+      }
+    ]
+  }
+}

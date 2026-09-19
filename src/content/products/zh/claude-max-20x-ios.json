@@ -1,0 +1,49 @@
+{
+  "id": "claude-max-20x-ios",
+  "categoryId": "claude",
+  "categoryName": "Claude",
+  "title": "Claude MAX 20X 月卡｜iOS 官方正规充值【秒充】【质保30天】",
+  "subtitle": "【20X 旗舰算力】充值到自己账号。Claude 最高等级 20 倍推理算力上限。",
+  "price": 2600,
+  "order": 12,
+  "tags": [
+    "MAX 20X",
+    "顶配满血",
+    "高并发分析",
+    "质保30天"
+  ],
+  "deliveryNotice": "24 小时自动充值，预计 1-3 分钟成功",
+  "features": [
+    "20 倍顶配算力上限",
+    "满血 Claude 旗舰推理",
+    "30 天订阅质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥2600",
+  "actionType": "buy",
+  "orderName": "Claude MAX 20X 月卡",
+  "isHot": true,
+  "warnings": [
+    "充值前请确认账号无欠费、逾期账单。",
+    "充值成功后不支持退款，封号不在质保售后范围。"
+  ],
+  "detail": {
+    "title": "Claude MAX 20X 月卡｜iOS 官方充值",
+    "subtitle": "Claude 顶配 20 倍算力上限，支持高并发长文本分析与大项目重构。",
+    "sections": [
+      {
+        "title": "商品说明",
+        "items": [
+          "Claude MAX 20X 顶配会员正规充值，无需提供账号密码，24 小时自助秒到账。",
+          "保障 30 天官方订阅足额有效。"
+        ]
+      },
+      {
+        "title": "风控说明",
+        "items": [
+          "请在独立干净的稳定网络环境中使用，避免频繁切换地区 IP 导致封号。"
+        ]
+      }
+    ]
+  }
+}
