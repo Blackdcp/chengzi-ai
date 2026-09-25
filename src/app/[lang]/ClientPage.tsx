@@ -157,7 +157,6 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
     "chatgpt-pro-5x-ios": lang === 'zh' ? "iOS 官方内购直充，无需账号密码，秒级到账，享 30 天全程质保。" : "Official iOS top-up with 5X quota, instant delivery with 30-day warranty.",
     "chatgpt-pro-20x-renew": lang === 'zh' ? "要求当前仍在有效期内且之前为卡充（优先菲区），顶级 20X 旗舰算力延期。" : "For active unexpired accounts previously topped up via card (PH preferred).",
     "chatgpt-pro-20x-ios": lang === 'zh' ? "iOS 官方直充，新号或已过期老号均可充值，顶配 20X 满血算力。" : "Official iOS top-up for new or expired accounts. Full 20X flagship compute.",
-    "chatgpt-pro-20x-ready": lang === 'zh' ? "顶配 20X 旗舰算力独享成品号，含 30 天官方订阅质保，现货即发。" : "Flagship 20X ready account with 30-day warranty. Hassle-free deployment.",
     "claude-pro-ios": lang === 'zh' ? "正规 iOS 渠道代充，极速秒充，畅享 Claude 3.7 Sonnet 混合推理。" : "Official iOS top-up with Claude 3.7 Sonnet hybrid reasoning.",
     "claude-max-5x-ios": lang === 'zh' ? "Claude 官方 5 倍算力额度，重度编程与长工程架构利器。" : "5X Claude compute quota. Ideal for heavy coding & long documents.",
     "claude-max-20x-ios": lang === 'zh' ? "Claude 顶配 20 倍推理算力上限，支持高并发长文本分析与大项目重构。" : "Top-tier 20X compute limit for enterprise engineering & complex workflows.",
