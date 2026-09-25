@@ -81,7 +81,7 @@ export async function generateMetadata({ params }: GuidePageProps): Promise<Meta
 }
 
 function parseMarkdown(content: string): MarkdownBlock[] {
-  const lines = content.replace(/\r\n/g, '\n').split('\n')
+  const lines = content.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n')
   const blocks: MarkdownBlock[] = []
   let index = 0
 
@@ -144,18 +144,23 @@ function parseMarkdown(content: string): MarkdownBlock[] {
       const current = lines[index].trim()
       if (!current) break
       if (
-        /^```/.test(current) ||
-        /^(#{2,4})\s+/.test(current) ||
-        current.startsWith('>') ||
-        /^[-*]\s+/.test(current) ||
-        /^\d+\.\s+/.test(current)
+        paragraphLines.length > 0 &&
+        (/^```/.test(current) ||
+          /^(#{2,4})\s+/.test(current) ||
+          current.startsWith('>') ||
+          /^[-*]\s+/.test(current) ||
+          /^\d+\.\s+/.test(current))
       ) {
         break
       }
       paragraphLines.push(current)
       index += 1
     }
-    blocks.push({ type: 'paragraph', text: paragraphLines.join(' ') })
+    if (paragraphLines.length > 0) {
+      blocks.push({ type: 'paragraph', text: paragraphLines.join(' ') })
+    } else {
+      index += 1
+    }
   }
 
   return blocks
