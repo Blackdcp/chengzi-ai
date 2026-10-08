@@ -2,47 +2,68 @@
   "id": "chatgpt-pro-20x-renew",
   "categoryId": "chatgpt",
   "categoryName": "ChatGPT",
-  "title": "ChatGPT Pro 20X Renewal | Official Card Top-up [20X Flagship]",
-  "subtitle": "For active unexpired Pro 20X accounts previously topped up via card. Full 20X compute renewal.",
+  "title": "ChatGPT Pro $200 Monthly Card | Official Top-up [30-day Warranty]",
+  "subtitle": "【10X-$200 Tier】Top up your own account. Instant key activation; renewals before Oct 29 retain 20X quota!",
   "price": 1300,
   "order": 1,
   "tags": [
-    "Pro 20X 续费",
-    "顶级算力",
-    "卡充续费",
-    "可囤三天"
+    "Pro $200",
+    "Official Top-up",
+    "30-day Warranty",
+    "Stock 3 Days"
   ],
-  "deliveryNotice": "Instant automated delivery after payment",
+  "deliveryNotice": "Instant automated key delivery after payment",
   "features": [
-    "20 倍顶配推理算力",
-    "无限制模型并发",
-    "30 天订阅质保"
+    "Official top-up to your own account",
+    "Instant key delivery, stockable for 3 days",
+    "Full 30-day subscription warranty"
   ],
   "inStock": true,
   "buyButtonText": "Buy Now ¥1300",
   "actionType": "buy",
-  "orderName": "ChatGPT Pro 20X 续费月卡",
+  "orderName": "ChatGPT Pro $200 Top-up Key",
   "isHot": true,
   "warnings": [
-    "【必须尚未到期】：如果 Pro 20X 已到期变为免费版，无法通过该渠道续费。",
-    "【仅支持在期续费】：要求之前为卡充（优先菲区），通过 iOS / Google Play 开通的无法走此渠道。"
+    "【Renewal 20X Privilege】: Renewing before Oct 29 retains the original 20X high usage quota!",
+    "【Extension Rules】: Accounts expiring within 7 days of deadline renew before Oct 29 keep quota; otherwise updated 10X tier.",
+    "【Stockable Key】: Keys are redeemable within 72 hours to match your current subscription cycle."
   ],
   "detail": {
-    "title": "ChatGPT Pro 20X Renewal | Official Card Top-up [20X Flagship]",
-    "subtitle": "For active unexpired Pro 20X accounts previously topped up via card. Full 20X compute renewal.",
+    "title": "ChatGPT Pro $200 Monthly Card · Top up Your Own Account",
+    "subtitle": "Official genuine redemption channel to top up your own ChatGPT account safely.",
     "sections": [
       {
-        "title": "Product Details",
+        "title": "Key Highlights",
         "items": [
-          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
-          "Includes 30-day subscription warranty against unprompted drops."
+          "Official top-up: Official redemption code to recharge your own account safely.",
+          "Instant delivery: Auto-delivered key code, instant activation for $200 Pro plan.",
+          "30-day warranty: Full 30-day warranty with hassle-free support.",
+          "Stockable for 3 days: Redeemable within 72 hours to match your current cycle."
         ]
       },
       {
-        "title": "Important Notes",
+        "title": "Important Quota & Renewal Rules",
         "items": [
-          "Please use a clean, stable proxy IP environment.",
-          "Account bans caused by network environment or policy violations are not covered."
+          "20X quota privilege: Resubscribing before Oct 29 retains the original 20X super-high usage quota!",
+          "Extension eligibility: Subscriptions expiring within 7 days before cutoff can keep quota by resubscribing before Oct 29.",
+          "Cancellation non-stop: Cancelling renewal does not terminate active cycle immediately."
+        ]
+      },
+      {
+        "title": "Redemption Steps",
+        "items": [
+          "1. Receive redemption key and guide automatically after payment.",
+          "2. Log in to your personal ChatGPT account.",
+          "3. Go to the official redemption page, paste code, and upgrade.",
+          "4. No passwords required, 100% privacy protected."
+        ]
+      },
+      {
+        "title": "Warranty & Notice",
+        "items": [
+          "Redeem within 3 days after issuance.",
+          "30-day full subscription warranty included.",
+          "Please comply with OpenAI terms of service."
         ]
       }
     ]

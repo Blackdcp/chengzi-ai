@@ -155,7 +155,8 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
     "chatgpt-sms-verify": lang === 'zh' ? "美国真实实体手机卡接码，专为 OpenAI / ChatGPT 注册与安全验证打造。" : "Real US physical SIM verification, dedicated to OpenAI / ChatGPT.",
     "chatgpt-pro-5x-card": lang === 'zh' ? "官方正规卡充，5 倍官方用量与满血 o1/o3 深度推理算力。" : "Official card top-up with 5X official quota and full o1 reasoning.",
     "chatgpt-pro-5x-ios": lang === 'zh' ? "iOS 官方内购直充，无需账号密码，秒级到账，享 30 天全程质保。" : "Official iOS top-up with 5X quota, instant delivery with 30-day warranty.",
-    "chatgpt-pro-20x-renew": lang === 'zh' ? "要求当前仍在有效期内且之前为卡充（优先菲区），顶级 20X 旗舰算力延期。" : "For active unexpired accounts previously topped up via card (PH preferred).",
+    "chatgpt-pro-20x-renew": lang === 'zh' ? "【10X-200刀款】纯正官方卡充，直充自己账号；到期重新订阅仍享20X额度至10月29日！" : "【10X-$200】Official top-up to own account; renewals retain 20X quota until Oct 29!",
+    "chatgpt-pro-25x-500": lang === 'zh' ? "【25X-500刀款】官方正规卡密，直充自己账号1个月Pro 500刀顶配套餐（享25X超高算力，严禁使用微软邮箱）。" : "【25X-$500】Official key for Pro $500 tier with 25X compute (Microsoft email prohibited).",
     "claude-pro-ios": lang === 'zh' ? "正规 iOS 渠道代充，极速秒充，畅享 Claude 3.7 Sonnet 混合推理。" : "Official iOS top-up with Claude 3.7 Sonnet hybrid reasoning.",
     "claude-max-5x-ios": lang === 'zh' ? "Claude 官方 5 倍算力额度，重度编程与长工程架构利器。" : "5X Claude compute quota. Ideal for heavy coding & long documents.",
     "claude-max-20x-ios": lang === 'zh' ? "Claude 顶配 20 倍推理算力上限，支持高并发长文本分析与大项目重构。" : "Top-tier 20X compute limit for enterprise engineering & complex workflows.",
@@ -164,7 +165,7 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
   };
 
   const getProductBadge = (product: Product) => {
-    if (product.id.includes("pro-20x") || product.id.includes("max-20x") || product.id === "grok-heavy-300") return lang === 'zh' ? "旗舰顶配" : "Flagship";
+    if (product.id.includes("pro-20x") || product.id.includes("25x") || product.id.includes("max-20x") || product.id === "grok-heavy-300") return lang === 'zh' ? "旗舰顶配" : "Flagship";
     if (product.id.includes("plus") || product.id === "claude-pro-ios") return lang === 'zh' ? "高性价比" : "Popular";
     if (product.isHot) return lang === 'zh' ? "热门" : "Hot";
     return "";
