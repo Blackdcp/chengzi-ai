@@ -3,8 +3,8 @@
   "categoryId": "claude",
   "categoryName": "Claude",
   "title": "Claude MAX 5X 1-Month | iOS Official Top-up [5X Quota][30-Day Warranty]",
-  "subtitle": "5X Claude compute quota. Official iOS top-up with 30-day subscription warranty.",
-  "price": 1300,
+  "subtitle": "[5X-$100 Plan] Top up your own account. 5X official Claude compute quota with UID fast top-up.",
+  "price": 999,
   "order": 11,
   "tags": [
     "MAX 5X",
@@ -19,7 +19,7 @@
     "30 天订阅质保"
   ],
   "inStock": true,
-  "buyButtonText": "Buy Now ¥1300",
+  "buyButtonText": "Buy Now ￥999",
   "actionType": "buy",
   "orderName": "Claude MAX 5X 月卡",
   "isHot": true,

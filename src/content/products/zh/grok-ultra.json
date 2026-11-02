@@ -1,0 +1,51 @@
+{
+  "id": "grok-ultra",
+  "categoryId": "grok",
+  "categoryName": "Grok",
+  "title": "Grok Ultra 月卡｜新版多合一 官网正规充值【质保30天】",
+  "subtitle": "【Grok Ultra 旗舰款】充值到自己账号。xAI 顶配超算通道，第一性原理深度推演与高并发算力。",
+  "price": 799,
+  "order": 15,
+  "tags": [
+    "Grok Ultra",
+    "顶配算力",
+    "官方卡充",
+    "质保30天"
+  ],
+  "deliveryNotice": "发送卡密 24 小时自助秒充，预计 1-3 分钟到账",
+  "features": [
+    "xAI 旗舰 Ultra 算力",
+    "直充自用账号",
+    "1-3分钟极速秒充",
+    "30 天全程质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥799",
+  "actionType": "buy",
+  "orderName": "Grok Ultra 月卡（旗舰多合一）",
+  "isHot": true,
+  "warnings": [
+    "账号必须为免费版且享有半价（50% OFF）优惠资格方可充值。",
+    "提供全程 30 天订阅质保，质保期内掉订阅按剩余天数退差价；封号不在售后范围内。"
+  ],
+  "detail": {
+    "title": "Grok Ultra 月卡｜xAI 旗舰顶配官方正规充值",
+    "subtitle": "解锁马斯克 xAI 十万卡超算集群最高优先级算力，支持充值到您自己的账号。",
+    "sections": [
+      {
+        "title": "商品说明",
+        "items": [
+          "正规官方卡充，支持直接充值到您自己的 Grok 账号（需免费版且有 50% 半价优惠）。",
+          "下单后发送卡密自助充值，预计 1-3 分钟极速到账，全端（Web / iOS / Android）通用。"
+        ]
+      },
+      {
+        "title": "质保与售后说明",
+        "items": [
+          "本商品提供全程 30 天订阅质保，质保期内如掉订阅按剩余天数退补差价。",
+          "请保持固定纯净的 IP 与合规使用习惯，因环境异常导致的封号不在售后范围内。"
+        ]
+      }
+    ]
+  }
+}

@@ -5,7 +5,7 @@
   "title": "Claude MAX 20X 1-Month | iOS Official Top-up [20X Flagship][30-Day Warranty]",
   "subtitle": "Top-tier 20X compute limit for high-intensity engineering. Official iOS instant top-up.",
   "price": 2600,
-  "order": 12,
+  "order": 99,
   "tags": [
     "MAX 20X",
     "顶配满血",
@@ -18,7 +18,7 @@
     "满血 Claude 旗舰推理",
     "30 天订阅质保"
   ],
-  "inStock": true,
+  "inStock": false,
   "buyButtonText": "Buy Now ¥2600",
   "actionType": "buy",
   "orderName": "Claude MAX 20X 月卡",

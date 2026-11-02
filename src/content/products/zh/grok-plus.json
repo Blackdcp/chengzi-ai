@@ -1,0 +1,51 @@
+{
+  "id": "grok-plus",
+  "categoryId": "grok",
+  "categoryName": "Grok",
+  "title": "Grok Plus 月卡｜新版多合一｜官方正规充值【质保订阅】",
+  "subtitle": "充值到自己账号。新版多合一套餐官方卡充，支持 Web / iOS / Android 全端通用。",
+  "price": 75,
+  "order": 12,
+  "tags": [
+    "Grok Plus",
+    "新版多合一",
+    "官方充值",
+    "全端支持"
+  ],
+  "deliveryNotice": "下单后客服极速跟进或发送卡密自助充值",
+  "features": [
+    "正规官方卡充",
+    "支持 Web/iOS/Android",
+    "全程订阅质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥75",
+  "actionType": "buy",
+  "orderName": "Grok Plus 月卡（新版多合一）",
+  "isHot": false,
+  "warnings": [
+    "不支持覆盖已有订阅，请确保您的账号当前为无订阅状态再充值。",
+    "CDK 提取后 24 小时内有效，请及时完成充值；提供全程订阅质保，封号不在售后范围。"
+  ],
+  "detail": {
+    "title": "Grok Plus 月卡｜新版多合一官方正规充值",
+    "subtitle": "高性价比入门首选，直充自用账号，全端畅享 xAI 智能与实时搜索。",
+    "sections": [
+      {
+        "title": "商品说明",
+        "items": [
+          "新版多合一官方卡充支付，支持 Web 网页端、iOS 端与 Android 端全平台使用。",
+          "不支持叠加覆盖，充值前请确保账号处于未订阅的免费版状态。",
+          "卡密有效期内 24 小时均可自助兑换充值。"
+        ]
+      },
+      {
+        "title": "质保与风控说明",
+        "items": [
+          "提供 30 天全程订阅质保，质保期内如掉订阅按剩余天数退补差价。",
+          "请避免账号共享、频繁切换 IP 或批量异常操作，封号不在售后范围内。"
+        ]
+      }
+    ]
+  }
+}

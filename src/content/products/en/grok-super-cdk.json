@@ -2,10 +2,10 @@
   "id": "grok-super-cdk",
   "categoryId": "grok",
   "categoryName": "Grok",
-  "title": "Grok Super 1-Month | Official iOS CDK Top-up [Subscription Warranty]",
-  "subtitle": "Official Grok Super subscription key on your own account. Works across Web, iOS & Android.",
-  "price": 260,
-  "order": 13,
+  "title": "Grok Super 1-Month | All-in-One Official Top-up [30-Day Warranty]",
+  "subtitle": "Top up your own account. Official card recharge (requires free tier with 50% promo eligibility).",
+  "price": 399,
+  "order": 14,
   "tags": [
     "Grok Super",
     "官方充值",
@@ -19,13 +19,13 @@
     "全程订阅质保"
   ],
   "inStock": true,
-  "buyButtonText": "Buy Now ¥260",
+  "buyButtonText": "Buy Now ￥399",
   "actionType": "buy",
   "orderName": "Grok Super 月卡",
   "isHot": true,
   "warnings": [
-    "卡密未使用前长期有效，支持提前续费（提前续费会覆盖原时间）。",
-    "掉订阅按天退差价，封号不在质保范围内。"
+    "Account must be on the free tier with 50% discount eligibility.",
+    "Full 30-day subscription warranty included. Account bans are not covered."
   ],
   "detail": {
     "title": "Grok Super 1-Month | Official iOS CDK Top-up [Subscription Warranty]",

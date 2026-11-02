@@ -5,6 +5,8 @@ export interface Category {
 }
 
 export const categories: Category[] = [
-  { id: "gpt", name: "GPT 会员", iconName: "bot" },
-  { id: "gemini", name: "Gemini 会员", iconName: "star" }
+  { id: "chatgpt", name: "ChatGPT", iconName: "bot" },
+  { id: "claude", name: "Claude", iconName: "sparkles" },
+  { id: "grok", name: "Grok", iconName: "zap" },
+  { id: "gemini", name: "Gemini", iconName: "star" }
 ];

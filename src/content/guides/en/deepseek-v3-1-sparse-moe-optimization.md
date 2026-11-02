@@ -79,9 +79,9 @@ While open-source MoE engines handle high-frequency code completions, frontier c
 
 **Chengzi AI** provides verified official subscription accounts with full 30-day warranty:
 
-- 👑 **[ChatGPT Pro 20X Renewal (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Price reduced to ¥1300! 20X compute limit for uninterrupted research and heavy-duty development.
-- 🚀 **[ChatGPT Pro 5X Card Top-Up (¥900)](/en/products/chatgpt-pro-5x-card)**: 5X official quota and o1/o3 reasoning power, instant delivery.
+- 👑 **[ChatGPT Pro 20X Renewal (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Price reduced to ¥1200! 20X compute limit for uninterrupted research and heavy-duty development.
+- 🚀 **[ChatGPT Pro 5X Card Top-Up (¥688)](/en/products/chatgpt-pro-5x-card)**: 5X official quota and o1/o3 reasoning power, instant delivery.
 - ⚡ **[Claude MAX 20X Official Top-Up (¥2600)](/en/products/claude-max-20x-ios)**: Uncapped 20X Claude capacity for massive terminal agent tasks.
-- ⚡ **[Claude MAX 5X Official Top-Up (¥1300)](/en/products/claude-max-5x-ios)**: 5X capacity for power coders, backed by 30-day subscription warranty.
-- 🌟 **[Claude Pro 1-Month Top-Up (¥190)](/en/products/claude-pro-ios)**: Budget-friendly gateway to Claude 3.7 Sonnet hybrid reasoning.
-- 🔥 **[Grok Super & Heavy Tiers (From ¥260)](/en/products/grok-super-cdk)**: Direct access to Elon Musk's 100k GPU Colossus cluster.
+- ⚡ **[Claude MAX 5X Official Top-Up (¥999)](/en/products/claude-max-5x-ios)**: 5X capacity for power coders, backed by 30-day subscription warranty.
+- 🌟 **[Claude Pro 1-Month Top-Up (¥159)](/en/products/claude-pro-ios)**: Budget-friendly gateway to Claude 3.7 Sonnet hybrid reasoning.
+- 🔥 **[Grok Super & Heavy Tiers (From ¥399)](/en/products/grok-super-cdk)**: Direct access to Elon Musk's 100k GPU Colossus cluster.

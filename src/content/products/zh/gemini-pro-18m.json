@@ -1,0 +1,61 @@
+{
+  "id": "gemini-pro-18m",
+  "categoryId": "gemini",
+  "categoryName": "Gemini",
+  "title": "Gemini Pro 18个月会员 高权重成品号【2-3年老邮箱】【质保首登】",
+  "subtitle": "折合每月仅 ￥2.5！附 2-3 年高品质 Gmail 老邮箱独享成品号，已开通 18 个月 Gemini Pro 会员。",
+  "price": 45,
+  "order": 16,
+  "tags": [
+    "18个月会员",
+    "2-3年老Gmail",
+    "独享成品号",
+    "质保首登"
+  ],
+  "deliveryNotice": "自动发货，含完整 Google 账号、密码与 2FA 密钥",
+  "features": [
+    "已开通 18 个月 Pro 会员",
+    "2-3 年高权重老 Gmail",
+    "支持 NotebookLM / Veo",
+    "独享账号带 2FA"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥45",
+  "actionType": "buy",
+  "orderName": "Gemini Pro 18个月会员成品号",
+  "isHot": true,
+  "warnings": [
+    "【严禁立即改密】：首次登录后请勿马上修改密码或安全设置，建议固定纯净 IP（推荐美国节点）正常使用 3-7 天后再更换 2FA 与密码！",
+    "本超值特惠商品原则上质保首次登录及 Gemini Pro 会员正常开通（不质保 Antigravity / GCP 等附加场景）。"
+  ],
+  "detail": {
+    "title": "Gemini Pro 18个月会员｜2-3年高品质老 Gmail 独享成品号",
+    "subtitle": "一次购买畅用一年半！包含 Google Gemini Advanced / Pro、NotebookLM、Veo 等核心会员权益。",
+    "sections": [
+      {
+        "title": "商品核心亮点",
+        "items": [
+          "超长 18 个月有效期：Gemini Pro 会员已正式开通，会员期限长达 18 个月（折合每月仅 2.5 元）。",
+          "2–3 年高权重老邮箱：采用 2-3 年高品质 Gmail 老号制作，抗风控能力远超新注册白号。",
+          "完整独享交付：发货格式为「Google 账号 ---- 登录密码 ---- 2FA 密钥」，一人一号绝不共享。",
+          "支持 Google AI 全家桶：畅享 Gemini Pro 旗舰模型、NotebookLM 高级版、Veo 视频生成等 Pro 会员服务。"
+        ]
+      },
+      {
+        "title": "重要防风控养号指南（必看）",
+        "items": [
+          "1. 禁止立即改密：首次登录后请勿立刻修改密码，否则极易触发 Google 异地安全风控，因自行立即改密导致的问题不在售后范围。",
+          "2. 3天后再改 2FA：建议在固定设备与稳定美国 IP 下正常使用 3 天左右，再优先通过 Change Authenticator（更改身份验证器）替换为您自己的 2FA，防止邮箱被扫号找回。",
+          "3. 避免频繁切换 IP：请勿在短时间内频繁登入登出或切换国家节点，稳定使用 7-30 天后可绑定自己的辅助邮箱。"
+        ]
+      },
+      {
+        "title": "售后与场景说明",
+        "items": [
+          "本特惠商品质保首次正常登录及 Gemini Pro 会员权益已开通。",
+          "Antigravity（反重力）、GCP、API 反代等属于附加高风控场景，不作为本商品售后标准。"
+        ]
+      }
+    ]
+  }
+}

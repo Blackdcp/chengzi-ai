@@ -55,15 +55,15 @@ As an independent provider of verified official subscriptions and apex compute t
 
 | Ecosystem | Product SKU | Price | Capacity & Focus | Best For |
 | :--- | :--- | :--- | :--- | :--- |
-| **ChatGPT** | **[Pro 20X Active Renewal](/en/products/chatgpt-pro-20x-renew)** | **¥1300** | 20X compute limit, zero concurrency caps | Algorithms, formal math, unbeatable value |
-| **ChatGPT** | **[Pro 5X Card Top-Up](/en/products/chatgpt-pro-5x-card)** | **¥900** | 5X official quota, o1/o3 reasoning | Daily heavy development, Cursor workflows |
-| **ChatGPT** | **[Plus PH Card Top-Up](/en/products/chatgpt-plus-ph)** | **¥140** | Official card top-up, valid 5 days, instant | Daily personal tasks, budget full-stack |
-| **ChatGPT** | **[Plus Ready Account](/en/products/chatgpt-plus-ready)** | **¥190** | Dedicated email credentials, instant setup | Zero-setup onboarding, overseas users |
+| **ChatGPT** | **[Pro 20X Active Renewal](/en/products/chatgpt-pro-20x-renew)** | **¥1200** | 20X compute limit, zero concurrency caps | Algorithms, formal math, unbeatable value |
+| **ChatGPT** | **[Pro 5X Card Top-Up](/en/products/chatgpt-pro-5x-card)** | **¥688** | 5X official quota, o1/o3 reasoning | Daily heavy development, Cursor workflows |
+| **ChatGPT** | **[Plus PH Card Top-Up](/en/products/chatgpt-plus-ph)** | **¥125** | Official card top-up, valid 5 days, instant | Daily personal tasks, budget full-stack |
+| **ChatGPT** | **[Plus Ready Account](/en/products/chatgpt-plus-ready)** | **¥165** | Dedicated email credentials, instant setup | Zero-setup onboarding, overseas users |
 | **Claude** | **[MAX 20X Official Top-Up](/en/products/claude-max-20x-ios)** | **¥2600** | 20X Claude limit, full-context mastery | Large monorepo refactoring, Claude Code CLI |
-| **Claude** | **[MAX 5X Official Top-Up](/en/products/claude-max-5x-ios)** | **¥1300** | 5X Claude capacity, instant response | Full-stack daily engineering |
-| **Claude** | **[Pro 1-Month Top-Up](/en/products/claude-pro-ios)** | **¥190** | Official iOS top-up, Claude 3.7 Sonnet | Technical writing, clean code generation |
+| **Claude** | **[MAX 5X Official Top-Up](/en/products/claude-max-5x-ios)** | **¥999** | 5X Claude capacity, instant response | Full-stack daily engineering |
+| **Claude** | **[Pro 1-Month Top-Up](/en/products/claude-pro-ios)** | **¥159** | Official iOS top-up, Claude 3.7 Sonnet | Technical writing, clean code generation |
 | **Grok** | **[SuperGrok Heavy $300 Tier](/en/products/grok-heavy-300)** | **¥2800** | 100k GPU Colossus cluster, first-principles | Macro finance, breaking intelligence, physics |
-| **Grok** | **[Grok Super Official CDK](/en/products/grok-super-cdk)** | **¥260** | Real-time X firehose digestion, multi-platform | Social trend tracking, crypto volatility |
+| **Grok** | **[Grok Super Official CDK](/en/products/grok-super-cdk)** | **¥399** | Real-time X firehose digestion, multi-platform | Social trend tracking, crypto volatility |
 
 ---
 
@@ -89,10 +89,10 @@ As an independent provider of verified official subscriptions and apex compute t
 
 **Chengzi AI** upholds verified official billing channels, absolute fraud elimination, and full 30-day warranty coverage across all tiers:
 
-- 👑 **[ChatGPT Pro 20X Renewal (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Newly reduced to ¥1300! 20X compute limit for uninterrupted research and heavy-duty development, backed by 30-day warranty.
-- 🚀 **[ChatGPT Pro 5X Card Top-Up (¥900)](/en/products/chatgpt-pro-5x-card)**: 5X official quota and o1/o3 reasoning power, instant delivery.
+- 👑 **[ChatGPT Pro 20X Renewal (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Newly reduced to ¥1200! 20X compute limit for uninterrupted research and heavy-duty development, backed by 30-day warranty.
+- 🚀 **[ChatGPT Pro 5X Card Top-Up (¥688)](/en/products/chatgpt-pro-5x-card)**: 5X official quota and o1/o3 reasoning power, instant delivery.
 - ⚡ **[Claude MAX 20X Official Top-Up (¥2600)](/en/products/claude-max-20x-ios)**: Uncapped 20X Claude capacity for massive terminal agent tasks.
-- ⚡ **[Claude MAX 5X Official Top-Up (¥1300)](/en/products/claude-max-5x-ios)**: 5X capacity for power coders, backed by 30-day subscription warranty.
-- 🌟 **[Claude Pro 1-Month Top-Up (¥190)](/en/products/claude-pro-ios)**: Budget-friendly gateway to Claude 3.7 Sonnet hybrid reasoning.
+- ⚡ **[Claude MAX 5X Official Top-Up (¥999)](/en/products/claude-max-5x-ios)**: 5X capacity for power coders, backed by 30-day subscription warranty.
+- 🌟 **[Claude Pro 1-Month Top-Up (¥159)](/en/products/claude-pro-ios)**: Budget-friendly gateway to Claude 3.7 Sonnet hybrid reasoning.
 - 🔥 **[SuperGrok Heavy 1-Month Top-Up / Ready Account (¥2800)](/en/products/grok-heavy-300)**: xAI's flagship $300 tier with 100k GPU Colossus cluster backing.
-- 🔥 **[Grok Super 1-Month Official iOS CDK (¥260)](/en/products/grok-super-cdk)**: Cost-effective access to xAI compute across Web, iOS, and Android.
+- 🔥 **[Grok Super 1-Month Official iOS CDK (¥399)](/en/products/grok-super-cdk)**: Cost-effective access to xAI compute across Web, iOS, and Android.

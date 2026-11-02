@@ -76,10 +76,10 @@ OpenAI 官方计费网关对 Pro 200 套餐额度特权的判定遵循以下状�
 
 针对 OpenAI 官方的这一关键政策调整，**橙子 AI** 已全面备足官方合规兑换卡密，助力开发者稳妥锁定 20X 算力特权：
 
-- 👑 **[ChatGPT Pro 200刀月卡 充值自己账号 (¥1300)](/zh/products/chatgpt-pro-20x-renew)**：性价比天花板！直充自己账号，老用户在 10 月 29 日前重新订阅仍享 20X 原高额度特权，卡密可囤 3 天，30 天足额质保。
-- 🚀 **[ChatGPT Pro 25X 智利区 500刀套餐 (¥3500)](/zh/products/chatgpt-pro-25x-500)**：算力天花板！专享 25X 超高算力配额，兑换直充 1 个月官方 Pro 500 刀顶配套餐（请勿使用微软邮箱）。
-- ⚡ **[ChatGPT Pro 5X 官方正规卡充 (¥900)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1/o3 深度推理，秒充极速到账。
+- 👑 **[ChatGPT Pro 200刀月卡 充值自己账号 (¥1200)](/zh/products/chatgpt-pro-20x-renew)**：性价比天花板！直充自己账号，老用户在 10 月 29 日前重新订阅仍享 20X 原高额度特权，卡密可囤 3 天，30 天足额质保。
+- 🚀 **[ChatGPT Pro 25X 智利区 500刀套餐 (¥3280)](/zh/products/chatgpt-pro-25x-500)**：算力天花板！专享 25X 超高算力配额，兑换直充 1 个月官方 Pro 500 刀顶配套餐（请勿使用微软邮箱）。
+- ⚡ **[ChatGPT Pro 5X 官方正规卡充 (¥688)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1/o3 深度推理，秒充极速到账。
 - ⚡ **[Claude MAX 20X 月卡 官方秒充 (¥2600)](/zh/products/claude-max-20x-ios)**：顶配 20 倍 Claude 算力上限，全长文本深度推理无死角，30 天订阅质保。
-- ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥1300)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，重度工程师全天候高频编码首选。
-- 🌟 **[Claude Pro 月卡 iOS 官方秒充 (¥190)](/zh/products/claude-pro-ios)**：极速 1-3 分钟到账，畅享 Claude 3.7 Sonnet 混合推理。
-- 🔥 **[SuperGrok Heavy 月卡 (¥2800)](/zh/products/grok-heavy-300)** 与 **[Grok Super (¥260)](/zh/products/grok-super-cdk)**：直通马斯克 xAI 十万卡液冷超算集群与实时检索。
+- ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥999)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，重度工程师全天候高频编码首选。
+- 🌟 **[Claude Pro 月卡 iOS 官方秒充 (¥159)](/zh/products/claude-pro-ios)**：极速 1-3 分钟到账，畅享 Claude 3.7 Sonnet 混合推理。
+- 🔥 **[SuperGrok Heavy 月卡 (¥2800)](/zh/products/grok-heavy-300)** 与 **[Grok Super (¥399)](/zh/products/grok-super-cdk)**：直通马斯克 xAI 十万卡液冷超算集群与实时检索。

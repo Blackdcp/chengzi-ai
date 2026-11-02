@@ -1,0 +1,52 @@
+{
+  "id": "gemini-pro-18m",
+  "categoryId": "gemini",
+  "categoryName": "Gemini",
+  "title": "Gemini Pro 18-Month Membership | Aged 2-3 Yr Gmail Ready Account",
+  "subtitle": "Only ¥2.5/month! Dedicated 2-3 year aged Gmail account with 18 months of Gemini Pro pre-activated.",
+  "price": 45,
+  "order": 16,
+  "tags": [
+    "18-Month Pro",
+    "Aged 2-3Yr Gmail",
+    "Dedicated Account",
+    "2FA Included"
+  ],
+  "deliveryNotice": "Automated delivery with Google email, password & 2FA secret",
+  "features": [
+    "18 Months Gemini Pro",
+    "2-3 Year Aged Gmail",
+    "NotebookLM & Veo Access",
+    "Dedicated with 2FA"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ￥45",
+  "actionType": "buy",
+  "orderName": "Gemini Pro 18-Month Ready Account",
+  "isHot": true,
+  "warnings": [
+    "DO NOT change password immediately upon first login! Use a fixed clean US IP for 3-7 days before updating 2FA and password.",
+    "Warranty covers first login and active Gemini Pro membership (excludes Antigravity/GCP)."
+  ],
+  "detail": {
+    "title": "Gemini Pro 18-Month Membership | Aged Gmail Ready Account",
+    "subtitle": "18 months of pre-activated Google Gemini Pro & NotebookLM on a high-trust 2-3 year old Gmail account.",
+    "sections": [
+      {
+        "title": "Highlights",
+        "items": [
+          "18-Month Active Membership: Pre-activated Gemini Pro subscription valid for 18 months.",
+          "2-3 Year Aged Gmail: Built on aged high-trust Google accounts with full 2FA credentials.",
+          "Full Pro Ecosystem: Includes Gemini Pro models, NotebookLM Plus, and Veo access."
+        ]
+      },
+      {
+        "title": "Account Safety & Warm-up Guide",
+        "items": [
+          "Do not change the password immediately after first login to avoid triggering Google security locks.",
+          "Log in from a fixed device and clean US IP for 3-7 days, then use Change Authenticator to update your 2FA key."
+        ]
+      }
+    ]
+  }
+}

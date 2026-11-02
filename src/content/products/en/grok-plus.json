@@ -1,0 +1,49 @@
+{
+  "id": "grok-plus",
+  "categoryId": "grok",
+  "categoryName": "Grok",
+  "title": "Grok Plus 1-Month | All-in-One Official Top-up [Subscription Warranty]",
+  "subtitle": "Top up your own account. New all-in-one official card recharge for Web, iOS, and Android.",
+  "price": 75,
+  "order": 12,
+  "tags": [
+    "Grok Plus",
+    "All-in-One",
+    "Official Top-up",
+    "Multi-platform"
+  ],
+  "deliveryNotice": "Fast self-service CDK or assisted recharge",
+  "features": [
+    "Official Card Top-up",
+    "Web/iOS/Android Support",
+    "Full Subscription Warranty"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ￥75",
+  "actionType": "buy",
+  "orderName": "Grok Plus 1-Month",
+  "isHot": false,
+  "warnings": [
+    "Does not stack on active subscriptions; account must be on the free tier.",
+    "Redeem within 24 hours of delivery. Full subscription warranty included."
+  ],
+  "detail": {
+    "title": "Grok Plus 1-Month | Official All-in-One Top-up",
+    "subtitle": "Entry-level xAI subscription topped up directly to your own account.",
+    "sections": [
+      {
+        "title": "Product Details",
+        "items": [
+          "Official card recharge supporting Web, iOS, and Android platforms.",
+          "Account must have no active subscription prior to recharging."
+        ]
+      },
+      {
+        "title": "Warranty Policy",
+        "items": [
+          "30-day pro-rated subscription warranty. Account bans due to IP switching or sharing are not covered."
+        ]
+      }
+    ]
+  }
+}

@@ -76,10 +76,10 @@ Many users worry that cancelling auto-renew causes immediate service termination
 
 To ensure users secure their 20X compute rights before October 29, **Chengzi AI** maintains dedicated inventory of official redemption keys:
 
-- 👑 **[ChatGPT Pro $200 Monthly Card (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Top value! Top up your own account, retain 20X quota if renewed before Oct 29, stockable for 3 days with full 30-day warranty.
-- 🚀 **[ChatGPT Pro 25X Chile $500 Plan (¥3500)](/en/products/chatgpt-pro-25x-500)**: Ultimate compute! 25X exclusive compute allocation, official card redemption directly to your account (Microsoft email prohibited).
-- ⚡ **[ChatGPT Pro 5X Official Card (¥900)](/en/products/chatgpt-pro-5x-card)**: 5X official capacity with full o1/o3 reasoning, instant delivery.
+- 👑 **[ChatGPT Pro $200 Monthly Card (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Top value! Top up your own account, retain 20X quota if renewed before Oct 29, stockable for 3 days with full 30-day warranty.
+- 🚀 **[ChatGPT Pro 25X Chile $500 Plan (¥3280)](/en/products/chatgpt-pro-25x-500)**: Ultimate compute! 25X exclusive compute allocation, official card redemption directly to your account (Microsoft email prohibited).
+- ⚡ **[ChatGPT Pro 5X Official Card (¥688)](/en/products/chatgpt-pro-5x-card)**: 5X official capacity with full o1/o3 reasoning, instant delivery.
 - ⚡ **[Claude MAX 20X Monthly Card (¥2600)](/en/products/claude-max-20x-ios)**: 20X Claude compute ceiling with unlimited context reasoning, 30-day warranty.
-- ⚡ **[Claude MAX 5X Monthly Card (¥1300)](/en/products/claude-max-5x-ios)**: 5X capacity for uninterrupted engineering sprints.
-- 🌟 **[Claude Pro Monthly Card (¥190)](/en/products/claude-pro-ios)**: 1-3 minute fast delivery via iOS in-app channel.
-- 🔥 **[SuperGrok Heavy Monthly Card (¥2800)](/en/products/grok-heavy-300)** & **[Grok Super Key (¥260)](/en/products/grok-super-cdk)**: 100,000-GPU cluster access and real-time live search.
+- ⚡ **[Claude MAX 5X Monthly Card (¥999)](/en/products/claude-max-5x-ios)**: 5X capacity for uninterrupted engineering sprints.
+- 🌟 **[Claude Pro Monthly Card (¥159)](/en/products/claude-pro-ios)**: 1-3 minute fast delivery via iOS in-app channel.
+- 🔥 **[SuperGrok Heavy Monthly Card (¥2800)](/en/products/grok-heavy-300)** & **[Grok Super Key (¥399)](/en/products/grok-super-cdk)**: 100,000-GPU cluster access and real-time live search.

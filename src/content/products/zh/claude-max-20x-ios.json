@@ -5,7 +5,7 @@
   "title": "Claude MAX 20X 月卡｜iOS 官方正规充值【秒充】【质保30天】",
   "subtitle": "【20X 旗舰算力】充值到自己账号。Claude 最高等级 20 倍推理算力上限。",
   "price": 2600,
-  "order": 12,
+  "order": 99,
   "tags": [
     "MAX 20X",
     "顶配满血",
@@ -18,7 +18,7 @@
     "满血 Claude 旗舰推理",
     "30 天订阅质保"
   ],
-  "inStock": true,
+  "inStock": false,
   "buyButtonText": "下单购买 ￥2600",
   "actionType": "buy",
   "orderName": "Claude MAX 20X 月卡",

@@ -81,8 +81,8 @@ Claude 3.8 的强大能力对账户的算力额度提出了极高要求。在复
 **橙子 AI** 提供纯正官方渠道充值、享有足额 30 天质保的高阶 Claude 与 GPT 账号服务：
 
 - ⚡ **[Claude MAX 20X 月卡 官方秒充 (¥2600)](/zh/products/claude-max-20x-ios)**：顶配 20 倍 Claude 算力上限，全长文本深度推理无死角，30 天订阅质保，重度系统架构终极保障。
-- ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥1300)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，全栈工程师全天候高频编码首选。
-- 🌟 **[Claude Pro 月卡 iOS 官方秒充 (¥190)](/zh/products/claude-pro-ios)**：极速 1-3 分钟到账，畅享 Claude 3.7 / 3.8 混合推理。
-- 👑 **[ChatGPT Pro 25X 智利区 500刀套餐 (¥3500)](/zh/products/chatgpt-pro-25x-500)**：25 倍顶配算力天花板，与 Claude MAX 形成终极双模型互补（请勿使用微软邮箱）。
-- 🚀 **[ChatGPT Pro 200刀月卡 充值自己账号 (¥1300)](/zh/products/chatgpt-pro-20x-renew)**：老用户 10 月 29 日前续费享 20X 额度，卡密可囤 3 天，现货秒充。
+- ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥999)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，全栈工程师全天候高频编码首选。
+- 🌟 **[Claude Pro 月卡 iOS 官方秒充 (¥159)](/zh/products/claude-pro-ios)**：极速 1-3 分钟到账，畅享 Claude 3.7 / 3.8 混合推理。
+- 👑 **[ChatGPT Pro 25X 智利区 500刀套餐 (¥3280)](/zh/products/chatgpt-pro-25x-500)**：25 倍顶配算力天花板，与 Claude MAX 形成终极双模型互补（请勿使用微软邮箱）。
+- 🚀 **[ChatGPT Pro 200刀月卡 充值自己账号 (¥1200)](/zh/products/chatgpt-pro-20x-renew)**：老用户 10 月 29 日前续费享 20X 额度，卡密可囤 3 天，现货秒充。
 - 🔥 **[SuperGrok Heavy 月卡 (¥2800)](/zh/products/grok-heavy-300)**：xAI 孟菲斯十万卡集群支持，第一性原理与实时信息捕捉。

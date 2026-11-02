@@ -2,10 +2,10 @@
   "id": "grok-super-cdk",
   "categoryId": "grok",
   "categoryName": "Grok",
-  "title": "Grok Super 月卡｜iOS 官方正规充值【质保订阅】",
-  "subtitle": "充值到自己账号。自助充值卡密，兑换完即可订阅 1 个月的 Grok Super 套餐。",
-  "price": 260,
-  "order": 13,
+  "title": "Grok Super 月卡｜新版多合一｜官方正规充值【质保30天】",
+  "subtitle": "充值到自己账号。新版多合一正规官方卡充（账号需为免费版且有半价优惠），直通 xAI 算力集群。",
+  "price": 399,
+  "order": 14,
   "tags": [
     "Grok Super",
     "官方充值",
@@ -19,13 +19,13 @@
     "全程订阅质保"
   ],
   "inStock": true,
-  "buyButtonText": "下单购买 ￥260",
+  "buyButtonText": "下单购买 ￥399",
   "actionType": "buy",
   "orderName": "Grok Super 月卡",
   "isHot": true,
   "warnings": [
-    "卡密未使用前长期有效，支持提前续费（提前续费会覆盖原时间）。",
-    "掉订阅按天退差价，封号不在质保范围内。"
+    "账号必须为无订阅免费版且享有半价（50% OFF）优惠资格方可充值。",
+    "提供全程 30 天订阅质保，掉订阅按天退差价；封号不在售后范围内。"
   ],
   "detail": {
     "title": "Grok Super 月卡｜官方正规充值",

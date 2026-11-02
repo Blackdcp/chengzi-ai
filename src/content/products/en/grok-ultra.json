@@ -1,0 +1,50 @@
+{
+  "id": "grok-ultra",
+  "categoryId": "grok",
+  "categoryName": "Grok",
+  "title": "Grok Ultra 1-Month | Flagship All-in-One Official Top-up [30-Day Warranty]",
+  "subtitle": "[Grok Ultra Flagship] Top up your own account. Maximum xAI compute priority and deep reasoning.",
+  "price": 799,
+  "order": 15,
+  "tags": [
+    "Grok Ultra",
+    "Flagship Compute",
+    "Official Top-up",
+    "30-Day Warranty"
+  ],
+  "deliveryNotice": "24/7 self-service CDK, 1-3 mins instant recharge",
+  "features": [
+    "xAI Ultra Compute Tier",
+    "Top Up Own Account",
+    "1-3 Mins Delivery",
+    "30-Day Warranty"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ￥799",
+  "actionType": "buy",
+  "orderName": "Grok Ultra 1-Month Flagship",
+  "isHot": true,
+  "warnings": [
+    "Requires a free-tier account with 50% promo eligibility.",
+    "Full 30-day subscription warranty included. Account bans are not covered."
+  ],
+  "detail": {
+    "title": "Grok Ultra 1-Month | Flagship Official Top-up",
+    "subtitle": "Unrestricted access to xAI flagship compute on your own account.",
+    "sections": [
+      {
+        "title": "Product Details",
+        "items": [
+          "Official card recharge directly to your own Grok account (free tier with 50% promo required).",
+          "Self-service CDK completes recharge in 1-3 minutes across Web, iOS, and Android."
+        ]
+      },
+      {
+        "title": "Warranty Policy",
+        "items": [
+          "Full 30-day pro-rated subscription warranty against subscription drops."
+        ]
+      }
+    ]
+  }
+}

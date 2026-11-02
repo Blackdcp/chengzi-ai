@@ -3,9 +3,9 @@
   "categoryId": "chatgpt",
   "categoryName": "ChatGPT",
   "title": "ChatGPT Plus 1-Month | PH Official Top-up [Instant][Warranty]",
-  "subtitle": "Self top-up code for 1-month ChatGPT Plus subscription on your own account.",
-  "price": 140,
-  "order": 3,
+  "subtitle": "Top up your own account. Cheaper than official $20 USD rate, 24/7 self-service key for 1-month Plus.",
+  "price": 125,
+  "order": 4,
   "tags": [
     "Plus 月卡",
     "官方卡充",
@@ -19,7 +19,7 @@
     "卡密提取后 5 天内有效"
   ],
   "inStock": true,
-  "buyButtonText": "Buy Now ¥140",
+  "buyButtonText": "Buy Now ￥125",
   "actionType": "buy",
   "orderName": "ChatGPT Plus 月卡（菲区卡充）",
   "isHot": true,

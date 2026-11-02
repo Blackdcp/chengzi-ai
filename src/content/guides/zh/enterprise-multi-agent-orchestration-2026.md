@@ -64,12 +64,12 @@ $$C_{\text{tiered}} = M \times (0.5 C_{\text{L1}} + 0.4 C_{\text{L2}} + 0.1 C_{\
 
 | 算力层级 | 代表商品 / 渠道 | 专属标价 | 核心特性与额度倍率 | 推荐承担的 Agent 角色 |
 | :--- | :--- | :--- | :--- | :--- |
-| **L3 顶配旗舰** | **[ChatGPT Pro 25X 500刀](/zh/products/chatgpt-pro-25x-500)** | **¥3500** | 25X 顶配配额，无惧极端并发 | 首席架构师 Agent、数学证明 Agent |
+| **L3 顶配旗舰** | **[ChatGPT Pro 25X 500刀](/zh/products/chatgpt-pro-25x-500)** | **¥3280** | 25X 顶配配额，无惧极端并发 | 首席架构师 Agent、数学证明 Agent |
 | **L3 顶配旗舰** | **[Claude MAX 20X 月卡](/zh/products/claude-max-20x-ios)** | **¥2600** | 20 倍 Claude 算力，百万上下文 | 全局 AST 重构 Agent、系统审计 Agent |
-| **L3 性价比王** | **[ChatGPT Pro 200刀卡充](/zh/products/chatgpt-pro-20x-renew)** | **¥1300** | 10.29前锁定 20X 额度，老号首选 | 深度推理验证、长链思考攻坚 |
-| **L2 主力工程** | **[Claude MAX 5X 月卡](/zh/products/claude-max-5x-ios)** | **¥1300** | 5 倍 Claude 额度，全天候极速 | 核心全栈开发 Agent、CLI 编程终端 |
-| **L2 主力工程** | **[ChatGPT Pro 5X 官方卡充](/zh/products/chatgpt-pro-5x-card)** | **¥900** | 5 倍官方用量，满血 o1 推理 | 单元测试生成 Agent、API 实现 Agent |
-| **L1 基础日常** | **[ChatGPT Plus 菲区卡充](/zh/products/chatgpt-plus-ph)** | **¥140** | 官方正规卡充，秒充秒开，可囤5天 | 日常文档提取 Agent、Git 提交总结 |
+| **L3 性价比王** | **[ChatGPT Pro 200刀卡充](/zh/products/chatgpt-pro-20x-renew)** | **¥1200** | 10.29前锁定 20X 额度，老号首选 | 深度推理验证、长链思考攻坚 |
+| **L2 主力工程** | **[Claude MAX 5X 月卡](/zh/products/claude-max-5x-ios)** | **¥999** | 5 倍 Claude 额度，全天候极速 | 核心全栈开发 Agent、CLI 编程终端 |
+| **L2 主力工程** | **[ChatGPT Pro 5X 官方卡充](/zh/products/chatgpt-pro-5x-card)** | **¥688** | 5 倍官方用量，满血 o1 推理 | 单元测试生成 Agent、API 实现 Agent |
+| **L1 基础日常** | **[ChatGPT Plus 菲区卡充](/zh/products/chatgpt-plus-ph)** | **¥125** | 官方正规卡充，秒充秒开，可囤5天 | 日常文档提取 Agent、Git 提交总结 |
 | **情报态势感知**| **[SuperGrok Heavy 300刀](/zh/products/grok-heavy-300)** | **¥2800** | 十万卡集群驱动，全网推文秒级检索 | 金融突发监控 Agent、开源异动感知 |
 
 ---
@@ -116,10 +116,10 @@ print("Multi-agent tiered router initialized.")
 
 **橙子 AI** 为技术团队与资深极客提供全梯队覆盖的官方正规现货账号服务：
 
-- 👑 **[ChatGPT Pro 25X 智利区 500刀套餐 (¥3500)](/zh/products/chatgpt-pro-25x-500)**：全新到货！25 倍顶配超级算力配额，官方卡充直充自己账号，适合作为企业多智能体核心中枢（请勿使用微软邮箱）。
-- 🚀 **[ChatGPT Pro 200刀月卡 充值自己账号 (¥1300)](/zh/products/chatgpt-pro-20x-renew)**：性价比神话！老用户在 10 月 29 日前重新订阅立享 20X 顶配特权，卡密可囤 3 天，现货秒充。
+- 👑 **[ChatGPT Pro 25X 智利区 500刀套餐 (¥3280)](/zh/products/chatgpt-pro-25x-500)**：全新到货！25 倍顶配超级算力配额，官方卡充直充自己账号，适合作为企业多智能体核心中枢（请勿使用微软邮箱）。
+- 🚀 **[ChatGPT Pro 200刀月卡 充值自己账号 (¥1200)](/zh/products/chatgpt-pro-20x-renew)**：性价比神话！老用户在 10 月 29 日前重新订阅立享 20X 顶配特权，卡密可囤 3 天，现货秒充。
 - ⚡ **[Claude MAX 20X 月卡 官方秒充 (¥2600)](/zh/products/claude-max-20x-ios)**：顶配 20 倍 Claude 算力上限，全长文本深度推理无死角，30 天订阅质保。
-- ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥1300)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，全栈工程师全天候高频编码首选。
-- 🚀 **[ChatGPT Pro 5X 官方正规卡充 (¥900)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1/o3 深度推理，秒充极速到账。
-- 🌟 **[Claude Pro 月卡 iOS 官方秒充 (¥190)](/zh/products/claude-pro-ios)**：极速 1-3 分钟到账，畅享 Claude 3.7 Sonnet 混合推理。
+- ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥999)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，全栈工程师全天候高频编码首选。
+- 🚀 **[ChatGPT Pro 5X 官方正规卡充 (¥688)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1/o3 深度推理，秒充极速到账。
+- 🌟 **[Claude Pro 月卡 iOS 官方秒充 (¥159)](/zh/products/claude-pro-ios)**：极速 1-3 分钟到账，畅享 Claude 3.7 Sonnet 混合推理。
 - 🔥 **[SuperGrok Heavy 月卡 (¥2800)](/zh/products/grok-heavy-300)**：xAI 旗舰顶配 300 刀款，直通马斯克十万卡集群与全网实时检索。

@@ -50,7 +50,7 @@ lastModified: "2026-10-07T08:00:00.000Z"
 | **多文件自主重构** | ★★★★★ (端到端自主闭环) | ★★★★☆ (依赖人工审查) | ★★★★☆ (长链逻辑极强) |
 | **并发死锁排查** | ★★★★☆ | ★★★☆☆ | ★★★★★ (满血 o1/o3 算力全开) |
 | **单日算力耐受度** | 20X 顶配无排队等待 | 容易耗尽 Fast 请求额度 | **25X 极致吞吐，绝无限速** |
-| **推荐账号配置** | **[Claude MAX 20X (¥2600)](/zh/products/claude-max-20x-ios)** | **[Claude Pro (¥190)](/zh/products/claude-pro-ios)** | **[Pro 25X 500刀 (¥3500)](/zh/products/chatgpt-pro-25x-500)** |
+| **推荐账号配置** | **[Claude MAX 20X (¥2600)](/zh/products/claude-max-20x-ios)** | **[Claude Pro (¥159)](/zh/products/claude-pro-ios)** | **[Pro 25X 500刀 (¥3280)](/zh/products/chatgpt-pro-25x-500)** |
 
 ---
 
@@ -97,8 +97,8 @@ print("Concurrency validation passed.")
 **橙子 AI** 为专业软件工程师与科研极客提供官方正规、享有 30 天质保的高阶算力账号服务：
 
 - ⚡ **[Claude MAX 20X 月卡 官方秒充 (¥2600)](/zh/products/claude-max-20x-ios)**：顶配 20 倍 Claude 算力上限，Claude Code 终端重构绝配，全长文本深度推理无死角，30 天订阅质保。
-- ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥1300)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，全栈工程师日常高频编程黄金档位。
-- 👑 **[ChatGPT Pro 25X 智利区 500刀套餐 (¥3500)](/zh/products/chatgpt-pro-25x-500)**：全新上线！25 倍顶配超级算力配额，官方卡充直充自己账号，并发形式化推演首选（请勿使用微软邮箱）。
-- 🚀 **[ChatGPT Pro 200刀月卡 充值自己账号 (¥1300)](/zh/products/chatgpt-pro-20x-renew)**：性价比神话！老用户在 10 月 29 日前重新订阅立享 20X 顶配额度，卡密可囤 3 天，现货秒充。
-- 🌟 **[Claude Pro 月卡 iOS 官方秒充 (¥190)](/zh/products/claude-pro-ios)**：极速 1-3 分钟到账，入门体验 Claude 3.7 混合推理。
-- 🚀 **[ChatGPT Pro 5X 官方正规卡充 (¥900)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1 深度推理，秒充极速到账。
+- ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥999)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，全栈工程师日常高频编程黄金档位。
+- 👑 **[ChatGPT Pro 25X 智利区 500刀套餐 (¥3280)](/zh/products/chatgpt-pro-25x-500)**：全新上线！25 倍顶配超级算力配额，官方卡充直充自己账号，并发形式化推演首选（请勿使用微软邮箱）。
+- 🚀 **[ChatGPT Pro 200刀月卡 充值自己账号 (¥1200)](/zh/products/chatgpt-pro-20x-renew)**：性价比神话！老用户在 10 月 29 日前重新订阅立享 20X 顶配额度，卡密可囤 3 天，现货秒充。
+- 🌟 **[Claude Pro 月卡 iOS 官方秒充 (¥159)](/zh/products/claude-pro-ios)**：极速 1-3 分钟到账，入门体验 Claude 3.7 混合推理。
+- 🚀 **[ChatGPT Pro 5X 官方正规卡充 (¥688)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1 深度推理，秒充极速到账。

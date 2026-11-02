@@ -21,20 +21,28 @@ const languages = ['zh', 'en'] as const
 const copy = {
   zh: {
     title: 'AI 官方账号与会员直充产品',
-    description: '集中展示橙子 AI 的官方账号与会员直充服务，包含 ChatGPT Pro 5X / 20X、Gemini Pro 与 Grok-Super。',
+    description: '集中展示橙子 AI 的官方账号与会员直充服务，涵盖 ChatGPT Plus/Pro、Claude Pro/MAX、Grok 全系与 Gemini Pro。',
     kicker: '官方现货',
     home: '返回首页',
     guidesLink: '查看实用教程',
     viewDetails: '查看详情',
     from: '起',
     groups: {
-      gpt: {
-        title: 'ChatGPT 旗舰与 Pro 算力',
-        description: 'ChatGPT Pro 5X、Pro 20X 官方秒充与账号直充服务。',
+      chatgpt: {
+        title: 'ChatGPT 会员与 Pro 旗舰算力',
+        description: 'ChatGPT Plus、Pro 5X、Pro 200刀与 500刀智利顶配官方直充及成品号。',
+      },
+      claude: {
+        title: 'Claude 编程与混合推理会员',
+        description: 'Claude Pro 与 Claude MAX 5X 官方 iOS 免密秒充。',
+      },
+      grok: {
+        title: 'Grok (xAI) 全系会员直充',
+        description: 'Grok Plus、Premium、Super 与 Ultra 新版多合一官方直充。',
       },
       gemini: {
-        title: 'Gemini 与 Grok 会员',
-        description: 'Gemini Pro 年卡直充与 Grok-Super 季度订阅。',
+        title: 'Gemini Pro 会员与高权重账号',
+        description: 'Gemini Pro 18个月会员成品号（附 2-3 年高品质 Gmail 老邮箱）。',
       },
       other: {
         title: '其他服务',
@@ -44,20 +52,28 @@ const copy = {
   },
   en: {
     title: 'Official AI Accounts & Subscriptions',
-    description: 'Official account subscriptions from Orange AI, featuring ChatGPT Pro 5X / 20X, Gemini Pro, and Grok-Super.',
+    description: 'Official account subscriptions from Orange AI, featuring ChatGPT Plus/Pro, Claude Pro/MAX, Grok, and Gemini Pro.',
     kicker: 'Verified Stock',
     home: 'Back home',
     guidesLink: 'Practical Guides',
     viewDetails: 'View details',
     from: 'from',
     groups: {
-      gpt: {
-        title: 'ChatGPT Pro & Flagship Compute',
-        description: 'Official ChatGPT Pro 5X and 20X top-ups and subscriptions.',
+      chatgpt: {
+        title: 'ChatGPT Plus & Pro Flagship Compute',
+        description: 'Official ChatGPT Plus, Pro 5X, $200 Pro, and $500 25X top-ups and ready accounts.',
+      },
+      claude: {
+        title: 'Claude Pro & MAX Subscriptions',
+        description: 'Claude Pro and MAX 5X official iOS fast top-ups.',
+      },
+      grok: {
+        title: 'Grok (xAI) All-in-One Tiers',
+        description: 'Grok Plus, Premium, Super, and Ultra official top-ups.',
       },
       gemini: {
-        title: 'Gemini & Grok Subscriptions',
-        description: 'Gemini Pro annual cards and Grok-Super 90-day passes.',
+        title: 'Gemini Pro Memberships',
+        description: 'Gemini Pro 18-month pre-activated aged Gmail ready accounts.',
       },
       other: {
         title: 'Other Services',
@@ -129,11 +145,11 @@ function stripHtml(value: string) {
 }
 
 function getIndexableProducts(lang: 'zh' | 'en') {
-  return getProducts(lang).filter(product => product.actionType !== 'link')
+  return getProducts(lang).filter(product => product.actionType !== 'link' && product.inStock)
 }
 
 function groupProducts(lang: 'zh' | 'en', products: Product[]): ProductGroup[] {
-  const order = ['gpt', 'gemini'] as const
+  const order = ['chatgpt', 'claude', 'grok', 'gemini'] as const
   const knownGroupIds = new Set<string>(order)
   const pageCopy = copy[lang]
   const groups: ProductGroup[] = order

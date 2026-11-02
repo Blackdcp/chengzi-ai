@@ -55,15 +55,15 @@ lastModified: "2026-09-25T08:00:00.000Z"
 
 | 品牌生态 | 商品名称 / SKU | 专属售价 | 算力与核心特性 | 最佳适用场景 |
 | :--- | :--- | :--- | :--- | :--- |
-| **ChatGPT** | **[Pro 20X 在期卡充续费](/zh/products/chatgpt-pro-20x-renew)** | **¥1300** | 20 倍顶配深度推理，无并发限制 | 算法研究、形式化数学、性价比王者 |
-| **ChatGPT** | **[Pro 5X 官方卡充](/zh/products/chatgpt-pro-5x-card)** | **¥900** | 5 倍官方用量，满血 o1/o3 推理 | 重度开发主力、Cursor 深度用户 |
-| **ChatGPT** | **[Plus 菲区正规卡充](/zh/products/chatgpt-plus-ph)** | **¥140** | 官方正规卡充，5天可囤，秒级开通 | 个人日常使用、轻度开发、高性价比 |
-| **ChatGPT** | **[Plus 独享成品号](/zh/products/chatgpt-plus-ready)** | **¥190** | 包含完整邮箱，开箱即用，免去注册 | 新手入门、无外币卡或缺乏账号者 |
+| **ChatGPT** | **[Pro 20X 在期卡充续费](/zh/products/chatgpt-pro-20x-renew)** | **¥1200** | 20 倍顶配深度推理，无并发限制 | 算法研究、形式化数学、性价比王者 |
+| **ChatGPT** | **[Pro 5X 官方卡充](/zh/products/chatgpt-pro-5x-card)** | **¥688** | 5 倍官方用量，满血 o1/o3 推理 | 重度开发主力、Cursor 深度用户 |
+| **ChatGPT** | **[Plus 菲区正规卡充](/zh/products/chatgpt-plus-ph)** | **¥125** | 官方正规卡充，5天可囤，秒级开通 | 个人日常使用、轻度开发、高性价比 |
+| **ChatGPT** | **[Plus 独享成品号](/zh/products/chatgpt-plus-ready)** | **¥165** | 包含完整邮箱，开箱即用，免去注册 | 新手入门、无外币卡或缺乏账号者 |
 | **Claude** | **[MAX 20X 官方秒充](/zh/products/claude-max-20x-ios)** | **¥2600** | 20 倍 Claude 算力上限，全长文本理解 | 大型软件系统重构、Claude Code 极客 |
-| **Claude** | **[MAX 5X 官方秒充](/zh/products/claude-max-5x-ios)** | **¥1300** | 5 倍 Claude 额度，全天候极速响应 | 全栈工程师高频开发日常必备 |
-| **Claude** | **[Pro 月卡 iOS 秒充](/zh/products/claude-pro-ios)** | **¥190** | 正规 iOS 渠道充值，畅享 3.7 Sonnet | 日常写作、高质量代码生成、技术文档 |
+| **Claude** | **[MAX 5X 官方秒充](/zh/products/claude-max-5x-ios)** | **¥999** | 5 倍 Claude 额度，全天候极速响应 | 全栈工程师高频开发日常必备 |
+| **Claude** | **[Pro 月卡 iOS 秒充](/zh/products/claude-pro-ios)** | **¥159** | 正规 iOS 渠道充值，畅享 3.7 Sonnet | 日常写作、高质量代码生成、技术文档 |
 | **Grok** | **[SuperGrok Heavy 300刀款](/zh/products/grok-heavy-300)** | **¥2800** | xAI 孟菲斯十万卡超算支持，第一性原理 | 宏观对冲基金、突发事件情报、极限物理 |
-| **Grok** | **[Grok Super 官方 CDK](/zh/products/grok-super-cdk)** | **¥260** | 全网实时推文流消化，全端支持 | 社交趋势追踪、加密市场动态、日常对话 |
+| **Grok** | **[Grok Super 官方 CDK](/zh/products/grok-super-cdk)** | **¥399** | 全网实时推文流消化，全端支持 | 社交趋势追踪、加密市场动态、日常对话 |
 
 ---
 
@@ -89,10 +89,10 @@ lastModified: "2026-09-25T08:00:00.000Z"
 
 **橙子 AI** 始终坚持“官方通道、正规安全、全额质保”三大准则，为所有客户提供无忧售后保障：
 
-- 👑 **[ChatGPT Pro 20X 月卡 在期卡充续费 (¥1300)](/zh/products/chatgpt-pro-20x-renew)**：最新直降 100 元！提供 20 倍顶配深度推理算力，老号续费首选，30 天足额订阅质保。
-- 🚀 **[ChatGPT Pro 5X 官方正规卡充 (¥900)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1 深度推理，秒充极速到账。
+- 👑 **[ChatGPT Pro 20X 月卡 在期卡充续费 (¥1200)](/zh/products/chatgpt-pro-20x-renew)**：最新直降 100 元！提供 20 倍顶配深度推理算力，老号续费首选，30 天足额订阅质保。
+- 🚀 **[ChatGPT Pro 5X 官方正规卡充 (¥688)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1 深度推理，秒充极速到账。
 - ⚡ **[Claude MAX 20X 月卡 官方秒充 (¥2600)](/zh/products/claude-max-20x-ios)**：顶配 20 倍 Claude 算力上限，全长文本深度推理无死角，30 天订阅质保。
-- ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥1300)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，重度工程师全天候高频编码首选。
-- 🌟 **[Claude Pro 月卡 iOS 官方秒充 (¥190)](/zh/products/claude-pro-ios)**：极速 1-3 分钟到账，畅享 Claude 3.7 Sonnet 混合推理。
+- ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥999)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，重度工程师全天候高频编码首选。
+- 🌟 **[Claude Pro 月卡 iOS 官方秒充 (¥159)](/zh/products/claude-pro-ios)**：极速 1-3 分钟到账，畅享 Claude 3.7 Sonnet 混合推理。
 - 🔥 **[SuperGrok Heavy 月卡 官网正规充值/成品号 (¥2800)](/zh/products/grok-heavy-300)**：xAI 旗舰顶配 300 刀套餐，十万卡液冷集群支持，专人现场制作。
-- 🔥 **[Grok Super 月卡 iOS 官方正规充值 (¥260)](/zh/products/grok-super-cdk)**：直通马斯克 xAI 强劲算力，全端支持，秒发 CDK。
+- 🔥 **[Grok Super 月卡 iOS 官方正规充值 (¥399)](/zh/products/grok-super-cdk)**：直通马斯克 xAI 强劲算力，全端支持，秒发 CDK。

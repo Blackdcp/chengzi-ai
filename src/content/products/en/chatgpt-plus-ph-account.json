@@ -1,0 +1,52 @@
+{
+  "id": "chatgpt-plus-ph-account",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Plus 1-Month | PH Half-Price Ready Account [30-Day Warranty]",
+  "subtitle": "Unbeatable value! Dedicated ready-to-use Plus account with password & 2FA included.",
+  "price": 79,
+  "order": 3,
+  "tags": [
+    "Ready Account",
+    "Half-Price",
+    "2FA Included",
+    "30-Day Warranty"
+  ],
+  "deliveryNotice": "Instant redemption key for dedicated ready account",
+  "features": [
+    "Dedicated Plus Account",
+    "Official Subscription",
+    "30-Day Warranty",
+    "Email Changeable"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ￥79",
+  "actionType": "buy",
+  "orderName": "ChatGPT Plus Ready Account (PH Promo)",
+  "isHot": true,
+  "warnings": [
+    "Format: Email — Password — 2FA Secret. You may rebind the email after verifying normal login.",
+    "30-day subscription warranty included (account bans or SMS triggers due to IP environment are not covered)."
+  ],
+  "detail": {
+    "title": "ChatGPT Plus 1-Month | PH Promo Ready Account",
+    "subtitle": "Full 1-month official ChatGPT Plus access at nearly half the standard price.",
+    "sections": [
+      {
+        "title": "Delivery Details",
+        "items": [
+          "Dedicated ChatGPT Plus account with 1-month active official subscription.",
+          "Delivered with full credentials and 2FA key for immediate login.",
+          "You can change the bound email after confirming normal usage."
+        ]
+      },
+      {
+        "title": "Warranty Policy",
+        "items": [
+          "30-day subscription warranty against subscription drops.",
+          "Please use a clean, stable IP address to avoid platform risk controls."
+        ]
+      }
+    ]
+  }
+}

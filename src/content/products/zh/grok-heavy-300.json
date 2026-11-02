@@ -5,7 +5,7 @@
   "title": "SuperGrok Heavy 月卡｜官网正规充值 / 成品号【质保30天】",
   "subtitle": "【SuperGrok Heavy 300刀款】。xAI 旗舰顶配 300 刀套餐，支持充值自用或交付成品号。",
   "price": 2800,
-  "order": 14,
+  "order": 99,
   "tags": [
     "Heavy 300刀",
     "顶配算力",
@@ -18,7 +18,7 @@
     "专属极限高并发与算力",
     "30 天全程质保"
   ],
-  "inStock": true,
+  "inStock": false,
   "buyButtonText": "下单购买 ￥2800",
   "actionType": "buy",
   "orderName": "SuperGrok Heavy 月卡（300刀款）",

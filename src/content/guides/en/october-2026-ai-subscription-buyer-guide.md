@@ -44,19 +44,19 @@ OpenAI's grandfathered 20X extension policy operates on strict temporal rules:
 
 | Category | Product / SKU | Price | Key Features & Multiplier | Best Use Case |
 | :--- | :--- | :--- | :--- | :--- |
-| **ChatGPT** | **[Pro $200 Monthly Card](/en/products/chatgpt-pro-20x-renew)** | **¥1300** | Retain 20X if renewed before Oct 29 | Existing subscribers, deep reasoning |
-| **ChatGPT** | **[Pro 25X Chile $500 Plan](/en/products/chatgpt-pro-25x-500)** | **¥3500** | 25X maximum compute allocation | Elite research, quant funds (No MS email) |
-| **ChatGPT** | **[Plus PH Official Card](/en/products/chatgpt-plus-ph)** | **¥140** | Official card, instant delivery, 5-day stock | High-value daily productivity |
-| **ChatGPT** | **[Plus Monthly iOS Top-up](/en/products/chatgpt-plus-ios)** | **¥170** | Direct iOS delivery, no password needed | Convenient personal upgrades |
-| **ChatGPT** | **[Plus Dedicated Account](/en/products/chatgpt-plus-ready)** | **¥190** | Includes full email access, instant setup | Turnkey account for beginners |
-| **ChatGPT** | **[US Physical SIM Verification](/en/products/chatgpt-sms-verify)** | **¥20** | Authentic US physical SIM for OpenAI signup | Clean independent account creation |
-| **ChatGPT** | **[Pro 5X Official Card](/en/products/chatgpt-pro-5x-card)** | **¥900** | 5X official quota with full o1 reasoning | Professional engineers, Cursor power users |
-| **ChatGPT** | **[Pro 5X iOS Top-up](/en/products/chatgpt-pro-5x-ios)** | **¥950** | Instant iOS delivery with 30-day warranty | Heavy coding and continuous agents |
+| **ChatGPT** | **[Pro $200 Monthly Card](/en/products/chatgpt-pro-20x-renew)** | **¥1200** | Retain 20X if renewed before Oct 29 | Existing subscribers, deep reasoning |
+| **ChatGPT** | **[Pro 25X Chile $500 Plan](/en/products/chatgpt-pro-25x-500)** | **¥3280** | 25X maximum compute allocation | Elite research, quant funds (No MS email) |
+| **ChatGPT** | **[Plus PH Official Card](/en/products/chatgpt-plus-ph)** | **¥125** | Official card, instant delivery, 5-day stock | High-value daily productivity |
+| **ChatGPT** | **[Plus Monthly iOS Top-up](/en/products/chatgpt-plus-ios)** | **¥145** | Direct iOS delivery, no password needed | Convenient personal upgrades |
+| **ChatGPT** | **[Plus Dedicated Account](/en/products/chatgpt-plus-ready)** | **¥165** | Includes full email access, instant setup | Turnkey account for beginners |
+| **ChatGPT** | **[US Physical SIM Verification](/en/products/chatgpt-sms-verify)** | **¥15** | Authentic US physical SIM for OpenAI signup | Clean independent account creation |
+| **ChatGPT** | **[Pro 5X Official Card](/en/products/chatgpt-pro-5x-card)** | **¥688** | 5X official quota with full o1 reasoning | Professional engineers, Cursor power users |
+| **ChatGPT** | **[Pro 5X iOS Top-up](/en/products/chatgpt-pro-5x-ios)** | **¥699** | Instant iOS delivery with 30-day warranty | Heavy coding and continuous agents |
 | **Claude** | **[MAX 20X Monthly Card](/en/products/claude-max-20x-ios)** | **¥2600** | 20X Claude limit, 1M context window | System refactoring, Claude Code CLI |
-| **Claude** | **[MAX 5X Monthly Card](/en/products/claude-max-5x-ios)** | **¥1300** | 5X Claude capacity, high-speed response | Full-stack software engineering |
-| **Claude** | **[Pro Monthly iOS Top-up](/en/products/claude-pro-ios)** | **¥190** | Fast iOS top-up with Claude 3.7 reasoning | High-quality writing and standard coding |
+| **Claude** | **[MAX 5X Monthly Card](/en/products/claude-max-5x-ios)** | **¥999** | 5X Claude capacity, high-speed response | Full-stack software engineering |
+| **Claude** | **[Pro Monthly iOS Top-up](/en/products/claude-pro-ios)** | **¥159** | Fast iOS top-up with Claude 3.7 reasoning | High-quality writing and standard coding |
 | **Grok** | **[SuperGrok Heavy $300](/en/products/grok-heavy-300)** | **¥2800** | xAI 100k-GPU Colossus cluster access | Macro hedge funds, real-time telemetry |
-| **Grok** | **[Grok Super Official CDK](/en/products/grok-super-cdk)** | **¥260** | Direct live X stream ingestion, all platforms | Social trend analysis, crypto tracking |
+| **Grok** | **[Grok Super Official CDK](/en/products/grok-super-cdk)** | **¥399** | Direct live X stream ingestion, all platforms | Social trend analysis, crypto tracking |
 
 ---
 
@@ -84,10 +84,10 @@ OpenAI's grandfathered 20X extension policy operates on strict temporal rules:
 
 **Chengzi AI** adheres strictly to verified channels, direct account top-ups, and full 30-day warranties:
 
-- 👑 **[ChatGPT Pro $200 Monthly Card (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Grandfathered 20X quota for renewals before Oct 29, stockable keys with 30-day warranty.
-- 👑 **[ChatGPT Pro 25X Chile $500 Plan (¥3500)](/en/products/chatgpt-pro-25x-500)**: Uncapped 25X compute ceiling, official card redemption directly to your account (Microsoft emails prohibited).
+- 👑 **[ChatGPT Pro $200 Monthly Card (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Grandfathered 20X quota for renewals before Oct 29, stockable keys with 30-day warranty.
+- 👑 **[ChatGPT Pro 25X Chile $500 Plan (¥3280)](/en/products/chatgpt-pro-25x-500)**: Uncapped 25X compute ceiling, official card redemption directly to your account (Microsoft emails prohibited).
 - ⚡ **[Claude MAX 20X Monthly Card (¥2600)](/en/products/claude-max-20x-ios)**: 20X Claude capacity for unrestricted architecture analysis.
-- ⚡ **[Claude MAX 5X Monthly Card (¥1300)](/en/products/claude-max-5x-ios)**: 5X capacity for uninterrupted engineering sprints.
-- 🚀 **[ChatGPT Pro 5X Official Card (¥900)](/en/products/chatgpt-pro-5x-card)**: 5X capacity with full o1/o3 reasoning, instant delivery.
-- 🌟 **[Claude Pro Monthly Card (¥190)](/en/products/claude-pro-ios)**: 1-3 minute fast delivery via iOS in-app channel.
+- ⚡ **[Claude MAX 5X Monthly Card (¥999)](/en/products/claude-max-5x-ios)**: 5X capacity for uninterrupted engineering sprints.
+- 🚀 **[ChatGPT Pro 5X Official Card (¥688)](/en/products/chatgpt-pro-5x-card)**: 5X capacity with full o1/o3 reasoning, instant delivery.
+- 🌟 **[Claude Pro Monthly Card (¥159)](/en/products/claude-pro-ios)**: 1-3 minute fast delivery via iOS in-app channel.
 - 🔥 **[SuperGrok Heavy Monthly Card (¥2800)](/en/products/grok-heavy-300)**: Direct connection to xAI's 100k Colossus cluster for macro deduction.

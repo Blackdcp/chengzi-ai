@@ -50,7 +50,7 @@ When refactoring database locks or distributed consensus code, the subsystem is 
 | **Multi-File Autonomous Flow** | ★★★★★ (Full autonomous loop) | ★★★★☆ (Manual verification) | ★★★★☆ (Strong logical depth) |
 | **Concurrency Deadlock Audit** | ★★★★☆ | ★★★☆☆ | ★★★★★ (Full o1/o3 reasoning depth) |
 | **Daily Quota Ceiling** | 20X Top-tier Priority | Easily exhausts fast requests | **25X Maximum Throughput** |
-| **Recommended Subscription** | **[Claude MAX 20X (¥2600)](/en/products/claude-max-20x-ios)** | **[Claude Pro (¥190)](/en/products/claude-pro-ios)** | **[Pro 25X $500 (¥3500)](/en/products/chatgpt-pro-25x-500)** |
+| **Recommended Subscription** | **[Claude MAX 20X (¥2600)](/en/products/claude-max-20x-ios)** | **[Claude Pro (¥159)](/en/products/claude-pro-ios)** | **[Pro 25X $500 (¥3280)](/en/products/chatgpt-pro-25x-500)** |
 
 ---
 
@@ -92,8 +92,8 @@ print("Formal concurrency verification passed.")
 Terminal coding loops rapidly exhaust standard quotas. **Chengzi AI** maintains verified official accounts backed by 30-day warranty protection:
 
 - ⚡ **[Claude MAX 20X Monthly Card (¥2600)](/en/products/claude-max-20x-ios)**: Uncapped 20X Claude capacity, the ultimate pairing for Claude Code terminal workflows.
-- ⚡ **[Claude MAX 5X Monthly Card (¥1300)](/en/products/claude-max-5x-ios)**: 5X capacity for uninterrupted engineering sprints.
-- 👑 **[ChatGPT Pro 25X Chile $500 Plan (¥3500)](/en/products/chatgpt-pro-25x-500)**: 25X compute ceiling for formal concurrency verification (Microsoft emails prohibited).
-- 🚀 **[ChatGPT Pro $200 Monthly Card (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Grandfathered 20X quota for renewals before Oct 29, stockable keys with 30-day warranty.
-- 🌟 **[Claude Pro Monthly Card (¥190)](/en/products/claude-pro-ios)**: Fast 1-3 minute activation via iOS in-app channel.
-- 🚀 **[ChatGPT Pro 5X Official Card (¥900)](/en/products/chatgpt-pro-5x-card)**: 5X capacity with full o1/o3 reasoning, instant delivery.
+- ⚡ **[Claude MAX 5X Monthly Card (¥999)](/en/products/claude-max-5x-ios)**: 5X capacity for uninterrupted engineering sprints.
+- 👑 **[ChatGPT Pro 25X Chile $500 Plan (¥3280)](/en/products/chatgpt-pro-25x-500)**: 25X compute ceiling for formal concurrency verification (Microsoft emails prohibited).
+- 🚀 **[ChatGPT Pro $200 Monthly Card (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Grandfathered 20X quota for renewals before Oct 29, stockable keys with 30-day warranty.
+- 🌟 **[Claude Pro Monthly Card (¥159)](/en/products/claude-pro-ios)**: Fast 1-3 minute activation via iOS in-app channel.
+- 🚀 **[ChatGPT Pro 5X Official Card (¥688)](/en/products/chatgpt-pro-5x-card)**: 5X capacity with full o1/o3 reasoning, instant delivery.

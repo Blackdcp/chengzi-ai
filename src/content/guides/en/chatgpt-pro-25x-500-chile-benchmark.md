@@ -92,10 +92,10 @@ When building multi-million line codebases, reliable and verified official chann
 
 **Chengzi AI** provides instant delivery and full 30-day warranty protection across all flagship AI tiers:
 
-- 👑 **[ChatGPT Pro 25X Chile $500 Plan (¥3500)](/en/products/chatgpt-pro-25x-500)**: Brand new! Exclusive 25X compute ceiling, official card redemption directly to your own account with 30-day warranty (Microsoft emails prohibited).
-- 🚀 **[ChatGPT Pro $200 Monthly Card (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Unmatched value! Renew before Oct 29 to retain the original 20X quota. Keys stockable for 3 days.
+- 👑 **[ChatGPT Pro 25X Chile $500 Plan (¥3280)](/en/products/chatgpt-pro-25x-500)**: Brand new! Exclusive 25X compute ceiling, official card redemption directly to your own account with 30-day warranty (Microsoft emails prohibited).
+- 🚀 **[ChatGPT Pro $200 Monthly Card (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Unmatched value! Renew before Oct 29 to retain the original 20X quota. Keys stockable for 3 days.
 - ⚡ **[Claude MAX 20X Monthly Card (¥2600)](/en/products/claude-max-20x-ios)**: Uncapped 20X compute limit for enterprise engineering, backed by 30-day subscription warranty.
-- ⚡ **[Claude MAX 5X Monthly Card (¥1300)](/en/products/claude-max-5x-ios)**: 5X Claude capacity, the prime choice for full-stack developers.
-- 🌟 **[Claude Pro Monthly Card (¥190)](/en/products/claude-pro-ios)**: Fast 1-3 minute activation via iOS channel, enjoy Claude 3.7 Sonnet hybrid reasoning.
+- ⚡ **[Claude MAX 5X Monthly Card (¥999)](/en/products/claude-max-5x-ios)**: 5X Claude capacity, the prime choice for full-stack developers.
+- 🌟 **[Claude Pro Monthly Card (¥159)](/en/products/claude-pro-ios)**: Fast 1-3 minute activation via iOS channel, enjoy Claude 3.7 Sonnet hybrid reasoning.
 - 🔥 **[SuperGrok Heavy Monthly Card (¥2800)](/en/products/grok-heavy-300)**: Direct access to xAI's 100,000-GPU cluster for macro analysis and physics simulations.
-- 🔥 **[Grok Super Monthly Key (¥260)](/en/products/grok-super-cdk)**: Seamless xAI access across Web, iOS, and Android with instant key delivery.
+- 🔥 **[Grok Super Monthly Key (¥399)](/en/products/grok-super-cdk)**: Seamless xAI access across Web, iOS, and Android with instant key delivery.

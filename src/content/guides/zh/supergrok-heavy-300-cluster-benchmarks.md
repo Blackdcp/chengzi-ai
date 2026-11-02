@@ -95,8 +95,8 @@ xAI 构建的 Colossus 超算集群是全球目前单一地点运行的最大规
 **橙子 AI** 为您提供官方正规渠道现货直充与独享成品号，支持 30 天足额订阅质保：
 
 - 🔥 **[SuperGrok Heavy 月卡 官网正规充值/成品号 (¥2800)](/zh/products/grok-heavy-300)**：xAI 旗舰顶配 300 刀套餐，支持充值自用账号或直接交付现成独享号，专人跟进制作，30 天全程质保。
-- 🌟 **[Grok Super 月卡 iOS 官方正规充值 (¥260)](/zh/products/grok-super-cdk)**：高性价比体验马斯克 xAI 强劲算力，全端（Web/iOS/Android）通用，秒发 CDK。
-- 👑 **[ChatGPT Pro 20X 月卡 在期卡充续费 (¥1300)](/zh/products/chatgpt-pro-20x-renew)**：最新直降特惠！OpenAI 顶配 20X 旗舰算力，在期续费首选。
-- 🚀 **[ChatGPT Pro 5X 官方正规卡充 (¥900)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1 深度推理，秒充极速到账。
+- 🌟 **[Grok Super 月卡 iOS 官方正规充值 (¥399)](/zh/products/grok-super-cdk)**：高性价比体验马斯克 xAI 强劲算力，全端（Web/iOS/Android）通用，秒发 CDK。
+- 👑 **[ChatGPT Pro 20X 月卡 在期卡充续费 (¥1200)](/zh/products/chatgpt-pro-20x-renew)**：最新直降特惠！OpenAI 顶配 20X 旗舰算力，在期续费首选。
+- 🚀 **[ChatGPT Pro 5X 官方正规卡充 (¥688)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1 深度推理，秒充极速到账。
 - ⚡ **[Claude MAX 20X 月卡 官方秒充 (¥2600)](/zh/products/claude-max-20x-ios)**：顶配 20 倍 Claude 算力上限，全长文本深度推理无死角。
-- ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥1300)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，重度工程师全天候高频编码首选。
+- ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥999)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，重度工程师全天候高频编码首选。

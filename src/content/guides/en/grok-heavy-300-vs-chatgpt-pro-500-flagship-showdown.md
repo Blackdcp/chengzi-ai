@@ -78,8 +78,8 @@ Whether deploying SuperGrok Heavy for real-time intelligence or ChatGPT Pro 25X 
 **Chengzi AI** maintains verified inventory with comprehensive 30-day warranty coverage:
 
 - 🔥 **[SuperGrok Heavy Monthly Card (¥2800)](/en/products/grok-heavy-300)**: Direct connection to xAI's 100k Colossus cluster, live real-time ingestion, available via self-topup or ready account.
-- 👑 **[ChatGPT Pro 25X Chile $500 Plan (¥3500)](/en/products/chatgpt-pro-25x-500)**: Uncapped 25X compute ceiling, official card redemption directly to your account (Microsoft emails prohibited).
-- 🚀 **[ChatGPT Pro $200 Monthly Card (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Grandfathered 20X quota for renewals before Oct 29, stockable keys with 30-day warranty.
+- 👑 **[ChatGPT Pro 25X Chile $500 Plan (¥3280)](/en/products/chatgpt-pro-25x-500)**: Uncapped 25X compute ceiling, official card redemption directly to your account (Microsoft emails prohibited).
+- 🚀 **[ChatGPT Pro $200 Monthly Card (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Grandfathered 20X quota for renewals before Oct 29, stockable keys with 30-day warranty.
 - ⚡ **[Claude MAX 20X Monthly Card (¥2600)](/en/products/claude-max-20x-ios)**: 20X Claude capacity for unrestricted architecture analysis.
-- ⚡ **[Claude MAX 5X Monthly Card (¥1300)](/en/products/claude-max-5x-ios)**: 5X capacity for uninterrupted engineering sprints.
-- 🔥 **[Grok Super Monthly Key (¥260)](/en/products/grok-super-cdk)**: Entry-level access to xAI's real-time compute cluster.
+- ⚡ **[Claude MAX 5X Monthly Card (¥999)](/en/products/claude-max-5x-ios)**: 5X capacity for uninterrupted engineering sprints.
+- 🔥 **[Grok Super Monthly Key (¥399)](/en/products/grok-super-cdk)**: Entry-level access to xAI's real-time compute cluster.

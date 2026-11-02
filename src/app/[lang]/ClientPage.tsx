@@ -130,12 +130,15 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
     }
   };
 
-  const [activeTab, setActiveTab] = useState<"all" | "chatgpt" | "claude" | "grok">("all");
+  const [activeTab, setActiveTab] = useState<"all" | "chatgpt" | "claude" | "grok" | "gemini">("all");
+
+  const activeProducts = products.filter(p => p.inStock);
 
   const productsByCategory: Record<string, Product[]> = {
-    chatgpt: products.filter(p => p.categoryId === "chatgpt"),
-    claude: products.filter(p => p.categoryId === "claude"),
-    grok: products.filter(p => p.categoryId === "grok")
+    chatgpt: activeProducts.filter(p => p.categoryId === "chatgpt"),
+    claude: activeProducts.filter(p => p.categoryId === "claude"),
+    grok: activeProducts.filter(p => p.categoryId === "grok"),
+    gemini: activeProducts.filter(p => p.categoryId === "gemini")
   };
 
   const pageNavItems = [
@@ -145,28 +148,33 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
   ];
 
   const filteredProducts = activeTab === "all" 
-    ? products 
+    ? activeProducts 
     : (productsByCategory[activeTab] || []);
 
   const productHints: Record<string, string> = {
-    "chatgpt-plus-ph": lang === 'zh' ? "官方正规卡充，卡密提取后 5 天内有效，支持 24 小时自助兑换。" : "Official card top-up, valid for 5 days after delivery, 24/7 self-service.",
-    "chatgpt-plus-ios": lang === 'zh' ? "iOS 官方正规通道充值，无需账号密码，1-3 分钟极速秒充。" : "Official iOS in-app top-up, no password needed, 1-3 mins delivery.",
-    "chatgpt-plus-ready": lang === 'zh' ? "纯净独享已开通 Plus 成品号，含完整邮箱资料，开箱即用。" : "Dedicated ready account with 1-month Plus, full email access included.",
+    "chatgpt-plus-ph-account": lang === 'zh' ? "超值引流爆款！独享 Plus 成品号，带完整密码与 2FA，可自行换绑邮箱。" : "Best-value dedicated Plus ready account with 2FA included, email rebind supported.",
+    "chatgpt-plus-ph": lang === 'zh' ? "低于官方 $20 美元原价！官方正规卡充，卡密提取后 5 天内有效，24 小时自助兑换。" : "Cheaper than official $20 USD! Official card top-up, valid for 5 days, 24/7 self-service.",
+    "chatgpt-plus-ios": lang === 'zh' ? "1:1 持平官方汇率，iOS 官方正规通道充值，无需账号密码，1-3 分钟极速秒充。" : "Matches official USD rate, iOS in-app top-up, no password needed, 1-3 mins delivery.",
+    "chatgpt-plus-ready": lang === 'zh' ? "注册满一周以上纯净老号 + 顶级 IP 订阅，含完整 2FA 资料，独享开箱即用。" : "Dedicated aged account with 1-month Plus and full 2FA access included.",
     "chatgpt-sms-verify": lang === 'zh' ? "美国真实实体手机卡接码，专为 OpenAI / ChatGPT 注册与安全验证打造。" : "Real US physical SIM verification, dedicated to OpenAI / ChatGPT.",
-    "chatgpt-pro-5x-card": lang === 'zh' ? "官方正规卡充，5 倍官方用量与满血 o1/o3 深度推理算力。" : "Official card top-up with 5X official quota and full o1 reasoning.",
-    "chatgpt-pro-5x-ios": lang === 'zh' ? "iOS 官方内购直充，无需账号密码，秒级到账，享 30 天全程质保。" : "Official iOS top-up with 5X quota, instant delivery with 30-day warranty.",
-    "chatgpt-pro-20x-renew": lang === 'zh' ? "老用户在 10 月 29 日前重新订阅仍享原 20X 高额度；卡密可囤 3 天，支持自助秒充。" : "Renewals before Oct 29 retain original 20X quota; keys stockable for 3 days.",
-    "chatgpt-pro-25x-500": lang === 'zh' ? "⚠️ 拍前必看：严禁使用微软体系邮箱（Outlook/Hotmail/Live）；建议使用 Gmail 充值。" : "⚠️ Important: Microsoft emails prohibited. Gmail or international emails recommended.",
-    "claude-pro-ios": lang === 'zh' ? "正规 iOS 渠道代充，极速秒充，畅享 Claude 3.7 Sonnet 混合推理。" : "Official iOS top-up with Claude 3.7 Sonnet hybrid reasoning.",
-    "claude-max-5x-ios": lang === 'zh' ? "Claude 官方 5 倍算力额度，重度编程与长工程架构利器。" : "5X Claude compute quota. Ideal for heavy coding & long documents.",
+    "chatgpt-pro-5x-card": lang === 'zh' ? "比官方 $100 汇率更便宜！官方正规卡充，享 5 倍官方用量与满血 o1/o3 深度推理算力。" : "Below official $100 USD rate! Official card top-up with 5X quota and full reasoning.",
+    "chatgpt-pro-5x-ios": lang === 'zh' ? "低于官方美元原价，iOS 官方内购直充，无需账号密码，秒级到账，享 30 天全程质保。" : "Below official USD rate, iOS top-up with 5X quota, instant delivery with 30-day warranty.",
+    "chatgpt-pro-20x-renew": lang === 'zh' ? "立省 ¥250+！老用户在 10 月 29 日前重新订阅仍享原 20X 高额度；卡密可囤 3 天，自助秒充。" : "Save ¥250+! Renewals before Oct 29 retain original 20X quota; keys stockable for 3 days.",
+    "chatgpt-pro-25x-500": lang === 'zh' ? "⚠️ 拍前必看：比官方汇率立省 ¥345，享 25X 超高算力配额（严禁使用微软体系邮箱）。" : "⚠️ Important: Save ¥345 vs official rate with 25X quota (Microsoft emails prohibited).",
+    "claude-pro-ios": lang === 'zh' ? "正规 iOS 渠道代充，支持 SK / UID 免密极速秒充，畅享 Claude 3.7 / 3.8 混合推理。" : "Official iOS top-up via SK/UID with Claude 3.7/3.8 hybrid reasoning.",
+    "claude-max-5x-ios": lang === 'zh' ? "直破千元大关！Claude 官方 5 倍算力额度，支持 UID 免密秒充，重度编程与长工程利器。" : "Sub-¥1000 special! 5X Claude compute quota, ideal for heavy coding & long context.",
     "claude-max-20x-ios": lang === 'zh' ? "Claude 顶配 20 倍推理算力上限，支持高并发长文本分析与大项目重构。" : "Top-tier 20X compute limit for enterprise engineering & complex workflows.",
-    "grok-super-cdk": lang === 'zh' ? "官方正规 iOS CDK，全端（Web/iOS/Android）支持，直通万卡集群。" : "Official Grok Super key, works on all platforms with real-time cluster search.",
-    "grok-heavy-300": lang === 'zh' ? "xAI 旗舰顶配 300 刀套餐，支持充值自用账号或交付独享成品号。" : "xAI flagship $300 tier. Supports existing account top-up or dedicated ready account."
+    "grok-plus": lang === 'zh' ? "新版多合一官方卡充，支持 Web / iOS / Android 全端通用，需无订阅状态充值。" : "New all-in-one official card top-up for Web, iOS, and Android (free tier required).",
+    "grok-premium": lang === 'zh' ? "新版多合一 1-3 分钟自助秒充（账号需为免费版且享有半价优惠资格），全端支持。" : "1-3 mins self-service CDK across all platforms (requires free tier with 50% promo).",
+    "grok-super-cdk": lang === 'zh' ? "新版多合一正规官方卡充（需免费版且有半价优惠），直通 xAI 算力集群与实时全网检索。" : "Official Grok Super card top-up, works on all platforms with real-time cluster search.",
+    "grok-ultra": lang === 'zh' ? "xAI 旗舰 Ultra 顶配算力通道，直充自己账号（需免费版且有半价优惠），1-3 分钟秒到账。" : "xAI flagship Ultra tier topped up to your own account in 1-3 minutes.",
+    "gemini-pro-18m": lang === 'zh' ? "🔥 折合每月仅 ¥2.5！附 2-3 年老 Gmail 独享成品号（首次登录请勿立即改密，先稳定养号 3-7 天）。" : "🔥 Only ¥2.5/mo! Aged 2-3Yr Gmail with 18M Gemini Pro (warm up 3-7 days before password change)."
   };
 
   const getProductBadge = (product: Product) => {
-    if (product.id.includes("pro-20x") || product.id.includes("25x") || product.id.includes("max-20x") || product.id === "grok-heavy-300") return lang === 'zh' ? "旗舰顶配" : "Flagship";
-    if (product.id.includes("plus") || product.id === "claude-pro-ios") return lang === 'zh' ? "高性价比" : "Popular";
+    if (product.id.includes("pro-20x") || product.id.includes("25x") || product.id === "grok-ultra" || product.id === "claude-max-5x-ios") return lang === 'zh' ? "旗舰顶配" : "Flagship";
+    if (product.id === "chatgpt-plus-ph-account" || product.id === "gemini-pro-18m") return lang === 'zh' ? "超值爆款" : "Best Value";
+    if (product.id.includes("plus") || product.id === "claude-pro-ios" || product.id === "grok-premium") return lang === 'zh' ? "高性价比" : "Popular";
     if (product.isHot) return lang === 'zh' ? "热门" : "Hot";
     return "";
   };
@@ -839,14 +847,14 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
               </h1>
               <p className="cz-hero-copy" style={{ fontSize: "clamp(16px, 2vw, 19px)", color: "#666666", maxWidth: 720, margin: "0 auto 28px", lineHeight: 1.7 }}>
                 {lang === 'zh'
-                  ? '专注 ChatGPT、Claude、Grok 等官方正规会员直充与成品号。网页直接下单，自动安全交付。'
-                  : 'Official subscriptions and accounts for ChatGPT, Claude, and Grok. Fast, reliable, and secure delivery.'}
+                  ? '专注 ChatGPT、Claude、Grok、Gemini 等官方正规会员直充与成品号。网页直接下单，自动安全交付。'
+                  : 'Official subscriptions and accounts for ChatGPT, Claude, Grok, and Gemini. Fast, reliable, and secure delivery.'}
               </p>
               <div className="cz-hero-actions">
                 <a href="#accounts" className="vercel-button cz-hero-primary" style={{ padding: "12px 28px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '立即选购 AI 账号' : 'Explore AI Accounts'}</a>
               </div>
               <div className="cz-hero-note">
-                {lang === 'zh' ? 'ChatGPT Plus/Pro · Claude Pro/MAX · Grok Super/Heavy 旗舰算力' : 'ChatGPT Plus/Pro · Claude Pro/MAX · Grok Super/Heavy'}
+                {lang === 'zh' ? 'ChatGPT Plus/Pro · Claude Pro/MAX · Grok 全系 · Gemini Pro 18个月' : 'ChatGPT Plus/Pro · Claude Pro/MAX · Grok Ultra · Gemini Pro'}
               </div>
             </div>
 
@@ -859,8 +867,8 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
                 {[
                   {
                     num: '01',
-                    title: lang === 'zh' ? '三大前沿生态' : 'Top 3 Frontier AI',
-                    desc: lang === 'zh' ? 'ChatGPT · Claude · Grok' : 'ChatGPT, Claude, and Grok'
+                    title: lang === 'zh' ? '四大前沿生态' : 'Top 4 Frontier AI',
+                    desc: lang === 'zh' ? 'ChatGPT · Claude · Grok · Gemini' : 'ChatGPT, Claude, Grok & Gemini'
                   },
                   {
                     num: '02',
@@ -886,17 +894,18 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
             "01",
             lang === 'zh' ? 'AI 会员与账号专区' : 'AI Subscriptions & Accounts',
             lang === 'zh'
-              ? '支持 ChatGPT、Claude 与 Grok 全系列正规官方充值、高阶算力与成品号，官方通道极速交付，全额质保。'
-              : 'Official subscriptions, compute tiers, and ready accounts for ChatGPT, Claude, and Grok with instant delivery.'
+              ? '支持 ChatGPT、Claude、Grok 与 Gemini 全系列正规官方充值、高阶算力与成品号，官方通道极速交付，全额质保。'
+              : 'Official subscriptions, compute tiers, and ready accounts for ChatGPT, Claude, Grok, and Gemini with instant delivery.'
           )}
 
           {/* Category Tabs */}
           <div style={{ display: "flex", gap: 10, marginBottom: 22, flexWrap: "wrap" }}>
             {[
-              { key: "all", label: lang === 'zh' ? "全部产品" : "All Products", count: products.length },
+              { key: "all", label: lang === 'zh' ? "全部产品" : "All Products", count: activeProducts.length },
               { key: "chatgpt", label: "ChatGPT", count: productsByCategory.chatgpt?.length || 0 },
               { key: "claude", label: "Claude", count: productsByCategory.claude?.length || 0 },
-              { key: "grok", label: "Grok", count: productsByCategory.grok?.length || 0 }
+              { key: "grok", label: "Grok", count: productsByCategory.grok?.length || 0 },
+              { key: "gemini", label: "Gemini", count: productsByCategory.gemini?.length || 0 }
             ].map(tab => {
               const isSelected = activeTab === tab.key;
               return (

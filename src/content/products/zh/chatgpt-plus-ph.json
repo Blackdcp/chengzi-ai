@@ -3,9 +3,9 @@
   "categoryId": "chatgpt",
   "categoryName": "ChatGPT",
   "title": "ChatGPT Plus 月卡｜菲区官方正规卡充【秒充】【同步官方售后】【卡密可囤五天】",
-  "subtitle": "充值到自己账号。自助充值卡密，兑换完即可订阅一个月的 Plus 套餐。",
-  "price": 140,
-  "order": 3,
+  "subtitle": "充值到自己账号。低于官方 20 美元原价，24小时自助充值卡密，兑换即享 1 个月 Plus 套餐。",
+  "price": 125,
+  "order": 4,
   "tags": [
     "Plus 月卡",
     "官方卡充",
@@ -19,7 +19,7 @@
     "卡密提取后 5 天内有效"
   ],
   "inStock": true,
-  "buyButtonText": "下单购买 ￥140",
+  "buyButtonText": "下单购买 ￥125",
   "actionType": "buy",
   "orderName": "ChatGPT Plus 月卡（菲区卡充）",
   "isHot": true,

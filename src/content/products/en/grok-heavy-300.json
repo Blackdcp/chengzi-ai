@@ -5,7 +5,7 @@
   "title": "SuperGrok Heavy 1-Month |  Tier Official Top-up / Ready Account",
   "subtitle": "Flagship xAI  tier. Supports top-up to existing account or full ready account.",
   "price": 2800,
-  "order": 14,
+  "order": 99,
   "tags": [
     "Heavy 300刀",
     "顶配算力",
@@ -18,7 +18,7 @@
     "专属极限高并发与算力",
     "30 天全程质保"
   ],
-  "inStock": true,
+  "inStock": false,
   "buyButtonText": "Buy Now ¥2800",
   "actionType": "buy",
   "orderName": "SuperGrok Heavy 月卡（300刀款）",

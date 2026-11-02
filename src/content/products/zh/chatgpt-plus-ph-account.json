@@ -1,0 +1,52 @@
+{
+  "id": "chatgpt-plus-ph-account",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Plus 月卡｜菲区半价成品号｜官方正规充值【质保订阅】",
+  "subtitle": "超值半价独享成品号！含账号密码与 2FA 验证码，开箱即用，质保 30 天订阅。",
+  "price": 79,
+  "order": 3,
+  "tags": [
+    "Plus 成品号",
+    "半价特惠",
+    "带 2FA",
+    "质保30天"
+  ],
+  "deliveryNotice": "下单后发送兑换卡密，直接提取成品号",
+  "features": [
+    "独享 Plus 成品号",
+    "官方正规充值",
+    "30 天订阅质保",
+    "支持换绑邮箱"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥79",
+  "actionType": "buy",
+  "orderName": "ChatGPT Plus 月卡（菲区半价成品号）",
+  "isHot": true,
+  "warnings": [
+    "交付格式为：GPT账号 — GPT密码 — 2FA验证码，使用正常后可自行换绑邮箱。",
+    "提供 30 天订阅质保（仅保障订阅不掉，封号或触发接码不在售后范围内）。"
+  ],
+  "detail": {
+    "title": "ChatGPT Plus 月卡｜菲区半价独享成品号",
+    "subtitle": "不到 80 元畅享完整一个月官方 ChatGPT Plus 会员权益，独享账号开箱即用。",
+    "sections": [
+      {
+        "title": "商品与交付说明",
+        "items": [
+          "本商品为 ChatGPT Plus 菲区特惠独享成品号，保证官方正规充值，订阅有效期为 1 个月。",
+          "交付格式：GPT账号 —— GPT密码 —— 2FA 密钥（可通过 2FA 工具获取验证码登录）。",
+          "登录确认使用正常后，支持自行换绑为您自己的邮箱。"
+        ]
+      },
+      {
+        "title": "质保与使用须知",
+        "items": [
+          "提供 30 天订阅质保，仅保障订阅有效，因网络环境触发风控封号不在质保范围内。",
+          "如遇网页版未刷新 Plus 模型，请退出重登或使用浏览器无痕模式登录即可激活。"
+        ]
+      }
+    ]
+  }
+}

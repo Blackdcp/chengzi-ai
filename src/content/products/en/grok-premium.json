@@ -1,0 +1,50 @@
+{
+  "id": "grok-premium",
+  "categoryId": "grok",
+  "categoryName": "Grok",
+  "title": "Grok Premium 1-Month | All-in-One Official Top-up [Instant]",
+  "subtitle": "Top up your own account in 1-3 mins. Requires free-tier account with 50% promo eligibility.",
+  "price": 129,
+  "order": 13,
+  "tags": [
+    "Grok Premium",
+    "All-in-One",
+    "1-3m Instant",
+    "Warranty"
+  ],
+  "deliveryNotice": "24/7 self-service CDK, 1-3 mins completion",
+  "features": [
+    "Official Card Top-up",
+    "All Platforms",
+    "1-3 Mins Delivery",
+    "30-Day Warranty"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ￥129",
+  "actionType": "buy",
+  "orderName": "Grok Premium 1-Month",
+  "isHot": true,
+  "warnings": [
+    "Account must be on the free tier with 50% promo eligibility; does not overwrite active plans.",
+    "Redeem CDK within 24 hours. Full 30-day pro-rated subscription warranty."
+  ],
+  "detail": {
+    "title": "Grok Premium 1-Month | Official All-in-One Top-up",
+    "subtitle": "Fast 24/7 self-service recharge for Web, iOS, and Android.",
+    "sections": [
+      {
+        "title": "Product Details",
+        "items": [
+          "All-in-one card top-up supporting Android, iOS, and Web.",
+          "Requires a free-tier account eligible for the 50% discount promotion."
+        ]
+      },
+      {
+        "title": "Warranty Policy",
+        "items": [
+          "Full 30-day subscription warranty with pro-rated refund for any subscription drop."
+        ]
+      }
+    ]
+  }
+}

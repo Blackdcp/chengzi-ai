@@ -103,8 +103,8 @@ lastModified: "2026-09-11T08:00:00.000Z"
 
 **橙子 AI** 为您提供全网最具性价比的正规账号与充值解决方案：
 
-- 👑 **[ChatGPT Pro 20X 月卡 在期卡充续费 (¥1300)](/zh/products/chatgpt-pro-20x-renew)**：降价至 1300 元！尊享 20 倍顶配深度推理算力，无并发排队，学术科研与重度极客终极神器。
-- 🚀 **[ChatGPT Pro 5X 官方正规卡充 (¥900)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1/o3 深度推理，秒充极速到账。
-- ⚡ **[ChatGPT Plus 月卡 菲区官方正规卡充 (¥140)](/zh/products/chatgpt-plus-ph)**：高性价比首选，支持 5 天可囤，秒充开通官方 Plus 完整权益。
-- 🌟 **[Claude MAX 20X / 5X 官方秒充 (¥1300起)](/zh/products/claude-max-5x-ios)**：顶配 Claude 官方算力，畅享 3.7 Sonnet 混合长链推演。
-- 🔥 **[Grok Super / Heavy 月卡 (¥260起)](/zh/products/grok-super-cdk)**：直通马斯克 xAI 十万卡集群，全端可用，30天全额订阅质保。
+- 👑 **[ChatGPT Pro 20X 月卡 在期卡充续费 (¥1200)](/zh/products/chatgpt-pro-20x-renew)**：降价至 1200 元！尊享 20 倍顶配深度推理算力，无并发排队，学术科研与重度极客终极神器。
+- 🚀 **[ChatGPT Pro 5X 官方正规卡充 (¥688)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1/o3 深度推理，秒充极速到账。
+- ⚡ **[ChatGPT Plus 月卡 菲区官方正规卡充 (¥125)](/zh/products/chatgpt-plus-ph)**：高性价比首选，支持 5 天可囤，秒充开通官方 Plus 完整权益。
+- 🌟 **[Claude MAX 20X / 5X 官方秒充 (¥999起)](/zh/products/claude-max-5x-ios)**：顶配 Claude 官方算力，畅享 3.7 Sonnet 混合长链推演。
+- 🔥 **[Grok Super / Heavy 月卡 (¥399起)](/zh/products/grok-super-cdk)**：直通马斯克 xAI 十万卡集群，全端可用，30天全额订阅质保。
