@@ -34,7 +34,6 @@ function collectUrls() {
     `${BASE_URL}/llms-full.txt`,
   ];
 
-  // Collect active product detail URLs
   const productUrls = [];
   const zhProductsDir = path.join(__dirname, '../src/content/products/zh');
   if (fs.existsSync(zhProductsDir)) {
@@ -53,7 +52,6 @@ function collectUrls() {
     }
   }
 
-  // Collect guides sorted by date descending (newest first)
   const guideEntries = [];
   const guideLangs = ['zh', 'en'];
   for (const lang of guideLangs) {
@@ -75,7 +73,6 @@ function collectUrls() {
   guideEntries.sort((a, b) => b.date.localeCompare(a.date));
   const guideUrls = guideEntries.map((g) => g.url);
 
-  // Prioritized order: Core -> Products -> Newest Guides first
   return {
     allUrls: [...coreUrls, ...productUrls, ...guideUrls],
     coreUrls,
@@ -84,8 +81,40 @@ function collectUrls() {
   };
 }
 
+async function syncClockWithServer() {
+  try {
+    const realNow = Date.now.bind(Date);
+    const res = await fetch('https://www.bing.com', { method: 'HEAD' });
+    const serverDateStr = res.headers.get('date');
+    if (serverDateStr) {
+      const serverTime = new Date(serverDateStr).getTime();
+      const localTime = realNow();
+      const offsetMs = serverTime - localTime;
+      if (Math.abs(offsetMs) > 60_000) {
+        console.log(
+          `[Clock Sync] Local clock differs from network UTC date (${serverDateStr}). Applying offset for OAuth JWT signing.`
+        );
+        Date.now = () => realNow() + offsetMs;
+      }
+    }
+  } catch (err) {
+    console.warn('[Clock Sync] Could not fetch server date header:', err.message);
+  }
+}
+
 async function submitToIndexNow(urlList) {
   console.log(`\n=== 1. Submitting ${urlList.length} URLs to Bing / IndexNow ===`);
+
+  try {
+    const keyRes = await fetch(INDEXNOW_KEY_LOCATION);
+    const keyText = (await keyRes.text()).trim();
+    console.log(
+      `Checking live key file [${INDEXNOW_KEY_LOCATION}] -> HTTP ${keyRes.status} (body: "${keyText.slice(0, 60)}")`
+    );
+  } catch (err) {
+    console.warn(`Could not verify live key file: ${err.message}`);
+  }
+
   const endpoints = [
     'https://api.indexnow.org/indexnow',
     'https://www.bing.com/indexnow',
@@ -105,7 +134,10 @@ async function submitToIndexNow(urlList) {
         headers: { 'Content-Type': 'application/json; charset=utf-8' },
         body: JSON.stringify(payload),
       });
-      console.log(`IndexNow [${endpoint}] -> HTTP ${res.status} ${res.statusText}`);
+      const bodyText = await res.text();
+      console.log(
+        `IndexNow [${endpoint}] -> HTTP ${res.status} ${res.statusText}${bodyText ? ` | ${bodyText}` : ''}`
+      );
     } catch (err) {
       console.error(`IndexNow FAILED [${endpoint}]:`, err.message);
     }
@@ -118,6 +150,8 @@ async function submitToGoogleIndexing(prioritizedUrls) {
     console.error('ERROR: google-service-account.json not found!');
     return;
   }
+
+  await syncClockWithServer();
 
   const auth = new google.auth.GoogleAuth({
     keyFile: KEY_FILE,
@@ -145,8 +179,11 @@ async function submitToGoogleIndexing(prioritizedUrls) {
     } catch (error) {
       failCount++;
       console.error(`[GSC FAIL] ${url}: ${error.message}`);
-      if (error.message && error.message.includes('Quota exceeded')) {
-        console.warn('Reached Google Indexing API daily quota (200 URLs/day). Stopping GSC loop.');
+      if (
+        error.message &&
+        (error.message.includes('Quota exceeded') || error.message.includes('Invalid JWT Signature'))
+      ) {
+        console.warn(`Stopping GSC loop early due to: ${error.message}`);
         break;
       }
     }
@@ -161,10 +198,7 @@ async function main() {
     `Collected ${allUrls.length} total URLs (${coreUrls.length} core + ${productUrls.length} products + ${guideEntries.length} guides).`
   );
 
-  // 1. Push all URLs via IndexNow (Bing, Yandex, Seznam, Naver)
   await submitToIndexNow(allUrls);
-
-  // 2. Push prioritized URLs via Google Indexing API (Core + 16 Products + Newest Guides first)
   await submitToGoogleIndexing(allUrls);
 }
 
