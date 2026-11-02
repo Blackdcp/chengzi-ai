@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getDictionary } from '../../../../lib/dictionaries'
+import { getProducts } from '../../../../lib/api'
 import { getGuideBySlug, getGuides, type GuideLanguage } from '../../../../lib/guides'
 import GuideCtaLink from './GuideCtaLink'
 import { AdsterraBanner, AdsterraNative } from '../../../../components/AdsterraAds'
@@ -311,6 +312,33 @@ export default async function GuidePage({ params }: GuidePageProps) {
     notFound()
   }
 
+  const allProducts = getProducts(lang).filter(p => p.inStock)
+  const mentionedProducts = allProducts.filter(p => guide.content.includes(`/products/${p.id}`))
+
+  const blocks = parseMarkdown(guide.content)
+  const extractedFaqs: { question: string; answer: string }[] = []
+  for (let i = 0; i < blocks.length - 1; i++) {
+    const b = blocks[i]
+    const next = blocks[i + 1]
+    if (
+      b.type === 'heading' &&
+      (b.text.includes('?') || b.text.includes('？') || /^Q\d+[:：]/i.test(b.text))
+    ) {
+      const answerText =
+        next.type === 'paragraph'
+          ? next.text
+          : next.type === 'list'
+          ? next.items.join('；')
+          : ''
+      if (answerText) {
+        extractedFaqs.push({
+          question: b.text.replace(/\*\*/g, ''),
+          answer: answerText.replace(/\*\*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'),
+        })
+      }
+    }
+  }
+
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -328,7 +356,39 @@ export default async function GuidePage({ params }: GuidePageProps) {
       name: dict.header.title,
     },
     mainEntityOfPage: `https://cheng-zi-ai.com/${lang}/guides/${guide.slug}`,
+    ...(mentionedProducts.length > 0
+      ? {
+          mentions: mentionedProducts.map(p => ({
+            '@type': 'Product',
+            name: p.title,
+            description: p.subtitle,
+            url: `https://cheng-zi-ai.com/${lang}/products/${p.id}`,
+            offers: {
+              '@type': 'Offer',
+              price: p.price,
+              priceCurrency: 'CNY',
+              availability: 'https://schema.org/InStock',
+            },
+          })),
+        }
+      : {}),
   }
+
+  const faqJsonLd =
+    extractedFaqs.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: extractedFaqs.map(f => ({
+            '@type': 'Question',
+            name: f.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: f.answer,
+            },
+          })),
+        }
+      : null
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -365,6 +425,12 @@ export default async function GuidePage({ params }: GuidePageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <style>{`
         .cz-guide-page {
           min-height: 100vh;

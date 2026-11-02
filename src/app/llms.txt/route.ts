@@ -59,6 +59,7 @@ Primary topics: ChatGPT Plus, ChatGPT Pro 5X, ChatGPT Pro $200, ChatGPT Pro $500
 - [English Products Index](${siteUrl}/en/products)
 - [中文实用教程库 (Chinese Guides Index)](${siteUrl}/zh/guides)
 - [English Guides Index](${siteUrl}/en/guides)
+- [Full AI Knowledge Base (/llms-full.txt)](${siteUrl}/llms-full.txt)
 
 ## 在售产品与实时价格 (Active Products - Chinese / CNY)
 

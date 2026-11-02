@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: ['/', '/llms.txt'],
+        allow: ['/', '/llms.txt', '/llms-full.txt'],
         disallow: disallowPaths,
       },
       {
@@ -20,7 +20,7 @@ export default function robots(): MetadataRoute.Robots {
           'Google-Extended',
           'Bytespider',
         ],
-        allow: ['/', '/llms.txt'],
+        allow: ['/', '/llms.txt', '/llms-full.txt'],
         disallow: disallowPaths,
       },
     ],

@@ -994,15 +994,70 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
           )}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
             {[
-              { step: "1", title: lang === 'zh' ? "选择商品" : "Choose", desc: lang === 'zh' ? "按需选择 ChatGPT Pro、Gemini 或 Grok。" : "Pick ChatGPT Pro, Gemini, or Grok." },
-              { step: "2", title: lang === 'zh' ? "网页下单" : "Order", desc: lang === 'zh' ? "直接支付或提交需求。" : "Pay or submit details online." },
-              { step: "3", title: lang === 'zh' ? "等待交付" : "Delivery", desc: lang === 'zh' ? "按商品类型交付账号、卡密或官方直充说明。" : "Receive account, code, or top-up instructions." },
-              { step: "4", title: lang === 'zh' ? "邮件售后" : "Support", desc: lang === 'zh' ? "订单问题联系 chengziai2026@163.com。" : "Contact chengziai2026@163.com for order issues." }
+              { step: "1", title: lang === 'zh' ? "选择商品" : "Choose", desc: lang === 'zh' ? "按需选择 ChatGPT、Claude、Grok 或 Gemini。" : "Pick ChatGPT, Claude, Grok, or Gemini." },
+              { step: "2", title: lang === 'zh' ? "网页下单" : "Order", desc: lang === 'zh' ? "直接扫码支付或提交邮箱接收卡密/账号。" : "Pay or submit details online." },
+              { step: "3", title: lang === 'zh' ? "极速交付" : "Delivery", desc: lang === 'zh' ? "24小时自动发货卡密、成品号或免密直充说明。" : "Receive account, code, or top-up instructions." },
+              { step: "4", title: lang === 'zh' ? "无忧售后" : "Support", desc: lang === 'zh' ? "质保期内任何问题联系 chengziai2026@163.com。" : "Contact chengziai2026@163.com for order issues." }
             ].map(item => (
               <div key={item.step} className="vercel-card" style={{ padding: 22, background: "#ffffff" }}>
                 <div style={{ width: 30, height: 30, borderRadius: "50%", background: "#111827", color: "#ffffff", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, marginBottom: 14 }}>{item.step}</div>
                 <h3 style={{ fontSize: 16, fontWeight: 700, color: "#111827", margin: "0 0 8px" }}>{item.title}</h3>
                 <p style={{ fontSize: 14, color: "#666", lineHeight: 1.55, margin: 0 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="faq" className="cz-section" style={{ paddingTop: 40, borderTop: "1px solid #eaeaea" }}>
+          {renderSectionHeader(
+            "04",
+            lang === 'zh' ? '选品指南与常见问题' : 'Buyer Guide & FAQ',
+            lang === 'zh'
+              ? '针对不同预算、算力档位与防风控要求的核心解答，帮您 1 分钟选对方案。'
+              : 'Quick answers on pricing tiers, passwordless recharge, and account safety rules.'
+          )}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 14 }}>
+            {(lang === 'zh'
+              ? [
+                  {
+                    q: "ChatGPT Plus 的 ¥79、¥125、¥145、¥165 四款怎么选？",
+                    a: "追求极致性价比或备用号选【¥79 菲区半价成品号】；已有 Gmail 个人免费号想充自己号选【¥125 菲区官方卡充】（比官方 $20 省 20 元）；需要覆盖已有 Plus 选【¥145 iOS 官方秒充】；想要高权重满周老号开箱即用选【¥165 独享老号成品号】。"
+                  },
+                  {
+                    q: "ChatGPT Pro 5X (¥688) 与 Pro 200刀 (¥1200) / 500刀 (¥3280) 有什么区别？",
+                    a: "【Pro 5X (¥688/¥699)】对应官方 $100 档，低于官方汇率价，适合高频编程与日常 o1/o3 推理；【Pro 200刀 (¥1200)】立省 ¥250+，支持卡密囤 3 天，老用户 10.29 前续订仍享 20X 额度；【智利区 500刀 (¥3280)】专享 25X 顶配极限算力（严禁使用微软邮箱）。"
+                  },
+                  {
+                    q: "Claude Pro (¥159) 和 MAX 5X (¥999) 充值需要提供密码吗？",
+                    a: "完全不需要！支持 SK 充值（系统自动检测账号状态）与 Claude UID 自助免密直充，1-3 分钟到账。注意充值 MAX 5X 要求账号注册满 30 天以上、有历史订阅记录，且需自行配合完成官方 KYC 验证。"
+                  },
+                  {
+                    q: "Gemini Pro 18个月成品号为什么只要 ¥45？怎么防封？",
+                    a: "该商品为附带 2-3 年高权重老 Gmail 的独享账号，已预开通 18 个月 Gemini Pro 会员（折合 ¥2.5/月）。防封铁律：首次登录后严禁立即改密！请用固定纯净美国 IP 正常使用 3-7 天后，再通过 Change Authenticator 更换 2FA。"
+                  }
+                ]
+              : [
+                  {
+                    q: "How to choose between ChatGPT Plus ¥79, ¥125, ¥145, and ¥165?",
+                    a: "Pick ¥79 (PH Ready Account) for the lowest-cost turnkey access; pick ¥125 (PH Card Top-up) to recharge your own free Gmail account below the $20 USD rate; pick ¥145 (iOS Top-up) for passwordless iOS channel; or ¥165 for a 1+ week aged ready account."
+                  },
+                  {
+                    q: "What is the difference between Pro 5X (¥688), Pro $200 (¥1200), and Pro 25X $500 (¥3280)?",
+                    a: "Pro 5X (¥688/¥699) is the $100 official tier priced below USD exchange rates; Pro $200 (¥1200) saves ¥250+ with 3-day stockable keys; Pro 25X $500 (¥3280) unlocks 25X flagship compute (Gmail required, no Microsoft emails)."
+                  },
+                  {
+                    q: "Do Claude Pro (¥159) and MAX 5X (¥999) require my password?",
+                    a: "No! Both use passwordless SK or Claude UID self-service recharge in 1-3 minutes. Note that MAX 5X requires an account aged 30+ days with prior subscription history and user KYC completion."
+                  },
+                  {
+                    q: "How to safely use the ¥45 Gemini Pro 18-Month Aged Gmail Account?",
+                    a: "Do NOT change the password immediately upon first login! Use a fixed clean US IP for 3-7 days first, then update your 2FA via Change Authenticator."
+                  }
+                ]
+            ).map(faq => (
+              <div key={faq.q} className="vercel-card" style={{ padding: 22, background: "#ffffff" }}>
+                <h3 style={{ fontSize: 16, fontWeight: 750, color: "#111827", margin: "0 0 10px", lineHeight: 1.4 }}>{faq.q}</h3>
+                <p style={{ fontSize: 14, color: "#666", lineHeight: 1.65, margin: 0 }}>{faq.a}</p>
               </div>
             ))}
           </div>
