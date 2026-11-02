@@ -24,25 +24,25 @@
   "orderName": "Claude MAX 5X 月卡",
   "isHot": true,
   "warnings": [
-    "不懂 Claude 风控规则或新手小白请谨慎下单，容易封号。",
-    "充值成功后不支持退款，封号不在售后质保范围内。"
+    "Strict Requirements: (1) Account must be registered for 30+ days; (2) Must have prior Claude subscription history; (3) No active plan or overdue bill.",
+    "Note: MAX tier recharges currently trigger official KYC verification 100% of the time, which you must complete to activate."
   ],
   "detail": {
-    "title": "Claude MAX 5X 1-Month | iOS Official Top-up [5X Quota][30-Day Warranty]",
-    "subtitle": "5X Claude compute quota. Official iOS top-up with 30-day subscription warranty.",
+    "title": "Claude MAX 5X 1-Month | iOS Official Passwordless Top-up",
+    "subtitle": "Sub-¥1000 special! 5X official Claude compute limit via UID passwordless recharge.",
     "sections": [
       {
-        "title": "Product Details",
+        "title": "Mandatory Account Requirements",
         "items": [
-          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
-          "Includes 30-day subscription warranty against unprompted drops."
+          "1. Aged 30+ Days: Account must be at least 30 days old (newly registered accounts may fail to credit).",
+          "2. Prior Subscription History: Account must have subscribed to Claude previously.",
+          "3. Official KYC: Recharging MAX tiers triggers official KYC verification which must be completed by the user."
         ]
       },
       {
-        "title": "Important Notes",
+        "title": "Warranty Policy",
         "items": [
-          "Please use a clean, stable proxy IP environment.",
-          "Account bans caused by network environment or policy violations are not covered."
+          "30-day pro-rated warranty against subscription drops."
         ]
       }
     ]

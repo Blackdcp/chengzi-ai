@@ -24,25 +24,24 @@
   "orderName": "ChatGPT Pro 5X（iOS 充值）",
   "isHot": true,
   "warnings": [
-    "需确保当前账户无未结清账单。",
-    "掉订阅按剩余天数退补差价，封号不在售后范围。"
+    "Supports overwriting active iOS Plus subscriptions (resets validity to 1 month from today and adds 4X quota difference).",
+    "Do not use accounts previously recharged with cheap black-market cards or Microsoft emails. Gmail is strongly recommended."
   ],
   "detail": {
-    "title": "ChatGPT Pro 5X 1-Month | iOS Official Top-up [Instant][30-Day Warranty]",
-    "subtitle": "Official iOS in-app top-up with 5X official compute and 30-day full subscription warranty.",
+    "title": "ChatGPT Pro 5X 1-Month | iOS Official Top-up ($100 Plan)",
+    "subtitle": "Below official $100 USD rate! 24/7 automated iOS in-app recharge in 1-3 minutes.",
     "sections": [
       {
-        "title": "Product Details",
+        "title": "Product & Upgrade Rules",
         "items": [
-          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
-          "Includes 30-day subscription warranty against unprompted drops."
+          "Self-service recharge CDK for 1-month ChatGPT Pro 5X ($100 USD official tier), completed in 1-3 minutes.",
+          "Can upgrade existing iOS Plus accounts (adds 4X remaining quota difference and starts a new 1-month cycle)."
         ]
       },
       {
-        "title": "Important Notes",
+        "title": "30-Day Warranty",
         "items": [
-          "Please use a clean, stable proxy IP environment.",
-          "Account bans caused by network environment or policy violations are not covered."
+          "Full 30-day pro-rated warranty against subscription drops. Use Gmail and a clean IP environment."
         ]
       }
     ]

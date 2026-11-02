@@ -25,25 +25,24 @@
   "orderName": "ChatGPT Pro 5X 月卡（官方卡充）",
   "isHot": true,
   "warnings": [
-    "请勿使用微软邮箱注册的账号充值。",
-    "非正常号、0元购、低价黑冲号禁止提交，否则封号不退款。"
+    "Do NOT submit accounts that currently have active Plus/Team/Pro status or prior $0/black-market billing history.",
+    "Microsoft emails are prohibited. Gmail is strongly recommended. Please save your billing receipt."
   ],
   "detail": {
-    "title": "ChatGPT Pro 5X 1-Month | Official Card Top-up [5X Quota]",
-    "subtitle": "5X official quota & o1 reasoning for 1 month. Self top-up code on your own account.",
+    "title": "ChatGPT Pro 5X 1-Month | Official Card Top-up ($100 Plan)",
+    "subtitle": "Save vs official $100 USD rate! 24/7 automated official card recharge in 1-10 minutes.",
     "sections": [
       {
-        "title": "Product Details",
+        "title": "Service Details",
         "items": [
-          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
-          "Includes 30-day subscription warranty against unprompted drops."
+          "Official full-price card subscription for ChatGPT Pro 5X, processed automatically in 1-10 minutes.",
+          "Account must be on the free tier with clean billing history (no prior $0 promo or grey-market top-ups)."
         ]
       },
       {
-        "title": "Important Notes",
+        "title": "Email & Warranty",
         "items": [
-          "Please use a clean, stable proxy IP environment.",
-          "Account bans caused by network environment or policy violations are not covered."
+          "Gmail is strongly recommended (Microsoft emails prohibited). Full 30-day official billing protection."
         ]
       }
     ]

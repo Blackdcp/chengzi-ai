@@ -25,25 +25,24 @@
   "orderName": "ChatGPT Plus 月卡成品号",
   "isHot": true,
   "warnings": [
-    "交付完整账号及邮箱密码，建议首次登录后自行修改密码。",
-    "请使用稳定干净的代理网络登录，避免滥用导致风控。"
+    "Format: Account ---- Password ---- 2FA. Please update your 2FA secret after verifying normal login.",
+    "30-day subscription warranty included (excludes account bans or SMS verification triggers)."
   ],
   "detail": {
-    "title": "ChatGPT Plus Ready Account | Official 1-Month [30-Day Warranty]",
-    "subtitle": "Dedicated ready-to-use account with 1 month Plus subscription. Full email credentials provided.",
+    "title": "ChatGPT Plus 1-Month | Aged Ready Account",
+    "subtitle": "Aged 1+ week account subscribed under a clean premium IP, with full 2FA included.",
     "sections": [
       {
-        "title": "Product Details",
+        "title": "Delivery Details",
         "items": [
-          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
-          "Includes 30-day subscription warranty against unprompted drops."
+          "Dedicated ChatGPT Plus ready account registered over 1 week ago with 1-month active official subscription.",
+          "Delivered in format: Email ---- Password ---- 2FA Secret within 10 mins to 2 hours."
         ]
       },
       {
-        "title": "Important Notes",
+        "title": "Warranty Policy",
         "items": [
-          "Please use a clean, stable proxy IP environment.",
-          "Account bans caused by network environment or policy violations are not covered."
+          "30-day subscription warranty against subscription drops (account bans or SMS prompts are not covered)."
         ]
       }
     ]

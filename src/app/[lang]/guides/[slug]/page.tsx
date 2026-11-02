@@ -17,6 +17,7 @@ type MarkdownBlock =
   | { type: 'blockquote'; text: string }
   | { type: 'list'; ordered: boolean; items: string[] }
   | { type: 'code'; language: string; code: string }
+  | { type: 'table'; headers: string[]; rows: string[][] }
 
 export const dynamicParams = false
 
@@ -139,6 +140,28 @@ function parseMarkdown(content: string): MarkdownBlock[] {
       continue
     }
 
+    if (line.startsWith('|') && line.endsWith('|')) {
+      const tableLines: string[] = []
+      while (index < lines.length) {
+        const current = lines[index].trim()
+        if (!current.startsWith('|') || !current.endsWith('|')) break
+        tableLines.push(current)
+        index += 1
+      }
+      if (tableLines.length >= 2) {
+        const parseRow = (r: string) =>
+          r
+            .slice(1, -1)
+            .split('|')
+            .map(c => c.trim())
+        const headers = parseRow(tableLines[0])
+        const dataLines = tableLines.slice(1).filter(r => !/^\|[\s\-:|]+\|$/.test(r))
+        const rows = dataLines.map(parseRow)
+        blocks.push({ type: 'table', headers, rows })
+        continue
+      }
+    }
+
     const paragraphLines: string[] = []
     while (index < lines.length) {
       const current = lines[index].trim()
@@ -148,6 +171,7 @@ function parseMarkdown(content: string): MarkdownBlock[] {
         (/^```/.test(current) ||
           /^(#{2,4})\s+/.test(current) ||
           current.startsWith('>') ||
+          (current.startsWith('|') && current.endsWith('|')) ||
           /^[-*]\s+/.test(current) ||
           /^\d+\.\s+/.test(current))
       ) {
@@ -246,6 +270,35 @@ function renderBlock(block: MarkdownBlock, index: number) {
     )
   }
 
+  if (block.type === 'table') {
+    return (
+      <div key={index} style={{ overflowX: 'auto', margin: '18px 0' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14, lineHeight: 1.6 }}>
+          <thead>
+            <tr style={{ background: '#f9fafb', borderBottom: '2px solid #e5e7eb' }}>
+              {block.headers.map((h, i) => (
+                <th key={i} style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 700, color: '#111827', whiteSpace: 'nowrap' }}>
+                  {renderInline(h)}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {block.rows.map((row, rIdx) => (
+              <tr key={rIdx} style={{ borderBottom: '1px solid #eaeaea' }}>
+                {row.map((cell, cIdx) => (
+                  <td key={cIdx} style={{ padding: '10px 12px', color: '#374151', verticalAlign: 'top' }}>
+                    {renderInline(cell)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+
   return <p key={index}>{renderInline(block.text)}</p>
 }
 
@@ -291,6 +344,12 @@ export default async function GuidePage({ params }: GuidePageProps) {
         '@type': 'ListItem',
         position: 2,
         name: lang === 'zh' ? '实用教程' : 'Guides',
+        item: `https://cheng-zi-ai.com/${lang}/guides`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: guide.title,
         item: `https://cheng-zi-ai.com/${lang}/guides/${guide.slug}`,
       },
     ],

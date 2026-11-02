@@ -27,172 +27,62 @@ export function generateStaticParams() {
 
 function getProductFaqs(product: Product, lang: 'en' | 'zh'): ProductFaq[] {
   if (lang === 'en') {
+    const specific: ProductFaq[] = []
+    if (product.deliveryNotice) {
+      specific.push({
+        question: `What is the delivery time and format for ${product.title}?`,
+        answer: `${product.deliveryNotice}. ${product.subtitle}`,
+      })
+    }
+    if (product.warnings && product.warnings.length > 0) {
+      specific.push({
+        question: `What are the important requirements before ordering ${product.title}?`,
+        answer: product.warnings.join(' '),
+      })
+    }
     const common: ProductFaq[] = [
       {
-        question: `Is ${product.title} an official OpenAI or Google service?`,
+        question: `Is ${product.title} an official service?`,
         answer:
-          'No. ChengZi AI is a third-party service platform. Product names and model names belong to their respective rights holders.',
+          'ChengZi AI is an independent third-party service platform providing official channel top-ups and verified ready accounts. All trademarks belong to their respective owners.',
       },
       {
-        question: 'How is the product delivered?',
+        question: 'How is the warranty handled?',
         answer:
-          'After payment, delivery is handled according to the product type. The page and order email will show the account, code, top-up instruction, or setup guide you need.',
-      },
-      {
-        question: 'What should I do if I enter the wrong email?',
-        answer:
-          'Contact support as soon as possible with your order information. Delivery depends on the email or contact detail submitted during checkout.',
+          'All subscriptions and accounts carry the warranty specified in the product description (typically 30-day pro-rated subscription warranty or first-login guarantee). Contact chengziai2026@163.com with your order ID for support.',
       },
     ]
+    return [...specific, ...common]
+  }
 
-    const byProduct: Record<string, ProductFaq[]> = {
-      'chatgpt-plus-monthly-code': [
-        {
-          question: 'Who is the ChatGPT Plus monthly pass for?',
-          answer:
-            'It is for users who want a low-cost ChatGPT Plus experience for writing, office work, study, coding, or temporary Plus usage.',
-        },
-        {
-          question: 'Do I need to handle overseas payment myself?',
-          answer:
-            'No. This product is designed for users who do not want to manage overseas payment steps themselves.',
-        },
-      ],
-      'chatgpt-plus-renewal': [
-        {
-          question: 'Do I need my own ChatGPT account for renewal?',
-          answer:
-            'Yes. Renewal is meant for users who already have their own ChatGPT account and want to continue using Plus on that account.',
-        },
-        {
-          question: 'Can I order renewal if my account is restricted?',
-          answer:
-            'You should not order renewal for an account that is restricted, unavailable, or unable to receive normal subscription changes.',
-        },
-      ],
-      'chatgpt-plus-ready-account': [
-        {
-          question: 'What is a ready-to-use account?',
-          answer:
-            'It is an account prepared for immediate use after delivery, suitable for users who do not want to register or configure an account themselves.',
-        },
-        {
-          question: 'Is it suitable as a backup account?',
-          answer:
-            'Yes. Many users choose a ready-to-use account as a temporary or backup ChatGPT Plus option.',
-        },
-      ],
-      'chatgpt-pro-20x-fast': [
-        {
-          question: 'How is ChatGPT Pro different from Plus?',
-          answer:
-            'Pro is intended for heavier usage such as AI coding, frequent chat, file analysis, deep research, and project sprints. It is not the same as standard Plus.',
-        },
-        {
-          question: 'Who should not buy this product?',
-          answer:
-            'Users who only chat occasionally may be better served by a Plus-level product instead of the Pro option.',
-        },
-      ],
-      'gemini-pro-year-account': [
-        {
-          question: 'Is this a Gemini family group subscription?',
-          answer:
-            'No. This is for subscribing an individual Google or Gemini account to Google AI Pro for one year.',
-        },
-        {
-          question: 'Will ChengZi AI keep my account information?',
-          answer:
-            'No. Account information is only used temporarily for activation when required and is not kept after completion.',
-        },
-      ],
-    }
-
-    return [...(byProduct[product.id] || []), ...common]
+  const specificZh: ProductFaq[] = []
+  if (product.deliveryNotice) {
+    specificZh.push({
+      question: `这款商品下单后多久发货？如何交付？`,
+      answer: `${product.deliveryNotice}。${product.subtitle}`,
+    })
+  }
+  if (product.warnings && product.warnings.length > 0) {
+    specificZh.push({
+      question: `购买与充值前有哪些必须注意的事项？`,
+      answer: product.warnings.join(' '),
+    })
   }
 
   const common: ProductFaq[] = [
     {
-      question: `${product.title} 是官方服务吗？`,
+      question: `${product.title} 是官方正规渠道吗？`,
       answer:
-        '不是。橙子 AI 是第三方服务平台，不是 OpenAI、Anthropic 或 Google 官方服务，也不是其授权代理。相关名称和商标归对应权利方所有。',
+        '橙子 AI 是独立的第三方服务平台，所有代充卡密与成品号均采用官方正规支付通道开通，绝非黑卡或零元购。相关品牌与模型商标归对应权利方所有。',
     },
     {
-      question: '下单后怎么交付？',
+      question: '遇到充值疑问或售后问题如何联系客服？',
       answer:
-        '交付方式按商品类型处理，可能是账号、卡密、充值说明或配置说明。请使用正确邮箱下单，以便接收交付信息。',
-    },
-    {
-      question: '邮箱填错了怎么办？',
-      answer:
-        '请尽快带订单信息联系客服。商品交付会依赖下单时填写的邮箱或联系方式。',
+        '请保留您的订单号与下单邮箱，直接发送邮件至官方售后邮箱 chengziai2026@163.com，客服将第一时间为您核实处理。',
     },
   ]
 
-  const byProduct: Record<string, ProductFaq[]> = {
-    'chatgpt-plus-monthly-code': [
-      {
-        question: 'ChatGPT Plus 国内直连月卡适合谁？',
-        answer:
-          '适合想低价体验 ChatGPT Plus，或临时需要 Plus 能力用于写作、办公、学习和编程的用户。',
-      },
-      {
-        question: '需要自己处理海外支付吗？',
-        answer:
-          '不需要。这个商品面向不想自己处理海外支付流程的用户，网页下单后按说明接收交付。',
-      },
-    ],
-    'chatgpt-plus-renewal': [
-      {
-        question: 'ChatGPT Plus 续费需要自己的账号吗？',
-        answer:
-          '需要。续费适合已经有自用 ChatGPT 账号，并希望继续在该账号上使用 Plus 的用户。',
-      },
-      {
-        question: '账号异常还能续费吗？',
-        answer:
-          '如果账号受限、不可用或无法正常变更订阅，不建议下单续费。',
-      },
-    ],
-    'chatgpt-plus-ready-account': [
-      {
-        question: '成品号是什么意思？',
-        answer:
-          '成品号是交付后可按说明登录使用的账号，适合不想注册或配置账号流程的用户。',
-      },
-      {
-        question: '可以作为备用账号吗？',
-        answer:
-          '可以。很多用户会把成品号作为临时使用或备用的 ChatGPT Plus 方案。',
-      },
-    ],
-    'chatgpt-pro-20x-fast': [
-      {
-        question: 'ChatGPT Pro 和 Plus 有什么区别？',
-        answer:
-          'Pro 面向更高强度使用场景，例如 AI Coding、高频对话、文件分析、深度研究和项目冲刺，不是普通 Plus。',
-      },
-      {
-        question: '什么人不适合买 Pro？',
-        answer:
-          '如果只是偶尔聊天或轻量使用，通常 Plus 级别商品更合适。',
-      },
-    ],
-    'gemini-pro-year-account': [
-      {
-        question: '这是 Gemini 家庭组吗？',
-        answer:
-          '不是。这是给你自己的 Google / Gemini 账号订阅一年 Google AI Pro，属于个人账号单独订阅。',
-      },
-      {
-        question: '平台会保存我的账号信息吗？',
-        answer:
-          '不会。需要提交的信息仅用于订阅临时处理，完成后不保留。',
-      },
-    ],
-  }
-
-  return [...(byProduct[product.id] || []), ...common]
+  return [...specificZh, ...common]
 }
 
 export async function generateMetadata({
@@ -281,7 +171,7 @@ export default async function ProductPage({
     "offers": {
       "@type": "Offer",
       "price": product.price,
-      "priceCurrency": resolvedParams.lang === 'en' ? "USD" : "CNY",
+      "priceCurrency": "CNY",
       "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
     }
   };
@@ -362,13 +252,22 @@ export default async function ProductPage({
           {product.title}
         </h1>
 
-        <div style={{ marginBottom: 32, display: "flex", alignItems: "baseline" }}>
-          {product.price > 0 ? (
-             <>
-               <span style={{ fontSize: 40, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>{dict.common.currency}{product.price}</span>
-             </>
-          ) : (
-             <span style={{ fontSize: 40, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>{dict.common.free}</span>
+        <div style={{ marginBottom: 32, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
+          <div>
+            {product.price > 0 ? (
+               <span style={{ fontSize: 40, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>¥ {product.price}</span>
+            ) : (
+               <span style={{ fontSize: 40, fontWeight: 700, color: "#111827", letterSpacing: "-0.03em" }}>{dict.common.free}</span>
+            )}
+          </div>
+          {product.inStock && (
+            <Link
+              href={`/${resolvedParams.lang}#accounts`}
+              className="vercel-button"
+              style={{ padding: "12px 24px", fontSize: 15, fontWeight: 700, textDecoration: "none", borderRadius: 10 }}
+            >
+              {product.buyButtonText}
+            </Link>
           )}
         </div>
 

@@ -25,25 +25,24 @@
   "orderName": "Claude Pro 月卡（iOS 充值）",
   "isHot": true,
   "warnings": [
-    "请确认当前会员已到期，账号无 0 元账单或逾期欠费。",
-    "封号 99% 为用户自身 IP 环境异常导致，封号不在售后范围。"
+    "Supports passwordless SK recharge (recommended, auto-checks account health) and Claude UID self-service recharge.",
+    "Does not overwrite active plans; account must have no overdue bills."
   ],
   "detail": {
-    "title": "Claude Pro 1-Month | iOS Official Top-up [Instant][30-Day Warranty]",
-    "subtitle": "Official iOS top-up for Claude Pro on your own account. Instant 1-3 min delivery.",
+    "title": "Claude Pro 1-Month | iOS Official Passwordless Top-up",
+    "subtitle": "24/7 automated recharge in 1-3 minutes via SK or Claude UID, no password required.",
     "sections": [
       {
-        "title": "Product Details",
+        "title": "Two Passwordless Methods",
         "items": [
-          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
-          "Includes 30-day subscription warranty against unprompted drops."
+          "1. SK Recharge (Recommended): Automatically checks account health before recharging.",
+          "2. Claude UID Recharge: Instant self-service top-up using only your Claude UID."
         ]
       },
       {
-        "title": "Important Notes",
+        "title": "Warranty & Risk Control",
         "items": [
-          "Please use a clean, stable proxy IP environment.",
-          "Account bans caused by network environment or policy violations are not covered."
+          "30-day pro-rated subscription warranty. Do not submit accounts with active subscriptions or overdue invoices."
         ]
       }
     ]

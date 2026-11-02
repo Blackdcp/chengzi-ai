@@ -6,8 +6,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://cheng-zi-ai.com'
   const products = getProducts('zh')
 
-  // Only index real product detail pages
-  const validProducts = products.filter(p => p.actionType !== 'link')
+  // Only index active in-stock real product detail pages
+  const validProducts = products.filter(p => p.actionType !== 'link' && p.inStock)
 
   const productIndexUrls = (['zh', 'en'] as const).map(lang => ({
     url: `${baseUrl}/${lang}/products`,

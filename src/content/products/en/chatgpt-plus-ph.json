@@ -2,17 +2,17 @@
   "id": "chatgpt-plus-ph",
   "categoryId": "chatgpt",
   "categoryName": "ChatGPT",
-  "title": "ChatGPT Plus 1-Month | PH Official Top-up [Instant][Warranty]",
+  "title": "ChatGPT Plus 1-Month | PH Official Card Top-up [Instant][30-Day Warranty]",
   "subtitle": "Top up your own account. Cheaper than official $20 USD rate, 24/7 self-service key for 1-month Plus.",
   "price": 125,
   "order": 4,
   "tags": [
-    "Plus 月卡",
-    "官方卡充",
-    "秒充",
-    "可囤五天"
+    "Plus 1-Month",
+    "Official Card",
+    "1-3m Instant",
+    "30-Day Warranty"
   ],
-  "deliveryNotice": "Instant automated delivery after payment",
+  "deliveryNotice": "24/7 automated CDK, 1-3 mins self-service completion",
   "features": [
     "正规卡充充值",
     "质保 30 天不掉订阅",
@@ -24,25 +24,26 @@
   "orderName": "ChatGPT Plus 月卡（菲区卡充）",
   "isHot": true,
   "warnings": [
-    "请确认当前会员已到期，账号无未结清账单。",
-    "封号由于官方风控或自身使用网络环境导致，不在质保范围内。"
+    "[No Overwrite]: Account must be on the free tier with no active subscription (switch back to Personal workspace if in Team).",
+    "[Email Rule]: Do not use Microsoft emails. Google Gmail is strongly recommended. Redeem on the day of purchase."
   ],
   "detail": {
-    "title": "ChatGPT Plus 1-Month | PH Official Top-up [Instant][Warranty]",
-    "subtitle": "Self top-up code for 1-month ChatGPT Plus subscription on your own account.",
+    "title": "ChatGPT Plus 1-Month | PH Official Card Top-up",
+    "subtitle": "Cheaper than official $20 USD rate. 24/7 automated top-up to your own account in 1-3 minutes.",
     "sections": [
       {
-        "title": "Product Details",
+        "title": "Product & Recharge Details",
         "items": [
-          "Official genuine subscription channel, no unauthorized 0-dollar exploit.",
-          "Includes 30-day subscription warranty against unprompted drops."
+          "Self-service recharge CDK for 1 month of official ChatGPT Plus ($20 USD value).",
+          "24/7 automated processing within 1-3 minutes without sharing your password.",
+          "Does not support overwriting active Plus/Pro subscriptions; account must be on the free tier."
         ]
       },
       {
-        "title": "Important Notes",
+        "title": "Important Requirements",
         "items": [
-          "Please use a clean, stable proxy IP environment.",
-          "Account bans caused by network environment or policy violations are not covered."
+          "Strongly recommend using Gmail. Avoid Microsoft (Outlook/Hotmail) or niche email providers.",
+          "Please redeem on the same day of purchase; log out and log back in if Plus status does not refresh immediately."
         ]
       }
     ]

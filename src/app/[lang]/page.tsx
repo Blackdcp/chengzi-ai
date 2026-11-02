@@ -15,6 +15,7 @@ export default async function Page({
   const refCode = resolvedSearchParams.ref || ''
   const dict = await getDictionary(resolvedParams.lang)
   const products = getProducts(resolvedParams.lang)
+  const activeProducts = products.filter(p => p.inStock && p.actionType !== 'link')
   const guides = getGuides(resolvedParams.lang).slice(0, 4)
   const organizationJsonLd = {
     '@context': 'https://schema.org',
@@ -31,6 +32,28 @@ export default async function Page({
     url: `https://cheng-zi-ai.com/${resolvedParams.lang}`,
     inLanguage: resolvedParams.lang === 'zh' ? 'zh-CN' : 'en-US',
   }
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: resolvedParams.lang === 'zh' ? '橙子 AI 官方账号与会员直充在售清单' : 'Orange AI Official Subscriptions & Ready Accounts',
+    numberOfItems: activeProducts.length,
+    itemListElement: activeProducts.map((p, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      item: {
+        '@type': 'Product',
+        name: p.title,
+        description: p.subtitle,
+        url: `https://cheng-zi-ai.com/${resolvedParams.lang}/products/${p.id}`,
+        offers: {
+          '@type': 'Offer',
+          price: p.price,
+          priceCurrency: 'CNY',
+          availability: 'https://schema.org/InStock',
+        },
+      },
+    })),
+  }
   
   return (
     <>
@@ -41,6 +64,10 @@ export default async function Page({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
       <ClientPage dict={dict} products={products} guides={guides} lang={resolvedParams.lang} refCode={refCode as string} />
     </>
