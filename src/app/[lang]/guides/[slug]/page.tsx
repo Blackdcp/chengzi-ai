@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getDictionary } from '../../../../lib/dictionaries'
 import { getProducts } from '../../../../lib/api'
+import { buildProductJsonLd } from '../../../../lib/productSchema'
 import { getGuideBySlug, getGuides, type GuideLanguage } from '../../../../lib/guides'
 import GuideCtaLink from './GuideCtaLink'
 import { AdsterraBanner, AdsterraNative } from '../../../../components/AdsterraAds'
@@ -358,18 +359,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
     mainEntityOfPage: `https://cheng-zi-ai.com/${lang}/guides/${guide.slug}`,
     ...(mentionedProducts.length > 0
       ? {
-          mentions: mentionedProducts.map(p => ({
-            '@type': 'Product',
-            name: p.title,
-            description: p.subtitle,
-            url: `https://cheng-zi-ai.com/${lang}/products/${p.id}`,
-            offers: {
-              '@type': 'Offer',
-              price: p.price,
-              priceCurrency: 'CNY',
-              availability: 'https://schema.org/InStock',
-            },
-          })),
+          mentions: mentionedProducts.map(p => buildProductJsonLd(p, lang)),
         }
       : {}),
   }

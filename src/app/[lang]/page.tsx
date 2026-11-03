@@ -1,6 +1,7 @@
 import { getDictionary } from '../../lib/dictionaries'
 import { getProducts } from '../../lib/api'
 import { getGuides } from '../../lib/guides'
+import { buildProductJsonLd } from '../../lib/productSchema'
 import ClientPage from './ClientPage'
 
 export default async function Page({
@@ -40,18 +41,7 @@ export default async function Page({
     itemListElement: activeProducts.map((p, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
-      item: {
-        '@type': 'Product',
-        name: p.title,
-        description: p.subtitle,
-        url: `https://cheng-zi-ai.com/${resolvedParams.lang}/products/${p.id}`,
-        offers: {
-          '@type': 'Offer',
-          price: p.price,
-          priceCurrency: 'CNY',
-          availability: 'https://schema.org/InStock',
-        },
-      },
+      item: buildProductJsonLd(p, resolvedParams.lang),
     })),
   }
   

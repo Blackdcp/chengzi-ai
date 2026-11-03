@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getProductBySlug, getProducts } from '../../../../lib/api'
 import { getDictionary } from '../../../../lib/dictionaries'
+import { buildProductJsonLd } from '../../../../lib/productSchema'
 import type { Product } from '../../../../types/product'
 
 import { Metadata } from 'next'
@@ -160,20 +161,7 @@ export default async function ProductPage({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": product.title,
-    "description": productDescription,
-    "url": `https://cheng-zi-ai.com/${resolvedParams.lang}/products/${product.id}`,
-    "brand": {
-      "@type": "Brand",
-      "name": dict.header.title
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": product.price,
-      "priceCurrency": "CNY",
-      "availability": product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
-    }
+    ...buildProductJsonLd(product, resolvedParams.lang),
   };
 
   const breadcrumbJsonLd = {
