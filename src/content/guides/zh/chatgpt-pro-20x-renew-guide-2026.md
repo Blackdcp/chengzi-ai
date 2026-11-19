@@ -84,7 +84,7 @@ OpenAI 的风控检测系统（Fraud Detection Engine）重点监控以下几类
 
 **橙子 AI** 专注于为专业研发机构、极客开发者和企业团队提供最纯净、合规的官方 AI 账号与直充保障：
 
-- 👑 **[ChatGPT Pro 20X 月卡 在期卡充续费 (¥1200)](/zh/products/chatgpt-pro-20x-renew)**：直降至 1200 元！尊享 20 倍顶配深度推理算力，老号续费首选，30 天足额订阅质保。
+- 👑 **[ChatGPT Pro 20X 月卡 在期卡充续费 (¥1300)](/zh/products/chatgpt-pro-20x-renew)**：直降至 1300 元！尊享 20 倍顶配深度推理算力，老号续费首选，30 天足额订阅质保。
 - 🚀 **[ChatGPT Pro 5X 官方正规卡充 (¥688)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1 深度推理，秒充极速到账。
 - ⚡ **[ChatGPT Plus 月卡 菲区官方正规卡充 (¥125)](/zh/products/chatgpt-plus-ph)**：高性价比首选，支持 5 天可囤，秒充开通官方 Plus 完整权益。
 - ⚡ **[Claude MAX 20X 月卡 官方秒充 (¥2600)](/zh/products/claude-max-20x-ios)**：顶配 20 倍 Claude 算力上限，全长文本深度推理无死角，30 天订阅质保。

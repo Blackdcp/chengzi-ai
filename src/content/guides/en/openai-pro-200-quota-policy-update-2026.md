@@ -76,7 +76,7 @@ Many users worry that cancelling auto-renew causes immediate service termination
 
 To ensure users secure their 20X compute rights before October 29, **Chengzi AI** maintains dedicated inventory of official redemption keys:
 
-- 👑 **[ChatGPT Pro $200 Monthly Card (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Top value! Top up your own account, retain 20X quota if renewed before Oct 29, stockable for 3 days with full 30-day warranty.
+- 👑 **[ChatGPT Pro $200 Monthly Card (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Top value! Top up your own account, retain 20X quota if renewed before Oct 29, stockable for 3 days with full 30-day warranty.
 - 🚀 **[ChatGPT Pro 25X Chile $500 Plan (¥3280)](/en/products/chatgpt-pro-25x-500)**: Ultimate compute! 25X exclusive compute allocation, official card redemption directly to your account (Microsoft email prohibited).
 - ⚡ **[ChatGPT Pro 5X Official Card (¥688)](/en/products/chatgpt-pro-5x-card)**: 5X official capacity with full o1/o3 reasoning, instant delivery.
 - ⚡ **[Claude MAX 20X Monthly Card (¥2600)](/en/products/claude-max-20x-ios)**: 20X Claude compute ceiling with unlimited context reasoning, 30-day warranty.

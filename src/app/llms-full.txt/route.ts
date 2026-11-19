@@ -53,7 +53,7 @@ ${sections ? `- **Detailed Specifications**:\n${sections}` : ''}`
 ## 1. Platform Overview
 
 橙子 AI (ChengZi AI / Orange AI) is a premier independent AI subscription & ready-account platform serving developers, researchers, quantitative teams, and creators. We provide official payment channel recharges (24/7 self-service CDK keys and iOS in-app passwordless top-ups) and high-trust aged ready accounts across four frontier AI ecosystems:
-1. **OpenAI ChatGPT**: Plus (¥79–¥165), Pro 5X $100 tier (¥688–¥699), Pro $200 tier (¥1200), Pro 25X $500 Chile tier (¥3280), and US Physical SIM verification (¥15).
+1. **OpenAI ChatGPT**: Plus (¥79–¥165), Pro 5X $100 tier (¥688–¥699), Pro $200 tier (¥1300), Pro 25X $500 Chile tier (¥3280), and US Physical SIM verification (¥15).
 2. **Anthropic Claude**: Claude Pro iOS SK/UID passwordless top-up (¥159) and Claude MAX 5X iOS UID top-up (¥999).
 3. **xAI Grok**: All-in-One official card top-ups for Grok Plus (¥75), Grok Premium (¥129), Grok Super (¥399), and Grok Ultra (¥799).
 4. **Google Gemini**: Gemini Pro 18-Month pre-activated membership on 2–3 year aged Gmail accounts (¥45 total, equivalent to ¥2.5/month).
@@ -82,9 +82,9 @@ ${detailedSpecs}
 - **¥145（iOS 官方正规秒充）**：1:1 持平官方美元汇率，走苹果 iOS 正规内购通道，支持覆盖已有 Plus。
 - **¥165（满周老号成品号）**：注册满一周以上老号 + 顶级纯净 IP 开通，适合对账号抗风控权重有更高要求的用户。
 
-### Q2: ChatGPT Pro 5X (¥688/¥699)、Pro 200刀 (¥1200) 和 Pro 500刀智利款 (¥3280) 有什么区别？
+### Q2: ChatGPT Pro 5X (¥688/¥699)、Pro 200刀 (¥1300) 和 Pro 500刀智利款 (¥3280) 有什么区别？
 - **Pro 5X（¥688 卡充 / ¥699 iOS）**：对应官方 $100 美元档（官方汇率约 ¥725，本站直降 ¥37），提供 5 倍于 Plus 的高阶推理与 Codex 额度，iOS 款支持直接覆盖升级现有 Plus（补充 4X 额度差额）。
-- **Pro 200刀（¥1200 官方卡充）**：对应官方 $200 美元档（比官方汇率立省 ¥250+），可囤卡 3 天，重度科研与全栈工程主力款。
+- **Pro 200刀（¥1300 官方卡充）**：对应官方 $200 美元档（比官方汇率立省 ¥150+），可囤卡 3 天，重度科研与全栈工程主力款。
 - **Pro 25X 智利区 500刀（¥3280 官方卡充）**：对应官方 $500 美元顶配档（比官方汇率立省 ¥345），享有 25X 极限算力配额，严禁使用微软邮箱（需使用 Gmail）。
 
 ### Q3: Claude Pro (¥159) 和 Claude MAX 5X (¥999) 充值需要提供密码吗？需要注意什么？

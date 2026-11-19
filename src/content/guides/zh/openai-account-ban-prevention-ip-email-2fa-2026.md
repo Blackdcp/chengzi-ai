@@ -17,7 +17,7 @@ lastModified: "2026-10-25T08:00:00.000Z"
 
 | 平台与对应商品 | 绝对禁止的高危行为（必封/不到账雷区） | 橙子 AI 推荐的标准合规操作 |
 | :--- | :--- | :--- |
-| **ChatGPT 全系充值**<br>([Plus ¥125](/zh/products/chatgpt-plus-ph) / [Pro 5X ¥688](/zh/products/chatgpt-pro-5x-card) / [200刀 ¥1200](/zh/products/chatgpt-pro-20x-renew) / [500刀 ¥3280](/zh/products/chatgpt-pro-25x-500)) | ❌ 使用微软邮箱（Outlook/Hotmail/Live）<br>❌ 拿曾买过 0元购/低价黑卡/谷歌内购的旧号充值<br>❌ 在 Team 团队空间下直接提取凭证 | ✅ **统一使用 Google Gmail 个人版账号**<br>✅ 曾用过黑卡的号直接弃用，用新 Gmail 充值<br>✅ 若触发手机验证，使用 **[¥15 美国实体卡接码](/zh/products/chatgpt-sms-verify)** |
+| **ChatGPT 全系充值**<br>([Plus ¥125](/zh/products/chatgpt-plus-ph) / [Pro 5X ¥688](/zh/products/chatgpt-pro-5x-card) / [200刀 ¥1300](/zh/products/chatgpt-pro-20x-renew) / [500刀 ¥3280](/zh/products/chatgpt-pro-25x-500)) | ❌ 使用微软邮箱（Outlook/Hotmail/Live）<br>❌ 拿曾买过 0元购/低价黑卡/谷歌内购的旧号充值<br>❌ 在 Team 团队空间下直接提取凭证 | ✅ **统一使用 Google Gmail 个人版账号**<br>✅ 曾用过黑卡的号直接弃用，用新 Gmail 充值<br>✅ 若触发手机验证，使用 **[¥15 美国实体卡接码](/zh/products/chatgpt-sms-verify)** |
 | **Claude 全系免密直充**<br>([Pro ¥159](/zh/products/claude-pro-ios) / [MAX 5X ¥999](/zh/products/claude-max-5x-ios)) | ❌ 把账号密码发给人工异地登录代充<br>❌ 用刚注册不满 30 天的纯白号直充 MAX 5X<br>❌ 会员未到期强行覆盖或带着逾期账单充值 | ✅ **采用 SK / UID 免密自助充值（零密码接触）**<br>✅ 充 MAX 5X 必用满 30 天且有订阅史的老号<br>✅ 固定单个纯净原生 IP，绝不多人共享 |
 | **Gemini Pro 18个月老号**<br>([¥45 独享成品号](/zh/products/gemini-pro-18m)) | ❌ 首次登录当天立刻修改密码或删 2FA<br>❌ 短时间内频繁切换国家节点与浏览器 | ✅ **前 3–7 天固定美国 IP 正常使用不改密**<br>✅ 满 3–7 天后通过 `Change Authenticator` 换绑 2FA |
 | **Grok 新版多合一全系**<br>([Plus ¥75](/zh/products/grok-plus) ~ [Ultra ¥799](/zh/products/grok-ultra)) | ❌ 在还有未到期订阅的账号上叠加充值<br>❌ 无半价优惠资格强行拍 Premium/Super/Ultra | ✅ **确认账号为免费版且含 50% 半价优惠资格**<br>✅ 提取 CDK 后 24 小时内完成自助充值 |

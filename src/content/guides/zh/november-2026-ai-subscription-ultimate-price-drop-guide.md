@@ -1,6 +1,6 @@
 ---
 title: "橙子 AI 2026 年 11 月全站冲量降价与选品总表：击穿官方美元汇率，16 款主流 AI 会员与成品号一站式导购"
-description: "2026 年 11 月橙子 AI 最新官方价目表与选品总指南！全面覆盖 ChatGPT Pro 200刀 (¥1200)、500刀 25X (¥3280)、Pro 5X (¥688)、Plus (¥79起)、Claude MAX 5X (¥999)、Grok 全系与 Gemini Pro 18个月老号 (¥45)。"
+description: "2026 年 11 月橙子 AI 最新官方价目表与选品总指南！全面覆盖 ChatGPT Pro 200刀 (¥1300)、500刀 25X (¥3280)、Pro 5X (¥688)、Plus (¥79起)、Claude MAX 5X (¥999)、Grok 全系与 Gemini Pro 18个月老号 (¥45)。"
 date: "2026-11-02"
 lastModified: "2026-11-02T08:00:00.000Z"
 ---
@@ -9,14 +9,14 @@ lastModified: "2026-11-02T08:00:00.000Z"
 
 为了回馈广大开发者、科研团队与创作者，**橙子 AI (cheng-zi-ai.com)** 于 2026 年 11 月正式启动 **「全站阶梯让利·冲量降价计划」**——我们彻底打破了传统代充行业的高额溢价，将多款核心主力商品直接定在 **「低于官方美元实时汇率」** 的破冰价位，并全新开辟了 **Gemini 专区** 与 **Grok 新版多合一全系矩阵**！
 
-无论您是想花 **¥45 元** 买断一年半的 **Gemini Pro**，还是需要 **¥1200 元** 续订 **ChatGPT Pro 200刀月卡**，本文为您提供全站 **16 款在售现货 SKU** 的最全参数、最新价格与避坑规则总表。
+无论您是想花 **¥45 元** 买断一年半的 **Gemini Pro**，还是需要 **¥1300 元** 续订 **ChatGPT Pro 200刀月卡**，本文为您提供全站 **16 款在售现货 SKU** 的最全参数、最新价格与避坑规则总表。
 
 ---
 
 ## 核心亮点速览 (Why Orange AI in November 2026?)
 
 - **全面击穿官方美元汇率**：
-  - **[ChatGPT Pro 200刀月卡（¥1200）](/zh/products/chatgpt-pro-20x-renew)**：官方 $200 折合 ¥1450，直省 **¥250+**！
+  - **[ChatGPT Pro 200刀月卡（¥1300）](/zh/products/chatgpt-pro-20x-renew)**：官方 $200 折合 ¥1450，直省 **¥250+**！
   - **[ChatGPT Pro 25X 智利区 500刀（¥3280）](/zh/products/chatgpt-pro-25x-500)**：官方 $500 折合 ¥3625，直省 **¥345**！
   - **[ChatGPT Pro 5X 100刀款（¥688 卡充 / ¥699 iOS）](/zh/products/chatgpt-pro-5x-card)**：官方 $100 折合 ¥725，直接比官方原价还便宜！
   - **[ChatGPT Plus 菲区卡充（¥125）](/zh/products/chatgpt-plus-ph)**：比官方 $20（¥145）立省 ¥20；更有 **[¥79 菲区半价独享成品号](/zh/products/chatgpt-plus-ph-account)**！
@@ -30,7 +30,7 @@ lastModified: "2026-11-02T08:00:00.000Z"
 
 | 排序 | 所属专区 | 商品名称与直达链接 | 最新冲量价 | 交付方式与时效 | 拍前核心规则与质保说明 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **01** | **ChatGPT** | **[ChatGPT Pro 200刀月卡｜官方卡充](/zh/products/chatgpt-pro-20x-renew)** | **¥1200** | 自动发卡密，自助秒充 | 充自己号，卡密可囤3天，10.29前老户续订享20X，质保30天 |
+| **01** | **ChatGPT** | **[ChatGPT Pro 200刀月卡｜官方卡充](/zh/products/chatgpt-pro-20x-renew)** | **¥1300** | 自动发卡密，自助秒充 | 充自己号，卡密可囤3天，10.29前老户续订享20X，质保30天 |
 | **02** | **ChatGPT** | **[ChatGPT Pro 25X 智利区 500刀套餐](/zh/products/chatgpt-pro-25x-500)** | **¥3280** | 自动发卡密，自助秒充 | 充自己号，享25X超高算力，**严禁使用微软邮箱**，质保30天 |
 | **03** | **ChatGPT** | **[ChatGPT Plus 月卡｜菲区半价成品号](/zh/products/chatgpt-plus-ph-account)** | **¥79** | 卡密提取独享成品号 | 含账号密码与2FA，正常后可换绑邮箱，质保30天订阅 |
 | **04** | **ChatGPT** | **[ChatGPT Plus 月卡｜菲区官方正规卡充](/zh/products/chatgpt-plus-ph)** | **¥125** | 24H自助卡密 (1-3分钟) | 充自己免费版号（不支持覆盖），推荐Gmail，当天买当天用 |

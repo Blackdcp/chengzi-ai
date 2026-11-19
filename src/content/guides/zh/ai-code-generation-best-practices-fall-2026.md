@@ -99,6 +99,6 @@ print("Concurrency validation passed.")
 - ⚡ **[Claude MAX 20X 月卡 官方秒充 (¥2600)](/zh/products/claude-max-20x-ios)**：顶配 20 倍 Claude 算力上限，Claude Code 终端重构绝配，全长文本深度推理无死角，30 天订阅质保。
 - ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥999)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，全栈工程师日常高频编程黄金档位。
 - 👑 **[ChatGPT Pro 25X 智利区 500刀套餐 (¥3280)](/zh/products/chatgpt-pro-25x-500)**：全新上线！25 倍顶配超级算力配额，官方卡充直充自己账号，并发形式化推演首选（请勿使用微软邮箱）。
-- 🚀 **[ChatGPT Pro 200刀月卡 充值自己账号 (¥1200)](/zh/products/chatgpt-pro-20x-renew)**：性价比神话！老用户在 10 月 29 日前重新订阅立享 20X 顶配额度，卡密可囤 3 天，现货秒充。
+- 🚀 **[ChatGPT Pro 200刀月卡 充值自己账号 (¥1300)](/zh/products/chatgpt-pro-20x-renew)**：性价比神话！老用户在 10 月 29 日前重新订阅立享 20X 顶配额度，卡密可囤 3 天，现货秒充。
 - 🌟 **[Claude Pro 月卡 iOS 官方秒充 (¥159)](/zh/products/claude-pro-ios)**：极速 1-3 分钟到账，入门体验 Claude 3.7 混合推理。
 - 🚀 **[ChatGPT Pro 5X 官方正规卡充 (¥688)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1 深度推理，秒充极速到账。

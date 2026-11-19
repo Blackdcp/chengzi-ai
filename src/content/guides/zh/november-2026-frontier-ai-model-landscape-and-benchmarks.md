@@ -19,7 +19,7 @@ lastModified: "2026-10-31T08:00:00.000Z"
 
 | 核心能力维度 | 行业冠军生态 | 橙子 AI 入门高性价比款 | 橙子 AI 重度旗舰主推款 |
 | :--- | :--- | :--- | :--- |
-| **综合推理、数理证明与复杂科研** | **OpenAI ChatGPT** | **[Plus 半价成品号 (¥79)](/zh/products/chatgpt-plus-ph-account)** / **[菲区卡充 (¥125)](/zh/products/chatgpt-plus-ph)** | **[Pro 200刀 (¥1200)](/zh/products/chatgpt-pro-20x-renew)** / **[Pro 5X (¥688)](/zh/products/chatgpt-pro-5x-card)** / **[500刀 25X (¥3280)](/zh/products/chatgpt-pro-25x-500)** |
+| **综合推理、数理证明与复杂科研** | **OpenAI ChatGPT** | **[Plus 半价成品号 (¥79)](/zh/products/chatgpt-plus-ph-account)** / **[菲区卡充 (¥125)](/zh/products/chatgpt-plus-ph)** | **[Pro 200刀 (¥1300)](/zh/products/chatgpt-pro-20x-renew)** / **[Pro 5X (¥688)](/zh/products/chatgpt-pro-5x-card)** / **[500刀 25X (¥3280)](/zh/products/chatgpt-pro-25x-500)** |
 | **大型工程重构、前端 UI 与终端编程** | **Anthropic Claude** | **[Claude Pro iOS 免密秒充 (¥159)](/zh/products/claude-pro-ios)** | **[Claude MAX 5X iOS 免密秒充 (¥999)](/zh/products/claude-max-5x-ios)** |
 | **全网实时热点、Web3 与金融情报** | **xAI Grok** | **[Grok Plus (¥75)](/zh/products/grok-plus)** / **[Premium (¥129)](/zh/products/grok-premium)** | **[Grok Super (¥399)](/zh/products/grok-super-cdk)** / **[Grok Ultra (¥799)](/zh/products/grok-ultra)** |
 | **百万字 PDF 文献库、音视频多模态** | **Google Gemini** | **[Gemini Pro 18个月老邮箱成品号 (¥45)](/zh/products/gemini-pro-18m)** | **[Gemini Pro 18个月老邮箱成品号 (¥45，折合¥2.5/月)](/zh/products/gemini-pro-18m)** |

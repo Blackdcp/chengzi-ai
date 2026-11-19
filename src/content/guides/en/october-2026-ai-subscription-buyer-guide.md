@@ -44,7 +44,7 @@ OpenAI's grandfathered 20X extension policy operates on strict temporal rules:
 
 | Category | Product / SKU | Price | Key Features & Multiplier | Best Use Case |
 | :--- | :--- | :--- | :--- | :--- |
-| **ChatGPT** | **[Pro $200 Monthly Card](/en/products/chatgpt-pro-20x-renew)** | **¥1200** | Retain 20X if renewed before Oct 29 | Existing subscribers, deep reasoning |
+| **ChatGPT** | **[Pro $200 Monthly Card](/en/products/chatgpt-pro-20x-renew)** | **¥1300** | Retain 20X if renewed before Oct 29 | Existing subscribers, deep reasoning |
 | **ChatGPT** | **[Pro 25X Chile $500 Plan](/en/products/chatgpt-pro-25x-500)** | **¥3280** | 25X maximum compute allocation | Elite research, quant funds (No MS email) |
 | **ChatGPT** | **[Plus PH Official Card](/en/products/chatgpt-plus-ph)** | **¥125** | Official card, instant delivery, 5-day stock | High-value daily productivity |
 | **ChatGPT** | **[Plus Monthly iOS Top-up](/en/products/chatgpt-plus-ios)** | **¥145** | Direct iOS delivery, no password needed | Convenient personal upgrades |
@@ -84,7 +84,7 @@ OpenAI's grandfathered 20X extension policy operates on strict temporal rules:
 
 **Chengzi AI** adheres strictly to verified channels, direct account top-ups, and full 30-day warranties:
 
-- 👑 **[ChatGPT Pro $200 Monthly Card (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Grandfathered 20X quota for renewals before Oct 29, stockable keys with 30-day warranty.
+- 👑 **[ChatGPT Pro $200 Monthly Card (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Grandfathered 20X quota for renewals before Oct 29, stockable keys with 30-day warranty.
 - 👑 **[ChatGPT Pro 25X Chile $500 Plan (¥3280)](/en/products/chatgpt-pro-25x-500)**: Uncapped 25X compute ceiling, official card redemption directly to your account (Microsoft emails prohibited).
 - ⚡ **[Claude MAX 20X Monthly Card (¥2600)](/en/products/claude-max-20x-ios)**: 20X Claude capacity for unrestricted architecture analysis.
 - ⚡ **[Claude MAX 5X Monthly Card (¥999)](/en/products/claude-max-5x-ios)**: 5X capacity for uninterrupted engineering sprints.

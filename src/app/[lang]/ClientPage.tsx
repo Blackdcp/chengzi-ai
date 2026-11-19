@@ -1024,8 +1024,8 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
                     a: "追求极致性价比或备用号选【¥79 菲区半价成品号】；已有 Gmail 个人免费号想充自己号选【¥125 菲区官方卡充】（比官方 $20 省 20 元）；需要覆盖已有 Plus 选【¥145 iOS 官方秒充】；想要高权重满周老号开箱即用选【¥165 独享老号成品号】。"
                   },
                   {
-                    q: "ChatGPT Pro 5X (¥688) 与 Pro 200刀 (¥1200) / 500刀 (¥3280) 有什么区别？",
-                    a: "【Pro 5X (¥688/¥699)】对应官方 $100 档，低于官方汇率价，适合高频编程与日常 o1/o3 推理；【Pro 200刀 (¥1200)】立省 ¥250+，支持卡密囤 3 天，老用户 10.29 前续订仍享 20X 额度；【智利区 500刀 (¥3280)】专享 25X 顶配极限算力（严禁使用微软邮箱）。"
+                    q: "ChatGPT Pro 5X (¥688) 与 Pro 200刀 (¥1300) / 500刀 (¥3280) 有什么区别？",
+                    a: "【Pro 5X (¥688/¥699)】对应官方 $100 档，低于官方汇率价，适合高频编程与日常 o1/o3 推理；【Pro 200刀 (¥1300)】立省 ¥250+，支持卡密囤 3 天，老用户 10.29 前续订仍享 20X 额度；【智利区 500刀 (¥3280)】专享 25X 顶配极限算力（严禁使用微软邮箱）。"
                   },
                   {
                     q: "Claude Pro (¥159) 和 MAX 5X (¥999) 充值需要提供密码吗？",
@@ -1042,8 +1042,8 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
                     a: "Pick ¥79 (PH Ready Account) for the lowest-cost turnkey access; pick ¥125 (PH Card Top-up) to recharge your own free Gmail account below the $20 USD rate; pick ¥145 (iOS Top-up) for passwordless iOS channel; or ¥165 for a 1+ week aged ready account."
                   },
                   {
-                    q: "What is the difference between Pro 5X (¥688), Pro $200 (¥1200), and Pro 25X $500 (¥3280)?",
-                    a: "Pro 5X (¥688/¥699) is the $100 official tier priced below USD exchange rates; Pro $200 (¥1200) saves ¥250+ with 3-day stockable keys; Pro 25X $500 (¥3280) unlocks 25X flagship compute (Gmail required, no Microsoft emails)."
+                    q: "What is the difference between Pro 5X (¥688), Pro $200 (¥1300), and Pro 25X $500 (¥3280)?",
+                    a: "Pro 5X (¥688/¥699) is the $100 official tier priced below USD exchange rates; Pro $200 (¥1300) saves ¥250+ with 3-day stockable keys; Pro 25X $500 (¥3280) unlocks 25X flagship compute (Gmail required, no Microsoft emails)."
                   },
                   {
                     q: "Do Claude Pro (¥159) and MAX 5X (¥999) require my password?",

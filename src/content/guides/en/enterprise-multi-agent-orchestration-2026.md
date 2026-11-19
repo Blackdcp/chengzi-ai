@@ -63,7 +63,7 @@ Empirical data demonstrates that tiered routing achieves **65% to 72% cost savin
 | :--- | :--- | :--- | :--- | :--- |
 | **L3 Flagship** | **[ChatGPT Pro 25X $500](/en/products/chatgpt-pro-25x-500)** | **¥3280** | 25X Extreme Ceiling | Principal Architect Agent, Mathematical Proof |
 | **L3 Flagship** | **[Claude MAX 20X](/en/products/claude-max-20x-ios)** | **¥2600** | 20X Claude Multiplier | Global AST Refactoring, Security Audit |
-| **L3 Value King**| **[ChatGPT Pro $200 Card](/en/products/chatgpt-pro-20x-renew)** | **¥1200** | Grandfathered 20X (Pre-Oct 29) | Deep Reasoning Verification |
+| **L3 Value King**| **[ChatGPT Pro $200 Card](/en/products/chatgpt-pro-20x-renew)** | **¥1300** | Grandfathered 20X (Pre-Oct 29) | Deep Reasoning Verification |
 | **L2 Core Dev** | **[Claude MAX 5X](/en/products/claude-max-5x-ios)** | **¥999** | 5X Claude Quota | Full-Stack Implementation, CLI Agent |
 | **L2 Core Dev** | **[ChatGPT Pro 5X Card](/en/products/chatgpt-pro-5x-card)** | **¥688** | 5X Quota with o1 Reasoning | Test Generator, API Implementation |
 | **L1 Utility** | **[ChatGPT Plus PH Card](/en/products/chatgpt-plus-ph)** | **¥125** | Official Card, Stockable 5 Days | Docs Extraction, Commit Summaries |
@@ -106,7 +106,7 @@ Building multi-agent production swarms demands reliable capacity and verified wa
 **Chengzi AI** provides official inventory across all enterprise tiers:
 
 - 👑 **[ChatGPT Pro 25X Chile $500 Plan (¥3280)](/en/products/chatgpt-pro-25x-500)**: Brand new! Exclusive 25X compute ceiling, official card redemption directly to your account (Microsoft emails prohibited).
-- 🚀 **[ChatGPT Pro $200 Monthly Card (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Top value! Renew before Oct 29 to retain original 20X quota. Keys stockable for 3 days with full 30-day warranty.
+- 🚀 **[ChatGPT Pro $200 Monthly Card (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Top value! Renew before Oct 29 to retain original 20X quota. Keys stockable for 3 days with full 30-day warranty.
 - ⚡ **[Claude MAX 20X Monthly Card (¥2600)](/en/products/claude-max-20x-ios)**: 20X Claude capacity for unrestricted architecture analysis.
 - ⚡ **[Claude MAX 5X Monthly Card (¥999)](/en/products/claude-max-5x-ios)**: 5X capacity for uninterrupted engineering sprints.
 - 🚀 **[ChatGPT Pro 5X Official Card (¥688)](/en/products/chatgpt-pro-5x-card)**: 5X official capacity with full o1/o3 reasoning, instant delivery.

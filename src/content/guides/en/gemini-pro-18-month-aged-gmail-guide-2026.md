@@ -46,6 +46,6 @@ Google's security algorithm flags immediate password resets from a brand-new dev
 ## Recommended Official AI Subscriptions on Orange AI
 
 - 🔥 **[Gemini Pro 18-Month Aged Gmail Account (¥45)](/en/products/gemini-pro-18m)**: Only ¥2.5/month! Pre-activated 18-month membership with 2FA.
-- 👑 **[ChatGPT Pro $200 Monthly Card (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Save ¥250+ vs official USD exchange rates with 30-day warranty.
+- 👑 **[ChatGPT Pro $200 Monthly Card (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Save ¥150+ vs official USD exchange rates with 30-day warranty.
 - 💡 **[ChatGPT Plus PH Half-Price Ready Account (¥79)](/en/products/chatgpt-plus-ph-account)** & **[PH Card Top-up (¥125)](/en/products/chatgpt-plus-ph)**: Cheaper than the official $20 USD rate.
 - ⚡ **[Claude MAX 5X iOS Top-up (¥999)](/en/products/claude-max-5x-ios)**: Sub-¥1000 special with UID passwordless recharge.

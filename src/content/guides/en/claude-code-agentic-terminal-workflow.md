@@ -96,7 +96,7 @@ Autonomous agents consume immense token volumes. Standard free or entry-tier acc
 
 **Chengzi AI** provides verified official subscription accounts with full 30-day warranty:
 
-- 👑 **[ChatGPT Pro 20X Renewal (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Newly discounted! Uncapped official 20X reasoning compute for top-tier research and engineering.
+- 👑 **[ChatGPT Pro 20X Renewal (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Newly discounted! Uncapped official 20X reasoning compute for top-tier research and engineering.
 - 🚀 **[ChatGPT Pro 5X Card Top-Up (¥688)](/en/products/chatgpt-pro-5x-card)**: 5X official quota with full o1 reasoning power, instant delivery.
 - ⚡ **[Claude MAX 20X Official Top-Up (¥2600)](/en/products/claude-max-20x-ios)**: Uncapped 20X Claude capacity for massive terminal agent tasks.
 - ⚡ **[Claude MAX 5X Official Top-Up (¥999)](/en/products/claude-max-5x-ios)**: 5X capacity for power coders, backed by 30-day subscription warranty.

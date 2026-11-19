@@ -61,10 +61,10 @@ export default async function Page({
             },
             {
               '@type': 'Question',
-              name: 'ChatGPT Pro 5X (¥688) 与 Pro 200刀 (¥1200) / 500刀 (¥3280) 有什么区别？',
+              name: 'ChatGPT Pro 5X (¥688) 与 Pro 200刀 (¥1300) / 500刀 (¥3280) 有什么区别？',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Pro 5X (¥688/¥699) 对应官方 $100 档，低于官方汇率价；Pro 200刀 (¥1200) 立省 ¥250+，支持卡密囤 3 天；智利区 500刀 (¥3280) 专享 25X 顶配极限算力（严禁使用微软邮箱）。',
+                text: 'Pro 5X (¥688/¥699) 对应官方 $100 档，低于官方汇率价；Pro 200刀 (¥1300) 立省 ¥250+，支持卡密囤 3 天；智利区 500刀 (¥3280) 专享 25X 顶配极限算力（严禁使用微软邮箱）。',
               },
             },
             {
@@ -95,10 +95,10 @@ export default async function Page({
             },
             {
               '@type': 'Question',
-              name: 'What is the difference between Pro 5X (¥688), Pro $200 (¥1200), and Pro 25X $500 (¥3280)?',
+              name: 'What is the difference between Pro 5X (¥688), Pro $200 (¥1300), and Pro 25X $500 (¥3280)?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Pro 5X (¥688/¥699) is the $100 tier below USD exchange rates; Pro $200 (¥1200) saves ¥250+ with 3-day stockable keys; Pro 25X $500 (¥3280) unlocks 25X flagship compute.',
+                text: 'Pro 5X (¥688/¥699) is the $100 tier below USD exchange rates; Pro $200 (¥1300) saves ¥250+ with 3-day stockable keys; Pro 25X $500 (¥3280) unlocks 25X flagship compute.',
               },
             },
           ],

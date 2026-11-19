@@ -92,7 +92,7 @@ python3 -m vllm.entrypoints.openai.api_server \
 
 **橙子 AI** 为企业与高阶极客提供全球顶级 AI 官方账号与会员充值服务：
 
-- 👑 **[ChatGPT Pro 20X 月卡 在期卡充续费 (¥1200)](/zh/products/chatgpt-pro-20x-renew)**：价格全面下调至 1200 元！尊享 20 倍顶配深度推理算力，重度科学计算与高阶算法架构终极利器。
+- 👑 **[ChatGPT Pro 20X 月卡 在期卡充续费 (¥1300)](/zh/products/chatgpt-pro-20x-renew)**：价格全面下调至 1300 元！尊享 20 倍顶配深度推理算力，重度科学计算与高阶算法架构终极利器。
 - 🚀 **[ChatGPT Pro 5X 官方正规卡充 (¥688)](/zh/products/chatgpt-pro-5x-card)**：官方正规卡充，5 倍官方用量与满血 o1/o3 深度推理，秒充极速到账。
 - ⚡ **[Claude MAX 20X 月卡 官方秒充 (¥2600)](/zh/products/claude-max-20x-ios)**：顶配 20 倍 Claude 算力上限，全长文本理解无死角，30 天订阅质保。
 - ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥999)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，重度工程师全天候高频编码首选。

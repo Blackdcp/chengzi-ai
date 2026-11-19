@@ -69,6 +69,6 @@ lastModified: "2026-10-10T08:00:00.000Z"
 ## 官方正规高阶算力与账号服务推荐
 
 - 🔥 **[Gemini Pro 18个月会员 2-3年老邮箱成品号 (¥45)](/zh/products/gemini-pro-18m)**：折合每月仅 ¥2.5 元！自动发货带 2FA，畅享 Gemini Pro 与 NotebookLM。
-- 👑 **[ChatGPT Pro 200刀月卡 官方卡充 (¥1200)](/zh/products/chatgpt-pro-20x-renew)**：比官方美元汇率立省 ¥250+，充值自己账号，30 天质保。
+- 👑 **[ChatGPT Pro 200刀月卡 官方卡充 (¥1300)](/zh/products/chatgpt-pro-20x-renew)**：比官方美元汇率立省 ¥150+，充值自己账号，30 天质保。
 - 💡 **[ChatGPT Plus 菲区半价成品号 (¥79)](/zh/products/chatgpt-plus-ph-account)** 与 **[菲区官方卡充 (¥125)](/zh/products/chatgpt-plus-ph)**：击穿官方 $20 美元原价，日常生产力首选。
 - ⚡ **[Claude MAX 5X 月卡 iOS 免密秒充 (¥999)](/zh/products/claude-max-5x-ios)**：直破千元大关，5 倍官方算力，支持 UID 免密直充。

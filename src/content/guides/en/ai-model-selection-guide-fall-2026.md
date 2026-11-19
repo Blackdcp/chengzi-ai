@@ -55,7 +55,7 @@ As an independent provider of verified official subscriptions and apex compute t
 
 | Ecosystem | Product SKU | Price | Capacity & Focus | Best For |
 | :--- | :--- | :--- | :--- | :--- |
-| **ChatGPT** | **[Pro 20X Active Renewal](/en/products/chatgpt-pro-20x-renew)** | **¥1200** | 20X compute limit, zero concurrency caps | Algorithms, formal math, unbeatable value |
+| **ChatGPT** | **[Pro 20X Active Renewal](/en/products/chatgpt-pro-20x-renew)** | **¥1300** | 20X compute limit, zero concurrency caps | Algorithms, formal math, unbeatable value |
 | **ChatGPT** | **[Pro 5X Card Top-Up](/en/products/chatgpt-pro-5x-card)** | **¥688** | 5X official quota, o1/o3 reasoning | Daily heavy development, Cursor workflows |
 | **ChatGPT** | **[Plus PH Card Top-Up](/en/products/chatgpt-plus-ph)** | **¥125** | Official card top-up, valid 5 days, instant | Daily personal tasks, budget full-stack |
 | **ChatGPT** | **[Plus Ready Account](/en/products/chatgpt-plus-ready)** | **¥165** | Dedicated email credentials, instant setup | Zero-setup onboarding, overseas users |
@@ -89,7 +89,7 @@ As an independent provider of verified official subscriptions and apex compute t
 
 **Chengzi AI** upholds verified official billing channels, absolute fraud elimination, and full 30-day warranty coverage across all tiers:
 
-- 👑 **[ChatGPT Pro 20X Renewal (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Newly reduced to ¥1200! 20X compute limit for uninterrupted research and heavy-duty development, backed by 30-day warranty.
+- 👑 **[ChatGPT Pro 20X Renewal (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Newly reduced to ¥1300! 20X compute limit for uninterrupted research and heavy-duty development, backed by 30-day warranty.
 - 🚀 **[ChatGPT Pro 5X Card Top-Up (¥688)](/en/products/chatgpt-pro-5x-card)**: 5X official quota and o1/o3 reasoning power, instant delivery.
 - ⚡ **[Claude MAX 20X Official Top-Up (¥2600)](/en/products/claude-max-20x-ios)**: Uncapped 20X Claude capacity for massive terminal agent tasks.
 - ⚡ **[Claude MAX 5X Official Top-Up (¥999)](/en/products/claude-max-5x-ios)**: 5X capacity for power coders, backed by 30-day subscription warranty.

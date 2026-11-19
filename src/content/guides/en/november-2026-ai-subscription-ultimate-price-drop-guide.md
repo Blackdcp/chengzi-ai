@@ -15,7 +15,7 @@ Welcome to **Orange AI's (cheng-zi-ai.com)** November 2026 Master Buyer's Guide!
 
 | Order | Category | Product Title & Link | Price (CNY) | Delivery Method | Key Rules & Warranty |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **01** | **ChatGPT** | **[ChatGPT Pro $200 Monthly Card](/en/products/chatgpt-pro-20x-renew)** | **¥1200** | Instant Self-Service CDK | Save ¥250+ vs USD rate; stockable 3 days; 30-day warranty |
+| **01** | **ChatGPT** | **[ChatGPT Pro $200 Monthly Card](/en/products/chatgpt-pro-20x-renew)** | **¥1300** | Instant Self-Service CDK | Save ¥150+ vs USD rate; stockable 3 days; 30-day warranty |
 | **02** | **ChatGPT** | **[ChatGPT Pro 25X Chile $500 Plan](/en/products/chatgpt-pro-25x-500)** | **¥3280** | Instant Self-Service CDK | 25X compute ceiling; **No Microsoft emails**; 30-day warranty |
 | **03** | **ChatGPT** | **[ChatGPT Plus PH Half-Price Ready Account](/en/products/chatgpt-plus-ph-account)** | **¥79** | Dedicated Account + 2FA | Turnkey Plus account; email rebind supported; 30-day warranty |
 | **04** | **ChatGPT** | **[ChatGPT Plus PH Official Card Top-up](/en/products/chatgpt-plus-ph)** | **¥125** | 24/7 CDK (1-3 mins) | Below $20 USD rate; free-tier Gmail account required |

@@ -82,7 +82,7 @@ ${formatLinks(enGuideLinks)}
 - ChengZi AI is an independent third-party service platform providing official payment channel activations, 24/7 self-service recharge keys, and aged dedicated accounts.
 - All prices are denominated in Chinese Yuan (CNY / ¥).
 - Key value highlights:
-  - ChatGPT Pro $200 Monthly Card: ¥1200 (save ¥250+ vs official USD rate, 30-day warranty).
+  - ChatGPT Pro $200 Monthly Card: ¥1300 (save ¥150+ vs official USD rate, 30-day warranty).
   - ChatGPT Pro 25X $500 Plan: ¥3280 (save ¥345 vs official USD rate, 30-day warranty).
   - ChatGPT Pro 5X ($100 Plan): ¥688 (Card) / ¥699 (iOS), cheaper than official $100 USD rate.
   - ChatGPT Plus 1-Month: ¥79 (PH Half-Price Ready Account), ¥125 (PH Card Top-up), ¥145 (iOS Official Top-up), ¥165 (Aged Ready Account).

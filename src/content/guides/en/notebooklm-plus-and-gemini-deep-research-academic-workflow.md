@@ -1,6 +1,6 @@
 ---
 title: "Academic Research AI Stack 2026: Pairing the ¥45 Gemini Pro 18-Month Account (NotebookLM Plus) with ChatGPT Deep Research"
-description: "How researchers and PhD students build an unstoppable literature review and LaTeX writing workflow using Orange AI's ¥45 Gemini Pro 18-Month Account, ChatGPT Plus (¥79/¥125), and Pro $200 (¥1200)."
+description: "How researchers and PhD students build an unstoppable literature review and LaTeX writing workflow using Orange AI's ¥45 Gemini Pro 18-Month Account, ChatGPT Plus (¥79/¥125), and Pro $200 (¥1300)."
 date: "2026-10-22"
 lastModified: "2026-10-22T08:00:00.000Z"
 ---
@@ -17,7 +17,7 @@ For PhD candidates, academic researchers, and graduate students, **Google Notebo
 | :--- | :--- | :--- | :--- |
 | **100+ PDF Literature Synthesis & Grounded Citations** | **[Gemini Pro 18-Month Account](/en/products/gemini-pro-18m)** | **¥45 (18 Months)** | Full NotebookLM Plus quota with inline PDF citations & Audio Overviews |
 | **Automated Deep Literature Discovery** | **[ChatGPT Plus PH Card](/en/products/chatgpt-plus-ph)** / **[Ready Account](/en/products/chatgpt-plus-ph-account)** | **¥125 / ¥79** | OpenAI Deep Research multi-step web & paper synthesis |
-| **Formal Math Proofs & Simulation Code** | **[ChatGPT Pro $200](/en/products/chatgpt-pro-20x-renew)** / **[Pro 5X](/en/products/chatgpt-pro-5x-card)** | **¥1200 / ¥688** | Deep reasoning for complex LaTeX derivations and Python simulations |
+| **Formal Math Proofs & Simulation Code** | **[ChatGPT Pro $200](/en/products/chatgpt-pro-20x-renew)** / **[Pro 5X](/en/products/chatgpt-pro-5x-card)** | **¥1300 / ¥688** | Deep reasoning for complex LaTeX derivations and Python simulations |
 | **Native-Level Academic Manuscript Polishing** | **[Claude Pro iOS Top-up](/en/products/claude-pro-ios)** | **¥159** | Natural, publication-ready prose for IEEE, ACM, and Nature submissions |
 
 ---

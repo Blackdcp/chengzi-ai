@@ -19,7 +19,7 @@ lastModified: "2026-10-29T08:00:00.000Z"
 | :--- | :--- | :--- | :--- |
 | **7×24h 突发宏观新闻、链上叙事与 KOL 情绪监控** | **[Grok Ultra 旗舰月卡](/zh/products/grok-ultra)** | **¥799** | 最高优先级超算并发 + 零延迟 X 全量推文流深度聚合 |
 | **日常行业热点追踪、多维事实核查 (DeepSearch)** | **[Grok Super 月卡](/zh/products/grok-super-cdk)** / **[Premium](/zh/products/grok-premium)** | **¥399 / ¥129** | 死守 400 元内关口，Web/iOS/Android 全端同步实时检索 |
-| **量化因子推导、Python 回测引擎与财报精算** | **[ChatGPT Pro 200刀月卡](/zh/products/chatgpt-pro-20x-renew)** | **¥1200** | 强悍的数理统计推理与代码沙盒执行能力 |
+| **量化因子推导、Python 回测引擎与财报精算** | **[ChatGPT Pro 200刀月卡](/zh/products/chatgpt-pro-20x-renew)** | **¥1300** | 强悍的数理统计推理与代码沙盒执行能力 |
 | **百份招股书 / 美联储会议纪要 PDF 交叉比对** | **[Gemini Pro 18个月老号](/zh/products/gemini-pro-18m)** | **¥45 (18个月)** | 百万级上下文 + NotebookLM 零幻觉原文引证 |
 
 ---

@@ -19,7 +19,7 @@ Entering November 2026, the frontier AI market is led by four specialized ecosys
 
 | Primary Strength | Ecosystem | Best Entry SKU on Orange AI | Best Power-User Flagship SKU |
 | :--- | :--- | :--- | :--- |
-| **Deep Reasoning & Math** | **ChatGPT** | **[Plus Ready (¥79)](/en/products/chatgpt-plus-ph-account)** / **[PH Card (¥125)](/en/products/chatgpt-plus-ph)** | **[Pro $200 (¥1200)](/en/products/chatgpt-pro-20x-renew)** / **[Pro 5X (¥688)](/en/products/chatgpt-pro-5x-card)** / **[Pro 25X $500 (¥3280)](/en/products/chatgpt-pro-25x-500)** |
+| **Deep Reasoning & Math** | **ChatGPT** | **[Plus Ready (¥79)](/en/products/chatgpt-plus-ph-account)** / **[PH Card (¥125)](/en/products/chatgpt-plus-ph)** | **[Pro $200 (¥1300)](/en/products/chatgpt-pro-20x-renew)** / **[Pro 5X (¥688)](/en/products/chatgpt-pro-5x-card)** / **[Pro 25X $500 (¥3280)](/en/products/chatgpt-pro-25x-500)** |
 | **Agentic Coding & Prose** | **Claude** | **[Claude Pro iOS (¥159)](/en/products/claude-pro-ios)** | **[Claude MAX 5X iOS (¥999)](/en/products/claude-max-5x-ios)** |
 | **Real-Time X Alpha** | **Grok** | **[Grok Plus (¥75)](/en/products/grok-plus)** / **[Premium (¥129)](/en/products/grok-premium)** | **[Grok Super (¥399)](/en/products/grok-super-cdk)** / **[Grok Ultra (¥799)](/en/products/grok-ultra)** |
 | **1M Context & NotebookLM** | **Gemini** | **[Gemini Pro 18M Aged Gmail (¥45)](/en/products/gemini-pro-18m)** | **[Gemini Pro 18M Aged Gmail (¥45 — ¥2.5/mo)](/en/products/gemini-pro-18m)** |

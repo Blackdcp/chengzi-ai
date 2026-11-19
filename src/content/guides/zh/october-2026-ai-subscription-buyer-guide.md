@@ -44,7 +44,7 @@ lastModified: "2026-10-08T08:00:00.000Z"
 
 | 品牌生态 | 商品名称 / SKU | 专属售价 | 算力与核心特性 | 最佳适用场景 |
 | :--- | :--- | :--- | :--- | :--- |
-| **ChatGPT** | **[Pro 200刀月卡 充值自用](/zh/products/chatgpt-pro-20x-renew)** | **¥1200** | 10.29前续订享 20X 顶配额度，可囤3天 | 现有老号续费、高性价比深度推理 |
+| **ChatGPT** | **[Pro 200刀月卡 充值自用](/zh/products/chatgpt-pro-20x-renew)** | **¥1300** | 10.29前续订享 20X 顶配额度，可囤3天 | 现有老号续费、高性价比深度推理 |
 | **ChatGPT** | **[Pro 25X 智利区 500刀](/zh/products/chatgpt-pro-25x-500)** | **¥3280** | 25 倍顶配算力天花板，专享独立通道 | 顶尖科研、量化对冲 (严禁微软邮箱) |
 | **ChatGPT** | **[Plus 菲区正规卡充](/zh/products/chatgpt-plus-ph)** | **¥125** | 官方卡充，秒充秒到账，可囤5天 | 个人高性价比日常生产力 |
 | **ChatGPT** | **[Plus 月卡 iOS 直充](/zh/products/chatgpt-plus-ios)** | **¥145** | iOS 官方直充，无需账密，极速1-3分钟 | 无外币卡个人用户 |
@@ -84,7 +84,7 @@ lastModified: "2026-10-08T08:00:00.000Z"
 
 **橙子 AI** 坚守“正规通道、自用充值、足额质保”三大准则，所有商品均为现货秒发或专人极速代充：
 
-- 👑 **[ChatGPT Pro 200刀月卡 充值自己账号 (¥1200)](/zh/products/chatgpt-pro-20x-renew)**：性价比天花板！老用户在 10 月 29 日前重新订阅立享 20X 顶配特权，卡密可囤 3 天，现货秒充。
+- 👑 **[ChatGPT Pro 200刀月卡 充值自己账号 (¥1300)](/zh/products/chatgpt-pro-20x-renew)**：性价比天花板！老用户在 10 月 29 日前重新订阅立享 20X 顶配特权，卡密可囤 3 天，现货秒充。
 - 👑 **[ChatGPT Pro 25X 智利区 500刀套餐 (¥3280)](/zh/products/chatgpt-pro-25x-500)**：全新上线！独享 25X 顶配超级算力配额，官方卡充直充自己账号，30 天足额质保（请勿使用微软邮箱）。
 - ⚡ **[Claude MAX 20X 月卡 官方秒充 (¥2600)](/zh/products/claude-max-20x-ios)**：顶配 20 倍 Claude 算力上限，全长文本深度推理无死角，30 天订阅质保。
 - ⚡ **[Claude MAX 5X 月卡 官方秒充 (¥999)](/zh/products/claude-max-5x-ios)**：5 倍 Claude 额度，重度工程师全天候高频编码首选。

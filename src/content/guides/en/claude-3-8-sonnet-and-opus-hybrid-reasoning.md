@@ -78,5 +78,5 @@ Autonomous coding loops rapidly exhaust standard quotas. **Chengzi AI** provides
 - ⚡ **[Claude MAX 5X Monthly Card (¥999)](/en/products/claude-max-5x-ios)**: 5X capacity for uninterrupted engineering sprints.
 - 🌟 **[Claude Pro Monthly Card (¥159)](/en/products/claude-pro-ios)**: 1-3 minute fast delivery via iOS in-app channel.
 - 👑 **[ChatGPT Pro 25X Chile $500 Plan (¥3280)](/en/products/chatgpt-pro-25x-500)**: Ultimate 25X compute ceiling, perfect dual-model pairing with Claude MAX (No Microsoft emails).
-- 🚀 **[ChatGPT Pro $200 Monthly Card (¥1200)](/en/products/chatgpt-pro-20x-renew)**: Grandfathered 20X quota for renewals before Oct 29.
+- 🚀 **[ChatGPT Pro $200 Monthly Card (¥1300)](/en/products/chatgpt-pro-20x-renew)**: Grandfathered 20X quota for renewals before Oct 29.
 - 🔥 **[SuperGrok Heavy Monthly Card (¥2800)](/en/products/grok-heavy-300)**: 100,000-GPU cluster power for first-principles deduction.
