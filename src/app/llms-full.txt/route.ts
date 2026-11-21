@@ -56,7 +56,7 @@ ${sections ? `- **Detailed Specifications**:\n${sections}` : ''}`
 1. **OpenAI ChatGPT**: Plus (¥79–¥165), Pro 5X $100 tier (¥688–¥699), Pro $200 tier (¥1300), Pro 25X $500 Chile tier (¥3280), and US Physical SIM verification (¥15).
 2. **Anthropic Claude**: Claude Pro iOS SK/UID passwordless top-up (¥159) and Claude MAX 5X iOS UID top-up (¥999).
 3. **xAI Grok**: All-in-One official card top-ups for Grok Plus (¥75), Grok Premium (¥129), Grok Super (¥399), and Grok Ultra (¥799).
-4. **Google Gemini**: Gemini Pro 18-Month pre-activated membership on 2–3 year aged Gmail accounts (¥45 total, equivalent to ¥2.5/month).
+4. **Google Gemini**: Gemini Pro 3-Month Membership direct top-up to your own account, including 5TB Cloud Storage (xiaomi edition), supports Antigravity 4 (¥45 total).
 
 ---
 
@@ -91,9 +91,13 @@ ${detailedSpecs}
 - **全程无需提供账号密码**：支持 SK 充值（自动检测账号健康度）或 Claude UID 免密自助秒充，1–3 分钟到账。
 - **Claude MAX 5X 四大硬性条件**：① 账号必须注册满 30 天以上（新号禁止充 MAX）；② 历史必须订阅过 Claude 会员（纯白号不充）；③ 当前会员已到期且无逾期未结账单；④ 官方对 MAX 档位 100% 触发 KYC 认证，需用户自行完成 KYC 验证后正常到账。
 
-### Q4: Gemini Pro 18个月成品号为什么只要 ¥45？如何防封养号？
-- 该商品为已开通 18 个月 Google Gemini Pro 会员的 2–3 年高品质老 Gmail 独享账号（折合每月仅 ¥2.5，支持 Gemini 2.5 Pro、NotebookLM Plus、Veo 视频生成）。
-- **核心防封铁律**：首次登录后**严禁立即修改密码**！请先在固定设备与稳定纯净美国 IP 下正常使用 3–7 天，随后优先通过 Google 账户后台的「Change Authenticator（更改身份验证器）」替换为您自己的 2FA，稳定 7–30 天后再改密或绑定辅助邮箱。
+### Q4: Gemini Pro 3个月会员代开 (¥45) 有什么注意事项与免责规则？
+- **商品权益**：直接代充到您自己的 Google 账户上，包含 Gemini Pro 3个月会员 + 5TB 官方云存储（xiaomi 3个月版本），支持反重力4（Antigravity 4）。
+- **拍前必读免责声明**：不会用/嫌麻烦请勿拍！以不会使用、不想要了为理由申请售后的一律不退，拍下代表同意，不支持任何个人原因退款。此产品不做任何质保，掉订阅/封号均不在质保范围内。
+- **充值前注意事项**：
+  1. 确认账户已退出家庭组，且当前无任何生效会员。
+  2. 新注册账户非常脆弱极易触发 Google 风控（提示需要常用设备登录或被直接封禁），强烈建议使用老号，由于充值引发的人机验证概不负责。
+  3. 订阅完成后请及时修改密码或者 2FA，避免不必要的纠纷。
 
 ### Q5: Grok Plus (¥75) / Premium (¥129) / Super (¥399) / Ultra (¥799) 充值有什么要求？
 - 全系采用新版多合一官方正规卡充，支持 Web / iOS / Android 全端通用，提供 30 天全程订阅质保。

@@ -41,8 +41,8 @@ const copy = {
         description: 'Grok Plus、Premium、Super 与 Ultra 新版多合一官方直充。',
       },
       gemini: {
-        title: 'Gemini Pro 会员与高权重账号',
-        description: 'Gemini Pro 18个月会员成品号（附 2-3 年高品质 Gmail 老邮箱）。',
+        title: 'Gemini Pro 会员直充与代开',
+        description: 'Gemini Pro 3个月会员代开（充自己账户上，含 5TB 云存储，支持反重力4）。',
       },
       other: {
         title: '其他服务',
@@ -72,8 +72,8 @@ const copy = {
         description: 'Grok Plus, Premium, Super, and Ultra official top-ups.',
       },
       gemini: {
-        title: 'Gemini Pro Memberships',
-        description: 'Gemini Pro 18-month pre-activated aged Gmail ready accounts.',
+        title: 'Gemini Pro Direct Subscriptions',
+        description: 'Gemini Pro 3-Month top-up on your own account, 5TB Cloud Storage, Antigravity 4.',
       },
       other: {
         title: 'Other Services',

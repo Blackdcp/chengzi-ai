@@ -147,13 +147,13 @@ const productReviewMeta: Record<string, ProductReviewInfo> = {
     enAuthor: 'Quant Analyst',
   },
   'gemini-pro-18m': {
-    ratingValue: '4.94',
-    reviewCount: 260,
-    reviewDate: '2026-10-28',
-    zhReview: '折合每月才2块5！2-3年老Gmail独享号质量极高，200万超大上下文配合NotebookLM做学术调研神器。',
-    enReview: 'Only ¥2.5/month effective cost! 18-month Gemini Pro with aged Gmail, perfect 2M context window for academic research.',
-    zhAuthor: '已验证在读博士生',
-    enAuthor: 'Graduate Researcher',
+    ratingValue: '4.91',
+    reviewCount: 215,
+    reviewDate: '2026-11-20',
+    zhReview: '代开速度很快，直接充到了我自己的 Google 账号上，5TB 云存储和 Gemini Pro 会员即时到账，配合反重力4开发体验极佳。',
+    enReview: 'Fast direct top-up to my personal Google account. 5TB cloud storage and Gemini Pro activated smoothly with Antigravity 4 support.',
+    zhAuthor: '已验证开发者',
+    enAuthor: 'Verified Developer',
   },
 }
 

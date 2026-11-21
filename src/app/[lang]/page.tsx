@@ -77,10 +77,10 @@ export default async function Page({
             },
             {
               '@type': 'Question',
-              name: 'Gemini Pro 18个月成品号为什么只要 ¥45？怎么防封？',
+              name: 'Gemini Pro 3个月会员代开 (¥45) 有什么要求与注意事项？有质保吗？',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: '该商品为附带 2-3 年老 Gmail 的独享账号，已预开通 18 个月 Gemini Pro 会员（折合 ¥2.5/月）。首次登录后严禁立即改密，需用固定纯净美国 IP 正常使用 3-7 天后再更换 2FA。',
+                text: '【无质保与不退声明】：此产品不做任何质保，掉订阅/封号均不在质保范围内；不会用或嫌麻烦请勿下单，以不会使用或不想要了为由申请售后一律不退；【充值前提】：充值前必须确认账户已退出家庭组且无有效会员；【强烈建议老号】：新号非常脆弱极易触发 Google 常用设备或封禁风控，由于充值引发的人机验证概不负责；【安全提示】：代开完成后请及时修改密码或 2FA。',
               },
             },
           ]
@@ -99,6 +99,14 @@ export default async function Page({
               acceptedAnswer: {
                 '@type': 'Answer',
                 text: 'Pro 5X (¥688/¥699) is the $100 tier below USD exchange rates; Pro $200 (¥1300) saves ¥250+ with 3-day stockable keys; Pro 25X $500 (¥3280) unlocks 25X flagship compute.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'What are the rules and precautions for Gemini Pro 3-Month Top-up (¥45)?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Sold as-is with NO warranty (subscription drops and account bans are not covered; no personal refunds supported). Pre-requisites: confirm account has exited family groups with no active subscriptions. Aged accounts are strongly recommended as new accounts easily trigger Google risk checks. Change password/2FA immediately after completion.',
               },
             },
           ],

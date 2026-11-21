@@ -2,49 +2,61 @@
   "id": "gemini-pro-18m",
   "categoryId": "gemini",
   "categoryName": "Gemini",
-  "title": "Gemini Pro 18-Month Membership | Aged 2-3 Yr Gmail Ready Account",
-  "subtitle": "Only ¥2.5/month! Dedicated 2-3 year aged Gmail account with 18 months of Gemini Pro pre-activated.",
+  "title": "Gemini Pro 3-Month Membership Direct Top-up (On Your Own Account)",
+  "subtitle": "Gemini Pro + 5TB Cloud Storage (xiaomi 3-month edition). Supports Antigravity 4. Direct top-up to your account.",
   "price": 45,
   "order": 16,
   "tags": [
-    "18-Month Pro",
-    "Aged 2-3Yr Gmail",
-    "Dedicated Account",
-    "2FA Included"
+    "3-Month Pro",
+    "Your Own Account",
+    "5TB Cloud Storage",
+    "Supports Antigravity 4"
   ],
-  "deliveryNotice": "Automated delivery with Google email, password & 2FA secret",
+  "deliveryNotice": "Please contact support or provide your Google account upon ordering",
   "features": [
-    "18 Months Gemini Pro",
-    "2-3 Year Aged Gmail",
-    "NotebookLM & Veo Access",
-    "Dedicated with 2FA"
+    "Gemini Pro 3-Month Membership (top up your account)",
+    "Gemini Pro + 5TB Cloud Storage included",
+    "xiaomi 3-month edition, supports Antigravity 4",
+    "Sold as-is with no warranty / No personal refunds"
   ],
   "inStock": true,
   "buyButtonText": "Buy Now ￥45",
   "actionType": "buy",
-  "orderName": "Gemini Pro 18-Month Ready Account",
+  "orderName": "Gemini Pro 3-Month Top-up",
   "isHot": true,
   "warnings": [
-    "DO NOT change password immediately upon first login! Use a fixed clean US IP for 3-7 days before updating 2FA and password.",
-    "Warranty covers first login and active Gemini Pro membership (excludes Antigravity/GCP)."
+    "【Strict No-Refund Policy】: Do not purchase if unfamiliar or unwilling to troubleshoot. No refunds for personal reasons once ordered.",
+    "【No Warranty Disclaimer】: Sold as-is with NO warranty. Subscription drops or account bans are strictly outside warranty coverage.",
+    "【Pre-Requisites】: 1. Confirm your Google account has exited any family groups and has no active subscriptions.",
+    "【Aged Accounts Highly Recommended】: 2. Freshly registered accounts are very fragile and prone to Google security locks (device verification or account disabling). We are not responsible for phone/bot verifications.",
+    "【Post-Activation Security】: 3. Please update your password or 2FA promptly once subscription is activated to avoid disputes."
   ],
   "detail": {
-    "title": "Gemini Pro 18-Month Membership | Aged Gmail Ready Account",
-    "subtitle": "18 months of pre-activated Google Gemini Pro & NotebookLM on a high-trust 2-3 year old Gmail account.",
+    "title": "Gemini Pro 3-Month Membership Direct Top-up (On Your Own Account)",
+    "subtitle": "Gemini Pro + 5TB Cloud Storage (xiaomi 3-month edition). Supports Antigravity 4.",
     "sections": [
       {
-        "title": "Highlights",
+        "title": "Terms & Disclaimer (Read Before Purchase)",
         "items": [
-          "18-Month Active Membership: Pre-activated Gemini Pro subscription valid for 18 months.",
-          "2-3 Year Aged Gmail: Built on aged high-trust Google accounts with full 2FA credentials.",
-          "Full Pro Ecosystem: Includes Gemini Pro models, NotebookLM Plus, and Veo access."
+          "Do not purchase if unfamiliar or unwilling to troubleshoot. No refunds for personal reasons once ordered.",
+          "Placing an order constitutes agreement; no refunds supported for any personal reasons.",
+          "This product carries NO warranty. Subscription drops and account bans are not covered."
         ]
       },
       {
-        "title": "Account Safety & Warm-up Guide",
+        "title": "Key Features",
         "items": [
-          "Do not change the password immediately after first login to avoid triggering Google security locks.",
-          "Log in from a fixed device and clean US IP for 3-7 days, then use Change Authenticator to update your 2FA key."
+          "Gemini Pro 3-Month Membership direct activation onto your personal Google account.",
+          "Gemini Pro + 5TB Cloud Storage included.",
+          "xiaomi 3-month edition, supports Antigravity 4."
+        ]
+      },
+      {
+        "title": "Pre-Requisites & Important Notes",
+        "items": [
+          "1. Confirm your Google account has exited any family group and has no active membership.",
+          "2. Freshly registered accounts are extremely fragile and easily trigger Google risk checks. Aged accounts are strongly recommended; we are not responsible for verification challenges.",
+          "3. Change your password or 2FA immediately after top-up completion."
         ]
       }
     ]

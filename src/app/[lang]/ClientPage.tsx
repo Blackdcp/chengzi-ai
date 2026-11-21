@@ -168,7 +168,7 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
     "grok-premium": lang === 'zh' ? "新版多合一 1-3 分钟自助秒充（账号需为免费版且享有半价优惠资格），全端支持。" : "1-3 mins self-service CDK across all platforms (requires free tier with 50% promo).",
     "grok-super-cdk": lang === 'zh' ? "新版多合一正规官方卡充（需免费版且有半价优惠），直通 xAI 算力集群与实时全网检索。" : "Official Grok Super card top-up, works on all platforms with real-time cluster search.",
     "grok-ultra": lang === 'zh' ? "xAI 旗舰 Ultra 顶配算力通道，直充自己账号（需免费版且有半价优惠），1-3 分钟秒到账。" : "xAI flagship Ultra tier topped up to your own account in 1-3 minutes.",
-    "gemini-pro-18m": lang === 'zh' ? "🔥 折合每月仅 ¥2.5！附 2-3 年老 Gmail 独享成品号（首次登录请勿立即改密，先稳定养号 3-7 天）。" : "🔥 Only ¥2.5/mo! Aged 2-3Yr Gmail with 18M Gemini Pro (warm up 3-7 days before password change)."
+    "gemini-pro-18m": lang === 'zh' ? "🔥 Gemini Pro 3个月会员 + 5TB 云存储（xiaomi版），支持反重力4，代开充自己账户！" : "🔥 Gemini Pro 3-Month + 5TB Cloud Storage (xiaomi edition), supports Antigravity 4, direct top-up to your account!"
   };
 
   const getProductBadge = (product: Product) => {
@@ -854,7 +854,7 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
                 <a href="#accounts" className="vercel-button cz-hero-primary" style={{ padding: "12px 28px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '立即选购 AI 账号' : 'Explore AI Accounts'}</a>
               </div>
               <div className="cz-hero-note">
-                {lang === 'zh' ? 'ChatGPT Plus/Pro · Claude Pro/MAX · Grok 全系 · Gemini Pro 18个月' : 'ChatGPT Plus/Pro · Claude Pro/MAX · Grok Ultra · Gemini Pro'}
+                {lang === 'zh' ? 'ChatGPT Plus/Pro · Claude Pro/MAX · Grok 全系 · Gemini Pro 3个月' : 'ChatGPT Plus/Pro · Claude Pro/MAX · Grok Ultra · Gemini Pro 3M'}
               </div>
             </div>
 
@@ -1032,8 +1032,8 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
                     a: "完全不需要！支持 SK 充值（系统自动检测账号状态）与 Claude UID 自助免密直充，1-3 分钟到账。注意充值 MAX 5X 要求账号注册满 30 天以上、有历史订阅记录，且需自行配合完成官方 KYC 验证。"
                   },
                   {
-                    q: "Gemini Pro 18个月成品号为什么只要 ¥45？怎么防封？",
-                    a: "该商品为附带 2-3 年高权重老 Gmail 的独享账号，已预开通 18 个月 Gemini Pro 会员（折合 ¥2.5/月）。防封铁律：首次登录后严禁立即改密！请用固定纯净美国 IP 正常使用 3-7 天后，再通过 Change Authenticator 更换 2FA。"
+                    q: "Gemini Pro 3个月会员代开 (¥45) 有什么要求与注意事项？有质保吗？",
+                    a: "【无质保与不退声明】：此产品不做任何质保，掉订阅/封号均不在质保范围内；不会用或嫌麻烦请勿下单，以不会使用、不想要了为由申请售后一律不退；【充值前提】：充值前必须确认账户已退出家庭组且无有效会员；【强烈建议老号】：新号非常脆弱极易触发 Google 常用设备或封禁风控，由于充值引发的人机验证概不负责；【安全提示】：代开完成后请及时修改密码或 2FA。"
                   }
                 ]
               : [
@@ -1050,8 +1050,8 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
                     a: "No! Both use passwordless SK or Claude UID self-service recharge in 1-3 minutes. Note that MAX 5X requires an account aged 30+ days with prior subscription history and user KYC completion."
                   },
                   {
-                    q: "How to safely use the ¥45 Gemini Pro 18-Month Aged Gmail Account?",
-                    a: "Do NOT change the password immediately upon first login! Use a fixed clean US IP for 3-7 days first, then update your 2FA via Change Authenticator."
+                    q: "What are the rules and precautions for Gemini Pro 3-Month Top-up (¥45)?",
+                    a: "Sold as-is with NO warranty (subscription drops and account bans are not covered; no personal refunds supported). Pre-requisites: confirm account has exited family groups with no active subscriptions. Aged accounts are strongly recommended as new accounts easily trigger Google risk checks. Change password/2FA immediately after completion."
                   }
                 ]
             ).map(faq => (
