@@ -1,0 +1,45 @@
+{
+  "id": "codex-credits-250",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "Codex 250 Credits Top-up | Direct to Your Account [Active Sub Required]",
+  "subtitle": "Add 250 extra Codex usage credits directly to your ChatGPT account with instant arrival. Requires an active paid subscription (not API balance).",
+  "price": 95,
+  "order": 13,
+  "tags": [
+    "Codex",
+    "250 Credits",
+    "Instant",
+    "Paid Sub Required"
+  ],
+  "deliveryNotice": "Automated delivery, credits arrive immediately after recharge",
+  "features": [
+    "Adds 250 Codex extra usage credits directly to your personal account",
+    "Instant credit arrival to extend Plus/Pro Codex coding limits",
+    "No foreign credit card required"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥95",
+  "actionType": "buy",
+  "orderName": "Codex 250 Credits Top-up",
+  "isHot": false,
+  "warnings": [
+    "[Active Paid Subscription Required]: Your account must have an active paid ChatGPT subscription (Plus/Pro). Free accounts cannot be topped up.",
+    "[Not API Balance]: These are Codex usage credits, separate from OpenAI Platform API Key balance.",
+    "[Non-Refundable]: Credits are applied immediately upon redemption; verify subscription status before ordering."
+  ],
+  "detail": {
+    "title": "Codex 250 Credits Top-up · Instant Arrival",
+    "subtitle": "Direct top-up of 250 Codex credits for active ChatGPT subscribers.",
+    "sections": [
+      {
+        "title": "Product Details",
+        "items": [
+          "Amount: 250 Codex extra credits (not OpenAI API balance).",
+          "Arrival: Instant after redemption.",
+          "Requirement: Active ChatGPT Plus or Pro subscription required."
+        ]
+      }
+    ]
+  }
+}

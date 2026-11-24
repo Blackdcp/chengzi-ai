@@ -1,0 +1,45 @@
+{
+  "id": "chatgpt-pro-20x-ios",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Pro 20X｜1个月｜iOS 官方正规充值【秒充】【质保30天】",
+  "subtitle": "【20X-200刀款】充值自己账号，iOS 官方正规内购通道秒充到账，免外卡汇率烦恼，享 30 天完整质保。",
+  "price": 1420,
+  "order": 11,
+  "tags": [
+    "Pro 20X",
+    "iOS充值",
+    "秒充",
+    "质保30天"
+  ],
+  "deliveryNotice": "自助充值卡密自动发货，兑换秒到账",
+  "features": [
+    "官方 iOS 正规内购通道，直充自己账号（20X-200刀款）",
+    "无需账号密码，自助卡密兑换秒到账",
+    "提供 30 天完整订阅质保，低于官方直充成本"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单充值 ￥1420",
+  "actionType": "buy",
+  "orderName": "ChatGPT Pro 20X iOS官方充值",
+  "isHot": true,
+  "warnings": [
+    "【充值前提】：请确保当前账号无生效订阅或已到期，按指引自助兑换即可。",
+    "【隐私安全】：全程无需提供账号密码，正规 iOS 官方内购渠道。",
+    "【质保承诺】：提供 30 天订阅质保，周期内异常由客服全程处理。"
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 20X 月卡 · iOS 官方正规充值",
+    "subtitle": "【20X-200刀款】iOS 正规渠道直充自己账号，秒到账，质保 30 天。",
+    "sections": [
+      {
+        "title": "商品核心亮点",
+        "items": [
+          "iOS 官方通道：正规苹果内购直充，稳定可靠，不挑卡段。",
+          "自助秒充：发货后按教程自助兑换，1-3 分钟即刻升级 Pro 20X。",
+          "30 天质保：整月订阅保障，售后无忧。"
+        ]
+      }
+    ]
+  }
+}

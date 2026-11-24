@@ -1,0 +1,45 @@
+{
+  "id": "chatgpt-pro-20x-ready",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Pro 20X Monthly | Ready Account | Official Subscription [Warranty]",
+  "subtitle": "Dedicated ChatGPT Pro 20X ($200 tier) ready account — save ¥200 vs official USD rate! 1+ week aged account with 2FA included.",
+  "price": 1250,
+  "order": 8,
+  "tags": [
+    "Pro 20X",
+    "Ready Account",
+    "Save ¥200",
+    "Sub Warranty"
+  ],
+  "deliveryNotice": "Manual fulfillment via support after order (approx. 10 mins – 2 hours)",
+  "features": [
+    "1+ week aged account with official 1-month Pro 20X ($200 tier) subscription",
+    "Save ~¥200 vs official $200/mo pricing with turnkey delivery",
+    "Private credentials: Email----Password----2FA, 30-day subscription warranty"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥1250",
+  "actionType": "buy",
+  "orderName": "ChatGPT Pro 20X Ready Account",
+  "isHot": true,
+  "warnings": [
+    "[Delivery]: Contact support after checkout for manual delivery (10 mins – 2 hours).",
+    "[SMS]: SMS verification is not included if triggered later.",
+    "[Warranty]: 30-day subscription warranty; policy-violation bans are not covered."
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 20X Monthly · Aged Ready Account",
+    "subtitle": "Turnkey Pro 20X ($200 tier) dedicated account with full 2FA.",
+    "sections": [
+      {
+        "title": "What Is Included",
+        "items": [
+          "Plan: Official ChatGPT Pro 20X ($200/mo tier) active for 1 month.",
+          "Account Quality: Registered >1 week on clean IP, strictly 1-to-1 private.",
+          "Format: Email----Password----2FA."
+        ]
+      }
+    ]
+  }
+}

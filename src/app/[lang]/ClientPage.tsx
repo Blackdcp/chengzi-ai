@@ -154,27 +154,34 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
   const productHints: Record<string, string> = {
     "chatgpt-plus-ph-account": lang === 'zh' ? "超值引流爆款！独享 Plus 成品号，带完整密码与 2FA，可自行换绑邮箱。" : "Best-value dedicated Plus ready account with 2FA included, email rebind supported.",
     "chatgpt-plus-ph": lang === 'zh' ? "低于官方 $20 美元原价！官方正规卡充，卡密提取后 5 天内有效，24 小时自助兑换。" : "Cheaper than official $20 USD! Official card top-up, valid for 5 days, 24/7 self-service.",
-    "chatgpt-plus-ios": lang === 'zh' ? "1:1 持平官方汇率，iOS 官方正规通道充值，无需账号密码，1-3 分钟极速秒充。" : "Matches official USD rate, iOS in-app top-up, no password needed, 1-3 mins delivery.",
+    "chatgpt-plus-ios": lang === 'zh' ? "iOS 官方正规通道充值，无需账号密码，卡密可囤 3 天，1-3 分钟极速秒充。" : "Official iOS in-app top-up, no password needed, 3-day stockable key, 1-3 mins delivery.",
     "chatgpt-plus-ready": lang === 'zh' ? "注册满一周以上纯净老号 + 顶级 IP 订阅，含完整 2FA 资料，独享开箱即用。" : "Dedicated aged account with 1-month Plus and full 2FA access included.",
-    "chatgpt-sms-verify": lang === 'zh' ? "美国真实实体手机卡接码，专为 OpenAI / ChatGPT 注册与安全验证打造。" : "Real US physical SIM verification, dedicated to OpenAI / ChatGPT.",
-    "chatgpt-pro-5x-card": lang === 'zh' ? "比官方 $100 汇率更便宜！官方正规卡充，享 5 倍官方用量与满血 o1/o3 深度推理算力。" : "Below official $100 USD rate! Official card top-up with 5X quota and full reasoning.",
-    "chatgpt-pro-5x-ios": lang === 'zh' ? "低于官方美元原价，iOS 官方内购直充，无需账号密码，秒级到账，享 30 天全程质保。" : "Below official USD rate, iOS top-up with 5X quota, instant delivery with 30-day warranty.",
-    "chatgpt-pro-20x-renew": lang === 'zh' ? "立省 ¥250+！老用户在 10 月 29 日前重新订阅仍享原 20X 高额度；卡密可囤 3 天，自助秒充。" : "Save ¥250+! Renewals before Oct 29 retain original 20X quota; keys stockable for 3 days.",
-    "chatgpt-pro-25x-500": lang === 'zh' ? "⚠️ 拍前必看：比官方汇率立省 ¥345，享 25X 超高算力配额（严禁使用微软体系邮箱）。" : "⚠️ Important: Save ¥345 vs official rate with 25X quota (Microsoft emails prohibited).",
-    "claude-pro-ios": lang === 'zh' ? "正规 iOS 渠道代充，支持 SK / UID 免密极速秒充，畅享 Claude 3.7 / 3.8 混合推理。" : "Official iOS top-up via SK/UID with Claude 3.7/3.8 hybrid reasoning.",
-    "claude-max-5x-ios": lang === 'zh' ? "直破千元大关！Claude 官方 5 倍算力额度，支持 UID 免密秒充，重度编程与长工程利器。" : "Sub-¥1000 special! 5X Claude compute quota, ideal for heavy coding & long context.",
-    "claude-max-20x-ios": lang === 'zh' ? "Claude 顶配 20 倍推理算力上限，支持高并发长文本分析与大项目重构。" : "Top-tier 20X compute limit for enterprise engineering & complex workflows.",
+    "chatgpt-pro-10x-ready": lang === 'zh' ? "高权重满周老号 + 官方 Pro 10X ($100档) 1个月订阅，含完整 2FA，开箱即用。" : "1+ week aged account pre-loaded with official Pro 10X ($100 tier) & 2FA.",
+    "chatgpt-pro-20x-ready": lang === 'zh' ? "比官方 $200 美元直充立省 ¥200！满周高权重老号 + Pro 20X 1个月订阅，含 2FA。" : "Save ¥200 vs official $200 rate! Aged ready account with Pro 20X & 2FA.",
+    "chatgpt-sms-verify": lang === 'zh' ? "美国真实实体手机卡接码，有效期约 25 天，专为 OpenAI / ChatGPT 注册与验证打造。" : "Real US physical SIM verification (~25 days valid), dedicated to OpenAI / ChatGPT.",
+    "chatgpt-pro-5x-card": lang === 'zh' ? "低于官方 $100 汇率价！升级 10X 官方正规卡充，卡密可囤 5 天，享 30 天质保。" : "Below official $100 USD rate! Upgraded 10X official card top-up, 5-day stockable key.",
+    "chatgpt-pro-5x-ios": lang === 'zh' ? "iOS 官方内购直充 Pro 10X ($100档)，无需账号密码，秒级到账，享 30 天质保。" : "Official iOS top-up for Pro 10X ($100 tier), passwordless instant delivery with 30-day warranty.",
+    "chatgpt-pro-20x-renew": lang === 'zh' ? "立省 ¥150+！20X-200刀款官方卡充直充自己账号，卡密可囤 5 天，自助秒充。" : "Save ¥150+! 20X ($200 tier) official card top-up to your own account, 5-day stockable key.",
+    "chatgpt-pro-20x-ios": lang === 'zh' ? "20X-200刀款 iOS 官方正规内购直充，低于官方美元直充价，秒充秒到账，质保 30 天。" : "Official iOS in-app top-up for Pro 20X ($200 tier), instant activation with 30-day warranty.",
+    "chatgpt-pro-25x-500": lang === 'zh' ? "立省 ¥175+！全新升级 50X-500刀顶配官方卡充，直充自己账号，享 30 天全程质保。" : "Save ¥175+! Upgraded 50X ($500 tier) official card top-up with 30-day full warranty.",
+    "chatgpt-pro-50x-ios": lang === 'zh' ? "50X-500刀顶配 iOS 官方正规内购直充，免海外信用卡风控，秒充到账，质保 30 天。" : "Official iOS top-up for flagship 50X ($500 tier), instant delivery with 30-day warranty.",
+    "codex-credits-250": lang === 'zh' ? "直充 250 点数额度到自己账号（非 API 余额），充值立即到账，需账号已有有效付费订阅。" : "Adds 250 Codex credits instantly (not API balance). Active paid subscription required.",
+    "codex-credits-500": lang === 'zh' ? "直充 500 点数额度到自己账号，突破周限额首选加餐包，充值立即到账（需有效订阅）。" : "Adds 500 Codex credits instantly to extend coding limits (active paid subscription required).",
+    "codex-credits-1000": lang === 'zh' ? "直充 1000 点数额度到自己账号，重度 Codex CLI / IDE 开发者必备，立即到账（需有效订阅）。" : "Adds 1000 Codex credits instantly for heavy CLI/IDE coding (active paid subscription required).",
+    "codex-credits-2500": lang === 'zh' ? "直充 2500 大额点数到自己账号，超高单价性价比，立即到账（需有效付费订阅）。" : "Adds 2500 Codex credits instantly with best per-credit value (active paid subscription required).",
+    "claude-ultra-ready": lang === 'zh' ? "Claude Ultra ($200档，原 MAX 20X) 已过 KYC 成品号！下单 1-2 天交付，保障首登及 30 天订阅。" : "KYC-verified Claude Ultra ($200/mo tier) ready account! Delivered in 1–2 days with first-login guarantee.",
+    "claude-kyc-verify": lang === 'zh' ? "Claude 官方 KYC 验证协助，UU 远程一对一操作（10-30分钟），失败或过程中封号全额退款。" : "1-on-1 Claude KYC verification via UU Remote (10–30 mins). Full refund on failure or mid-process ban.",
+    "claude-portal-verify": lang === 'zh' ? "Claude 门户验证专业协助，UU 远程一对一指导（10-30分钟），失败或过程中封号全额退款。" : "1-on-1 Claude Portal verification via UU Remote (10–30 mins). Full refund on failure or mid-process ban.",
     "grok-plus": lang === 'zh' ? "新版多合一官方卡充，支持 Web / iOS / Android 全端通用，需无订阅状态充值。" : "New all-in-one official card top-up for Web, iOS, and Android (free tier required).",
-    "grok-premium": lang === 'zh' ? "新版多合一 1-3 分钟自助秒充（账号需为免费版且享有半价优惠资格），全端支持。" : "1-3 mins self-service CDK across all platforms (requires free tier with 50% promo).",
-    "grok-super-cdk": lang === 'zh' ? "新版多合一正规官方卡充（需免费版且有半价优惠），直通 xAI 算力集群与实时全网检索。" : "Official Grok Super card top-up, works on all platforms with real-time cluster search.",
-    "grok-ultra": lang === 'zh' ? "xAI 旗舰 Ultra 顶配算力通道，直充自己账号（需免费版且有半价优惠），1-3 分钟秒到账。" : "xAI flagship Ultra tier topped up to your own account in 1-3 minutes.",
-    "gemini-pro-18m": lang === 'zh' ? "🔥 Gemini Pro 3个月会员 + 5TB 云存储（xiaomi版），支持反重力4，代开充自己账户！" : "🔥 Gemini Pro 3-Month + 5TB Cloud Storage (xiaomi edition), supports Antigravity 4, direct top-up to your account!"
+    "gemini-pro-18m": lang === 'zh' ? "🔥 Gemini Pro 3个月会员 + 5TB 云存储（xiaomi版），支持反重力4，代开充自己账户！" : "🔥 Gemini Pro 3-Month + 5TB Cloud Storage (xiaomi edition), supports Antigravity 4, direct top-up to your account!",
+    "gemini-ultra-5x-ios": lang === 'zh' ? "Google AI Ultra 5X ($99.99/月档) iOS 官方直充，低于官价，享 5 倍 Pro 算力与订阅质保。" : "Official iOS top-up for Google AI Ultra 5X ($99.99/mo tier), below USD rate with subscription warranty.",
+    "gemini-ultra-20x-ios": lang === 'zh' ? "立省 ¥270！Google AI Ultra 20X ($199.99/月顶配) iOS 官方直充，20 倍算力 + 30TB 云存。" : "Save ¥270! Official iOS top-up for Google AI Ultra 20X ($199.99/mo flagship), 20x quota + 30TB storage."
   };
 
   const getProductBadge = (product: Product) => {
-    if (product.id.includes("pro-20x") || product.id.includes("25x") || product.id === "grok-ultra" || product.id === "claude-max-5x-ios") return lang === 'zh' ? "旗舰顶配" : "Flagship";
+    if (product.id.includes("pro-20x") || product.id.includes("25x") || product.id.includes("50x") || product.id === "claude-ultra-ready" || product.id === "gemini-ultra-20x-ios") return lang === 'zh' ? "旗舰顶配" : "Flagship";
     if (product.id === "chatgpt-plus-ph-account" || product.id === "gemini-pro-18m") return lang === 'zh' ? "超值爆款" : "Best Value";
-    if (product.id.includes("plus") || product.id === "claude-pro-ios" || product.id === "grok-premium") return lang === 'zh' ? "高性价比" : "Popular";
+    if (product.id.includes("plus") || product.id === "claude-kyc-verify" || product.id === "gemini-ultra-5x-ios") return lang === 'zh' ? "高性价比" : "Popular";
     if (product.isHot) return lang === 'zh' ? "热门" : "Hot";
     return "";
   };
@@ -854,7 +861,7 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
                 <a href="#accounts" className="vercel-button cz-hero-primary" style={{ padding: "12px 28px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '立即选购 AI 账号' : 'Explore AI Accounts'}</a>
               </div>
               <div className="cz-hero-note">
-                {lang === 'zh' ? 'ChatGPT Plus/Pro · Claude Pro/MAX · Grok 全系 · Gemini Pro 3个月' : 'ChatGPT Plus/Pro · Claude Pro/MAX · Grok Ultra · Gemini Pro 3M'}
+                {lang === 'zh' ? 'ChatGPT Plus/Pro/Codex · Claude Ultra/KYC · Grok · Gemini Pro/Ultra' : 'ChatGPT Plus/Pro/Codex · Claude Ultra/KYC · Grok · Gemini Pro/Ultra'}
               </div>
             </div>
 
@@ -1020,38 +1027,38 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
             {(lang === 'zh'
               ? [
                   {
-                    q: "ChatGPT Plus 的 ¥79、¥125、¥145、¥165 四款怎么选？",
-                    a: "追求极致性价比或备用号选【¥79 菲区半价成品号】；已有 Gmail 个人免费号想充自己号选【¥125 菲区官方卡充】（比官方 $20 省 20 元）；需要覆盖已有 Plus 选【¥145 iOS 官方秒充】；想要高权重满周老号开箱即用选【¥165 独享老号成品号】。"
+                    q: "ChatGPT Plus 的 ¥85、¥129、¥149、¥169 四款怎么选？",
+                    a: "追求极致性价比或备用号选【¥85 菲区半价成品号】；已有 Gmail 个人免费号想充自己号选【¥129 菲区官方卡充】（可囤5天，低于官方 $20 原价）；需要 iOS 通道选【¥149 iOS 官方秒充】（可囤3天）；想要高权重满周老号开箱即用选【¥169 独享老号成品号】。"
                   },
                   {
-                    q: "ChatGPT Pro 5X (¥688) 与 Pro 200刀 (¥1300) / 500刀 (¥3280) 有什么区别？",
-                    a: "【Pro 5X (¥688/¥699)】对应官方 $100 档，低于官方汇率价，适合高频编程与日常 o1/o3 推理；【Pro 200刀 (¥1300)】立省 ¥250+，支持卡密囤 3 天，老用户 10.29 前续订仍享 20X 额度；【智利区 500刀 (¥3280)】专享 25X 顶配极限算力（严禁使用微软邮箱）。"
+                    q: "ChatGPT Pro 10X / 20X / 50X 和 Codex 点数怎么选？",
+                    a: "【Pro 10X (¥715卡充 / ¥725 iOS / ¥799成品号)】对应官方 $100 档；【Pro 20X (¥1300卡充 / ¥1420 iOS / ¥1250成品号)】对应官方 $200 档，比官价省 ¥150~¥200；【Pro 50X (¥3450卡充 / ¥3580 iOS)】对应官方 $500 顶配档；已订阅用户若触发 Codex 周限额，可直接选购【Codex 250/500/1000/2500 点数包】立即到账加餐。"
                   },
                   {
-                    q: "Claude Pro (¥159) 和 MAX 5X (¥999) 充值需要提供密码吗？",
-                    a: "完全不需要！支持 SK 充值（系统自动检测账号状态）与 Claude UID 自助免密直充，1-3 分钟到账。注意充值 MAX 5X 要求账号注册满 30 天以上、有历史订阅记录，且需自行配合完成官方 KYC 验证。"
+                    q: "Claude Ultra 过 K 成品号 (¥2250) 和 KYC / 门户验证服务怎么选？",
+                    a: "需要直接上车顶配 $200 档选【Claude Ultra 过 K 成品号 (¥2250)】，1-2 天交付且保障首登与 30 天订阅；已有自己的 Claude 账号触发验证选【KYC 验证 (¥125)】或【门户验证 (¥329)】，UU 远程一对一协助，验证失败或过程中封号全额退款。"
                   },
                   {
-                    q: "Gemini Pro 3个月会员代开 (¥45) 有什么要求与注意事项？有质保吗？",
-                    a: "【无质保与不退声明】：此产品不做任何质保，掉订阅/封号均不在质保范围内；不会用或嫌麻烦请勿下单，以不会使用、不想要了为由申请售后一律不退；【充值前提】：充值前必须确认账户已退出家庭组且无有效会员；【强烈建议老号】：新号非常脆弱极易触发 Google 常用设备或封禁风控，由于充值引发的人机验证概不负责；【安全提示】：代开完成后请及时修改密码或 2FA。"
+                    q: "Gemini Pro 3个月代开 (¥45) 与 Gemini Ultra 5X (¥699) / 20X (¥1180) 怎么选？",
+                    a: "尝鲜或轻中度使用选【¥45 Gemini Pro 3个月代开】（含 5TB 云存、支持反重力4，注意此款无质保不退款，建议老号且退出家庭组）；重度科研与高并发 Agent 用户选【Gemini Ultra 5X (¥699)】或【20X (¥1180，比官价 $199.99 立省 ¥270)】，iOS 官方直充享订阅质保。"
                   }
                 ]
               : [
                   {
-                    q: "How to choose between ChatGPT Plus ¥79, ¥125, ¥145, and ¥165?",
-                    a: "Pick ¥79 (PH Ready Account) for the lowest-cost turnkey access; pick ¥125 (PH Card Top-up) to recharge your own free Gmail account below the $20 USD rate; pick ¥145 (iOS Top-up) for passwordless iOS channel; or ¥165 for a 1+ week aged ready account."
+                    q: "How to choose between ChatGPT Plus ¥85, ¥129, ¥149, and ¥169?",
+                    a: "Pick ¥85 (PH Ready Account) for the lowest-cost turnkey access; ¥129 (PH Card Top-up, 5-day stockable) to recharge your own Gmail below $20 USD; ¥149 (iOS Top-up, 3-day stockable); or ¥169 for a 1+ week aged ready account."
                   },
                   {
-                    q: "What is the difference between Pro 5X (¥688), Pro $200 (¥1300), and Pro 25X $500 (¥3280)?",
-                    a: "Pro 5X (¥688/¥699) is the $100 official tier priced below USD exchange rates; Pro $200 (¥1300) saves ¥250+ with 3-day stockable keys; Pro 25X $500 (¥3280) unlocks 25X flagship compute (Gmail required, no Microsoft emails)."
+                    q: "How do ChatGPT Pro 10X, 20X, 50X, and Codex Credits compare?",
+                    a: "Pro 10X (¥715 card / ¥725 iOS / ¥799 ready) is the $100 tier; Pro 20X (¥1300 card / ¥1420 iOS / ¥1250 ready) is the $200 tier saving ¥150–¥200; Pro 50X (¥3450 card / ¥3580 iOS) is the $500 flagship. Paid subscribers hitting coding caps can add Codex 250–2500 credit packs instantly."
                   },
                   {
-                    q: "Do Claude Pro (¥159) and MAX 5X (¥999) require my password?",
-                    a: "No! Both use passwordless SK or Claude UID self-service recharge in 1-3 minutes. Note that MAX 5X requires an account aged 30+ days with prior subscription history and user KYC completion."
+                    q: "How do Claude Ultra Ready Account (¥2250) and KYC/Portal Verification work?",
+                    a: "Claude Ultra Ready Account (¥2250) delivers a KYC-verified $200/mo flagship account in 1–2 days with first-login + 30-day sub warranty. For existing accounts needing verification, choose KYC (¥125) or Portal (¥329) via UU Remote with full refund on failure."
                   },
                   {
-                    q: "What are the rules and precautions for Gemini Pro 3-Month Top-up (¥45)?",
-                    a: "Sold as-is with NO warranty (subscription drops and account bans are not covered; no personal refunds supported). Pre-requisites: confirm account has exited family groups with no active subscriptions. Aged accounts are strongly recommended as new accounts easily trigger Google risk checks. Change password/2FA immediately after completion."
+                    q: "Gemini Pro 3-Month (¥45) vs Gemini Ultra 5X (¥699) / 20X (¥1180)?",
+                    a: "Gemini Pro 3-Month (¥45) includes 5TB storage & Antigravity 4 (as-is, no warranty, aged account recommended). For flagship compute with subscription warranty, pick Gemini Ultra 5X (¥699) or 20X (¥1180, saving ¥270 vs $199.99 USD) via official iOS top-up."
                   }
                 ]
             ).map(faq => (

@@ -1,0 +1,44 @@
+{
+  "id": "claude-portal-verify",
+  "categoryId": "claude",
+  "categoryName": "Claude",
+  "title": "Claude Portal Verification Service | UU Remote Assist [Refund on Failure]",
+  "subtitle": "1-on-1 Claude Portal verification assistance via UU Remote (10–30 mins). Full refund if verification fails or account is banned during the process.",
+  "price": 329,
+  "order": 20,
+  "tags": [
+    "Claude",
+    "Portal Verify",
+    "UU Remote",
+    "Refund Guarantee"
+  ],
+  "deliveryNotice": "Contact support after order for UU Remote session (10–30 mins)",
+  "features": [
+    "Dedicated assistance for Claude Portal verification via UU Remote",
+    "Typically completed within 10–30 minutes",
+    "Full refund if verification fails or ban occurs during the session"
+  ],
+  "inStock": true,
+  "buyButtonText": "Order Service ¥329",
+  "actionType": "buy",
+  "orderName": "Claude Portal Verification Service",
+  "isHot": false,
+  "warnings": [
+    "[Method]: Guided via UU Remote; final approval is determined by Anthropic.",
+    "[Refund Policy]: Full refund if verification fails or ban occurs during verification. No warranty >5 minutes after passing."
+  ],
+  "detail": {
+    "title": "Claude Portal Verification Service · UU Remote",
+    "subtitle": "Guided portal verification with refund protection on failure.",
+    "sections": [
+      {
+        "title": "Service Terms",
+        "items": [
+          "Remote Tool: UU Remote guided assistance.",
+          "Estimated Time: 10–30 minutes (longer during peak hours).",
+          "Guarantee: Full refund on failure or mid-process ban; no warranty >5 minutes after passing."
+        ]
+      }
+    ]
+  }
+}

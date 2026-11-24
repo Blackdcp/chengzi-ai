@@ -1,0 +1,45 @@
+{
+  "id": "gemini-ultra-20x-ios",
+  "categoryId": "gemini",
+  "categoryName": "Gemini",
+  "title": "Gemini Ultra 20X Monthly | iOS Official Top-up | Subscription Warranty",
+  "subtitle": "Google AI Ultra 20X ($199.99/mo ≈ ¥1450 tier) official iOS direct top-up — save ¥270! 20x Pro quota + 30TB storage with subscription warranty.",
+  "price": 1180,
+  "order": 24,
+  "tags": [
+    "Gemini Ultra",
+    "20X",
+    "iOS Top-up",
+    "Save ¥270"
+  ],
+  "deliveryNotice": "Automated delivery for official iOS direct top-up",
+  "features": [
+    "Official Google AI Ultra 20X ($199.99/mo) flagship tier — save ¥270 vs USD rate",
+    "Legitimate iOS top-up directly to your personal Google account",
+    "20x Pro compute quota + 30TB storage with subscription warranty"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥1180",
+  "actionType": "buy",
+  "orderName": "Gemini Ultra 20X iOS Top-up",
+  "isHot": true,
+  "warnings": [
+    "[Prerequisites]: Exit any Google Family Group and ensure no conflicting active plan.",
+    "[Account Age]: Aged Google accounts strongly recommended.",
+    "[Warranty]: Covers subscription validity during the billing cycle."
+  ],
+  "detail": {
+    "title": "Gemini Ultra 20X Monthly · iOS Official Top-up",
+    "subtitle": "Flagship Google AI Ultra 20X ($199.99/mo) via official iOS top-up.",
+    "sections": [
+      {
+        "title": "Key Benefits",
+        "items": [
+          "20x Pro quota for heavy developers, continuous agents, and multimodal workloads.",
+          "Save ¥270 compared to official $199.99/mo billing.",
+          "Subscription warranty included."
+        ]
+      }
+    ]
+  }
+}

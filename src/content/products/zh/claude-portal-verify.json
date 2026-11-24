@@ -1,0 +1,45 @@
+{
+  "id": "claude-portal-verify",
+  "categoryId": "claude",
+  "categoryName": "Claude",
+  "title": "Claude 门户验证服务｜UU 远程协助【失败全退】",
+  "subtitle": "Claude 门户验证协助服务，通过 UU 远程一对一指导处理，约 10～30 分钟完成，验证失败或过程中封号全额退款。",
+  "price": 329,
+  "order": 20,
+  "tags": [
+    "Claude",
+    "门户验证",
+    "UU远程",
+    "失败全退"
+  ],
+  "deliveryNotice": "下单后联系客服安排 UU 远程协助（约 10～30 分钟）",
+  "features": [
+    "针对 Claude 门户验证（Portal Verification）提供专业流程说明与远程协助",
+    "通过 UU 远程安全配合，通常 10～30 分钟完成",
+    "验证失败或验证过程中封号享全额退款"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单预约 ￥329",
+  "actionType": "buy",
+  "orderName": "Claude 门户验证服务",
+  "isHot": false,
+  "warnings": [
+    "【操作方式】：通过 UU 远程提供流程说明与操作答疑，最终审核结果以官方为准。",
+    "【退款与售后规则】：验证失败或验证过程中封号全额退款；通过验证 5 分钟后的后续封号不在质保范围内。",
+    "【处理时效】：常规 10～30 分钟，高峰期可能超过 1 小时。"
+  ],
+  "detail": {
+    "title": "Claude 门户验证协助服务 · UU 远程",
+    "subtitle": "专业门户验证协助，失败或过程中封号全额退款。",
+    "sections": [
+      {
+        "title": "服务流程与保障",
+        "items": [
+          "协助方式：下单后联系客服，通过 UU 远程完成门户验证指导。",
+          "处理耗时：常规 10～30 分钟（高峰期可能超过 1 小时）。",
+          "退款保障：验证失败或过程中封号全额退；通过 5 分钟后不质保后续封号。"
+        ]
+      }
+    ]
+  }
+}

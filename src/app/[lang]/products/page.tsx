@@ -29,20 +29,20 @@ const copy = {
     from: '起',
     groups: {
       chatgpt: {
-        title: 'ChatGPT 会员与 Pro 旗舰算力',
-        description: 'ChatGPT Plus、Pro 5X、Pro 200刀与 500刀智利顶配官方直充及成品号。',
+        title: 'ChatGPT 会员、Pro 旗舰算力与 Codex 点数',
+        description: 'ChatGPT Plus、Pro 10X/20X/50X 官方卡充/iOS直充/成品号，以及 Codex 250~2500 点数额度充值。',
       },
       claude: {
-        title: 'Claude 编程与混合推理会员',
-        description: 'Claude Pro 与 Claude MAX 5X 官方 iOS 免密秒充。',
+        title: 'Claude Ultra 成品号与 KYC / 门户验证',
+        description: 'Claude Ultra 过 K 成品号，以及 UU 远程协助 KYC 验证与门户验证服务。',
       },
       grok: {
-        title: 'Grok (xAI) 全系会员直充',
-        description: 'Grok Plus、Premium、Super 与 Ultra 新版多合一官方直充。',
+        title: 'Grok (xAI) 官方会员直充',
+        description: 'Grok Plus 新版多合一官方正规充值，全端通用。',
       },
       gemini: {
-        title: 'Gemini Pro 会员直充与代开',
-        description: 'Gemini Pro 3个月会员代开（充自己账户上，含 5TB 云存储，支持反重力4）。',
+        title: 'Gemini Pro / Ultra 会员直充与代开',
+        description: 'Gemini Pro 3个月代开（含 5TB 云存、支持反重力4），以及 Gemini Ultra 5X / 20X iOS 官方直充。',
       },
       other: {
         title: '其他服务',
@@ -60,20 +60,20 @@ const copy = {
     from: 'from',
     groups: {
       chatgpt: {
-        title: 'ChatGPT Plus & Pro Flagship Compute',
-        description: 'Official ChatGPT Plus, Pro 5X, $200 Pro, and $500 25X top-ups and ready accounts.',
+        title: 'ChatGPT Plus, Pro Flagship & Codex Credits',
+        description: 'Official ChatGPT Plus, Pro 10X/20X/50X card/iOS top-ups, ready accounts, and Codex 250–2500 credit packs.',
       },
       claude: {
-        title: 'Claude Pro & MAX Subscriptions',
-        description: 'Claude Pro and MAX 5X official iOS fast top-ups.',
+        title: 'Claude Ultra & KYC / Portal Verification',
+        description: 'KYC-verified Claude Ultra ready accounts and 1-on-1 UU Remote KYC / Portal verification.',
       },
       grok: {
-        title: 'Grok (xAI) All-in-One Tiers',
-        description: 'Grok Plus, Premium, Super, and Ultra official top-ups.',
+        title: 'Grok (xAI) Official Top-up',
+        description: 'Grok Plus new all-in-one official top-up for Web, iOS, and Android.',
       },
       gemini: {
-        title: 'Gemini Pro Direct Subscriptions',
-        description: 'Gemini Pro 3-Month top-up on your own account, 5TB Cloud Storage, Antigravity 4.',
+        title: 'Gemini Pro & Ultra Direct Subscriptions',
+        description: 'Gemini Pro 3-Month top-up (5TB Storage, Antigravity 4) and Gemini Ultra 5X / 20X iOS official top-ups.',
       },
       other: {
         title: 'Other Services',

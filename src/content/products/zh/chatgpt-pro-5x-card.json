@@ -2,14 +2,14 @@
   "id": "chatgpt-pro-5x-card",
   "categoryId": "chatgpt",
   "categoryName": "ChatGPT",
-  "title": "ChatGPT Pro 5X 月卡｜官方卡充｜1个月｜正规充值【质保30天】",
-  "subtitle": "【5X-100刀款】充值自己账号。低于官方 100 美元原价，享 5 倍官方算力与满血 o1/o3 推理。",
-  "price": 688,
-  "order": 7,
+  "title": "ChatGPT Pro 10X 月卡｜官方卡充｜1个月｜正规充值【质保30天】【卡密可囤五天】",
+  "subtitle": "【10X-100刀款】充值自己账号，低于官方 $100 汇率价，自助充值卡密兑换即享 1 个月 Pro 套餐，卡密可囤 5 天。",
+  "price": 715,
+  "order": 9,
   "tags": [
-    "Pro 5X (100刀)",
-    "低于官方汇率",
+    "Pro 10X",
     "官方卡充",
+    "可囤五天",
     "质保30天"
   ],
   "deliveryNotice": "24 小时自动充值，提交后约 1-10 分钟完成",
@@ -20,22 +20,22 @@
     "30 天质保"
   ],
   "inStock": true,
-  "buyButtonText": "下单购买 ￥688",
+  "buyButtonText": "下单购买 ￥715",
   "actionType": "buy",
-  "orderName": "ChatGPT Pro 5X 月卡（官方卡充）",
+  "orderName": "ChatGPT Pro 10X 官方卡充",
   "isHot": true,
   "warnings": [
     "【严禁提交在期或异常号】：当前已是 Plus / Team / Pro 的在期账号请勿提交；曾买过 0元购、谷歌内购或低价黑充的账号严禁提交！",
     "【邮箱要求】：严禁使用微软邮箱，强烈建议使用 Gmail（或 163/126/QQ 邮箱），充值成功后请自行保存账单。"
   ],
   "detail": {
-    "title": "ChatGPT Pro 5X 月卡｜官方正价卡充（100刀款）",
-    "subtitle": "比官方 $100 美元原价立省 ¥37+！官方正规卡充直充自用账号，24 小时自动处理。",
+    "title": "ChatGPT Pro 10X 月卡 · 官方正规卡充",
+    "subtitle": "【10X-100刀款】直充自己账号，卡密可囤 5 天，享 30 天订阅质保。",
     "sections": [
       {
         "title": "商品与处理说明",
         "items": [
-          "本服务为 ChatGPT Pro 5X（官方 100 美元档）正价官方卡充，24 小时全自动接单，正常处理时间约 1–10 分钟。",
+          "本服务为 ChatGPT Pro 10X（官方 100 美元档）正价官方卡充，24 小时全自动接单，正常处理时间约 1–10 分钟。",
           "充值成功后系统会发送邮件通知，请务必自行保存好账单凭证。"
         ]
       },

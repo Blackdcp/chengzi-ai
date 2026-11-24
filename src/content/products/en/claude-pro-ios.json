@@ -5,7 +5,7 @@
   "title": "Claude Pro 1-Month | iOS Official Top-up [Instant][30-Day Warranty]",
   "subtitle": "Top up your own account via official iOS channel. Supports SK/UID passwordless fast recharge.",
   "price": 159,
-  "order": 10,
+  "order": 99,
   "tags": [
     "Claude Pro",
     "iOS 充值",
@@ -19,7 +19,7 @@
     "无需账号密码",
     "30 天订阅质保"
   ],
-  "inStock": true,
+  "inStock": false,
   "buyButtonText": "Buy Now ￥159",
   "actionType": "buy",
   "orderName": "Claude Pro 月卡（iOS 充值）",

@@ -1,0 +1,45 @@
+{
+  "id": "gemini-ultra-5x-ios",
+  "categoryId": "gemini",
+  "categoryName": "Gemini",
+  "title": "Gemini Ultra 5X 月卡｜iOS 官方充值｜质保订阅",
+  "subtitle": "Google AI Ultra 5X（官方 $99.99/月档）iOS 官方直充，直充自己账号！含 5 倍 Pro 额度与 20TB 云存储，享订阅质保。",
+  "price": 699,
+  "order": 23,
+  "tags": [
+    "Gemini Ultra",
+    "5X",
+    "iOS直充",
+    "质保订阅"
+  ],
+  "deliveryNotice": "自动发货，按指引完成 iOS 官方直充",
+  "features": [
+    "官方 $99.99/月（约 ¥725）Google AI Ultra 5X 档位，本站立省直充",
+    "iOS 官方正规渠道直充自己 Google 账号，安全稳定",
+    "5 倍 Pro 旗舰算力额度 + 超大 Google One 云存储，提供订阅质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单充值 ￥699",
+  "actionType": "buy",
+  "orderName": "Gemini Ultra 5X iOS官方充值",
+  "isHot": true,
+  "warnings": [
+    "【充值前提】：请确保当前 Google 账号已退出家庭组且无冲突生效会员。",
+    "【账号建议】：建议使用稳定常用的老 Google 账号，避免新号触发 Google 风控。",
+    "【质保说明】：提供订阅周期内官方订阅质保，违规使用导致的封号不在质保范围内。"
+  ],
+  "detail": {
+    "title": "Gemini Ultra 5X 月卡 · iOS 官方直充",
+    "subtitle": "Google AI Ultra 5X ($99.99/月档) 正规 iOS 直充自己账号，质保订阅。",
+    "sections": [
+      {
+        "title": "核心权益",
+        "items": [
+          "5X 旗舰配额：畅享 Google 最前沿 Gemini Ultra 推理模型、Deep Think 与高并发额度。",
+          "官方 iOS 渠道：正规苹果内购直充，比官方美元直充更划算。",
+          "订阅质保：享受整月订阅质保服务。"
+        ]
+      }
+    ]
+  }
+}

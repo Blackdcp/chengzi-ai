@@ -1,0 +1,52 @@
+{
+  "id": "chatgpt-pro-10x-ready",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Pro 10X Monthly | Ready Account | Official Subscription [Warranty]",
+  "subtitle": "Dedicated ChatGPT Pro 10X ($100 tier) ready-made aged account (1+ week old, clean IP) with 1-month official subscription. Format: Email----Password----2FA.",
+  "price": 799,
+  "order": 7,
+  "tags": [
+    "Pro 10X",
+    "Ready Account",
+    "2FA Included",
+    "Sub Warranty"
+  ],
+  "deliveryNotice": "Manual fulfillment via support after order (approx. 10 mins – 2 hours)",
+  "features": [
+    "1+ week aged account with official 1-month Pro 10X ($100 tier) subscription",
+    "Full private credentials delivered: Email----Password----2FA",
+    "30-day subscription warranty included, ready out of the box"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥799",
+  "actionType": "buy",
+  "orderName": "ChatGPT Pro 10X Ready Account",
+  "isHot": true,
+  "warnings": [
+    "[Delivery]: Contact support after checkout for manual delivery (10 mins – 2 hours).",
+    "[SMS Verification]: Optional SMS verification is not included if triggered during usage.",
+    "[Warranty Scope]: 30-day subscription warranty; bans caused by policy violations or dirty IPs are excluded."
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 10X Monthly · Aged Ready Account",
+    "subtitle": "Turnkey 1+ week aged account pre-loaded with official Pro 10X 1-month subscription.",
+    "sections": [
+      {
+        "title": "What Is Included",
+        "items": [
+          "Plan: Official ChatGPT Pro 10X ($100/mo tier) active for 1 month.",
+          "Account Quality: Registered >1 week on clean residential IP, strictly 1-to-1 private.",
+          "Format: Email----Password----2FA."
+        ]
+      },
+      {
+        "title": "Fulfillment & Warranty",
+        "items": [
+          "Fulfillment: Delivered via support within 10 minutes to 2 hours.",
+          "Warranty: 30-day subscription warranty (account bans not covered)."
+        ]
+      }
+    ]
+  }
+}

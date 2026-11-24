@@ -5,7 +5,7 @@
   "title": "Grok Super 1-Month | All-in-One Official Top-up [30-Day Warranty]",
   "subtitle": "Top up your own account. Official card recharge (requires free tier with 50% promo eligibility).",
   "price": 399,
-  "order": 14,
+  "order": 99,
   "tags": [
     "Grok Super",
     "官方充值",
@@ -18,7 +18,7 @@
     "支持 Web/iOS/Android 全端",
     "全程订阅质保"
   ],
-  "inStock": true,
+  "inStock": false,
   "buyButtonText": "Buy Now ￥399",
   "actionType": "buy",
   "orderName": "Grok Super 月卡",

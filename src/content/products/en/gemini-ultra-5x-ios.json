@@ -1,0 +1,45 @@
+{
+  "id": "gemini-ultra-5x-ios",
+  "categoryId": "gemini",
+  "categoryName": "Gemini",
+  "title": "Gemini Ultra 5X Monthly | iOS Official Top-up | Subscription Warranty",
+  "subtitle": "Google AI Ultra 5X ($99.99/mo tier) official iOS direct top-up to your own Google account. Below official USD pricing with subscription warranty.",
+  "price": 699,
+  "order": 23,
+  "tags": [
+    "Gemini Ultra",
+    "5X",
+    "iOS Top-up",
+    "Sub Warranty"
+  ],
+  "deliveryNotice": "Automated delivery for official iOS direct top-up",
+  "features": [
+    "Official Google AI Ultra 5X ($99.99/mo) tier below direct USD cost",
+    "Legitimate iOS top-up directly to your personal Google account",
+    "5x Pro usage quota + massive Google One storage with subscription warranty"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥699",
+  "actionType": "buy",
+  "orderName": "Gemini Ultra 5X iOS Top-up",
+  "isHot": true,
+  "warnings": [
+    "[Prerequisites]: Exit any Google Family Group and ensure no conflicting active plan.",
+    "[Account Age]: Aged Google accounts are recommended to avoid risk checks.",
+    "[Warranty]: Covers subscription validity during the billing cycle."
+  ],
+  "detail": {
+    "title": "Gemini Ultra 5X Monthly · iOS Official Top-up",
+    "subtitle": "Official iOS recharge for Google AI Ultra 5X with subscription warranty.",
+    "sections": [
+      {
+        "title": "Key Benefits",
+        "items": [
+          "5x Pro quota for flagship Gemini models and developer workflows.",
+          "Official iOS payment rail, cheaper than direct USD billing.",
+          "Subscription warranty included."
+        ]
+      }
+    ]
+  }
+}

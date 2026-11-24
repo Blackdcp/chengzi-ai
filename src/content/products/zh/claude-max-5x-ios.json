@@ -5,7 +5,7 @@
   "title": "Claude MAX 5X 月卡｜iOS 官方正规充值【秒充】【质保30天】",
   "subtitle": "【5X-100刀款】充值到自己账号。直破千元大关，5 倍官方算力上限，支持 UID 免密自助秒充。",
   "price": 999,
-  "order": 11,
+  "order": 99,
   "tags": [
     "MAX 5X",
     "5倍用量",
@@ -18,7 +18,7 @@
     "重度代码编程利器",
     "30 天订阅质保"
   ],
-  "inStock": true,
+  "inStock": false,
   "buyButtonText": "下单购买 ￥999",
   "actionType": "buy",
   "orderName": "Claude MAX 5X 月卡",

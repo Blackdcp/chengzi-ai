@@ -1,0 +1,52 @@
+{
+  "id": "codex-credits-250",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "Codex 250 点数额度充值｜直充自己账号【需有效订阅】",
+  "subtitle": "为您的 ChatGPT / Codex 账号直充 250 点数额度，充值后立即到账！适用于 Plus / Pro 订阅用户扩充 Codex 编码额度（非 API 余额）。",
+  "price": 95,
+  "order": 13,
+  "tags": [
+    "Codex",
+    "250点数",
+    "立即到账",
+    "需有效订阅"
+  ],
+  "deliveryNotice": "自动发货，充值后立即到账",
+  "features": [
+    "官方直充 250 Codex 点数额度到自己账号",
+    "充值后立即到账，突破 Plus / Pro 周限额与会话限额",
+    "无需海外双币信用卡，安全便捷"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单充值 ￥95",
+  "actionType": "buy",
+  "orderName": "Codex 250 点数额度充值",
+  "isHot": false,
+  "warnings": [
+    "【必须拥有有效订阅】：账号当前必须处于有效的 ChatGPT 付费订阅状态（Plus / Pro 等），免费版（Free）账号无法充值！",
+    "【非 API 余额】：本商品为 ChatGPT / Codex 客户端与 CLI 专用的额外点数额度，不可用于 OpenAI Platform API Key 计费。",
+    "【一经充值不可退款】：虚拟点数充值后立即到账，拍前请确认账号订阅状态。"
+  ],
+  "detail": {
+    "title": "Codex 250 点数额度充值 · 立即到账",
+    "subtitle": "直充自己账号 250 Codex 点数额度，需账号拥有有效付费订阅。",
+    "sections": [
+      {
+        "title": "商品说明",
+        "items": [
+          "充值额度：250 Codex 额外点数额度（非官方 Platform API 余额）。",
+          "到账速度：按指引完成充值后立即到账，马上恢复满血编码体验。",
+          "适用场景：适合使用 Codex CLI / IDE 插件 / Web 编码触发周限额后快速加餐。"
+        ]
+      },
+      {
+        "title": "拍前必看（重要）",
+        "items": [
+          "1. 您的 ChatGPT 账号必须已有生效中的付费订阅（如 Plus / Pro），Free 免费账号无法充值。",
+          "2. Codex 点数额度与 OpenAI API 余额相互独立，请勿混淆拍错。"
+        ]
+      }
+    ]
+  }
+}

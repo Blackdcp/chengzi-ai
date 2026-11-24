@@ -1,0 +1,45 @@
+{
+  "id": "chatgpt-pro-50x-ios",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Pro 50X｜1个月｜iOS 官方正规充值【秒充】【质保30天】",
+  "subtitle": "【50X-500刀款】充值自己账号，iOS 官方正规内购直充 500 刀顶配套餐，自助卡密秒到账，享 30 天质保。",
+  "price": 3580,
+  "order": 12,
+  "tags": [
+    "Pro 50X",
+    "500刀顶配",
+    "iOS充值",
+    "质保30天"
+  ],
+  "deliveryNotice": "自助充值卡密自动发货，兑换秒到账",
+  "features": [
+    "官方 iOS 正规内购直充自己账号（50X-500刀旗舰档）",
+    "解锁 OpenAI 最高 50X 算力配额与全速 Codex / 深度推理",
+    "自助卡密秒充，无需提供密码，提供 30 天完整质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单充值 ￥3580",
+  "actionType": "buy",
+  "orderName": "ChatGPT Pro 50X iOS官方充值",
+  "isHot": true,
+  "warnings": [
+    "【账号要求】：请确保当前账号无生效订阅，建议使用稳定常用的高权重账号。",
+    "【隐私安全】：全程无需提供账号密码，正规 iOS 内购渠道直充。",
+    "【质保承诺】：提供 30 天订阅质保，非违规封禁导致的账单问题全额兜底。"
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 50X (500刀款) · iOS 官方正规充值",
+    "subtitle": "【50X-500刀款】iOS 正规通道秒充自己账号，质保 30 天。",
+    "sections": [
+      {
+        "title": "商品核心亮点",
+        "items": [
+          "50X 旗舰算力：OpenAI 最高 $500 档位，畅享极致推理速度与重度 Agent / Codex 配额。",
+          "iOS 官方直充：正规苹果内购渠道，免海外信用卡风控烦恼。",
+          "30 天质保：整月完整质保，企业与重度开发者安心之选。"
+        ]
+      }
+    ]
+  }
+}

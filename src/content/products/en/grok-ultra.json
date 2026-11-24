@@ -5,7 +5,7 @@
   "title": "Grok Ultra 1-Month | Flagship All-in-One Official Top-up [30-Day Warranty]",
   "subtitle": "[Grok Ultra Flagship] Top up your own account. Maximum xAI compute priority and deep reasoning.",
   "price": 799,
-  "order": 15,
+  "order": 99,
   "tags": [
     "Grok Ultra",
     "Flagship Compute",
@@ -19,7 +19,7 @@
     "1-3 Mins Delivery",
     "30-Day Warranty"
   ],
-  "inStock": true,
+  "inStock": false,
   "buyButtonText": "Buy Now ￥799",
   "actionType": "buy",
   "orderName": "Grok Ultra 1-Month Flagship",

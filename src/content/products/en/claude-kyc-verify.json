@@ -1,0 +1,45 @@
+{
+  "id": "claude-kyc-verify",
+  "categoryId": "claude",
+  "categoryName": "Claude",
+  "title": "Claude KYC Verification Service | UU Remote Assist [Refund on Failure]",
+  "subtitle": "1-on-1 Claude KYC verification assistance via UU Remote (10–30 mins). Full refund if verification fails or account is banned during the process.",
+  "price": 125,
+  "order": 19,
+  "tags": [
+    "Claude",
+    "KYC Verify",
+    "UU Remote",
+    "Refund Guarantee"
+  ],
+  "deliveryNotice": "Contact support after order for UU Remote session (10–30 mins)",
+  "features": [
+    "Guided KYC verification assistance for Claude accounts",
+    "Conducted via UU Remote, typically 10–30 minutes (may exceed 1 hour at peak times)",
+    "Full refund if verification fails or ban occurs during verification"
+  ],
+  "inStock": true,
+  "buyButtonText": "Order Service ¥125",
+  "actionType": "buy",
+  "orderName": "Claude KYC Verification Service",
+  "isHot": true,
+  "warnings": [
+    "[Method]: Requires UU Remote; final approval is determined by Anthropic.",
+    "[Refund Policy]: Full refund if verification fails or account is banned during verification. No warranty for bans occurring >5 minutes after passing.",
+    "[Turnaround]: Normally 10–30 mins; peak hours may take over 1 hour."
+  ],
+  "detail": {
+    "title": "Claude KYC Verification Service · UU Remote",
+    "subtitle": "Guided KYC assistance with refund protection on verification failure.",
+    "sections": [
+      {
+        "title": "Service Terms",
+        "items": [
+          "Remote Tool: UU Remote guided assistance.",
+          "Estimated Time: 10–30 minutes (longer during peak demand).",
+          "Guarantee: Full refund on failure or mid-process ban; no post-pass ban warranty after 5 minutes."
+        ]
+      }
+    ]
+  }
+}

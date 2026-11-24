@@ -1,0 +1,53 @@
+{
+  "id": "claude-ultra-ready",
+  "categoryId": "claude",
+  "categoryName": "Claude",
+  "title": "Claude Ultra 过 K 成品号【质保首登】",
+  "subtitle": "Claude Ultra（原 MAX 20X / 官方 $200 档）已过 KYC 验证成品号！下单后 1～2 天交付，保障首登及 30 天订阅。",
+  "price": 2250,
+  "order": 18,
+  "tags": [
+    "Claude Ultra",
+    "已过KYC",
+    "成品号",
+    "质保首登"
+  ],
+  "deliveryNotice": "下单后 1～2 天定制交付，保障首登及 30 天订阅",
+  "features": [
+    "Claude Ultra 顶配 $200 档成品号（原 MAX 20X 算力），已完成官方 KYC 认证",
+    "解除 5 小时滚动限流痛点，重度 Claude Code 与 Agent 工程旗舰利器",
+    "保障首登及 30 天订阅有效期，省去自行过 K 繁琐流程"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单购买 ￥2250",
+  "actionType": "buy",
+  "orderName": "Claude Ultra 过K成品号",
+  "isHot": true,
+  "warnings": [
+    "【交付周期】：下单后需 1～2 天准备与交付，急单请提前联系客服确认排期。",
+    "【质保范围】：保障首次正常登录及 30 天订阅有效；Claude 官方风控严格，账号后续因 IP 环境或使用习惯导致的封号不在质保范围内。",
+    "【使用建议】：强烈建议使用独享纯净欧美家宽 IP + 固定指纹浏览器登录，切勿频繁切换节点。"
+  ],
+  "detail": {
+    "title": "Claude Ultra 过 K 成品号 · 顶配算力",
+    "subtitle": "已通过官方 KYC 验证的 Claude Ultra ($200档) 独享成品号，下单后 1～2 天交付。",
+    "sections": [
+      {
+        "title": "核心优势",
+        "items": [
+          "顶配算力：对应 Anthropic 官方 $200/月 Claude Ultra 套餐，极高周额度与 Claude Code 畅用体验。",
+          "免去过 K 烦恼：已完成官方 KYC 认证，拿到手即可在纯净环境下直接投入生产。",
+          "质保承诺：保障首登与 30 天订阅状态。"
+        ]
+      },
+      {
+        "title": "重要注意事项",
+        "items": [
+          "1. 交付周期为下单后 1～2 天。",
+          "2. 质保首登及 30 天订阅，不质保封号。",
+          "3. 请务必使用稳定纯净的欧美原生 IP，避免多人共享节点触发风控。"
+        ]
+      }
+    ]
+  }
+}

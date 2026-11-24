@@ -1,0 +1,45 @@
+{
+  "id": "gemini-ultra-20x-ios",
+  "categoryId": "gemini",
+  "categoryName": "Gemini",
+  "title": "Gemini Ultra 20X 月卡｜iOS 官方充值｜质保订阅",
+  "subtitle": "Google AI Ultra 20X（官方 $199.99/月 ≈ ¥1450 档）iOS 官方直充，立省 ¥270！享 20 倍顶配额度与 30TB 云存储，质保订阅。",
+  "price": 1180,
+  "order": 24,
+  "tags": [
+    "Gemini Ultra",
+    "20X",
+    "iOS直充",
+    "立省¥270"
+  ],
+  "deliveryNotice": "自动发货，按指引完成 iOS 官方直充",
+  "features": [
+    "官方 $199.99/月（约 ¥1450）Google AI Ultra 20X 顶配档，立省 ¥270",
+    "iOS 官方正规渠道直充自己 Google 账号，享 20 倍 Pro 极限算力配额",
+    "适合重度科研、Antigravity Agent 连续开发与视频生成，享订阅质保"
+  ],
+  "inStock": true,
+  "buyButtonText": "下单充值 ￥1180",
+  "actionType": "buy",
+  "orderName": "Gemini Ultra 20X iOS官方充值",
+  "isHot": true,
+  "warnings": [
+    "【充值前提】：请确保当前 Google 账号已退出家庭组且无冲突生效会员。",
+    "【账号建议】：强烈建议使用稳定老 Google 账号，降低风控概率。",
+    "【质保说明】：提供订阅周期内官方订阅质保，违规使用导致的封号不在质保范围内。"
+  ],
+  "detail": {
+    "title": "Gemini Ultra 20X 月卡 · iOS 官方直充",
+    "subtitle": "Google AI Ultra 20X ($199.99/月顶配档) 正规 iOS 直充，比官价立省 ¥270。",
+    "sections": [
+      {
+        "title": "核心权益",
+        "items": [
+          "20X 顶配算力：Google 最高个人算力档位，满足高强度编码、多模态与连续 Agent 需求。",
+          "超值折扣：官价 $199.99（约 ¥1450），本站 iOS 官方直充仅 ¥1180，立省 ¥270。",
+          "订阅质保：官方渠道正规充值，提供整月订阅质保。"
+        ]
+      }
+    ]
+  }
+}

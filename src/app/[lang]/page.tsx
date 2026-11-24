@@ -53,60 +53,60 @@ export default async function Page({
         ? [
             {
               '@type': 'Question',
-              name: 'ChatGPT Plus 的 ¥79、¥125、¥145、¥165 四款怎么选？',
+              name: 'ChatGPT Plus 的 ¥85、¥129、¥149、¥169 四款怎么选？',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: '追求极致性价比选 ¥79 菲区半价成品号；已有 Gmail 个人免费号想充自己号选 ¥125 菲区官方卡充（比官方 $20 省 20 元）；需要覆盖已有 Plus 选 ¥145 iOS 官方秒充；想要高权重满周老号选 ¥165 独享老号成品号。',
+                text: '追求极致性价比选 ¥85 菲区半价成品号；已有 Gmail 个人免费号想充自己号选 ¥129 菲区官方卡充（可囤5天，低于官方 $20 原价）；需要 iOS 通道选 ¥149 iOS 官方秒充（可囤3天）；想要高权重满周老号选 ¥169 独享老号成品号。',
               },
             },
             {
               '@type': 'Question',
-              name: 'ChatGPT Pro 5X (¥688) 与 Pro 200刀 (¥1300) / 500刀 (¥3280) 有什么区别？',
+              name: 'ChatGPT Pro 10X / 20X / 50X 和 Codex 点数怎么选？',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Pro 5X (¥688/¥699) 对应官方 $100 档，低于官方汇率价；Pro 200刀 (¥1300) 立省 ¥250+，支持卡密囤 3 天；智利区 500刀 (¥3280) 专享 25X 顶配极限算力（严禁使用微软邮箱）。',
+                text: 'Pro 10X (¥715卡充/¥725 iOS/¥799成品号) 对应官方 $100 档；Pro 20X (¥1300卡充/¥1420 iOS/¥1250成品号) 对应官方 $200 档，比官价省 ¥150~¥200；Pro 50X (¥3450卡充/¥3580 iOS) 对应官方 $500 顶配档；Codex 250~2500 点数包支持有效付费订阅账号即充即到。',
               },
             },
             {
               '@type': 'Question',
-              name: 'Claude Pro (¥159) 和 MAX 5X (¥999) 充值需要提供密码吗？',
+              name: 'Claude Ultra 过 K 成品号 (¥2250) 与 KYC / 门户验证服务怎么选？',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: '不需要，支持 SK 充值与 Claude UID 免密直充，1-3 分钟到账。充值 MAX 5X 需满 30 天老号且有历史订阅记录。',
+                text: '直接上车顶配 $200 档选 Claude Ultra 过 K 成品号 (¥2250)，1-2天交付保障首登及30天订阅；已有账号触发验证选 KYC 验证 (¥125) 或门户验证 (¥329)，UU 远程一对一协助，失败或过程中封号全额退款。',
               },
             },
             {
               '@type': 'Question',
-              name: 'Gemini Pro 3个月会员代开 (¥45) 有什么要求与注意事项？有质保吗？',
+              name: 'Gemini Pro 3个月代开 (¥45) 与 Gemini Ultra 5X (¥699) / 20X (¥1180) 有什么区别？',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: '【无质保与不退声明】：此产品不做任何质保，掉订阅/封号均不在质保范围内；不会用或嫌麻烦请勿下单，以不会使用或不想要了为由申请售后一律不退；【充值前提】：充值前必须确认账户已退出家庭组且无有效会员；【强烈建议老号】：新号非常脆弱极易触发 Google 常用设备或封禁风控，由于充值引发的人机验证概不负责；【安全提示】：代开完成后请及时修改密码或 2FA。',
+                text: 'Gemini Pro 3个月代开 (¥45) 含 5TB 云存且支持反重力4，但无质保不退款；Gemini Ultra 5X (¥699) 与 20X (¥1180，比官价立省 ¥270) 为官方 iOS 直充，享 5x/20x 旗舰算力与订阅质保。',
               },
             },
           ]
         : [
             {
               '@type': 'Question',
-              name: 'How to choose between ChatGPT Plus ¥79, ¥125, ¥145, and ¥165?',
+              name: 'How to choose between ChatGPT Plus ¥85, ¥129, ¥149, and ¥169?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Pick ¥79 (PH Ready Account) for lowest-cost turnkey access; ¥125 (PH Card Top-up) to recharge your own Gmail account below $20 USD; ¥145 for iOS top-up; or ¥165 for a 1+ week aged ready account.',
+                text: 'Pick ¥85 (PH Ready Account) for lowest-cost turnkey access; ¥129 (PH Card Top-up, 5-day stockable) to recharge your own Gmail below $20 USD; ¥149 for iOS top-up; or ¥169 for a 1+ week aged ready account.',
               },
             },
             {
               '@type': 'Question',
-              name: 'What is the difference between Pro 5X (¥688), Pro $200 (¥1300), and Pro 25X $500 (¥3280)?',
+              name: 'How do ChatGPT Pro 10X, 20X, 50X, and Codex Credits compare?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Pro 5X (¥688/¥699) is the $100 tier below USD exchange rates; Pro $200 (¥1300) saves ¥250+ with 3-day stockable keys; Pro 25X $500 (¥3280) unlocks 25X flagship compute.',
+                text: 'Pro 10X (¥715 card / ¥725 iOS / ¥799 ready) is the $100 tier; Pro 20X (¥1300 card / ¥1420 iOS / ¥1250 ready) is the $200 tier; Pro 50X (¥3450 card / ¥3580 iOS) is the $500 flagship. Codex 250–2500 credit packs top up active paid accounts instantly.',
               },
             },
             {
               '@type': 'Question',
-              name: 'What are the rules and precautions for Gemini Pro 3-Month Top-up (¥45)?',
+              name: 'Gemini Pro 3-Month (¥45) vs Gemini Ultra 5X (¥699) / 20X (¥1180)?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Sold as-is with NO warranty (subscription drops and account bans are not covered; no personal refunds supported). Pre-requisites: confirm account has exited family groups with no active subscriptions. Aged accounts are strongly recommended as new accounts easily trigger Google risk checks. Change password/2FA immediately after completion.',
+                text: 'Gemini Pro 3-Month (¥45) includes 5TB storage & Antigravity 4 (as-is, no warranty). Gemini Ultra 5X (¥699) and 20X (¥1180, saving ¥270 vs $199.99 USD) are official iOS top-ups with subscription warranty.',
               },
             },
           ],

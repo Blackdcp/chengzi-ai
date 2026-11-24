@@ -2,14 +2,14 @@
   "id": "chatgpt-pro-5x-ios",
   "categoryId": "chatgpt",
   "categoryName": "ChatGPT",
-  "title": "ChatGPT Pro 5X｜1个月｜iOS 官方正规充值【秒充】【质保30天】",
-  "subtitle": "【5X-100刀款】充值自己账号。iOS 官方内购直充，低于官方美元原价，无需账密极速秒充。",
-  "price": 699,
-  "order": 8,
+  "title": "ChatGPT Pro 10X｜1个月｜iOS 官方正规充值【秒充】【质保30天】",
+  "subtitle": "【10X-100刀款】充值自己账号，iOS 官方正规内购直充，自助充值卡密秒到账，享 30 天完整质保。",
+  "price": 725,
+  "order": 10,
   "tags": [
-    "Pro 5X",
-    "iOS 直充",
-    "秒充到账",
+    "Pro 10X",
+    "iOS充值",
+    "秒充",
     "质保30天"
   ],
   "deliveryNotice": "秒级处理，极速直充到账",
@@ -19,23 +19,23 @@
     "30 天全程质保"
   ],
   "inStock": true,
-  "buyButtonText": "下单购买 ￥699",
+  "buyButtonText": "下单购买 ￥725",
   "actionType": "buy",
-  "orderName": "ChatGPT Pro 5X（iOS 充值）",
+  "orderName": "ChatGPT Pro 10X iOS官方充值",
   "isHot": true,
   "warnings": [
     "【支持覆盖 Plus】：若当前是 Plus（iOS端充值），可覆盖升级为 Pro 5X（有效期从覆盖当天重算 1 个月，补充 4X 额度差额）。",
     "【严禁黑卡号与微软邮箱】：请勿使用曾用低价黑卡/0元购充过的账号或微软邮箱充值，强烈建议使用 Gmail 并当天买当天用。"
   ],
   "detail": {
-    "title": "ChatGPT Pro 5X 月卡｜iOS 官方正规充值（100刀款）",
-    "subtitle": "低于官方 $100 美元汇率原价！iOS 官方内购秒充，享 5 倍算力与满血推理。",
+    "title": "ChatGPT Pro 10X 月卡 · iOS 官方正规充值",
+    "subtitle": "【10X-100刀款】iOS 正规通道直充自己账号，秒到账，质保 30 天。",
     "sections": [
       {
         "title": "商品与套餐覆盖规则",
         "items": [
-          "本商品为 GPT Pro 5X（官方原价 100 美元/月）自助充值卡密，24 小时自动充值，预计 1-3 分钟到账。",
-          "支持覆盖升级：若您当前是 Plus，覆盖成功后订阅时间将从当天重新计算 1 个月，并补充 4X 额度差额（5X - 1X = 4X）。",
+          "本商品为 GPT Pro 10X（官方原价 100 美元/月）自助充值卡密，24 小时自动充值，预计 1-3 分钟到账。",
+          "支持覆盖升级：若您当前是 Plus，覆盖成功后订阅时间将从当天重新计算 1 个月，并补充 4X 额度差额（10X - 1X = 4X）。",
           "特别说明：若购买与当前相同类型的套餐，覆盖后仅更新订阅有效期，不会重置已用完的额度。"
         ]
       },

@@ -5,7 +5,7 @@
   "title": "Grok Ultra 月卡｜新版多合一 官网正规充值【质保30天】",
   "subtitle": "【Grok Ultra 旗舰款】充值到自己账号。xAI 顶配超算通道，第一性原理深度推演与高并发算力。",
   "price": 799,
-  "order": 15,
+  "order": 99,
   "tags": [
     "Grok Ultra",
     "顶配算力",
@@ -19,7 +19,7 @@
     "1-3分钟极速秒充",
     "30 天全程质保"
   ],
-  "inStock": true,
+  "inStock": false,
   "buyButtonText": "下单购买 ￥799",
   "actionType": "buy",
   "orderName": "Grok Ultra 月卡（旗舰多合一）",

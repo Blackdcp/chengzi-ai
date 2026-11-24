@@ -1,0 +1,45 @@
+{
+  "id": "claude-ultra-ready",
+  "categoryId": "claude",
+  "categoryName": "Claude",
+  "title": "Claude Ultra KYC-Verified Ready Account [First-Login Warranty]",
+  "subtitle": "KYC-verified Claude Ultra ($200/mo tier, formerly Max 20x) turnkey account. Delivered in 1–2 days with first-login and 30-day subscription guarantee.",
+  "price": 2250,
+  "order": 18,
+  "tags": [
+    "Claude Ultra",
+    "KYC Verified",
+    "Ready Account",
+    "First-Login Warranty"
+  ],
+  "deliveryNotice": "Delivered within 1–2 days after order",
+  "features": [
+    "Flagship Claude Ultra ($200/mo) account with official KYC verification completed",
+    "Built for heavy Claude Code and continuous agentic workflows",
+    "Guaranteed first login and 30-day subscription validity"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥2250",
+  "actionType": "buy",
+  "orderName": "Claude Ultra KYC Ready Account",
+  "isHot": true,
+  "warnings": [
+    "[Delivery Time]: 1–2 days processing time after checkout.",
+    "[Warranty]: Covers first login and 30-day subscription; subsequent account bans are not covered.",
+    "[IP Hygiene]: Always use a dedicated clean residential US/EU IP and avoid frequent IP switching."
+  ],
+  "detail": {
+    "title": "Claude Ultra KYC-Verified Ready Account",
+    "subtitle": "Turnkey flagship $200/mo Claude Ultra account with KYC completed.",
+    "sections": [
+      {
+        "title": "Key Details",
+        "items": [
+          "Tier: Official Claude Ultra ($200/month), KYC pre-verified.",
+          "Delivery: 1–2 days after order.",
+          "Warranty: First-login + 30-day subscription guarantee (bans excluded)."
+        ]
+      }
+    ]
+  }
+}

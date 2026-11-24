@@ -5,7 +5,7 @@
   "title": "Grok Premium 月卡｜新版多合一｜官方正规充值【质保订阅】",
   "subtitle": "充值到自己账号。新版多合一官方卡充（账号需为免费版且含半价优惠），1-3分钟秒充。",
   "price": 129,
-  "order": 13,
+  "order": 99,
   "tags": [
     "Grok Premium",
     "新版多合一",
@@ -19,7 +19,7 @@
     "1-3分钟极速到账",
     "全程订阅质保"
   ],
-  "inStock": true,
+  "inStock": false,
   "buyButtonText": "下单购买 ￥129",
   "actionType": "buy",
   "orderName": "Grok Premium 月卡（新版多合一）",

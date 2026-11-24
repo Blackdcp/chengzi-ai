@@ -2,15 +2,15 @@
   "id": "chatgpt-pro-5x-card",
   "categoryId": "chatgpt",
   "categoryName": "ChatGPT",
-  "title": "ChatGPT Pro 5X 1-Month | Official Card Top-up [5X Quota]",
-  "subtitle": "[5X-$100 Plan] Top up your own account. Below official $100 USD exchange rate with 5X compute quota.",
-  "price": 688,
-  "order": 7,
+  "title": "ChatGPT Pro 10X Monthly | Official Card Top-up | 1 Month [30D Warranty][5D Stockable]",
+  "subtitle": "[10X - $100 Tier] Direct official card top-up to your own account, below official $100 USD rate. 5-day stockable key & 30-day warranty.",
+  "price": 715,
+  "order": 9,
   "tags": [
-    "Pro 5X",
-    "官方卡充",
-    "5倍算力",
-    "可囤五天"
+    "Pro 10X",
+    "Official Card",
+    "5D Stockable",
+    "30D Warranty"
   ],
   "deliveryNotice": "Instant automated delivery after payment",
   "features": [
@@ -20,22 +20,22 @@
     "30 天质保"
   ],
   "inStock": true,
-  "buyButtonText": "Buy Now ￥688",
+  "buyButtonText": "Buy Now ¥715",
   "actionType": "buy",
-  "orderName": "ChatGPT Pro 5X 月卡（官方卡充）",
+  "orderName": "ChatGPT Pro 10X Card Top-up",
   "isHot": true,
   "warnings": [
     "Do NOT submit accounts that currently have active Plus/Team/Pro status or prior $0/black-market billing history.",
     "Microsoft emails are prohibited. Gmail is strongly recommended. Please save your billing receipt."
   ],
   "detail": {
-    "title": "ChatGPT Pro 5X 1-Month | Official Card Top-up ($100 Plan)",
-    "subtitle": "Save vs official $100 USD rate! 24/7 automated official card recharge in 1-10 minutes.",
+    "title": "ChatGPT Pro 10X Monthly · Official Card Top-up",
+    "subtitle": "[10X - $100 Tier] Top up your own account with a 5-day stockable key.",
     "sections": [
       {
         "title": "Service Details",
         "items": [
-          "Official full-price card subscription for ChatGPT Pro 5X, processed automatically in 1-10 minutes.",
+          "Official full-price card subscription for ChatGPT Pro 10X, processed automatically in 1-10 minutes.",
           "Account must be on the free tier with clean billing history (no prior $0 promo or grey-market top-ups)."
         ]
       },

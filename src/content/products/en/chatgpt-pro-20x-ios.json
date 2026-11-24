@@ -1,0 +1,45 @@
+{
+  "id": "chatgpt-pro-20x-ios",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Pro 20X | 1 Month | iOS Official Top-up [Instant][30D Warranty]",
+  "subtitle": "[20X - $200 Tier] Official iOS in-app top-up directly onto your own account. Instant self-service key activation with 30-day warranty.",
+  "price": 1420,
+  "order": 11,
+  "tags": [
+    "Pro 20X",
+    "iOS Top-up",
+    "Instant",
+    "30D Warranty"
+  ],
+  "deliveryNotice": "Automated self-service top-up key, instant activation",
+  "features": [
+    "Official Apple iOS in-app recharge directly to your personal account (20X $200 tier)",
+    "Passwordless self-service redemption, instant delivery",
+    "Full 30-day subscription warranty included"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥1420",
+  "actionType": "buy",
+  "orderName": "ChatGPT Pro 20X iOS Top-up",
+  "isHot": true,
+  "warnings": [
+    "[Prerequisites]: Ensure your account has no conflicting active subscription before redeeming.",
+    "[Security]: No password required; official iOS payment rail.",
+    "[Warranty]: 30-day full subscription warranty."
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 20X Monthly · iOS Official Top-up",
+    "subtitle": "[20X - $200 Tier] Direct iOS top-up with instant delivery and 30-day warranty.",
+    "sections": [
+      {
+        "title": "Key Highlights",
+        "items": [
+          "Official iOS billing channel for maximum stability.",
+          "Self-service voucher redemption in 1–3 minutes.",
+          "30-day full subscription warranty."
+        ]
+      }
+    ]
+  }
+}

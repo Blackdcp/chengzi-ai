@@ -1,0 +1,45 @@
+{
+  "id": "chatgpt-pro-50x-ios",
+  "categoryId": "chatgpt",
+  "categoryName": "ChatGPT",
+  "title": "ChatGPT Pro 50X | 1 Month | iOS Official Top-up ($500 Tier) [Instant][30D Warranty]",
+  "subtitle": "[50X - $500 Tier] Official iOS top-up directly onto your own account. Instant activation for OpenAI flagship 50X compute with 30-day warranty.",
+  "price": 3580,
+  "order": 12,
+  "tags": [
+    "Pro 50X",
+    "$500 Flagship",
+    "iOS Top-up",
+    "30D Warranty"
+  ],
+  "deliveryNotice": "Automated self-service top-up key, instant activation",
+  "features": [
+    "Official iOS in-app recharge directly to your own account (50X $500 tier)",
+    "Unlocks OpenAI highest 50X compute & Codex agentic allowance",
+    "Instant passwordless redemption with 30-day warranty"
+  ],
+  "inStock": true,
+  "buyButtonText": "Buy Now ¥3580",
+  "actionType": "buy",
+  "orderName": "ChatGPT Pro 50X iOS Top-up",
+  "isHot": true,
+  "warnings": [
+    "[Prerequisites]: Account should have no conflicting active subscription.",
+    "[Security]: No password needed; official iOS payment channel.",
+    "[Warranty]: Full 30-day subscription warranty."
+  ],
+  "detail": {
+    "title": "ChatGPT Pro 50X ($500 Tier) · iOS Official Top-up",
+    "subtitle": "[50X - $500 Tier] Instant iOS top-up with 30-day warranty.",
+    "sections": [
+      {
+        "title": "Key Highlights",
+        "items": [
+          "Top-tier 50X $500 plan for continuous agentic and Codex workloads.",
+          "Official iOS payment rail, no foreign credit card needed.",
+          "30-day full warranty."
+        ]
+      }
+    ]
+  }
+}
