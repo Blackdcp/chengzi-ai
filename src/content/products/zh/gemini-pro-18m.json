@@ -5,7 +5,7 @@
   "title": "Gemini Pro 3个月 会员代开（充自己账户上）",
   "subtitle": "Gemini Pro + 5TB 云存储 xiaomi 3个月会员版本，支持反重力4。直充自己账户，拍前必读免责条款。",
   "price": 45,
-  "order": 22,
+  "order": 99,
   "tags": [
     "3个月会员",
     "充自己账号",
@@ -19,7 +19,7 @@
     "xiaomi 3个月会员版本 支持反重力4",
     "拍下代表同意免责协议，无质保不退款"
   ],
-  "inStock": true,
+  "inStock": false,
   "buyButtonText": "下单代开 ￥45",
   "actionType": "buy",
   "orderName": "Gemini Pro 3个月会员代开",

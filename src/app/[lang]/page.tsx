@@ -77,10 +77,10 @@ export default async function Page({
             },
             {
               '@type': 'Question',
-              name: 'Gemini Pro 3个月代开 (¥45) 与 Gemini Ultra 5X (¥699) / 20X (¥1180) 有什么区别？',
+              name: 'Gemini Ultra 5X (¥699) 与 Gemini Ultra 20X (¥1180) 有什么区别？',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Gemini Pro 3个月代开 (¥45) 含 5TB 云存且支持反重力4，但无质保不退款；Gemini Ultra 5X (¥699) 与 20X (¥1180，比官价立省 ¥270) 为官方 iOS 直充，享 5x/20x 旗舰算力与订阅质保。',
+                text: '两款均为官方 iOS 直充自己 Google 账号并享订阅质保：Gemini Ultra 5X (¥699) 对应 $99.99/月档含 5x 算力与 20TB 云存；Gemini Ultra 20X (¥1180，比官价 $199.99 立省 ¥270) 含 20x 顶配算力与 30TB 云存。',
               },
             },
           ]
@@ -103,10 +103,10 @@ export default async function Page({
             },
             {
               '@type': 'Question',
-              name: 'Gemini Pro 3-Month (¥45) vs Gemini Ultra 5X (¥699) / 20X (¥1180)?',
+              name: 'Gemini Ultra 5X (¥699) vs Gemini Ultra 20X (¥1180)?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Gemini Pro 3-Month (¥45) includes 5TB storage & Antigravity 4 (as-is, no warranty). Gemini Ultra 5X (¥699) and 20X (¥1180, saving ¥270 vs $199.99 USD) are official iOS top-ups with subscription warranty.',
+                text: 'Both are official iOS top-ups with subscription warranty. Gemini Ultra 5X (¥699) is the $99.99/mo tier (5x quota + 20TB storage), and Gemini Ultra 20X (¥1180, saving ¥270 vs $199.99 USD) unlocks 20x flagship compute + 30TB storage.',
               },
             },
           ],

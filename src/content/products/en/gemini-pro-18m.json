@@ -5,7 +5,7 @@
   "title": "Gemini Pro 3-Month Membership Direct Top-up (On Your Own Account)",
   "subtitle": "Gemini Pro + 5TB Cloud Storage (xiaomi 3-month edition). Supports Antigravity 4. Direct top-up to your account.",
   "price": 45,
-  "order": 22,
+  "order": 99,
   "tags": [
     "3-Month Pro",
     "Your Own Account",
@@ -19,7 +19,7 @@
     "xiaomi 3-month edition, supports Antigravity 4",
     "Sold as-is with no warranty / No personal refunds"
   ],
-  "inStock": true,
+  "inStock": false,
   "buyButtonText": "Buy Now ￥45",
   "actionType": "buy",
   "orderName": "Gemini Pro 3-Month Top-up",

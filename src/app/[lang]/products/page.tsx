@@ -41,8 +41,8 @@ const copy = {
         description: 'Grok Plus 新版多合一官方正规充值，全端通用。',
       },
       gemini: {
-        title: 'Gemini Pro / Ultra 会员直充与代开',
-        description: 'Gemini Pro 3个月代开（含 5TB 云存、支持反重力4），以及 Gemini Ultra 5X / 20X iOS 官方直充。',
+        title: 'Gemini Ultra 会员 iOS 官方直充',
+        description: 'Gemini Ultra 5X 与 20X 月卡 iOS 官方正规直充自己账户，享订阅质保。',
       },
       other: {
         title: '其他服务',
@@ -72,8 +72,8 @@ const copy = {
         description: 'Grok Plus new all-in-one official top-up for Web, iOS, and Android.',
       },
       gemini: {
-        title: 'Gemini Pro & Ultra Direct Subscriptions',
-        description: 'Gemini Pro 3-Month top-up (5TB Storage, Antigravity 4) and Gemini Ultra 5X / 20X iOS official top-ups.',
+        title: 'Gemini Ultra Official iOS Top-ups',
+        description: 'Official iOS direct top-ups for Gemini Ultra 5X and 20X with subscription warranty.',
       },
       other: {
         title: 'Other Services',

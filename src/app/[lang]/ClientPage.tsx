@@ -861,7 +861,7 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
                 <a href="#accounts" className="vercel-button cz-hero-primary" style={{ padding: "12px 28px", fontSize: 15, fontWeight: 700, textDecoration: "none" }}>{lang === 'zh' ? '立即选购 AI 账号' : 'Explore AI Accounts'}</a>
               </div>
               <div className="cz-hero-note">
-                {lang === 'zh' ? 'ChatGPT Plus/Pro/Codex · Claude Ultra/KYC · Grok · Gemini Pro/Ultra' : 'ChatGPT Plus/Pro/Codex · Claude Ultra/KYC · Grok · Gemini Pro/Ultra'}
+                {lang === 'zh' ? 'ChatGPT Plus/Pro/Codex · Claude Ultra/KYC · Grok · Gemini Ultra' : 'ChatGPT Plus/Pro/Codex · Claude Ultra/KYC · Grok · Gemini Ultra'}
               </div>
             </div>
 
@@ -1039,8 +1039,8 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
                     a: "需要直接上车顶配 $200 档选【Claude Ultra 过 K 成品号 (¥2250)】，1-2 天交付且保障首登与 30 天订阅；已有自己的 Claude 账号触发验证选【KYC 验证 (¥125)】或【门户验证 (¥329)】，UU 远程一对一协助，验证失败或过程中封号全额退款。"
                   },
                   {
-                    q: "Gemini Pro 3个月代开 (¥45) 与 Gemini Ultra 5X (¥699) / 20X (¥1180) 怎么选？",
-                    a: "尝鲜或轻中度使用选【¥45 Gemini Pro 3个月代开】（含 5TB 云存、支持反重力4，注意此款无质保不退款，建议老号且退出家庭组）；重度科研与高并发 Agent 用户选【Gemini Ultra 5X (¥699)】或【20X (¥1180，比官价 $199.99 立省 ¥270)】，iOS 官方直充享订阅质保。"
+                    q: "Gemini Ultra 5X (¥699) 与 Gemini Ultra 20X (¥1180) 怎么选？",
+                    a: "两款均为 iOS 官方正规直充自己 Google 账号并享订阅质保：【Gemini Ultra 5X (¥699)】对应官方 $99.99/月档，含 5 倍 Pro 算力与 20TB 云存；【Gemini Ultra 20X (¥1180)】对应官方 $199.99/月顶配档，比官价立省 ¥270，含 20 倍顶配算力与 30TB 云存，适合重度科研与连续 Agent 开发。"
                   }
                 ]
               : [
@@ -1057,8 +1057,8 @@ export default function HomePage({ dict, products, guides, lang, refCode }: { di
                     a: "Claude Ultra Ready Account (¥2250) delivers a KYC-verified $200/mo flagship account in 1–2 days with first-login + 30-day sub warranty. For existing accounts needing verification, choose KYC (¥125) or Portal (¥329) via UU Remote with full refund on failure."
                   },
                   {
-                    q: "Gemini Pro 3-Month (¥45) vs Gemini Ultra 5X (¥699) / 20X (¥1180)?",
-                    a: "Gemini Pro 3-Month (¥45) includes 5TB storage & Antigravity 4 (as-is, no warranty, aged account recommended). For flagship compute with subscription warranty, pick Gemini Ultra 5X (¥699) or 20X (¥1180, saving ¥270 vs $199.99 USD) via official iOS top-up."
+                    q: "Gemini Ultra 5X (¥699) vs Gemini Ultra 20X (¥1180)?",
+                    a: "Both are official iOS direct top-ups to your own Google account with subscription warranty. Ultra 5X (¥699) maps to the $99.99/mo tier (5x Pro quota + 20TB storage), while Ultra 20X (¥1180) saves ¥270 vs $199.99/mo with 20x flagship compute and 30TB storage."
                   }
                 ]
             ).map(faq => (

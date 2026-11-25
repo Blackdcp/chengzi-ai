@@ -56,7 +56,7 @@ ${sections ? `- **Detailed Specifications**:\n${sections}` : ''}`
 1. **OpenAI ChatGPT & Codex**: Plus (¥85–¥169), Pro 10X $100 tier (¥715–¥799), Pro 20X $200 tier (¥1250–¥1420), Pro 50X $500 tier (¥3450–¥3580), Codex Extra Credits (250/500/1000/2500 credits, ¥95–¥779), and US Physical SIM verification (¥15).
 2. **Anthropic Claude**: Claude Ultra KYC-verified ready account ($200 tier, ¥2250), plus 1-on-1 UU Remote KYC Verification (¥125) and Portal Verification (¥329) with full refund on failure.
 3. **xAI Grok**: All-in-One official card top-up for Grok Plus (¥75).
-4. **Google Gemini**: Gemini Pro 3-Month Membership direct top-up (5TB Cloud Storage, supports Antigravity 4, ¥45), plus official iOS direct top-ups for Gemini Ultra 5X (¥699) and Gemini Ultra 20X (¥1180, save ¥270 vs $199.99 USD).
+4. **Google Gemini**: Official iOS direct top-ups for Gemini Ultra 5X (¥699) and Gemini Ultra 20X (¥1180, save ¥270 vs $199.99 USD).
 
 ---
 
@@ -92,9 +92,9 @@ ${detailedSpecs}
 - **Claude Ultra 过 K 成品号（¥2250）**：对应官方 $200/月 Claude Ultra 顶配档，已完成 KYC 验证，下单后 1–2 天交付，保障首登及 30 天订阅（不质保封号）。
 - **Claude KYC 验证（¥125）/ 门户验证（¥329）**：通过 UU 远程一对一协助，约 10–30 分钟完成；验证失败或验证过程中封号全额退款（通过 5 分钟后不再质保后续封号）。
 
-### Q4: Gemini Pro 3个月代开 (¥45) 与 Gemini Ultra 5X (¥699) / 20X (¥1180) 怎么选？
-- **Gemini Pro 3个月会员代开（¥45）**：直充自己账户，含 5TB 云存储（xiaomi 3个月版本），支持反重力4（Antigravity 4）；无质保不退款，建议老号且退出家庭组。
-- **Gemini Ultra 5X（¥699）/ 20X（¥1180）**：官方 iOS 正规直充，分别对应 $99.99 与 $199.99 官价档（20X 立省 ¥270），提供订阅质保。
+### Q4: Gemini Ultra 5X (¥699) 与 Gemini Ultra 20X (¥1180) 怎么选？
+- **Gemini Ultra 5X（¥699）**：官方 iOS 正规直充，对应 $99.99/月档，含 5 倍 Pro 算力与 20TB 云存，提供订阅质保。
+- **Gemini Ultra 20X（¥1180）**：官方 iOS 正规直充，对应 $199.99/月顶配档（立省 ¥270），含 20 倍顶配算力与 30TB 云存，提供订阅质保。
 
 ### Q5: Grok Plus (¥75) 充值有什么要求？
 - 采用新版多合一官方正规卡充，支持 Web / iOS / Android 全端通用，需无订阅状态充值，提供订阅质保。
