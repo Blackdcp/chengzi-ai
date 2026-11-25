@@ -48,7 +48,7 @@ ${sections ? `- **Detailed Specifications**:\n${sections}` : ''}`
 > Chinese Storefront: ${siteUrl}/zh
 > English Storefront: ${siteUrl}/en
 > Support Email: chengziai2026@163.com
-> Last Updated: 2026-11-24
+> Last Updated: 2026-11-25
 
 ## 1. Platform Overview
 

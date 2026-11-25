@@ -612,8 +612,8 @@ export default async function GuidePage({ params }: GuidePageProps) {
             </div>
             <div className="cz-guide-cta-copy">
               {lang === 'zh'
-                ? '前往橙子 AI 官方商城，选购 ChatGPT Pro 5X / 20X、Gemini Pro 与 Grok-Super 官方正规账号与会员秒充。'
-                : 'Visit Orange AI store to get official ChatGPT Pro 5X / 20X, Gemini Pro, and Grok-Super accounts with instant delivery.'}
+                ? '前往橙子 AI 官方商城，选购谷歌 Gemini Pro / Ultra 5X & 20X 官方直充、ChatGPT Pro 10X / 20X / 50X、Claude Ultra 与 Grok Plus 正规会员服务。'
+                : 'Visit ChengZi AI store to get official Google Gemini Pro / Ultra 5X & 20X direct top-ups, ChatGPT Pro 10X / 20X / 50X, Claude Ultra, and Grok Plus subscriptions.'}
             </div>
             <GuideCtaLink href={`/${lang}#accounts`} lang={lang} slug={guide.slug}>
               {lang === 'zh' ? '前往选购 AI 账号 →' : 'Explore AI Accounts →'}

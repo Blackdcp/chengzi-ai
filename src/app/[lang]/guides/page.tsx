@@ -26,8 +26,10 @@ const categoriesByLanguage: Record<GuideLanguage, GuideCategory[]> = {
     {
       id: 'accounts',
       title: 'AI 账号购买与续费',
-      description: 'ChatGPT Plus、ChatGPT Pro、Gemini AI Pro 的购买、续费、成品号和使用前判断。',
+      description: 'Google Gemini 4 / Pro / Ultra 5X & 20X 谷歌官方充值、Antigravity 反重力扩容，以及 ChatGPT Plus / Pro 购买与续费指南。',
       slugs: [
+        'google-gemini-4-pro-ultra-recharge-guide-2026',
+        'google-antigravity-gemini-4-pro-ultra-quota-recharge-guide',
         'buy-chatgpt-plus-account-guide',
         'chatgpt-plus-ready-account-vs-renewal',
         'chatgpt-plus-no-vpn-guide',
@@ -72,8 +74,10 @@ const categoriesByLanguage: Record<GuideLanguage, GuideCategory[]> = {
     {
       id: 'accounts',
       title: 'AI Account Buying and Renewal',
-      description: 'Buying, renewing, and comparing ChatGPT Plus, ChatGPT Pro, ready accounts, and Gemini AI Pro subscriptions.',
+      description: 'Google Gemini 4 / Pro / Ultra 5X & 20X direct top-ups, Antigravity quota upgrades, and ChatGPT Plus / Pro buying guides.',
       slugs: [
+        'google-gemini-4-pro-ultra-recharge-guide-2026',
+        'google-antigravity-gemini-4-pro-ultra-quota-recharge-guide',
         'buy-chatgpt-plus-account-guide',
         'chatgpt-plus-ready-account-vs-renewal',
         'chatgpt-plus-no-vpn-guide',
